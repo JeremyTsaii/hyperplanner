@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "HyperPlanner",
+  "name": "Web App for planning/reviewing your 4 years of college!",
   "icons": [
     {
       "src": "favicon.ico",
