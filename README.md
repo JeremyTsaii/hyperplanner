@@ -2,6 +2,10 @@
 
 [![Build Status](https://travis-ci.com/JeremyTsaii/hyperplanner.png?branch=master)](https://travis-ci.com/JeremyTsaii/hyperplanner)
 
+[![Dependency Status](https://david-dm.org/{JeremyTsaii}/{hyperplanner}.svg)](https://david-dm.org/JeremyTsaii/hyperplanner)
+
+[![devDependency Status](https://david-dm.org/{JeremyTsaii}/{hyperplanner}/dev-status.svg)](https://david-dm.org/JeremyTsaii/hyperplanner#info=devDependencies)
+
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
