@@ -1,6 +1,10 @@
+[![HitCount](http://hits.dwyl.com/JeremyTsaii/hyperplanner.svg)](http://hits.dwyl.com/JeremyTsaii/hyperplanner)
+
 [![Build Status](https://travis-ci.com/{JeremyTsaii}/{hyperplanner}.png?branch=master)](https://travis-ci.com/{JeremyTsaii}/{hyperplanner})
 
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
+
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ## Available Scripts
 
