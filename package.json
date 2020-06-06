@@ -55,7 +55,7 @@
     "lint": "eslint src/**/*.{js,jsx,ts,tsx} --color",
     "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
     "format": "prettier --check src/**/*.{js,jsx,ts,tsx,scss,css,json,md}",
-    "format:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,scss,css,json,md}",
+    "format:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,scss,css,json,md}"
   },
   "eslintConfig": {
     "extends": "react-app"
