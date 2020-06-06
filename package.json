@@ -29,6 +29,7 @@
     "eslint-plugin-react": "^7.20.0",
     "eslint-plugin-react-hooks": "^4.0.4",
     "husky": "^4.2.5",
+    "istanbul": "^0.4.5",
     "lint-staged": "^10.2.9",
     "prettier": "^2.0.5"
   },
@@ -53,7 +54,8 @@
     "lint": "eslint src/**/*.{js,jsx,ts,tsx} --color",
     "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
     "format": "prettier --check src/**/*.{js,jsx,ts,tsx,scss,css,json,md}",
-    "format:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,scss,css,json,md}"
+    "format:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,scss,css,json,md}",
+    "coverage": "istanbul cover ./App.test.tsx"
   },
   "eslintConfig": {
     "extends": "react-app"

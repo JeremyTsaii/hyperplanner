@@ -6,6 +6,8 @@
 
 [![devDependency Status](https://david-dm.org/{JeremyTsaii}/{hyperplanner}/dev-status.svg)](https://david-dm.org/JeremyTsaii/hyperplanner#info=devDependencies)
 
+[![Maintainability](https://api.codeclimate.com/v1/badges/80bb8a05abd8bfa7b70b/maintainability)](https://codeclimate.com/github/JeremyTsaii/hyperplanner/maintainability)
+
 [![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
