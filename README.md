@@ -2,11 +2,11 @@
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c938739e-15ab-4c97-9e21-217e6acdbe13/deploy-status)](https://app.netlify.com/sites/hyperplanner/deploys)
 
-[![Build Status](https://travis-ci.com/JeremyTsaii/hyperplanner.png?branch=master)](https://travis-ci.com/JeremyTsaii/hyperplanner)
+[![Build Status](https://travis-ci.com/JeremyTsaii/hyperplanner.svg?branch=master)](https://travis-ci.com/JeremyTsaii/hyperplanner)
 
-[![Dependency Status](https://david-dm.org/{JeremyTsaii}/{hyperplanner}.svg)](https://david-dm.org/JeremyTsaii/hyperplanner)
+[![Dependency Status](https://david-dm.org/JeremyTsaii/hyperplanner.svg)](https://david-dm.org/JeremyTsaii/hyperplanner)
 
-[![devDependency Status](https://david-dm.org/{JeremyTsaii}/{hyperplanner}/dev-status.svg)](https://david-dm.org/JeremyTsaii/hyperplanner#info=devDependencies)
+[![devDependency Status](https://david-dm.org/JeremyTsaii/hyperplanner/dev-status.svg)](https://david-dm.org/JeremyTsaii/hyperplanner#info=devDependencies)
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/80bb8a05abd8bfa7b70b/maintainability)](https://codeclimate.com/github/JeremyTsaii/hyperplanner/maintainability)
 
