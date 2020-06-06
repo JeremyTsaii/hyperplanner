@@ -8,7 +8,7 @@ script:
   - npm run build
   - npm run lint
   - npm run format
-  - npm run test
+  - npm run test:coverage
 before_install:
   - pip install --user codecov
 after_success:
