@@ -1,4 +1,6 @@
-[![Build Status](https://travis-ci.org/{JeremyTsaii}/{hyperplanner}.png?branch=master)](https://travis-ci.org/{JeremyTsaii}/{hyperplanner})
+[![Build Status](https://travis-ci.com/{JeremyTsaii}/{hyperplanner}.png?branch=master)](https://travis-ci.com/{JeremyTsaii}/{hyperplanner})
+
+[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
 
 ## Available Scripts
 
