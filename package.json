@@ -39,7 +39,12 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx,json,css,scss,md}": [
-      "prettier --write"
+      "prettier --write",
+      "git add"
+    ],
+    "src/**/*.{js,jsx,jts,tsx}": [
+      "eslint --fix",
+      "git add"
     ]
   },
   "scripts": {
@@ -47,10 +52,10 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.{ts,tsx} --color",
-    "lint:fix": "eslint src/**/*.{ts,tsx} --fix",
-    "format": "prettier --check src/**/*.{ts,tsx,scss,css,json}",
-    "format:fix": "prettier --write src/**/*.{ts,tsx,scss,css,json}"
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx} --color",
+    "lint:fix": "eslint src/**/*.{js,jsx,ts,tsx} --fix",
+    "format": "prettier --check src/**/*.{js,jsx,ts,tsx,scss,css,json,md}",
+    "format:fix": "prettier --write src/**/*.{js,jsx,ts,tsx,scss,css,json,md}"
   },
   "eslintConfig": {
     "extends": "react-app"
