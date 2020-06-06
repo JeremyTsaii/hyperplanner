@@ -6,6 +6,8 @@
 
 [![Maintainability](https://api.codeclimate.com/v1/badges/80bb8a05abd8bfa7b70b/maintainability)](https://codeclimate.com/github/JeremyTsaii/hyperplanner/maintainability)
 
+[![codecov](https://codecov.io/gh/JeremyTsaii/hyperplanner/branch/master/graph/badge.svg)](https://codecov.io/gh/JeremyTsaii/hyperplanner)
+
 [![HitCount](http://hits.dwyl.com/JeremyTsaii/hyperplanner.svg)](http://hits.dwyl.com/JeremyTsaii/hyperplanner)
 
 [![Dependency Status](https://david-dm.org/JeremyTsaii/hyperplanner.svg)](https://david-dm.org/JeremyTsaii/hyperplanner)
