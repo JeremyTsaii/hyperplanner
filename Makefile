@@ -1,19 +1,19 @@
-PHONY:build
-docker-build:
+.PHONY: build
+build:
 		docker-compose build web
 
-PHONY:serve
+.PHONY: serve
 serve:    
 		docker-compose run --rm --service-ports web
 
-PHONY:test
+.PHONY: test
 test:
-		docker-compose run --rm web npm test
+		docker-compose run --rm web npm run test
 
-PHONY:format
+.PHONY: format
 format:
-		docker-compose run --rm web npm format:fix
+		docker-compose run --rm web npm run format:fix
 
-PHONY:lint
+.PHONY: lint
 lint:
-		docker-compose run --rm web npm lint:fix
+		docker-compose run --rm web npm run lint:fix
