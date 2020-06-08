@@ -3,7 +3,6 @@ services:
   web:
     build: .
     volumes:
-      - ./public:/app/public
-      - ./src:/app/src
+      - ./:/usr/src/app
     ports:
       - "3000:3000"
