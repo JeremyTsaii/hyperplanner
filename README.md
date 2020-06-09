@@ -2,9 +2,6 @@
 
 ### The Web App for planning/reviewing all 4 years of college!
 
-List of currently-supported schools:
-- Harvey Mudd College
-
 [![forthebadge](https://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](https://forthebadge.com)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/c938739e-15ab-4c97-9e21-217e6acdbe13/deploy-status)](https://app.netlify.com/sites/hyperplanner/deploys)
@@ -28,6 +25,9 @@ List of currently-supported schools:
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 ***
+
+## List of currently-supported schools:
+- Harvey Mudd College
 
 ## How was this developed?
 
