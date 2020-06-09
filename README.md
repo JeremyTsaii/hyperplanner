@@ -47,6 +47,8 @@
 
 - Prettier and ESLint (Airbnb preferences) used for best coding practices
 
+- Auth0 used for user authentication
+
 - Google Analytics used to track site statistics
 
 ## Where is the backend?
