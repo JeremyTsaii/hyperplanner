@@ -1,8 +1,6 @@
 # HyperPlanner
 
-***
-
-The Web App for planning/reviewing all 4 years of college!
+### The Web App for planning/reviewing all 4 years of college!
 
 List of currently-supported schools:
 - Harvey Mudd College
