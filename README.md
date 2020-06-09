@@ -51,7 +51,7 @@
 
 ## Where is the backend?
 
-The backend of HyperPlanner uses Hasura, which is an open source engine connecting our PostgreSQL Database to our GraphQL backend. This is hosted on Heroku, located [here](https://hyperplanner.herokuapp.com/console).
+The Backend of HyperPlanner uses Hasura, which is an open source engine connecting our PostgreSQL Database to our GraphQL Backend. This is hosted on Heroku, located [here](https://hyperplanner.herokuapp.com/console). The Frontend communicates with the GraphQL engine using Apollo Client.
 
 ## What is the development workflow?
 
