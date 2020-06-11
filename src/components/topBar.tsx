@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import GitButton from './gitButton'
+import DownloadButton from './downloadButton'
 import LoginButton from './loginButton'
 import YearStepper from './stepper'
 
@@ -47,10 +48,11 @@ function TopBar(): JSX.Element {
           <Grid className={classes.stepper}>
             <YearStepper />
           </Grid>
-          <div className={classes.sideButtons}>
+          <Grid className={classes.sideButtons}>
             <LoginButton />
+            <DownloadButton />
             <GitButton />
-          </div>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>
