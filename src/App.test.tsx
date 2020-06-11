@@ -5,8 +5,8 @@ import App from './App'
 // Necessary to prevent unit testing ReactGA errors
 jest.mock('react-ga')
 
-test('renders text', () => {
+test('Renders HyperPlanner text', () => {
   const { getByText } = render(<App />)
-  const linkElement = getByText(/the beginning of hyperplanner/i)
+  const linkElement = getByText(/hyperplanner/i)
   expect(linkElement).toBeInTheDocument()
 })

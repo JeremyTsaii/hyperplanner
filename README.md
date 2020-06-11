@@ -51,7 +51,7 @@
 
 - Google Analytics used to track site statistics
 
-## Where is the backend?
+## Where is the Backend?
 
 The Backend of HyperPlanner uses Hasura, which is an open source engine connecting our PostgreSQL Database to our GraphQL Backend. This is hosted on Heroku, located [here](https://hyperplanner.herokuapp.com/console). The Frontend communicates with the GraphQL engine using Apollo Client.
 
