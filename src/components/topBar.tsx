@@ -7,19 +7,19 @@ import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
 import GitButton from './gitButton'
+import DownloadButton from './downloadButton'
 import LoginButton from './loginButton'
 import YearStepper from './stepper'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
   appBar: {
     background: '#282c34',
   },
-  menuButton: {
-    marginRight: theme.spacing(1),
-  },
+  toolBar: {},
+  menuButton: {},
   title: {},
   stepper: {
     flexGrow: 1,
@@ -33,7 +33,7 @@ function TopBar(): JSX.Element {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar variant="dense" className={classes.toolBar}>
           <IconButton
             edge="start"
             color="secondary"
@@ -47,10 +47,11 @@ function TopBar(): JSX.Element {
           <Grid className={classes.stepper}>
             <YearStepper />
           </Grid>
-          <div className={classes.sideButtons}>
+          <Grid className={classes.sideButtons}>
             <LoginButton />
+            <DownloadButton />
             <GitButton />
-          </div>
+          </Grid>
         </Toolbar>
       </AppBar>
     </div>

@@ -37,14 +37,10 @@ const StyledStepLabel = withStyles({
   },
 })(StepLabel)
 
-function getSteps(): string[] {
-  return ['Freshman', 'Sophomore', 'Junior', 'Senior']
-}
-
 // Color connectors when completed
 const QontoConnector = withStyles({
   alternativeLabel: {
-    top: 10,
+    top: 12,
     left: 'calc(-50% + 16px)',
     right: 'calc(50% + 16px)',
   },
@@ -60,10 +56,14 @@ const QontoConnector = withStyles({
   },
   line: {
     borderColor: '#eaeaf0',
-    borderTopWidth: 3,
+    borderTopWidth: 2,
     borderRadius: 1,
   },
 })(StepConnector)
+
+function getSteps(): string[] {
+  return ['Freshman', 'Sophomore', 'Junior', 'Senior']
+}
 
 function YearStepper(): JSX.Element {
   const classes = useStyles()
