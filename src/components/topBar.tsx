@@ -11,16 +11,15 @@ import DownloadButton from './downloadButton'
 import LoginButton from './loginButton'
 import YearStepper from './stepper'
 
-const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
   },
   appBar: {
     background: '#282c34',
   },
-  menuButton: {
-    marginRight: theme.spacing(1),
-  },
+  toolBar: {},
+  menuButton: {},
   title: {},
   stepper: {
     flexGrow: 1,
@@ -34,7 +33,7 @@ function TopBar(): JSX.Element {
   return (
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
-        <Toolbar>
+        <Toolbar variant="dense" className={classes.toolBar}>
           <IconButton
             edge="start"
             color="secondary"
