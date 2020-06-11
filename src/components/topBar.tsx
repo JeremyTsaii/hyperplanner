@@ -16,18 +16,15 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     background: '#282c34',
-    alignItems: 'right',
   },
   menuButton: {
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
   title: {},
   stepper: {
     flexGrow: 1,
   },
-  sideButtons: {
-    flexGrow: 1,
-  },
+  sideButtons: {},
 }))
 
 function TopBar(): JSX.Element {
@@ -50,10 +47,10 @@ function TopBar(): JSX.Element {
           <Grid className={classes.stepper}>
             <YearStepper />
           </Grid>
-          <Grid className={classes.sideButtons}>
+          <div className={classes.sideButtons}>
             <LoginButton />
             <GitButton />
-          </Grid>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
