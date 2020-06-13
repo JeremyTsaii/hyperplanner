@@ -1,8 +1,6 @@
 import React from 'react'
-import MenuIcon from '@material-ui/icons/Menu'
 import AppBar from '@material-ui/core/AppBar'
 import Toolbar from '@material-ui/core/Toolbar'
-import IconButton from '@material-ui/core/IconButton'
 import Typography from '@material-ui/core/Typography'
 import { makeStyles } from '@material-ui/core/styles'
 import Grid from '@material-ui/core/Grid'
@@ -10,6 +8,7 @@ import GitButton from './gitButton'
 import DownloadButton from './downloadButton'
 import LoginButton from './loginButton'
 import YearStepper from './stepper'
+import Logo from '../images/logo.png'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -34,13 +33,7 @@ function TopBar(): JSX.Element {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar variant="dense" className={classes.toolBar}>
-          <IconButton
-            edge="start"
-            color="secondary"
-            aria-label="menu"
-            className={classes.menuButton}>
-            <MenuIcon />
-          </IconButton>
+          <img alt="logo" style={{ width: 50, paddingRight: 10 }} src={Logo} />
           <Typography variant="h5" color="secondary" className={classes.title}>
             HyperPlanner
           </Typography>
