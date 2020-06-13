@@ -32,7 +32,7 @@ function Info(): JSX.Element {
   const classes = useStyles()
 
   return (
-    <Grid container justify="flex-start" xs={12} className={classes.container}>
+    <Grid className={classes.container}>
       <Grid item>
         <Paper elevation={ELEV} className={classes.infoCard} />
       </Grid>
