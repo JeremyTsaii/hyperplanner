@@ -8,6 +8,7 @@ import GitButton from './gitButton'
 import DownloadButton from './downloadButton'
 import LoginButton from './loginButton'
 import YearStepper from './stepper'
+import Logo from '../images/logo.png'
 
 const useStyles = makeStyles(() => ({
   root: {
@@ -25,8 +26,6 @@ const useStyles = makeStyles(() => ({
   sideButtons: {},
 }))
 
-const logo = require('../images/logo.png')
-
 function TopBar(): JSX.Element {
   const classes = useStyles()
 
@@ -34,7 +33,7 @@ function TopBar(): JSX.Element {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar variant="dense" className={classes.toolBar}>
-          <img alt="logo" style={{ width: 50, paddingRight: 10 }} src={logo} />
+          <img alt="logo" style={{ width: 50, paddingRight: 10 }} src={Logo} />
           <Typography variant="h5" color="secondary" className={classes.title}>
             HyperPlanner
           </Typography>
