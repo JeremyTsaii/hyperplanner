@@ -2,25 +2,43 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline'
 import { makeStyles } from '@material-ui/core/styles'
+import { useAuth0 } from '../utils/react-auth0-spa'
 
 const useStyles = makeStyles((theme) => ({
-  loginButton: {
+  logButton: {
     marginRight: theme.spacing(1),
     textTransform: 'none',
   },
 }))
 
 function LoginButton(): JSX.Element {
+  const { isAuthenticated, loginWithPopup, logout } = useAuth0()
   const classes = useStyles()
 
   return (
-    <Button
-      variant="outlined"
-      color="secondary"
-      className={classes.loginButton}
-      startIcon={<PersonOutlineIcon />}>
-      Login
-    </Button>
+    <div>
+      {!isAuthenticated && (
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={() => loginWithPopup({})}
+          className={classes.logButton}
+          startIcon={<PersonOutlineIcon />}>
+          Log In
+        </Button>
+      )}
+
+      {isAuthenticated && (
+        <Button
+          variant="outlined"
+          color="secondary"
+          onClick={() => logout()}
+          className={classes.logButton}
+          startIcon={<PersonOutlineIcon />}>
+          Log Out
+        </Button>
+      )}
+    </div>
   )
 }
 
