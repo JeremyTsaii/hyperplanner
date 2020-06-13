@@ -24,7 +24,10 @@ const useStyles = makeStyles(() => ({
   stepper: {
     flexGrow: 1,
   },
-  sideButtons: {},
+  sideButtons: {
+    display: 'flex',
+    flexWrap: 'nowrap',
+  },
 }))
 
 function TopBar(): JSX.Element {
@@ -48,9 +51,9 @@ function TopBar(): JSX.Element {
             <YearStepper />
           </Grid>
           <Grid className={classes.sideButtons}>
-            <LoginButton />
             <DownloadButton />
             <GitButton />
+            <LoginButton />
           </Grid>
         </Toolbar>
       </AppBar>
