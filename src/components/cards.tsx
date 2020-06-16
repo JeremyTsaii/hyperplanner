@@ -13,15 +13,17 @@ const useStyles = makeStyles((theme) => ({
   innerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',
+    marginLeft: theme.spacing(12),
+    marginRight: theme.spacing(12),
   },
   mainCard: {
-    background: '#515969',
+    background: '#3A3F55',
     margin: theme.spacing(1),
     height: theme.spacing(30),
     flexGrow: 1,
   },
   summerCard: {
-    background: '#515969',
+    background: '#3A3F55',
     margin: theme.spacing(1),
     height: theme.spacing(15),
     flexGrow: 1,

@@ -13,17 +13,18 @@ const useStyles = makeStyles((theme) => ({
     flexWrap: 'nowrap',
   },
   infoCard: {
-    background: '#515969',
+    background: '#3A3F55',
     margin: theme.spacing(1),
-    width: theme.spacing(30),
-    height: theme.spacing(20),
+    width: theme.spacing(40),
+    height: theme.spacing(25),
     flexGrow: 1,
   },
   statsCard: {
-    background: '#515969',
+    background: '#3A3F55',
     margin: theme.spacing(1),
-    width: theme.spacing(80),
-    height: theme.spacing(20),
+    marginLeft: theme.spacing(10),
+    width: theme.spacing(100),
+    height: theme.spacing(25),
     flexGrow: 1,
   },
 }))
@@ -32,7 +33,13 @@ function Info(): JSX.Element {
   const classes = useStyles()
 
   return (
-    <Grid container justify="flex-start" xs={12} className={classes.container}>
+    <Grid
+      container
+      xs={12}
+      className={classes.container}
+      direction="row"
+      justify="center"
+      alignItems="center">
       <Grid item>
         <Paper elevation={ELEV} className={classes.infoCard} />
       </Grid>
