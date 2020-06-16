@@ -37,7 +37,7 @@
 
 - Travis CI used for CI/CD tests
 
-- Jest used for unit test
+- Jest/React Testing Library used for unit tests
 
 - Code Coverage and Code Climate used to assess the maintainability of the code and the coverage of tests
 
