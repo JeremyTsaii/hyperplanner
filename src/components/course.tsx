@@ -62,12 +62,12 @@ function Course({ code, title, credits, color }: courseProps): JSX.Element {
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item justify="flex-end">
+        <Grid item>
           <IconButton edge="end" aria-label="edit" size="small">
             <EditIcon />
           </IconButton>
         </Grid>
-        <Grid item justify="flex-end">
+        <Grid item>
           <IconButton edge="end" aria-label="delete" size="small">
             <DeleteForeverIcon />
           </IconButton>
