@@ -58,6 +58,8 @@ The Backend of HyperPlanner uses Hasura, which is an open source engine connecti
 
 ![Diagram](https://iili.io/J4B7N2.png)
 
+![Database](https://iili.io/JP2d8l.png)
+
 ## What is the development workflow?
 
 First clone the repository onto your local machine. Note that on Windows, if using Git Bash, you will need to install Make. Look [here](https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058) for more information on installing Make. You will also need to have [Docker](https://www.docker.com/products/docker-desktop) downloaded.
