@@ -1,5 +1,6 @@
 {
   "hmc": {
+    "grad": 128,
     "major": {
       "bio": {
         "major_req": [
@@ -31,7 +32,10 @@
           { "code": "CHEM111", "title": "Organic Chemistry II Laboratory" },
           { "code": "BIOL054", "title": "Experimental Biology Laboratory" },
           { "code": "BIOL154", "title": "Biostatistics" },
-          { "code": "BIOL111", "title": "Molecular Biology Laboratory" },
+          {
+            "code": "BIOL111",
+            "title": "Molecular and Cellular Biology Laboratory"
+          },
           { "code": "BIOL113", "title": "Molecular Genetics" },
           { "code": "BIOL/CHEM182", "title": "Biochemistry" },
           { "code": "BIOL/CHEM184", "title": "Biochemistry Laboratory" },
@@ -53,8 +57,6 @@
           },
           { "code": "BIOL191", "title": "Biology Colloquium" },
           { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
           { "code": "CHEM199", "title": "Chemistry Seminar" },
           { "code": "CHEM199", "title": "Chemistry Seminar" },
           { "code": "BIOL193/CHEM151", "title": "Senior Thesis Research" },
@@ -358,7 +360,6 @@
         ]
       },
       "pe": 3
-    },
-    "grad": 128
+    }
   }
 }
