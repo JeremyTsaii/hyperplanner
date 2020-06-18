@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Course from './course'
+import reqs from '../static/requirements.json'
 
 // Page elevation constant
 const ELEV = 12
