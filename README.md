@@ -1,4 +1,5 @@
 # HyperPlanner
+![Banner](https://iili.io/J4BEKu.png)
 
 ### The Web App for planning/reviewing all 4 years of college!
 
@@ -54,6 +55,10 @@
 ## Where is the Backend?
 
 The Backend of HyperPlanner uses Hasura, which is an open source engine connecting our PostgreSQL Database to our GraphQL Backend. This is hosted on Heroku, located [here](https://hyperplanner.herokuapp.com/console). The Frontend communicates with the GraphQL engine using Apollo Client.
+
+![Diagram](https://iili.io/J4B7N2.png)
+
+![Database](https://iili.io/JP2d8l.png)
 
 ## What is the development workflow?
 
