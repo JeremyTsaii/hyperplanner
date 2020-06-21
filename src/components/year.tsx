@@ -8,7 +8,6 @@ import AddIcon from '@material-ui/icons/Add'
 import Course from './course'
 
 // Color constants
-const BLACK = '#282c34'
 const GREY = '#515969'
 const PINK = '#e91e63' // Major
 const BLUE = '#2196f3' // Core

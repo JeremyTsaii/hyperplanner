@@ -1,8 +1,6 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import { Typography } from '@material-ui/core'
-import Course from './course'
 import Year from './year'
 
 // Page elevation constant
