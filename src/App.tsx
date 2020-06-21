@@ -32,14 +32,14 @@ function App(): JSX.Element {
           <TopBar />
           <Info
             firstName="Jeremy"
-            schoolName="Bellevue College"
+            schoolName="Harvey Mudd College"
             majorName="CS"
-            concName="Excel"
-            gradYear={2045}
-            totalCredits={20}
-            creditsRem={47}
-            avgCredit={20}
-            avgRem={8}
+            concName="Economics"
+            gradYear={2022}
+            totalCredits={73.5}
+            creditsRem={54.5}
+            avgCredit={18.375}
+            avgRem={13.5}
           />
           <Cards />
         </div>
