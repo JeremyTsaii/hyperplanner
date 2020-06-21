@@ -8,11 +8,11 @@ import AddIcon from '@material-ui/icons/Add'
 import Course from './Course'
 
 // Color constants
-const GREY = '#515969'
-const PINK = '#e91e63' // Major
-const BLUE = '#2196f3' // Core
+// const GREY = '#515969'
+// const PINK = '#e91e63' // Major
+// const BLUE = '#2196f3' // Core
 // const GREEN = '#1de9b6' // Hums (Breadth)
-const ORANGE = '#ef5350' // Hums (Depth)
+// const ORANGE = '#ef5350' // Hums (Depth)
 const PURPLE = '#7c4dff' // Other (PE)
 
 interface yearProps {
@@ -103,6 +103,12 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
           <Paper elevation={0} className={classes.paper} />
+          <Course
+            code="CSCI 151"
+            title="Artificial Intelligence"
+            credits={3}
+            color={PURPLE}
+          />
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
