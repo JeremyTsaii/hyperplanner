@@ -18,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     // Override icon color
-    color: theme.palette.secondary.main,
+    color: '#FF0325',
     '&$activeIcon': {
-      color: theme.palette.secondary.main,
+      color: '#FF0325',
     },
     '&$completedIcon': {
-      color: theme.palette.secondary.main,
+      color: '#FF0325',
     },
   },
   activeIcon: {},
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
 // Make step label text red
 const StyledStepLabel = withStyles({
   label: {
-    color: '#f50057!important',
+    color: 'white!important',
   },
 })(StepLabel)
 
@@ -46,12 +46,12 @@ const QontoConnector = withStyles({
   },
   active: {
     '& $line': {
-      borderColor: '#f50057',
+      borderColor: '#FF0325',
     },
   },
   completed: {
     '& $line': {
-      borderColor: '#f50057',
+      borderColor: '#FF0325',
     },
   },
   line: {

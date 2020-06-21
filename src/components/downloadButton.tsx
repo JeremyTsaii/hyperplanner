@@ -16,7 +16,7 @@ function DownloadButton(): JSX.Element {
   return (
     <Button
       variant="outlined"
-      color="secondary"
+      color="primary"
       className={classes.downloadButton}
       startIcon={<GetAppOutlinedIcon />}>
       Download
