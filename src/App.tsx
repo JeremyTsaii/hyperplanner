@@ -1,10 +1,10 @@
 import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-import Layout from './components/layout'
+import Layout from './components/GALayout'
 import './App.css'
-import TopBar from './components/topBar'
-import Info from './components/info'
-import Cards from './components/cards'
+import TopBar from './components/TopBar'
+import InfoCards from './components/InfoCards'
+import YearCards from './components/YearCards'
 import { useAuth0 } from './utils/react-auth0-spa'
 
 const mainTheme = createMuiTheme({
@@ -30,18 +30,18 @@ function App(): JSX.Element {
       <Layout>
         <div className="App">
           <TopBar />
-          <Info
+          <InfoCards
             firstName="Jeremy"
-            schoolName="Bellevue College"
+            schoolName="Harvey Mudd College"
             majorName="CS"
-            concName="Excel"
-            gradYear={2045}
-            totalCredits={20}
-            creditsRem={47}
-            avgCredit={20}
-            avgRem={8}
+            concName="Economics"
+            gradYear={2022}
+            totalCredits={73.5}
+            creditsRem={54.5}
+            avgCredit={18.375}
+            avgRem={13.5}
           />
-          <Cards />
+          <YearCards />
         </div>
       </Layout>
     </ThemeProvider>

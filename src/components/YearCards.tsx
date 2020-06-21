@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
-import Year from './year'
+import Year from './Year'
 
 // Page elevation constant
 const BLACK = '#282c34'
@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function Cards(): JSX.Element {
+function YearCards(): JSX.Element {
   const classes = useStyles()
 
   return (
@@ -33,4 +33,4 @@ function Cards(): JSX.Element {
   )
 }
 
-export default Cards
+export default YearCards
