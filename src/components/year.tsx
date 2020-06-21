@@ -5,7 +5,7 @@ import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
-import Course from './course'
+import Course from './Course'
 
 // Color constants
 const GREY = '#515969'
@@ -86,38 +86,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
-          <Paper elevation={0} className={classes.paper}>
-            <Course
-              code="CSCI 105"
-              title="Computer Systems"
-              credits={3}
-              color={PINK}
-            />
-            <Course
-              code="CSCI 121"
-              title="Software Development"
-              credits={3}
-              color={ORANGE}
-            />
-            <Course
-              code="CSCI 134"
-              title="Operating Systems"
-              credits={3}
-              color={BLUE}
-            />
-            <Course
-              code="CSCI 140"
-              title="Algorithms"
-              credits={3}
-              color={GREY}
-            />
-            <Course
-              code="CSCI 151"
-              title="Artificial Intelligence"
-              credits={3}
-              color={PURPLE}
-            />
-          </Paper>
+          <Paper elevation={0} className={classes.paper} />
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -133,38 +102,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
-          <Paper elevation={0} className={classes.paper}>
-            <Course
-              code="CSCI 105"
-              title="Computer Systems"
-              credits={3}
-              color={PINK}
-            />
-            <Course
-              code="CSCI 121"
-              title="Software Development"
-              credits={3}
-              color={ORANGE}
-            />
-            <Course
-              code="CSCI 134"
-              title="Operating Systems"
-              credits={3}
-              color={BLUE}
-            />
-            <Course
-              code="CSCI 140"
-              title="Algorithms"
-              credits={3}
-              color={GREY}
-            />
-            <Course
-              code="CSCI 151"
-              title="Artificial Intelligence"
-              credits={3}
-              color={PURPLE}
-            />
-          </Paper>
+          <Paper elevation={0} className={classes.paper} />
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -180,38 +118,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
-          <Paper elevation={0} className={classes.paper}>
-            <Course
-              code="CSCI 105"
-              title="Computer Systems"
-              credits={3}
-              color={PINK}
-            />
-            <Course
-              code="CSCI 121"
-              title="Software Development"
-              credits={3}
-              color={ORANGE}
-            />
-            <Course
-              code="CSCI 134"
-              title="Operating Systems"
-              credits={3}
-              color={BLUE}
-            />
-            <Course
-              code="CSCI 140"
-              title="Algorithms"
-              credits={3}
-              color={GREY}
-            />
-            <Course
-              code="CSCI 151"
-              title="Artificial Intelligence"
-              credits={3}
-              color={PURPLE}
-            />
-          </Paper>
+          <Paper elevation={0} className={classes.paper} />
         </Collapse>
       </div>
     </Paper>

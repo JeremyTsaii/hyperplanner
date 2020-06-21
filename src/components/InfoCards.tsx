@@ -69,7 +69,7 @@ interface infoProps {
   avgRem: number
 }
 
-function Info({
+function InfoCards({
   firstName,
   schoolName,
   majorName,
@@ -137,4 +137,4 @@ function Info({
   )
 }
 
-export default Info
+export default InfoCards
