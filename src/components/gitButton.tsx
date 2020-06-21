@@ -16,7 +16,7 @@ function GitButton(): JSX.Element {
   return (
     <Button
       variant="outlined"
-      color="secondary"
+      color="primary"
       className={classes.gitButton}
       startIcon={<GitHubIcon />}
       onClick={() =>

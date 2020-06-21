@@ -20,7 +20,7 @@ function LoginButton(): JSX.Element {
       {!isAuthenticated && (
         <Button
           variant="outlined"
-          color="secondary"
+          color="primary"
           onClick={() => loginWithPopup({})}
           className={classes.logButton}
           startIcon={<PersonOutlineIcon />}>
@@ -31,7 +31,7 @@ function LoginButton(): JSX.Element {
       {isAuthenticated && (
         <Button
           variant="outlined"
-          color="secondary"
+          color="primary"
           onClick={() => logout()}
           className={classes.logButton}
           startIcon={<PersonOutlineIcon />}>
