@@ -5,18 +5,33 @@ import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
+import gql from 'graphql-tag'
+import { useQuery } from '@apollo/react-hooks'
 import Course from './Course'
 
 // Color constants
 // const GREY = '#515969'
-// const PINK = '#e91e63' // Major
-// const BLUE = '#2196f3' // Core
-// const GREEN = '#1de9b6' // Hums (Breadth)
-// const ORANGE = '#ef5350' // Hums (Depth)
-const PURPLE = '#7c4dff' // Other (PE)
+const PINK = '#e91e63' // Major (Requirement)
+const LPINK = '#f06292' // Major (Elective)
+const BLUE = '#2196f3' // Hums (Depth)
+const PURPLE = '#7c4dff' // Hums (Breadth)
+const LPURPLE = '#ba68c8' // Hums (Elective)
+const GREEN = '#26a69a' // Core
+const ORANGE = '#ef5350' // Other (PE)
 
 interface yearProps {
   yearNumber: number
+}
+
+interface DataCourse {
+  term: string
+  title: string
+  code: string
+  credits: number
+  type: string
+  campus: string
+  // eslint-disable-next-line
+  writ_inten: boolean
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -52,6 +67,42 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+const GET_MY_COURSES = gql`
+  query getMyCourses {
+    courses {
+      term
+      title
+      code
+      credits
+      type
+      campus
+      writ_inten
+    }
+  }
+`
+
+const getCourseColor = (type: string): string => {
+  if (type === 'major_req') {
+    return PINK
+  }
+  if (type === 'major_elec') {
+    return LPINK
+  }
+  if (type === 'hum_depth') {
+    return BLUE
+  }
+  if (type === 'hum_breadth') {
+    return PURPLE
+  }
+  if (type === 'hum_elec') {
+    return LPURPLE
+  }
+  if (type === 'core_req') {
+    return GREEN
+  }
+  return ORANGE
+}
+
 function Year({ yearNumber }: yearProps): JSX.Element {
   const classes = useStyles()
 
@@ -70,8 +121,19 @@ function Year({ yearNumber }: yearProps): JSX.Element {
     setCheckedSummer((prev) => !prev)
   }
 
+  const { loading, error, data } = useQuery(GET_MY_COURSES)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+  if (error || !data) {
+    return <div>Error...</div>
+  }
+
+  const { courses } = data
+
   return (
-    <Paper elevation={12} id="fall1" className={classes.mainCard}>
+    <Paper elevation={12} className={classes.mainCard}>
       <Typography className={classes.yearText}>Year {yearNumber}</Typography>
       <div className={classes.semesterHeader}>
         <Button
@@ -86,7 +148,21 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
-          <Paper elevation={0} className={classes.paper} />
+          <Paper elevation={0} className={classes.paper}>
+            {courses
+              .filter(
+                (course: DataCourse) => course.term === `fall${yearNumber}`,
+              )
+              .map((course: DataCourse) => (
+                <Course
+                  key={course.term + course.code}
+                  code={course.code}
+                  title={course.title}
+                  credits={course.credits}
+                  color={getCourseColor(course.type)}
+                />
+              ))}
+          </Paper>
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -102,13 +178,21 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
-          <Paper elevation={0} className={classes.paper} />
-          <Course
-            code="CSCI 151"
-            title="Artificial Intelligence"
-            credits={3}
-            color={PURPLE}
-          />
+          <Paper elevation={0} className={classes.paper}>
+            {courses
+              .filter(
+                (course: DataCourse) => course.term === `spring${yearNumber}`,
+              )
+              .map((course: DataCourse) => (
+                <Course
+                  key={course.term + course.code}
+                  code={course.code}
+                  title={course.title}
+                  credits={course.credits}
+                  color={getCourseColor(course.type)}
+                />
+              ))}
+          </Paper>
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -124,7 +208,21 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
-          <Paper elevation={0} className={classes.paper} />
+          <Paper elevation={0} className={classes.paper}>
+            {courses
+              .filter(
+                (course: DataCourse) => course.term === `summer${yearNumber}`,
+              )
+              .map((course: DataCourse) => (
+                <Course
+                  key={course.term + course.code}
+                  code={course.code}
+                  title={course.title}
+                  credits={course.credits}
+                  color={getCourseColor(course.type)}
+                />
+              ))}
+          </Paper>
         </Collapse>
       </div>
     </Paper>
