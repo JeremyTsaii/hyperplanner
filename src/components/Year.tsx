@@ -5,9 +5,9 @@ import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
-import gql from 'graphql-tag'
 import { useQuery } from '@apollo/react-hooks'
 import Course from './Course'
+import { Courses, GetMyCoursesDocument } from '../generated/graphql'
 
 // Color constants
 // const GREY = '#515969'
@@ -21,17 +21,6 @@ const ORANGE = '#ef5350' // Other (PE)
 
 interface yearProps {
   yearNumber: number
-}
-
-interface DataCourse {
-  term: string
-  title: string
-  code: string
-  credits: number
-  type: string
-  campus: string
-  // eslint-disable-next-line
-  writ_inten: boolean
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -66,20 +55,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#white',
   },
 }))
-
-const GET_MY_COURSES = gql`
-  query getMyCourses {
-    courses {
-      term
-      title
-      code
-      credits
-      type
-      campus
-      writ_inten
-    }
-  }
-`
 
 const getCourseColor = (type: string): string => {
   if (type === 'major_req') {
@@ -121,7 +96,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
     setCheckedSummer((prev) => !prev)
   }
 
-  const { loading, error, data } = useQuery(GET_MY_COURSES)
+  const { loading, error, data } = useQuery(GetMyCoursesDocument)
 
   if (loading) {
     return <div>Loading...</div>
@@ -150,10 +125,8 @@ function Year({ yearNumber }: yearProps): JSX.Element {
         <Collapse in={checkedFall}>
           <Paper elevation={0} className={classes.paper}>
             {courses
-              .filter(
-                (course: DataCourse) => course.term === `fall${yearNumber}`,
-              )
-              .map((course: DataCourse) => (
+              .filter((course: Courses) => course.term === `fall${yearNumber}`)
+              .map((course: Courses) => (
                 <Course
                   key={course.term + course.code}
                   code={course.code}
@@ -181,9 +154,9 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           <Paper elevation={0} className={classes.paper}>
             {courses
               .filter(
-                (course: DataCourse) => course.term === `spring${yearNumber}`,
+                (course: Courses) => course.term === `spring${yearNumber}`,
               )
-              .map((course: DataCourse) => (
+              .map((course: Courses) => (
                 <Course
                   key={course.term + course.code}
                   code={course.code}
@@ -211,9 +184,9 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           <Paper elevation={0} className={classes.paper}>
             {courses
               .filter(
-                (course: DataCourse) => course.term === `summer${yearNumber}`,
+                (course: Courses) => course.term === `summer${yearNumber}`,
               )
-              .map((course: DataCourse) => (
+              .map((course: Courses) => (
                 <Course
                   key={course.term + course.code}
                   code={course.code}
