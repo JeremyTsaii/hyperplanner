@@ -10,7 +10,7 @@ interface IProps {
 }
 
 // https://github.com/auth0-samples/auth0-javascript-samples/issues/79
-const AuthorizedApolloProvider = ({ children }: IProps) => {
+const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   const { loading, isAuthenticated, getTokenSilently } = useAuth0()
 
   if (loading) {
