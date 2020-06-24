@@ -3,8 +3,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography } from '@material-ui/core'
-import IconButton from '@material-ui/core/IconButton'
-import EditIcon from '@material-ui/icons/Edit'
+import InfoModal from './InfoModal'
 
 // Page elevation constant
 const ELEV = 12
@@ -50,10 +49,6 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     paddingTop: theme.spacing(2),
-  },
-  editIcon: {
-    alignSelf: 'end',
-    left: theme.spacing(16),
   },
 }))
 
@@ -106,14 +101,7 @@ function InfoCards({
           <Typography className={classes.personalInfo}>
             Graduation Year: {gradYear}
           </Typography>
-          <IconButton
-            edge="end"
-            aria-label="edit"
-            size="small"
-            color="secondary"
-            className={classes.editIcon}>
-            <EditIcon />
-          </IconButton>
+          <InfoModal />
         </Paper>
       </Grid>
       <Grid item>
