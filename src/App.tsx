@@ -25,17 +25,7 @@ function App(): JSX.Element {
         <Layout>
           <div className="App">
             <TopBar />
-            <InfoCards
-              firstName="Jeremy"
-              schoolName="Harvey Mudd College"
-              majorName="Computer Science"
-              concName="Economics"
-              gradYear={2022}
-              totalCredits={73.5}
-              creditsRem={54.5}
-              avgCredit={18.375}
-              avgRem={13.5}
-            />
+            <InfoCards />
             <YearCards />
           </div>
         </Layout>
