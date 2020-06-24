@@ -127,6 +127,13 @@ function InfoModal(): JSX.Element {
         <DialogTitle onClose={handleClose}>Edit Information</DialogTitle>
         <DialogContent dividers>
           <TextField
+            autoFocus
+            margin="dense"
+            id="name"
+            label="Name"
+            fullWidth
+          />
+          <TextField
             select
             label="School"
             fullWidth
