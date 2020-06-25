@@ -79,8 +79,8 @@ const getCourseColor = (type: string): string => {
   return ORANGE
 }
 
-const GetMyCourses = gql`
-  query getMyCourses {
+const GET_COURSES_QUERY = gql`
+  query GET_COURSES {
     courses {
       term
       title
@@ -111,7 +111,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
     setCheckedSummer((prev) => !prev)
   }
 
-  const { loading, error, data } = useQuery(GetMyCourses)
+  const { loading, error, data } = useQuery(GET_COURSES_QUERY)
 
   if (loading) {
     return <div>Loading...</div>

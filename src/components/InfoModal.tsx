@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
@@ -70,7 +70,7 @@ function InfoModal(): JSX.Element {
   const classes = useStyles()
 
   // Opening/Closing modal
-  const [open, setOpen] = React.useState(false)
+  const [open, setOpen] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -78,15 +78,18 @@ function InfoModal(): JSX.Element {
   const handleClose = () => {
     setOpen(false)
   }
+  const handleSave = () => {
+    handleClose()
+  }
 
   // Changing information in modal
-  const [school, setSchool] = React.useState('')
+  const [school, setSchool] = useState('')
 
-  const [major, setMajor] = React.useState('')
+  const [major, setMajor] = useState('')
 
-  const [concentration, setConcentration] = React.useState('')
+  const [concentration, setConcentration] = useState('')
 
-  const [gradYear, setGradYear] = React.useState('')
+  const [gradYear, setGradYear] = useState('')
 
   const handleSchoolChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -117,8 +120,9 @@ function InfoModal(): JSX.Element {
         aria-label="edit"
         size="small"
         color="secondary"
-        className={classes.editIcon}>
-        <EditIcon onClick={handleClickOpen} />
+        className={classes.editIcon}
+        onClick={handleClickOpen}>
+        <EditIcon />
       </IconButton>
       <Dialog
         onClose={handleClose}
@@ -183,7 +187,7 @@ function InfoModal(): JSX.Element {
           </TextField>
         </DialogContent>
         <DialogActions>
-          <Button autoFocus onClick={handleClose} color="primary">
+          <Button autoFocus onClick={handleSave} color="primary">
             Save Information
           </Button>
         </DialogActions>
