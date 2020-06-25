@@ -6,8 +6,9 @@ import Collapse from '@material-ui/core/Collapse'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
 import { useQuery } from '@apollo/react-hooks'
+import gql from 'graphql-tag'
 import Course from './Course'
-import { Courses, GetMyCoursesDocument } from '../generated/graphql'
+import { Courses } from '../generated/graphql'
 
 // Color constants
 // const GREY = '#515969'
@@ -78,6 +79,20 @@ const getCourseColor = (type: string): string => {
   return ORANGE
 }
 
+const GetMyCourses = gql`
+  query getMyCourses {
+    courses {
+      term
+      title
+      code
+      credits
+      type
+      campus
+      writ_inten
+    }
+  }
+`
+
 function Year({ yearNumber }: yearProps): JSX.Element {
   const classes = useStyles()
 
@@ -96,7 +111,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
     setCheckedSummer((prev) => !prev)
   }
 
-  const { loading, error, data } = useQuery(GetMyCoursesDocument)
+  const { loading, error, data } = useQuery(GetMyCourses)
 
   if (loading) {
     return <div>Loading...</div>
