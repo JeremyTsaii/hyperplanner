@@ -3,12 +3,11 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
-import IconButton from '@material-ui/core/IconButton'
-import AddIcon from '@material-ui/icons/Add'
 import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import Course from './Course'
 import { Courses } from '../generated/graphql'
+import CourseModal from './CourseModal'
 
 // Color constants
 // const GREY = '#515969'
@@ -132,9 +131,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Fall
         </Button>
-        <IconButton edge="end" aria-label="edit" size="small">
-          <AddIcon color="secondary" />
-        </IconButton>
+        <CourseModal year={`Year ${yearNumber}`} term="Fall" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
@@ -160,9 +157,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Spring
         </Button>
-        <IconButton edge="end" aria-label="edit" size="small">
-          <AddIcon color="secondary" />
-        </IconButton>
+        <CourseModal year={`Year ${yearNumber}`} term="Spring" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
@@ -190,9 +185,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Summer
         </Button>
-        <IconButton edge="end" aria-label="edit" size="small">
-          <AddIcon color="secondary" />
-        </IconButton>
+        <CourseModal year={`Year ${yearNumber}`} term="Spring" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
