@@ -5577,6 +5577,18 @@
             "deprecationReason": null
           },
           {
+            "name": "nickname",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "school",
             "description": null,
             "args": [],
@@ -6188,6 +6200,16 @@
             "defaultValue": null
           },
           {
+            "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "String_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "school",
             "description": null,
             "type": {
@@ -6357,6 +6379,16 @@
             "defaultValue": null
           },
           {
+            "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "school",
             "description": null,
             "type": {
@@ -6485,6 +6517,18 @@
             "deprecationReason": null
           },
           {
+            "name": "nickname",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "school",
             "description": null,
             "args": [],
@@ -6590,6 +6634,16 @@
           },
           {
             "name": "name",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nickname",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -6727,6 +6781,18 @@
             "deprecationReason": null
           },
           {
+            "name": "nickname",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "school",
             "description": null,
             "args": [],
@@ -6832,6 +6898,16 @@
           },
           {
             "name": "name",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nickname",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7105,6 +7181,16 @@
             "defaultValue": null
           },
           {
+            "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "school",
             "description": null,
             "type": {
@@ -7207,6 +7293,12 @@
             "deprecationReason": null
           },
           {
+            "name": "nickname",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "school",
             "description": "column name",
             "isDeprecated": false,
@@ -7303,6 +7395,16 @@
           },
           {
             "name": "name",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "nickname",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -7648,6 +7750,12 @@
           },
           {
             "name": "name",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "nickname",
             "description": "column name",
             "isDeprecated": false,
             "deprecationReason": null

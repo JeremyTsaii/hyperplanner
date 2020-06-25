@@ -1,7 +1,6 @@
 import gql from 'graphql-tag'
 import * as ApolloReactCommon from '@apollo/react-common'
 import * as ApolloReactHooks from '@apollo/react-hooks'
-
 export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] }
 /** All built-in and custom scalars, mapped to their actual values */
@@ -872,6 +871,7 @@ export type Users = {
   last_seen: Scalars['timestamptz']
   major?: Maybe<Scalars['String']>
   name: Scalars['String']
+  nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -971,6 +971,7 @@ export type Users_Bool_Exp = {
   last_seen?: Maybe<Timestamptz_Comparison_Exp>
   major?: Maybe<String_Comparison_Exp>
   name?: Maybe<String_Comparison_Exp>
+  nickname?: Maybe<String_Comparison_Exp>
   school?: Maybe<String_Comparison_Exp>
 }
 
@@ -998,6 +999,7 @@ export type Users_Insert_Input = {
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
+  nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1013,6 +1015,7 @@ export type Users_Max_Fields = {
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
+  nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1027,6 +1030,7 @@ export type Users_Max_Order_By = {
   last_seen?: Maybe<Order_By>
   major?: Maybe<Order_By>
   name?: Maybe<Order_By>
+  nickname?: Maybe<Order_By>
   school?: Maybe<Order_By>
 }
 
@@ -1042,6 +1046,7 @@ export type Users_Min_Fields = {
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
+  nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1056,6 +1061,7 @@ export type Users_Min_Order_By = {
   last_seen?: Maybe<Order_By>
   major?: Maybe<Order_By>
   name?: Maybe<Order_By>
+  nickname?: Maybe<Order_By>
   school?: Maybe<Order_By>
 }
 
@@ -1093,6 +1099,7 @@ export type Users_Order_By = {
   last_seen?: Maybe<Order_By>
   major?: Maybe<Order_By>
   name?: Maybe<Order_By>
+  nickname?: Maybe<Order_By>
   school?: Maybe<Order_By>
 }
 
@@ -1122,6 +1129,8 @@ export enum Users_Select_Column {
   /** column name */
   Name = 'name',
   /** column name */
+  Nickname = 'nickname',
+  /** column name */
   School = 'school',
 }
 
@@ -1136,6 +1145,7 @@ export type Users_Set_Input = {
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
+  nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1212,6 +1222,8 @@ export enum Users_Update_Column {
   /** column name */
   Name = 'name',
   /** column name */
+  Nickname = 'nickname',
+  /** column name */
   School = 'school',
 }
 
@@ -1254,75 +1266,71 @@ export type Users_Variance_Order_By = {
   id?: Maybe<Order_By>
 }
 
-export type GetMyCoursesQueryVariables = Exact<{ [key: string]: never }>
+export type GetMyInfoQueryVariables = Exact<{ [key: string]: never }>
 
-export type GetMyCoursesQuery = { __typename?: 'query_root' } & {
-  courses: Array<
-    { __typename?: 'courses' } & Pick<
-      Courses,
-      'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
+export type GetMyInfoQuery = { __typename?: 'query_root' } & {
+  users: Array<
+    { __typename?: 'users' } & Pick<
+      Users,
+      'nickname' | 'school' | 'major' | 'concentration' | 'grad_year'
     >
   >
 }
 
-export const GetMyCoursesDocument = gql`
-  query getMyCourses {
-    courses {
-      term
-      title
-      code
-      credits
-      type
-      campus
-      writ_inten
+export const GetMyInfoDocument = gql`
+  query getMyInfo {
+    users {
+      nickname
+      school
+      major
+      concentration
+      grad_year
     }
   }
 `
 
 /**
- * __useGetMyCoursesQuery__
+ * __useGetMyInfoQuery__
  *
- * To run a query within a React component, call `useGetMyCoursesQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetMyCoursesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGetMyInfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGetMyInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetMyCoursesQuery({
+ * const { data, loading, error } = useGetMyInfoQuery({
  *   variables: {
  *   },
  * });
  */
-export function useGetMyCoursesQuery(
+export function useGetMyInfoQuery(
   baseOptions?: ApolloReactHooks.QueryHookOptions<
-    GetMyCoursesQuery,
-    GetMyCoursesQueryVariables
+    GetMyInfoQuery,
+    GetMyInfoQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useQuery<
-    GetMyCoursesQuery,
-    GetMyCoursesQueryVariables
-  >(GetMyCoursesDocument, baseOptions)
+  return ApolloReactHooks.useQuery<GetMyInfoQuery, GetMyInfoQueryVariables>(
+    GetMyInfoDocument,
+    baseOptions,
+  )
 }
-export function useGetMyCoursesLazyQuery(
+export function useGetMyInfoLazyQuery(
   baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    GetMyCoursesQuery,
-    GetMyCoursesQueryVariables
+    GetMyInfoQuery,
+    GetMyInfoQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useLazyQuery<
-    GetMyCoursesQuery,
-    GetMyCoursesQueryVariables
-  >(GetMyCoursesDocument, baseOptions)
+  return ApolloReactHooks.useLazyQuery<GetMyInfoQuery, GetMyInfoQueryVariables>(
+    GetMyInfoDocument,
+    baseOptions,
+  )
 }
-export type GetMyCoursesQueryHookResult = ReturnType<
-  typeof useGetMyCoursesQuery
+export type GetMyInfoQueryHookResult = ReturnType<typeof useGetMyInfoQuery>
+export type GetMyInfoLazyQueryHookResult = ReturnType<
+  typeof useGetMyInfoLazyQuery
 >
-export type GetMyCoursesLazyQueryHookResult = ReturnType<
-  typeof useGetMyCoursesLazyQuery
->
-export type GetMyCoursesQueryResult = ApolloReactCommon.QueryResult<
-  GetMyCoursesQuery,
-  GetMyCoursesQueryVariables
+export type GetMyInfoQueryResult = ApolloReactCommon.QueryResult<
+  GetMyInfoQuery,
+  GetMyInfoQueryVariables
 >
