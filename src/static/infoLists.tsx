@@ -205,3 +205,76 @@ export const campuses = [
     label: 'Pitzer College',
   },
 ]
+
+export const credits = [
+  {
+    value: '0.5',
+  },
+  {
+    value: '1.0',
+  },
+  {
+    value: '1.5',
+  },
+  {
+    value: '2.0',
+  },
+  {
+    value: '2.5',
+  },
+  {
+    value: '3.0',
+  },
+  {
+    value: '3.5',
+  },
+  {
+    value: '4.0',
+  },
+]
+
+export const types = [
+  {
+    value: 'major_req',
+    label: 'Major Requirement',
+  },
+  {
+    value: 'major_elec',
+    label: 'Major Elective',
+  },
+  {
+    value: 'core_req',
+    label: 'Core Requirement',
+  },
+  {
+    value: 'hum_depth',
+    label: 'Humanities Depth',
+  },
+  {
+    value: 'hum_breadth',
+    label: 'Humanities Breadth',
+  },
+  {
+    value: 'hum_elec',
+    label: 'Humanities Elective',
+  },
+  {
+    value: 'pe',
+    label: 'Physical Elective',
+  },
+  {
+    value: 'other',
+    label: 'Other',
+  },
+]
+
+export const bools = [
+  {
+    value: true,
+    label: 'True',
+  },
+  {
+    value: false,
+    label: 'False',
+  },
+]
