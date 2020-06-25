@@ -1,7 +1,6 @@
 import React from 'react'
-import { ApolloProvider } from '@apollo/react-common'
+import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost'
-import { InMemoryCache } from 'apollo-cache-inmemory'
 import { useAuth0 } from '../utils/react-auth0-spa'
 import { GRAPHQL_URL } from '../utils/auth_config.json'
 
@@ -16,7 +15,7 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   if (loading) {
     return <div>Loading...</div>
   }
-  const client = new ApolloClient({
+  const apolloClient = new ApolloClient({
     uri: GRAPHQL_URL,
     request: async (operation) => {
       // Get token or get refreshed token
@@ -27,10 +26,9 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
         },
       })
     },
-    cache: new InMemoryCache(),
   })
 
-  return <ApolloProvider client={client}>{children}</ApolloProvider>
+  return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>
 }
 
 export default AuthorizedApolloProvider
