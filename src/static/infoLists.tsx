@@ -237,6 +237,14 @@ export const campuses = [
   },
 ]
 
+export const campusDict: StringToString = {
+  hmc: 'Harvey Mudd College',
+  sc: 'Scripps College',
+  po: 'Pomona College',
+  cmc: 'Claremont McKenna College',
+  pz: 'Pitzer College',
+}
+
 export const credits = [
   {
     value: '0.5',
@@ -291,13 +299,24 @@ export const types = [
   },
   {
     value: 'pe',
-    label: 'Physical Elective',
+    label: 'Physical Education',
   },
   {
     value: 'other',
     label: 'Other',
   },
 ]
+
+export const typeDict: StringToString = {
+  major_req: 'Major Requirement',
+  major_elec: 'Major Elective',
+  core_req: 'Core Requirement',
+  hum_depth: 'Humanities Depth',
+  hum_breadth: 'Humanities Breadth',
+  hum_elec: 'Humanities Elective',
+  pe: 'Physical Education',
+  other: 'Other',
+}
 
 export const bools = [
   {
