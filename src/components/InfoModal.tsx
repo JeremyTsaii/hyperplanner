@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
@@ -98,6 +98,7 @@ function InfoModal({
 
   // Changing information in modal
   const [name, setName] = useState(nameProp)
+  const nameRef = useRef('')
 
   const [school, setSchool] = useState(schoolDict[schoolProp])
 
@@ -107,8 +108,9 @@ function InfoModal({
 
   const [gradYear, setGradYear] = useState(String(gradYearProp))
 
-  const handleNameChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setName(event.target.value)
+  const getValue = (ref: React.MutableRefObject<string>): string => {
+    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    return cur.value
   }
 
   const handleSchoolChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -139,6 +141,7 @@ function InfoModal({
   const handleClickOpen = () => {
     setOpen(true)
   }
+
   const handleClose = () => {
     setName(nameProp)
     setSchool(schoolDict[schoolProp])
@@ -149,9 +152,10 @@ function InfoModal({
   }
 
   const handleSave = () => {
+    const newName = getValue(nameRef)
     updateUser({
       variables: {
-        name,
+        name: newName,
         school,
         major,
         conc: concentration,
@@ -166,7 +170,7 @@ function InfoModal({
           returning: [
             {
               __typename: 'users',
-              nickname: name,
+              nickname: newName,
               school,
               major,
               concentration,
@@ -177,6 +181,7 @@ function InfoModal({
         },
       },
     })
+    setName(newName)
     setOpen(false)
   }
 
@@ -203,8 +208,9 @@ function InfoModal({
             id="name"
             label="Name"
             fullWidth
-            value={name}
-            onChange={handleNameChange}
+            placeholder={name}
+            autoComplete="off"
+            inputRef={nameRef}
           />
           <TextField
             select
