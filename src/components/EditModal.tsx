@@ -1,19 +1,26 @@
 import React, { useState, useRef } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
-import AddIcon from '@material-ui/icons/Add'
 import Dialog from '@material-ui/core/Dialog'
 import MuiDialogTitle from '@material-ui/core/DialogTitle'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import MuiDialogActions from '@material-ui/core/DialogActions'
+import EditIcon from '@material-ui/icons/Edit'
 import CloseIcon from '@material-ui/icons/Close'
 import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
-import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useMutation } from '@apollo/react-hooks'
-import { ADD_COURSE } from '../utils/gqlQueries'
+import Button from '@material-ui/core/Button'
 import { campuses, credits, types, bools } from '../static/infoLists'
+
+interface EditProps {
+  codeProp: string
+  titleProp: string
+  creditsProp: number
+  typeProp: string
+  campusProp: string
+  writIntenProp: boolean
+}
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -27,11 +34,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[500],
   },
 }))
-
-interface DialogProps {
-  term: string
-  year: string
-}
 
 interface DialogTitleProps {
   onClose: () => void
@@ -69,26 +71,38 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function CourseModal({ term, year }: DialogProps): JSX.Element {
-  const [addCourse] = useMutation(ADD_COURSE)
-
-  // Create refs for string inputs in text field
-  const codeRef = useRef('')
-  const titleRef = useRef('')
-
+function EditModal({
+  codeProp,
+  titleProp,
+  creditsProp,
+  typeProp,
+  campusProp,
+  writIntenProp,
+}: EditProps): JSX.Element {
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
     return cur.value
   }
 
+  const capitalize = (str: string): string => {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
+  // Create refs for string inputs in text field
+  const codeRef = useRef('')
+  const [code, setCode] = useState(codeProp)
+
+  const titleRef = useRef('')
+  const [title, setTitle] = useState(titleProp)
+
   // Changing information in modal
-  const [campus, setCampus] = useState('')
+  const [campus, setCampus] = useState(campusProp)
 
-  const [credit, setCredit] = useState('')
+  const [credit, setCredit] = useState(String(creditsProp.toFixed(1)))
 
-  const [type, setType] = useState('')
+  const [type, setType] = useState(typeProp)
 
-  const [writInten, setWritInten] = useState('False')
+  const [writInten, setWritInten] = useState(capitalize(String(writIntenProp)))
 
   const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -116,10 +130,10 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
   const [open, setOpen] = useState(false)
 
   const resetInputs = () => {
-    setCampus('')
-    setCredit('')
-    setType('')
-    setWritInten('False')
+    setCampus(campusProp)
+    setCredit(String(creditsProp.toFixed(1)))
+    setType(typeProp)
+    setWritInten(capitalize(String(writIntenProp)))
   }
 
   const handleOpen = () => {
@@ -130,40 +144,35 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     setOpen(false)
   }
   const handleSave = () => {
-    addCourse({
-      variables: {
-        term: term.toLowerCase() + year,
-        title: getValue(titleRef),
-        code: getValue(codeRef),
-        credits: parseFloat(credit),
-        type,
-        campus,
-        writ_inten: writInten === 'True',
-      },
-    })
-    resetInputs()
+    const newCode = getValue(codeRef)
+    const newTitle = getValue(titleRef)
+
+    setCode(newCode)
+    setTitle(newTitle)
     setOpen(false)
   }
 
   return (
     <div>
-      <IconButton edge="end" aria-label="add" size="small" onClick={handleOpen}>
-        <AddIcon color="secondary" />
+      <IconButton
+        edge="end"
+        aria-label="edit"
+        size="small"
+        onClick={handleOpen}>
+        <EditIcon />
       </IconButton>
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}>
-        <DialogTitle onClose={handleClose}>
-          Add Course to {term}, Year {year}
-        </DialogTitle>
+        <DialogTitle onClose={handleClose}>Edit Course</DialogTitle>
         <DialogContent dividers>
           <TextField
             autoFocus
             margin="dense"
             id="code"
             label="Course Code"
-            placeholder="CSCI134"
+            placeholder={code}
             required
             fullWidth
             inputRef={codeRef}
@@ -174,7 +183,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             margin="dense"
             id="title"
             label="Course Title"
-            placeholder="Operating Systems"
+            placeholder={title}
             fullWidth
             required
             inputRef={titleRef}
@@ -235,7 +244,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSave} color="primary">
-            Add Course
+            Edit Course
           </Button>
         </DialogActions>
       </Dialog>
@@ -243,4 +252,4 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
   )
 }
 
-export default CourseModal
+export default EditModal

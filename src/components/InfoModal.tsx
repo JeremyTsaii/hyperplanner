@@ -138,7 +138,7 @@ function InfoModal({
   // Opening/Closing modal
   const [open, setOpen] = useState(false)
 
-  const handleClickOpen = () => {
+  const handleOpen = () => {
     setOpen(true)
   }
 
@@ -152,7 +152,10 @@ function InfoModal({
   }
 
   const handleSave = () => {
-    const newName = getValue(nameRef)
+    let newName = getValue(nameRef)
+    if (newName === '') {
+      newName = nameProp
+    }
     updateUser({
       variables: {
         name: newName,
@@ -193,7 +196,7 @@ function InfoModal({
         size="small"
         color="secondary"
         className={classes.editIcon}
-        onClick={handleClickOpen}>
+        onClick={handleOpen}>
         <EditIcon />
       </IconButton>
       <Dialog

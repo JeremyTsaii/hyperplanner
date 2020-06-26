@@ -9,16 +9,6 @@ import Course from './Course'
 import { Courses } from '../generated/graphql'
 import CourseModal from './CourseModal'
 
-// Color constants
-// const GREY = '#515969'
-const PINK = '#e91e63' // Major (Requirement)
-const LPINK = '#f06292' // Major (Elective)
-const BLUE = '#2196f3' // Hums (Depth)
-const PURPLE = '#7c4dff' // Hums (Breadth)
-const LPURPLE = '#ba68c8' // Hums (Elective)
-const GREEN = '#26a69a' // Core
-const ORANGE = '#ef5350' // Other (PE)
-
 interface yearProps {
   yearNumber: number
 }
@@ -55,28 +45,6 @@ const useStyles = makeStyles((theme) => ({
     color: '#white',
   },
 }))
-
-const getCourseColor = (type: string): string => {
-  if (type === 'major_req') {
-    return PINK
-  }
-  if (type === 'major_elec') {
-    return LPINK
-  }
-  if (type === 'hum_depth') {
-    return BLUE
-  }
-  if (type === 'hum_breadth') {
-    return PURPLE
-  }
-  if (type === 'hum_elec') {
-    return LPURPLE
-  }
-  if (type === 'core_req') {
-    return GREEN
-  }
-  return ORANGE
-}
 
 function Year({ yearNumber }: yearProps): JSX.Element {
   const classes = useStyles()
@@ -130,7 +98,9 @@ function Year({ yearNumber }: yearProps): JSX.Element {
                   code={course.code}
                   title={course.title}
                   credits={course.credits}
-                  color={getCourseColor(course.type)}
+                  type={course.type}
+                  campus={course.campus}
+                  writInten={course.writ_inten}
                 />
               ))}
           </Paper>
@@ -158,7 +128,9 @@ function Year({ yearNumber }: yearProps): JSX.Element {
                   code={course.code}
                   title={course.title}
                   credits={course.credits}
-                  color={getCourseColor(course.type)}
+                  type={course.type}
+                  campus={course.campus}
+                  writInten={course.writ_inten}
                 />
               ))}
           </Paper>
@@ -186,7 +158,9 @@ function Year({ yearNumber }: yearProps): JSX.Element {
                   code={course.code}
                   title={course.title}
                   credits={course.credits}
-                  color={getCourseColor(course.type)}
+                  type={course.type}
+                  campus={course.campus}
+                  writInten={course.writ_inten}
                 />
               ))}
           </Paper>
