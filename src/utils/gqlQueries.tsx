@@ -57,3 +57,38 @@ export const UPDATE_USER = gql`
     }
   }
 `
+
+export const ADD_COURSE = gql`
+  mutation insert_courses(
+    $term: String!
+    $title: String!
+    $code: String!
+    $credits: numeric
+    $type: String!
+    $campus: String!
+    $writ_inten: Boolean!
+  ) {
+    insert_courses(
+      objects: {
+        term: $term
+        title: $title
+        code: $code
+        credits: $credits
+        type: $type
+        campus: $campus
+        writ_inten: $writ_inten
+      }
+    ) {
+      affected_rows
+      returning {
+        term
+        title
+        code
+        credits
+        type
+        campus
+        writ_inten
+      }
+    }
+  }
+`

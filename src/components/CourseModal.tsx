@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
@@ -11,6 +11,8 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { useMutation } from '@apollo/react-hooks'
+import { ADD_COURSE } from '../utils/gqlQueries'
 import { campuses, credits, types, bools } from '../static/infoLists'
 
 const useStyles = makeStyles((theme) => ({
@@ -72,17 +74,15 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 function CourseModal({ term, year }: DialogProps): JSX.Element {
-  // Opening/Closing modal
-  const [open, setOpen] = useState(false)
+  const [addCourse] = useMutation(ADD_COURSE)
 
-  const handleClickOpen = () => {
-    setOpen(true)
-  }
-  const handleClose = () => {
-    setOpen(false)
-  }
-  const handleSave = () => {
-    handleClose()
+  // Create refs for string inputs in text field
+  const codeRef = useRef('')
+  const titleRef = useRef('')
+
+  const getValue = (ref: React.MutableRefObject<string>): string => {
+    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    return cur.value
   }
 
   // Changing information in modal
@@ -92,7 +92,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
 
   const [type, setType] = useState('')
 
-  const [writIntens, setWritIntens] = useState('')
+  const [writInten, setWritInten] = useState('False')
 
   const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -109,11 +109,44 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     setType(target.value)
   }
 
-  const handleWritIntensChange = (
+  const handleWritIntenChange = (
     event: React.ChangeEvent<HTMLInputElement>,
   ) => {
     const target = event.target as HTMLInputElement
-    setWritIntens(target.value)
+    setWritInten(target.value)
+  }
+
+  // Opening/Closing modal
+  const [open, setOpen] = useState(false)
+
+  const resetInputs = () => {
+    setCampus('')
+    setCredit('')
+    setType('')
+    setWritInten('False')
+  }
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    resetInputs()
+    setOpen(false)
+  }
+  const handleSave = () => {
+    addCourse({
+      variables: {
+        term: term.toLowerCase() + year,
+        title: getValue(titleRef),
+        code: getValue(codeRef),
+        credits: parseFloat(credit),
+        type,
+        campus,
+        writ_inten: writInten === 'True',
+      },
+    })
+    resetInputs()
+    setOpen(false)
   }
 
   return (
@@ -138,16 +171,22 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             margin="dense"
             id="code"
             label="Course Code"
+            placeholder="CSCI134"
             required
             fullWidth
+            inputRef={codeRef}
+            autoComplete="off"
           />
           <TextField
             autoFocus
             margin="dense"
             id="title"
             label="Course Title"
+            placeholder="Operating Systems"
             fullWidth
             required
+            inputRef={titleRef}
+            autoComplete="off"
           />
           <TextField
             select
@@ -193,8 +232,8 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             label="Writing Intensive?"
             fullWidth
             required
-            value={writIntens}
-            onChange={handleWritIntensChange}>
+            value={writInten}
+            onChange={handleWritIntenChange}>
             {bools.map((option) => (
               <MenuItem key={option.label} value={option.label}>
                 {option.label}

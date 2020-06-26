@@ -117,7 +117,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Fall
         </Button>
-        <CourseModal year={`Year ${yearNumber}`} term="Fall" />
+        <CourseModal year={String(yearNumber)} term="Fall" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
@@ -143,7 +143,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Spring
         </Button>
-        <CourseModal year={`Year ${yearNumber}`} term="Spring" />
+        <CourseModal year={String(yearNumber)} term="Spring" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
@@ -171,7 +171,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Summer
         </Button>
-        <CourseModal year={`Year ${yearNumber}`} term="Spring" />
+        <CourseModal year={String(yearNumber)} term="Spring" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
