@@ -36,6 +36,7 @@ interface infoProps {
   majorName: string
   concName: string
   gradYear: number
+  id: string
   ELEV: number
 }
 
@@ -45,6 +46,7 @@ function LeftInfoCard({
   majorName,
   concName,
   gradYear,
+  id,
   ELEV,
 }: infoProps): JSX.Element {
   const classes = useStyles()
@@ -67,7 +69,14 @@ function LeftInfoCard({
         <Typography className={classes.personalInfo}>
           Graduation Year: {gradYear}
         </Typography>
-        <InfoModal />
+        <InfoModal
+          nameProp={firstName}
+          schoolProp={schoolName}
+          majorProp={majorName}
+          concProp={concName}
+          gradYearProp={gradYear}
+          idProp={id}
+        />
       </Paper>
     </Grid>
   )

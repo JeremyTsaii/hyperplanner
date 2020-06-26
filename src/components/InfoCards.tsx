@@ -5,6 +5,7 @@ import { useQuery } from '@apollo/react-hooks'
 import gql from 'graphql-tag'
 import LeftInfoCard from './LeftInfoCard'
 import RightStatsCard from './RightStatsCard'
+import { schoolDict, majorDict } from '../static/infoLists'
 
 // Page elevation constant
 const ELEV = 12
@@ -25,6 +26,7 @@ const GET_INFO_QUERY = gql`
       major
       concentration
       nickname
+      auth0_id
     }
   }
 `
@@ -52,10 +54,11 @@ function InfoCards(): JSX.Element {
       alignItems="center">
       <LeftInfoCard
         firstName={info.nickname}
-        schoolName={info.school}
-        majorName={info.major}
+        schoolName={schoolDict[info.school]}
+        majorName={majorDict[info.major]}
         concName={info.concentration}
         gradYear={info.grad_year}
+        id={info.auth0_id}
         ELEV={ELEV}
       />
       <RightStatsCard

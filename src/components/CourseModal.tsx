@@ -138,6 +138,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             margin="dense"
             id="code"
             label="Course Code"
+            required
             fullWidth
           />
           <TextField
@@ -146,11 +147,13 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             id="title"
             label="Course Title"
             fullWidth
+            required
           />
           <TextField
             select
             label="Campus"
             fullWidth
+            required
             value={campus}
             onChange={handleCampusChange}>
             {campuses.map((option) => (
@@ -163,6 +166,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             select
             label="Credits"
             fullWidth
+            required
             value={credit}
             onChange={handleCreditChange}>
             {credits.map((option) => (
@@ -175,6 +179,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             select
             label="Course Type"
             fullWidth
+            required
             value={type}
             onChange={handleTypeChange}>
             {types.map((option) => (
@@ -187,6 +192,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             select
             label="Writing Intensive?"
             fullWidth
+            required
             value={writIntens}
             onChange={handleWritIntensChange}>
             {bools.map((option) => (

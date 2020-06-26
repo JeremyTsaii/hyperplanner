@@ -11,7 +11,16 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { schools, majors, concentrations, gradYears } from '../static/infoLists'
+import gql from 'graphql-tag'
+import { useMutation } from '@apollo/react-hooks'
+import {
+  schools,
+  schoolDict,
+  majors,
+  majorDict,
+  concentrations,
+  gradYears,
+} from '../static/infoLists'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -29,6 +38,15 @@ const useStyles = makeStyles((theme) => ({
     left: theme.spacing(16),
   },
 }))
+
+interface DialogProps {
+  nameProp: string
+  schoolProp: string
+  majorProp: string
+  concProp: string
+  gradYearProp: number
+  idProp: string
+}
 
 interface DialogTitleProps {
   onClose: () => void
@@ -66,8 +84,48 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function InfoModal(): JSX.Element {
+const UPDATE_USER = gql`
+  mutation UPDATE_USER(
+    $id: String!
+    $name: String!
+    $school: String!
+    $major: String!
+    $conc: String!
+    $gradYear: Int!
+  ) {
+    update_users(
+      where: { auth0_id: { _eq: $id } }
+      _set: {
+        nickname: $name
+        school: $school
+        major: $major
+        concentration: $conc
+        grad_year: $gradYear
+      }
+    ) {
+      affected_rows
+      returning {
+        nickname
+        school
+        major
+        concentration
+        grad_year
+      }
+    }
+  }
+`
+
+function InfoModal({
+  nameProp,
+  schoolProp,
+  majorProp,
+  concProp,
+  gradYearProp,
+  idProp,
+}: DialogProps): JSX.Element {
   const classes = useStyles()
+
+  const [updateUser] = useMutation(UPDATE_USER)
 
   // Opening/Closing modal
   const [open, setOpen] = useState(false)
@@ -78,18 +136,21 @@ function InfoModal(): JSX.Element {
   const handleClose = () => {
     setOpen(false)
   }
-  const handleSave = () => {
-    handleClose()
-  }
 
   // Changing information in modal
-  const [school, setSchool] = useState('')
+  const [name, setName] = useState(nameProp)
 
-  const [major, setMajor] = useState('')
+  const [school, setSchool] = useState(schoolDict[schoolProp])
 
-  const [concentration, setConcentration] = useState('')
+  const [major, setMajor] = useState(majorDict[majorProp])
 
-  const [gradYear, setGradYear] = useState('')
+  const [concentration, setConcentration] = useState(concProp)
+
+  const [gradYear, setGradYear] = useState(String(gradYearProp))
+
+  const handleNameChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    setName(event.target.value)
+  }
 
   const handleSchoolChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -111,6 +172,21 @@ function InfoModal(): JSX.Element {
   const handleGradYearChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
     setGradYear(target.value)
+  }
+
+  // Sending info to database
+  const handleSave = () => {
+    updateUser({
+      variables: {
+        name,
+        school,
+        major,
+        conc: concentration,
+        gradYear,
+        id: idProp,
+      },
+    })
+    handleClose()
   }
 
   return (
@@ -136,6 +212,8 @@ function InfoModal(): JSX.Element {
             id="name"
             label="Name"
             fullWidth
+            value={name}
+            onChange={handleNameChange}
           />
           <TextField
             select
