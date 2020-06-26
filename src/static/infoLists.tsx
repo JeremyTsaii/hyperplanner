@@ -5,6 +5,14 @@ export const schools = [
   },
 ]
 
+interface StringToString {
+  [input: string]: string
+}
+export const schoolDict: StringToString = {
+  hmc: 'Harvey Mudd College',
+  'Harvey Mudd College': 'hmc',
+}
+
 export const majors = [
   {
     value: 'bio',
@@ -47,6 +55,29 @@ export const majors = [
     label: 'Physics',
   },
 ]
+
+export const majorDict: StringToString = {
+  bio: 'Biology',
+  Biology: 'bio',
+  bio_chem: 'Joint Biology/Chemistry',
+  'Joint Biology/Chemistry': 'bio_chem',
+  chem: 'Chemistry',
+  Chemistry: 'chem',
+  cs: 'Computer Science',
+  'Computer Science': 'cs',
+  cs_math: 'Joint Computer Science/Mathematics',
+  'Joint Computer Science/Mathematics': 'cs_math',
+  engr: 'Engineering',
+  Engineering: 'engr',
+  math: 'Mathematics',
+  Mathematics: 'math',
+  math_phys: 'Joint Mathematics/Physics',
+  'Joint Mathematics/Physics': 'math_phys',
+  mcb: 'Mathematical/Computational Biology',
+  'Mathematical/Computational Biology': 'mcb',
+  phys: 'Physics',
+  Physics: 'phys',
+}
 
 export const gradYears = [
   {
