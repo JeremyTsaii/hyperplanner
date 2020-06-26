@@ -11,7 +11,9 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
+import { useMutation } from '@apollo/react-hooks'
 import { campuses, credits, types, bools } from '../static/infoLists'
+import { UPDATE_COURSE } from '../utils/gqlQueries'
 
 interface EditProps {
   codeProp: string
@@ -20,6 +22,7 @@ interface EditProps {
   typeProp: string
   campusProp: string
   writIntenProp: boolean
+  termProp: string
 }
 
 const useStyles = makeStyles((theme) => ({
@@ -78,7 +81,11 @@ function EditModal({
   typeProp,
   campusProp,
   writIntenProp,
+  termProp,
 }: EditProps): JSX.Element {
+  const [updateCourse] = useMutation(UPDATE_COURSE)
+  const oldTitle = titleProp
+
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
     return cur.value
@@ -150,7 +157,18 @@ function EditModal({
     if (allFilled()) {
       const newCode = getValue(codeRef)
       const newTitle = getValue(titleRef)
-
+      updateCourse({
+        variables: {
+          old_title: oldTitle,
+          term: termProp,
+          title: newTitle,
+          code: newCode,
+          credits: parseFloat(credit),
+          type,
+          campus,
+          writ_inten: writInten === 'True',
+        },
+      })
       setCode(newCode)
       setTitle(newTitle)
       setOpen(false)

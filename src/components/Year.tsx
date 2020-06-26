@@ -101,6 +101,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
                   type={course.type}
                   campus={course.campus}
                   writInten={course.writ_inten}
+                  term={course.term}
                 />
               ))}
           </Paper>
@@ -131,6 +132,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
                   type={course.type}
                   campus={course.campus}
                   writInten={course.writ_inten}
+                  term={course.term}
                 />
               ))}
           </Paper>
@@ -161,6 +163,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
                   type={course.type}
                   campus={course.campus}
                   writInten={course.writ_inten}
+                  term={course.term}
                 />
               ))}
           </Paper>

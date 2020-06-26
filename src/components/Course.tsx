@@ -31,6 +31,7 @@ interface courseProps {
   type: string
   campus: string
   writInten: boolean
+  term: string
 }
 
 const useStyles = makeStyles(() => ({
@@ -75,6 +76,7 @@ function Course({
   type,
   campus,
   writInten,
+  term,
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
@@ -110,6 +112,7 @@ function Course({
             typeProp={type}
             campusProp={campus}
             writIntenProp={writInten}
+            termProp={term}
           />
         </Grid>
         <Grid item>
