@@ -4,7 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
 import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
+import { GET_COURSES_QUERY } from '../utils/gqlQueries'
 import Course from './Course'
 import { Courses } from '../generated/graphql'
 import CourseModal from './CourseModal'
@@ -77,20 +77,6 @@ const getCourseColor = (type: string): string => {
   }
   return ORANGE
 }
-
-const GET_COURSES_QUERY = gql`
-  query GET_COURSES {
-    courses {
-      term
-      title
-      code
-      credits
-      type
-      campus
-      writ_inten
-    }
-  }
-`
 
 function Year({ yearNumber }: yearProps): JSX.Element {
   const classes = useStyles()

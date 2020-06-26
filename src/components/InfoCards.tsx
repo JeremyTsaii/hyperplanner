@@ -2,10 +2,10 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import { useQuery } from '@apollo/react-hooks'
-import gql from 'graphql-tag'
 import LeftInfoCard from './LeftInfoCard'
 import RightStatsCard from './RightStatsCard'
 import { schoolDict, majorDict } from '../static/infoLists'
+import { GET_INFO_QUERY } from '../utils/gqlQueries'
 
 // Page elevation constant
 const ELEV = 12
@@ -17,19 +17,6 @@ const useStyles = makeStyles(() => ({
     flexWrap: 'nowrap',
   },
 }))
-
-const GET_INFO_QUERY = gql`
-  query GET_INFO {
-    users {
-      school
-      grad_year
-      major
-      concentration
-      nickname
-      auth0_id
-    }
-  }
-`
 
 function InfoCards(): JSX.Element {
   const classes = useStyles()

@@ -11,8 +11,8 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import gql from 'graphql-tag'
 import { useMutation } from '@apollo/react-hooks'
+import { UPDATE_USER } from '../utils/gqlQueries'
 import {
   schools,
   schoolDict,
@@ -84,37 +84,6 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-const UPDATE_USER = gql`
-  mutation UPDATE_USER(
-    $id: String!
-    $name: String!
-    $school: String!
-    $major: String!
-    $conc: String!
-    $gradYear: Int!
-  ) {
-    update_users(
-      where: { auth0_id: { _eq: $id } }
-      _set: {
-        nickname: $name
-        school: $school
-        major: $major
-        concentration: $conc
-        grad_year: $gradYear
-      }
-    ) {
-      affected_rows
-      returning {
-        nickname
-        school
-        major
-        concentration
-        grad_year
-      }
-    }
-  }
-`
-
 function InfoModal({
   nameProp,
   schoolProp,
@@ -126,16 +95,6 @@ function InfoModal({
   const classes = useStyles()
 
   const [updateUser] = useMutation(UPDATE_USER)
-
-  // Opening/Closing modal
-  const [open, setOpen] = useState(false)
-
-  const handleClickOpen = () => {
-    setOpen(true)
-  }
-  const handleClose = () => {
-    setOpen(false)
-  }
 
   // Changing information in modal
   const [name, setName] = useState(nameProp)
@@ -174,7 +133,21 @@ function InfoModal({
     setGradYear(target.value)
   }
 
-  // Sending info to database
+  // Opening/Closing modal
+  const [open, setOpen] = useState(false)
+
+  const handleClickOpen = () => {
+    setOpen(true)
+  }
+  const handleClose = () => {
+    setName(nameProp)
+    setSchool(schoolDict[schoolProp])
+    setMajor(majorDict[majorProp])
+    setConcentration(concProp)
+    setGradYear(String(gradYearProp))
+    setOpen(false)
+  }
+
   const handleSave = () => {
     updateUser({
       variables: {
@@ -185,8 +158,26 @@ function InfoModal({
         gradYear,
         id: idProp,
       },
+      optimisticResponse: {
+        __typename: 'mutation_root',
+        update_users: {
+          __typename: 'users_mutation_response',
+          affected_rows: 1,
+          returning: [
+            {
+              __typename: 'users',
+              nickname: name,
+              school,
+              major,
+              concentration,
+              grad_year: gradYear,
+              auth0_id: idProp,
+            },
+          ],
+        },
+      },
     })
-    handleClose()
+    setOpen(false)
   }
 
   return (
