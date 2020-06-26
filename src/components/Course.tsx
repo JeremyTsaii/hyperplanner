@@ -10,7 +10,9 @@ import {
   createMuiTheme,
   MuiThemeProvider,
 } from '@material-ui/core/styles'
+import { useMutation } from '@apollo/react-hooks'
 import EditModal from './EditModal'
+import { REMOVE_COURSE } from '../utils/gqlQueries'
 
 // Constant used for field spacing in course component
 const SPACING = 3
@@ -80,6 +82,15 @@ function Course({
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
+  const [courseRemove] = useMutation(REMOVE_COURSE)
+
+  // Delete course on icon click
+  const handleDelete = () => {
+    courseRemove({
+      variables: { term, title },
+    })
+  }
+
   return (
     <Paper style={{ backgroundColor: getCourseColor(type), margin: 5 }}>
       <Grid container alignItems="center" justify="flex-start">
@@ -116,7 +127,11 @@ function Course({
           />
         </Grid>
         <Grid item>
-          <IconButton edge="end" aria-label="delete" size="small">
+          <IconButton
+            edge="end"
+            aria-label="delete"
+            size="small"
+            onClick={handleDelete}>
             <DeleteForeverIcon />
           </IconButton>
         </Grid>

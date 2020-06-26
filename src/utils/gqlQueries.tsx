@@ -128,3 +128,10 @@ export const ADD_COURSE = gql`
     }
   }
 `
+export const REMOVE_COURSE = gql`
+  mutation REMOVE_COURSE($term: String!, $title: String!) {
+    delete_courses(where: { term: { _eq: $term }, title: { _eq: $title } }) {
+      affected_rows
+    }
+  }
+`
