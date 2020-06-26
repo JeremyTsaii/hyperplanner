@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
-import YearStepper from '../components/stepper'
+import YearStepper from '../components/Stepper'
 
 describe('YearStepper', () => {
   test('Renders YearStepper Without Crashing', () => {

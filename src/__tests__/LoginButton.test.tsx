@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
-import LoginButton from '../components/loginButton'
+import LoginButton from '../components/LoginButton'
 import { useAuth0 } from '../utils/react-auth0-spa'
 
 jest.mock('../utils/react-auth0-spa')

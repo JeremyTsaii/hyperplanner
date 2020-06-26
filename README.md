@@ -58,6 +58,8 @@ The Backend of HyperPlanner uses Hasura, which is an open source engine connecti
 
 ![Diagram](https://iili.io/J4B7N2.png)
 
+![Authentication](https://iili.io/JLmraR.png)
+
 ![Database](https://iili.io/JP2d8l.png)
 
 ## What is the development workflow?
