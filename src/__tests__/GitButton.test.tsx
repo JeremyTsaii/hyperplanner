@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
-import GitButton from '../components/gitButton'
+import GitButton from '../components/GitButton'
 
 describe('GitHub Button', () => {
   test('Renders GitHub Button Without Crashing', () => {
