@@ -129,20 +129,31 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     resetInputs()
     setOpen(false)
   }
+  const allFilled = () => {
+    return (
+      campus !== '' &&
+      credit !== '' &&
+      type !== '' &&
+      getValue(codeRef) !== '' &&
+      getValue(titleRef) !== ''
+    )
+  }
   const handleSave = () => {
-    addCourse({
-      variables: {
-        term: term.toLowerCase() + year,
-        title: getValue(titleRef),
-        code: getValue(codeRef),
-        credits: parseFloat(credit),
-        type,
-        campus,
-        writ_inten: writInten === 'True',
-      },
-    })
-    resetInputs()
-    setOpen(false)
+    if (allFilled()) {
+      addCourse({
+        variables: {
+          term: term.toLowerCase() + year,
+          title: getValue(titleRef),
+          code: getValue(codeRef),
+          credits: parseFloat(credit),
+          type,
+          campus,
+          writ_inten: writInten === 'True',
+        },
+      })
+      resetInputs()
+      setOpen(false)
+    }
   }
 
   return (

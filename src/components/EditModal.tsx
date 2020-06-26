@@ -143,13 +143,18 @@ function EditModal({
     resetInputs()
     setOpen(false)
   }
+  const allFilled = () => {
+    return getValue(codeRef) !== '' && getValue(titleRef) !== ''
+  }
   const handleSave = () => {
-    const newCode = getValue(codeRef)
-    const newTitle = getValue(titleRef)
+    if (allFilled()) {
+      const newCode = getValue(codeRef)
+      const newTitle = getValue(titleRef)
 
-    setCode(newCode)
-    setTitle(newTitle)
-    setOpen(false)
+      setCode(newCode)
+      setTitle(newTitle)
+      setOpen(false)
+    }
   }
 
   return (
