@@ -3,17 +3,11 @@ import Paper from '@material-ui/core/Paper'
 import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
-import IconButton from '@material-ui/core/IconButton'
-import AddIcon from '@material-ui/icons/Add'
+import { useQuery } from '@apollo/react-hooks'
+import { GET_COURSES_QUERY } from '../utils/gqlQueries'
 import Course from './Course'
-
-// Color constants
-// const GREY = '#515969'
-// const PINK = '#e91e63' // Major
-// const BLUE = '#2196f3' // Core
-// const GREEN = '#1de9b6' // Hums (Breadth)
-// const ORANGE = '#ef5350' // Hums (Depth)
-const PURPLE = '#7c4dff' // Other (PE)
+import { Courses } from '../generated/graphql'
+import CourseModal from './CourseModal'
 
 interface yearProps {
   yearNumber: number
@@ -70,8 +64,19 @@ function Year({ yearNumber }: yearProps): JSX.Element {
     setCheckedSummer((prev) => !prev)
   }
 
+  const { loading, error, data } = useQuery(GET_COURSES_QUERY)
+
+  if (loading) {
+    return <div>Loading...</div>
+  }
+  if (error || !data) {
+    return <div>Error...</div>
+  }
+
+  const { courses } = data
+
   return (
-    <Paper elevation={12} id="fall1" className={classes.mainCard}>
+    <Paper elevation={12} className={classes.mainCard}>
       <Typography className={classes.yearText}>Year {yearNumber}</Typography>
       <div className={classes.semesterHeader}>
         <Button
@@ -80,13 +85,26 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Fall
         </Button>
-        <IconButton edge="end" aria-label="edit" size="small">
-          <AddIcon color="secondary" />
-        </IconButton>
+        <CourseModal year={String(yearNumber)} term="Fall" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
-          <Paper elevation={0} className={classes.paper} />
+          <Paper elevation={0} className={classes.paper}>
+            {courses
+              .filter((course: Courses) => course.term === `fall${yearNumber}`)
+              .map((course: Courses) => (
+                <Course
+                  key={course.term + course.code}
+                  code={course.code}
+                  title={course.title}
+                  credits={course.credits}
+                  type={course.type}
+                  campus={course.campus}
+                  writInten={course.writ_inten}
+                  term={course.term}
+                />
+              ))}
+          </Paper>
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -96,19 +114,28 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Spring
         </Button>
-        <IconButton edge="end" aria-label="edit" size="small">
-          <AddIcon color="secondary" />
-        </IconButton>
+        <CourseModal year={String(yearNumber)} term="Spring" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
-          <Paper elevation={0} className={classes.paper} />
-          <Course
-            code="CSCI 151"
-            title="Artificial Intelligence"
-            credits={3}
-            color={PURPLE}
-          />
+          <Paper elevation={0} className={classes.paper}>
+            {courses
+              .filter(
+                (course: Courses) => course.term === `spring${yearNumber}`,
+              )
+              .map((course: Courses) => (
+                <Course
+                  key={course.term + course.code}
+                  code={course.code}
+                  title={course.title}
+                  credits={course.credits}
+                  type={course.type}
+                  campus={course.campus}
+                  writInten={course.writ_inten}
+                  term={course.term}
+                />
+              ))}
+          </Paper>
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -118,13 +145,28 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Summer
         </Button>
-        <IconButton edge="end" aria-label="edit" size="small">
-          <AddIcon color="secondary" />
-        </IconButton>
+        <CourseModal year={String(yearNumber)} term="Spring" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
-          <Paper elevation={0} className={classes.paper} />
+          <Paper elevation={0} className={classes.paper}>
+            {courses
+              .filter(
+                (course: Courses) => course.term === `summer${yearNumber}`,
+              )
+              .map((course: Courses) => (
+                <Course
+                  key={course.term + course.code}
+                  code={course.code}
+                  title={course.title}
+                  credits={course.credits}
+                  type={course.type}
+                  campus={course.campus}
+                  writInten={course.writ_inten}
+                  term={course.term}
+                />
+              ))}
+          </Paper>
         </Collapse>
       </div>
     </Paper>
