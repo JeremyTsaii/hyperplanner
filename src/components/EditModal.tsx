@@ -11,7 +11,13 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
-import { campuses, credits, types, bools } from '../static/infoLists'
+import {
+  campuses,
+  credits,
+  types,
+  bools,
+  courseSort,
+} from '../static/infoLists'
 /* eslint-disable */
 import {
   Courses,
@@ -193,6 +199,7 @@ function EditModal({
             }
             return course
           })
+          newCourses.sort(courseSort)
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: newCourses },

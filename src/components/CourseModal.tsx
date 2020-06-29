@@ -11,7 +11,13 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { campuses, credits, types, bools } from '../static/infoLists'
+import {
+  campuses,
+  credits,
+  types,
+  bools,
+  courseSort,
+} from '../static/infoLists'
 /* eslint-disable */
 import {
   useAdd_CourseMutation,
@@ -164,9 +170,12 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             ? getExistingCourses.courses
             : []
           const newCourse = data!.insert_courses!.returning[0]
+          // Sort by descending type then ascending code
+          const sortedCourses = existingCourses.concat(newCourse)
+          sortedCourses.sort(courseSort)
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: [newCourse, ...existingCourses] },
+            data: { courses: sortedCourses },
           })
           /* eslint-enable */
         },
