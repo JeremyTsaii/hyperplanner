@@ -1266,71 +1266,548 @@ export type Users_Variance_Order_By = {
   id?: Maybe<Order_By>
 }
 
-export type GetMyInfoQueryVariables = Exact<{ [key: string]: never }>
+export type Get_InfoQueryVariables = Exact<{ [key: string]: never }>
 
-export type GetMyInfoQuery = { __typename?: 'query_root' } & {
+export type Get_InfoQuery = { __typename?: 'query_root' } & {
   users: Array<
     { __typename?: 'users' } & Pick<
       Users,
-      'nickname' | 'school' | 'major' | 'concentration' | 'grad_year'
+      | 'school'
+      | 'grad_year'
+      | 'major'
+      | 'concentration'
+      | 'nickname'
+      | 'auth0_id'
     >
   >
 }
 
-export const GetMyInfoDocument = gql`
-  query getMyInfo {
+export type Get_CoursesQueryVariables = Exact<{ [key: string]: never }>
+
+export type Get_CoursesQuery = { __typename?: 'query_root' } & {
+  courses: Array<
+    { __typename?: 'courses' } & Pick<
+      Courses,
+      'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
+    >
+  >
+}
+
+export type Update_UserMutationVariables = Exact<{
+  id: Scalars['String']
+  name: Scalars['String']
+  school: Scalars['String']
+  major: Scalars['String']
+  conc: Scalars['String']
+  gradYear: Scalars['Int']
+}>
+
+export type Update_UserMutation = { __typename?: 'mutation_root' } & {
+  update_users?: Maybe<
+    { __typename?: 'users_mutation_response' } & Pick<
+      Users_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<
+          { __typename?: 'users' } & Pick<
+            Users,
+            'nickname' | 'school' | 'major' | 'concentration' | 'grad_year'
+          >
+        >
+      }
+  >
+}
+
+export type Update_CourseMutationVariables = Exact<{
+  old_title: Scalars['String']
+  term: Scalars['String']
+  title: Scalars['String']
+  code: Scalars['String']
+  credits?: Maybe<Scalars['numeric']>
+  type: Scalars['String']
+  campus: Scalars['String']
+  writ_inten: Scalars['Boolean']
+}>
+
+export type Update_CourseMutation = { __typename?: 'mutation_root' } & {
+  update_courses?: Maybe<
+    { __typename?: 'courses_mutation_response' } & Pick<
+      Courses_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<
+          { __typename?: 'courses' } & Pick<
+            Courses,
+            | 'term'
+            | 'title'
+            | 'code'
+            | 'credits'
+            | 'type'
+            | 'campus'
+            | 'writ_inten'
+          >
+        >
+      }
+  >
+}
+
+export type Add_CourseMutationVariables = Exact<{
+  term: Scalars['String']
+  title: Scalars['String']
+  code: Scalars['String']
+  credits?: Maybe<Scalars['numeric']>
+  type: Scalars['String']
+  campus: Scalars['String']
+  writ_inten: Scalars['Boolean']
+}>
+
+export type Add_CourseMutation = { __typename?: 'mutation_root' } & {
+  insert_courses?: Maybe<
+    { __typename?: 'courses_mutation_response' } & Pick<
+      Courses_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<
+          { __typename?: 'courses' } & Pick<
+            Courses,
+            | 'term'
+            | 'title'
+            | 'code'
+            | 'credits'
+            | 'type'
+            | 'campus'
+            | 'writ_inten'
+          >
+        >
+      }
+  >
+}
+
+export type Remove_CourseMutationVariables = Exact<{
+  term: Scalars['String']
+  title: Scalars['String']
+}>
+
+export type Remove_CourseMutation = { __typename?: 'mutation_root' } & {
+  delete_courses?: Maybe<
+    { __typename?: 'courses_mutation_response' } & Pick<
+      Courses_Mutation_Response,
+      'affected_rows'
+    >
+  >
+}
+
+export const Get_InfoDocument = gql`
+  query GET_INFO {
     users {
-      nickname
       school
+      grad_year
       major
       concentration
-      grad_year
+      nickname
+      auth0_id
     }
   }
 `
 
 /**
- * __useGetMyInfoQuery__
+ * __useGet_InfoQuery__
  *
- * To run a query within a React component, call `useGetMyInfoQuery` and pass it any options that fit your needs.
- * When your component renders, `useGetMyInfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * To run a query within a React component, call `useGet_InfoQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGet_InfoQuery` returns an object from Apollo Client that contains loading, error, and data properties
  * you can use to render your UI.
  *
  * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
  *
  * @example
- * const { data, loading, error } = useGetMyInfoQuery({
+ * const { data, loading, error } = useGet_InfoQuery({
  *   variables: {
  *   },
  * });
  */
-export function useGetMyInfoQuery(
+export function useGet_InfoQuery(
   baseOptions?: ApolloReactHooks.QueryHookOptions<
-    GetMyInfoQuery,
-    GetMyInfoQueryVariables
+    Get_InfoQuery,
+    Get_InfoQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useQuery<GetMyInfoQuery, GetMyInfoQueryVariables>(
-    GetMyInfoDocument,
+  return ApolloReactHooks.useQuery<Get_InfoQuery, Get_InfoQueryVariables>(
+    Get_InfoDocument,
     baseOptions,
   )
 }
-export function useGetMyInfoLazyQuery(
+export function useGet_InfoLazyQuery(
   baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
-    GetMyInfoQuery,
-    GetMyInfoQueryVariables
+    Get_InfoQuery,
+    Get_InfoQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useLazyQuery<GetMyInfoQuery, GetMyInfoQueryVariables>(
-    GetMyInfoDocument,
+  return ApolloReactHooks.useLazyQuery<Get_InfoQuery, Get_InfoQueryVariables>(
+    Get_InfoDocument,
     baseOptions,
   )
 }
-export type GetMyInfoQueryHookResult = ReturnType<typeof useGetMyInfoQuery>
-export type GetMyInfoLazyQueryHookResult = ReturnType<
-  typeof useGetMyInfoLazyQuery
+export type Get_InfoQueryHookResult = ReturnType<typeof useGet_InfoQuery>
+export type Get_InfoLazyQueryHookResult = ReturnType<
+  typeof useGet_InfoLazyQuery
 >
-export type GetMyInfoQueryResult = ApolloReactCommon.QueryResult<
-  GetMyInfoQuery,
-  GetMyInfoQueryVariables
+export type Get_InfoQueryResult = ApolloReactCommon.QueryResult<
+  Get_InfoQuery,
+  Get_InfoQueryVariables
+>
+export const Get_CoursesDocument = gql`
+  query GET_COURSES {
+    courses(order_by: [{ type: desc }, { code: asc }]) {
+      term
+      title
+      code
+      credits
+      type
+      campus
+      writ_inten
+    }
+  }
+`
+
+/**
+ * __useGet_CoursesQuery__
+ *
+ * To run a query within a React component, call `useGet_CoursesQuery` and pass it any options that fit your needs.
+ * When your component renders, `useGet_CoursesQuery` returns an object from Apollo Client that contains loading, error, and data properties
+ * you can use to render your UI.
+ *
+ * @param baseOptions options that will be passed into the query, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options;
+ *
+ * @example
+ * const { data, loading, error } = useGet_CoursesQuery({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useGet_CoursesQuery(
+  baseOptions?: ApolloReactHooks.QueryHookOptions<
+    Get_CoursesQuery,
+    Get_CoursesQueryVariables
+  >,
+) {
+  return ApolloReactHooks.useQuery<Get_CoursesQuery, Get_CoursesQueryVariables>(
+    Get_CoursesDocument,
+    baseOptions,
+  )
+}
+export function useGet_CoursesLazyQuery(
+  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+    Get_CoursesQuery,
+    Get_CoursesQueryVariables
+  >,
+) {
+  return ApolloReactHooks.useLazyQuery<
+    Get_CoursesQuery,
+    Get_CoursesQueryVariables
+  >(Get_CoursesDocument, baseOptions)
+}
+export type Get_CoursesQueryHookResult = ReturnType<typeof useGet_CoursesQuery>
+export type Get_CoursesLazyQueryHookResult = ReturnType<
+  typeof useGet_CoursesLazyQuery
+>
+export type Get_CoursesQueryResult = ApolloReactCommon.QueryResult<
+  Get_CoursesQuery,
+  Get_CoursesQueryVariables
+>
+export const Update_UserDocument = gql`
+  mutation UPDATE_USER(
+    $id: String!
+    $name: String!
+    $school: String!
+    $major: String!
+    $conc: String!
+    $gradYear: Int!
+  ) {
+    update_users(
+      where: { auth0_id: { _eq: $id } }
+      _set: {
+        nickname: $name
+        school: $school
+        major: $major
+        concentration: $conc
+        grad_year: $gradYear
+      }
+    ) {
+      affected_rows
+      returning {
+        nickname
+        school
+        major
+        concentration
+        grad_year
+      }
+    }
+  }
+`
+export type Update_UserMutationFn = ApolloReactCommon.MutationFunction<
+  Update_UserMutation,
+  Update_UserMutationVariables
+>
+
+/**
+ * __useUpdate_UserMutation__
+ *
+ * To run a mutation, you first call `useUpdate_UserMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_UserMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateUserMutation, { data, loading, error }] = useUpdate_UserMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      name: // value for 'name'
+ *      school: // value for 'school'
+ *      major: // value for 'major'
+ *      conc: // value for 'conc'
+ *      gradYear: // value for 'gradYear'
+ *   },
+ * });
+ */
+export function useUpdate_UserMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    Update_UserMutation,
+    Update_UserMutationVariables
+  >,
+) {
+  return ApolloReactHooks.useMutation<
+    Update_UserMutation,
+    Update_UserMutationVariables
+  >(Update_UserDocument, baseOptions)
+}
+export type Update_UserMutationHookResult = ReturnType<
+  typeof useUpdate_UserMutation
+>
+export type Update_UserMutationResult = ApolloReactCommon.MutationResult<
+  Update_UserMutation
+>
+export type Update_UserMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  Update_UserMutation,
+  Update_UserMutationVariables
+>
+export const Update_CourseDocument = gql`
+  mutation UPDATE_COURSE(
+    $old_title: String!
+    $term: String!
+    $title: String!
+    $code: String!
+    $credits: numeric
+    $type: String!
+    $campus: String!
+    $writ_inten: Boolean!
+  ) {
+    update_courses(
+      where: { term: { _eq: $term }, title: { _eq: $old_title } }
+      _set: {
+        title: $title
+        code: $code
+        credits: $credits
+        type: $type
+        campus: $campus
+        writ_inten: $writ_inten
+      }
+    ) {
+      affected_rows
+      returning {
+        term
+        title
+        code
+        credits
+        type
+        campus
+        writ_inten
+      }
+    }
+  }
+`
+export type Update_CourseMutationFn = ApolloReactCommon.MutationFunction<
+  Update_CourseMutation,
+  Update_CourseMutationVariables
+>
+
+/**
+ * __useUpdate_CourseMutation__
+ *
+ * To run a mutation, you first call `useUpdate_CourseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_CourseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateCourseMutation, { data, loading, error }] = useUpdate_CourseMutation({
+ *   variables: {
+ *      old_title: // value for 'old_title'
+ *      term: // value for 'term'
+ *      title: // value for 'title'
+ *      code: // value for 'code'
+ *      credits: // value for 'credits'
+ *      type: // value for 'type'
+ *      campus: // value for 'campus'
+ *      writ_inten: // value for 'writ_inten'
+ *   },
+ * });
+ */
+export function useUpdate_CourseMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    Update_CourseMutation,
+    Update_CourseMutationVariables
+  >,
+) {
+  return ApolloReactHooks.useMutation<
+    Update_CourseMutation,
+    Update_CourseMutationVariables
+  >(Update_CourseDocument, baseOptions)
+}
+export type Update_CourseMutationHookResult = ReturnType<
+  typeof useUpdate_CourseMutation
+>
+export type Update_CourseMutationResult = ApolloReactCommon.MutationResult<
+  Update_CourseMutation
+>
+export type Update_CourseMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  Update_CourseMutation,
+  Update_CourseMutationVariables
+>
+export const Add_CourseDocument = gql`
+  mutation ADD_COURSE(
+    $term: String!
+    $title: String!
+    $code: String!
+    $credits: numeric
+    $type: String!
+    $campus: String!
+    $writ_inten: Boolean!
+  ) {
+    insert_courses(
+      objects: {
+        term: $term
+        title: $title
+        code: $code
+        credits: $credits
+        type: $type
+        campus: $campus
+        writ_inten: $writ_inten
+      }
+    ) {
+      affected_rows
+      returning {
+        term
+        title
+        code
+        credits
+        type
+        campus
+        writ_inten
+      }
+    }
+  }
+`
+export type Add_CourseMutationFn = ApolloReactCommon.MutationFunction<
+  Add_CourseMutation,
+  Add_CourseMutationVariables
+>
+
+/**
+ * __useAdd_CourseMutation__
+ *
+ * To run a mutation, you first call `useAdd_CourseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useAdd_CourseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [addCourseMutation, { data, loading, error }] = useAdd_CourseMutation({
+ *   variables: {
+ *      term: // value for 'term'
+ *      title: // value for 'title'
+ *      code: // value for 'code'
+ *      credits: // value for 'credits'
+ *      type: // value for 'type'
+ *      campus: // value for 'campus'
+ *      writ_inten: // value for 'writ_inten'
+ *   },
+ * });
+ */
+export function useAdd_CourseMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    Add_CourseMutation,
+    Add_CourseMutationVariables
+  >,
+) {
+  return ApolloReactHooks.useMutation<
+    Add_CourseMutation,
+    Add_CourseMutationVariables
+  >(Add_CourseDocument, baseOptions)
+}
+export type Add_CourseMutationHookResult = ReturnType<
+  typeof useAdd_CourseMutation
+>
+export type Add_CourseMutationResult = ApolloReactCommon.MutationResult<
+  Add_CourseMutation
+>
+export type Add_CourseMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  Add_CourseMutation,
+  Add_CourseMutationVariables
+>
+export const Remove_CourseDocument = gql`
+  mutation REMOVE_COURSE($term: String!, $title: String!) {
+    delete_courses(where: { term: { _eq: $term }, title: { _eq: $title } }) {
+      affected_rows
+    }
+  }
+`
+export type Remove_CourseMutationFn = ApolloReactCommon.MutationFunction<
+  Remove_CourseMutation,
+  Remove_CourseMutationVariables
+>
+
+/**
+ * __useRemove_CourseMutation__
+ *
+ * To run a mutation, you first call `useRemove_CourseMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemove_CourseMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeCourseMutation, { data, loading, error }] = useRemove_CourseMutation({
+ *   variables: {
+ *      term: // value for 'term'
+ *      title: // value for 'title'
+ *   },
+ * });
+ */
+export function useRemove_CourseMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    Remove_CourseMutation,
+    Remove_CourseMutationVariables
+  >,
+) {
+  return ApolloReactHooks.useMutation<
+    Remove_CourseMutation,
+    Remove_CourseMutationVariables
+  >(Remove_CourseDocument, baseOptions)
+}
+export type Remove_CourseMutationHookResult = ReturnType<
+  typeof useRemove_CourseMutation
+>
+export type Remove_CourseMutationResult = ApolloReactCommon.MutationResult<
+  Remove_CourseMutation
+>
+export type Remove_CourseMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  Remove_CourseMutation,
+  Remove_CourseMutationVariables
 >

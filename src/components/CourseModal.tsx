@@ -11,9 +11,10 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useMutation } from '@apollo/react-hooks'
-import { ADD_COURSE } from '../utils/gqlQueries'
+import { GET_COURSES_QUERY } from '../utils/gqlQueries'
 import { campuses, credits, types, bools } from '../static/infoLists'
+// eslint-disable-next-line
+import { Get_CoursesQuery, useAdd_CourseMutation } from '../generated/graphql'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,7 +71,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 function CourseModal({ term, year }: DialogProps): JSX.Element {
-  const [addCourse] = useMutation(ADD_COURSE)
+  const [addCourse] = useAdd_CourseMutation()
 
   // Create refs for string inputs in text field
   const codeRef = useRef('')
@@ -149,6 +150,26 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           type,
           campus,
           writ_inten: writInten === 'True',
+        },
+        update(cache, { data }) {
+          if (!data) {
+            return null
+          }
+          // eslint-disable-next-line
+          const getExistingCourses: Get_CoursesQuery | null = cache.readQuery({
+            query: GET_COURSES_QUERY,
+          })
+          const existingCourses = getExistingCourses
+            ? getExistingCourses.courses
+            : []
+          // eslint-disable-next-line
+          const newCourse = data.insert_courses!.returning[0]
+          // eslint-disable-next-line
+          cache.writeQuery<Get_CoursesQuery>({
+            query: GET_COURSES_QUERY,
+            data: { courses: [newCourse, ...existingCourses] },
+          })
+          return true
         },
       })
       resetInputs()
