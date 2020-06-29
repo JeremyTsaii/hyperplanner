@@ -10,11 +10,16 @@ import {
   createMuiTheme,
   MuiThemeProvider,
 } from '@material-ui/core/styles'
-import { useMutation } from '@apollo/react-hooks'
 import EditModal from './EditModal'
-import { REMOVE_COURSE } from '../utils/gqlQueries'
+/* eslint-disable */
+import {
+  useRemove_CourseMutation,
+  Get_CoursesQuery,
+  Get_CoursesDocument,
+} from '../generated/graphql'
+/* eslint-enable */
 
-// Constant used for field spacing in course component
+// Constant used for field spacing
 const SPACING = 3
 
 // Color constants
@@ -82,12 +87,26 @@ function Course({
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
-  const [courseRemove] = useMutation(REMOVE_COURSE)
+  const [courseRemove] = useRemove_CourseMutation()
 
   // Delete course on icon click
   const handleDelete = () => {
     courseRemove({
       variables: { term, title },
+      update(cache) {
+        /* eslint-disable */
+        const existingCourses = cache.readQuery<Get_CoursesQuery>({
+          query: Get_CoursesDocument,
+        })
+        const newCourses = existingCourses!.courses.filter((course) => {
+          return course.title !== title || course.term !== term
+        })
+        cache.writeQuery<Get_CoursesQuery>({
+          query: Get_CoursesDocument,
+          data: { courses: newCourses },
+        })
+        /* eslint-enable */
+      },
     })
   }
 

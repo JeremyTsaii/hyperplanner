@@ -156,24 +156,19 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           writ_inten: writInten === 'True',
         },
         update(cache, { data }) {
-          if (!data) {
-            return null
-          }
-          // eslint-disable-next-line
+          /* eslint-disable */
           const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
           const existingCourses = getExistingCourses
             ? getExistingCourses.courses
             : []
-          // eslint-disable-next-line
-          const newCourse = data.insert_courses!.returning[0]
-          // eslint-disable-next-line
+          const newCourse = data!.insert_courses!.returning[0]
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: [newCourse, ...existingCourses] },
           })
-          return true
+          /* eslint-enable */
         },
       })
       resetInputs()

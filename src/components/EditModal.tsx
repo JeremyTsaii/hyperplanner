@@ -175,11 +175,10 @@ function EditModal({
           writ_inten: writInten === 'True',
         },
         update(cache) {
-          // eslint-disable-next-line
+          /* eslint-disable */
           const existingCourses = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
-          // eslint-disable-next-line
           const newCourses = existingCourses!.courses.map((course) => {
             if (course.title === oldTitle && course.term === termProp) {
               const newCourse = {} as Courses
@@ -194,11 +193,11 @@ function EditModal({
             }
             return course
           })
-          // eslint-disable-next-line
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: newCourses },
           })
+          /* eslint-enable */
         },
       })
       setCode(newCode)

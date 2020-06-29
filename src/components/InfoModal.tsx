@@ -172,23 +172,21 @@ function InfoModal({
         id: idProp,
       },
       update(cache) {
-        // eslint-disable-next-line
+        /* eslint-disable */
         const existingInfo = cache.readQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
         })
-        // eslint-disable-next-line
         const newInfo = existingInfo!.users[0]
         newInfo.nickname = newName
         newInfo.school = school
         newInfo.major = major
         newInfo.concentration = concentration
         newInfo.grad_year = parseFloat(gradYear)
-
-        // eslint-disable-next-line
         cache.writeQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
           data: { users: [newInfo] },
         })
+        /* eslint-enable */
       },
       optimisticResponse: {
         __typename: 'mutation_root',
