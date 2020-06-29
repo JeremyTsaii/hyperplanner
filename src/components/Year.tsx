@@ -145,7 +145,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Summer
         </Button>
-        <CourseModal year={String(yearNumber)} term="Spring" />
+        <CourseModal year={String(yearNumber)} term="Summer" />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
