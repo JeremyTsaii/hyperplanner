@@ -247,6 +247,9 @@ export const campusDict: StringToString = {
 
 export const credits = [
   {
+    value: '0.0',
+  },
+  {
     value: '0.5',
   },
   {
