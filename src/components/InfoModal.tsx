@@ -11,8 +11,8 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useMutation } from '@apollo/react-hooks'
-import { UPDATE_USER } from '../utils/gqlQueries'
+// eslint-disable-next-line
+import { GET_INFO_QUERY } from '../utils/gqlQueries'
 import {
   schools,
   schoolDict,
@@ -21,6 +21,8 @@ import {
   concentrations,
   gradYears,
 } from '../static/infoLists'
+// eslint-disable-next-line
+import { Get_InfoQuery, useUpdate_UserMutation } from '../generated/graphql'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,7 +96,7 @@ function InfoModal({
 }: DialogProps): JSX.Element {
   const classes = useStyles()
 
-  const [updateUser] = useMutation(UPDATE_USER)
+  const [updateUser] = useUpdate_UserMutation()
 
   // Changing information in modal
   const [name, setName] = useState(nameProp)
@@ -162,8 +164,27 @@ function InfoModal({
         school,
         major,
         conc: concentration,
-        gradYear,
+        gradYear: parseFloat(gradYear),
         id: idProp,
+      },
+      update(cache) {
+        // eslint-disable-next-line
+        const existingInfo = cache.readQuery<Get_InfoQuery>({
+          query: GET_INFO_QUERY,
+        })
+        // eslint-disable-next-line
+        const newInfo = existingInfo!.users[0]
+        newInfo.nickname = newName
+        newInfo.school = school
+        newInfo.major = major
+        newInfo.concentration = concentration
+        newInfo.grad_year = parseFloat(gradYear)
+
+        // eslint-disable-next-line
+        cache.writeQuery<Get_InfoQuery>({
+          query: GET_INFO_QUERY,
+          data: { users: [newInfo] },
+        })
       },
       optimisticResponse: {
         __typename: 'mutation_root',
@@ -177,8 +198,7 @@ function InfoModal({
               school,
               major,
               concentration,
-              grad_year: gradYear,
-              auth0_id: idProp,
+              grad_year: parseFloat(gradYear),
             },
           ],
         },

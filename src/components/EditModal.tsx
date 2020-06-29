@@ -11,9 +11,9 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
-import { useMutation } from '@apollo/react-hooks'
 import { campuses, credits, types, bools } from '../static/infoLists'
-import { UPDATE_COURSE } from '../utils/gqlQueries'
+// eslint-disable-next-line
+import { useUpdate_CourseMutation } from '../generated/graphql'
 
 interface EditProps {
   codeProp: string
@@ -83,7 +83,7 @@ function EditModal({
   writIntenProp,
   termProp,
 }: EditProps): JSX.Element {
-  const [updateCourse] = useMutation(UPDATE_COURSE)
+  const [updateCourse] = useUpdate_CourseMutation()
   const oldTitle = titleProp
 
   const getValue = (ref: React.MutableRefObject<string>): string => {

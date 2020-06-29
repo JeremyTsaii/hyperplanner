@@ -156,7 +156,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
             return null
           }
           // eslint-disable-next-line
-          const getExistingCourses: Get_CoursesQuery | null = cache.readQuery({
+          const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
             query: GET_COURSES_QUERY,
           })
           const existingCourses = getExistingCourses
