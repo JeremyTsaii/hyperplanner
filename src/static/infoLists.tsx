@@ -1,3 +1,5 @@
+import { Courses } from '../generated/graphql'
+
 export const schools = [
   {
     value: 'hmc',
@@ -331,3 +333,19 @@ export const bools = [
     label: 'False',
   },
 ]
+
+type Course = {
+  __typename?: 'courses' | undefined
+} & Pick<
+  Courses,
+  'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
+>
+
+export const courseSort = (c1: Course, c2: Course): number => {
+  let val = -c1.type.localeCompare(c2.type)
+  // Types are equal so compare cdes next
+  if (!val) {
+    val = c1.code.localeCompare(c2.code)
+  }
+  return val
+}

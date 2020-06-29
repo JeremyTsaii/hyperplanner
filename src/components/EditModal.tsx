@@ -11,9 +11,21 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
-import { useMutation } from '@apollo/react-hooks'
-import { campuses, credits, types, bools } from '../static/infoLists'
-import { UPDATE_COURSE } from '../utils/gqlQueries'
+import {
+  campuses,
+  credits,
+  types,
+  bools,
+  courseSort,
+} from '../static/infoLists'
+/* eslint-disable */
+import {
+  Courses,
+  useUpdate_CourseMutation,
+  Get_CoursesQuery,
+  Get_CoursesDocument,
+} from '../generated/graphql'
+/* eslint-enable */
 
 interface EditProps {
   codeProp: string
@@ -83,7 +95,7 @@ function EditModal({
   writIntenProp,
   termProp,
 }: EditProps): JSX.Element {
-  const [updateCourse] = useMutation(UPDATE_COURSE)
+  const [updateCourse] = useUpdate_CourseMutation()
   const oldTitle = titleProp
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
@@ -167,6 +179,52 @@ function EditModal({
           type,
           campus,
           writ_inten: writInten === 'True',
+        },
+        update(cache) {
+          /* eslint-disable */
+          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+          })
+          const newCourses = existingCourses!.courses.map((course) => {
+            if (course.title === oldTitle && course.term === termProp) {
+              const newCourse = {} as Courses
+              newCourse.__typename = 'courses'
+              newCourse.term = termProp
+              newCourse.title = newTitle
+              newCourse.code = newCode
+              newCourse.credits = parseFloat(credit)
+              newCourse.type = type
+              newCourse.campus = campus
+              newCourse.writ_inten = writInten === 'True'
+              return newCourse
+            }
+            return course
+          })
+          newCourses.sort(courseSort)
+          cache.writeQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+            data: { courses: newCourses },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          update_courses: {
+            __typename: 'courses_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'courses',
+                term: termProp,
+                title: newTitle,
+                code: newCode,
+                credits: parseFloat(credit),
+                type,
+                campus,
+                writ_inten: writInten === 'True',
+              },
+            ],
+          },
         },
       })
       setCode(newCode)

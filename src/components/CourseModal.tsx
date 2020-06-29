@@ -11,9 +11,21 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useMutation } from '@apollo/react-hooks'
-import { ADD_COURSE } from '../utils/gqlQueries'
-import { campuses, credits, types, bools } from '../static/infoLists'
+import {
+  campuses,
+  credits,
+  types,
+  bools,
+  courseSort,
+} from '../static/infoLists'
+/* eslint-disable */
+import {
+  useAdd_CourseMutation,
+  Get_CoursesQuery,
+  Get_CoursesDocument,
+  Courses,
+} from '../generated/graphql'
+/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -70,7 +82,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 function CourseModal({ term, year }: DialogProps): JSX.Element {
-  const [addCourse] = useMutation(ADD_COURSE)
+  const [addCourse] = useAdd_CourseMutation()
 
   // Create refs for string inputs in text field
   const codeRef = useRef('')
@@ -139,16 +151,67 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     )
   }
   const handleSave = () => {
+    const newTitle = getValue(titleRef)
+    const newCode = getValue(codeRef)
+    const formatTerm = term.toLowerCase() + year
     if (allFilled()) {
       addCourse({
         variables: {
-          term: term.toLowerCase() + year,
-          title: getValue(titleRef),
-          code: getValue(codeRef),
+          term: formatTerm,
+          title: newTitle,
+          code: newCode,
           credits: parseFloat(credit),
           type,
           campus,
           writ_inten: writInten === 'True',
+        },
+        update(cache) {
+          /* eslint-disable */
+          const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+          })
+          const existingCourses = getExistingCourses
+            ? getExistingCourses.courses
+            : []
+
+          const newCourse = {} as Courses
+          newCourse.__typename = 'courses'
+          newCourse.term = formatTerm
+          newCourse.title = newTitle
+          newCourse.code = newCode
+          newCourse.credits = parseFloat(credit)
+          newCourse.type = type
+          newCourse.campus = campus
+          newCourse.writ_inten = writInten === 'True'
+
+          // Sort by descending type then ascending code
+          const sortedCourses = existingCourses.concat(newCourse)
+          sortedCourses.sort(courseSort)
+          console.log(sortedCourses)
+          cache.writeQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+            data: { courses: sortedCourses },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          insert_courses: {
+            __typename: 'courses_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'courses',
+                term: formatTerm,
+                title: newTitle,
+                code: newCode,
+                credits: parseFloat(credit),
+                type,
+                campus,
+                writ_inten: writInten === 'True',
+              },
+            ],
+          },
         },
       })
       resetInputs()

@@ -11,8 +11,7 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useMutation } from '@apollo/react-hooks'
-import { UPDATE_USER } from '../utils/gqlQueries'
+// eslint-disable-next-line
 import {
   schools,
   schoolDict,
@@ -21,6 +20,13 @@ import {
   concentrations,
   gradYears,
 } from '../static/infoLists'
+/* eslint-disable */
+import {
+  useUpdate_UserMutation,
+  Get_InfoQuery,
+  Get_InfoDocument,
+} from '../generated/graphql'
+/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,7 +100,7 @@ function InfoModal({
 }: DialogProps): JSX.Element {
   const classes = useStyles()
 
-  const [updateUser] = useMutation(UPDATE_USER)
+  const [updateUser] = useUpdate_UserMutation()
 
   // Changing information in modal
   const [name, setName] = useState(nameProp)
@@ -162,8 +168,25 @@ function InfoModal({
         school,
         major,
         conc: concentration,
-        gradYear,
+        gradYear: parseFloat(gradYear),
         id: idProp,
+      },
+      update(cache) {
+        /* eslint-disable */
+        const existingInfo = cache.readQuery<Get_InfoQuery>({
+          query: Get_InfoDocument,
+        })
+        const newInfo = existingInfo!.users[0]
+        newInfo.nickname = newName
+        newInfo.school = school
+        newInfo.major = major
+        newInfo.concentration = concentration
+        newInfo.grad_year = parseFloat(gradYear)
+        cache.writeQuery<Get_InfoQuery>({
+          query: Get_InfoDocument,
+          data: { users: [newInfo] },
+        })
+        /* eslint-enable */
       },
       optimisticResponse: {
         __typename: 'mutation_root',
@@ -177,8 +200,7 @@ function InfoModal({
               school,
               major,
               concentration,
-              grad_year: gradYear,
-              auth0_id: idProp,
+              grad_year: parseFloat(gradYear),
             },
           ],
         },
