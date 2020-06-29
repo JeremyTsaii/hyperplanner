@@ -15,7 +15,7 @@ export const GET_INFO_QUERY = gql`
 
 export const GET_COURSES_QUERY = gql`
   query GET_COURSES {
-    courses {
+    courses(order_by: [{ type: desc }, { code: asc }]) {
       term
       title
       code
