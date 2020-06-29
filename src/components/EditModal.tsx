@@ -12,8 +12,14 @@ import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import { campuses, credits, types, bools } from '../static/infoLists'
-// eslint-disable-next-line
-import { useUpdate_CourseMutation } from '../generated/graphql'
+/* eslint-disable */
+import {
+  Courses,
+  useUpdate_CourseMutation,
+  Get_CoursesQuery,
+  Get_CoursesDocument,
+} from '../generated/graphql'
+/* eslint-enable */
 
 interface EditProps {
   codeProp: string
@@ -167,6 +173,32 @@ function EditModal({
           type,
           campus,
           writ_inten: writInten === 'True',
+        },
+        update(cache) {
+          // eslint-disable-next-line
+          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+          })
+          // eslint-disable-next-line
+          const newCourses = existingCourses!.courses.map((course) => {
+            if (course.title === oldTitle && course.term === termProp) {
+              const newCourse = {} as Courses
+              newCourse.term = termProp
+              newCourse.title = newTitle
+              newCourse.code = newCode
+              newCourse.credits = parseFloat(credit)
+              newCourse.type = type
+              newCourse.campus = campus
+              newCourse.writ_inten = writInten === 'True'
+              return newCourse
+            }
+            return course
+          })
+          // eslint-disable-next-line
+          cache.writeQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+            data: { courses: newCourses },
+          })
         },
       })
       setCode(newCode)

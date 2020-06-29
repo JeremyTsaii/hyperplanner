@@ -12,7 +12,6 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 // eslint-disable-next-line
-import { GET_INFO_QUERY } from '../utils/gqlQueries'
 import {
   schools,
   schoolDict,
@@ -21,8 +20,13 @@ import {
   concentrations,
   gradYears,
 } from '../static/infoLists'
-// eslint-disable-next-line
-import { Get_InfoQuery, useUpdate_UserMutation } from '../generated/graphql'
+/* eslint-disable */
+import {
+  useUpdate_UserMutation,
+  Get_InfoQuery,
+  Get_InfoDocument,
+} from '../generated/graphql'
+/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -170,7 +174,7 @@ function InfoModal({
       update(cache) {
         // eslint-disable-next-line
         const existingInfo = cache.readQuery<Get_InfoQuery>({
-          query: GET_INFO_QUERY,
+          query: Get_InfoDocument,
         })
         // eslint-disable-next-line
         const newInfo = existingInfo!.users[0]
@@ -182,7 +186,7 @@ function InfoModal({
 
         // eslint-disable-next-line
         cache.writeQuery<Get_InfoQuery>({
-          query: GET_INFO_QUERY,
+          query: Get_InfoDocument,
           data: { users: [newInfo] },
         })
       },

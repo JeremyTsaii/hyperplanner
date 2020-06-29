@@ -11,10 +11,14 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { GET_COURSES_QUERY } from '../utils/gqlQueries'
 import { campuses, credits, types, bools } from '../static/infoLists'
-// eslint-disable-next-line
-import { Get_CoursesQuery, useAdd_CourseMutation } from '../generated/graphql'
+/* eslint-disable */
+import {
+  useAdd_CourseMutation,
+  Get_CoursesQuery,
+  Get_CoursesDocument,
+} from '../generated/graphql'
+/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -157,7 +161,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           }
           // eslint-disable-next-line
           const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
-            query: GET_COURSES_QUERY,
+            query: Get_CoursesDocument,
           })
           const existingCourses = getExistingCourses
             ? getExistingCourses.courses
@@ -166,7 +170,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           const newCourse = data.insert_courses!.returning[0]
           // eslint-disable-next-line
           cache.writeQuery<Get_CoursesQuery>({
-            query: GET_COURSES_QUERY,
+            query: Get_CoursesDocument,
             data: { courses: [newCourse, ...existingCourses] },
           })
           return true
