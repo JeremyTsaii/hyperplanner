@@ -107,6 +107,13 @@ function Course({
         })
         /* eslint-enable */
       },
+      optimisticResponse: {
+        __typename: 'mutation_root',
+        delete_courses: {
+          __typename: 'courses_mutation_response',
+          affected_rows: 1,
+        },
+      },
     })
   }
 

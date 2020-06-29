@@ -188,6 +188,7 @@ function EditModal({
           const newCourses = existingCourses!.courses.map((course) => {
             if (course.title === oldTitle && course.term === termProp) {
               const newCourse = {} as Courses
+              newCourse.__typename = 'courses'
               newCourse.term = termProp
               newCourse.title = newTitle
               newCourse.code = newCode
@@ -205,6 +206,25 @@ function EditModal({
             data: { courses: newCourses },
           })
           /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          update_courses: {
+            __typename: 'courses_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'courses',
+                term: termProp,
+                title: newTitle,
+                code: newCode,
+                credits: parseFloat(credit),
+                type,
+                campus,
+                writ_inten: writInten === 'True',
+              },
+            ],
+          },
         },
       })
       setCode(newCode)
