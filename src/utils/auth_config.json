@@ -1,4 +1,6 @@
 {
-  "domain": "hyperplanner.us.auth0.com",
-  "clientId": "6Fo3fvROhv1sAYXBWZ8xkYMHWT0AELuh"
+  "DOMAIN": "hyperplanner.us.auth0.com",
+  "CLIENTID": "6Fo3fvROhv1sAYXBWZ8xkYMHWT0AELuh",
+  "AUDIENCE": "https://hyperplanner.us.auth0.com/api/v2/",
+  "GRAPHQL_URL": "https://hyperplanner.herokuapp.com/v1/graphql"
 }
