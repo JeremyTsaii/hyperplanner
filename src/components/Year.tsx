@@ -28,6 +28,8 @@ const useStyles = makeStyles((theme) => ({
     overflowY: 'scroll',
     width: theme.spacing(25),
     flexGrow: 1,
+    scrollbarWidth: 'thin',
+    scrollbarColor: '#282c34 #3a3f55',
   },
   semesterHeader: {
     display: 'flex',
@@ -106,7 +108,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           <Course
             code="CSCI 151"
             title="Artificial Intelligence"
-            credits={3}
+            credit={4}
             color={PURPLE}
           />
         </Collapse>
@@ -125,6 +127,12 @@ function Year({ yearNumber }: yearProps): JSX.Element {
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
           <Paper elevation={0} className={classes.paper} />
+          <Course
+            code="CSCI 151"
+            title="Artificial Intelligence"
+            credit={3}
+            color={PURPLE}
+          />
         </Collapse>
       </div>
     </Paper>
