@@ -108,6 +108,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           <Course
             code="CSCI 151"
             title="Artificial Intelligence"
+            credit={4}
             color={PURPLE}
           />
         </Collapse>
@@ -129,6 +130,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           <Course
             code="CSCI 151"
             title="Artificial Intelligence"
+            credit={3}
             color={PURPLE}
           />
         </Collapse>

@@ -18,6 +18,7 @@ const SPACING = 3
 interface courseProps {
   code: string
   title: string
+  credit: number
   color: string
 }
 
@@ -35,12 +36,15 @@ const useStyles = makeStyles(() => ({
   titleText: {
     color: '#FFFFFF',
   },
+  creditText: {
+    color: '#FFFFFF',
+  },
   courseButton: {
     alignItems: 'flex-end',
   },
 }))
 
-function Course({ code, title, color }: courseProps): JSX.Element {
+function Course({ code, title, credit, color }: courseProps): JSX.Element {
   const classes = useStyles()
 
   return (
@@ -53,10 +57,17 @@ function Course({ code, title, color }: courseProps): JSX.Element {
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item xs={6} zeroMinWidth>
+        <Grid item xs={5} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.titleText} noWrap>
               {title}
+            </Typography>
+          </MuiThemeProvider>
+        </Grid>
+        <Grid item xs={1} zeroMinWidth>
+          <MuiThemeProvider theme={theme}>
+            <Typography variant="h6" className={classes.creditText} noWrap>
+              {credit}
             </Typography>
           </MuiThemeProvider>
         </Grid>
