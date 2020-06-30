@@ -1,10 +1,6 @@
 import React from 'react'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
-<<<<<<< HEAD
-import Layout from './components/layout'
-=======
 import Layout from './components/GALayout'
->>>>>>> 51346e6a5f21ba285eb590563ec82ff79dfeb129
 import './App.css'
 import TopBar from './components/TopBar'
 import InfoCards from './components/InfoCards'
@@ -34,20 +30,6 @@ function App(): JSX.Element {
       <Layout>
         <div className="App">
           <TopBar />
-<<<<<<< HEAD
-          <Info
-            firstName="Jeremy"
-            schoolName="Bellevue College"
-            majorName="CS"
-            concName="Excel"
-            gradYear={2045}
-            totalCredits={20}
-            creditsRem={47}
-            avgCredit={20}
-            avgRem={8}
-          />
-          <Cards />
-=======
           <InfoCards
             firstName="Jeremy"
             schoolName="Harvey Mudd College"
@@ -60,7 +42,6 @@ function App(): JSX.Element {
             avgRem={13.5}
           />
           <YearCards />
->>>>>>> 51346e6a5f21ba285eb590563ec82ff79dfeb129
         </div>
       </Layout>
     </ThemeProvider>

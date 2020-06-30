@@ -13,9 +13,17 @@ import Logo from '../images/logo.png'
 const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
+    paddingBottom: '20px',
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    paddingTop: '15px',
   },
   appBar: {
-    background: '#282c34',
+    background: '#3A3F55',
+    borderTopLeftRadius: '10px',
+    borderBottomLeftRadius: '10px',
+    borderTopRightRadius: '10px',
+    borderBottomRightRadius: '10px',
   },
   toolBar: {},
   menuButton: {},

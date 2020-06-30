@@ -18,15 +18,8 @@ const SPACING = 3
 interface courseProps {
   code: string
   title: string
-  credits: number
   color: string
 }
-
-const useStyles = makeStyles(() => ({
-  text: {
-    color: '#FFFFFF',
-  },
-}))
 
 let theme = createMuiTheme({
   typography: {
@@ -35,7 +28,19 @@ let theme = createMuiTheme({
 })
 theme = responsiveFontSizes(theme)
 
-function Course({ code, title, credits, color }: courseProps): JSX.Element {
+const useStyles = makeStyles(() => ({
+  codeText: {
+    color: '#FFFFFF',
+  },
+  titleText: {
+    color: '#FFFFFF',
+  },
+  courseButton: {
+    alignItems: 'flex-end',
+  },
+}))
+
+function Course({ code, title, color }: courseProps): JSX.Element {
   const classes = useStyles()
 
   return (
@@ -43,31 +48,24 @@ function Course({ code, title, credits, color }: courseProps): JSX.Element {
       <Grid container alignItems="center" justify="flex-start">
         <Grid item xs={SPACING} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.text} noWrap>
+            <Typography variant="h6" className={classes.codeText} noWrap>
               {code}
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item xs={SPACING} zeroMinWidth>
+        <Grid item xs={6} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.text} noWrap>
+            <Typography variant="h6" className={classes.titleText} noWrap>
               {title}
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item xs={SPACING} zeroMinWidth>
-          <MuiThemeProvider theme={theme}>
-            <Typography variant="subtitle1" className={classes.text} noWrap>
-              Credits: {credits}
-            </Typography>
-          </MuiThemeProvider>
-        </Grid>
-        <Grid item>
+        <Grid item className={classes.courseButton}>
           <IconButton edge="end" aria-label="edit" size="small">
             <EditIcon />
           </IconButton>
         </Grid>
-        <Grid item>
+        <Grid item className={classes.courseButton}>
           <IconButton edge="end" aria-label="delete" size="small">
             <DeleteForeverIcon />
           </IconButton>
