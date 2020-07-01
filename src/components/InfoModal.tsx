@@ -94,8 +94,6 @@ function InfoModal({
   gradYearProp,
   idProp,
 }: DialogProps): JSX.Element {
-  const classes = useStyles()
-
   const [updateUser] = useUpdate_UserMutation()
 
   // Changing information in modal
