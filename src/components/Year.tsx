@@ -70,11 +70,51 @@ function Year({ yearNumber }: yearProps): JSX.Element {
 
   const { loading, error, data } = useQuery(GET_COURSES_QUERY)
 
-  if (loading) {
-    return <div>Loading...</div>
-  }
-  if (error || !data) {
-    return <div>Error...</div>
+  if (loading || error || !data) {
+    return (
+      <Paper elevation={12} className={classes.mainCard}>
+        <Typography className={classes.yearText}>Year {yearNumber}</Typography>
+        <div className={classes.semesterHeader}>
+          <Button
+            color="secondary"
+            onClick={handleChangeFall}
+            className={classes.semesterButton}>
+            Fall: 0
+          </Button>
+        </div>
+        <div className={classes.courseContainer}>
+          <Collapse in={checkedFall}>
+            <Paper elevation={0} className={classes.paper} />
+          </Collapse>
+        </div>
+        <div className={classes.semesterHeader}>
+          <Button
+            color="secondary"
+            onClick={handleChangeSpring}
+            className={classes.semesterButton}>
+            Spring: 0
+          </Button>
+        </div>
+        <div className={classes.courseContainer}>
+          <Collapse in={checkedSpring}>
+            <Paper elevation={0} className={classes.paper} />
+          </Collapse>
+        </div>
+        <div className={classes.semesterHeader}>
+          <Button
+            color="secondary"
+            onClick={handleChangeSummer}
+            className={classes.semesterButton}>
+            Summer: 0
+          </Button>
+        </div>
+        <div className={classes.courseContainer}>
+          <Collapse in={checkedSummer}>
+            <Paper elevation={0} className={classes.paper} />
+          </Collapse>
+        </div>
+      </Paper>
+    )
   }
 
   const { courses } = data
@@ -161,7 +201,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Summer:{' '}
           {courses
-            .filter((course: Courses) => course.term === `summer${yearNumber}`)
+            .filter((course: Courses) => course.term === `${yearNumber}`)
             .reduce(
               (count: number, course: Courses) => count + course.credits,
               0,

@@ -81,7 +81,7 @@ function YearStepper(): JSX.Element {
 
   const { loading, error, data } = useQuery(GET_INFO_QUERY)
 
-  if (loading) {
+  if (loading || error || !data) {
     return (
       <div className={classes.root}>
         <Stepper
@@ -106,9 +106,6 @@ function YearStepper(): JSX.Element {
         </Stepper>
       </div>
     )
-  }
-  if (error || !data) {
-    return <div>Error...</div>
   }
 
   const gradYear = data.users[0].grad_year
