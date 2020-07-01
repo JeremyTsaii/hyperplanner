@@ -146,7 +146,7 @@ function Course({
         <Grid item xs={1} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.creditText} noWrap>
-              {credit}
+              {credits}
             </Typography>
           </MuiThemeProvider>
         </Grid>

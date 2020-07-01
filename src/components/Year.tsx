@@ -45,6 +45,8 @@ const useStyles = makeStyles((theme) => ({
   },
   semesterButton: {
     color: '#white',
+    textAlign: 'left',
+    alignItems: 'flex-start',
   },
 }))
 
