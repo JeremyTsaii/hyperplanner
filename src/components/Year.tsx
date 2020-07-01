@@ -201,7 +201,7 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           className={classes.semesterButton}>
           Summer:{' '}
           {courses
-            .filter((course: Courses) => course.term === `${yearNumber}`)
+            .filter((course: Courses) => course.term === `summer${yearNumber}`)
             .reduce(
               (count: number, course: Courses) => count + course.credits,
               0,
