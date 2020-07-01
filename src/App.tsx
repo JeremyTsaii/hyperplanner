@@ -6,7 +6,6 @@ import TopBar from './components/TopBar'
 import InfoCards from './components/InfoCards'
 import YearCards from './components/YearCards'
 import AuthorizedApolloProvider from './components/AuthorizedApolloProvider'
-import { YearStateProvider } from './components/YearState'
 
 const mainTheme = createMuiTheme({
   palette: {
@@ -25,10 +24,8 @@ function App(): JSX.Element {
       <ThemeProvider theme={mainTheme}>
         <Layout>
           <div className="App">
-            <YearStateProvider>
-              <TopBar />
-              <InfoCards />
-            </YearStateProvider>
+            <TopBar />
+            <InfoCards />
             <YearCards />
           </div>
         </Layout>
