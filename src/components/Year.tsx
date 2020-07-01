@@ -87,7 +87,13 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           color="secondary"
           onClick={handleChangeFall}
           className={classes.semesterButton}>
-          Fall
+          Fall:{' '}
+          {courses
+            .filter((course: Courses) => course.term === `fall${yearNumber}`)
+            .reduce(
+              (count: number, course: Courses) => count + course.credits,
+              0,
+            )}
         </Button>
         <CourseModal year={String(yearNumber)} term="Fall" />
       </div>
@@ -116,7 +122,13 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           color="secondary"
           onClick={handleChangeSpring}
           className={classes.semesterButton}>
-          Spring
+          Spring:{' '}
+          {courses
+            .filter((course: Courses) => course.term === `spring${yearNumber}`)
+            .reduce(
+              (count: number, course: Courses) => count + course.credits,
+              0,
+            )}
         </Button>
         <CourseModal year={String(yearNumber)} term="Spring" />
       </div>
@@ -147,7 +159,13 @@ function Year({ yearNumber }: yearProps): JSX.Element {
           color="secondary"
           onClick={handleChangeSummer}
           className={classes.semesterButton}>
-          Summer
+          Summer:{' '}
+          {courses
+            .filter((course: Courses) => course.term === `summer${yearNumber}`)
+            .reduce(
+              (count: number, course: Courses) => count + course.credits,
+              0,
+            )}
         </Button>
         <CourseModal year={String(yearNumber)} term="Summer" />
       </div>

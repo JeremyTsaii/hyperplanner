@@ -50,7 +50,6 @@ function InfoCards(): JSX.Element {
   return (
     <Grid
       container
-      xs={12}
       className={classes.container}
       direction="row"
       justify="space-between">
