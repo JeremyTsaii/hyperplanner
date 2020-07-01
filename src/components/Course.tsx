@@ -62,10 +62,10 @@ const getCourseColor = (type: string): string => {
     return LPINK
   }
   if (type === 'hum_depth') {
-    return BLUE
+    return PURPLE
   }
   if (type === 'hum_breadth') {
-    return PURPLE
+    return BLUE
   }
   if (type === 'hum_elec') {
     return LPURPLE
