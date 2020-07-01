@@ -41,18 +41,27 @@ interface courseProps {
   term: string
 }
 
-const useStyles = makeStyles(() => ({
-  text: {
-    color: '#FFFFFF',
-  },
-}))
-
 let theme = createMuiTheme({
   typography: {
     fontSize: 10,
   },
 })
 theme = responsiveFontSizes(theme)
+
+const useStyles = makeStyles(() => ({
+  codeText: {
+    color: '#FFFFFF',
+  },
+  titleText: {
+    color: '#FFFFFF',
+  },
+  creditText: {
+    color: '#FFFFFF',
+  },
+  courseButton: {
+    alignItems: 'flex-end',
+  },
+}))
 
 const getCourseColor = (type: string): string => {
   if (type === 'major_req') {
@@ -122,22 +131,22 @@ function Course({
       <Grid container alignItems="center" justify="flex-start">
         <Grid item xs={SPACING} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.text} noWrap>
+            <Typography variant="h6" className={classes.codeText} noWrap>
               {code}
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item xs={SPACING} zeroMinWidth>
+        <Grid item xs={5} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.text} noWrap>
+            <Typography variant="h6" className={classes.titleText} noWrap>
               {title}
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item xs={SPACING} zeroMinWidth>
+        <Grid item xs={1} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="subtitle1" className={classes.text} noWrap>
-              Credits: {credits}
+            <Typography variant="h6" className={classes.creditText} noWrap>
+              {credits}
             </Typography>
           </MuiThemeProvider>
         </Grid>

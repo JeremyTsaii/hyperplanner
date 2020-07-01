@@ -7,12 +7,17 @@ import InfoModal from './InfoModal'
 
 const useStyles = makeStyles((theme) => ({
   infoCard: {
+    display: 'flex',
     background: '#3A3F55',
-    width: theme.spacing(40),
     height: theme.spacing(25),
-    marginLeft: theme.spacing(10),
     flexGrow: 1,
-    marginRight: theme.spacing(4),
+    marginRight: theme.spacing(3),
+    flexDirection: 'column',
+    position: 'relative',
+    overflowY: 'auto',
+    overflowX: 'hidden',
+    MsOverflowStyle: 'none',
+    scrollbarWidth: 'none',
   },
   header: {
     color: '#fff',
@@ -27,6 +32,11 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '17px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
+  },
+  editIcon: {
+    alignSelf: 'flex-end',
+    margin: '0',
+    marginRight: theme.spacing(2),
   },
 }))
 
@@ -69,14 +79,16 @@ function LeftInfoCard({
         <Typography className={classes.personalInfo}>
           Graduation Year: {gradYear}
         </Typography>
-        <InfoModal
-          nameProp={firstName}
-          schoolProp={schoolName}
-          majorProp={majorName}
-          concProp={concName}
-          gradYearProp={gradYear}
-          idProp={id}
-        />
+        <div className={classes.editIcon}>
+          <InfoModal
+            nameProp={firstName}
+            schoolProp={schoolName}
+            majorProp={majorName}
+            concProp={concName}
+            gradYearProp={gradYear}
+            idProp={id}
+          />
+        </div>
       </Paper>
     </Grid>
   )

@@ -39,10 +39,6 @@ const useStyles = makeStyles((theme) => ({
     top: theme.spacing(1),
     color: theme.palette.grey[500],
   },
-  editIcon: {
-    alignSelf: 'end',
-    left: theme.spacing(16),
-  },
 }))
 
 interface DialogProps {
@@ -98,8 +94,6 @@ function InfoModal({
   gradYearProp,
   idProp,
 }: DialogProps): JSX.Element {
-  const classes = useStyles()
-
   const [updateUser] = useUpdate_UserMutation()
 
   // Changing information in modal
@@ -217,7 +211,6 @@ function InfoModal({
         aria-label="edit"
         size="small"
         color="secondary"
-        className={classes.editIcon}
         onClick={handleOpen}>
         <EditIcon />
       </IconButton>
