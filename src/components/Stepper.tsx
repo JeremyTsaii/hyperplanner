@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
 import StepConnector from '@material-ui/core/StepConnector'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { useQuery } from '@apollo/react-hooks'
+import { GET_INFO_QUERY } from '../utils/gqlQueries'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -18,12 +20,12 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     // Override icon color
-    color: '#FF0325',
+    color: '#f50057',
     '&$activeIcon': {
-      color: '#FF0325',
+      color: '#f50057',
     },
     '&$completedIcon': {
-      color: '#FF0325',
+      color: '#f50057',
     },
   },
   activeIcon: {},
@@ -46,12 +48,12 @@ const QontoConnector = withStyles({
   },
   active: {
     '& $line': {
-      borderColor: '#FF0325',
+      borderColor: '#f50057',
     },
   },
   completed: {
     '& $line': {
-      borderColor: '#FF0325',
+      borderColor: '#f50057',
     },
   },
   line: {
@@ -61,19 +63,60 @@ const QontoConnector = withStyles({
   },
 })(StepConnector)
 
-function getSteps(): string[] {
-  return ['Freshman', 'Sophomore', 'Junior', 'Senior']
-}
-
 function YearStepper(): JSX.Element {
   const classes = useStyles()
-  const [activeStep] = React.useState(2)
-  const steps = getSteps()
+
+  const calculateYear = (gradYear: number): number => {
+    const date = new Date()
+    const month = date.getMonth()
+    const year = date.getFullYear()
+    let monthWeight = 0
+    // Year cutoff at June
+    if (month < 5) {
+      monthWeight = 1
+    }
+    return 4 - (gradYear - year) - monthWeight
+  }
+  const steps = ['Freshman', 'Sophomore', 'Junior', 'Senior']
+
+  const { loading, error, data } = useQuery(GET_INFO_QUERY)
+
+  if (loading) {
+    return (
+      <div className={classes.root}>
+        <Stepper
+          activeStep={0}
+          alternativeLabel
+          connector={<QontoConnector />}
+          className={classes.stepper}>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StyledStepLabel
+                StepIconProps={{
+                  classes: {
+                    root: classes.icon,
+                    active: classes.activeIcon,
+                    completed: classes.completedIcon,
+                  },
+                }}>
+                {label}
+              </StyledStepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </div>
+    )
+  }
+  if (error || !data) {
+    return <div>Error...</div>
+  }
+
+  const gradYear = data.users[0].grad_year
 
   return (
     <div className={classes.root}>
       <Stepper
-        activeStep={activeStep}
+        activeStep={calculateYear(gradYear)}
         alternativeLabel
         connector={<QontoConnector />}
         className={classes.stepper}>
