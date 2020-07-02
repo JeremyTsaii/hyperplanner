@@ -9,6 +9,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import FormLabel from '@material-ui/core/FormLabel'
 
+
 const useStyles = makeStyles((theme) => ({
   statsCard: {
     background: '#3A3F55',
@@ -55,6 +56,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
     height: theme.spacing(4),
     textAlign: 'left',
+
     color: 'white',
   },
 }))

@@ -10,7 +10,7 @@ import AuthorizedApolloProvider from './components/AuthorizedApolloProvider'
 const mainTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#FF0325',
+      main: '#f50057',
     },
     secondary: {
       main: '#fff',
