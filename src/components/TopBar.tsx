@@ -18,7 +18,7 @@ const useStyles = makeStyles(() => ({
     paddingTop: '15px',
   },
   appBar: {
-    background: '#3A3F55',
+    background: '#23252e',
     borderTopLeftRadius: '10px',
     borderBottomLeftRadius: '10px',
     borderTopRightRadius: '10px',

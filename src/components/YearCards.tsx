@@ -3,12 +3,9 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import Year from './Year'
 
-// Page elevation constant
-const BLACK = '#282c34'
-
 const useStyles = makeStyles((theme) => ({
   outerContainer: {
-    background: BLACK,
+    background: '#282c34',
   },
   innerContainer: {
     display: 'flex',

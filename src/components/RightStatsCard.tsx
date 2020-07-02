@@ -7,11 +7,10 @@ import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
-import FormLabel from '@material-ui/core/FormLabel'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
-    background: '#3A3F55',
+    background: '#23252e',
     height: theme.spacing(25),
     flexGrow: 4,
     flexDirection: 'row',
@@ -100,9 +99,6 @@ function RightStatsCard({
         </div>
         <div className={classes.reqButtonSection}>
           <FormControl component="fieldset">
-            <FormLabel component="legend" color="primary">
-              Requirements
-            </FormLabel>
             <RadioGroup
               aria-label="req"
               name="req1"

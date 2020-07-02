@@ -100,34 +100,7 @@ function InfoCards(): JSX.Element {
     coursesError ||
     !coursesData
   ) {
-    return (
-      <Grid
-        container
-        className={classes.container}
-        direction="row"
-        justify="space-between">
-        <Grid item xs={3}>
-          <LeftInfoCard
-            firstName="there, please log in"
-            schoolName=""
-            majorName=""
-            concName=""
-            gradYear={new Date().getFullYear()}
-            id=""
-            ELEV={ELEV}
-          />
-        </Grid>
-        <Grid item xs={9}>
-          <RightStatsCard
-            totalCredits={0}
-            creditsRem={0}
-            avgCredits={0}
-            avgRem={0}
-            ELEV={ELEV}
-          />
-        </Grid>
-      </Grid>
-    )
+    return <div>Loading...</div>
   }
 
   const info = infoData.users[0]

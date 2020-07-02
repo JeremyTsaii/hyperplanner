@@ -8,7 +8,7 @@ import InfoModal from './InfoModal'
 const useStyles = makeStyles((theme) => ({
   infoCard: {
     display: 'flex',
-    background: '#3A3F55',
+    background: '#23252e',
     height: theme.spacing(25),
     flexGrow: 1,
     marginRight: theme.spacing(3),

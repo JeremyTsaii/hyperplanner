@@ -15,7 +15,7 @@ interface yearProps {
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {
-    background: '#3A3F55',
+    background: '#23252e',
     margin: theme.spacing(2),
     height: theme.spacing(70),
     maxHeight: theme.spacing(70),
@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
     marginRight: theme.spacing(1),
   },
   courseContainer: {
-    background: '#3A3F55',
+    background: '#23252e',
   },
   yearText: {
     color: '#fff',
@@ -40,7 +40,7 @@ const useStyles = makeStyles((theme) => ({
   },
 
   paper: {
-    background: '#3A3F55',
+    background: '#23252e',
     margin: theme.spacing(1),
   },
   semesterButton: {
