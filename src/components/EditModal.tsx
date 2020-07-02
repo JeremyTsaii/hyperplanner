@@ -97,6 +97,7 @@ function EditModal({
 }: EditProps): JSX.Element {
   const [updateCourse] = useUpdate_CourseMutation()
   const oldTitle = titleProp
+  const oldCode = codeProp
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -162,75 +163,77 @@ function EditModal({
     resetInputs()
     setOpen(false)
   }
-  const allFilled = () => {
-    return getValue(codeRef) !== '' && getValue(titleRef) !== ''
-  }
   const handleSave = () => {
-    if (allFilled()) {
-      const newCode = getValue(codeRef)
-      const newTitle = getValue(titleRef)
-      updateCourse({
-        variables: {
-          old_title: oldTitle,
-          term: termProp,
-          title: newTitle,
-          code: newCode,
-          credits: parseFloat(credit),
-          type,
-          campus,
-          writ_inten: writInten === 'True',
-        },
-        update(cache) {
-          /* eslint-disable */
-          const existingCourses = cache.readQuery<Get_CoursesQuery>({
-            query: Get_CoursesDocument,
-          })
-          const newCourses = existingCourses!.courses.map((course) => {
-            if (course.title === oldTitle && course.term === termProp) {
-              const newCourse = {} as Courses
-              newCourse.__typename = 'courses'
-              newCourse.term = termProp
-              newCourse.title = newTitle
-              newCourse.code = newCode
-              newCourse.credits = parseFloat(credit)
-              newCourse.type = type
-              newCourse.campus = campus
-              newCourse.writ_inten = writInten === 'True'
-              return newCourse
-            }
-            return course
-          })
-          newCourses.sort(courseSort)
-          cache.writeQuery<Get_CoursesQuery>({
-            query: Get_CoursesDocument,
-            data: { courses: newCourses },
-          })
-          /* eslint-enable */
-        },
-        optimisticResponse: {
-          __typename: 'mutation_root',
-          update_courses: {
-            __typename: 'courses_mutation_response',
-            affected_rows: 1,
-            returning: [
-              {
-                __typename: 'courses',
-                term: termProp,
-                title: newTitle,
-                code: newCode,
-                credits: parseFloat(credit),
-                type,
-                campus,
-                writ_inten: writInten === 'True',
-              },
-            ],
-          },
-        },
-      })
-      setCode(newCode)
-      setTitle(newTitle)
-      setOpen(false)
+    let newCode = getValue(codeRef)
+    let newTitle = getValue(titleRef)
+
+    if (newCode === '') {
+      newCode = oldCode
     }
+    if (newTitle === '') {
+      newTitle = oldTitle
+    }
+    updateCourse({
+      variables: {
+        old_title: oldTitle,
+        term: termProp,
+        title: newTitle,
+        code: newCode,
+        credits: parseFloat(credit),
+        type,
+        campus,
+        writ_inten: writInten === 'True',
+      },
+      update(cache) {
+        /* eslint-disable */
+        const existingCourses = cache.readQuery<Get_CoursesQuery>({
+          query: Get_CoursesDocument,
+        })
+        const newCourses = existingCourses!.courses.map((course) => {
+          if (course.title === oldTitle && course.term === termProp) {
+            const newCourse = {} as Courses
+            newCourse.__typename = 'courses'
+            newCourse.term = termProp
+            newCourse.title = newTitle
+            newCourse.code = newCode
+            newCourse.credits = parseFloat(credit)
+            newCourse.type = type
+            newCourse.campus = campus
+            newCourse.writ_inten = writInten === 'True'
+            return newCourse
+          }
+          return course
+        })
+        newCourses.sort(courseSort)
+        cache.writeQuery<Get_CoursesQuery>({
+          query: Get_CoursesDocument,
+          data: { courses: newCourses },
+        })
+        /* eslint-enable */
+      },
+      optimisticResponse: {
+        __typename: 'mutation_root',
+        update_courses: {
+          __typename: 'courses_mutation_response',
+          affected_rows: 1,
+          returning: [
+            {
+              __typename: 'courses',
+              term: termProp,
+              title: newTitle,
+              code: newCode,
+              credits: parseFloat(credit),
+              type,
+              campus,
+              writ_inten: writInten === 'True',
+            },
+          ],
+        },
+      },
+    })
+    setCode(newCode)
+    setTitle(newTitle)
+    setOpen(false)
   }
 
   return (

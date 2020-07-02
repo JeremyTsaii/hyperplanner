@@ -48,7 +48,7 @@
 
 - Prettier and ESLint (Airbnb preferences) used for best coding practices
 
-- Auth0 used for user authentication
+- Auth0 used for user authentication/authorization
 
 - Google Analytics used to track site statistics
 
