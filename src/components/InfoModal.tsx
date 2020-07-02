@@ -210,7 +210,7 @@ function InfoModal({
         edge="end"
         aria-label="edit"
         size="small"
-        color="secondary"
+        color="primary"
         onClick={handleOpen}>
         <EditIcon />
       </IconButton>

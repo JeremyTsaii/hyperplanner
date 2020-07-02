@@ -222,7 +222,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
   return (
     <div>
       <IconButton edge="end" aria-label="add" size="small" onClick={handleOpen}>
-        <AddIcon color="secondary" />
+        <AddIcon color="primary" />
       </IconButton>
       <Dialog
         onClose={handleClose}
