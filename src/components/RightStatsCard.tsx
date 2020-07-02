@@ -3,7 +3,11 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
-import Button from '@material-ui/core/Button'
+import Radio from '@material-ui/core/Radio'
+import RadioGroup from '@material-ui/core/RadioGroup'
+import FormControlLabel from '@material-ui/core/FormControlLabel'
+import FormControl from '@material-ui/core/FormControl'
+import FormLabel from '@material-ui/core/FormLabel'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
@@ -51,6 +55,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
     height: theme.spacing(4),
     textAlign: 'left',
+
+    color: 'white',
   },
 }))
 
@@ -70,49 +76,64 @@ function RightStatsCard({
   ELEV,
 }: statsProps): JSX.Element {
   const classes = useStyles()
+  const [value, setValue] = React.useState('graduation')
 
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setValue((event.target as HTMLInputElement).value)
+  }
   return (
     <Grid item>
       <Paper elevation={ELEV} className={classes.statsCard}>
         <div className={classes.reqStatSection}>
           <Typography className={classes.personalStats}>
-            Total Credits: {totalCredits}
+            <b>Total Credits:</b> {totalCredits}
           </Typography>
           <Typography className={classes.personalStats}>
-            Credits Remaining: {creditsRem}
+            <b>Credits Remaining:</b> {creditsRem}
           </Typography>
           <Typography className={classes.personalStats}>
-            Average Credits per Semester: {avgCredits}
+            <b>Average Credits per Semester:</b> {avgCredits}
           </Typography>
           <Typography className={classes.personalStats}>
-            Remaining Average Credits: {avgRem}
+            <b>Remaining Average Credits:</b> {avgRem}
           </Typography>
         </div>
         <div className={classes.reqButtonSection}>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className={classes.statButton}>
-            Graduation
-          </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className={classes.statButton}>
-            Major
-          </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className={classes.statButton}>
-            Core
-          </Button>
-          <Button
-            variant="outlined"
-            color="secondary"
-            className={classes.statButton}>
-            Humanities
-          </Button>
+          <FormControl component="fieldset">
+            <FormLabel component="legend" color="primary">
+              Requirements
+            </FormLabel>
+            <RadioGroup
+              aria-label="req"
+              name="req1"
+              value={value}
+              onChange={handleChange}>
+              <FormControlLabel
+                value="grad"
+                control={<Radio />}
+                label="Graduation"
+                className={classes.statButton}
+              />
+              <FormControlLabel
+                value="major"
+                control={<Radio />}
+                label="Major"
+                className={classes.statButton}
+              />
+              <FormControlLabel
+                value="core"
+                control={<Radio />}
+                label="Core"
+                className={classes.statButton}
+              />
+              <FormControlLabel
+                value="humanities"
+                control={<Radio />}
+                label="Humanities"
+                className={classes.statButton}
+              />
+            </RadioGroup>
+          </FormControl>
         </div>
       </Paper>
     </Grid>
