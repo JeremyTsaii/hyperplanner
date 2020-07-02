@@ -1,6 +1,8 @@
 import React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost'
+import ReactLoading from 'react-loading'
+import { makeStyles } from '@material-ui/core/styles'
 import { useAuth0 } from '../utils/react-auth0-spa'
 import { GRAPHQL_URL } from '../utils/auth_config.json'
 
@@ -8,12 +10,25 @@ interface IProps {
   children: React.ReactNode
 }
 
+const useStyles = makeStyles(() => ({
+  loadingStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+}))
+
 // https://github.com/auth0-samples/auth0-javascript-samples/issues/79
 const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   const { loading, isAuthenticated, getTokenSilently } = useAuth0()
+  const classes = useStyles()
 
   if (loading) {
-    return <div>Loading...</div>
+    return (
+      <div className={classes.loadingStyle}>
+        <ReactLoading type="spin" color="white" height="20%" width="20%" />
+      </div>
+    )
   }
   const apolloClient = new ApolloClient({
     uri: GRAPHQL_URL,

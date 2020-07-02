@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     color: '#fff',
-    fontSize: '25px',
+    fontSize: '21px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(1),
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   personalInfo: {
     color: '#fff',
-    fontSize: '17px',
+    fontSize: '15px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
   },
@@ -68,16 +68,16 @@ function LeftInfoCard({
           Hello {firstName}!
         </Typography>
         <Typography className={classes.personalInfo}>
-          School: {schoolName}
+          <b>School:</b> {schoolName}
         </Typography>
         <Typography className={classes.personalInfo}>
-          Major: {majorName}
+          <b>Major:</b> {majorName}
         </Typography>
         <Typography className={classes.personalInfo}>
-          Concentration: {concName}
+          <b>Concentration:</b> {concName}
         </Typography>
         <Typography className={classes.personalInfo}>
-          Graduation Year: {gradYear}
+          <b>Graduation Year:</b> {gradYear}
         </Typography>
         <div className={classes.editIcon}>
           <InfoModal
