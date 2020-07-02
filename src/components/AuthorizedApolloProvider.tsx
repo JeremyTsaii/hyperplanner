@@ -27,7 +27,12 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   if (loading) {
     return (
       <div className={classes.loadingStyle}>
-        <ReactLoading type="spin" color="white" height="20%" width="20%" />
+        <ReactLoading
+          type="spinningBubbles"
+          color="#f50057"
+          height="10%"
+          width="10%"
+        />
       </div>
     )
   }

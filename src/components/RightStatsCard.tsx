@@ -54,7 +54,6 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: theme.spacing(1),
     height: theme.spacing(4),
     textAlign: 'left',
-
     color: 'white',
   },
 }))
