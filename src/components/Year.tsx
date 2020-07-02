@@ -22,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
     width: theme.spacing(25),
     flexGrow: 1,
     overflowY: 'scroll',
+    scrollbarWidth: 'thin',
+    scrollbarColor: '#282c34 #3a3f55',
   },
   semesterHeader: {
     display: 'flex',
