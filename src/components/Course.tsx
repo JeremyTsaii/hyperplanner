@@ -58,6 +58,9 @@ const useStyles = makeStyles(() => ({
   creditText: {
     color: '#FFFFFF',
   },
+  writText: {
+    color: '#FFFFFF',
+  },
   courseButton: {
     alignItems: 'flex-end',
   },
@@ -127,8 +130,19 @@ function Course({
   }
 
   return (
-    <Paper style={{ backgroundColor: getCourseColor(type), margin: 5 }}>
-      <Grid container alignItems="center" justify="flex-start">
+    <Paper
+      style={{
+        backgroundColor: getCourseColor(type),
+        margin: 5,
+        display: 'flex',
+      }}>
+      <Grid
+        container
+        alignItems="center"
+        justify="space-between"
+        style={{
+          display: 'flex',
+        }}>
         <Grid item xs={SPACING} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.codeText} noWrap>
@@ -140,6 +154,13 @@ function Course({
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.titleText} noWrap>
               {title}
+            </Typography>
+          </MuiThemeProvider>
+        </Grid>
+        <Grid item xs={1} zeroMinWidth>
+          <MuiThemeProvider theme={theme}>
+            <Typography variant="h6" className={classes.writText} noWrap>
+              W
             </Typography>
           </MuiThemeProvider>
         </Grid>

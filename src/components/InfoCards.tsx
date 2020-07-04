@@ -35,10 +35,23 @@ const useStyles = makeStyles(() => ({
   container: {
     background: '#282c34',
     display: 'flex',
-    paddingRight: theme.spacing(14),
-    paddingLeft: theme.spacing(14),
+    paddingRight: theme.spacing(4),
+    paddingLeft: theme.spacing(4),
     alignItems: 'stretch',
     flexWrap: 'nowrap',
+    [theme.breakpoints.down('xs')]: {
+      paddingRight: theme.spacing(1),
+      paddingLeft: theme.spacing(1),
+    },
+    [theme.breakpoints.down('sm')]: {
+      paddingRight: theme.spacing(2),
+      paddingLeft: theme.spacing(2),
+    },
+    [theme.breakpoints.down('md')]: {
+      paddingRight: theme.spacing(3),
+      paddingLeft: theme.spacing(3),
+      flexWrap: 'wrap',
+    },
   },
 }))
 
@@ -110,11 +123,10 @@ function InfoCards(): JSX.Element {
   return (
     <Grid
       container
-      xs={12}
       className={classes.container}
       direction="row"
       justify="space-between">
-      <Grid item xs={3}>
+      <Grid item xs={12} sm={12} md={3} lg={3} xl={3}>
         <LeftInfoCard
           firstName={info.nickname}
           schoolName={schoolDict[info.school]}
@@ -125,7 +137,7 @@ function InfoCards(): JSX.Element {
           ELEV={ELEV}
         />
       </Grid>
-      <Grid item xs={9}>
+      <Grid item xs={12} sm={12} md={9} lg={9} xl={9}>
         <RightStatsCard
           totalCredits={stats.total}
           creditsRem={stats.rem}

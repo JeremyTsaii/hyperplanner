@@ -10,8 +10,27 @@ const useStyles = makeStyles((theme) => ({
   innerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',
-    marginLeft: theme.spacing(12),
-    marginRight: theme.spacing(12),
+    marginLeft: theme.spacing(4),
+    marginRight: theme.spacing(4),
+    marginTop: theme.spacing(1),
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column',
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+    },
+    [theme.breakpoints.down('sm')]: {
+      flexDirection: 'column',
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
+    },
+    [theme.breakpoints.down('md')]: {
+      marginRight: theme.spacing(2),
+      marginLeft: theme.spacing(2),
+    },
+    [theme.breakpoints.down('lg')]: {
+      marginRight: theme.spacing(2),
+      marginLeft: theme.spacing(2),
+    },
   },
 }))
 

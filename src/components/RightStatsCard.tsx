@@ -12,12 +12,20 @@ const useStyles = makeStyles((theme) => ({
   statsCard: {
     background: '#23252e',
     height: theme.spacing(25),
+
     flexGrow: 4,
     flexDirection: 'row',
     display: 'flex',
     boxSizing: 'border-box',
     marginLeft: theme.spacing(1),
     justifyContent: 'space-between',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column-reverse',
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+      marginTop: theme.spacing(3),
+    },
   },
   header: {
     color: '#fff',
@@ -33,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     paddingTop: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(2),
+    },
   },
   reqButtonSection: {
     display: 'flex',
@@ -42,16 +53,25 @@ const useStyles = makeStyles((theme) => ({
     margin: '0px',
     paddingTop: theme.spacing(2),
     marginRight: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: theme.spacing(2),
+    },
   },
   reqStatSection: {
     display: 'flex',
-    flexDirection: 'column',
+    flexFlow: 'column wrap',
     maxWidth: '400px',
     width: '400px',
     margin: '0px',
+    [theme.breakpoints.down('xs')]: {
+      width: '90%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '250px',
+    },
   },
   statButton: {
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(0.5),
     height: theme.spacing(4),
     textAlign: 'left',
     color: 'white',
@@ -74,7 +94,7 @@ function RightStatsCard({
   ELEV,
 }: statsProps): JSX.Element {
   const classes = useStyles()
-  const [value, setValue] = React.useState('graduation')
+  const [value, setValue] = React.useState('grad')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)

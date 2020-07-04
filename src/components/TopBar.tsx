@@ -9,7 +9,7 @@ import LoginButton from './LoginButton'
 import YearStepper from './Stepper'
 import Logo from '../images/logo.png'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
     paddingBottom: '20px',
@@ -24,16 +24,28 @@ const useStyles = makeStyles(() => ({
     borderTopRightRadius: '10px',
     borderBottomRightRadius: '10px',
   },
-  toolBar: {},
+  toolBar: { display: 'flex', justifyContent: 'space-between' },
   menuButton: {},
-  title: {},
+  title: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
+  },
   stepper: {
     flexGrow: 1,
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
   sideButtons: {
     display: 'flex',
     flexWrap: 'nowrap',
+    justifySelf: 'flex-end',
+    [theme.breakpoints.down('xs')]: {
+      transform: 'scale(.8)',
+    },
   },
+  brand: { display: 'flex', alignItems: 'center' },
 }))
 
 function TopBar(): JSX.Element {
@@ -43,10 +55,19 @@ function TopBar(): JSX.Element {
     <div className={classes.root}>
       <AppBar position="static" className={classes.appBar}>
         <Toolbar variant="dense" className={classes.toolBar}>
-          <img alt="logo" style={{ width: 50, paddingRight: 10 }} src={Logo} />
-          <Typography variant="h5" color="secondary" className={classes.title}>
-            HyperPlanner
-          </Typography>
+          <div className={classes.brand}>
+            <img
+              alt="logo"
+              style={{ width: 50, paddingRight: 10 }}
+              src={Logo}
+            />
+            <Typography
+              variant="h5"
+              color="secondary"
+              className={classes.title}>
+              HyperPlanner
+            </Typography>
+          </div>
           <Grid className={classes.stepper}>
             <YearStepper />
           </Grid>

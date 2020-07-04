@@ -8,6 +8,9 @@ const useStyles = makeStyles((theme) => ({
   logButton: {
     marginRight: theme.spacing(1),
     textTransform: 'none',
+    [theme.breakpoints.down('xs')]: {
+      width: '110%',
+    },
   },
 }))
 

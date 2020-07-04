@@ -17,13 +17,21 @@ const useStyles = makeStyles((theme) => ({
   mainCard: {
     background: '#23252e',
     margin: theme.spacing(2),
-    height: theme.spacing(70),
-    maxHeight: theme.spacing(70),
     width: theme.spacing(25),
+    height: theme.spacing(70),
     flexGrow: 1,
     overflowY: 'scroll',
     scrollbarWidth: 'thin',
     scrollbarColor: '#282c34 #3a3f55',
+    [theme.breakpoints.down('xs')]: {
+      marginTop: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: '88%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginTop: theme.spacing(1),
+      width: '97%',
+    },
   },
   semesterHeader: {
     display: 'flex',
