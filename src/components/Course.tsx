@@ -129,6 +129,19 @@ function Course({
     })
   }
 
+  // Add M and/or W if Mudd hum/writing intensive course
+  let placeholder = ''
+  if (writInten) {
+    placeholder = 'W'
+  }
+  if (campus === 'hmc' && type.slice(0, 3) === 'hum') {
+    if (placeholder) {
+      placeholder += '|M'
+    } else {
+      placeholder = 'M'
+    }
+  }
+
   return (
     <Paper
       style={{
@@ -160,7 +173,7 @@ function Course({
         <Grid item xs={1} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.writText} noWrap>
-              W
+              {placeholder}
             </Typography>
           </MuiThemeProvider>
         </Grid>
