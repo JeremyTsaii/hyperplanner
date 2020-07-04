@@ -33,7 +33,6 @@ const ELEV = 12
 
 const useStyles = makeStyles(() => ({
   container: {
-    background: '#282c34',
     display: 'flex',
     paddingRight: theme.spacing(4),
     paddingLeft: theme.spacing(4),

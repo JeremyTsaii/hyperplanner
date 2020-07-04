@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     overflowX: 'hidden',
     MsOverflowStyle: 'none',
     scrollbarWidth: 'none',
+    alignContent: 'space-between',
   },
   header: {
     color: '#fff',
@@ -60,6 +61,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   editIcon: {
+    marginTop: theme.spacing(1.5),
     alignSelf: 'flex-end',
     margin: '0',
     marginRight: theme.spacing(2),
@@ -90,21 +92,23 @@ function LeftInfoCard({
   return (
     <Grid item>
       <Paper elevation={ELEV} className={classes.infoCard}>
-        <Typography variant="h5" className={classes.header}>
-          Hello {firstName}!
-        </Typography>
-        <Typography className={classes.personalInfo}>
-          <b>School:</b> {schoolName}
-        </Typography>
-        <Typography className={classes.personalInfo}>
-          <b>Major:</b> {majorName}
-        </Typography>
-        <Typography className={classes.personalInfo}>
-          <b>Concentration:</b> {concName}
-        </Typography>
-        <Typography className={classes.personalInfo}>
-          <b>Graduation Year:</b> {gradYear}
-        </Typography>
+        <div>
+          <Typography variant="h5" className={classes.header}>
+            Hello {firstName}!
+          </Typography>
+          <Typography className={classes.personalInfo}>
+            <b>School:</b> {schoolName}
+          </Typography>
+          <Typography className={classes.personalInfo}>
+            <b>Major:</b> {majorName}
+          </Typography>
+          <Typography className={classes.personalInfo}>
+            <b>Concentration:</b> {concName}
+          </Typography>
+          <Typography className={classes.personalInfo}>
+            <b>Graduation Year:</b> {gradYear}
+          </Typography>
+        </div>
         <div className={classes.editIcon}>
           <InfoModal
             nameProp={firstName}

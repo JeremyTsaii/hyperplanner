@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '300px',
     width: '300px',
     margin: '0px',
+    alignContent: 'space-between',
     paddingTop: theme.spacing(2),
     marginRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
@@ -71,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   statButton: {
-    marginBottom: theme.spacing(0.5),
+    marginBottom: theme.spacing(1),
     height: theme.spacing(4),
     textAlign: 'left',
     color: 'white',
