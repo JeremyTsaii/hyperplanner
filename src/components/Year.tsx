@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
 import { useQuery } from '@apollo/react-hooks'
+import ReactLoading from 'react-loading'
 import { GET_COURSES_QUERY } from '../utils/gqlQueries'
 import Course from './Course'
 import { Courses } from '../generated/graphql'
@@ -56,6 +57,10 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     alignItems: 'flex-start',
   },
+  loadingStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
 }))
 
 function Year({ yearNumber }: yearProps): JSX.Element {
@@ -78,7 +83,15 @@ function Year({ yearNumber }: yearProps): JSX.Element {
 
   const { loading, error, data } = useQuery(GET_COURSES_QUERY)
 
-  if (loading || error || !data) {
+  if (loading) {
+    return (
+      <div className={classes.loadingStyle}>
+        <ReactLoading type="cylon" color="#f50057" height="2%" width="2%" />
+      </div>
+    )
+  }
+
+  if (error) {
     return (
       <Paper elevation={12} className={classes.mainCard}>
         <Typography className={classes.yearText}>Year {yearNumber}</Typography>

@@ -5,6 +5,7 @@ import {
   responsiveFontSizes,
   createMuiTheme,
 } from '@material-ui/core/styles'
+import ReactLoading from 'react-loading'
 import { useQuery } from '@apollo/react-hooks'
 import LeftInfoCard from './LeftInfoCard'
 import RightStatsCard from './RightStatsCard'
@@ -52,6 +53,14 @@ const useStyles = makeStyles(() => ({
       paddingLeft: theme.spacing(3),
       flexWrap: 'wrap',
     },
+  },
+  loadingStyle: {
+    display: 'flex',
+    justifyContent: 'center',
+  },
+  loginText: {
+    color: '#f50057',
+    fontSize: '30px',
   },
 }))
 
@@ -105,15 +114,16 @@ function InfoCards(): JSX.Element {
     data: coursesData,
   } = useQuery(GET_COURSES_QUERY)
 
-  if (
-    infoLoading ||
-    infoError ||
-    !infoData ||
-    coursesLoading ||
-    coursesError ||
-    !coursesData
-  ) {
-    return <div>Loading...</div>
+  if (infoLoading || coursesLoading) {
+    return (
+      <div className={classes.loadingStyle}>
+        <ReactLoading type="cylon" color="#f50057" height="2%" width="2%" />
+      </div>
+    )
+  }
+
+  if (infoError || coursesError) {
+    return <div className={classes.loginText}>Please log in!</div>
   }
 
   const info = infoData.users[0]
