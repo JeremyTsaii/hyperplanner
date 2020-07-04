@@ -72,7 +72,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   statButton: {
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(0.5),
     height: theme.spacing(4),
     textAlign: 'left',
     color: 'white',
