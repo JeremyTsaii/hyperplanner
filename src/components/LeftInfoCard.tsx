@@ -8,10 +8,16 @@ import InfoModal from './InfoModal'
 const useStyles = makeStyles((theme) => ({
   infoCard: {
     display: 'flex',
-    background: '#3A3F55',
+    background: '#23252e',
     height: theme.spacing(25),
     flexGrow: 1,
     marginRight: theme.spacing(3),
+    [theme.breakpoints.down('xs')]: {
+      marginRight: '0',
+    },
+    [theme.breakpoints.down('sm')]: {
+      marginRight: '0',
+    },
     flexDirection: 'column',
     position: 'relative',
     overflowY: 'auto',
@@ -26,12 +32,32 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(1),
     paddingTop: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '7px',
+      paddingTop: theme.spacing(1),
+      marginBottom: theme.spacing(0.5),
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '15px',
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: '18px',
+    },
   },
   personalInfo: {
     color: '#fff',
     fontSize: '15px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '5px',
+    },
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '12px',
+    },
+    [theme.breakpoints.down('md')]: {
+      fontSize: '14px',
+    },
   },
   editIcon: {
     alignSelf: 'flex-end',

@@ -8,6 +8,15 @@ import YearCards from './components/YearCards'
 import AuthorizedApolloProvider from './components/AuthorizedApolloProvider'
 
 const mainTheme = createMuiTheme({
+  breakpoints: {
+    values: {
+      xs: 300,
+      sm: 600,
+      md: 1110,
+      lg: 1550,
+      xl: 1920,
+    },
+  },
   palette: {
     primary: {
       main: '#f50057',

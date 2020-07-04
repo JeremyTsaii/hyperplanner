@@ -7,18 +7,25 @@ import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
-import FormLabel from '@material-ui/core/FormLabel'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
-    background: '#3A3F55',
+    background: '#23252e',
     height: theme.spacing(25),
+
     flexGrow: 4,
     flexDirection: 'row',
     display: 'flex',
     boxSizing: 'border-box',
     marginLeft: theme.spacing(1),
     justifyContent: 'space-between',
+    [theme.breakpoints.down('xs')]: {
+      flexDirection: 'column-reverse',
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+      marginTop: theme.spacing(3),
+    },
   },
   header: {
     color: '#fff',
@@ -34,6 +41,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     paddingTop: theme.spacing(2),
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: theme.spacing(2),
+    },
   },
   reqButtonSection: {
     display: 'flex',
@@ -43,19 +53,27 @@ const useStyles = makeStyles((theme) => ({
     margin: '0px',
     paddingTop: theme.spacing(2),
     marginRight: theme.spacing(2),
+    [theme.breakpoints.down('xs')]: {
+      marginLeft: theme.spacing(2),
+    },
   },
   reqStatSection: {
     display: 'flex',
-    flexDirection: 'column',
+    flexFlow: 'column wrap',
     maxWidth: '400px',
     width: '400px',
     margin: '0px',
+    [theme.breakpoints.down('xs')]: {
+      width: '90%',
+    },
+    [theme.breakpoints.down('sm')]: {
+      width: '250px',
+    },
   },
   statButton: {
-    marginBottom: theme.spacing(1),
+    marginBottom: theme.spacing(0.5),
     height: theme.spacing(4),
     textAlign: 'left',
-
     color: 'white',
   },
 }))
@@ -76,7 +94,7 @@ function RightStatsCard({
   ELEV,
 }: statsProps): JSX.Element {
   const classes = useStyles()
-  const [value, setValue] = React.useState('graduation')
+  const [value, setValue] = React.useState('grad')
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
@@ -100,9 +118,6 @@ function RightStatsCard({
         </div>
         <div className={classes.reqButtonSection}>
           <FormControl component="fieldset">
-            <FormLabel component="legend" color="primary">
-              Requirements
-            </FormLabel>
             <RadioGroup
               aria-label="req"
               name="req1"
