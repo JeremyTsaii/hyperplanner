@@ -1,4 +1,5 @@
 import React from 'react'
+import Particles from 'react-tsparticles'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Layout from './components/GALayout'
 import './App.css'
@@ -33,6 +34,28 @@ function App(): JSX.Element {
       <ThemeProvider theme={mainTheme}>
         <Layout>
           <div className="App">
+            <Particles
+              params={{
+                fps_limit: 60,
+                background: {
+                  color: '#282c34',
+                },
+                particles: {
+                  links: {
+                    enable: true,
+                  },
+                  move: {
+                    enable: true,
+                  },
+                  size: {
+                    value: 3,
+                  },
+                  opacity: {
+                    value: 0.5,
+                  },
+                },
+              }}
+            />
             <TopBar />
             <InfoCards />
             <YearCards />

@@ -45,7 +45,13 @@ const useStyles = makeStyles((theme) => ({
       transform: 'scale(.8)',
     },
   },
-  brand: { display: 'flex', alignItems: 'center' },
+  brand: {
+    display: 'flex',
+    alignItems: 'center',
+    [theme.breakpoints.down('sm')]: {
+      transform: 'scale(0.6)',
+    },
+  },
 }))
 
 function TopBar(): JSX.Element {

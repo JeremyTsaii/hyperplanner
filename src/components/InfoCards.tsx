@@ -34,7 +34,6 @@ const ELEV = 12
 
 const useStyles = makeStyles(() => ({
   container: {
-    background: '#282c34',
     display: 'flex',
     paddingRight: theme.spacing(4),
     paddingLeft: theme.spacing(4),
@@ -123,7 +122,9 @@ function InfoCards(): JSX.Element {
   }
 
   if (infoError || coursesError) {
-    return <div className={classes.loginText}>Please log in!</div>
+    return (
+      <div className={classes.loginText}>Please log in & enable pop-ups!</div>
+    )
   }
 
   const info = infoData.users[0]
