@@ -52,6 +52,7 @@ const useStyles = makeStyles(() => ({
       paddingLeft: theme.spacing(3),
       flexWrap: 'wrap',
     },
+  },
   loadingStyle: {
     display: 'flex',
     justifyContent: 'center',
