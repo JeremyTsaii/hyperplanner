@@ -122,7 +122,9 @@ function InfoCards(): JSX.Element {
   }
 
   if (infoError || coursesError) {
-    return <div className={classes.loginText}>Please log in!</div>
+    return (
+      <div className={classes.loginText}>Please log in & enable pop-ups!</div>
+    )
   }
 
   const info = infoData.users[0]
