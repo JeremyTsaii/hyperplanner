@@ -44,6 +44,7 @@ function App(): JSX.Element {
                   links: {
                     enable: true,
                     color: '#f50057',
+                    distance: 185,
                   },
                   move: {
                     enable: true,

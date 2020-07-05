@@ -15,7 +15,7 @@ const CircularProgressWithLabel = ({ title, val }: IProps): JSX.Element => {
         <CircularProgress
           variant="static"
           thickness={5.0}
-          size={80}
+          size={90}
           value={val}
         />
         <Box
