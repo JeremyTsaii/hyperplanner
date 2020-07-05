@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '17px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
-    paddingTop: theme.spacing(2.5),
+    paddingTop: theme.spacing(1.5),
+    paddingBottom: theme.spacing(1.5),
     [theme.breakpoints.down('sm')]: {
       marginBottom: theme.spacing(2),
     },
