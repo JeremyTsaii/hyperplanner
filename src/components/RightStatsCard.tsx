@@ -31,18 +31,16 @@ const useStyles = makeStyles((theme) => ({
   reqButtonSection: {
     display: 'flex',
     flexDirection: 'column',
-    maxWidth: '300px',
-    width: '300px',
+    maxWidth: '150px',
+    width: '150px',
     margin: '0px',
-    alignContent: 'space-between',
-    paddingTop: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    paddingTop: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(2),
     },
   },
   statButton: {
-    marginBottom: theme.spacing(0.5),
+    marginBottom: theme.spacing(1),
     height: theme.spacing(4),
     textAlign: 'left',
     color: 'white',
@@ -55,6 +53,16 @@ interface statsProps {
   avgCredits: number
   avgRem: number
   setting: string
+  school: string
+  gradYear: number
+  major: string
+  pe: number
+  majorElec: number
+  depth: number
+  breadth: number
+  humElec: number
+  muddHum: number
+  writ: number
   ELEV: number
 }
 
@@ -64,6 +72,16 @@ function RightStatsCard({
   avgCredits,
   avgRem,
   setting,
+  school,
+  gradYear,
+  major,
+  pe,
+  majorElec,
+  depth,
+  breadth,
+  humElec,
+  muddHum,
+  writ,
   ELEV,
 }: statsProps): JSX.Element {
   const classes = useStyles()
@@ -77,6 +95,9 @@ function RightStatsCard({
   let dynamicStatsComponent = {}
   let dynamicProgressComponent = {}
 
+  const schoolKey = school as keyof typeof Requirements
+  const majorKey = major as keyof typeof Requirements[typeof schoolKey]['major']
+
   if (value === 'grad') {
     const titleArr = [
       'Total Credits:',
@@ -87,11 +108,11 @@ function RightStatsCard({
     const valArr = [totalCredits, creditsRem, avgCredits, avgRem]
     const list = false
     const progressTitleArr = ['Credits', 'PE']
-    const totalRequired = Requirements.hmc.grad
-    const peRequired = Requirements.hmc.pe
+    const totalRequired = Requirements[schoolKey].grad
+    const peRequired = Requirements[schoolKey].pe
     const progressValArr = [
       (totalCredits / totalRequired) * 100,
-      (3 / peRequired) * 100,
+      (pe / peRequired) * 100,
     ]
 
     dynamicStatsComponent = (
@@ -105,9 +126,10 @@ function RightStatsCard({
     )
   } else if (value === 'major') {
     const list = true
-    const checklist = Requirements.hmc.major.bio.major_req
-    const progressTitleArr = ['Checked', 'Electives']
-    const progressValArr = [30, 50]
+    const checklist = Requirements[schoolKey].major[majorKey].major_req
+    const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
+    const progressTitleArr = ['Completed', 'Electives']
+    const progressValArr = [69, (majorElec / majorElecRequired) * 100]
 
     dynamicStatsComponent = (
       <RightStatsCardStats list={list} checklist={checklist} />
@@ -120,9 +142,13 @@ function RightStatsCard({
     )
   } else if (value === 'core') {
     const list = true
-    const checklist = Requirements.hmc.core.pre.courses
-    const progressTitleArr = ['Checked']
-    const progressValArr = [100]
+    let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
+    if (gradYear > 2022) {
+      coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
+    }
+    const checklist = Requirements[schoolKey].core[coreTypeKey].courses
+    const progressTitleArr = ['Completed']
+    const progressValArr = [69]
 
     dynamicStatsComponent = (
       <RightStatsCardStats list={list} checklist={checklist} />
@@ -134,6 +160,13 @@ function RightStatsCard({
       />
     )
   } else if (value === 'hum') {
+    const list = false
+    const depthRequired = Requirements[schoolKey].hum.hum_depth
+    const breadthRequired = Requirements[schoolKey].hum.hum_breadth
+    const elecRequired = Requirements[schoolKey].hum.hum_elec
+    const muddRequired = Requirements[schoolKey].hum.mudd_hum
+    const writRequired = Requirements[schoolKey].hum.writ_inten
+
     const titleArr = [
       'Humanities Depth:',
       'Humanities Breadth:',
@@ -141,8 +174,7 @@ function RightStatsCard({
       'Mudd Hums:',
       'Writing Intensive:',
     ]
-    const valArr = [1, 2, 3, 4, 5]
-    const list = false
+    const valArr = [depth, breadth, humElec, muddHum, writ]
     const progressTitleArr = [
       'Depth',
       'Breadth',
@@ -150,7 +182,13 @@ function RightStatsCard({
       'Mudd Hums',
       'Writing',
     ]
-    const progressValArr = [30, 40, 50, 60, 70]
+    const progressValArr = [
+      (depth / depthRequired) * 100,
+      (breadth / breadthRequired) * 100,
+      (humElec / elecRequired) * 100,
+      (muddHum / muddRequired) * 100,
+      (writ / writRequired) * 100,
+    ]
 
     dynamicStatsComponent = (
       <RightStatsCardStats titleArr={titleArr} valArr={valArr} list={list} />

@@ -5,7 +5,6 @@ import CircularProgressWithLabel from './CircularProgress'
 const useStyles = makeStyles(() => ({
   progressSection: {
     display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
   },
 }))

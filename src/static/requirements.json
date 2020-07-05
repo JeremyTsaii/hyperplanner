@@ -304,11 +304,11 @@
       }
     },
     "hum": {
-      "hum_depth": 12,
-      "hum_breadth": 15,
-      "hum_elec": 6,
-      "mudd_hum": 12,
-      "writ_inten": 3
+      "hum_depth": 4,
+      "hum_breadth": 4,
+      "hum_elec": 2,
+      "mudd_hum": 4,
+      "writ_inten": 1
     },
     "core": {
       "pre": {

@@ -8,7 +8,7 @@ const useStyles = makeStyles((theme) => ({
     fontSize: '17px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
-    paddingTop: theme.spacing(2),
+    paddingTop: theme.spacing(2.5),
     [theme.breakpoints.down('sm')]: {
       marginBottom: theme.spacing(2),
     },
@@ -18,8 +18,8 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: 'column',
     overflowY: 'scroll',
     height: '100%',
-    maxWidth: '400px',
-    width: '400px',
+    maxWidth: '500px',
+    width: '500px',
     margin: '0px',
     [theme.breakpoints.down('xs')]: {
       width: '90%',
