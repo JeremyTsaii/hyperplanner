@@ -187,15 +187,15 @@ function RightStatsCard({
                 className={classes.statButton}
               />
               <FormControlLabel
-                value="core"
-                control={<Radio />}
-                label="Core"
-                className={classes.statButton}
-              />
-              <FormControlLabel
                 value="hum"
                 control={<Radio />}
                 label="Humanities"
+                className={classes.statButton}
+              />
+              <FormControlLabel
+                value="core"
+                control={<Radio />}
+                label="Core"
                 className={classes.statButton}
               />
             </RadioGroup>
