@@ -2,6 +2,14 @@ import React from 'react'
 import CircularProgress from '@material-ui/core/CircularProgress'
 import Box from '@material-ui/core/Box'
 import { Typography } from '@material-ui/core'
+import { makeStyles } from '@material-ui/core/styles'
+
+const useStyles = makeStyles(() => ({
+  progress: {
+    paddingLeft: '10px',
+    paddingRight: '10px',
+  },
+}))
 
 interface IProps {
   title: string
@@ -9,13 +17,15 @@ interface IProps {
 }
 
 const CircularProgressWithLabel = ({ title, val }: IProps): JSX.Element => {
+  const classes = useStyles()
+
   return (
-    <div>
+    <div className={classes.progress}>
       <Box position="relative" display="inline-flex">
         <CircularProgress
           variant="static"
           thickness={5.0}
-          size={90}
+          size={80}
           value={val}
         />
         <Box
