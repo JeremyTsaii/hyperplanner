@@ -28,6 +28,15 @@ const useStyles = makeStyles((theme) => ({
       width: '250px',
     },
   },
+  checklist: {
+    color: 'white',
+    textAlign: 'left',
+    alignItems: 'left',
+    paddingTop: '6px',
+    paddingBottom: '6px',
+    paddingLeft: '4px',
+    paddingRight: '4px',
+  },
 }))
 
 interface IProps {
@@ -69,7 +78,12 @@ const RightStatsCardStats = ({
   return (
     <div className={classes.reqStatSection}>
       {checklist?.map((req, i) => {
-        return <div key={req.code + i}>{`${req.code}: ${req.title}`}</div>
+        return (
+          <div className={classes.checklist} key={req.code + i}>
+            <b>{req.code}</b>
+            {`: ${req.title}`}
+          </div>
+        )
       })}
     </div>
   )
