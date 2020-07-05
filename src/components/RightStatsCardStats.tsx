@@ -1,6 +1,7 @@
 import React from 'react'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import RequirementsList from './RequirementsList'
 
 const useStyles = makeStyles((theme) => ({
   personalStats: {
@@ -78,14 +79,8 @@ const RightStatsCardStats = ({
   // Checklist
   return (
     <div className={classes.reqStatSection}>
-      {checklist?.map((req, i) => {
-        return (
-          <div className={classes.checklist} key={req.code + i}>
-            <b>{req.code}</b>
-            {`: ${req.title}`}
-          </div>
-        )
-      })}
+      {/* eslint-disable-next-line */}
+      <RequirementsList reqs={checklist!} />
     </div>
   )
 }
