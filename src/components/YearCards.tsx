@@ -4,9 +4,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Year from './Year'
 
 const useStyles = makeStyles((theme) => ({
-  outerContainer: {
-    background: '#282c34',
-  },
+  outerContainer: {},
   innerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',

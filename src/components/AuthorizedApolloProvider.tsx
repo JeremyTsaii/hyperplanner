@@ -2,6 +2,7 @@ import React from 'react'
 import { ApolloProvider } from '@apollo/react-hooks'
 import ApolloClient from 'apollo-boost'
 import ReactLoading from 'react-loading'
+import Particles from 'react-tsparticles'
 import { makeStyles } from '@material-ui/core/styles'
 import { useAuth0 } from '../utils/react-auth0-spa'
 import { GRAPHQL_URL } from '../utils/auth_config.json'
@@ -15,7 +16,9 @@ const useStyles = makeStyles(() => ({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: '20%',
+    backgroundColor: '#282c34',
+    width: '100vw',
+    height: '100vh',
   },
 }))
 
@@ -27,6 +30,28 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   if (loading) {
     return (
       <div className={classes.loadingStyle}>
+        <Particles
+          params={{
+            fps_limit: 60,
+            background: {
+              color: '#282c34',
+            },
+            particles: {
+              links: {
+                enable: true,
+              },
+              move: {
+                enable: true,
+              },
+              size: {
+                value: 3,
+              },
+              opacity: {
+                value: 0.5,
+              },
+            },
+          }}
+        />
         <ReactLoading
           type="spinningBubbles"
           color="#f50057"
