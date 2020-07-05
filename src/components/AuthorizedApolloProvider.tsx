@@ -39,6 +39,7 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
             particles: {
               links: {
                 enable: true,
+                color: '#f50057',
               },
               move: {
                 enable: true,
@@ -48,6 +49,12 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
               },
               opacity: {
                 value: 0.5,
+              },
+              color: {
+                value: '#f50057',
+              },
+              collisions: {
+                enable: true,
               },
             },
           }}
