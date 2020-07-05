@@ -61,10 +61,10 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   editIcon: {
-    marginTop: theme.spacing(1.5),
+    marginTop: theme.spacing(1.25),
     alignSelf: 'flex-end',
     margin: '0',
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
 }))
 
