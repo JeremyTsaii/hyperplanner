@@ -153,6 +153,7 @@ function InfoCards(): JSX.Element {
           creditsRem={stats.rem}
           avgCredits={stats.avg}
           avgRem={stats.avgRem}
+          setting="grad"
           ELEV={ELEV}
         />
       </Grid>
