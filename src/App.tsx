@@ -57,9 +57,6 @@ function App(): JSX.Element {
                   color: {
                     value: '#f50057',
                   },
-                  collisions: {
-                    enable: true,
-                  },
                 },
               }}
             />

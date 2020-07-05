@@ -53,9 +53,6 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
               color: {
                 value: '#f50057',
               },
-              collisions: {
-                enable: true,
-              },
             },
           }}
         />
