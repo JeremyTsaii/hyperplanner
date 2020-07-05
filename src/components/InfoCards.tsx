@@ -242,7 +242,7 @@ function InfoCards(): JSX.Element {
           avgRem={stats.avgRem}
           setting="grad"
           school={info.school}
-          gradYear={info.gradYear}
+          gradYear={info.grad_year}
           major={info.major}
           pe={stats.pe}
           majorElec={stats.majorElec}
