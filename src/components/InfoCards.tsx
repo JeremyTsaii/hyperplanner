@@ -142,6 +142,9 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
     })
     num = num * 2 - (sem === 'fall' ? 1 : 0)
 
+    // -1 Edge case where no courses added yet
+    num = num === -1 ? 0 : num
+
     return {
       semesters: num,
       pe,
@@ -174,7 +177,9 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
 
   statsObj.total = totalCredits
   statsObj.rem = requiredCredits - totalCredits
-  statsObj.avg = Number((totalCredits / semesters).toFixed(2))
+  statsObj.avg = Number(
+    (totalCredits / (semesters === 0 ? 1 : semesters)).toFixed(2),
+  )
   statsObj.avgRem = Number((statsObj.rem / (8 - semesters)).toFixed(2))
   statsObj.pe = pe
   statsObj.majorElec = majorElec
