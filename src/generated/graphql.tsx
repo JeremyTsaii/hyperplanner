@@ -860,6 +860,7 @@ export type Users = {
   __typename?: 'users'
   auth0_id: Scalars['String']
   concentration?: Maybe<Scalars['String']>
+  coreChecks?: Maybe<Scalars['String']>
   /** An array relationship */
   courses: Array<Courses>
   /** An aggregated array relationship */
@@ -870,6 +871,7 @@ export type Users = {
   id: Scalars['Int']
   last_seen: Scalars['timestamptz']
   major?: Maybe<Scalars['String']>
+  majorChecks: Scalars['String']
   name: Scalars['String']
   nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
@@ -963,6 +965,7 @@ export type Users_Bool_Exp = {
   _or?: Maybe<Array<Maybe<Users_Bool_Exp>>>
   auth0_id?: Maybe<String_Comparison_Exp>
   concentration?: Maybe<String_Comparison_Exp>
+  coreChecks?: Maybe<String_Comparison_Exp>
   courses?: Maybe<Courses_Bool_Exp>
   created_at?: Maybe<Timestamptz_Comparison_Exp>
   email?: Maybe<String_Comparison_Exp>
@@ -970,6 +973,7 @@ export type Users_Bool_Exp = {
   id?: Maybe<Int_Comparison_Exp>
   last_seen?: Maybe<Timestamptz_Comparison_Exp>
   major?: Maybe<String_Comparison_Exp>
+  majorChecks?: Maybe<String_Comparison_Exp>
   name?: Maybe<String_Comparison_Exp>
   nickname?: Maybe<String_Comparison_Exp>
   school?: Maybe<String_Comparison_Exp>
@@ -991,6 +995,7 @@ export type Users_Inc_Input = {
 export type Users_Insert_Input = {
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
+  coreChecks?: Maybe<Scalars['String']>
   courses?: Maybe<Courses_Arr_Rel_Insert_Input>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
@@ -998,6 +1003,7 @@ export type Users_Insert_Input = {
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
+  majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
@@ -1008,12 +1014,14 @@ export type Users_Max_Fields = {
   __typename?: 'users_max_fields'
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
+  coreChecks?: Maybe<Scalars['String']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
+  majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
@@ -1023,12 +1031,14 @@ export type Users_Max_Fields = {
 export type Users_Max_Order_By = {
   auth0_id?: Maybe<Order_By>
   concentration?: Maybe<Order_By>
+  coreChecks?: Maybe<Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
   last_seen?: Maybe<Order_By>
   major?: Maybe<Order_By>
+  majorChecks?: Maybe<Order_By>
   name?: Maybe<Order_By>
   nickname?: Maybe<Order_By>
   school?: Maybe<Order_By>
@@ -1039,12 +1049,14 @@ export type Users_Min_Fields = {
   __typename?: 'users_min_fields'
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
+  coreChecks?: Maybe<Scalars['String']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
+  majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
@@ -1054,12 +1066,14 @@ export type Users_Min_Fields = {
 export type Users_Min_Order_By = {
   auth0_id?: Maybe<Order_By>
   concentration?: Maybe<Order_By>
+  coreChecks?: Maybe<Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
   last_seen?: Maybe<Order_By>
   major?: Maybe<Order_By>
+  majorChecks?: Maybe<Order_By>
   name?: Maybe<Order_By>
   nickname?: Maybe<Order_By>
   school?: Maybe<Order_By>
@@ -1091,6 +1105,7 @@ export type Users_On_Conflict = {
 export type Users_Order_By = {
   auth0_id?: Maybe<Order_By>
   concentration?: Maybe<Order_By>
+  coreChecks?: Maybe<Order_By>
   courses_aggregate?: Maybe<Courses_Aggregate_Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
@@ -1098,6 +1113,7 @@ export type Users_Order_By = {
   id?: Maybe<Order_By>
   last_seen?: Maybe<Order_By>
   major?: Maybe<Order_By>
+  majorChecks?: Maybe<Order_By>
   name?: Maybe<Order_By>
   nickname?: Maybe<Order_By>
   school?: Maybe<Order_By>
@@ -1115,6 +1131,8 @@ export enum Users_Select_Column {
   /** column name */
   Concentration = 'concentration',
   /** column name */
+  CoreChecks = 'coreChecks',
+  /** column name */
   CreatedAt = 'created_at',
   /** column name */
   Email = 'email',
@@ -1127,6 +1145,8 @@ export enum Users_Select_Column {
   /** column name */
   Major = 'major',
   /** column name */
+  MajorChecks = 'majorChecks',
+  /** column name */
   Name = 'name',
   /** column name */
   Nickname = 'nickname',
@@ -1138,12 +1158,14 @@ export enum Users_Select_Column {
 export type Users_Set_Input = {
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
+  coreChecks?: Maybe<Scalars['String']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
   major?: Maybe<Scalars['String']>
+  majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
@@ -1208,6 +1230,8 @@ export enum Users_Update_Column {
   /** column name */
   Concentration = 'concentration',
   /** column name */
+  CoreChecks = 'coreChecks',
+  /** column name */
   CreatedAt = 'created_at',
   /** column name */
   Email = 'email',
@@ -1219,6 +1243,8 @@ export enum Users_Update_Column {
   LastSeen = 'last_seen',
   /** column name */
   Major = 'major',
+  /** column name */
+  MajorChecks = 'majorChecks',
   /** column name */
   Name = 'name',
   /** column name */
@@ -1278,6 +1304,8 @@ export type Get_InfoQuery = { __typename?: 'query_root' } & {
       | 'concentration'
       | 'nickname'
       | 'auth0_id'
+      | 'majorChecks'
+      | 'coreChecks'
     >
   >
 }
@@ -1314,6 +1342,38 @@ export type Update_UserMutation = { __typename?: 'mutation_root' } & {
             'nickname' | 'school' | 'major' | 'concentration' | 'grad_year'
           >
         >
+      }
+  >
+}
+
+export type Update_Major_ChecksMutationVariables = Exact<{
+  id: Scalars['String']
+  majorChecks: Scalars['String']
+}>
+
+export type Update_Major_ChecksMutation = { __typename?: 'mutation_root' } & {
+  update_users?: Maybe<
+    { __typename?: 'users_mutation_response' } & Pick<
+      Users_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<{ __typename?: 'users' } & Pick<Users, 'majorChecks'>>
+      }
+  >
+}
+
+export type Update_Core_ChecksMutationVariables = Exact<{
+  id: Scalars['String']
+  coreChecks: Scalars['String']
+}>
+
+export type Update_Core_ChecksMutation = { __typename?: 'mutation_root' } & {
+  update_users?: Maybe<
+    { __typename?: 'users_mutation_response' } & Pick<
+      Users_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<{ __typename?: 'users' } & Pick<Users, 'coreChecks'>>
       }
   >
 }
@@ -1406,6 +1466,8 @@ export const Get_InfoDocument = gql`
       concentration
       nickname
       auth0_id
+      majorChecks
+      coreChecks
     }
   }
 `
@@ -1591,6 +1653,120 @@ export type Update_UserMutationResult = ApolloReactCommon.MutationResult<
 export type Update_UserMutationOptions = ApolloReactCommon.BaseMutationOptions<
   Update_UserMutation,
   Update_UserMutationVariables
+>
+export const Update_Major_ChecksDocument = gql`
+  mutation UPDATE_MAJOR_CHECKS($id: String!, $majorChecks: String!) {
+    update_users(
+      where: { auth0_id: { _eq: $id } }
+      _set: { majorChecks: $majorChecks }
+    ) {
+      affected_rows
+      returning {
+        majorChecks
+      }
+    }
+  }
+`
+export type Update_Major_ChecksMutationFn = ApolloReactCommon.MutationFunction<
+  Update_Major_ChecksMutation,
+  Update_Major_ChecksMutationVariables
+>
+
+/**
+ * __useUpdate_Major_ChecksMutation__
+ *
+ * To run a mutation, you first call `useUpdate_Major_ChecksMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_Major_ChecksMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateMajorChecksMutation, { data, loading, error }] = useUpdate_Major_ChecksMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      majorChecks: // value for 'majorChecks'
+ *   },
+ * });
+ */
+export function useUpdate_Major_ChecksMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    Update_Major_ChecksMutation,
+    Update_Major_ChecksMutationVariables
+  >,
+) {
+  return ApolloReactHooks.useMutation<
+    Update_Major_ChecksMutation,
+    Update_Major_ChecksMutationVariables
+  >(Update_Major_ChecksDocument, baseOptions)
+}
+export type Update_Major_ChecksMutationHookResult = ReturnType<
+  typeof useUpdate_Major_ChecksMutation
+>
+export type Update_Major_ChecksMutationResult = ApolloReactCommon.MutationResult<
+  Update_Major_ChecksMutation
+>
+export type Update_Major_ChecksMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  Update_Major_ChecksMutation,
+  Update_Major_ChecksMutationVariables
+>
+export const Update_Core_ChecksDocument = gql`
+  mutation UPDATE_CORE_CHECKS($id: String!, $coreChecks: String!) {
+    update_users(
+      where: { auth0_id: { _eq: $id } }
+      _set: { coreChecks: $coreChecks }
+    ) {
+      affected_rows
+      returning {
+        coreChecks
+      }
+    }
+  }
+`
+export type Update_Core_ChecksMutationFn = ApolloReactCommon.MutationFunction<
+  Update_Core_ChecksMutation,
+  Update_Core_ChecksMutationVariables
+>
+
+/**
+ * __useUpdate_Core_ChecksMutation__
+ *
+ * To run a mutation, you first call `useUpdate_Core_ChecksMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_Core_ChecksMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateCoreChecksMutation, { data, loading, error }] = useUpdate_Core_ChecksMutation({
+ *   variables: {
+ *      id: // value for 'id'
+ *      coreChecks: // value for 'coreChecks'
+ *   },
+ * });
+ */
+export function useUpdate_Core_ChecksMutation(
+  baseOptions?: ApolloReactHooks.MutationHookOptions<
+    Update_Core_ChecksMutation,
+    Update_Core_ChecksMutationVariables
+  >,
+) {
+  return ApolloReactHooks.useMutation<
+    Update_Core_ChecksMutation,
+    Update_Core_ChecksMutationVariables
+  >(Update_Core_ChecksDocument, baseOptions)
+}
+export type Update_Core_ChecksMutationHookResult = ReturnType<
+  typeof useUpdate_Core_ChecksMutation
+>
+export type Update_Core_ChecksMutationResult = ApolloReactCommon.MutationResult<
+  Update_Core_ChecksMutation
+>
+export type Update_Core_ChecksMutationOptions = ApolloReactCommon.BaseMutationOptions<
+  Update_Core_ChecksMutation,
+  Update_Core_ChecksMutationVariables
 >
 export const Update_CourseDocument = gql`
   mutation UPDATE_COURSE(

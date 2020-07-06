@@ -251,6 +251,9 @@ function InfoCards(): JSX.Element {
           humElec={stats.humElec}
           muddHum={stats.muddHum}
           writ={stats.writ}
+          id={info.auth0_id}
+          majorChecks={info.majorChecks}
+          coreChecks={info.coreChecks}
           ELEV={ELEV}
         />
       </Grid>
