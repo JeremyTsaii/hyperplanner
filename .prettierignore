@@ -2,3 +2,5 @@ build/\*
 public/\*
 src/react-app-env.d.ts
 src/serviceWorker.ts
+src/static/defaultMajorChecks.json
+src/static/defaultCoreChecks.json

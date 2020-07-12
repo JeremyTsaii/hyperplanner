@@ -11,7 +11,6 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-// eslint-disable-next-line
 import {
   schools,
   schoolDict,

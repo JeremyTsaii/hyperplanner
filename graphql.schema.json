@@ -5303,6 +5303,18 @@
             "deprecationReason": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "courses",
             "description": "An array relationship",
             "args": [
@@ -5556,6 +5568,22 @@
               "kind": "SCALAR",
               "name": "String",
               "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "majorChecks",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
             },
             "isDeprecated": false,
             "deprecationReason": null
@@ -6120,6 +6148,16 @@
             "defaultValue": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "String_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "courses",
             "description": null,
             "type": {
@@ -6181,6 +6219,16 @@
           },
           {
             "name": "major",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "String_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "type": {
               "kind": "INPUT_OBJECT",
@@ -6299,6 +6347,16 @@
             "defaultValue": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "courses",
             "description": null,
             "type": {
@@ -6360,6 +6418,16 @@
           },
           {
             "name": "major",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -6433,6 +6501,18 @@
             "deprecationReason": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "created_at",
             "description": null,
             "args": [],
@@ -6494,6 +6574,18 @@
           },
           {
             "name": "major",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "args": [],
             "type": {
@@ -6573,6 +6665,16 @@
             "defaultValue": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "created_at",
             "description": null,
             "type": {
@@ -6624,6 +6726,16 @@
           },
           {
             "name": "major",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -6697,6 +6809,18 @@
             "deprecationReason": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "created_at",
             "description": null,
             "args": [],
@@ -6758,6 +6882,18 @@
           },
           {
             "name": "major",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "args": [],
             "type": {
@@ -6837,6 +6973,16 @@
             "defaultValue": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "created_at",
             "description": null,
             "type": {
@@ -6888,6 +7034,16 @@
           },
           {
             "name": "major",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7101,6 +7257,16 @@
             "defaultValue": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "courses_aggregate",
             "description": null,
             "type": {
@@ -7162,6 +7328,16 @@
           },
           {
             "name": "major",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7251,6 +7427,12 @@
             "deprecationReason": null
           },
           {
+            "name": "coreChecks",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "created_at",
             "description": "column name",
             "isDeprecated": false,
@@ -7282,6 +7464,12 @@
           },
           {
             "name": "major",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "majorChecks",
             "description": "column name",
             "isDeprecated": false,
             "deprecationReason": null
@@ -7334,6 +7522,16 @@
             "defaultValue": null
           },
           {
+            "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "created_at",
             "description": null,
             "type": {
@@ -7385,6 +7583,16 @@
           },
           {
             "name": "major",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "majorChecks",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -7713,6 +7921,12 @@
             "deprecationReason": null
           },
           {
+            "name": "coreChecks",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "created_at",
             "description": "column name",
             "isDeprecated": false,
@@ -7744,6 +7958,12 @@
           },
           {
             "name": "major",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "majorChecks",
             "description": "column name",
             "isDeprecated": false,
             "deprecationReason": null

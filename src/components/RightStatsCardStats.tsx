@@ -44,21 +44,33 @@ const useStyles = makeStyles((theme) => ({
 interface IProps {
   titleArr?: string[]
   valArr?: number[]
-  list: boolean
+  isList: boolean
+  isMajor?: boolean
   checklist?: { code: string; title: string }[]
+  id?: string
+  coreChecks?: string
+  gradYear?: number
+  majorChecks?: string
+  major?: string
 }
 
 const RightStatsCardStats = ({
   titleArr,
   valArr,
-  list,
+  isList,
+  isMajor,
   checklist,
+  id,
+  coreChecks,
+  gradYear,
+  majorChecks,
+  major,
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
   const zip = (a1: string[], a2: number[]) => a1.map((x, i) => [x, a2[i]])
 
-  if (!list) {
+  if (!isList) {
     // Stats
     // eslint-disable-next-line
     const zippedStats = zip(titleArr!, valArr!)
@@ -77,10 +89,32 @@ const RightStatsCardStats = ({
     )
   }
   // Checklist
+  if (isMajor) {
+    return (
+      <div className={classes.reqStatSection}>
+        {/* eslint-disable */}
+        <RequirementsList
+          isMajor
+          reqs={checklist!}
+          id={id!}
+          majorChecks={majorChecks!}
+          major={major!}
+        />
+        {/* eslint-enable */}
+      </div>
+    )
+  }
   return (
     <div className={classes.reqStatSection}>
-      {/* eslint-disable-next-line */}
-      <RequirementsList reqs={checklist!} />
+      {/* eslint-disable */}
+      <RequirementsList
+        isMajor={false}
+        reqs={checklist!}
+        id={id!}
+        coreChecks={coreChecks!}
+        gradYear={gradYear!}
+      />
+      {/* eslint-enable */}
     </div>
   )
 }
