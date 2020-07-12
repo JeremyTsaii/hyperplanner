@@ -1,6 +1,7 @@
 {
   "hmc": {
     "grad": 128,
+    "pe": 3,
     "major": {
       "bio": {
         "major_req": [
@@ -303,63 +304,62 @@
       }
     },
     "hum": {
-      "hum_depth": 12,
-      "hum_breadth": 15,
-      "hum_elec": 6,
-      "mudd_hum": 12,
-      "writ_inten": 3
+      "hum_depth": 4,
+      "hum_breadth": 4,
+      "hum_elec": 2,
+      "mudd_hum": 4,
+      "writ_inten": 1
     },
     "core": {
       "pre": {
         "courses": [
-          { "name": "BIOL023", "title": "Biology Laboratory" },
-          { "name": "BIOL052", "title": "Introduction to Biology" },
-          { "name": "CHEM023A", "title": "Chemistry in the Modern World I" },
-          { "name": "CHEM023B", "title": "Chemistry in the Modern World II" },
-          { "name": "CHEM024", "title": "Chemistry Laboratory" },
-          { "name": "CSCI005", "title": "Introduction to Computer Science" },
-          { "name": "ENGR079", "title": "Introduction to Engineering Systems" },
-          { "name": "HSA010", "title": "Critical Inquiry" },
-          { "name": "MATH030", "title": "Calculus" },
-          { "name": "MATH035", "title": "Probability and Statistics" },
-          { "name": "MATH040", "title": "Introduction to Linear Algebra" },
+          { "code": "BIOL023", "title": "Biology Laboratory" },
+          { "code": "BIOL052", "title": "Introduction to Biology" },
+          { "code": "CHEM023A", "title": "Chemistry in the Modern World I" },
+          { "code": "CHEM023B", "title": "Chemistry in the Modern World II" },
+          { "code": "CHEM024", "title": "Chemistry Laboratory" },
+          { "code": "CSCI005", "title": "Introduction to Computer Science" },
+          { "code": "ENGR079", "title": "Introduction to Engineering Systems" },
+          { "code": "HSA010", "title": "Critical Inquiry" },
+          { "code": "MATH030", "title": "Calculus" },
+          { "code": "MATH035", "title": "Probability and Statistics" },
+          { "code": "MATH040", "title": "Introduction to Linear Algebra" },
           {
-            "name": "MATH045",
+            "code": "MATH045",
             "title": "Introduction to Differential Equations"
           },
-          { "name": "MATH060", "title": "Multivariable Calculus" },
+          { "code": "MATH060", "title": "Multivariable Calculus" },
           {
-            "name": "MATH065",
+            "code": "MATH065",
             "title": "Differential Equations/Linear Algebra"
           },
-          { "name": "PHYS023", "title": "Special Relativity" },
-          { "name": "PHYS024", "title": "Mechanics and Wave Motion" },
-          { "name": "PHYS050", "title": "Physics Laboratory" },
-          { "name": "PHYS051", "title": "Electromagnetic Theory and Optics" },
-          { "name": "WRIT001", "title": "Introduction to Academic Writing" }
+          { "code": "PHYS023", "title": "Special Relativity" },
+          { "code": "PHYS024", "title": "Mechanics and Wave Motion" },
+          { "code": "PHYS050", "title": "Physics Laboratory" },
+          { "code": "PHYS051", "title": "Electromagnetic Theory and Optics" },
+          { "code": "WRIT001", "title": "Introduction to Academic Writing" }
         ]
       },
       "post": {
         "courses": [
-          { "name": "BIOL023", "title": "Biology Laboratory" },
-          { "name": "BIOL052", "title": "Introduction to Biology" },
-          { "name": "CHEM023A", "title": "Chemistry in the Modern World I" },
-          { "name": "CHEM023B", "title": "Chemistry in the Modern World II" },
-          { "name": "CHEM024", "title": "Chemistry Laboratory" },
-          { "name": "CSCI005", "title": "Introduction to Computer Science" },
-          { "name": "ENR079", "title": "Introduction to Engineering Systems" },
-          { "name": "HSA010", "title": "Critical Inquiry" },
-          { "name": "MATH019", "title": "Calculus" },
-          { "name": "MATH073", "title": "Linear Algebra" },
-          { "name": "MATH082", "title": "Differential Equations" },
-          { "name": "PHYS023", "title": "Special Relativity" },
-          { "name": "PHYS024", "title": "Mechanics and Wave Motion" },
-          { "name": "PHYS050", "title": "Physics Laboratory" },
-          { "name": "PHYS051", "title": "Electromagnetic Theory and Optics" },
-          { "name": "WRIT001", "title": "Introduction to Academic Writing" }
+          { "code": "BIOL023", "title": "Biology Laboratory" },
+          { "code": "BIOL052", "title": "Introduction to Biology" },
+          { "code": "CHEM023A", "title": "Chemistry in the Modern World I" },
+          { "code": "CHEM023B", "title": "Chemistry in the Modern World II" },
+          { "code": "CHEM024", "title": "Chemistry Laboratory" },
+          { "code": "CSCI005", "title": "Introduction to Computer Science" },
+          { "code": "ENR079", "title": "Introduction to Engineering Systems" },
+          { "code": "HSA010", "title": "Critical Inquiry" },
+          { "code": "MATH019", "title": "Calculus" },
+          { "code": "MATH073", "title": "Linear Algebra" },
+          { "code": "MATH082", "title": "Differential Equations" },
+          { "code": "PHYS023", "title": "Special Relativity" },
+          { "code": "PHYS024", "title": "Mechanics and Wave Motion" },
+          { "code": "PHYS050", "title": "Physics Laboratory" },
+          { "code": "PHYS051", "title": "Electromagnetic Theory and Optics" },
+          { "code": "WRIT001", "title": "Introduction to Academic Writing" }
         ]
-      },
-      "pe": 3
+      }
     }
   }
 }

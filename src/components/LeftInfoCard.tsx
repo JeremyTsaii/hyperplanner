@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     color: '#fff',
-    fontSize: '21px',
+    fontSize: '20px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     marginBottom: theme.spacing(1),
@@ -42,29 +42,29 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '15px',
     },
     [theme.breakpoints.down('md')]: {
-      fontSize: '18px',
+      fontSize: '20px',
     },
   },
   personalInfo: {
     color: '#fff',
-    fontSize: '15px',
+    fontSize: '18px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
-      fontSize: '5px',
+      fontSize: '7px',
     },
     [theme.breakpoints.down('sm')]: {
-      fontSize: '12px',
+      fontSize: '14px',
     },
     [theme.breakpoints.down('md')]: {
-      fontSize: '14px',
+      fontSize: '17px',
     },
   },
   editIcon: {
-    marginTop: theme.spacing(1.5),
+    marginTop: theme.spacing(1.25),
     alignSelf: 'flex-end',
     margin: '0',
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
   },
 }))
 

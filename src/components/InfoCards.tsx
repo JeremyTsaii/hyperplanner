@@ -19,6 +19,13 @@ type Stats = {
   rem: number
   avg: number
   avgRem: number
+  pe: number
+  majorElec: number
+  depth: number
+  breadth: number
+  humElec: number
+  muddHum: number
+  writ: number
 }
 
 let theme = createMuiTheme({
@@ -63,13 +70,64 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
+// Calculate stats needed for graduation, major, humanities, and core requirements
+// Graduation: total credits, credits remaining, average credits per semester, remaining average credits, pe
+// Major: electives
+// Humanities: depth, breadth, electives, mudd hums, writing intensives
+// NOTE: Major electives in credits while depth, breadth, hum electgives, mudd hums, and writing intensives in courses
 const calculateStats = (school: string, courses: Courses[]): Stats => {
-  // Find number of completed semesters for average calculations
-  // Looks at greatest semester that is not a summer
-  const findNumSemesters = (courseArr: Courses[]): number => {
+  // Aggregate function that calculates multipate statistics to prevent looping through courses multiple times
+  const getCourseStats = (
+    courseArr: Courses[],
+  ): {
+    pe: number
+    majorElec: number
+    depth: number
+    breadth: number
+    humElec: number
+    muddHum: number
+    writ: number
+    semesters: number
+  } => {
+    // Counters for stats
+    let pe = 0
+    let majorElec = 0
+    let depth = 0
+    let breadth = 0
+    let humElec = 0
+    let muddHum = 0
+    let writ = 0
+
+    // Find number of completed semesters for average calculations
+    // Looks at greatest semester that is not a summer
     let num = 0
     let sem = 'fall'
     courseArr.forEach((course) => {
+      if (course.writ_inten) {
+        writ += 1
+      }
+
+      if (course.type === 'pe') {
+        pe += course.credits
+      } else if (course.type === 'major_elec') {
+        majorElec += course.credits
+      } else if (course.type === 'hum_depth') {
+        depth += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      } else if (course.type === 'hum_breadth') {
+        breadth += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      } else if (course.type === 'hum_elec') {
+        humElec += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      }
+
       const lastChar = course.term.slice(-1)
       const lastSem = course.term.slice(0, -1)
       const numLast = parseInt(lastChar, 10)
@@ -83,8 +141,19 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
       }
     })
     num = num * 2 - (sem === 'fall' ? 1 : 0)
-    return num
+
+    return {
+      semesters: num,
+      pe,
+      majorElec,
+      depth,
+      breadth,
+      humElec,
+      muddHum,
+      writ,
+    }
   }
+
   const statsObj = {} as Stats
   const key = school as keyof typeof Requirements
   const requiredCredits = Requirements[key].grad
@@ -92,12 +161,29 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
     (count: number, course: Courses) => count + course.credits,
     0,
   )
-  const semesters = findNumSemesters(courses)
+  const {
+    semesters,
+    pe,
+    majorElec,
+    depth,
+    breadth,
+    humElec,
+    muddHum,
+    writ,
+  } = getCourseStats(courses)
 
   statsObj.total = totalCredits
   statsObj.rem = requiredCredits - totalCredits
   statsObj.avg = Number((totalCredits / semesters).toFixed(2))
   statsObj.avgRem = Number((statsObj.rem / (8 - semesters)).toFixed(2))
+  statsObj.pe = pe
+  statsObj.majorElec = majorElec
+  statsObj.depth = depth
+  statsObj.breadth = breadth
+  statsObj.humElec = humElec
+  statsObj.muddHum = muddHum
+  statsObj.writ = writ
+
   return statsObj
 }
 
@@ -154,6 +240,17 @@ function InfoCards(): JSX.Element {
           creditsRem={stats.rem}
           avgCredits={stats.avg}
           avgRem={stats.avgRem}
+          setting="grad"
+          school={info.school}
+          gradYear={info.grad_year}
+          major={info.major}
+          pe={stats.pe}
+          majorElec={stats.majorElec}
+          depth={stats.depth}
+          breadth={stats.breadth}
+          humElec={stats.humElec}
+          muddHum={stats.muddHum}
+          writ={stats.writ}
           ELEV={ELEV}
         />
       </Grid>

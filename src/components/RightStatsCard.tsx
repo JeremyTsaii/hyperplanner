@@ -1,18 +1,19 @@
-import React from 'react'
-import Paper from '@material-ui/core/Paper'
-import Grid from '@material-ui/core/Grid'
-import { Typography } from '@material-ui/core'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import Radio from '@material-ui/core/Radio'
 import RadioGroup from '@material-ui/core/RadioGroup'
 import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
+import Paper from '@material-ui/core/Paper'
+import Grid from '@material-ui/core/Grid'
+import RightStatsCardStats from './RightStatsCardStats'
+import RightStatsCardProgress from './RightStatsCardProgress'
+import Requirements from '../static/requirements.json'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
     background: '#23252e',
     height: theme.spacing(25),
-
     flexGrow: 4,
     flexDirection: 'row',
     display: 'flex',
@@ -27,52 +28,19 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(3),
     },
   },
-  header: {
-    color: '#fff',
-    fontSize: '25px',
-    textAlign: 'left',
-    marginLeft: theme.spacing(2),
-    marginBottom: theme.spacing(1),
-    paddingTop: theme.spacing(2),
-  },
-  personalStats: {
-    color: '#fff',
-    fontSize: '17px',
-    textAlign: 'left',
-    marginLeft: theme.spacing(2),
-    paddingTop: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.spacing(2),
-    },
-  },
   reqButtonSection: {
     display: 'flex',
     flexDirection: 'column',
-    maxWidth: '300px',
-    width: '300px',
+    maxWidth: '150px',
+    width: '150px',
     margin: '0px',
-    alignContent: 'space-between',
-    paddingTop: theme.spacing(2),
-    marginRight: theme.spacing(2),
+    paddingTop: theme.spacing(3),
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(2),
     },
   },
-  reqStatSection: {
-    display: 'flex',
-    flexFlow: 'column wrap',
-    maxWidth: '400px',
-    width: '400px',
-    margin: '0px',
-    [theme.breakpoints.down('xs')]: {
-      width: '90%',
-    },
-    [theme.breakpoints.down('sm')]: {
-      width: '250px',
-    },
-  },
   statButton: {
-    marginBottom: theme.spacing(0.5),
+    marginBottom: theme.spacing(1),
     height: theme.spacing(4),
     textAlign: 'left',
     color: 'white',
@@ -84,6 +52,17 @@ interface statsProps {
   creditsRem: number
   avgCredits: number
   avgRem: number
+  setting: string
+  school: string
+  gradYear: number
+  major: string
+  pe: number
+  majorElec: number
+  depth: number
+  breadth: number
+  humElec: number
+  muddHum: number
+  writ: number
   ELEV: number
 }
 
@@ -92,31 +71,141 @@ function RightStatsCard({
   creditsRem,
   avgCredits,
   avgRem,
+  setting,
+  school,
+  gradYear,
+  major,
+  pe,
+  majorElec,
+  depth,
+  breadth,
+  humElec,
+  muddHum,
+  writ,
   ELEV,
 }: statsProps): JSX.Element {
   const classes = useStyles()
-  const [value, setValue] = React.useState('grad')
+
+  const [value, setValue] = useState(setting)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
   }
+
+  let dynamicStatsComponent = {}
+  let dynamicProgressComponent = {}
+
+  const schoolKey = school as keyof typeof Requirements
+  const majorKey = major as keyof typeof Requirements[typeof schoolKey]['major']
+
+  if (value === 'grad') {
+    const titleArr = [
+      'Total Credits:',
+      'Credits Remaining:',
+      'Average Credits per Semester:',
+      'Remaining Average Credits:',
+    ]
+    const valArr = [totalCredits, creditsRem, avgCredits, avgRem]
+    const list = false
+    const progressTitleArr = ['Credits', 'PE']
+    const totalRequired = Requirements[schoolKey].grad
+    const peRequired = Requirements[schoolKey].pe
+    const progressValArr = [
+      (totalCredits / totalRequired) * 100,
+      (pe / peRequired) * 100,
+    ]
+
+    dynamicStatsComponent = (
+      <RightStatsCardStats titleArr={titleArr} valArr={valArr} list={list} />
+    )
+    dynamicProgressComponent = (
+      <RightStatsCardProgress
+        progressTitleArr={progressTitleArr}
+        progressValArr={progressValArr}
+      />
+    )
+  } else if (value === 'major') {
+    const list = true
+    const checklist = Requirements[schoolKey].major[majorKey].major_req
+    const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
+    const progressTitleArr = ['Completed', 'Electives']
+    const progressValArr = [69, (majorElec / majorElecRequired) * 100]
+
+    dynamicStatsComponent = (
+      <RightStatsCardStats list={list} checklist={checklist} />
+    )
+    dynamicProgressComponent = (
+      <RightStatsCardProgress
+        progressTitleArr={progressTitleArr}
+        progressValArr={progressValArr}
+      />
+    )
+  } else if (value === 'core') {
+    const list = true
+    let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
+    if (gradYear > 2022) {
+      coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
+    }
+    const checklist = Requirements[schoolKey].core[coreTypeKey].courses
+    const progressTitleArr = ['Completed']
+    const progressValArr = [69]
+
+    dynamicStatsComponent = (
+      <RightStatsCardStats list={list} checklist={checklist} />
+    )
+    dynamicProgressComponent = (
+      <RightStatsCardProgress
+        progressTitleArr={progressTitleArr}
+        progressValArr={progressValArr}
+      />
+    )
+  } else if (value === 'hum') {
+    const list = false
+    const depthRequired = Requirements[schoolKey].hum.hum_depth
+    const breadthRequired = Requirements[schoolKey].hum.hum_breadth
+    const elecRequired = Requirements[schoolKey].hum.hum_elec
+    const muddRequired = Requirements[schoolKey].hum.mudd_hum
+    const writRequired = Requirements[schoolKey].hum.writ_inten
+
+    const titleArr = [
+      'Humanities Depth:',
+      'Humanities Breadth:',
+      'Humanities Electives:',
+      'Mudd Hums:',
+      'Writing Intensive:',
+    ]
+    const valArr = [depth, breadth, humElec, muddHum, writ]
+    const progressTitleArr = [
+      'Depth',
+      'Breadth',
+      'Electives',
+      'Mudd Hums',
+      'Writing',
+    ]
+    const progressValArr = [
+      (depth / depthRequired) * 100,
+      (breadth / breadthRequired) * 100,
+      (humElec / elecRequired) * 100,
+      (muddHum / muddRequired) * 100,
+      (writ / writRequired) * 100,
+    ]
+
+    dynamicStatsComponent = (
+      <RightStatsCardStats titleArr={titleArr} valArr={valArr} list={list} />
+    )
+    dynamicProgressComponent = (
+      <RightStatsCardProgress
+        progressTitleArr={progressTitleArr}
+        progressValArr={progressValArr}
+      />
+    )
+  }
+
   return (
     <Grid item>
       <Paper elevation={ELEV} className={classes.statsCard}>
-        <div className={classes.reqStatSection}>
-          <Typography className={classes.personalStats}>
-            <b>Total Credits:</b> {totalCredits}
-          </Typography>
-          <Typography className={classes.personalStats}>
-            <b>Credits Remaining:</b> {creditsRem}
-          </Typography>
-          <Typography className={classes.personalStats}>
-            <b>Average Credits per Semester:</b> {avgCredits}
-          </Typography>
-          <Typography className={classes.personalStats}>
-            <b>Remaining Average Credits:</b> {avgRem}
-          </Typography>
-        </div>
+        {dynamicStatsComponent}
+        {dynamicProgressComponent}
         <div className={classes.reqButtonSection}>
           <FormControl component="fieldset">
             <RadioGroup
@@ -137,15 +226,15 @@ function RightStatsCard({
                 className={classes.statButton}
               />
               <FormControlLabel
-                value="core"
+                value="hum"
                 control={<Radio />}
-                label="Core"
+                label="Humanities"
                 className={classes.statButton}
               />
               <FormControlLabel
-                value="humanities"
+                value="core"
                 control={<Radio />}
-                label="Humanities"
+                label="Core"
                 className={classes.statButton}
               />
             </RadioGroup>
