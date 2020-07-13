@@ -19,9 +19,6 @@ import {
 } from '../generated/graphql'
 /* eslint-enable */
 
-// Constant used for field spacing
-const SPACING = 3
-
 // Color constants
 const PINK = '#e91e63' // Major (Requirement)
 const LPINK = '#f06292' // Major (Elective)
@@ -141,7 +138,6 @@ function Course({
       placeholder = 'M'
     }
   }
-
   return (
     <Paper
       style={{
@@ -155,8 +151,10 @@ function Course({
         justify="space-between"
         style={{
           display: 'flex',
-        }}>
-        <Grid item xs={SPACING} zeroMinWidth>
+        }}
+        xs={12}
+        zeroMinWidth>
+        <Grid item xs={3} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.codeText} noWrap>
               {code}
@@ -184,7 +182,7 @@ function Course({
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item>
+        <Grid item xs={1} zeroMinWidth>
           <EditModal
             codeProp={code}
             titleProp={title}
@@ -195,7 +193,7 @@ function Course({
             termProp={term}
           />
         </Grid>
-        <Grid item>
+        <Grid item xs={1} zeroMinWidth>
           <IconButton
             edge="end"
             aria-label="delete"

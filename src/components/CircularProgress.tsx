@@ -4,10 +4,22 @@ import Box from '@material-ui/core/Box'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   progress: {
     paddingLeft: '10px',
     paddingRight: '10px',
+  },
+  bottom: {
+    color: '#0C0D11',
+    position: 'relative',
+  },
+  top: {
+    animationDuration: '550ms',
+    position: 'absolute',
+    left: 0,
+  },
+  progressText: {
+    fontSize: theme.spacing(1.5),
   },
 }))
 
@@ -24,6 +36,15 @@ const CircularProgressWithLabel = ({ title, val }: IProps): JSX.Element => {
       <Box position="relative" display="inline-flex">
         <CircularProgress
           variant="static"
+          className={classes.bottom}
+          size={80}
+          thickness={5}
+          value={100}
+        />
+        <CircularProgress
+          variant="static"
+          disableShrink
+          className={classes.top}
           thickness={5.0}
           size={80}
           value={val}
@@ -43,7 +64,9 @@ const CircularProgressWithLabel = ({ title, val }: IProps): JSX.Element => {
             color="secondary">{`${Math.round(val)}%`}</Typography>
         </Box>
       </Box>
-      <div style={{ color: 'white' }}>{title}</div>
+      <div className={classes.progressText} style={{ color: 'white' }}>
+        {title}
+      </div>
     </div>
   )
 }

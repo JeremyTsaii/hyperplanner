@@ -261,25 +261,25 @@ function RightStatsCard({
               onChange={handleChange}>
               <FormControlLabel
                 value="grad"
-                control={<Radio />}
+                control={<Radio color="primary" />}
                 label="Graduation"
                 className={classes.statButton}
               />
               <FormControlLabel
                 value="major"
-                control={<Radio />}
+                control={<Radio color="primary" />}
                 label="Major"
                 className={classes.statButton}
               />
               <FormControlLabel
                 value="hum"
-                control={<Radio />}
+                control={<Radio color="primary" />}
                 label="Humanities"
                 className={classes.statButton}
               />
               <FormControlLabel
                 value="core"
-                control={<Radio />}
+                control={<Radio color="primary" />}
                 label="Core"
                 className={classes.statButton}
               />

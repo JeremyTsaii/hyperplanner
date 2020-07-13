@@ -33,6 +33,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: theme.spacing(1),
       width: '97%',
     },
+    [theme.breakpoints.down('md')]: {
+      marginRight: theme.spacing(0.8),
+    },
   },
   semesterHeader: {
     display: 'flex',
@@ -51,6 +54,7 @@ const useStyles = makeStyles((theme) => ({
   paper: {
     background: '#23252e',
     margin: theme.spacing(1),
+    marginRight: theme.spacing(0),
   },
   semesterButton: {
     color: '#white',

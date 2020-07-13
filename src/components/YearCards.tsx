@@ -22,8 +22,8 @@ const useStyles = makeStyles((theme) => ({
       marginRight: theme.spacing(2),
     },
     [theme.breakpoints.down('md')]: {
-      marginRight: theme.spacing(2),
-      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(0.5),
+      marginLeft: theme.spacing(0.5),
     },
     [theme.breakpoints.down('lg')]: {
       marginRight: theme.spacing(2),
