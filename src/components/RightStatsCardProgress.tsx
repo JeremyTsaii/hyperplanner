@@ -6,6 +6,7 @@ const useStyles = makeStyles(() => ({
   progressSection: {
     display: 'flex',
     alignItems: 'center',
+    justifyItems: 'center',
   },
 }))
 
