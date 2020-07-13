@@ -10,9 +10,9 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     paddingTop: theme.spacing(1.5),
-    paddingBottom: theme.spacing(1.5),
+    paddingBottom: theme.spacing(0),
     [theme.breakpoints.down('sm')]: {
-      marginBottom: theme.spacing(2),
+      marginBottom: theme.spacing(0.5),
     },
   },
   reqStatSection: {
