@@ -63,6 +63,9 @@ interface statsProps {
   humElec: number
   muddHum: number
   writ: number
+  id: string
+  majorChecks: string
+  coreChecks: string
   ELEV: number
 }
 
@@ -82,6 +85,9 @@ function RightStatsCard({
   humElec,
   muddHum,
   writ,
+  id,
+  majorChecks,
+  coreChecks,
   ELEV,
 }: statsProps): JSX.Element {
   const classes = useStyles()
@@ -92,11 +98,32 @@ function RightStatsCard({
     setValue((event.target as HTMLInputElement).value)
   }
 
+  const calculatePercentageChecked = (arr: number[]): number => {
+    // Calculate percentage checked
+    let len = 0
+    let checked = 0
+    arr.forEach((num: number) => {
+      len += 1
+      if (num) {
+        checked += 1
+      }
+    })
+
+    return (checked / len) * 100
+  }
+
+  const capPercentage = (val: number): number => {
+    return val > 100 ? 100 : val
+  }
+
   let dynamicStatsComponent = {}
   let dynamicProgressComponent = {}
 
   const schoolKey = school as keyof typeof Requirements
   const majorKey = major as keyof typeof Requirements[typeof schoolKey]['major']
+
+  const jsonMajorChecks = JSON.parse(majorChecks)
+  const jsonCoreChecks = JSON.parse(coreChecks)
 
   if (value === 'grad') {
     const titleArr = [
@@ -106,17 +133,16 @@ function RightStatsCard({
       'Remaining Average Credits:',
     ]
     const valArr = [totalCredits, creditsRem, avgCredits, avgRem]
-    const list = false
     const progressTitleArr = ['Credits', 'PE']
     const totalRequired = Requirements[schoolKey].grad
     const peRequired = Requirements[schoolKey].pe
     const progressValArr = [
-      (totalCredits / totalRequired) * 100,
-      (pe / peRequired) * 100,
+      capPercentage((totalCredits / totalRequired) * 100),
+      capPercentage((pe / peRequired) * 100),
     ]
 
     dynamicStatsComponent = (
-      <RightStatsCardStats titleArr={titleArr} valArr={valArr} list={list} />
+      <RightStatsCardStats titleArr={titleArr} valArr={valArr} isList={false} />
     )
     dynamicProgressComponent = (
       <RightStatsCardProgress
@@ -125,14 +151,26 @@ function RightStatsCard({
       />
     )
   } else if (value === 'major') {
-    const list = true
     const checklist = Requirements[schoolKey].major[majorKey].major_req
     const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
+    const majorKey2 = major as keyof typeof jsonMajorChecks
+    const majorChecksArr = jsonMajorChecks[majorKey2]
+
     const progressTitleArr = ['Completed', 'Electives']
-    const progressValArr = [69, (majorElec / majorElecRequired) * 100]
+    const progressValArr = [
+      calculatePercentageChecked(majorChecksArr),
+      capPercentage((majorElec / majorElecRequired) * 100),
+    ]
 
     dynamicStatsComponent = (
-      <RightStatsCardStats list={list} checklist={checklist} />
+      <RightStatsCardStats
+        isMajor
+        isList
+        checklist={checklist}
+        id={id}
+        major={major}
+        majorChecks={majorChecks}
+      />
     )
     dynamicProgressComponent = (
       <RightStatsCardProgress
@@ -141,17 +179,26 @@ function RightStatsCard({
       />
     )
   } else if (value === 'core') {
-    const list = true
     let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
+    let coreTypeKey2 = 'pre' as keyof typeof jsonCoreChecks
     if (gradYear > 2022) {
       coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
+      coreTypeKey2 = 'post' as keyof typeof jsonCoreChecks
     }
     const checklist = Requirements[schoolKey].core[coreTypeKey].courses
+    const coreChecksArr = jsonCoreChecks[coreTypeKey2]
     const progressTitleArr = ['Completed']
-    const progressValArr = [69]
+    const progressValArr = [calculatePercentageChecked(coreChecksArr)]
 
     dynamicStatsComponent = (
-      <RightStatsCardStats list={list} checklist={checklist} />
+      <RightStatsCardStats
+        isMajor={false}
+        isList
+        checklist={checklist}
+        id={id}
+        gradYear={gradYear}
+        coreChecks={coreChecks}
+      />
     )
     dynamicProgressComponent = (
       <RightStatsCardProgress
@@ -160,7 +207,6 @@ function RightStatsCard({
       />
     )
   } else if (value === 'hum') {
-    const list = false
     const depthRequired = Requirements[schoolKey].hum.hum_depth
     const breadthRequired = Requirements[schoolKey].hum.hum_breadth
     const elecRequired = Requirements[schoolKey].hum.hum_elec
@@ -183,15 +229,15 @@ function RightStatsCard({
       'Writing',
     ]
     const progressValArr = [
-      (depth / depthRequired) * 100,
-      (breadth / breadthRequired) * 100,
-      (humElec / elecRequired) * 100,
-      (muddHum / muddRequired) * 100,
-      (writ / writRequired) * 100,
+      capPercentage((depth / depthRequired) * 100),
+      capPercentage((breadth / breadthRequired) * 100),
+      capPercentage((humElec / elecRequired) * 100),
+      capPercentage((muddHum / muddRequired) * 100),
+      capPercentage((writ / writRequired) * 100),
     ]
 
     dynamicStatsComponent = (
-      <RightStatsCardStats titleArr={titleArr} valArr={valArr} list={list} />
+      <RightStatsCardStats titleArr={titleArr} valArr={valArr} isList={false} />
     )
     dynamicProgressComponent = (
       <RightStatsCardProgress
