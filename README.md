@@ -1,5 +1,5 @@
 # HyperPlanner
-![Banner](https://i.ibb.co/DtVLkCk/page.png)
+![Banner](https://iili.io/dKj5lf.png)
 
 ### The Web App for planning/reviewing all 4 years of college!
 
