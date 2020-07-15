@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(70),
     flexGrow: 1,
     overflowY: 'scroll',
+    overflowX: 'hidden',
     scrollbarWidth: 'thin',
     scrollbarColor: '#282c34 #3a3f55',
     [theme.breakpoints.down('xs')]: {
@@ -32,9 +33,6 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('sm')]: {
       marginTop: theme.spacing(1),
       width: '97%',
-    },
-    [theme.breakpoints.down('md')]: {
-      marginRight: theme.spacing(0.8),
     },
   },
   semesterHeader: {
