@@ -48,15 +48,27 @@ theme = responsiveFontSizes(theme)
 const useStyles = makeStyles(() => ({
   codeText: {
     color: '#FFFFFF',
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.spacing(1.25),
+    },
   },
   titleText: {
     color: '#FFFFFF',
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.spacing(1.25),
+    },
   },
   creditText: {
     color: '#FFFFFF',
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.spacing(1.25),
+    },
   },
   writText: {
     color: '#FFFFFF',
+    [theme.breakpoints.down('md')]: {
+      fontSize: theme.spacing(1.25),
+    },
   },
   courseButton: {
     alignItems: 'flex-end',
