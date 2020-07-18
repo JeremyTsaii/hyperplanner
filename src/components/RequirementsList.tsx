@@ -155,7 +155,7 @@ const RequirementsList = ({
               disableTypography
               primary={
                 <Typography className={classes.text}>
-                  {`${req.code}: ${req.title}`}
+                  <b>{req.code}</b>: {req.title}
                 </Typography>
               }
             />
