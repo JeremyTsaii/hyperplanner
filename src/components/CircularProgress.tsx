@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   top: {
-    animationDuration: '550ms',
+    color: '#00e676',
     position: 'absolute',
     left: 0,
   },
