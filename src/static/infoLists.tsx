@@ -237,6 +237,14 @@ export const campuses = [
     value: 'pz',
     label: 'Pitzer College',
   },
+  {
+    value: 'kgi',
+    label: 'Keck Graduate Institute',
+  },
+  {
+    value: 'cgu',
+    label: 'Claremont Graduate University',
+  },
 ]
 
 export const campusDict: StringToString = {
@@ -245,6 +253,8 @@ export const campusDict: StringToString = {
   po: 'Pomona College',
   cmc: 'Claremont McKenna College',
   pz: 'Pitzer College',
+  kgi: 'Keck Graduate Institute',
+  cgu: 'Claremont Graduate University',
 }
 
 export const credits = [
