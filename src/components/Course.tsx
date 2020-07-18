@@ -153,25 +153,29 @@ function Course({
   // Add M and/or W if Mudd hum/writing intensive course
   let placeholder = ''
   let titleLength = 6
+  let codeLength = 1
   let placeholderGrid = (): JSX.Element => {
     return <div />
   }
 
   if (writInten) {
     placeholder = 'W'
+    titleLength = 5
   }
   if (campus === 'hmc' && type.slice(0, 3) === 'hum') {
     if (placeholder) {
       placeholder += '|M'
+      codeLength = 2
+      titleLength = 4
     } else {
       placeholder = 'M'
+      titleLength = 5
     }
   }
   if (placeholder) {
-    titleLength = 4
     placeholderGrid = (): JSX.Element => {
       return (
-        <Grid item xs={2} zeroMinWidth>
+        <Grid item xs={codeLength as 1 | 2} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.writText} noWrap>
               <b>{placeholder}</b>
