@@ -8,6 +8,7 @@ import GitButton from './GitButton'
 import LoginButton from './LoginButton'
 import YearStepper from './Stepper'
 import Logo from '../images/logo.png'
+import HelpModal from './HelpModal'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -78,6 +79,7 @@ function TopBar(): JSX.Element {
             <YearStepper />
           </Grid>
           <Grid className={classes.sideButtons}>
+            <HelpModal />
             <GitButton />
             <LoginButton />
           </Grid>
