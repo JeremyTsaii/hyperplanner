@@ -9,9 +9,9 @@
 
 [![Build Status](https://travis-ci.com/JeremyTsaii/hyperplanner.svg?branch=master)](https://travis-ci.com/JeremyTsaii/hyperplanner)
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/80bb8a05abd8bfa7b70b/maintainability)](https://codeclimate.com/github/JeremyTsaii/hyperplanner/maintainability)
+<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/80bb8a05abd8bfa7b70b/maintainability)](https://codeclimate.com/github/JeremyTsaii/hyperplanner/maintainability) -->
 
-[![codecov](https://codecov.io/gh/JeremyTsaii/hyperplanner/branch/master/graph/badge.svg)](https://codecov.io/gh/JeremyTsaii/hyperplanner)
+<!-- [![codecov](https://codecov.io/gh/JeremyTsaii/hyperplanner/branch/master/graph/badge.svg)](https://codecov.io/gh/JeremyTsaii/hyperplanner) -->
 
 [![HitCount](http://hits.dwyl.com/JeremyTsaii/hyperplanner.svg)](http://hits.dwyl.com/JeremyTsaii/hyperplanner)
 
@@ -40,7 +40,7 @@
 
 - Jest/React Testing Library used for unit tests
 
-- Code Coverage and Code Climate used to assess the maintainability of the code and the coverage of tests
+<!-- - Code Coverage and Code Climate used to assess the maintainability of the code and the coverage of tests -->
 
 - Docker used to create a consistent development environment
 
