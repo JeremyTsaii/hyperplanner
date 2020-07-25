@@ -28,16 +28,6 @@ const LPURPLE = '#ba68c8' // Hums (Elective)
 const GREEN = '#26a69a' // Core
 const ORANGE = '#ef5350' // Other (PE)
 
-interface courseProps {
-  code: string
-  title: string
-  credits: number
-  type: string
-  campus: string
-  writInten: boolean
-  term: string
-}
-
 let theme = createMuiTheme({
   typography: {
     fontSize: 10,
@@ -109,6 +99,55 @@ const getCourseColor = (type: string): string => {
   return ORANGE
 }
 
+const createEditIcon = (
+  code: string,
+  title: string,
+  credits: number,
+  type: string,
+  campus: string,
+  writInten: boolean,
+  term: string,
+): JSX.Element => {
+  return (
+    <Grid item xs={1} zeroMinWidth>
+      <EditModal
+        codeProp={code}
+        titleProp={title}
+        creditsProp={credits}
+        typeProp={type}
+        campusProp={campus}
+        writIntenProp={writInten}
+        termProp={term}
+      />
+    </Grid>
+  )
+}
+
+const createDeleteIcon = (handleDelete?: () => void): JSX.Element => {
+  return (
+    <Grid item xs={1} zeroMinWidth>
+      <IconButton
+        edge="end"
+        aria-label="delete"
+        size="small"
+        onClick={handleDelete}>
+        <DeleteForeverIcon />
+      </IconButton>
+    </Grid>
+  )
+}
+
+interface courseProps {
+  code: string
+  title: string
+  credits: number
+  type: string
+  campus: string
+  writInten: boolean
+  term: string
+  showIcons: boolean
+}
+
 function Course({
   code,
   title,
@@ -117,6 +156,7 @@ function Course({
   campus,
   writInten,
   term,
+  showIcons,
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
@@ -148,6 +188,23 @@ function Course({
         },
       },
     })
+  }
+
+  let editIconPlaceholder = <div />
+  let deleteIconPlaceholder = createDeleteIcon()
+
+  // If false, don't show icons (for logged out viewers)
+  if (showIcons) {
+    editIconPlaceholder = createEditIcon(
+      code,
+      title,
+      credits,
+      type,
+      campus,
+      writInten,
+      term,
+    )
+    deleteIconPlaceholder = createDeleteIcon(handleDelete)
   }
 
   // Add M and/or W if Mudd hum/writing intensive course
@@ -224,26 +281,8 @@ function Course({
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        <Grid item xs={1} zeroMinWidth>
-          <EditModal
-            codeProp={code}
-            titleProp={title}
-            creditsProp={credits}
-            typeProp={type}
-            campusProp={campus}
-            writIntenProp={writInten}
-            termProp={term}
-          />
-        </Grid>
-        <Grid item xs={1} zeroMinWidth>
-          <IconButton
-            edge="end"
-            aria-label="delete"
-            size="small"
-            onClick={handleDelete}>
-            <DeleteForeverIcon />
-          </IconButton>
-        </Grid>
+        {editIconPlaceholder}
+        {deleteIconPlaceholder}
       </Grid>
     </Paper>
   )

@@ -81,11 +81,38 @@ function YearStepper(): JSX.Element {
 
   const { loading, error, data } = useQuery(GET_INFO_QUERY)
 
-  if (loading || error || !data) {
+  if (loading) {
     return (
       <div className={classes.root}>
         <Stepper
           activeStep={0}
+          alternativeLabel
+          connector={<QontoConnector />}
+          className={classes.stepper}>
+          {steps.map((label) => (
+            <Step key={label}>
+              <StyledStepLabel
+                StepIconProps={{
+                  classes: {
+                    root: classes.icon,
+                    active: classes.activeIcon,
+                    completed: classes.completedIcon,
+                  },
+                }}>
+                {label}
+              </StyledStepLabel>
+            </Step>
+          ))}
+        </Stepper>
+      </div>
+    )
+  }
+
+  if (error) {
+    return (
+      <div className={classes.root}>
+        <Stepper
+          activeStep={2}
           alternativeLabel
           connector={<QontoConnector />}
           className={classes.stepper}>

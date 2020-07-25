@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
-function YearCards(): JSX.Element {
+const YearCards = (): JSX.Element => {
   const classes = useStyles()
 
   return (
