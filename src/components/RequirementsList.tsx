@@ -175,4 +175,11 @@ const RequirementsList = ({
   )
 }
 
+RequirementsList.defaultProps = {
+  coreChecks: '',
+  gradYear: 0,
+  majorChecks: '',
+  major: '',
+}
+
 export default RequirementsList

@@ -119,4 +119,16 @@ const RightStatsCardStats = ({
   )
 }
 
+RightStatsCardStats.defaultProps = {
+  titleArr: [],
+  valArr: [],
+  isMajor: false,
+  checklist: [],
+  id: '',
+  coreChecks: '',
+  gradYear: 0,
+  majorChecks: '',
+  major: '',
+}
+
 export default RightStatsCardStats
