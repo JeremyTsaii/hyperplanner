@@ -28,7 +28,7 @@
     "apollo-link-context": "^1.0.20",
     "apollo-link-http": "^1.5.17",
     "graphql": "^15.3.0",
-    "graphql-tag": "^2.10.4",
+    "graphql-tag": "^2.11.0",
     "history": "^5.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
