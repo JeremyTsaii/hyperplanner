@@ -1,6 +1,6 @@
 {
   "hmc": {
-    "grad": 128,
+    "grad": 125,
     "pe": 3,
     "major": {
       "bio": {
@@ -117,10 +117,9 @@
           { "code": "CSCI184", "title": "Computer Science Clinic II" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" }
         ],
-        "major_elec": 9
+        "major_elec": 6
       },
       "cs_math": {
         "major_req": [
@@ -137,18 +136,16 @@
           { "code": "CSCI131", "title": "Programming Languages" },
           { "code": "CSCI140", "title": "Algorithms" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" },
           { "code": "MATH131", "title": "Analysis I" },
           { "code": "MATH171", "title": "Abstract Algebra I" },
           {
             "code": "MATH199",
             "title": "Undergraduate Mathematics Colloquium"
           },
-          { "code": "MATH198", "title": "Undergraduate Mathematics Forum" },
           { "code": "CSMT183", "title": "Computer Science & Math Clinic I" },
           { "code": "CSMT184", "title": "Computer Science & Math Clinic II" }
         ],
-        "major_elec": 14
+        "major_elec": 12
       },
       "engr": {
         "major_req": [
@@ -203,7 +200,6 @@
             "code": "MATH193/197",
             "title": "Senior Thesis/Mathematics Clinic"
           },
-          { "code": "MATH198", "title": "Undergraduate Mathematics Forum" },
           { "code": "MATH199", "title": "Mathematics Colloquium" }
         ],
         "major_elec": 7
@@ -219,7 +215,6 @@
             "code": "MATH115/180",
             "title": "Fourier Series and Boundary Value Problems/Introduction to Partial Differential Equations"
           },
-          { "code": "MATH198", "title": "Undergraduate Mathematics Forum" },
           { "code": "MATH199", "title": "Mathematics Colloquium" },
           { "code": "PHYS052", "title": "Quantum Physics" },
           { "code": "PHYS054", "title": "Modern Physics Lab" },
@@ -273,7 +268,6 @@
           { "code": "", "title": "3-Unit Computer Science Course" },
           { "code": "BIOL191", "title": "Biology Colloquium" },
           { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "MATH198", "title": "Undergraduate Mathematics Forum" },
           { "code": "", "title": "Joint Colloquium" },
           { "code": "", "title": "Senior Thesis/Clinic" },
           { "code": "", "title": "Senior Thesis/Clinic" }
