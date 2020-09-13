@@ -1,4 +1,4 @@
-import React, { useState} from 'react'
+import React, { useState } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
@@ -11,7 +11,7 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { Autocomplete } from '@material-ui/lab';
+import { Autocomplete } from '@material-ui/lab'
 
 import {
   placeholderCourses,
@@ -96,7 +96,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
 
   const [titleRef, setTitle] = useState('')
 
-  const[codeRef, setCode] = useState('')
+  const [codeRef, setCode] = useState('')
 
   const handleTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -224,23 +224,23 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           Add Course to {term}, Year {year}
         </DialogTitle>
         <DialogContent dividers>
-        <Autocomplete
+          <Autocomplete
             options={placeholderCourses}
-            onChange = {(event:any, newValue: any | null) => {
-              setCampus(newValue.campus);
-              setCode(newValue.code);
-              setTitle(newValue.title);
-              setCredit(newValue.credits);
+            onChange={(event: any, newValue: any | null) => {
+              setCampus(newValue.campus)
+              setCode(newValue.code)
+              setTitle(newValue.title)
+              setCredit(newValue.credits)
             }}
-            getOptionLabel={(option)=> option.code + " " + option.title }
-            renderInput={params => (
-                <TextField
+            getOptionLabel={(option) => `${option.code} ${option.title}`}
+            renderInput={(params) => (
+              <TextField
                 {...params}
                 variant="standard"
-                label={"Search for your courses"}
+                label="Search for your courses"
                 margin="normal"
                 fullWidth
-                />
+              />
             )}
           />
           <TextField

@@ -1,8 +1,8 @@
 import firebase from 'firebase'
 
 const config = {
-  //Enter Firebase Database Credentials
-};
-firebase.initializeApp(config);
+  // Enter Firebase Database Credentials
+}
+firebase.initializeApp(config)
 
-export default firebase;
+export default firebase
