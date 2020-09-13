@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState} from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
@@ -11,9 +11,10 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
+import { Autocomplete } from '@material-ui/lab';
+
 import {
-  campuses,
-  credits,
+  placeholderCourses,
   types,
   bools,
   courseSort,
@@ -84,15 +85,6 @@ const DialogActions = withStyles((theme) => ({
 function CourseModal({ term, year }: DialogProps): JSX.Element {
   const [addCourse] = useAdd_CourseMutation()
 
-  // Create refs for string inputs in text field
-  const codeRef = useRef('')
-  const titleRef = useRef('')
-
-  const getValue = (ref: React.MutableRefObject<string>): string => {
-    const cur = (ref.current as unknown) as HTMLTextAreaElement
-    return cur.value
-  }
-
   // Changing information in modal
   const [campus, setCampus] = useState('')
 
@@ -102,15 +94,9 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
 
   const [writInten, setWritInten] = useState('False')
 
-  const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const target = event.target as HTMLInputElement
-    setCampus(target.value)
-  }
+  const [titleRef, setTitle] = useState('')
 
-  const handleCreditChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const target = event.target as HTMLInputElement
-    setCredit(target.value)
-  }
+  const[codeRef, setCode] = useState('')
 
   const handleTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -128,6 +114,8 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
   const [open, setOpen] = useState(false)
 
   const resetInputs = () => {
+    setTitle('')
+    setCode('')
     setCampus('')
     setCredit('')
     setType('')
@@ -146,13 +134,17 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
       campus !== '' &&
       credit !== '' &&
       type !== '' &&
-      getValue(codeRef) !== '' &&
-      getValue(titleRef) !== ''
+      // getValue(codeRef) !== '' &&
+      // getValue(titleRef) !== ''
+      codeRef !== '' &&
+      titleRef !== ''
     )
   }
   const handleSave = () => {
-    const newTitle = getValue(titleRef)
-    const newCode = getValue(codeRef)
+    // const newTitle = getValue(titleRef)
+    // const newCode = getValue(codeRef)
+    const newTitle = titleRef
+    const newCode = codeRef
     const formatTerm = term.toLowerCase() + year
     if (allFilled()) {
       addCourse({
@@ -232,54 +224,25 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           Add Course to {term}, Year {year}
         </DialogTitle>
         <DialogContent dividers>
-          <TextField
-            autoFocus
-            margin="dense"
-            id="code"
-            label="Course Code"
-            placeholder="CSCI134"
-            required
-            fullWidth
-            inputRef={codeRef}
-            autoComplete="off"
+        <Autocomplete
+            options={placeholderCourses}
+            onChange = {(event:any, newValue: any | null) => {
+              setCampus(newValue.campus);
+              setCode(newValue.code);
+              setTitle(newValue.title);
+              setCredit(newValue.credits);
+            }}
+            getOptionLabel={(option)=> option.code + " " + option.title }
+            renderInput={params => (
+                <TextField
+                {...params}
+                variant="standard"
+                label={"Search for your courses"}
+                margin="normal"
+                fullWidth
+                />
+            )}
           />
-          <TextField
-            autoFocus
-            margin="dense"
-            id="title"
-            label="Course Title"
-            placeholder="Operating Systems"
-            fullWidth
-            required
-            inputRef={titleRef}
-            autoComplete="off"
-          />
-          <TextField
-            select
-            label="Campus"
-            fullWidth
-            required
-            value={campus}
-            onChange={handleCampusChange}>
-            {campuses.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.label}
-              </MenuItem>
-            ))}
-          </TextField>
-          <TextField
-            select
-            label="Credits"
-            fullWidth
-            required
-            value={credit}
-            onChange={handleCreditChange}>
-            {credits.map((option) => (
-              <MenuItem key={option.value} value={option.value}>
-                {option.value}
-              </MenuItem>
-            ))}
-          </TextField>
           <TextField
             select
             label="Course Type"
