@@ -123,8 +123,6 @@ const HelpModal = (): JSX.Element => {
               showIcons={false}
             />
           ))}
-        </DialogContent>
-        <DialogContent dividers>
           <Typography variant="h6" color="secondary">
             Course Initials Types
           </Typography>
