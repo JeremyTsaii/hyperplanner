@@ -60,6 +60,10 @@ interface IProps {
   fallModal: JSX.Element
   springModal: JSX.Element
   summerModal: JSX.Element
+  majorChecks: string
+  coreChecks: string
+  school: string
+  id: string
 }
 
 const CourseContainer = ({
@@ -69,6 +73,10 @@ const CourseContainer = ({
   fallModal,
   springModal,
   summerModal,
+  majorChecks,
+  coreChecks,
+  school,
+  id,
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
@@ -123,6 +131,10 @@ const CourseContainer = ({
                   writInten={course.writ_inten}
                   term={course.term}
                   showIcons={showIcons}
+                  majorChecks={majorChecks}
+                  coreChecks={coreChecks}
+                  school={school}
+                  id={id}
                 />
               ))}
           </Paper>
@@ -163,6 +175,10 @@ const CourseContainer = ({
                   writInten={course.writ_inten}
                   term={course.term}
                   showIcons={showIcons}
+                  majorChecks={majorChecks}
+                  coreChecks={coreChecks}
+                  school={school}
+                  id={id}
                 />
               ))}
           </Paper>
@@ -203,6 +219,10 @@ const CourseContainer = ({
                   writInten={course.writ_inten}
                   term={course.term}
                   showIcons={showIcons}
+                  majorChecks={majorChecks}
+                  coreChecks={coreChecks}
+                  school={school}
+                  id={id}
                 />
               ))}
           </Paper>

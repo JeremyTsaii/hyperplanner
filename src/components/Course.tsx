@@ -10,10 +10,15 @@ import {
   createMuiTheme,
   MuiThemeProvider,
 } from '@material-ui/core/styles'
+import { modifyChecklist } from '../utils/modalFunctions'
 import EditModal from './EditModal'
 /* eslint-disable */
 import {
   useRemove_CourseMutation,
+  useUpdate_Major_ChecksMutation,
+  useUpdate_Core_ChecksMutation,
+  Get_InfoDocument,
+  Get_InfoQuery,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../generated/graphql'
@@ -146,6 +151,10 @@ interface courseProps {
   writInten: boolean
   term: string
   showIcons: boolean
+  majorChecks: string
+  coreChecks: string
+  school: string
+  id: string
 }
 
 function Course({
@@ -157,13 +166,20 @@ function Course({
   writInten,
   term,
   showIcons,
+  majorChecks,
+  coreChecks,
+  school,
+  id,
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
   const [courseRemove] = useRemove_CourseMutation()
+  const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
+  const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
 
   // Delete course on icon click
   const handleDelete = () => {
+    // Remove course
     courseRemove({
       variables: { term, title },
       update(cache) {
@@ -185,6 +201,81 @@ function Course({
         delete_courses: {
           __typename: 'courses_mutation_response',
           affected_rows: 1,
+        },
+      },
+    })
+
+    // Update checklists
+    const [newMajorChecks, newCoreChecks] = modifyChecklist(
+      code,
+      0,
+      majorChecks,
+      coreChecks,
+      school,
+    )
+
+    updateMajorChecks({
+      variables: {
+        id,
+        majorChecks: newMajorChecks,
+      },
+      update(cache) {
+        /* eslint-disable */
+        const existingInfo = cache.readQuery<Get_InfoQuery>({
+          query: Get_InfoDocument,
+        })
+        const newInfo = existingInfo!.users[0]
+        newInfo.majorChecks = newMajorChecks
+        cache.writeQuery<Get_InfoQuery>({
+          query: Get_InfoDocument,
+          data: { users: [newInfo] },
+        })
+        /* eslint-enable */
+      },
+      optimisticResponse: {
+        __typename: 'mutation_root',
+        update_users: {
+          __typename: 'users_mutation_response',
+          affected_rows: 1,
+          returning: [
+            {
+              __typename: 'users',
+              majorChecks: newMajorChecks,
+            },
+          ],
+        },
+      },
+    })
+
+    updateCoreChecks({
+      variables: {
+        id,
+        coreChecks: newCoreChecks,
+      },
+      update(cache) {
+        /* eslint-disable */
+        const existingInfo = cache.readQuery<Get_InfoQuery>({
+          query: Get_InfoDocument,
+        })
+        const newInfo = existingInfo!.users[0]
+        newInfo.coreChecks = newCoreChecks
+        cache.writeQuery<Get_InfoQuery>({
+          query: Get_InfoDocument,
+          data: { users: [newInfo] },
+        })
+        /* eslint-enable */
+      },
+      optimisticResponse: {
+        __typename: 'mutation_root',
+        update_users: {
+          __typename: 'users_mutation_response',
+          affected_rows: 1,
+          returning: [
+            {
+              __typename: 'users',
+              coreChecks: newCoreChecks,
+            },
+          ],
         },
       },
     })

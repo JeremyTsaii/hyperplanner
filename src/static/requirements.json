@@ -27,7 +27,7 @@
         "major_req": [
           { "code": "CHEM51", "title": "Physical Chemistry" },
           { "code": "CHEM053", "title": "Physical Chemistry Laboratory" },
-          { "code": "CHEM56", "title": "Organic Chemistry I" },
+          { "code": "CHEM056", "title": "Organic Chemistry I" },
           { "code": "CHEM058", "title": "Organic Chemistry I Laboratory" },
           { "code": "CHEM105", "title": "Organic Chemistry II" },
           { "code": "CHEM111", "title": "Organic Chemistry II Laboratory" },
@@ -67,8 +67,8 @@
       },
       "chem": {
         "major_req": [
-          { "code": "CHEM51", "title": "Physical Chemistry" },
-          { "code": "CHEM56", "title": "Organic Chemistry" },
+          { "code": "CHEM051", "title": "Physical Chemistry" },
+          { "code": "CHEM056", "title": "Organic Chemistry" },
           { "code": "CHEM103", "title": "Chemical Analysis" },
           { "code": "CHEM104", "title": "Inorganic Chemistry" },
           { "code": "CHEM182", "title": "Biochemistry" },
