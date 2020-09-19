@@ -134,15 +134,11 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
       campus !== '' &&
       credit !== '' &&
       type !== '' &&
-      // getValue(codeRef) !== '' &&
-      // getValue(titleRef) !== ''
       codeRef !== '' &&
       titleRef !== ''
     )
   }
   const handleSave = () => {
-    // const newTitle = getValue(titleRef)
-    // const newCode = getValue(codeRef)
     const newTitle = titleRef
     const newCode = codeRef
     const formatTerm = term.toLowerCase() + year
@@ -210,7 +206,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
       setOpen(false)
     }
   }
-
+  /* eslint-disable react/jsx-props-no-spreading */
   return (
     <div>
       <IconButton edge="end" aria-label="add" size="small" onClick={handleOpen}>
@@ -221,7 +217,9 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
         aria-labelledby="customized-dialog-title"
         open={open}>
         <DialogTitle onClose={handleClose}>
-          Add Course to {term}, Year {year}
+          <span style={{ paddingRight: 30 }}>
+            Add Course to {term}, Year {year}
+          </span>
         </DialogTitle>
         <DialogContent dividers>
           <Autocomplete
@@ -232,6 +230,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
               setTitle(newValue.title)
               setCredit(newValue.credits)
             }}
+            fullWidth
             getOptionLabel={(option) => `${option.code} ${option.title}`}
             renderInput={(params) => (
               <TextField
