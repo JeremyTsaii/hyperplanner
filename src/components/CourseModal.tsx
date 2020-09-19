@@ -217,9 +217,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
         aria-labelledby="customized-dialog-title"
         open={open}>
         <DialogTitle onClose={handleClose}>
-          <span style={{ paddingRight: 30 }}>
-            Add Course to {term}, Year {year}
-          </span>
+          Add Course to {term}, Year {year}
         </DialogTitle>
         <DialogContent dividers>
           <Autocomplete
@@ -231,6 +229,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
               setCredit(newValue.credits)
             }}
             fullWidth
+            style={{ width: 400 }}
             getOptionLabel={(option) => `${option.code} ${option.title}`}
             renderInput={(params) => (
               <TextField
