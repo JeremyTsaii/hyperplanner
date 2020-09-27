@@ -121,10 +121,12 @@ const HelpModal = (): JSX.Element => {
               writInten={course.writ_inten}
               term={course.term}
               showIcons={false}
+              majorChecks=""
+              coreChecks=""
+              school=""
+              id=""
             />
           ))}
-        </DialogContent>
-        <DialogContent dividers>
           <Typography variant="h6" color="secondary">
             Course Initials Types
           </Typography>
@@ -139,6 +141,10 @@ const HelpModal = (): JSX.Element => {
               writInten={course.writ_inten}
               term={course.term}
               showIcons={false}
+              majorChecks=""
+              coreChecks=""
+              school=""
+              id=""
             />
           ))}
         </DialogContent>

@@ -12,7 +12,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
-
+import { modifyChecklist } from '../utils/modalFunctions'
 import {
   placeholderCourses,
   types,
@@ -22,6 +22,10 @@ import {
 /* eslint-disable */
 import {
   useAdd_CourseMutation,
+  useUpdate_Major_ChecksMutation,
+  useUpdate_Core_ChecksMutation,
+  Get_InfoDocument,
+  Get_InfoQuery,
   Get_CoursesQuery,
   Get_CoursesDocument,
   Courses,
@@ -44,6 +48,10 @@ const useStyles = makeStyles((theme) => ({
 interface DialogProps {
   term: string
   year: string
+  majorChecks: string
+  coreChecks: string
+  school: string
+  id: string
 }
 
 interface DialogTitleProps {
@@ -82,8 +90,17 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function CourseModal({ term, year }: DialogProps): JSX.Element {
+function CourseModal({
+  term,
+  year,
+  majorChecks,
+  coreChecks,
+  school,
+  id,
+}: DialogProps): JSX.Element {
   const [addCourse] = useAdd_CourseMutation()
+  const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
+  const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
 
   // Changing information in modal
   const [campus, setCampus] = useState('')
@@ -113,6 +130,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
   // Opening/Closing modal
   const [open, setOpen] = useState(false)
 
+  // Reset inputs to default in the modal
   const resetInputs = () => {
     setTitle('')
     setCode('')
@@ -175,7 +193,6 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           // Sort by descending type then ascending code
           const sortedCourses = existingCourses.concat(newCourse)
           sortedCourses.sort(courseSort)
-          console.log(sortedCourses)
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: sortedCourses },
@@ -202,6 +219,81 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
           },
         },
       })
+
+      // Update checklists
+      const [newMajorChecks, newCoreChecks] = modifyChecklist(
+        newCode,
+        1,
+        majorChecks,
+        coreChecks,
+        school,
+      )
+      updateMajorChecks({
+        variables: {
+          id,
+          majorChecks: newMajorChecks,
+        },
+        update(cache) {
+          /* eslint-disable */
+          const existingInfo = cache.readQuery<Get_InfoQuery>({
+            query: Get_InfoDocument,
+          })
+          const newInfo = existingInfo!.users[0]
+          newInfo.majorChecks = newMajorChecks
+          cache.writeQuery<Get_InfoQuery>({
+            query: Get_InfoDocument,
+            data: { users: [newInfo] },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          update_users: {
+            __typename: 'users_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'users',
+                majorChecks: newMajorChecks,
+              },
+            ],
+          },
+        },
+      })
+
+      updateCoreChecks({
+        variables: {
+          id,
+          coreChecks: newCoreChecks,
+        },
+        update(cache) {
+          /* eslint-disable */
+          const existingInfo = cache.readQuery<Get_InfoQuery>({
+            query: Get_InfoDocument,
+          })
+          const newInfo = existingInfo!.users[0]
+          newInfo.coreChecks = newCoreChecks
+          cache.writeQuery<Get_InfoQuery>({
+            query: Get_InfoDocument,
+            data: { users: [newInfo] },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          update_users: {
+            __typename: 'users_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'users',
+                coreChecks: newCoreChecks,
+              },
+            ],
+          },
+        },
+      })
+
       resetInputs()
       setOpen(false)
     }
