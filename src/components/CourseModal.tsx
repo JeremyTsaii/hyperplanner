@@ -13,12 +13,8 @@ import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
 import { modifyChecklist } from '../utils/modalFunctions'
-import {
-  placeholderCourses,
-  types,
-  bools,
-  courseSort,
-} from '../static/infoLists'
+import AllCourses from '../static/allCourses.json'
+import { types, bools, courseSort } from '../static/infoLists'
 /* eslint-disable */
 import {
   useAdd_CourseMutation,
@@ -44,6 +40,13 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[500],
   },
 }))
+
+type AllCourse = {
+  campus: string
+  code: string
+  title: string
+  credits: number
+}
 
 interface DialogProps {
   term: string
@@ -313,12 +316,14 @@ function CourseModal({
         </DialogTitle>
         <DialogContent dividers>
           <Autocomplete
-            options={placeholderCourses}
-            onChange={(event: any, newValue: any | null) => {
-              setCampus(newValue.campus)
-              setCode(newValue.code)
-              setTitle(newValue.title)
-              setCredit(newValue.credits)
+            options={AllCourses}
+            onChange={(event, newValue: AllCourse | null) => {
+              if (newValue !== null) {
+                setCampus(newValue.campus)
+                setCode(newValue.code)
+                setTitle(newValue.title)
+                setCredit(newValue.credits.toFixed(1))
+              }
             }}
             fullWidth
             style={{ width: 400 }}
