@@ -48,30 +48,6 @@
     "title": "Intro Archaeology & Bio Anthro"
   },
   {
-    "campus": "pz",
-    "code": "ANTH002",
-    "credits": 3.0,
-    "title": "Intro Sociocultural Anthropology"
-  },
-  {
-    "campus": "pz",
-    "code": "ANTH002",
-    "credits": 3.0,
-    "title": "Intro Sociocultural Anthropology"
-  },
-  {
-    "campus": "sc",
-    "code": "ANTH002",
-    "credits": 3.0,
-    "title": "Intro Sociocultural Anthropology"
-  },
-  {
-    "campus": "po",
-    "code": "ANTH002",
-    "credits": 3.0,
-    "title": "Intro to Sociocultural Anth"
-  },
-  {
     "campus": "po",
     "code": "ANTH002",
     "credits": 3.0,
@@ -106,12 +82,6 @@
     "code": "ANTH101",
     "credits": 3.0,
     "title": "Archaeological Theory"
-  },
-  {
-    "campus": "pz",
-    "code": "ANTH105",
-    "credits": 3.0,
-    "title": "Field Methods in Anthropology"
   },
   {
     "campus": "pz",
@@ -193,12 +163,6 @@
   },
   {
     "campus": "cmc",
-    "code": "ARBC001",
-    "credits": 3.0,
-    "title": "Introductory Arabic"
-  },
-  {
-    "campus": "cmc",
     "code": "ARBC011",
     "credits": 0.0,
     "title": "Intro Conversation Arabic I"
@@ -214,12 +178,6 @@
     "code": "ARBC015",
     "credits": 1.0,
     "title": "Spoken Colloquial Arabic I"
-  },
-  {
-    "campus": "cmc",
-    "code": "ARBC033",
-    "credits": 3.0,
-    "title": "Intermediate Arabic"
   },
   {
     "campus": "cmc",
@@ -271,12 +229,6 @@
   },
   {
     "campus": "po",
-    "code": "ARHI178",
-    "credits": 3.0,
-    "title": "Black Aesth/Poli (Re)presentatn"
-  },
-  {
-    "campus": "po",
     "code": "ARHI179",
     "credits": 3.0,
     "title": "Modern Arch/Sustainability"
@@ -312,12 +264,6 @@
     "title": "Painting I"
   },
   {
-    "campus": "po",
-    "code": "ART010",
-    "credits": 3.0,
-    "title": "Painting I"
-  },
-  {
     "campus": "pz",
     "code": "ART012",
     "credits": 3.0,
@@ -330,18 +276,6 @@
     "title": "Eco-Photography"
   },
   {
-    "campus": "pz",
-    "code": "ART017",
-    "credits": 3.0,
-    "title": "Eco-Photography"
-  },
-  {
-    "campus": "po",
-    "code": "ART021",
-    "credits": 3.0,
-    "title": "Foundations of 2D Design"
-  },
-  {
     "campus": "po",
     "code": "ART021",
     "credits": 3.0,
@@ -352,12 +286,6 @@
     "code": "ART028",
     "credits": 3.0,
     "title": "Digital Photography"
-  },
-  {
-    "campus": "pz",
-    "code": "ART030",
-    "credits": 3.0,
-    "title": "Sustainable Sculpture"
   },
   {
     "campus": "pz",
@@ -390,12 +318,6 @@
     "title": "Intro to Ceramic Sculpture - Virtual Ceramics"
   },
   {
-    "campus": "sc",
-    "code": "ART121",
-    "credits": 3.0,
-    "title": "Intro to Ceramic Sculpture - Virtual Ceramics"
-  },
-  {
     "campus": "po",
     "code": "ART128",
     "credits": 3.0,
@@ -412,12 +334,6 @@
     "code": "ART138",
     "credits": 3.0,
     "title": "The Artist's Book: Rep Blackness"
-  },
-  {
-    "campus": "sc",
-    "code": "ART141",
-    "credits": 3.0,
-    "title": "Introduction to Digital Art"
   },
   {
     "campus": "sc",
@@ -552,12 +468,6 @@
     "title": "Elementary Astronomy"
   },
   {
-    "campus": "sc",
-    "code": "ASTR066L",
-    "credits": 3.0,
-    "title": "Elementary Astronomy"
-  },
-  {
     "campus": "po",
     "code": "ASTR101L",
     "credits": 0.0,
@@ -582,30 +492,6 @@
     "title": "Biology Laboratory"
   },
   {
-    "campus": "hmc",
-    "code": "BIOL023",
-    "credits": 1.0,
-    "title": "Biology Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL040",
-    "credits": 3.0,
-    "title": "Introductory Genetics w/Lab"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL040",
-    "credits": 3.0,
-    "title": "Introductory Genetics w/Lab"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL040",
-    "credits": 3.0,
-    "title": "Introductory Genetics w/Lab"
-  },
-  {
     "campus": "po",
     "code": "BIOL040",
     "credits": 3.0,
@@ -616,72 +502,6 @@
     "code": "BIOL043L",
     "credits": 3.0,
     "title": "Introductory Biology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043L",
-    "credits": 3.0,
-    "title": "Introductory Biology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043L",
-    "credits": 3.0,
-    "title": "Introductory Biology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043L",
-    "credits": 3.0,
-    "title": "Introductory Biology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043L",
-    "credits": 3.0,
-    "title": "Introductory Biology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL043LX",
-    "credits": 0.0,
-    "title": "Introductory Biology Lab"
   },
   {
     "campus": "sc",
@@ -721,12 +541,6 @@
   },
   {
     "campus": "hmc",
-    "code": "BIOL111",
-    "credits": 2.0,
-    "title": "Molecular/Cellular Biology Lab"
-  },
-  {
-    "campus": "hmc",
     "code": "BIOL113",
     "credits": 3.0,
     "title": "Molecular Genetics"
@@ -748,12 +562,6 @@
     "code": "BIOL131L",
     "credits": 3.0,
     "title": "Vertebrate Physiology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL131LX",
-    "credits": 0.0,
-    "title": "Vertebrate Physiology Lab"
   },
   {
     "campus": "sc",
@@ -811,12 +619,6 @@
   },
   {
     "campus": "sc",
-    "code": "BIOL148L",
-    "credits": 3.0,
-    "title": "Neuroscience I:Cell, Molecular"
-  },
-  {
-    "campus": "sc",
     "code": "BIOL149",
     "credits": 3.0,
     "title": "Neuroscience 2: Systems"
@@ -844,12 +646,6 @@
     "code": "BIOL160",
     "credits": 3.0,
     "title": "Immunology"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL161",
-    "credits": 3.0,
-    "title": "Neuroendocrinology"
   },
   {
     "campus": "cgu",
@@ -880,18 +676,6 @@
     "code": "BIOL175",
     "credits": 3.0,
     "title": "Applied Biostatistics"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL175",
-    "credits": 3.0,
-    "title": "Applied Biostatistics"
-  },
-  {
-    "campus": "sc",
-    "code": "BIOL177",
-    "credits": 3.0,
-    "title": "Biochemistry"
   },
   {
     "campus": "sc",
@@ -961,255 +745,15 @@
   },
   {
     "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191F",
-    "credits": 3.0,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
     "code": "BIOL191H",
     "credits": 1.5,
     "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL191H",
-    "credits": 1.5,
-    "title": "Senior Grant Proposal"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL191",
-    "credits": 3.0,
-    "title": "One-Semester Thesis in Biology"
   },
   {
     "campus": "cgu",
     "code": "BIOL193",
     "credits": 3.0,
     "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "cgu",
-    "code": "BIOL193",
-    "credits": 3.0,
-    "title": "Senior Thesis Research: Biology"
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "po",
-    "code": "BIOL194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
   },
   {
     "campus": "po",
@@ -1327,42 +871,6 @@
   },
   {
     "campus": "po",
-    "code": "CHEM001A",
-    "credits": 3.0,
-    "title": "General Chemistry w/Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM001A",
-    "credits": 3.0,
-    "title": "General Chemistry w/Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM001AL",
-    "credits": 0.0,
-    "title": "Lab, General Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM001AL",
-    "credits": 0.0,
-    "title": "Lab, General Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM001AL",
-    "credits": 0.0,
-    "title": "Lab, General Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM001AL",
-    "credits": 0.0,
-    "title": "Lab, General Chemistry"
-  },
-  {
-    "campus": "po",
     "code": "CHEM001AL",
     "credits": 0.0,
     "title": "Lab, General Chemistry"
@@ -1372,96 +880,6 @@
     "code": "CHEM014L",
     "credits": 3.0,
     "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM014L",
-    "credits": 3.0,
-    "title": "Basic Principles of Chemistry"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM023A",
-    "credits": 3.0,
-    "title": "Chemistry in the Modern World I"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM023A",
-    "credits": 3.0,
-    "title": "Chemistry in the Modern World I"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM023A",
-    "credits": 3.0,
-    "title": "Chemistry in the Modern World I"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM023A",
-    "credits": 3.0,
-    "title": "Chemistry in the Modern World I"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM023A",
-    "credits": 3.0,
-    "title": "Chemistry in the Modern World I"
   },
   {
     "campus": "hmc",
@@ -1474,30 +892,6 @@
     "code": "CHEM024",
     "credits": 1.0,
     "title": "Chemistry Laboratory"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM024",
-    "credits": 1.0,
-    "title": "Chemistry Laboratory"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM024",
-    "credits": 1.0,
-    "title": "Chemistry Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM051",
-    "credits": 3.0,
-    "title": "Gen Chemistry w/Lab Accelerated"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM051L",
-    "credits": 0.0,
-    "title": "Lab, General Chemistry (Accel)"
   },
   {
     "campus": "po",
@@ -1542,36 +936,6 @@
     "title": "Chemical Analysis Laboratory"
   },
   {
-    "campus": "hmc",
-    "code": "CHEM109",
-    "credits": 1.0,
-    "title": "Chemical Analysis Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM110AL",
-    "credits": 0.0,
-    "title": "Lab, Organic Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM110AL",
-    "credits": 0.0,
-    "title": "Lab, Organic Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM110AL",
-    "credits": 0.0,
-    "title": "Lab, Organic Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM110AL",
-    "credits": 0.0,
-    "title": "Lab, Organic Chemistry"
-  },
-  {
     "campus": "po",
     "code": "CHEM110AL",
     "credits": 0.0,
@@ -1582,18 +946,6 @@
     "code": "CHEM110A",
     "credits": 3.0,
     "title": "Organic Chemistry w/Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM110A",
-    "credits": 3.0,
-    "title": "Organic Chemistry w/Laboratory"
-  },
-  {
-    "campus": "hmc",
-    "code": "CHEM111",
-    "credits": 1.0,
-    "title": "Organic Chemistry II Laboratory"
   },
   {
     "campus": "hmc",
@@ -1609,24 +961,6 @@
   },
   {
     "campus": "po",
-    "code": "CHEM115",
-    "credits": 3.0,
-    "title": "Biochemistry w/Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM115L",
-    "credits": 0.0,
-    "title": "Lab, Biochemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM115L",
-    "credits": 0.0,
-    "title": "Lab, Biochemistry"
-  },
-  {
-    "campus": "po",
     "code": "CHEM115L",
     "credits": 0.0,
     "title": "Lab, Biochemistry"
@@ -1636,90 +970,6 @@
     "code": "CHEM116L",
     "credits": 3.0,
     "title": "Organic Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116L",
-    "credits": 3.0,
-    "title": "Organic Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116L",
-    "credits": 3.0,
-    "title": "Organic Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116L",
-    "credits": 3.0,
-    "title": "Organic Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116L",
-    "credits": 3.0,
-    "title": "Organic Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM116LX",
-    "credits": 0.0,
-    "title": "Organic Chemistry Lab"
   },
   {
     "campus": "sc",
@@ -1770,96 +1020,6 @@
     "title": "Senior Thesis Research:Chemistry"
   },
   {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 2.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
-    "campus": "cgu",
-    "code": "CHEM151",
-    "credits": 3.0,
-    "title": "Senior Thesis Research:Chemistry"
-  },
-  {
     "campus": "po",
     "code": "CHEM158A",
     "credits": 3.0,
@@ -1882,12 +1042,6 @@
     "code": "CHEM174",
     "credits": 1.5,
     "title": "Bio-Organic Chemistry"
-  },
-  {
-    "campus": "sc",
-    "code": "CHEM177",
-    "credits": 3.0,
-    "title": "Biochemistry"
   },
   {
     "campus": "sc",
@@ -1932,118 +1086,10 @@
     "title": "One-Semester Thesis in Chemistry"
   },
   {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM191",
-    "credits": 1.5,
-    "title": "Senior Literature Thesis"
-  },
-  {
     "campus": "cgu",
     "code": "CHEM193J",
     "credits": 2.0,
     "title": "ChemDynam:TransitionState&Beyond / Special Topics in Chemistry"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "CHEM194",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
   },
   {
     "campus": "po",
@@ -2062,18 +1108,6 @@
     "code": "CHEM199",
     "credits": 0.0,
     "title": "Chemistry Seminar"
-  },
-  {
-    "campus": "po",
-    "code": "CHIN001A",
-    "credits": 3.0,
-    "title": "Elementary Chinese"
-  },
-  {
-    "campus": "po",
-    "code": "CHIN001A",
-    "credits": 3.0,
-    "title": "Elementary Chinese"
   },
   {
     "campus": "po",
@@ -2104,30 +1138,6 @@
     "code": "CHIN051A",
     "credits": 3.0,
     "title": "Intermediate Chinese"
-  },
-  {
-    "campus": "po",
-    "code": "CHIN051A",
-    "credits": 3.0,
-    "title": "Intermediate Chinese"
-  },
-  {
-    "campus": "po",
-    "code": "CHIN051A",
-    "credits": 3.0,
-    "title": "Intermediate Chinese"
-  },
-  {
-    "campus": "po",
-    "code": "CHIN051A",
-    "credits": 3.0,
-    "title": "Intermediate Chinese"
-  },
-  {
-    "campus": "po",
-    "code": "CHIN111A",
-    "credits": 3.0,
-    "title": "Advanced Chinese"
   },
   {
     "campus": "po",
@@ -2245,195 +1255,9 @@
   },
   {
     "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE001",
-    "credits": 3.0,
-    "title": "Histories of the Present - Histories of Present: Truth"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - \"America\" in Recent Music & Lit"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Antiracist/Transntl Fem Coalit"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Collective Songwriting"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Essay, Film, and Theory"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Ethics/Truth/Postmod Metaphysics"
-  },
-  {
-    "campus": "sc",
     "code": "CORE003",
     "credits": 3.0,
     "title": "Histories of the Present - Forced Displacement"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Foreign Lang & Cult Teach Clin"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Futuring"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Landscapes of Plunder"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Living in a World of Numbers"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Narratives Memory Spain/Lat Amer"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Neuroethics"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Photography & the Archive"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Postcolonial Anxieties"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Realism & Anti-Realism"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Representing LA: Rock 'n' Roll"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - The Mechanical Eye"
-  },
-  {
-    "campus": "sc",
-    "code": "CORE003",
-    "credits": 3.0,
-    "title": "Histories of the Present - Women, Work, and Media"
   },
   {
     "campus": "pz",
@@ -2461,39 +1285,9 @@
   },
   {
     "campus": "hmc",
-    "code": "CSCI005",
-    "credits": 3.0,
-    "title": "Introduction to Computer Science"
-  },
-  {
-    "campus": "hmc",
     "code": "CSCI005L",
     "credits": 0.0,
     "title": "Intro to Computer Science Lab"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI005L",
-    "credits": 0.0,
-    "title": "Intro to Computer Science Lab"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI005L",
-    "credits": 0.0,
-    "title": "Intro to Computer Science Lab"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI005L",
-    "credits": 0.0,
-    "title": "Intro to Computer Science Lab"
-  },
-  {
-    "campus": "cmc",
-    "code": "CSCI036",
-    "credits": 3.0,
-    "title": "Foundations of Data Science"
   },
   {
     "campus": "cmc",
@@ -2515,36 +1309,6 @@
   },
   {
     "campus": "po",
-    "code": "CSCI051P",
-    "credits": 3.0,
-    "title": "Intro to CS in Python w/Lab"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI051PL",
-    "credits": 0.0,
-    "title": "Lab, Intro to CS in Python"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI051PL",
-    "credits": 0.0,
-    "title": "Lab, Intro to CS in Python"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI051PL",
-    "credits": 0.0,
-    "title": "Lab, Intro to CS in Python"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI051PL",
-    "credits": 0.0,
-    "title": "Lab, Intro to CS in Python"
-  },
-  {
-    "campus": "po",
     "code": "CSCI051PL",
     "credits": 0.0,
     "title": "Lab, Intro to CS in Python"
@@ -2554,12 +1318,6 @@
     "code": "CSCI054",
     "credits": 3.0,
     "title": "Discrete Math and Func. Prog."
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI060",
-    "credits": 3.0,
-    "title": "Principles of Computer Science"
   },
   {
     "campus": "cgu",
@@ -2580,40 +1338,10 @@
     "title": "Data Structures/Adv Program Lab"
   },
   {
-    "campus": "po",
-    "code": "CSCI062L",
-    "credits": 0.0,
-    "title": "Data Structures/Adv Program Lab"
-  },
-  {
     "campus": "cgu",
     "code": "CSCI070",
     "credits": 3.0,
     "title": "Data Structures/Prgm Development"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI070",
-    "credits": 3.0,
-    "title": "Data Structures/Prgm Development"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI070",
-    "credits": 3.0,
-    "title": "Data Structures/Prgm Development"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI070",
-    "credits": 3.0,
-    "title": "Data Structures/Prgm Development"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI070L",
-    "credits": 0.0,
-    "title": "Data Structures/Prgm Dev Lab"
   },
   {
     "campus": "cgu",
@@ -2628,18 +1356,6 @@
     "title": "Computability and Logic"
   },
   {
-    "campus": "hmc",
-    "code": "CSCI081",
-    "credits": 3.0,
-    "title": "Computability and Logic"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI101",
-    "credits": 3.0,
-    "title": "Intro to Languages and Theory"
-  },
-  {
     "campus": "po",
     "code": "CSCI101",
     "credits": 3.0,
@@ -2647,12 +1363,6 @@
   },
   {
     "campus": "hmc",
-    "code": "CSCI105",
-    "credits": 3.0,
-    "title": "Computer Systems"
-  },
-  {
-    "campus": "po",
     "code": "CSCI105",
     "credits": 3.0,
     "title": "Computer Systems"
@@ -2668,18 +1378,6 @@
     "code": "CSCI121",
     "credits": 3.0,
     "title": "Software Development"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI121",
-    "credits": 3.0,
-    "title": "Software Development"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI131",
-    "credits": 3.0,
-    "title": "Programming Languages"
   },
   {
     "campus": "hmc",
@@ -2701,24 +1399,6 @@
   },
   {
     "campus": "hmc",
-    "code": "CSCI134",
-    "credits": 3.0,
-    "title": "Operating Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI140",
-    "credits": 3.0,
-    "title": "Algorithms"
-  },
-  {
-    "campus": "hmc",
-    "code": "CSCI140",
-    "credits": 3.0,
-    "title": "Algorithms"
-  },
-  {
-    "campus": "po",
     "code": "CSCI140",
     "credits": 3.0,
     "title": "Algorithms"
@@ -2743,30 +1423,12 @@
   },
   {
     "campus": "hmc",
-    "code": "CSCI151",
-    "credits": 3.0,
-    "title": "Artificial Intelligence"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI151",
-    "credits": 3.0,
-    "title": "Artificial Intelligence"
-  },
-  {
-    "campus": "hmc",
     "code": "CSCI152",
     "credits": 3.0,
     "title": "Neural Networks"
   },
   {
     "campus": "hmc",
-    "code": "CSCI159",
-    "credits": 3.0,
-    "title": "Natural Language Processing"
-  },
-  {
-    "campus": "po",
     "code": "CSCI159",
     "credits": 3.0,
     "title": "Natural Language Processing"
@@ -2814,48 +1476,6 @@
     "title": "Computer Science Senior Seminar"
   },
   {
-    "campus": "po",
-    "code": "CSCI190",
-    "credits": 1.0,
-    "title": "Computer Science Senior Seminar"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI190",
-    "credits": 1.0,
-    "title": "Computer Science Senior Seminar"
-  },
-  {
-    "campus": "po",
-    "code": "CSCI190",
-    "credits": 1.0,
-    "title": "Computer Science Senior Seminar"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI191",
-    "credits": 3.0,
-    "title": "Sr Research/Thesis Computer Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI191",
-    "credits": 3.0,
-    "title": "Sr Research/Thesis Computer Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI191",
-    "credits": 3.0,
-    "title": "Sr Research/Thesis Computer Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI191",
-    "credits": 3.0,
-    "title": "Sr Research/Thesis Computer Sci"
-  },
-  {
     "campus": "cgu",
     "code": "CSCI191",
     "credits": 3.0,
@@ -2866,36 +1486,6 @@
     "code": "CSCI192",
     "credits": 1.5,
     "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI192",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI192",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI192",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI192",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "CSCI195",
-    "credits": 0.5,
-    "title": "Computer Science Colloquium"
   },
   {
     "campus": "cgu",
@@ -2908,12 +1498,6 @@
     "code": "CSMT183",
     "credits": 3.0,
     "title": "Computer Science & Math Clinic I"
-  },
-  {
-    "campus": "po",
-    "code": "DANC010",
-    "credits": 3.0,
-    "title": "Beginning Modern Dance"
   },
   {
     "campus": "po",
@@ -3084,22 +1668,10 @@
     "title": "Hip-Hop Dance"
   },
   {
-    "campus": "po",
-    "code": "DANC152",
-    "credits": 1.5,
-    "title": "Hip-Hop Dance"
-  },
-  {
     "campus": "sc",
     "code": "DANC152IO",
     "credits": 3.0,
     "title": "Choreographing Our Stories"
-  },
-  {
-    "campus": "po",
-    "code": "DANC152P",
-    "credits": 1.0,
-    "title": "Hip-Hop Dance"
   },
   {
     "campus": "po",
@@ -3168,12 +1740,6 @@
     "title": "Dance Repertory - Repertory - 2 Pieces"
   },
   {
-    "campus": "sc",
-    "code": "DANC180",
-    "credits": 3.0,
-    "title": "Selected Topic in Dance (Studio) - Intermediate Tap Dance"
-  },
-  {
     "campus": "cgu",
     "code": "DANC181",
     "credits": 1.5,
@@ -3223,36 +1789,6 @@
   },
   {
     "campus": "po",
-    "code": "EA010",
-    "credits": 3.0,
-    "title": "Intro to Environmental Analysis"
-  },
-  {
-    "campus": "po",
-    "code": "EA010",
-    "credits": 3.0,
-    "title": "Intro to Environmental Analysis"
-  },
-  {
-    "campus": "po",
-    "code": "EA010",
-    "credits": 3.0,
-    "title": "Intro to Environmental Analysis"
-  },
-  {
-    "campus": "pz",
-    "code": "EA010",
-    "credits": 3.0,
-    "title": "Intro to Environmental Analysis"
-  },
-  {
-    "campus": "pz",
-    "code": "EA010",
-    "credits": 3.0,
-    "title": "Intro to Environmental Analysis"
-  },
-  {
-    "campus": "po",
     "code": "EA020",
     "credits": 3.0,
     "title": "Nature, Culture and Society"
@@ -3262,18 +1798,6 @@
     "code": "EA030",
     "credits": 3.0,
     "title": "Environmental Science"
-  },
-  {
-    "campus": "po",
-    "code": "EA030L",
-    "credits": 0.0,
-    "title": "Lab, Science and the Environment"
-  },
-  {
-    "campus": "po",
-    "code": "EA030L",
-    "credits": 0.0,
-    "title": "Lab, Science and the Environment"
   },
   {
     "campus": "sc",
@@ -3390,124 +1914,16 @@
     "title": "Thesis in Environmental Analysis"
   },
   {
-    "campus": "po",
-    "code": "EA191",
-    "credits": 3.0,
-    "title": "Thesis in Environmental Analysis"
-  },
-  {
     "campus": "cmc",
     "code": "ECON050",
     "credits": 3.0,
     "title": "Principles of Economic Analysis"
   },
   {
-    "campus": "cmc",
-    "code": "ECON050",
-    "credits": 3.0,
-    "title": "Principles of Economic Analysis"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON050",
-    "credits": 3.0,
-    "title": "Principles of Economic Analysis"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON050",
-    "credits": 3.0,
-    "title": "Principles of Economic Analysis"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON050",
-    "credits": 3.0,
-    "title": "Principles of Economic Analysis"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON050",
-    "credits": 3.0,
-    "title": "Principles of Economic Analysis"
-  },
-  {
-    "campus": "pz",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles of Macroeconomics"
-  },
-  {
-    "campus": "sc",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles of Macroeconomics"
-  },
-  {
     "campus": "po",
     "code": "ECON051",
     "credits": 3.0,
     "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON051",
-    "credits": 3.0,
-    "title": "Principles: Macroeconomics"
-  },
-  {
-    "campus": "pz",
-    "code": "ECON052",
-    "credits": 3.0,
-    "title": "Principles of Microeconomics"
-  },
-  {
-    "campus": "pz",
-    "code": "ECON052",
-    "credits": 3.0,
-    "title": "Principles of Microeconomics"
-  },
-  {
-    "campus": "sc",
-    "code": "ECON052",
-    "credits": 3.0,
-    "title": "Principles of Microeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON052",
-    "credits": 3.0,
-    "title": "Principles: Microeconomics"
   },
   {
     "campus": "po",
@@ -3520,36 +1936,6 @@
     "code": "ECON057",
     "credits": 3.0,
     "title": "Economic Statistics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON057",
-    "credits": 3.0,
-    "title": "Economic Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON086",
-    "credits": 3.0,
-    "title": "Accounting for Decision Making"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON086",
-    "credits": 3.0,
-    "title": "Accounting for Decision Making"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON086",
-    "credits": 3.0,
-    "title": "Accounting for Decision Making"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON086",
-    "credits": 3.0,
-    "title": "Accounting for Decision Making"
   },
   {
     "campus": "cmc",
@@ -3576,12 +1962,6 @@
     "title": "Policy Lab"
   },
   {
-    "campus": "sc",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Intermed Microeconomic Theory"
-  },
-  {
     "campus": "cmc",
     "code": "ECON101",
     "credits": 3.0,
@@ -3589,105 +1969,15 @@
   },
   {
     "campus": "cmc",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Intermediate Microeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Intermediate Microeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Intermediate Microeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Intermediate Microeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Macroeconomic Theory"
-  },
-  {
-    "campus": "po",
-    "code": "ECON101",
-    "credits": 3.0,
-    "title": "Macroeconomic Theory"
-  },
-  {
-    "campus": "sc",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Intermed Macroeconomic Theory"
-  },
-  {
-    "campus": "cmc",
     "code": "ECON102",
     "credits": 3.0,
     "title": "Intermediate Macroeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Intermediate Macroeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Intermediate Macroeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Intermediate Macroeconomics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Intermediate Macroeconomics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Microeconomic Theory"
-  },
-  {
-    "campus": "po",
-    "code": "ECON102",
-    "credits": 3.0,
-    "title": "Microeconomic Theory"
   },
   {
     "campus": "pz",
     "code": "ECON105",
     "credits": 3.0,
     "title": "Microeconomic Theory"
-  },
-  {
-    "campus": "po",
-    "code": "ECON107",
-    "credits": 3.0,
-    "title": "Applied Econometrics"
-  },
-  {
-    "campus": "po",
-    "code": "ECON107",
-    "credits": 3.0,
-    "title": "Applied Econometrics"
   },
   {
     "campus": "cmc",
@@ -3708,61 +1998,7 @@
     "title": "Economics of Immigration"
   },
   {
-    "campus": "pz",
-    "code": "ECON115",
-    "credits": 3.0,
-    "title": "Labor Economics"
-  },
-  {
     "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON120",
-    "credits": 3.0,
-    "title": "Statistics"
-  },
-  {
-    "campus": "sc",
     "code": "ECON120",
     "credits": 3.0,
     "title": "Statistics"
@@ -3772,42 +2008,6 @@
     "code": "ECON121",
     "credits": 3.0,
     "title": "Economics of Gender & the Family"
-  },
-  {
-    "campus": "pz",
-    "code": "ECON125",
-    "credits": 3.0,
-    "title": "Econometrics"
-  },
-  {
-    "campus": "sc",
-    "code": "ECON125",
-    "credits": 3.0,
-    "title": "Econometrics"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON125",
-    "credits": 3.0,
-    "title": "Econometrics I"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON125",
-    "credits": 3.0,
-    "title": "Econometrics I"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON125",
-    "credits": 3.0,
-    "title": "Econometrics I"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON125",
-    "credits": 3.0,
-    "title": "Econometrics I"
   },
   {
     "campus": "cmc",
@@ -3834,18 +2034,6 @@
     "title": "Game Theory"
   },
   {
-    "campus": "cmc",
-    "code": "ECON129",
-    "credits": 3.0,
-    "title": "Game Theory"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON129",
-    "credits": 3.0,
-    "title": "Game Theory"
-  },
-  {
     "campus": "po",
     "code": "ECON130",
     "credits": 3.0,
@@ -3856,30 +2044,6 @@
     "code": "ECON134",
     "credits": 3.0,
     "title": "Corporate Finance"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON134",
-    "credits": 3.0,
-    "title": "Corporate Finance"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON134",
-    "credits": 3.0,
-    "title": "Corporate Finance"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON134",
-    "credits": 3.0,
-    "title": "Corporate Finance"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON135",
-    "credits": 3.0,
-    "title": "Money and Banking"
   },
   {
     "campus": "cmc",
@@ -3906,12 +2070,6 @@
     "title": "International Economics"
   },
   {
-    "campus": "pz",
-    "code": "ECON142",
-    "credits": 3.0,
-    "title": "Japanese Economy"
-  },
-  {
     "campus": "cmc",
     "code": "ECON142",
     "credits": 3.0,
@@ -3931,21 +2089,9 @@
   },
   {
     "campus": "cmc",
-    "code": "ECON151",
-    "credits": 3.0,
-    "title": "Strategic Cost Management"
-  },
-  {
-    "campus": "cmc",
     "code": "ECON152",
     "credits": 3.0,
     "title": "Tax Planning"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON154",
-    "credits": 3.0,
-    "title": "Financial Statement Analysis"
   },
   {
     "campus": "cmc",
@@ -3997,39 +2143,9 @@
   },
   {
     "campus": "cmc",
-    "code": "ECON173",
-    "credits": 3.0,
-    "title": "Economic Development"
-  },
-  {
-    "campus": "cmc",
     "code": "ECON175",
     "credits": 3.0,
     "title": "Labor Economics"
-  },
-  {
-    "campus": "pz",
-    "code": "ECON180",
-    "credits": 3.0,
-    "title": "Economics of Financial Markets"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON180",
-    "credits": 1.5,
-    "title": "Seminar in Research Methods"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON180",
-    "credits": 1.5,
-    "title": "Seminar in Research Methods"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON180",
-    "credits": 1.5,
-    "title": "Seminar in Research Methods"
   },
   {
     "campus": "cmc",
@@ -4048,12 +2164,6 @@
     "code": "ECON186",
     "credits": 3.0,
     "title": "Public Economics & Welfare"
-  },
-  {
-    "campus": "cmc",
-    "code": "ECON187",
-    "credits": 3.0,
-    "title": "Poverty, Inequality, Discrimnatn"
   },
   {
     "campus": "cmc",
@@ -4087,12 +2197,6 @@
   },
   {
     "campus": "pz",
-    "code": "ECON198",
-    "credits": 3.0,
-    "title": "Senior Seminar"
-  },
-  {
-    "campus": "pz",
     "code": "ENGL001",
     "credits": 3.0,
     "title": "Literary Theory"
@@ -4108,12 +2212,6 @@
     "code": "ENGL012A",
     "credits": 3.0,
     "title": "Intr to Afr Amer Lit Before 1865"
-  },
-  {
-    "campus": "pz",
-    "code": "ENGL030",
-    "credits": 3.0,
-    "title": "Introduction to Creative Writing"
   },
   {
     "campus": "pz",
@@ -4260,46 +2358,10 @@
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
-    "code": "ENGL191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "ENGL191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "ENGL191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "ENGL191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "ENGL191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
     "campus": "po",
     "code": "ENGL195",
     "credits": 3.0,
     "title": "Criticism: Advanced Methods"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR004",
-    "credits": 4.0,
-    "title": "Intro Engr Design/Manufacturing"
   },
   {
     "campus": "hmc",
@@ -4318,54 +2380,6 @@
     "code": "ENGR079",
     "credits": 3.0,
     "title": "Engineering Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR079",
-    "credits": 3.0,
-    "title": "Engineering Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR079",
-    "credits": 3.0,
-    "title": "Engineering Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR079",
-    "credits": 3.0,
-    "title": "Engineering Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR079",
-    "credits": 3.0,
-    "title": "Engineering Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR079",
-    "credits": 3.0,
-    "title": "Engineering Systems"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR079",
-    "credits": 3.0,
-    "title": "Engineering Systems"
-  },
-  {
-    "campus": "cgu",
-    "code": "ENGR082",
-    "credits": 3.0,
-    "title": "Chemical & Thermal Processes"
-  },
-  {
-    "campus": "cgu",
-    "code": "ENGR082",
-    "credits": 3.0,
-    "title": "Chemical & Thermal Processes"
   },
   {
     "campus": "cgu",
@@ -4432,12 +2446,6 @@
     "code": "ENGR131",
     "credits": 3.0,
     "title": "Fluid Mechanics"
-  },
-  {
-    "campus": "hmc",
-    "code": "ENGR155",
-    "credits": 4.0,
-    "title": "Microprocessor Sys:Design & App"
   },
   {
     "campus": "hmc",
@@ -4525,12 +2533,6 @@
   },
   {
     "campus": "sc",
-    "code": "FGSS026",
-    "credits": 3.0,
-    "title": "Intro Fem+Gndr+Sexuality Studies"
-  },
-  {
-    "campus": "sc",
     "code": "FGSS036",
     "credits": 3.0,
     "title": "Introduction to Queer Studies"
@@ -4546,66 +2548,6 @@
     "code": "FHS010",
     "credits": 3.0,
     "title": "Freshman Humanities Seminar - Evil"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Individual & Society South Asia"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Individual & Society South Asia"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Liberty and Excellence"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Liberty and Excellence"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Mystics,Prophets & Social Change"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Religion and Modernity"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Religion and Modernity"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Religion and Poetry"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Religion and Poetry"
-  },
-  {
-    "campus": "cmc",
-    "code": "FHS010",
-    "credits": 3.0,
-    "title": "Freshman Humanities Seminar - Tales of the Heroic"
   },
   {
     "campus": "cgu",
@@ -4662,18 +2604,6 @@
     "title": "Introductory French"
   },
   {
-    "campus": "sc",
-    "code": "FREN001",
-    "credits": 3.0,
-    "title": "Introductory French"
-  },
-  {
-    "campus": "pz",
-    "code": "FREN002",
-    "credits": 3.0,
-    "title": "Introductory French 2"
-  },
-  {
     "campus": "pz",
     "code": "FREN002",
     "credits": 3.0,
@@ -4705,45 +2635,9 @@
   },
   {
     "campus": "po",
-    "code": "FREN033",
-    "credits": 3.0,
-    "title": "Intermediate French"
-  },
-  {
-    "campus": "sc",
-    "code": "FREN033",
-    "credits": 3.0,
-    "title": "Intermediate French"
-  },
-  {
-    "campus": "sc",
-    "code": "FREN033",
-    "credits": 3.0,
-    "title": "Intermediate French"
-  },
-  {
-    "campus": "po",
     "code": "FREN044",
     "credits": 3.0,
     "title": "Advanced French"
-  },
-  {
-    "campus": "po",
-    "code": "FREN044",
-    "credits": 3.0,
-    "title": "Advanced French"
-  },
-  {
-    "campus": "sc",
-    "code": "FREN044",
-    "credits": 3.0,
-    "title": "Advanced French"
-  },
-  {
-    "campus": "po",
-    "code": "FREN101",
-    "credits": 3.0,
-    "title": "Intro to Literary Analysis"
   },
   {
     "campus": "po",
@@ -4786,30 +2680,6 @@
     "code": "FREN191",
     "credits": 1.5,
     "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "FREN191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "FREN191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "FREN192",
-    "credits": 1.5,
-    "title": "Senior Paper"
-  },
-  {
-    "campus": "cgu",
-    "code": "FREN192",
-    "credits": 1.5,
-    "title": "Senior Paper"
   },
   {
     "campus": "cgu",
@@ -4944,90 +2814,6 @@
     "title": "Freshman Writing Seminar - American Dreams"
   },
   {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Blackness in American Cinema"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Contemporary Women Writers"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Contemporary Women Writers"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Creative Nonfiction"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Ideas of Evil"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Language and Life"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Making Monsters"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Post-Apocalyptic Humanity"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Post-Apocalyptic Humanity"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Shakespeare and Otherness"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Voice, Variety, and Vernacular"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Writing About Poetry"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Writing About Poetry"
-  },
-  {
-    "campus": "cmc",
-    "code": "FWS010",
-    "credits": 3.0,
-    "title": "Freshman Writing Seminar - Writing and Experience"
-  },
-  {
     "campus": "po",
     "code": "GEOL015",
     "credits": 3.0,
@@ -5038,12 +2824,6 @@
     "code": "GEOL020C",
     "credits": 3.0,
     "title": "Intro to Geol: Environmental Geo"
-  },
-  {
-    "campus": "po",
-    "code": "GEOL020E",
-    "credits": 3.0,
-    "title": "Oceanography"
   },
   {
     "campus": "po",
@@ -5112,12 +2892,6 @@
     "title": "Elementary German 1"
   },
   {
-    "campus": "sc",
-    "code": "GERM001",
-    "credits": 3.0,
-    "title": "Elementary German 1"
-  },
-  {
     "campus": "po",
     "code": "GERM011",
     "credits": 1.0,
@@ -5131,12 +2905,6 @@
   },
   {
     "campus": "po",
-    "code": "GERM033",
-    "credits": 3.0,
-    "title": "Intermediate German"
-  },
-  {
-    "campus": "sc",
     "code": "GERM033",
     "credits": 3.0,
     "title": "Intermediate German"
@@ -5197,66 +2965,6 @@
   },
   {
     "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT020",
-    "credits": 3.0,
-    "title": "Introduction American Politics"
-  },
-  {
-    "campus": "cmc",
     "code": "GOVT041B",
     "credits": 0.0,
     "title": "Mock Trial (Non-Credit)"
@@ -5278,18 +2986,6 @@
     "code": "GOVT060",
     "credits": 3.0,
     "title": "Intro to Comparative Government"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT060",
-    "credits": 3.0,
-    "title": "Intro to Comparative Government"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT070",
-    "credits": 3.0,
-    "title": "Introduction to Int'l Politics"
   },
   {
     "campus": "cmc",
@@ -5389,24 +3085,6 @@
   },
   {
     "campus": "cmc",
-    "code": "GOVT137B",
-    "credits": 1.5,
-    "title": "Special Topics in Government - Policing the American City"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT137B",
-    "credits": 1.5,
-    "title": "Special Topics in Government - Policing the American City"
-  },
-  {
-    "campus": "cgu",
-    "code": "GOVT137B",
-    "credits": 1.5,
-    "title": "Special Topics in Government - Race and the Constitution"
-  },
-  {
-    "campus": "cmc",
     "code": "GOVT138C",
     "credits": 3.0,
     "title": "Latin American Politics & Policy"
@@ -5425,39 +3103,9 @@
   },
   {
     "campus": "cmc",
-    "code": "GOVT142E",
-    "credits": 3.0,
-    "title": "Chinese Politics"
-  },
-  {
-    "campus": "cmc",
     "code": "GOVT144D",
     "credits": 3.0,
     "title": "Democracy and Dictatorship"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT144D",
-    "credits": 3.0,
-    "title": "Democracy and Dictatorship"
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT149",
-    "credits": 3.0,
-    "title": "Foreign Relations of the U.S."
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT149",
-    "credits": 3.0,
-    "title": "Foreign Relations of the U.S."
-  },
-  {
-    "campus": "cmc",
-    "code": "GOVT149",
-    "credits": 3.0,
-    "title": "Foreign Relations of the U.S."
   },
   {
     "campus": "cmc",
@@ -5496,12 +3144,6 @@
     "title": "Honors Seminar - Government/IR Majors Honors Sem"
   },
   {
-    "campus": "cgu",
-    "code": "GOVT999",
-    "credits": 0.0,
-    "title": "Honors Seminar - Public Policy Major Honors Sem"
-  },
-  {
     "campus": "po",
     "code": "GREK022",
     "credits": 3.0,
@@ -5536,12 +3178,6 @@
     "code": "GRMT164",
     "credits": 3.0,
     "title": "Changing Worlds of Work"
-  },
-  {
-    "campus": "po",
-    "code": "GWS026",
-    "credits": 3.0,
-    "title": "Intro Gender and Women's Studies"
   },
   {
     "campus": "po",
@@ -5611,12 +3247,6 @@
   },
   {
     "campus": "po",
-    "code": "HIST031",
-    "credits": 3.0,
-    "title": "Colonial Latin America"
-  },
-  {
-    "campus": "po",
     "code": "HIST034",
     "credits": 3.0,
     "title": "History of Mexico"
@@ -5646,12 +3276,6 @@
     "title": "Middle East: Muhammad-Mongols"
   },
   {
-    "campus": "cmc",
-    "code": "HIST055",
-    "credits": 3.0,
-    "title": "Middle East: Muhammad-Mongols"
-  },
-  {
     "campus": "pz",
     "code": "HIST065",
     "credits": 3.0,
@@ -5668,18 +3292,6 @@
     "code": "HIST081",
     "credits": 3.0,
     "title": "Sci and Tech Early Modern World"
-  },
-  {
-    "campus": "hmc",
-    "code": "HIST081",
-    "credits": 3.0,
-    "title": "Sci and Tech Early Modern World"
-  },
-  {
-    "campus": "cmc",
-    "code": "HIST096",
-    "credits": 3.0,
-    "title": "The Amazon"
   },
   {
     "campus": "cmc",
@@ -5736,12 +3348,6 @@
     "title": "Topics in American History - Latinx Experiences of COVID-19"
   },
   {
-    "campus": "po",
-    "code": "HIST114",
-    "credits": 3.0,
-    "title": "Christian Views of Islam"
-  },
-  {
     "campus": "cmc",
     "code": "HIST114",
     "credits": 3.0,
@@ -5764,12 +3370,6 @@
     "code": "HIST118",
     "credits": 3.0,
     "title": "Native American History"
-  },
-  {
-    "campus": "cmc",
-    "code": "HIST119",
-    "credits": 3.0,
-    "title": "Women and Politics in America"
   },
   {
     "campus": "cmc",
@@ -5802,12 +3402,6 @@
     "title": "Cult/Soc Weimar & Nazi Germany"
   },
   {
-    "campus": "cmc",
-    "code": "HIST139E",
-    "credits": 3.0,
-    "title": "Cult/Soc Weimar & Nazi Germany"
-  },
-  {
     "campus": "sc",
     "code": "HIST143",
     "credits": 3.0,
@@ -5818,12 +3412,6 @@
     "code": "HIST144",
     "credits": 3.0,
     "title": "Haiti/Colombia/Maroons/Paramilit"
-  },
-  {
-    "campus": "cmc",
-    "code": "HIST150E",
-    "credits": 3.0,
-    "title": "Age of Eliz I and Shakespeare"
   },
   {
     "campus": "cmc",
@@ -5844,22 +3432,10 @@
     "title": "Modern Korean History"
   },
   {
-    "campus": "cmc",
-    "code": "HIST161",
-    "credits": 3.0,
-    "title": "Modern Korean History"
-  },
-  {
     "campus": "po",
     "code": "HIST165",
     "credits": 3.0,
     "title": "20th Century China"
-  },
-  {
-    "campus": "cmc",
-    "code": "HIST166",
-    "credits": 3.0,
-    "title": "Murder & Mayhem Imperial China"
   },
   {
     "campus": "cmc",
@@ -5920,12 +3496,6 @@
     "code": "HIST197",
     "credits": 3.0,
     "title": "Advanced Topics in World History - Racism Today&Human Rights Abuses"
-  },
-  {
-    "campus": "pz",
-    "code": "HIST197",
-    "credits": 3.0,
-    "title": "Seminar in History"
   },
   {
     "campus": "sc",
@@ -6031,12 +3601,6 @@
   },
   {
     "campus": "sc",
-    "code": "ITAL001",
-    "credits": 3.0,
-    "title": "Introductory Italian"
-  },
-  {
-    "campus": "sc",
     "code": "ITAL002",
     "credits": 3.0,
     "title": "Continued Introductory Italian"
@@ -6052,18 +3616,6 @@
     "code": "ITAL145",
     "credits": 3.0,
     "title": "Italian Literature of Gastronomy"
-  },
-  {
-    "campus": "po",
-    "code": "JAPN001A",
-    "credits": 3.0,
-    "title": "Elementary Japanese"
-  },
-  {
-    "campus": "po",
-    "code": "JAPN001A",
-    "credits": 3.0,
-    "title": "Elementary Japanese"
   },
   {
     "campus": "po",
@@ -6103,12 +3655,6 @@
   },
   {
     "campus": "po",
-    "code": "JAPN051A",
-    "credits": 3.0,
-    "title": "Intermediate Japanese"
-  },
-  {
-    "campus": "po",
     "code": "JAPN111A",
     "credits": 3.0,
     "title": "Advanced Japanese"
@@ -6136,24 +3682,6 @@
     "code": "KORE001",
     "credits": 3.0,
     "title": "Introductory Korean"
-  },
-  {
-    "campus": "cmc",
-    "code": "KORE001",
-    "credits": 3.0,
-    "title": "Introductory Korean"
-  },
-  {
-    "campus": "cmc",
-    "code": "KORE001",
-    "credits": 3.0,
-    "title": "Introductory Korean"
-  },
-  {
-    "campus": "cmc",
-    "code": "KORE033",
-    "credits": 3.0,
-    "title": "Intermediate Korean"
   },
   {
     "campus": "cmc",
@@ -6229,24 +3757,6 @@
   },
   {
     "campus": "po",
-    "code": "LGCS010",
-    "credits": 3.0,
-    "title": "Introduction to Linguistics"
-  },
-  {
-    "campus": "po",
-    "code": "LGCS011",
-    "credits": 3.0,
-    "title": "Intro to Cognitive Science"
-  },
-  {
-    "campus": "po",
-    "code": "LGCS011",
-    "credits": 3.0,
-    "title": "Intro to Cognitive Science"
-  },
-  {
-    "campus": "po",
     "code": "LGCS011",
     "credits": 3.0,
     "title": "Intro to Cognitive Science"
@@ -6313,72 +3823,6 @@
   },
   {
     "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
-    "code": "LGCS191",
-    "credits": 1.5,
-    "title": "Senior Thesis in Ling & Cog Sci"
-  },
-  {
-    "campus": "cgu",
     "code": "LGST191",
     "credits": 3.0,
     "title": "Senior Thesis in Legal Studies"
@@ -6394,12 +3838,6 @@
     "code": "LIT035",
     "credits": 3.0,
     "title": "Fiction Writing Workshop"
-  },
-  {
-    "campus": "cmc",
-    "code": "LIT037",
-    "credits": 3.0,
-    "title": "Poetry Writing I"
   },
   {
     "campus": "cmc",
@@ -6430,12 +3868,6 @@
     "code": "LIT090",
     "credits": 3.0,
     "title": "Emily Dickinson"
-  },
-  {
-    "campus": "cmc",
-    "code": "LIT099A",
-    "credits": 3.0,
-    "title": "Special Topics in Literature - Poetry and Philosophy"
   },
   {
     "campus": "cmc",
@@ -6546,60 +3978,6 @@
     "title": "Calculus I"
   },
   {
-    "campus": "cmc",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "cmc",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "cmc",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "cmc",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "po",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "po",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "pz",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "sc",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
-    "campus": "sc",
-    "code": "MATH030",
-    "credits": 3.0,
-    "title": "Calculus I"
-  },
-  {
     "campus": "pz",
     "code": "MATH030P",
     "credits": 6.0,
@@ -6607,42 +3985,6 @@
   },
   {
     "campus": "cmc",
-    "code": "MATH031",
-    "credits": 3.0,
-    "title": "Calculus II"
-  },
-  {
-    "campus": "cmc",
-    "code": "MATH031",
-    "credits": 3.0,
-    "title": "Calculus II"
-  },
-  {
-    "campus": "cmc",
-    "code": "MATH031",
-    "credits": 3.0,
-    "title": "Calculus II"
-  },
-  {
-    "campus": "po",
-    "code": "MATH031",
-    "credits": 3.0,
-    "title": "Calculus II"
-  },
-  {
-    "campus": "po",
-    "code": "MATH031",
-    "credits": 3.0,
-    "title": "Calculus II"
-  },
-  {
-    "campus": "pz",
-    "code": "MATH031",
-    "credits": 3.0,
-    "title": "Calculus II"
-  },
-  {
-    "campus": "sc",
     "code": "MATH031",
     "credits": 3.0,
     "title": "Calculus II"
@@ -6661,30 +4003,6 @@
   },
   {
     "campus": "cmc",
-    "code": "MATH032",
-    "credits": 3.0,
-    "title": "Calculus III"
-  },
-  {
-    "campus": "po",
-    "code": "MATH032",
-    "credits": 3.0,
-    "title": "Calculus III"
-  },
-  {
-    "campus": "po",
-    "code": "MATH032",
-    "credits": 3.0,
-    "title": "Calculus III"
-  },
-  {
-    "campus": "pz",
-    "code": "MATH032",
-    "credits": 3.0,
-    "title": "Calculus III"
-  },
-  {
-    "campus": "sc",
     "code": "MATH032",
     "credits": 3.0,
     "title": "Calculus III"
@@ -6714,24 +4032,6 @@
     "title": "Discrete Mathematics"
   },
   {
-    "campus": "hmc",
-    "code": "MATH055",
-    "credits": 3.0,
-    "title": "Discrete Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH055",
-    "credits": 3.0,
-    "title": "Discrete Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH055",
-    "credits": 3.0,
-    "title": "Discrete Mathematics"
-  },
-  {
     "campus": "po",
     "code": "MATH058",
     "credits": 3.0,
@@ -6745,36 +4045,6 @@
   },
   {
     "campus": "cmc",
-    "code": "MATH060",
-    "credits": 3.0,
-    "title": "Linear Algebra"
-  },
-  {
-    "campus": "po",
-    "code": "MATH060",
-    "credits": 3.0,
-    "title": "Linear Algebra"
-  },
-  {
-    "campus": "po",
-    "code": "MATH060",
-    "credits": 3.0,
-    "title": "Linear Algebra"
-  },
-  {
-    "campus": "po",
-    "code": "MATH060",
-    "credits": 3.0,
-    "title": "Linear Algebra"
-  },
-  {
-    "campus": "pz",
-    "code": "MATH060",
-    "credits": 3.0,
-    "title": "Linear Algebra"
-  },
-  {
-    "campus": "sc",
     "code": "MATH060",
     "credits": 3.0,
     "title": "Linear Algebra"
@@ -6816,12 +4086,6 @@
     "title": "Differential Equations"
   },
   {
-    "campus": "cmc",
-    "code": "MATH111",
-    "credits": 3.0,
-    "title": "Differential Equations"
-  },
-  {
     "campus": "po",
     "code": "MATH113",
     "credits": 3.0,
@@ -6832,24 +4096,6 @@
     "code": "MATH131",
     "credits": 3.0,
     "title": "Math Analysis I"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH131",
-    "credits": 3.0,
-    "title": "Mathematical Analysis I"
-  },
-  {
-    "campus": "po",
-    "code": "MATH131",
-    "credits": 3.0,
-    "title": "Principles of Real Analysis I"
-  },
-  {
-    "campus": "sc",
-    "code": "MATH131",
-    "credits": 3.0,
-    "title": "Principles of Real Analysis I"
   },
   {
     "campus": "cmc",
@@ -6871,12 +4117,6 @@
   },
   {
     "campus": "cmc",
-    "code": "MATH151",
-    "credits": 3.0,
-    "title": "Probability"
-  },
-  {
-    "campus": "po",
     "code": "MATH151",
     "credits": 3.0,
     "title": "Probability"
@@ -6918,22 +4158,10 @@
     "title": "Algorithms"
   },
   {
-    "campus": "hmc",
-    "code": "MATH168",
-    "credits": 3.0,
-    "title": "Algorithms"
-  },
-  {
     "campus": "cmc",
     "code": "MATH171",
     "credits": 3.0,
     "title": "Abstract Algebra"
-  },
-  {
-    "campus": "cgu",
-    "code": "MATH171",
-    "credits": 3.0,
-    "title": "Abstract Algebra I"
   },
   {
     "campus": "po",
@@ -6972,12 +4200,6 @@
     "title": "Sem in Mathematical Exposition"
   },
   {
-    "campus": "po",
-    "code": "MATH190",
-    "credits": 1.5,
-    "title": "Sem in Mathematical Exposition"
-  },
-  {
     "campus": "hmc",
     "code": "MATH193",
     "credits": 3.0,
@@ -7000,66 +4222,6 @@
     "code": "MATH197",
     "credits": 3.0,
     "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH197",
-    "credits": 3.0,
-    "title": "Senior Thesis in Mathematics"
-  },
-  {
-    "campus": "cgu",
-    "code": "MATH198",
-    "credits": 0.0,
-    "title": "Math Forum"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH198",
-    "credits": 1.0,
-    "title": "Undergraduate Mathematics Forum"
-  },
-  {
-    "campus": "hmc",
-    "code": "MATH198",
-    "credits": 1.0,
-    "title": "Undergraduate Mathematics Forum"
   },
   {
     "campus": "hmc",
@@ -7111,192 +4273,6 @@
   },
   {
     "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI191A",
-    "credits": 1.5,
-    "title": "Sr Libry Thesis-Res & Grant Prop"
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
-    "code": "MOBI194A",
-    "credits": 3.0,
-    "title": "Experimental Sen Thesis-1st Sem."
-  },
-  {
-    "campus": "cgu",
     "code": "MOBI194A",
     "credits": 3.0,
     "title": "Experimental Sen Thesis-1st Sem."
@@ -7315,24 +4291,12 @@
   },
   {
     "campus": "pz",
-    "code": "MS045",
-    "credits": 3.0,
-    "title": "Documentary Media"
-  },
-  {
-    "campus": "pz",
     "code": "MS048",
     "credits": 3.0,
     "title": "(Digital) Media Ethnography"
   },
   {
     "campus": "pz",
-    "code": "MS049",
-    "credits": 3.0,
-    "title": "Introduction to Media Studies"
-  },
-  {
-    "campus": "sc",
     "code": "MS049",
     "credits": 3.0,
     "title": "Introduction to Media Studies"
@@ -7518,12 +4482,6 @@
     "title": "Group Piano"
   },
   {
-    "campus": "po",
-    "code": "MUS007",
-    "credits": 1.0,
-    "title": "Group Piano"
-  },
-  {
     "campus": "cgu",
     "code": "MUS010",
     "credits": 1.0,
@@ -7627,12 +4585,6 @@
   },
   {
     "campus": "po",
-    "code": "MUS080L",
-    "credits": 0.0,
-    "title": "Lab, Theory I"
-  },
-  {
-    "campus": "po",
     "code": "MUS080",
     "credits": 3.0,
     "title": "Music Theory I"
@@ -7650,12 +4602,6 @@
     "title": "Lab, Theory II"
   },
   {
-    "campus": "po",
-    "code": "MUS081",
-    "credits": 3.0,
-    "title": "Music Theory II"
-  },
-  {
     "campus": "cgu",
     "code": "MUS085",
     "credits": 1.5,
@@ -7668,25 +4614,7 @@
     "title": "Group Voice"
   },
   {
-    "campus": "sc",
-    "code": "MUS089",
-    "credits": 1.5,
-    "title": "Group Voice"
-  },
-  {
     "campus": "cgu",
-    "code": "MUS092",
-    "credits": 1.5,
-    "title": "Voice for Musical Theatre"
-  },
-  {
-    "campus": "sc",
-    "code": "MUS092",
-    "credits": 1.5,
-    "title": "Voice for Musical Theatre"
-  },
-  {
-    "campus": "sc",
     "code": "MUS092",
     "credits": 1.5,
     "title": "Voice for Musical Theatre"
@@ -7741,30 +4669,6 @@
   },
   {
     "campus": "cgu",
-    "code": "MUS170F",
-    "credits": 3.0,
-    "title": "Voice"
-  },
-  {
-    "campus": "sc",
-    "code": "MUS170F",
-    "credits": 3.0,
-    "title": "Voice"
-  },
-  {
-    "campus": "cgu",
-    "code": "MUS170H",
-    "credits": 1.5,
-    "title": "Voice"
-  },
-  {
-    "campus": "cgu",
-    "code": "MUS170H",
-    "credits": 1.5,
-    "title": "Voice"
-  },
-  {
-    "campus": "sc",
     "code": "MUS170H",
     "credits": 1.5,
     "title": "Voice"
@@ -7773,24 +4677,6 @@
     "campus": "cgu",
     "code": "MUS171F",
     "credits": 3.0,
-    "title": "Piano"
-  },
-  {
-    "campus": "cgu",
-    "code": "MUS171F",
-    "credits": 3.0,
-    "title": "Piano"
-  },
-  {
-    "campus": "cgu",
-    "code": "MUS171H",
-    "credits": 1.5,
-    "title": "Piano"
-  },
-  {
-    "campus": "cgu",
-    "code": "MUS171H",
-    "credits": 1.5,
     "title": "Piano"
   },
   {
@@ -7867,12 +4753,6 @@
   },
   {
     "campus": "po",
-    "code": "NEUR101AL",
-    "credits": 0.0,
-    "title": "Lab, Intro to Neuroscience"
-  },
-  {
-    "campus": "po",
     "code": "NEUR103",
     "credits": 3.0,
     "title": "Neuropharmacology"
@@ -7888,12 +4768,6 @@
     "code": "NEUR130",
     "credits": 3.0,
     "title": "Vertebrate Sensory Systems w/Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "NEUR148L",
-    "credits": 3.0,
-    "title": "Neuroscience I:Cell, Molecular"
   },
   {
     "campus": "sc",
@@ -7948,48 +4822,6 @@
     "code": "NEUR191",
     "credits": 3.0,
     "title": "One-Sem Thesis in Neuroscience"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR191",
-    "credits": 1.5,
-    "title": "Senior Library Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR191",
-    "credits": 1.5,
-    "title": "Senior Library Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR194A",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR194A",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR194A",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR194A",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "NEUR194A",
-    "credits": 1.5,
-    "title": "Senior Experimental Thesis"
   },
   {
     "campus": "cgu",
@@ -8064,18 +4896,6 @@
     "title": "Introduction to Fitness"
   },
   {
-    "campus": "po",
-    "code": "PE003",
-    "credits": 1.0,
-    "title": "Introduction to Fitness"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE003",
-    "credits": 1.0,
-    "title": "Introduction to Fitness"
-  },
-  {
     "campus": "cgu",
     "code": "PE004B",
     "credits": 1.0,
@@ -8124,19 +4944,7 @@
     "title": "Core Training"
   },
   {
-    "campus": "cgu",
-    "code": "PE006",
-    "credits": 1.0,
-    "title": "Core Training"
-  },
-  {
     "campus": "hmc",
-    "code": "PE007B",
-    "credits": 1.0,
-    "title": "CATZ"
-  },
-  {
-    "campus": "cgu",
     "code": "PE007B",
     "credits": 1.0,
     "title": "CATZ"
@@ -8154,34 +4962,10 @@
     "title": "High Intens Interval Trng (HIIT)"
   },
   {
-    "campus": "cmc",
-    "code": "PE008B",
-    "credits": 1.0,
-    "title": "High Intens Interval Trng (HIIT)"
-  },
-  {
     "campus": "cgu",
     "code": "PE008",
     "credits": 1.0,
     "title": "Conditioning - Advanced"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE008",
-    "credits": 1.0,
-    "title": "Conditioning - Advanced"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE008",
-    "credits": 1.0,
-    "title": "Conditioning - Advanced"
-  },
-  {
-    "campus": "po",
-    "code": "PE009A",
-    "credits": 1.0,
-    "title": "Walking: Get your steps in"
   },
   {
     "campus": "po",
@@ -8194,18 +4978,6 @@
     "code": "PE009",
     "credits": 1.0,
     "title": "Half Marathon Training"
-  },
-  {
-    "campus": "po",
-    "code": "PE009",
-    "credits": 1.0,
-    "title": "Jogging/Running"
-  },
-  {
-    "campus": "po",
-    "code": "PE009",
-    "credits": 1.0,
-    "title": "Jogging/Running"
   },
   {
     "campus": "cgu",
@@ -8251,27 +5023,9 @@
   },
   {
     "campus": "cgu",
-    "code": "PE014",
-    "credits": 1.0,
-    "title": "Spinning-Stationary Bike"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE014",
-    "credits": 1.0,
-    "title": "Spinning-Stationary Bike"
-  },
-  {
-    "campus": "cgu",
     "code": "PE015",
     "credits": 1.0,
     "title": "Swim Conditioning"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE015",
-    "credits": 1.0,
-    "title": "Swim Fitness"
   },
   {
     "campus": "cgu",
@@ -8292,24 +5046,6 @@
     "title": "Weight Training & Cardio"
   },
   {
-    "campus": "po",
-    "code": "PE018",
-    "credits": 1.0,
-    "title": "Weight Training & Cardio"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE018",
-    "credits": 1.0,
-    "title": "Weight Training & Cardio"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE019B",
-    "credits": 1.0,
-    "title": "CrossFit"
-  },
-  {
     "campus": "cgu",
     "code": "PE019B",
     "credits": 1.0,
@@ -8323,45 +5059,9 @@
   },
   {
     "campus": "po",
-    "code": "PE019",
-    "credits": 1.0,
-    "title": "Circuit Strength Training"
-  },
-  {
-    "campus": "po",
-    "code": "PE019",
-    "credits": 1.0,
-    "title": "Circuit Strength Training"
-  },
-  {
-    "campus": "po",
     "code": "PE020B",
     "credits": 1.0,
     "title": "Body&Strength Interval Training"
-  },
-  {
-    "campus": "po",
-    "code": "PE020B",
-    "credits": 1.0,
-    "title": "Body&Strength Interval Training"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE020B",
-    "credits": 1.0,
-    "title": "Body&Strength Interval Training"
-  },
-  {
-    "campus": "po",
-    "code": "PE022A",
-    "credits": 1.0,
-    "title": "Yoga - I"
-  },
-  {
-    "campus": "po",
-    "code": "PE022A",
-    "credits": 1.0,
-    "title": "Yoga - I"
   },
   {
     "campus": "po",
@@ -8392,12 +5092,6 @@
     "code": "PE026",
     "credits": 1.0,
     "title": "Shotokan Karate"
-  },
-  {
-    "campus": "po",
-    "code": "PE029",
-    "credits": 1.0,
-    "title": "Pilates-Yoga Blend"
   },
   {
     "campus": "po",
@@ -8538,12 +5232,6 @@
     "title": "Yoga-Power"
   },
   {
-    "campus": "cmc",
-    "code": "PE074",
-    "credits": 1.0,
-    "title": "Yoga-Power"
-  },
-  {
     "campus": "cgu",
     "code": "PE075H",
     "credits": 1.0,
@@ -8554,36 +5242,6 @@
     "code": "PE075",
     "credits": 1.0,
     "title": "Yoga-Vinyasa Flow"
-  },
-  {
-    "campus": "cmc",
-    "code": "PE075",
-    "credits": 1.0,
-    "title": "Yoga-Vinyasa Flow"
-  },
-  {
-    "campus": "cmc",
-    "code": "PE075",
-    "credits": 1.0,
-    "title": "Yoga-Vinyasa Flow"
-  },
-  {
-    "campus": "cmc",
-    "code": "PE076",
-    "credits": 1.0,
-    "title": "Yoga-Hatha"
-  },
-  {
-    "campus": "cmc",
-    "code": "PE076",
-    "credits": 1.0,
-    "title": "Yoga-Hatha"
-  },
-  {
-    "campus": "cmc",
-    "code": "PE076",
-    "credits": 1.0,
-    "title": "Yoga-Hatha"
   },
   {
     "campus": "cmc",
@@ -8605,12 +5263,6 @@
   },
   {
     "campus": "hmc",
-    "code": "PE080",
-    "credits": 1.0,
-    "title": "Free Weights"
-  },
-  {
-    "campus": "cgu",
     "code": "PE080",
     "credits": 1.0,
     "title": "Free Weights"
@@ -8653,12 +5305,6 @@
   },
   {
     "campus": "cgu",
-    "code": "PE087",
-    "credits": 1.0,
-    "title": "Fitness & Wellness"
-  },
-  {
-    "campus": "cgu",
     "code": "PE088A",
     "credits": 1.0,
     "title": "Football-Offensive Strategy"
@@ -8680,18 +5326,6 @@
     "code": "PE088",
     "credits": 1.0,
     "title": "Football-Defensive Strategy"
-  },
-  {
-    "campus": "po",
-    "code": "PE088",
-    "credits": 1.5,
-    "title": "Leadership & Fitness"
-  },
-  {
-    "campus": "cgu",
-    "code": "PE088",
-    "credits": 1.5,
-    "title": "Leadership & Fitness"
   },
   {
     "campus": "cgu",
@@ -8761,12 +5395,6 @@
   },
   {
     "campus": "po",
-    "code": "PHIL001",
-    "credits": 3.0,
-    "title": "Problems of Philosophy"
-  },
-  {
-    "campus": "po",
     "code": "PHIL007",
     "credits": 3.0,
     "title": "Discovery, Invention & Progress"
@@ -8776,18 +5404,6 @@
     "code": "PHIL030",
     "credits": 3.0,
     "title": "Intro: Philosophical Questions"
-  },
-  {
-    "campus": "cmc",
-    "code": "PHIL030",
-    "credits": 3.0,
-    "title": "Intro: Philosophical Questions"
-  },
-  {
-    "campus": "pz",
-    "code": "PHIL030",
-    "credits": 3.0,
-    "title": "Knowledge, Mind & Existence"
   },
   {
     "campus": "po",
@@ -8806,30 +5422,6 @@
     "code": "PHIL038",
     "credits": 3.0,
     "title": "Intro: Reason and Reality"
-  },
-  {
-    "campus": "cmc",
-    "code": "PHIL038",
-    "credits": 3.0,
-    "title": "Intro: Reason and Reality"
-  },
-  {
-    "campus": "cmc",
-    "code": "PHIL038",
-    "credits": 3.0,
-    "title": "Intro: Reason and Reality - Intro: Reason & Reality"
-  },
-  {
-    "campus": "cmc",
-    "code": "PHIL038",
-    "credits": 3.0,
-    "title": "Intro: Reason and Reality - Intro: Reason & Reality"
-  },
-  {
-    "campus": "cmc",
-    "code": "PHIL039",
-    "credits": 3.0,
-    "title": "Intro: Special Topics in Phil - Intro: Sci, Tech, & Human Values"
   },
   {
     "campus": "cmc",
@@ -8872,12 +5464,6 @@
     "code": "PHIL090",
     "credits": 3.0,
     "title": "Introduction to Philosophy"
-  },
-  {
-    "campus": "cmc",
-    "code": "PHIL100E",
-    "credits": 3.0,
-    "title": "Special Topics: Hist of Philos - Modern Metaphysics"
   },
   {
     "campus": "cmc",
@@ -8946,12 +5532,6 @@
     "title": "Global Ethics - War and Peace"
   },
   {
-    "campus": "cmc",
-    "code": "PHIL177",
-    "credits": 3.0,
-    "title": "Global Ethics - War and Peace"
-  },
-  {
     "campus": "po",
     "code": "PHIL186K",
     "credits": 3.0,
@@ -8964,22 +5544,10 @@
     "title": "Environmental Ethics"
   },
   {
-    "campus": "cmc",
-    "code": "PHIL187",
-    "credits": 3.0,
-    "title": "Environmental Ethics"
-  },
-  {
     "campus": "po",
     "code": "PHIL190",
     "credits": 3.0,
     "title": "Senior Literature Review"
-  },
-  {
-    "campus": "sc",
-    "code": "PHIL190",
-    "credits": 3.0,
-    "title": "Senior Seminar in Philosophy"
   },
   {
     "campus": "cgu",
@@ -9012,84 +5580,6 @@
     "title": "Special Relativity"
   },
   {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS023",
-    "credits": 1.5,
-    "title": "Special Relativity"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS030L",
-    "credits": 3.0,
-    "title": "General Physics Life Sciences"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS030L",
-    "credits": 3.0,
-    "title": "General Physics Life Sciences"
-  },
-  {
     "campus": "sc",
     "code": "PHYS030L",
     "credits": 3.0,
@@ -9100,42 +5590,6 @@
     "code": "PHYS030LX",
     "credits": 0.0,
     "title": "General Physics Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS030LX",
-    "credits": 0.0,
-    "title": "General Physics Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS030LX",
-    "credits": 0.0,
-    "title": "General Physics Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS030LX",
-    "credits": 0.0,
-    "title": "General Physics Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS030LX",
-    "credits": 0.0,
-    "title": "General Physics Lab"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS033L",
-    "credits": 3.0,
-    "title": "Principles of Physics"
-  },
-  {
-    "campus": "sc",
-    "code": "PHYS033L",
-    "credits": 3.0,
-    "title": "Principles of Physics"
   },
   {
     "campus": "sc",
@@ -9157,30 +5611,6 @@
   },
   {
     "campus": "po",
-    "code": "PHYS041",
-    "credits": 3.0,
-    "title": "General Physics with Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "PHYS041L",
-    "credits": 0.0,
-    "title": "General Physics with Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "PHYS041L",
-    "credits": 0.0,
-    "title": "General Physics with Laboratory"
-  },
-  {
-    "campus": "po",
-    "code": "PHYS041L",
-    "credits": 0.0,
-    "title": "General Physics with Laboratory"
-  },
-  {
-    "campus": "po",
     "code": "PHYS041L",
     "credits": 0.0,
     "title": "General Physics with Laboratory"
@@ -9190,42 +5620,6 @@
     "code": "PHYS050",
     "credits": 1.0,
     "title": "Physics Laboratory"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS050",
-    "credits": 1.0,
-    "title": "Physics Laboratory"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS050",
-    "credits": 1.0,
-    "title": "Physics Laboratory"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS050",
-    "credits": 1.0,
-    "title": "Physics Laboratory"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS050",
-    "credits": 1.0,
-    "title": "Physics Laboratory"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS050",
-    "credits": 0.0,
-    "title": "Physics Laboratory - SPRING 2021 Placeholder Section"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051A",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
   },
   {
     "campus": "hmc",
@@ -9241,75 +5635,9 @@
   },
   {
     "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051",
-    "credits": 3.0,
-    "title": "Electromagnetic Theory & Optics"
-  },
-  {
-    "campus": "hmc",
     "code": "PHYS051M",
     "credits": 3.0,
     "title": "Elctrmagnetic Thry & Vector Calc"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS051M",
-    "credits": 3.0,
-    "title": "Elctrmagnetic Thry & Vector Calc"
-  },
-  {
-    "campus": "po",
-    "code": "PHYS089A",
-    "credits": 3.0,
-    "title": "Big Ideas in Modern Physics"
   },
   {
     "campus": "po",
@@ -9322,12 +5650,6 @@
     "code": "PHYS101",
     "credits": 3.0,
     "title": "Classical Mechns Computal Appls"
-  },
-  {
-    "campus": "po",
-    "code": "PHYS101",
-    "credits": 3.0,
-    "title": "Foundatns of Modern Phys w/Lab"
   },
   {
     "campus": "po",
@@ -9358,24 +5680,6 @@
     "code": "PHYS117",
     "credits": 3.0,
     "title": "StatisticalMechan/Thermodynamics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS117",
-    "credits": 3.0,
-    "title": "StatisticalMechan/Thermodynamics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS117",
-    "credits": 3.0,
-    "title": "StatisticalMechan/Thermodynamics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS133",
-    "credits": 1.0,
-    "title": "Electronics Laboratory"
   },
   {
     "campus": "hmc",
@@ -9445,75 +5749,9 @@
   },
   {
     "campus": "cgu",
-    "code": "PHYS191E",
-    "credits": 3.0,
-    "title": "Senior Thesis (Experimental)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191E",
-    "credits": 3.0,
-    "title": "Senior Thesis (Experimental)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191E",
-    "credits": 3.0,
-    "title": "Senior Thesis (Experimental)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191E",
-    "credits": 3.0,
-    "title": "Senior Thesis (Experimental)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191E",
-    "credits": 3.0,
-    "title": "Senior Thesis (Experimental)"
-  },
-  {
-    "campus": "cgu",
     "code": "PHYS191L",
     "credits": 1.5,
     "title": "Senior Thesis (Library)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191L",
-    "credits": 1.5,
-    "title": "Senior Thesis (Library)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191L",
-    "credits": 1.5,
-    "title": "Senior Thesis (Library)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191L",
-    "credits": 1.5,
-    "title": "Senior Thesis (Library)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191L",
-    "credits": 1.5,
-    "title": "Senior Thesis (Library)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191L",
-    "credits": 1.5,
-    "title": "Senior Thesis (Library)"
-  },
-  {
-    "campus": "cgu",
-    "code": "PHYS191",
-    "credits": 3.0,
-    "title": "One-Semester Thesis in Physics"
   },
   {
     "campus": "cgu",
@@ -9528,12 +5766,6 @@
     "title": "Physics Clinic"
   },
   {
-    "campus": "cgu",
-    "code": "PHYS193",
-    "credits": 0.0,
-    "title": "Senior Comprehensive Examination"
-  },
-  {
     "campus": "hmc",
     "code": "PHYS195",
     "credits": 0.5,
@@ -9544,78 +5776,6 @@
     "code": "PHYS197",
     "credits": 3.0,
     "title": "Readings in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
-  },
-  {
-    "campus": "hmc",
-    "code": "PHYS199",
-    "credits": 3.0,
-    "title": "Senior Thesis in Physics"
   },
   {
     "campus": "hmc",
@@ -9637,12 +5797,6 @@
   },
   {
     "campus": "po",
-    "code": "POLI003",
-    "credits": 3.0,
-    "title": "Intro to American Politics"
-  },
-  {
-    "campus": "po",
     "code": "POLI007",
     "credits": 3.0,
     "title": "United States Foreign Policy"
@@ -9652,18 +5806,6 @@
     "code": "POLI008",
     "credits": 3.0,
     "title": "Intro to International Relations"
-  },
-  {
-    "campus": "po",
-    "code": "POLI008",
-    "credits": 3.0,
-    "title": "Intro to International Relations"
-  },
-  {
-    "campus": "po",
-    "code": "POLI031",
-    "credits": 3.0,
-    "title": "California Politics and Policy"
   },
   {
     "campus": "po",
@@ -9739,12 +5881,6 @@
   },
   {
     "campus": "sc",
-    "code": "POLI135",
-    "credits": 3.0,
-    "title": "Political Economy of Food"
-  },
-  {
-    "campus": "sc",
     "code": "POLI145",
     "credits": 3.0,
     "title": "Race, Violence, and the Law"
@@ -9817,60 +5953,6 @@
   },
   {
     "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "POLI191",
-    "credits": 3.0,
-    "title": "Sr Thesis: Politics"
-  },
-  {
-    "campus": "cgu",
     "code": "POLI193",
     "credits": 1.5,
     "title": "Senior Oral Comprehensive Exam"
@@ -9910,18 +5992,6 @@
     "code": "POST020",
     "credits": 3.0,
     "title": "US Politics: Resistnce & Transfr"
-  },
-  {
-    "campus": "pz",
-    "code": "POST030",
-    "credits": 3.0,
-    "title": "Intro to Comparative Politics"
-  },
-  {
-    "campus": "pz",
-    "code": "POST030",
-    "credits": 3.0,
-    "title": "Intro to Comparative Politics"
   },
   {
     "campus": "pz",
@@ -10014,64 +6084,10 @@
     "title": "Introduction to Psychology"
   },
   {
-    "campus": "pz",
-    "code": "PSYC010",
-    "credits": 3.0,
-    "title": "Introduction to Psychology"
-  },
-  {
-    "campus": "pz",
-    "code": "PSYC010",
-    "credits": 3.0,
-    "title": "Introduction to Psychology"
-  },
-  {
     "campus": "cmc",
     "code": "PSYC030",
     "credits": 3.0,
     "title": "Introduction to Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC030",
-    "credits": 3.0,
-    "title": "Introduction to Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC030",
-    "credits": 3.0,
-    "title": "Introduction to Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC030",
-    "credits": 3.0,
-    "title": "Introduction to Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC030",
-    "credits": 3.0,
-    "title": "Introduction to Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC037",
-    "credits": 3.0,
-    "title": "Organizational Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC037",
-    "credits": 3.0,
-    "title": "Organizational Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC037",
-    "credits": 3.0,
-    "title": "Organizational Psychology"
   },
   {
     "campus": "cmc",
@@ -10092,24 +6108,6 @@
     "title": "Intro to Psychological Science"
   },
   {
-    "campus": "po",
-    "code": "PSYC051",
-    "credits": 3.0,
-    "title": "Intro to Psychological Science"
-  },
-  {
-    "campus": "po",
-    "code": "PSYC051",
-    "credits": 3.0,
-    "title": "Intro to Psychological Science"
-  },
-  {
-    "campus": "po",
-    "code": "PSYC051",
-    "credits": 3.0,
-    "title": "Intro to Psychological Science"
-  },
-  {
     "campus": "sc",
     "code": "PSYC052",
     "credits": 3.0,
@@ -10120,18 +6118,6 @@
     "code": "PSYC070",
     "credits": 3.0,
     "title": "Abnormal Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC070",
-    "credits": 3.0,
-    "title": "Abnormal Psychology"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC081",
-    "credits": 3.0,
-    "title": "Developmental Psychology"
   },
   {
     "campus": "cmc",
@@ -10164,12 +6150,6 @@
     "title": "Research Methods Practicum"
   },
   {
-    "campus": "pz",
-    "code": "PSYC092",
-    "credits": 3.0,
-    "title": "Research Methods"
-  },
-  {
     "campus": "cmc",
     "code": "PSYC092",
     "credits": 3.0,
@@ -10192,18 +6172,6 @@
     "code": "PSYC101",
     "credits": 3.0,
     "title": "Brain and Behavior"
-  },
-  {
-    "campus": "pz",
-    "code": "PSYC101",
-    "credits": 3.0,
-    "title": "Brain and Behavior"
-  },
-  {
-    "campus": "sc",
-    "code": "PSYC103",
-    "credits": 3.0,
-    "title": "Psychological Statistics"
   },
   {
     "campus": "pz",
@@ -10237,39 +6205,9 @@
   },
   {
     "campus": "cmc",
-    "code": "PSYC109",
-    "credits": 3.0,
-    "title": "Intro to Stats for Psychologists"
-  },
-  {
-    "campus": "sc",
-    "code": "PSYC110",
-    "credits": 3.0,
-    "title": "Child Development"
-  },
-  {
-    "campus": "cmc",
     "code": "PSYC110",
     "credits": 3.0,
     "title": "Research Methods"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC110",
-    "credits": 3.0,
-    "title": "Research Methods"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC111L",
-    "credits": 3.0,
-    "title": "Research Methods Practicum"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC111L",
-    "credits": 3.0,
-    "title": "Research Methods Practicum"
   },
   {
     "campus": "cmc",
@@ -10290,12 +6228,6 @@
     "title": "Physiological Psychology"
   },
   {
-    "campus": "sc",
-    "code": "PSYC112",
-    "credits": 3.0,
-    "title": "Clinical Geropsychology"
-  },
-  {
     "campus": "pz",
     "code": "PSYC112",
     "credits": 3.0,
@@ -10306,12 +6238,6 @@
     "code": "PSYC125",
     "credits": 3.0,
     "title": "Culture/Hum Dev:African Diaspora"
-  },
-  {
-    "campus": "pz",
-    "code": "PSYC127",
-    "credits": 3.0,
-    "title": "Language & Cognition"
   },
   {
     "campus": "pz",
@@ -10348,12 +6274,6 @@
     "code": "PSYC142",
     "credits": 3.0,
     "title": "Becoming a Leader:Sem in Ldr Dev"
-  },
-  {
-    "campus": "cmc",
-    "code": "PSYC150",
-    "credits": 3.0,
-    "title": "Child Psychopathology"
   },
   {
     "campus": "po",
@@ -10494,60 +6414,6 @@
     "title": "Senior Research in Psychology"
   },
   {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC190R",
-    "credits": 1.5,
-    "title": "Senior Research in Psychology"
-  },
-  {
     "campus": "po",
     "code": "PSYC190",
     "credits": 1.5,
@@ -10573,201 +6439,9 @@
   },
   {
     "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197A",
-    "credits": 1.0,
-    "title": "Directed Research in Psychology - Cognitive Electrophysiology"
-  },
-  {
-    "campus": "cgu",
     "code": "PSYC197B",
     "credits": 0.0,
     "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology"
-  },
-  {
-    "campus": "cgu",
-    "code": "PSYC197B",
-    "credits": 0.0,
-    "title": "Directed Research in Psychology - Cognitive Electrophysiology"
   },
   {
     "campus": "cmc",
@@ -10792,12 +6466,6 @@
     "code": "RLST021",
     "credits": 3.0,
     "title": "Jewish Civilization"
-  },
-  {
-    "campus": "cmc",
-    "code": "RLST037",
-    "credits": 3.0,
-    "title": "History of World Christianity"
   },
   {
     "campus": "cmc",
@@ -10962,18 +6630,6 @@
     "title": "Introduction to Sociology"
   },
   {
-    "campus": "pz",
-    "code": "SOC001",
-    "credits": 3.0,
-    "title": "Introduction to Sociology"
-  },
-  {
-    "campus": "pz",
-    "code": "SOC001",
-    "credits": 3.0,
-    "title": "Introduction to Sociology"
-  },
-  {
     "campus": "po",
     "code": "SOC030",
     "credits": 3.0,
@@ -10990,18 +6646,6 @@
     "code": "SOC050",
     "credits": 3.0,
     "title": "The Construction of Masculinity"
-  },
-  {
-    "campus": "po",
-    "code": "SOC051",
-    "credits": 3.0,
-    "title": "Introduction to Sociology"
-  },
-  {
-    "campus": "po",
-    "code": "SOC051",
-    "credits": 3.0,
-    "title": "Introduction to Sociology"
   },
   {
     "campus": "po",
@@ -11029,12 +6673,6 @@
   },
   {
     "campus": "po",
-    "code": "SOC102",
-    "credits": 3.0,
-    "title": "Qualitative Research Methods"
-  },
-  {
-    "campus": "pz",
     "code": "SOC102",
     "credits": 3.0,
     "title": "Qualitative Research Methods"
@@ -11112,58 +6750,10 @@
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
-    "code": "SOC191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "SOC191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "SOC191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN001",
-    "credits": 3.0,
-    "title": "Elementary Spanish"
-  },
-  {
     "campus": "cmc",
     "code": "SPAN001",
     "credits": 3.0,
     "title": "Introductory Spanish"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN001",
-    "credits": 3.0,
-    "title": "Introductory Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN001",
-    "credits": 3.0,
-    "title": "Introductory Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN001",
-    "credits": 3.0,
-    "title": "Introductory Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN011",
-    "credits": 1.0,
-    "title": "Spanish Conversation, Intermed"
   },
   {
     "campus": "po",
@@ -11178,43 +6768,7 @@
     "title": "Spanish Conversation, Advanced"
   },
   {
-    "campus": "po",
-    "code": "SPAN013",
-    "credits": 1.0,
-    "title": "Spanish Conversation, Advanced"
-  },
-  {
     "campus": "cmc",
-    "code": "SPAN022",
-    "credits": 3.0,
-    "title": "Intensive Introductory Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN022",
-    "credits": 3.0,
-    "title": "Intensive Introductory Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN022",
-    "credits": 3.0,
-    "title": "Intensive Introductory Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN022",
-    "credits": 3.0,
-    "title": "Intensive Introductory Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN022",
-    "credits": 3.0,
-    "title": "Intensive Introductory Spanish"
-  },
-  {
-    "campus": "sc",
     "code": "SPAN022",
     "credits": 3.0,
     "title": "Intensive Introductory Spanish"
@@ -11233,195 +6787,15 @@
   },
   {
     "campus": "cmc",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "sc",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "sc",
-    "code": "SPAN033",
-    "credits": 3.0,
-    "title": "Intermediate Spanish"
-  },
-  {
-    "campus": "cmc",
     "code": "SPAN033L",
     "credits": 0.0,
     "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN033L",
-    "credits": 0.0,
-    "title": "Int Spanish Conversation Class"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Adv. Spanish: Language & Culture"
-  },
-  {
-    "campus": "pz",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Adv. Spanish: Language & Culture"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Advanced Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Advanced Spanish"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Advanced Spanish"
-  },
-  {
-    "campus": "sc",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Advanced Spanish"
   },
   {
     "campus": "cmc",
     "code": "SPAN044",
     "credits": 3.0,
     "title": "Advanced Spanish: Culture & Soc"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Advanced Spanish: Culture & Soc"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN044",
-    "credits": 3.0,
-    "title": "Advanced Spanish: Culture & Soc"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN044L",
-    "credits": 0.0,
-    "title": "Adv Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN044L",
-    "credits": 0.0,
-    "title": "Adv Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN044L",
-    "credits": 0.0,
-    "title": "Adv Spanish Conversation Class"
-  },
-  {
-    "campus": "cmc",
-    "code": "SPAN044L",
-    "credits": 0.0,
-    "title": "Adv Spanish Conversation Class"
   },
   {
     "campus": "cmc",
@@ -11443,12 +6817,6 @@
   },
   {
     "campus": "pz",
-    "code": "SPAN055",
-    "credits": 1.5,
-    "title": "Adv Conversation through Film"
-  },
-  {
-    "campus": "pz",
     "code": "SPAN100",
     "credits": 3.0,
     "title": "Spanish in the Community"
@@ -11458,24 +6826,6 @@
     "code": "SPAN101",
     "credits": 3.0,
     "title": "Intro to Literary Analysis"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN101",
-    "credits": 3.0,
-    "title": "Intro to Literary Analysis"
-  },
-  {
-    "campus": "po",
-    "code": "SPAN101",
-    "credits": 3.0,
-    "title": "Intro to Literary Analysis"
-  },
-  {
-    "campus": "sc",
-    "code": "SPAN101",
-    "credits": 3.0,
-    "title": "Introduction Literary Analysis"
   },
   {
     "campus": "cmc",
@@ -11557,18 +6907,6 @@
   },
   {
     "campus": "cgu",
-    "code": "SPAN191",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "SPAN192",
-    "credits": 1.5,
-    "title": "Senior Paper"
-  },
-  {
-    "campus": "cgu",
     "code": "SPAN192",
     "credits": 1.5,
     "title": "Senior Paper"
@@ -11598,24 +6936,6 @@
     "title": "Senior Integrative Seminar"
   },
   {
-    "campus": "pz",
-    "code": "TEST001",
-    "credits": 3.0,
-    "title": "Test Course-Disregard"
-  },
-  {
-    "campus": "cgu",
-    "code": "TEST001",
-    "credits": 3.0,
-    "title": "Test Course-Disregard"
-  },
-  {
-    "campus": "cgu",
-    "code": "TEST001",
-    "credits": 3.0,
-    "title": "Test Course-Disregard"
-  },
-  {
     "campus": "cgu",
     "code": "TEST001",
     "credits": 3.0,
@@ -11638,24 +6958,6 @@
     "code": "TEST199",
     "credits": 3.0,
     "title": "Test Course For Web Registration"
-  },
-  {
-    "campus": "po",
-    "code": "THEA001A",
-    "credits": 3.0,
-    "title": "Basic Acting:Tools & Fundamentls"
-  },
-  {
-    "campus": "po",
-    "code": "THEA001A",
-    "credits": 3.0,
-    "title": "Basic Acting:Tools & Fundamentls"
-  },
-  {
-    "campus": "po",
-    "code": "THEA001A",
-    "credits": 3.0,
-    "title": "Basic Acting:Tools & Fundamentls"
   },
   {
     "campus": "po",
@@ -11724,22 +7026,10 @@
     "title": "Alexander Technique - Individual"
   },
   {
-    "campus": "cgu",
-    "code": "THEA053CI",
-    "credits": 1.0,
-    "title": "Alexander Technique - Individual"
-  },
-  {
     "campus": "po",
     "code": "THEA053HG",
     "credits": 1.5,
     "title": "Alexander Technique - Group"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA053HI",
-    "credits": 1.5,
-    "title": "Alexander Technique - Individual"
   },
   {
     "campus": "cgu",
@@ -11791,36 +7081,6 @@
   },
   {
     "campus": "cgu",
-    "code": "THEA190",
-    "credits": 1.5,
-    "title": "Senior Research & Colloquium"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA191H",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA191H",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA191H",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA191H",
-    "credits": 1.5,
-    "title": "Senior Thesis"
-  },
-  {
-    "campus": "cgu",
     "code": "THEA191H",
     "credits": 1.5,
     "title": "Senior Thesis"
@@ -11832,118 +7092,10 @@
     "title": "Senior Project"
   },
   {
-    "campus": "cgu",
-    "code": "THEA192H",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA192H",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA192H",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
-    "campus": "cgu",
-    "code": "THEA192H",
-    "credits": 1.5,
-    "title": "Senior Project"
-  },
-  {
     "campus": "hmc",
     "code": "WRIT001",
     "credits": 1.5,
     "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "hmc",
-    "code": "WRIT001",
-    "credits": 1.5,
-    "title": "Introduction to Academic Writing"
-  },
-  {
-    "campus": "pz",
-    "code": "WRIT100A",
-    "credits": 1.5,
-    "title": "Writing Center Theory & Praxis"
   },
   {
     "campus": "pz",
