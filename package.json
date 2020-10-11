@@ -37,7 +37,7 @@
     "react-loading": "^2.0.3",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-tsparticles": "^1.18.3",
+    "react-tsparticles": "^1.18.4",
     "typescript": "^4.0.3"
   },
   "devDependencies": {
