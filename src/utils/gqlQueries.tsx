@@ -164,3 +164,14 @@ export const REMOVE_COURSE = gql`
     }
   }
 `
+
+export const INCREMENT_COURSE_EDITS_MUTATION = gql`
+  mutation INCREMENT_COURSE_EDITS {
+    update_users(where: {}, _inc: { course_edits: 1 }) {
+      affected_rows
+      returning {
+        course_edits
+      }
+    }
+  }
+`
