@@ -11,6 +11,8 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
+import { useMutation } from '@apollo/react-hooks'
+import { INCREMENT_COURSE_EDITS_MUTATION } from '../utils/gqlQueries'
 import {
   campuses,
   credits,
@@ -96,6 +98,7 @@ function EditModal({
   termProp,
 }: EditProps): JSX.Element {
   const [updateCourse] = useUpdate_CourseMutation()
+  const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
   const oldTitle = titleProp
   const oldCode = codeProp
 
@@ -164,6 +167,9 @@ function EditModal({
     setOpen(false)
   }
   const handleSave = () => {
+    // Update user course_edits column
+    updateCourseEdits()
+
     let newCode = getValue(codeRef)
     let newTitle = getValue(titleRef)
 

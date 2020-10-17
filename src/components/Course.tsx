@@ -4,12 +4,14 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
+import { useMutation } from '@apollo/react-hooks'
 import {
   makeStyles,
   responsiveFontSizes,
   createMuiTheme,
   MuiThemeProvider,
 } from '@material-ui/core/styles'
+import { INCREMENT_COURSE_EDITS_MUTATION } from '../utils/gqlQueries'
 import { modifyChecklist } from '../utils/modalFunctions'
 import EditModal from './EditModal'
 /* eslint-disable */
@@ -174,11 +176,15 @@ function Course({
   const classes = useStyles()
 
   const [courseRemove] = useRemove_CourseMutation()
+  const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
   const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
   const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
 
   // Delete course on icon click
   const handleDelete = () => {
+    // Update user course_edits column
+    updateCourseEdits()
+
     // Remove course
     courseRemove({
       variables: { term, title },
