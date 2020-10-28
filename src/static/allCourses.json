@@ -144,13 +144,13 @@
     "title": "Senior Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ANTH191",
     "credits": 1.5,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ANTH192",
     "credits": 1.5,
     "title": "Senior Project"
@@ -432,7 +432,7 @@
     "title": "Asian Amer Studies Senior Sem"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ASAM191",
     "credits": 3.0,
     "title": "Senior Thesis Asian Amer Studies"
@@ -444,13 +444,13 @@
     "title": "Senior Thesis Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ASIA191",
     "credits": 3.0,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ASIA192",
     "credits": 3.0,
     "title": "Senior Essay in Asian Studies"
@@ -648,7 +648,7 @@
     "title": "Immunology"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "BIOL161",
     "credits": 3.0,
     "title": "Research Problems in Biology"
@@ -750,7 +750,7 @@
     "title": "Senior Grant Proposal"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "BIOL193",
     "credits": 3.0,
     "title": "Senior Thesis Research: Biology"
@@ -762,13 +762,13 @@
     "title": "Experimental Sen Thesis-1st Sem."
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "BIOL195",
     "credits": 6.0,
     "title": "Intensive Research in Biology"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "BIOL197",
     "credits": 3.0,
     "title": "Directed Reading in Biology"
@@ -1008,7 +1008,7 @@
     "title": "Environmental Chemistry"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "CHEM150",
     "credits": 1.0,
     "title": "Research in Chemistry"
@@ -1032,7 +1032,7 @@
     "title": "Advanced Analytical Chemistry"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "CHEM164",
     "credits": 2.0,
     "title": "Electronic Structure Theory / Advanced Physical Chemistry"
@@ -1320,7 +1320,7 @@
     "title": "Discrete Math and Func. Prog."
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "CSCI060",
     "credits": 3.0,
     "title": "Principles of Computer Science"
@@ -1338,7 +1338,7 @@
     "title": "Data Structures/Adv Program Lab"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "CSCI070",
     "credits": 3.0,
     "title": "Data Structures/Prgm Development"
@@ -1452,19 +1452,19 @@
     "title": "Computer Science Clinic I"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "CSCI186",
     "credits": 3.0,
     "title": "Comp Sci Research/Indep Study"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "CSCI188",
     "credits": 0.5,
     "title": "Computer Science Colloquium"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "CSCI189",
     "credits": 1.0,
     "title": "Programming Practicum"
@@ -1476,19 +1476,19 @@
     "title": "Computer Science Senior Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "CSCI191",
     "credits": 3.0,
     "title": "Sr Research/Thesis Computer Sci"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "CSCI192",
     "credits": 1.5,
     "title": "Senior Project"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "CSCI195",
     "credits": 0.5,
     "title": "Computer Science Colloquium"
@@ -1692,13 +1692,13 @@
     "title": "Dance Composition II"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "DANC162A",
     "credits": 3.0,
     "title": "Repertory"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "DANC162B",
     "credits": 1.5,
     "title": "Repertory"
@@ -1728,25 +1728,25 @@
     "title": "Alexander Technique - Group - Alexander Tech Motn: Group Class"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "DANC180",
     "credits": 3.0,
     "title": "Dance Repertory - Repertory - 2 Pieces"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "DANC180P",
     "credits": 1.0,
     "title": "Dance Repertory - Repertory - 2 Pieces"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "DANC181",
     "credits": 1.5,
     "title": "Dance Repertory - Repertory- 1 Piece"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "DANC181P",
     "credits": 1.0,
     "title": "Dance Repertory - Repertory- 1 Piece"
@@ -1758,13 +1758,13 @@
     "title": "Senior Seminar in Dance"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "DANC192",
     "credits": 1.5,
     "title": "Senior Project"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "DANC193",
     "credits": 0.0,
     "title": "Production Experience"
@@ -1776,7 +1776,7 @@
     "title": "Intro to Python & Data Analysis"
   },
   {
-    "campus": "cgu",
+    "campus": "cmc",
     "code": "DS180",
     "credits": 3.0,
     "title": "Adv Projects in Data Science"
@@ -1908,7 +1908,7 @@
     "title": "EA Science 1-semester Sr Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "EA191H",
     "credits": 1.5,
     "title": "Thesis in Environmental Analysis"
@@ -2184,7 +2184,7 @@
     "title": "Seminar in Investment Management"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ECON195",
     "credits": 0.0,
     "title": "Senior Activity in Economics"
@@ -2352,7 +2352,7 @@
     "title": "The Nonfiction Novel"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "ENGL191",
     "credits": 1.5,
     "title": "Senior Thesis"
@@ -2382,13 +2382,13 @@
     "title": "Engineering Systems"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "ENGR082",
     "credits": 3.0,
     "title": "Chemical & Thermal Processes"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "ENGR083",
     "credits": 3.0,
     "title": "Continuum Mechanics"
@@ -2514,7 +2514,7 @@
     "title": "SignalProcss/Model/Classifctn II / Special Topics in Engineering"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "ENGR191",
     "credits": 3.0,
     "title": "Advanced Problems in Engineering"
@@ -2592,7 +2592,7 @@
     "title": "Lang & Culture Tchng Clinic 2"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "FLAN191",
     "credits": 3.0,
     "title": "Senior Thesis: Foreign Language"
@@ -2676,19 +2676,19 @@
     "title": "The Art of Modern Fiction"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "FREN191",
     "credits": 1.5,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "FREN192",
     "credits": 1.5,
     "title": "Senior Paper"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "FREN193",
     "credits": 0.0,
     "title": "Senior Oral Presentation"
@@ -2880,7 +2880,7 @@
     "title": "Communicating Geology"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "GEOL192",
     "credits": 1.5,
     "title": "Senior Project in Geology"
@@ -2922,13 +2922,13 @@
     "title": "Arbeitswelt im Wandel"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "GERM191",
     "credits": 1.5,
     "title": "Senior Thesis in German"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "GERM193",
     "credits": 1.5,
     "title": "German Comprehensive Exams"
@@ -2994,7 +2994,7 @@
     "title": "Introduction to Int'l Politics"
   },
   {
-    "campus": "cgu",
+    "campus": "cmc",
     "code": "GOVT071",
     "credits": 1.5,
     "title": "Special Studies: Intl Relations"
@@ -3156,13 +3156,13 @@
     "title": "Intermediate Greek - Xenophon"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "GREK044",
     "credits": 3.0,
     "title": "Advanced Greek Readings - Euripides"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "GREK104",
     "credits": 1.5,
     "title": "Readings in Koine Greek"
@@ -3204,7 +3204,7 @@
     "title": "Senior Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "GWS191",
     "credits": 3.0,
     "title": "Senior Thesis"
@@ -3504,7 +3504,7 @@
     "title": "Genet"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "HUM196",
     "credits": 1.5,
     "title": "Humanities Studio Seminar"
@@ -3588,7 +3588,7 @@
     "title": "Senior IR Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "IR191",
     "credits": 3.0,
     "title": "Senior Thesis"
@@ -3660,13 +3660,13 @@
     "title": "Advanced Japanese"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "JAPN191H",
     "credits": 1.5,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "JAPN192",
     "credits": 1.5,
     "title": "Senior Research Paper"
@@ -3816,13 +3816,13 @@
     "title": "Senior Seminar in Linguistics"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "LGCS191",
     "credits": 1.5,
     "title": "Senior Thesis in Ling & Cog Sci"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "LGST191",
     "credits": 3.0,
     "title": "Senior Thesis in Legal Studies"
@@ -4212,7 +4212,7 @@
     "title": "Advanced Topics in Mathematics - Image Processing"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "MATH196",
     "credits": 1.0,
     "title": "Independent Study in Mathematics"
@@ -4236,7 +4236,7 @@
     "title": "Mathematics Colloquium"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "MCBI199",
     "credits": 0.5,
     "title": "Math/Comput Biology Colloquium"
@@ -4266,19 +4266,19 @@
     "title": "Molecular Biology Laboratory"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MOBI191A",
     "credits": 1.5,
     "title": "Sr Libry Thesis-Res & Grant Prop"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MOBI194A",
     "credits": 3.0,
     "title": "Experimental Sen Thesis-1st Sem."
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MOBI194B",
     "credits": 3.0,
     "title": "Experimental Sen Thesis-2nd Sem."
@@ -4428,7 +4428,7 @@
     "title": "Media Arts for Social Justice"
   },
   {
-    "campus": "cgu",
+    "campus": "pz",
     "code": "MS196",
     "credits": 3.0,
     "title": "Media Internship"
@@ -4482,19 +4482,19 @@
     "title": "Group Piano"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MUS010",
     "credits": 1.0,
     "title": "Individual Instruction, Level I"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MUS015",
     "credits": 1.0,
     "title": "Individual Instruction, Level I"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MUS020",
     "credits": 1.0,
     "title": "Individual Instruction, Level II"
@@ -4602,7 +4602,7 @@
     "title": "Lab, Theory II"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS085",
     "credits": 1.5,
     "title": "Group Piano"
@@ -4626,7 +4626,7 @@
     "title": "Electronic Music Studio"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MUS100",
     "credits": 1.5,
     "title": "Individual Instruction, Level II"
@@ -4662,31 +4662,31 @@
     "title": "Rhythm & the Latina Body Politic"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS170F",
     "credits": 3.0,
     "title": "Voice"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS170H",
     "credits": 1.5,
     "title": "Voice"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS171F",
     "credits": 3.0,
     "title": "Piano"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS171H",
     "credits": 1.5,
     "title": "Piano"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS172",
     "credits": 1.5,
     "title": "Chamber Music"
@@ -4704,13 +4704,13 @@
     "title": "Claremont Concert Orchestra - Clmnt Concert Orchestra-Pandemic"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS177F",
     "credits": 3.0,
     "title": "Violin"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "MUS177H",
     "credits": 1.5,
     "title": "Violin"
@@ -4734,7 +4734,7 @@
     "title": "Senior Colloquium"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "MUS192",
     "credits": 1.5,
     "title": "Senior Project"
@@ -4824,7 +4824,7 @@
     "title": "One-Sem Thesis in Neuroscience"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "NEUR194A",
     "credits": 1.5,
     "title": "Senior Experimental Thesis"
@@ -4962,7 +4962,7 @@
     "title": "High Intens Interval Trng (HIIT)"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE008",
     "credits": 1.0,
     "title": "Conditioning - Advanced"
@@ -5100,13 +5100,13 @@
     "title": "Pilates-Yoga Blend"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE032",
     "credits": 1.0,
     "title": "Dance - Hip Hop"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE033B",
     "credits": 1.0,
     "title": "Dance - Intl Latin Intermediate"
@@ -5124,13 +5124,13 @@
     "title": "Dance - Intl Standard Intermed"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE035A",
     "credits": 1.0,
     "title": "Dance - Smooth"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE035B",
     "credits": 1.0,
     "title": "Dance - Night Club"
@@ -5280,13 +5280,13 @@
     "title": "Weights-Free Weights"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE085",
     "credits": 1.0,
     "title": "Adapted Physical Education"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE086",
     "credits": 1.5,
     "title": "Baseball Analytics"
@@ -5346,13 +5346,13 @@
     "title": "Basketball Team-Women"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE110",
     "credits": 1.0,
     "title": "Cross Country Team-M/W"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE120",
     "credits": 1.0,
     "title": "Football Team"
@@ -5376,7 +5376,7 @@
     "title": "Volleyball Team-Women"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PE165",
     "credits": 1.0,
     "title": "Water Polo Team-Men"
@@ -5550,7 +5550,7 @@
     "title": "Senior Literature Review"
   },
   {
-    "campus": "cgu",
+    "campus": "sc",
     "code": "PHIL191",
     "credits": 1.5,
     "title": "Senior Thesis"
@@ -5742,19 +5742,19 @@
     "title": "Senior Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PHYS191E",
     "credits": 3.0,
     "title": "Senior Thesis (Experimental)"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PHYS191L",
     "credits": 1.5,
     "title": "Senior Thesis (Library)"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "PHYS191",
     "credits": 3.0,
     "title": "Research in Physics"
@@ -5772,7 +5772,7 @@
     "title": "Physics Colloquium"
   },
   {
-    "campus": "cgu",
+    "campus": "hmc",
     "code": "PHYS197",
     "credits": 3.0,
     "title": "Readings in Physics"
@@ -5946,19 +5946,19 @@
     "title": "Senior Sem: Contemp Poli/Theory"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "POLI191",
     "credits": 3.0,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "POLI193",
     "credits": 1.5,
     "title": "Senior Oral Comprehensive Exam"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "POLI195",
     "credits": 0.0,
     "title": "Subfield Specialization"
@@ -5982,7 +5982,7 @@
     "title": "Intermediate Portuguese"
   },
   {
-    "campus": "cgu",
+    "campus": "pz",
     "code": "PORT035",
     "credits": 1.5,
     "title": "Portuguese Virtual Learning Comm"
@@ -6066,7 +6066,7 @@
     "title": "Internship and Thesis Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "PPA195",
     "credits": 3.0,
     "title": "Internship in Public Affairs"
@@ -6432,13 +6432,13 @@
     "title": "Directed Research in Psychology - Confronting Prejudice/Discrimntn"
   },
   {
-    "campus": "cgu",
+    "campus": "cmc",
     "code": "PSYC197A",
     "credits": 1.0,
     "title": "Directed Research in Psychology"
   },
   {
-    "campus": "cgu",
+    "campus": "cmc",
     "code": "PSYC197B",
     "credits": 0.0,
     "title": "Directed Research in Psychology"
@@ -6450,7 +6450,7 @@
     "title": "Psych Senior Research Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "RLIT191",
     "credits": 1.5,
     "title": "Senior Thesis in Romance Lit"
@@ -6576,7 +6576,7 @@
     "title": "Senior Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "RLST191",
     "credits": 3.0,
     "title": "Senior Thesis"
@@ -6612,7 +6612,7 @@
     "title": "Readings in Modern Russian Lit"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "RUSS191",
     "credits": 1.5,
     "title": "Senior Thesis in Russian"
@@ -6744,7 +6744,7 @@
     "title": "Senior Seminar"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "SOC191",
     "credits": 1.5,
     "title": "Senior Thesis"
@@ -6900,13 +6900,13 @@
     "title": "Contemp Issues Span-Speak World"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "SPAN191",
     "credits": 1.5,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "SPAN192",
     "credits": 1.5,
     "title": "Senior Paper"
@@ -7020,7 +7020,7 @@
     "title": "Alexander Technique - Group"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "THEA053CI",
     "credits": 1.0,
     "title": "Alexander Technique - Individual"
@@ -7032,7 +7032,7 @@
     "title": "Alexander Technique - Group"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "THEA053HI",
     "credits": 1.5,
     "title": "Alexander Technique - Individual"
@@ -7080,13 +7080,13 @@
     "title": "Senior Research & Colloquium"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "THEA191H",
     "credits": 1.5,
     "title": "Senior Thesis"
   },
   {
-    "campus": "cgu",
+    "campus": "po",
     "code": "THEA192H",
     "credits": 1.5,
     "title": "Senior Project"
@@ -7138,5 +7138,4397 @@
     "code": "WRIT179A",
     "credits": 1.0,
     "title": "Theory and Practice of Tutoring / Special Topics in Writing"
+  },
+  {
+    "campus": "cmc",
+    "code": "AFRI010AC",
+    "credits": 3.0,
+    "title": "Intro to Africana Studies"
+  },
+  {
+    "campus": "sc",
+    "code": "AFRI010B",
+    "credits": 3.0,
+    "title": "Research Methods"
+  },
+  {
+    "campus": "sc",
+    "code": "AFRI191",
+    "credits": 3.0,
+    "title": "Senior Thesis:Africana Studies"
+  },
+  {
+    "campus": "sc",
+    "code": "AMST103",
+    "credits": 3.0,
+    "title": "Intro to American Cultures"
+  },
+  {
+    "campus": "sc",
+    "code": "AMST180",
+    "credits": 3.0,
+    "title": "American Studies Seminar"
+  },
+  {
+    "campus": "sc",
+    "code": "AMST191",
+    "credits": 3.0,
+    "title": "Senior Thesis: American Studies"
+  },
+  {
+    "campus": "pz",
+    "code": "ANTH012",
+    "credits": 3.0,
+    "title": "Native Americans & Environments"
+  },
+  {
+    "campus": "sc",
+    "code": "ANTH025",
+    "credits": 3.0,
+    "title": "Anthro of the Middle East"
+  },
+  {
+    "campus": "pz",
+    "code": "ANTH050",
+    "credits": 3.0,
+    "title": "Sex, Body and Reproduction"
+  },
+  {
+    "campus": "pz",
+    "code": "ANTH051",
+    "credits": 3.0,
+    "title": "Disaster & Society"
+  },
+  {
+    "campus": "po",
+    "code": "ANTH108",
+    "credits": 3.0,
+    "title": "The Essay as Resistance"
+  },
+  {
+    "campus": "pz",
+    "code": "ANTH112",
+    "credits": 3.0,
+    "title": "Energy & Humnty, Past, Prsnt, Ft"
+  },
+  {
+    "campus": "sc",
+    "code": "ANTH118",
+    "credits": 3.0,
+    "title": "Labor, Work, and Life"
+  },
+  {
+    "campus": "po",
+    "code": "ANTH121",
+    "credits": 3.0,
+    "title": "Science, Medicine, Technology"
+  },
+  {
+    "campus": "po",
+    "code": "ANTH150",
+    "credits": 3.0,
+    "title": "Anthropology of Religion"
+  },
+  {
+    "campus": "po",
+    "code": "ANTH158",
+    "credits": 3.0,
+    "title": "The Anthropology of Sports"
+  },
+  {
+    "campus": "po",
+    "code": "ANTH185",
+    "credits": 3.0,
+    "title": "Collapse and Transformation"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBC002",
+    "credits": 3.0,
+    "title": "Continuing Introductory Arabic"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBC012",
+    "credits": 0.0,
+    "title": "Intro Arabic Conversation II"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBC014",
+    "credits": 0.0,
+    "title": "Interm Conversation Arabic II"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBC016",
+    "credits": 1.0,
+    "title": "Spoken Colloquial Arabic II"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBC044",
+    "credits": 3.0,
+    "title": "Continuing Intermediate Arabic"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBC148",
+    "credits": 3.0,
+    "title": "Special Topics: Arabic Lit/Cult - Writings of Arab Women"
+  },
+  {
+    "campus": "cmc",
+    "code": "ARBT148",
+    "credits": 3.0,
+    "title": "Special Topics: Arabic in Transl - Diversity in Arab Societies"
+  },
+  {
+    "campus": "sc",
+    "code": "ARCN125",
+    "credits": 3.0,
+    "title": "Preserving Cultural Landscapes"
+  },
+  {
+    "campus": "sc",
+    "code": "ARCN191",
+    "credits": 3.0,
+    "title": "Sr Thesis: Art Conservation"
+  },
+  {
+    "campus": "po",
+    "code": "ARHI001B",
+    "credits": 3.0,
+    "title": "Intro to Art Hist: c. 1400-pres"
+  },
+  {
+    "campus": "po",
+    "code": "ARHI120",
+    "credits": 3.0,
+    "title": "Introduction to Islamic Art"
+  },
+  {
+    "campus": "po",
+    "code": "ARHI131",
+    "credits": 3.0,
+    "title": "Border Art"
+  },
+  {
+    "campus": "po",
+    "code": "ARHI140",
+    "credits": 3.0,
+    "title": "The Arts of Africa"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI153",
+    "credits": 3.0,
+    "title": "Art and Architecture of India"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI162",
+    "credits": 3.0,
+    "title": "Art of the Pacific Voyage"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI180R",
+    "credits": 3.0,
+    "title": "Russian & Soviet Avant-Gardes"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI184",
+    "credits": 3.0,
+    "title": "Art, Activism and Propaganda"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI185",
+    "credits": 3.0,
+    "title": "History of Photography"
+  },
+  {
+    "campus": "po",
+    "code": "ARHI186G",
+    "credits": 3.0,
+    "title": "Gendering the Renaissance"
+  },
+  {
+    "campus": "po",
+    "code": "ARHI186L",
+    "credits": 3.0,
+    "title": "Critical Race Thry/Representatn"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI186M",
+    "credits": 3.0,
+    "title": "Seminar in 20th Century Art - Dada and Surrealism"
+  },
+  {
+    "campus": "sc",
+    "code": "ARHI191",
+    "credits": 3.0,
+    "title": "Senior Thesis in Art History"
+  },
+  {
+    "campus": "po",
+    "code": "ART025A",
+    "credits": 3.0,
+    "title": "Sculpture I"
+  },
+  {
+    "campus": "po",
+    "code": "ART111",
+    "credits": 3.0,
+    "title": "Topics in Contemporary Painting"
+  },
+  {
+    "campus": "po",
+    "code": "ART139",
+    "credits": 3.0,
+    "title": "Sketchbook Pursuits"
+  },
+  {
+    "campus": "sc",
+    "code": "ART147",
+    "credits": 3.0,
+    "title": "Int/Adv Digital Photography"
+  },
+  {
+    "campus": "hmc",
+    "code": "ART179G",
+    "credits": 3.0,
+    "title": "Critical Design Studio / Special Topics in Art"
+  },
+  {
+    "campus": "sc",
+    "code": "ART181",
+    "credits": 3.0,
+    "title": "Topics Seminar in Studio Art - Digital Art Theories"
+  },
+  {
+    "campus": "po",
+    "code": "ART189A",
+    "credits": 3.0,
+    "title": "Writing Art"
+  },
+  {
+    "campus": "pz",
+    "code": "ASAM077B",
+    "credits": 3.0,
+    "title": "Tattoos:Aesthetics,Culture,Pasts"
+  },
+  {
+    "campus": "pz",
+    "code": "ASAM090",
+    "credits": 3.0,
+    "title": "Community Studies"
+  },
+  {
+    "campus": "pz",
+    "code": "ASAM105B",
+    "credits": 3.0,
+    "title": "Zines in the Asian Diaspora"
+  },
+  {
+    "campus": "pz",
+    "code": "ASAM115",
+    "credits": 3.0,
+    "title": "Theory and Methods"
+  },
+  {
+    "campus": "sc",
+    "code": "ASAM160",
+    "credits": 3.0,
+    "title": "Asian American Women's Experienc"
+  },
+  {
+    "campus": "hmc",
+    "code": "ASAM179G",
+    "credits": 3.0,
+    "title": "AsnAmer&PcfcIslan Diaspora & Mig /SpecialTopics:Asian-AmerStudies"
+  },
+  {
+    "campus": "po",
+    "code": "ASAM189C",
+    "credits": 3.0,
+    "title": "South Asian American Studies"
+  },
+  {
+    "campus": "po",
+    "code": "ASTR001",
+    "credits": 3.0,
+    "title": "Introductory Astronomy w/Lab"
+  },
+  {
+    "campus": "po",
+    "code": "ASTR001L",
+    "credits": 0.0,
+    "title": "Lab, Introductory Astronomy"
+  },
+  {
+    "campus": "po",
+    "code": "ASTR051",
+    "credits": 3.0,
+    "title": "Advanced Introductory Astronomy"
+  },
+  {
+    "campus": "po",
+    "code": "ASTR051L",
+    "credits": 0.0,
+    "title": "Advanced Intr. Astronomy Lab"
+  },
+  {
+    "campus": "hmc",
+    "code": "ASTR062",
+    "credits": 3.0,
+    "title": "Introduction to Astrophysics"
+  },
+  {
+    "campus": "po",
+    "code": "ASTR123",
+    "credits": 1.5,
+    "title": "Stellar Structure and Evolution"
+  },
+  {
+    "campus": "hmc",
+    "code": "ASTR124",
+    "credits": 2.0,
+    "title": "Planetary Astrophysics"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL001A",
+    "credits": 3.0,
+    "title": "Human Genetics for Non-Majors"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL001D",
+    "credits": 3.0,
+    "title": "Ecology for Non-Majors w/ Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL039L",
+    "credits": 3.0,
+    "title": "Analyses of Human Motor Skills"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL041C",
+    "credits": 3.0,
+    "title": "Intro Cell Chem & Cell Bio w/Lab"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL041E",
+    "credits": 3.0,
+    "title": "Intro Ecol & Evolutnry Bio w/Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL042L",
+    "credits": 6.0,
+    "title": "Integrated Biology & Chemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL044L",
+    "credits": 3.0,
+    "title": "Introductory Biology"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL044LX",
+    "credits": 0.0,
+    "title": "Introductory Biology Lab"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL052",
+    "credits": 3.0,
+    "title": "Introduction to Biology"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL052R",
+    "credits": 0.0,
+    "title": "Intro to Biology Recitation"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL054",
+    "credits": 1.0,
+    "title": "Experimental Biology Laboratory"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL063L",
+    "credits": 3.0,
+    "title": "Biology of Infectious Diseases"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL099",
+    "credits": 3.0,
+    "title": "Introduction to Python"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL101",
+    "credits": 3.0,
+    "title": "Comparative Physiology"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL104",
+    "credits": 3.0,
+    "title": "Conservation Science"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL108",
+    "credits": 3.0,
+    "title": "Ecology & Environmental Biology"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL129",
+    "credits": 3.0,
+    "title": "Neuromusc Physiol/Health/Disease"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL138",
+    "credits": 3.0,
+    "title": "Applied Ecology & Conservation"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL138L",
+    "credits": 0.0,
+    "title": "Appl Ecol + Conservation Lab"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL154",
+    "credits": 2.0,
+    "title": "Biostatistics"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL156L",
+    "credits": 3.0,
+    "title": "Genomics and Bioinformatics"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL164",
+    "credits": 3.0,
+    "title": "Virology"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL165AV",
+    "credits": 1.5,
+    "title": "Molecular Genetics of Cancer"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL167",
+    "credits": 3.0,
+    "title": "Sensory Evolution"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL168L",
+    "credits": 3.0,
+    "title": "Microbiology"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL169",
+    "credits": 3.0,
+    "title": "Developmental Biology w/Lab"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL169L",
+    "credits": 0.0,
+    "title": "Lab, Developmental Biology"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL173B",
+    "credits": 3.0,
+    "title": "Genomics & Bioinfon SARS-COV-2"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL173L",
+    "credits": 1.5,
+    "title": "Molecular Biology Seminar w/Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL176",
+    "credits": 3.0,
+    "title": "Tropical Ecology"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL180",
+    "credits": 3.0,
+    "title": "Microbial Ecology"
+  },
+  {
+    "campus": "hmc",
+    "code": "BIOL182",
+    "credits": 3.0,
+    "title": "Biochemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL183",
+    "credits": 3.0,
+    "title": "Nutritional Biology"
+  },
+  {
+    "campus": "cgu",
+    "code": "BIOL185L",
+    "credits": 3.0,
+    "title": "Biochemical Physiology with Lab"
+  },
+  {
+    "campus": "po",
+    "code": "BIOL190",
+    "credits": 1.5,
+    "title": "Biology Senior Seminar"
+  },
+  {
+    "campus": "pz",
+    "code": "CGS050",
+    "credits": 3.0,
+    "title": "Power and Social Change"
+  },
+  {
+    "campus": "pz",
+    "code": "CGS095",
+    "credits": 3.0,
+    "title": "Engaging Difference"
+  },
+  {
+    "campus": "pz",
+    "code": "CGS120",
+    "credits": 3.0,
+    "title": "State/Development In Third World"
+  },
+  {
+    "campus": "pz",
+    "code": "CGS125",
+    "credits": 3.0,
+    "title": "American Politics"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM001B",
+    "credits": 3.0,
+    "title": "General Chemistry w/Laboratory"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM001BL",
+    "credits": 0.0,
+    "title": "Lab, General Chemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHEM015L",
+    "credits": 3.0,
+    "title": "Basic Principles of Chemistry"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM023B",
+    "credits": 1.5,
+    "title": "Chemistry in the Modern World II"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM052",
+    "credits": 3.0,
+    "title": "Grp Thry/Quant Chem/Spectroscopy"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM056",
+    "credits": 3.0,
+    "title": "Organic Chemistry I"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM058",
+    "credits": 1.0,
+    "title": "Organic Chemistry I Laboratory"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM104",
+    "credits": 3.0,
+    "title": "Inorganic Chemistry"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM106",
+    "credits": 3.0,
+    "title": "Environmental Chemistry"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM110B",
+    "credits": 3.0,
+    "title": "Organic Chemistry w/Laboratory"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM110",
+    "credits": 1.0,
+    "title": "Inorganic Chemistry Laboratory"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM112",
+    "credits": 1.0,
+    "title": "Instrumental Analysis Laboratory"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM114",
+    "credits": 3.0,
+    "title": "Advanced Analytical Chemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHEM117L",
+    "credits": 3.0,
+    "title": "Organic Chemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHEM117LX",
+    "credits": 0.0,
+    "title": "Organic Chemistry Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHEM121",
+    "credits": 3.0,
+    "title": "Principles of Physical Chemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHEM125L",
+    "credits": 3.0,
+    "title": "Advanced Lab in Biochemistry"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHEM127L",
+    "credits": 3.0,
+    "title": "Advanced Laboratory in Chemistry"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM147",
+    "credits": 3.0,
+    "title": "Inorganic Chemistry with Lab"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM147L",
+    "credits": 0.0,
+    "title": "Lab, Inorganic Chemistry"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM152",
+    "credits": 2.0,
+    "title": "Senior Thesis Research:Chemistry"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM156",
+    "credits": 3.0,
+    "title": "Physical Chem in Molecular Biol"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM158BL",
+    "credits": 0.0,
+    "title": "Laboratory, Physical Chem"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM158B",
+    "credits": 3.0,
+    "title": "Physical Chemistry w/ Laboratory"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM162",
+    "credits": 1.5,
+    "title": "Physical Chemistry Laboratory"
+  },
+  {
+    "campus": "po",
+    "code": "CHEM181",
+    "credits": 3.0,
+    "title": "Chemical Biology"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM182",
+    "credits": 3.0,
+    "title": "Biochemistry"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM184",
+    "credits": 1.0,
+    "title": "Biochemistry Laboratory"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM190",
+    "credits": 2.0,
+    "title": "Bioinorganic Chemistry"
+  },
+  {
+    "campus": "hmc",
+    "code": "CHEM198",
+    "credits": 3.0,
+    "title": "Special Readings in Chemistry"
+  },
+  {
+    "campus": "po",
+    "code": "CHIN001B",
+    "credits": 3.0,
+    "title": "Elementary Chinese"
+  },
+  {
+    "campus": "po",
+    "code": "CHIN051B",
+    "credits": 3.0,
+    "title": "Intermediate Chinese"
+  },
+  {
+    "campus": "po",
+    "code": "CHIN051H",
+    "credits": 3.0,
+    "title": "Intermed Chinese for Bilinguals"
+  },
+  {
+    "campus": "po",
+    "code": "CHIN111B",
+    "credits": 3.0,
+    "title": "Advanced Chinese"
+  },
+  {
+    "campus": "po",
+    "code": "CHIN122",
+    "credits": 3.0,
+    "title": "Chinese in the Working World"
+  },
+  {
+    "campus": "po",
+    "code": "CHIN131",
+    "credits": 3.0,
+    "title": "Intro to Classical Chinese"
+  },
+  {
+    "campus": "pz",
+    "code": "CHLT060",
+    "credits": 3.0,
+    "title": "Women in the Third World"
+  },
+  {
+    "campus": "pz",
+    "code": "CHLT085",
+    "credits": 3.0,
+    "title": "Gender, Radicalism & Revolution"
+  },
+  {
+    "campus": "pz",
+    "code": "CHLT153",
+    "credits": 3.0,
+    "title": "Rural & Urban Social Movements"
+  },
+  {
+    "campus": "pz",
+    "code": "CHLT160",
+    "credits": 3.0,
+    "title": "Queering (Im)Migration"
+  },
+  {
+    "campus": "pz",
+    "code": "CHLT170",
+    "credits": 3.0,
+    "title": "Black/Indigenous Cent. Americans"
+  },
+  {
+    "campus": "po",
+    "code": "CHNT164",
+    "credits": 3.0,
+    "title": "Poetry and Poetics"
+  },
+  {
+    "campus": "sc",
+    "code": "CHST015",
+    "credits": 3.0,
+    "title": "Intro to Chicanx Latinx Studies"
+  },
+  {
+    "campus": "po",
+    "code": "CHST028",
+    "credits": 3.0,
+    "title": "Intro to Central Amer Studies"
+  },
+  {
+    "campus": "sc",
+    "code": "CHST066",
+    "credits": 3.0,
+    "title": "Fandango as a De-Colonial Tool"
+  },
+  {
+    "campus": "po",
+    "code": "CHST067",
+    "credits": 3.0,
+    "title": "Contemp Chicanx Art/Antecedents"
+  },
+  {
+    "campus": "sc",
+    "code": "CHST120",
+    "credits": 3.0,
+    "title": "Fronteras/Borders: Methods&Res"
+  },
+  {
+    "campus": "po",
+    "code": "CHST130",
+    "credits": 3.0,
+    "title": "Voices & Stories CL Communities"
+  },
+  {
+    "campus": "po",
+    "code": "CHST132",
+    "credits": 3.0,
+    "title": "Immigrant Youth Activism (CP)"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHST191",
+    "credits": 3.0,
+    "title": "Senior Thesis in Chicano Studies"
+  },
+  {
+    "campus": "cgu",
+    "code": "CHST192",
+    "credits": 3.0,
+    "title": "Senior Project"
+  },
+  {
+    "campus": "po",
+    "code": "CLAS001",
+    "credits": 3.0,
+    "title": "Greek and Roman Classics"
+  },
+  {
+    "campus": "sc",
+    "code": "CLAS019",
+    "credits": 3.0,
+    "title": "Classical Myth in Film"
+  },
+  {
+    "campus": "po",
+    "code": "CLAS064",
+    "credits": 3.0,
+    "title": "Gods,Humans,Justice Ancient Grc"
+  },
+  {
+    "campus": "po",
+    "code": "CLAS106",
+    "credits": 3.0,
+    "title": "Ancient Greek Leadership"
+  },
+  {
+    "campus": "po",
+    "code": "CLAS114",
+    "credits": 3.0,
+    "title": "Gender & Sex in Ancient Greece"
+  },
+  {
+    "campus": "po",
+    "code": "CLAS116A",
+    "credits": 3.0,
+    "title": "Out of The Cave"
+  },
+  {
+    "campus": "pz",
+    "code": "CLAS162",
+    "credits": 3.0,
+    "title": "Roman Art & Archaeology"
+  },
+  {
+    "campus": "sc",
+    "code": "CLAS191",
+    "credits": 3.0,
+    "title": "Sr Thesis: Ancient St/Classics"
+  },
+  {
+    "campus": "sc",
+    "code": "CORE002",
+    "credits": 3.0,
+    "title": "Histories of the Present - Terms of Modernity"
+  },
+  {
+    "campus": "pz",
+    "code": "CREA018",
+    "credits": 3.0,
+    "title": "History of the Creative Process"
+  },
+  {
+    "campus": "pz",
+    "code": "CREA193A",
+    "credits": 3.0,
+    "title": "Fictions of James Joyce"
+  },
+  {
+    "campus": "cmc",
+    "code": "CSCI046",
+    "credits": 3.0,
+    "title": "Data Structures and Algorithms"
+  },
+  {
+    "campus": "cmc",
+    "code": "CSCI143",
+    "credits": 3.0,
+    "title": "Big Data"
+  },
+  {
+    "campus": "hmc",
+    "code": "CSCI144",
+    "credits": 3.0,
+    "title": "Scientific Computing"
+  },
+  {
+    "campus": "po",
+    "code": "CSCI181G",
+    "credits": 3.0,
+    "title": "Game Engine Programming"
+  },
+  {
+    "campus": "po",
+    "code": "CSCI181V",
+    "credits": 3.0,
+    "title": "Principles of PLs: Obj-Oriented"
+  },
+  {
+    "campus": "hmc",
+    "code": "CSCI181Y",
+    "credits": 3.0,
+    "title": "CS for Inquiry / Computer Science Seminar"
+  },
+  {
+    "campus": "hmc",
+    "code": "CSCI181Z",
+    "credits": 1.5,
+    "title": "Machine Learning:Supervised Lear / Computer Science Seminar"
+  },
+  {
+    "campus": "hmc",
+    "code": "CSCI184",
+    "credits": 3.0,
+    "title": "Computer Science Clinic II"
+  },
+  {
+    "campus": "hmc",
+    "code": "CSMT184",
+    "credits": 3.0,
+    "title": "Computer Science&Math Clinic II"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC076A",
+    "credits": 3.0,
+    "title": "Modern Dance I"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC076B",
+    "credits": 1.5,
+    "title": "Modern Dance I"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC078B",
+    "credits": 1.5,
+    "title": "Ballet I"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC083B",
+    "credits": 1.5,
+    "title": "West African Dance I"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC101",
+    "credits": 3.0,
+    "title": "History of Dance Western Culture"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC114A",
+    "credits": 3.0,
+    "title": "Yoga: Evolving Practices"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC114B",
+    "credits": 1.5,
+    "title": "Yoga: Evolving Practices"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC121",
+    "credits": 3.0,
+    "title": "Raqs Al Sharqi - Level II"
+  },
+  {
+    "campus": "po",
+    "code": "DANC130",
+    "credits": 3.0,
+    "title": "Language of the Body"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC131",
+    "credits": 3.0,
+    "title": "Critical Dance: Gender/Race/Sex"
+  },
+  {
+    "campus": "po",
+    "code": "DANC166P",
+    "credits": 1.0,
+    "title": "Somatic Movement Techniques"
+  },
+  {
+    "campus": "po",
+    "code": "DANC166",
+    "credits": 1.5,
+    "title": "Somatic Movement Techniques"
+  },
+  {
+    "campus": "sc",
+    "code": "DANC191",
+    "credits": 3.0,
+    "title": "Senior Thesis in Dance"
+  },
+  {
+    "campus": "sc",
+    "code": "DS002",
+    "credits": 3.0,
+    "title": "Intro to Data Science"
+  },
+  {
+    "campus": "po",
+    "code": "EA030E",
+    "credits": 3.0,
+    "title": "Environmental Science-East Asia"
+  },
+  {
+    "campus": "cgu",
+    "code": "EA055L",
+    "credits": 3.0,
+    "title": "Phys Geography & Geomorphology"
+  },
+  {
+    "campus": "pz",
+    "code": "EA060",
+    "credits": 3.0,
+    "title": "Indigenous Land Use Planning"
+  },
+  {
+    "campus": "pz",
+    "code": "EA093",
+    "credits": 3.0,
+    "title": "Domestic Environmental Policy"
+  },
+  {
+    "campus": "pz",
+    "code": "EA098",
+    "credits": 3.0,
+    "title": "Urban Environments"
+  },
+  {
+    "campus": "cgu",
+    "code": "EA103",
+    "credits": 3.0,
+    "title": "Soils and Society"
+  },
+  {
+    "campus": "pz",
+    "code": "EA134",
+    "credits": 3.0,
+    "title": "Sustainable Place Studio"
+  },
+  {
+    "campus": "pz",
+    "code": "EA140",
+    "credits": 3.0,
+    "title": "The Desert as a Place"
+  },
+  {
+    "campus": "po",
+    "code": "EA170",
+    "credits": 3.0,
+    "title": "US Environmental History"
+  },
+  {
+    "campus": "po",
+    "code": "EA185",
+    "credits": 3.0,
+    "title": "Design Enviro. Behavior Change"
+  },
+  {
+    "campus": "pz",
+    "code": "EA197",
+    "credits": 3.0,
+    "title": "Senior Thesis"
+  },
+  {
+    "campus": "po",
+    "code": "ECON057B",
+    "credits": 3.0,
+    "title": "Economic Statistics"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON097",
+    "credits": 3.0,
+    "title": "Public Policy Analysis"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON104",
+    "credits": 3.0,
+    "title": "Foundations of Political Economy"
+  },
+  {
+    "campus": "pz",
+    "code": "ECON116",
+    "credits": 3.0,
+    "title": "Population Economics"
+  },
+  {
+    "campus": "po",
+    "code": "ECON117",
+    "credits": 3.0,
+    "title": "Managerial Acct Finan Analysis"
+  },
+  {
+    "campus": "po",
+    "code": "ECON122",
+    "credits": 3.0,
+    "title": "Poverty & Income Distribution"
+  },
+  {
+    "campus": "po",
+    "code": "ECON123",
+    "credits": 3.0,
+    "title": "International Economics"
+  },
+  {
+    "campus": "po",
+    "code": "ECON128",
+    "credits": 3.0,
+    "title": "Energy Economics, & Policy"
+  },
+  {
+    "campus": "po",
+    "code": "ECON131",
+    "credits": 3.0,
+    "title": "Economics of Entrepreneurship CP"
+  },
+  {
+    "campus": "sc",
+    "code": "ECON133",
+    "credits": 3.0,
+    "title": "Game Theory and Applications"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON134B",
+    "credits": 3.0,
+    "title": "Advanced Corporate Finance"
+  },
+  {
+    "campus": "sc",
+    "code": "ECON137",
+    "credits": 3.0,
+    "title": "Econ of Health and Health Policy"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON138",
+    "credits": 3.0,
+    "title": "Debt Markets"
+  },
+  {
+    "campus": "pz",
+    "code": "ECON145",
+    "credits": 3.0,
+    "title": "International Trade"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON160",
+    "credits": 3.0,
+    "title": "Accounting Data Analytics"
+  },
+  {
+    "campus": "po",
+    "code": "ECON162",
+    "credits": 3.0,
+    "title": "Advanced Microeconomic Analysis"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON165",
+    "credits": 3.0,
+    "title": "Industrial Organization"
+  },
+  {
+    "campus": "po",
+    "code": "ECON166",
+    "credits": 3.0,
+    "title": "Advanced Topics in Banking"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON171",
+    "credits": 3.0,
+    "title": "Environmental Economics"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON172",
+    "credits": 3.0,
+    "title": "Health Economics"
+  },
+  {
+    "campus": "po",
+    "code": "ECON190",
+    "credits": 3.0,
+    "title": "Senior Seminar in Economics"
+  },
+  {
+    "campus": "cmc",
+    "code": "ECON194B",
+    "credits": 1.5,
+    "title": "Seminar in Investment Management"
+  },
+  {
+    "campus": "sc",
+    "code": "ECON197W",
+    "credits": 3.0,
+    "title": "Regional and Urban Economics"
+  },
+  {
+    "campus": "cgu",
+    "code": "EDUC301GS",
+    "credits": 3.0,
+    "title": "Teach/Learn Process I: Spec Educ"
+  },
+  {
+    "campus": "cgu",
+    "code": "EDUC301G",
+    "credits": 3.0,
+    "title": "Teach/Learn Process I: Mult Subj"
+  },
+  {
+    "campus": "cgu",
+    "code": "EDUC302G",
+    "credits": 3.0,
+    "title": "Teach/Learn Process I:Single Sub"
+  },
+  {
+    "campus": "pz",
+    "code": "ENGL010B",
+    "credits": 3.0,
+    "title": "Survey of British Literature II"
+  },
+  {
+    "campus": "pz",
+    "code": "ENGL012B",
+    "credits": 3.0,
+    "title": "Intro to Afr Amer Lit After 1865"
+  },
+  {
+    "campus": "pz",
+    "code": "ENGL031",
+    "credits": 3.0,
+    "title": "Introduction to Fiction Writing"
+  },
+  {
+    "campus": "pz",
+    "code": "ENGL032",
+    "credits": 3.0,
+    "title": "Poetics of Correspondence"
+  },
+  {
+    "campus": "pz",
+    "code": "ENGL061",
+    "credits": 3.0,
+    "title": "Literature of the Supernatural"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL064B",
+    "credits": 3.0,
+    "title": "Creative Writing: Poetry"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL073",
+    "credits": 3.0,
+    "title": "The Literature of Gambling"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL075",
+    "credits": 3.0,
+    "title": "British Novel II"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL089A",
+    "credits": 3.0,
+    "title": "American Modernism"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL099",
+    "credits": 3.0,
+    "title": "The Idea of the Renaissance"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL102",
+    "credits": 3.0,
+    "title": "Readings in American Literature"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL111",
+    "credits": 3.0,
+    "title": "Shakespeare Comedies & Histories"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL118S",
+    "credits": 3.0,
+    "title": "Rhyme and Reason in Renaissance"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL121",
+    "credits": 3.0,
+    "title": "The Satirical Imagination"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL122",
+    "credits": 3.0,
+    "title": "Healing Narratives"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL124",
+    "credits": 3.0,
+    "title": "AfroFuturisms"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL131",
+    "credits": 3.0,
+    "title": "Modern British Novel"
+  },
+  {
+    "campus": "pz",
+    "code": "ENGL135",
+    "credits": 3.0,
+    "title": "Advncd Feminist Creative Writing"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL138",
+    "credits": 3.0,
+    "title": "Henry James on Art and Society"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL143S",
+    "credits": 3.0,
+    "title": "Antebellum Lit & Pop Culture"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL156",
+    "credits": 3.0,
+    "title": "Milton and Visual Culture"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL157",
+    "credits": 3.0,
+    "title": "James Baldwin"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL161",
+    "credits": 3.0,
+    "title": "Futures of Asian/America"
+  },
+  {
+    "campus": "po",
+    "code": "ENGL170G",
+    "credits": 3.0,
+    "title": "Shakespeare's Sonnets"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL171S",
+    "credits": 3.0,
+    "title": "The Postcolonial Novel"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL193",
+    "credits": 3.0,
+    "title": "Intro to Fiction Writing"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL194S",
+    "credits": 3.0,
+    "title": "Adv Fiction Writing Workshop"
+  },
+  {
+    "campus": "sc",
+    "code": "ENGL199T",
+    "credits": 3.0,
+    "title": "Senior Thesis in English"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR072",
+    "credits": 1.5,
+    "title": "Engineering Mathematics"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR102",
+    "credits": 3.0,
+    "title": "Advanced Systems Engineering II"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR113",
+    "credits": 3.0,
+    "title": "Engineering Clinic III"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR114",
+    "credits": 3.0,
+    "title": "Engineering Clinic"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR124",
+    "credits": 0.0,
+    "title": "Engineering Seminar"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR134",
+    "credits": 3.0,
+    "title": "Adv Engineering Thermodynamics"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR151",
+    "credits": 4.0,
+    "title": "Analog Circuit Design"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR161",
+    "credits": 3.0,
+    "title": "Computer Image Processing/Analys"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR164",
+    "credits": 3.0,
+    "title": "Intro to Biomedical Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR178",
+    "credits": 3.0,
+    "title": "High Power Rocketry"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR182",
+    "credits": 3.0,
+    "title": "Manufacturing Planning/Execution"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR185B",
+    "credits": 1.5,
+    "title": "Engineering Design & Invention 2"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR190AS",
+    "credits": 3.0,
+    "title": "Biomaterials / Special Topics in Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR190AV",
+    "credits": 3.0,
+    "title": "Signal Process/Model/Classifictn / Special Topics in Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR190AX",
+    "credits": 3.0,
+    "title": "Advanced Digital Design / Special Topics in Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR190AY",
+    "credits": 1.0,
+    "title": "Prototyping Your Mudd / Special Topics in Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR190AZ",
+    "credits": 1.0,
+    "title": "Prototyping Your Future Self / Special Topics in Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR190Z",
+    "credits": 3.0,
+    "title": "Risk Management and Leadership / Special Topics in Engineering"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR206",
+    "credits": 3.0,
+    "title": "Opt Techniques of Engr Design"
+  },
+  {
+    "campus": "hmc",
+    "code": "ENGR240",
+    "credits": 3.0,
+    "title": "Intro to Compressible Flow"
+  },
+  {
+    "campus": "sc",
+    "code": "FGSS184",
+    "credits": 3.0,
+    "title": "Intersectional Feminist Theories"
+  },
+  {
+    "campus": "sc",
+    "code": "FGSS186",
+    "credits": 3.0,
+    "title": "Imperial University"
+  },
+  {
+    "campus": "sc",
+    "code": "FGSS191",
+    "credits": 3.0,
+    "title": "Sr Thesis: Fem Gndr Sex Studies"
+  },
+  {
+    "campus": "cmc",
+    "code": "FIN301B",
+    "credits": 1.0,
+    "title": "Leadership Development"
+  },
+  {
+    "campus": "cmc",
+    "code": "FIN330",
+    "credits": 3.0,
+    "title": "Corporate Financial Management"
+  },
+  {
+    "campus": "cmc",
+    "code": "FIN410",
+    "credits": 3.0,
+    "title": "Portfolio Management"
+  },
+  {
+    "campus": "cmc",
+    "code": "FIN425",
+    "credits": 3.0,
+    "title": "Fixed Income"
+  },
+  {
+    "campus": "sc",
+    "code": "FREN100",
+    "credits": 3.0,
+    "title": "Intro Francophone Studies"
+  },
+  {
+    "campus": "po",
+    "code": "FREN103",
+    "credits": 3.0,
+    "title": "Frenchness: May '68-2018"
+  },
+  {
+    "campus": "po",
+    "code": "FREN106",
+    "credits": 3.0,
+    "title": "French Creative Writing"
+  },
+  {
+    "campus": "cmc",
+    "code": "FREN115",
+    "credits": 3.0,
+    "title": "The Francophone Caribbean"
+  },
+  {
+    "campus": "sc",
+    "code": "FREN122",
+    "credits": 3.0,
+    "title": "Etudes Queer"
+  },
+  {
+    "campus": "po",
+    "code": "FREN150C",
+    "credits": 3.0,
+    "title": "Moralistes/Philosophies: Adv Top - The Fiction of Philosophy"
+  },
+  {
+    "campus": "po",
+    "code": "FREN175",
+    "credits": 3.0,
+    "title": "Writing the Exotic"
+  },
+  {
+    "campus": "sc",
+    "code": "FREN182",
+    "credits": 3.0,
+    "title": "Contemporary Fiction/Non Fiction"
+  },
+  {
+    "campus": "pz",
+    "code": "FS001",
+    "credits": 3.0,
+    "title": "Philosophical Questions"
+  },
+  {
+    "campus": "pz",
+    "code": "FS013",
+    "credits": 3.0,
+    "title": "Psychology of Cricket"
+  },
+  {
+    "campus": "pz",
+    "code": "FS022",
+    "credits": 3.0,
+    "title": "Racialization and Incarceration"
+  },
+  {
+    "campus": "hmc",
+    "code": "GEOG179F",
+    "credits": 3.0,
+    "title": "Geographies of Education / Special Topics in Geography"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL020A",
+    "credits": 3.0,
+    "title": "Intro to Geology: Geohazards"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL121",
+    "credits": 3.0,
+    "title": "Tectonic Landscapes"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL125",
+    "credits": 3.0,
+    "title": "Earth History with Laboratory"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL127",
+    "credits": 3.0,
+    "title": "Mineralogy w/Laboratory"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL131",
+    "credits": 3.0,
+    "title": "Physical Volcanology w/Lab"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL189C",
+    "credits": 3.0,
+    "title": "Oceans on a Habitable Planet"
+  },
+  {
+    "campus": "po",
+    "code": "GEOL189D",
+    "credits": 3.0,
+    "title": "Meteorites & Solar Sys Evol"
+  },
+  {
+    "campus": "po",
+    "code": "GERM002",
+    "credits": 3.0,
+    "title": "Elementary German 2"
+  },
+  {
+    "campus": "po",
+    "code": "GERM010",
+    "credits": 3.0,
+    "title": "Intensive Introduction to German"
+  },
+  {
+    "campus": "sc",
+    "code": "GERM044",
+    "credits": 3.0,
+    "title": "Advanced German"
+  },
+  {
+    "campus": "po",
+    "code": "GERM103",
+    "credits": 3.0,
+    "title": "Intro to German Media and Film"
+  },
+  {
+    "campus": "sc",
+    "code": "GERM109",
+    "credits": 3.0,
+    "title": "Your Heimat is our Nightmare"
+  },
+  {
+    "campus": "pz",
+    "code": "GLAS180",
+    "credits": 3.0,
+    "title": "Carceral State: Comparative"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT050",
+    "credits": 3.0,
+    "title": "Intro to Public Administration"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT065",
+    "credits": 3.0,
+    "title": "Public Opinion for Publ Policy"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT070H",
+    "credits": 3.0,
+    "title": "Intro to Int'l Politics (Honors)"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT097",
+    "credits": 3.0,
+    "title": "Public Policy Analysis"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT101",
+    "credits": 3.0,
+    "title": "The United States Congress"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT117",
+    "credits": 3.0,
+    "title": "California Politics"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT124A",
+    "credits": 3.0,
+    "title": "Cases in American Pol Leadership - Amer Political Leadership: Nixon"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT128",
+    "credits": 3.0,
+    "title": "The University Blacklist"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT131",
+    "credits": 3.0,
+    "title": "Pol History of the Middle East"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT140",
+    "credits": 3.0,
+    "title": "Intl Politics of Nuclear Weapons"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT142C",
+    "credits": 3.0,
+    "title": "Dem. Transitions Middle East"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT142",
+    "credits": 3.0,
+    "title": "Intl Political Feature Writing"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT143C",
+    "credits": 3.0,
+    "title": "Int'l Pol Economy of Money/Finan"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT147",
+    "credits": 3.0,
+    "title": "Technology & International Pol"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT148",
+    "credits": 3.0,
+    "title": "Development in Practice"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT155",
+    "credits": 3.0,
+    "title": "Rwanda & Burundi"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT156E",
+    "credits": 3.0,
+    "title": "War II: Film"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT166",
+    "credits": 3.0,
+    "title": "Patriots and Demagogues"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT172",
+    "credits": 3.0,
+    "title": "Political Phil & Foreign Policy"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT191",
+    "credits": 3.0,
+    "title": "Public Policy since the New Deal"
+  },
+  {
+    "campus": "cmc",
+    "code": "GOVT192",
+    "credits": 3.0,
+    "title": "Liberalism & Conservatism"
+  },
+  {
+    "campus": "po",
+    "code": "GRMT014",
+    "credits": 1.5,
+    "title": "German Syntax for Translation"
+  },
+  {
+    "campus": "sc",
+    "code": "GRMT102",
+    "credits": 3.0,
+    "title": "Manifestos"
+  },
+  {
+    "campus": "po",
+    "code": "GWS172",
+    "credits": 3.0,
+    "title": "Race, Gender, & The Environment"
+  },
+  {
+    "campus": "po",
+    "code": "GWS182",
+    "credits": 3.0,
+    "title": "Feminist and Queer Materialism"
+  },
+  {
+    "campus": "po",
+    "code": "GWS186",
+    "credits": 3.0,
+    "title": "Theories of the Body"
+  },
+  {
+    "campus": "po",
+    "code": "HIST021",
+    "credits": 3.0,
+    "title": "Power in the US"
+  },
+  {
+    "campus": "po",
+    "code": "HIST024",
+    "credits": 3.0,
+    "title": "Global Race and US Religion"
+  },
+  {
+    "campus": "po",
+    "code": "HIST032",
+    "credits": 3.0,
+    "title": "Latin America Since Independence"
+  },
+  {
+    "campus": "po",
+    "code": "HIST041",
+    "credits": 3.0,
+    "title": "Africa in World Politics from 84"
+  },
+  {
+    "campus": "po",
+    "code": "HIST043",
+    "credits": 3.0,
+    "title": "Middle East in Modern Times"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST048",
+    "credits": 3.0,
+    "title": "Gndr/Tstmny in LatAm & Caribbean"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST050B",
+    "credits": 3.0,
+    "title": "African Diaspora US since 1877"
+  },
+  {
+    "campus": "po",
+    "code": "HIST060",
+    "credits": 3.0,
+    "title": "Asian Traditions"
+  },
+  {
+    "campus": "po",
+    "code": "HIST062",
+    "credits": 3.0,
+    "title": "China, Japan, Korea in 20th Cent"
+  },
+  {
+    "campus": "pz",
+    "code": "HIST066",
+    "credits": 3.0,
+    "title": "Oral History/Method and Practice"
+  },
+  {
+    "campus": "pz",
+    "code": "HIST067",
+    "credits": 3.0,
+    "title": "College Access in Virtual Times"
+  },
+  {
+    "campus": "po",
+    "code": "HIST071",
+    "credits": 3.0,
+    "title": "Modern Europe Since 1789"
+  },
+  {
+    "campus": "po",
+    "code": "HIST089A",
+    "credits": 3.0,
+    "title": "California History"
+  },
+  {
+    "campus": "cmc",
+    "code": "HIST100",
+    "credits": 3.0,
+    "title": "Freshman Honors Seminar - Gender/Popular Culture Middle E"
+  },
+  {
+    "campus": "po",
+    "code": "HIST101A",
+    "credits": 3.0,
+    "title": "Indian Ocean World"
+  },
+  {
+    "campus": "po",
+    "code": "HIST101Q",
+    "credits": 3.0,
+    "title": "Writing stories about the bodies"
+  },
+  {
+    "campus": "po",
+    "code": "HIST101S",
+    "credits": 3.0,
+    "title": "Latinx Oral Histories (CP)"
+  },
+  {
+    "campus": "po",
+    "code": "HIST101W",
+    "credits": 3.0,
+    "title": "Heresy and Church"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST113",
+    "credits": 3.0,
+    "title": "Venice and the Islamic East"
+  },
+  {
+    "campus": "cmc",
+    "code": "HIST120",
+    "credits": 3.0,
+    "title": "Native American History"
+  },
+  {
+    "campus": "cmc",
+    "code": "HIST122",
+    "credits": 3.0,
+    "title": "Amer Schools: Race, Inequality"
+  },
+  {
+    "campus": "po",
+    "code": "HIST127",
+    "credits": 3.0,
+    "title": "American Inequality"
+  },
+  {
+    "campus": "po",
+    "code": "HIST130",
+    "credits": 3.0,
+    "title": "Mexico-U.S. Border (CP)"
+  },
+  {
+    "campus": "po",
+    "code": "HIST140",
+    "credits": 3.0,
+    "title": "Women: Power, Majesty, Slavery"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST141",
+    "credits": 3.0,
+    "title": "Americas:Race,Labor & Organizing"
+  },
+  {
+    "campus": "pz",
+    "code": "HIST148A",
+    "credits": 3.0,
+    "title": "Gender Sexuality/Post-Col Africa"
+  },
+  {
+    "campus": "hmc",
+    "code": "HIST152",
+    "credits": 3.0,
+    "title": "History of Modern Physics"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST153",
+    "credits": 3.0,
+    "title": "Slave Women in Antebellum Amer"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST155",
+    "credits": 3.0,
+    "title": "Women, Gender, US Colonialism"
+  },
+  {
+    "campus": "pz",
+    "code": "HIST162",
+    "credits": 3.0,
+    "title": "Historical Epidemiology"
+  },
+  {
+    "campus": "cmc",
+    "code": "HIST169B",
+    "credits": 3.0,
+    "title": "Topics in South Asian History - Global S Asia: Medieval-Modern"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST169",
+    "credits": 3.0,
+    "title": "Gender, Race, and US Education"
+  },
+  {
+    "campus": "po",
+    "code": "HIST179",
+    "credits": 3.0,
+    "title": "Histories of Black Europe"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST180",
+    "credits": 3.0,
+    "title": "Prosemiar: What is History?"
+  },
+  {
+    "campus": "pz",
+    "code": "HIST185",
+    "credits": 3.0,
+    "title": "Information Revolutions x.0&z.0"
+  },
+  {
+    "campus": "cmc",
+    "code": "HIST186B",
+    "credits": 3.0,
+    "title": "Rev London & Paris: 1688-1852"
+  },
+  {
+    "campus": "sc",
+    "code": "HIST192",
+    "credits": 3.0,
+    "title": "Senior Thesis in History"
+  },
+  {
+    "campus": "sc",
+    "code": "HMSC192",
+    "credits": 3.0,
+    "title": "Sr Thesis: Humanities Major"
+  },
+  {
+    "campus": "hmc",
+    "code": "HSA010",
+    "credits": 3.0,
+    "title": "Critical Inquiry"
+  },
+  {
+    "campus": "sc",
+    "code": "HUM195J",
+    "credits": 3.0,
+    "title": "Fellowship in Humanities Inst"
+  },
+  {
+    "campus": "po",
+    "code": "ID199P2",
+    "credits": 1.5,
+    "title": "Independent Study: Persian 2"
+  },
+  {
+    "campus": "po",
+    "code": "ID199S2",
+    "credits": 1.5,
+    "title": "Independent Study:Swahili 2"
+  },
+  {
+    "campus": "po",
+    "code": "IR118",
+    "credits": 3.0,
+    "title": "International Economic Relations"
+  },
+  {
+    "campus": "sc",
+    "code": "ITAL044",
+    "credits": 3.0,
+    "title": "Advanced Italian"
+  },
+  {
+    "campus": "sc",
+    "code": "ITAL121",
+    "credits": 3.0,
+    "title": "Italian Fairy Tales"
+  },
+  {
+    "campus": "sc",
+    "code": "ITAL191",
+    "credits": 3.0,
+    "title": "Senior Thesis in Italian"
+  },
+  {
+    "campus": "po",
+    "code": "JAPN001B",
+    "credits": 3.0,
+    "title": "Elementary Japanese"
+  },
+  {
+    "campus": "po",
+    "code": "JAPN012B",
+    "credits": 1.0,
+    "title": "Intermediate Kanji"
+  },
+  {
+    "campus": "po",
+    "code": "JAPN014B",
+    "credits": 1.0,
+    "title": "Advanced Kanji"
+  },
+  {
+    "campus": "po",
+    "code": "JAPN051B",
+    "credits": 3.0,
+    "title": "Intermediate Japanese"
+  },
+  {
+    "campus": "po",
+    "code": "JAPN111B",
+    "credits": 3.0,
+    "title": "Advanced Japanese"
+  },
+  {
+    "campus": "po",
+    "code": "JAPN131",
+    "credits": 3.0,
+    "title": "Intro to Classical Japanese"
+  },
+  {
+    "campus": "po",
+    "code": "JPNT175",
+    "credits": 3.0,
+    "title": "Tokyo as Metaphor"
+  },
+  {
+    "campus": "po",
+    "code": "JPNT179",
+    "credits": 3.0,
+    "title": "Graphically Speaking:Japn Manga"
+  },
+  {
+    "campus": "cmc",
+    "code": "KORE002",
+    "credits": 3.0,
+    "title": "Continuing Introductory Korean"
+  },
+  {
+    "campus": "cmc",
+    "code": "KORE044",
+    "credits": 3.0,
+    "title": "Advanced Korean"
+  },
+  {
+    "campus": "cmc",
+    "code": "KRNT130",
+    "credits": 3.0,
+    "title": "Korean Cinema & Culture"
+  },
+  {
+    "campus": "sc",
+    "code": "LAST191",
+    "credits": 3.0,
+    "title": "Senior Thesis:Latin American St"
+  },
+  {
+    "campus": "cmc",
+    "code": "LEAD142",
+    "credits": 3.0,
+    "title": "Leading Social Innovation - Social Innovation Projects"
+  },
+  {
+    "campus": "hmc",
+    "code": "LEAD151",
+    "credits": 3.0,
+    "title": "Interpersonal Dynamics"
+  },
+  {
+    "campus": "pz",
+    "code": "LGCS110",
+    "credits": 3.0,
+    "title": "Language & Gender"
+  },
+  {
+    "campus": "po",
+    "code": "LGCS118",
+    "credits": 3.0,
+    "title": "Morphosyntactic Diversity"
+  },
+  {
+    "campus": "po",
+    "code": "LGCS119",
+    "credits": 3.0,
+    "title": "Language and Social Justice"
+  },
+  {
+    "campus": "po",
+    "code": "LGCS120",
+    "credits": 3.0,
+    "title": "Language Acquisition"
+  },
+  {
+    "campus": "po",
+    "code": "LGCS130",
+    "credits": 3.0,
+    "title": "Cognition and the Brain"
+  },
+  {
+    "campus": "pz",
+    "code": "LGCS166",
+    "credits": 3.0,
+    "title": "Topics in Sociolinguistics"
+  },
+  {
+    "campus": "po",
+    "code": "LGCS184",
+    "credits": 3.0,
+    "title": "Topics in Phonology"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT034",
+    "credits": 3.0,
+    "title": "Creative Journalism"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT058",
+    "credits": 3.0,
+    "title": "British Writers II"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT061",
+    "credits": 3.0,
+    "title": "The Bible"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT063",
+    "credits": 3.0,
+    "title": "Chaucer"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT068",
+    "credits": 3.0,
+    "title": "Slow Shakespeare"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT084",
+    "credits": 3.0,
+    "title": "Lyric Voice in Mod Amer Lit/Film"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT103",
+    "credits": 3.0,
+    "title": "The Idea of Poetry"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT119",
+    "credits": 3.0,
+    "title": "19th Century Russian Novel"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT134",
+    "credits": 3.0,
+    "title": "Special Studies in Film - Spcl Studies in Film: Spy Films"
+  },
+  {
+    "campus": "hmc",
+    "code": "LIT141",
+    "credits": 3.0,
+    "title": "Monsters in Literature"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT152",
+    "credits": 3.0,
+    "title": "Utopia/Dystopia"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT165",
+    "credits": 3.0,
+    "title": "Caribbean Women Writers"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT181",
+    "credits": 3.0,
+    "title": "Advanced Creative Writing"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT183",
+    "credits": 3.0,
+    "title": "Advanced Fiction Writing"
+  },
+  {
+    "campus": "cmc",
+    "code": "LIT185",
+    "credits": 3.0,
+    "title": "Poetry Writing II"
+  },
+  {
+    "campus": "pz",
+    "code": "MATH008",
+    "credits": 3.0,
+    "title": "Philosophy of Mathematics"
+  },
+  {
+    "campus": "cmc",
+    "code": "MATH031A",
+    "credits": 3.0,
+    "title": "Calculus II-A"
+  },
+  {
+    "campus": "po",
+    "code": "MATH032S",
+    "credits": 3.0,
+    "title": "Calc III w/Apps to the Sciences"
+  },
+  {
+    "campus": "po",
+    "code": "MATH058B",
+    "credits": 3.0,
+    "title": "Intro to Biostatistics w/ lab"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH062",
+    "credits": 3.0,
+    "title": "Intro: Probability & Statistics"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH070",
+    "credits": 1.5,
+    "title": "Intermediate Linear Algebra"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH073",
+    "credits": 3.0,
+    "title": "Linear Algebra"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH080",
+    "credits": 1.5,
+    "title": "Intermediate Diff Equations"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH104",
+    "credits": 3.0,
+    "title": "Graph Theory"
+  },
+  {
+    "campus": "po",
+    "code": "MATH112",
+    "credits": 3.0,
+    "title": "Discrete Dynamical Sys & Chaos"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH115",
+    "credits": 3.0,
+    "title": "Fourier Series/Bndry Value Prob"
+  },
+  {
+    "campus": "po",
+    "code": "MATH132",
+    "credits": 3.0,
+    "title": "Principles of Real Analysis II"
+  },
+  {
+    "campus": "po",
+    "code": "MATH150",
+    "credits": 3.0,
+    "title": "Methods in Biostatistics"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH155",
+    "credits": 3.0,
+    "title": "Time Series"
+  },
+  {
+    "campus": "po",
+    "code": "MATH158",
+    "credits": 3.0,
+    "title": "Statistical Linear Models"
+  },
+  {
+    "campus": "cmc",
+    "code": "MATH160",
+    "credits": 3.0,
+    "title": "Monte Carlo Methods"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH164",
+    "credits": 3.0,
+    "title": "Scientific Computing"
+  },
+  {
+    "campus": "cmc",
+    "code": "MATH172",
+    "credits": 3.0,
+    "title": "Abstract Algebra II: Galois Thry"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH175",
+    "credits": 3.0,
+    "title": "Number Theory"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH176",
+    "credits": 3.0,
+    "title": "Algebraic Geometry"
+  },
+  {
+    "campus": "po",
+    "code": "MATH181",
+    "credits": 3.0,
+    "title": "Dynamical Systems"
+  },
+  {
+    "campus": "hmc",
+    "code": "MATH189AA",
+    "credits": 3.0,
+    "title": "Commutative Algebra / Special Topics in Mathematics"
+  },
+  {
+    "campus": "cmc",
+    "code": "MATH191",
+    "credits": 1.5,
+    "title": "Math Majors Senior Seminar"
+  },
+  {
+    "campus": "hmc",
+    "code": "MCBI118A",
+    "credits": 1.5,
+    "title": "Intro to Mathematical Biology"
+  },
+  {
+    "campus": "hmc",
+    "code": "MCBI118B",
+    "credits": 1.5,
+    "title": "Intro to Computational Biology"
+  },
+  {
+    "campus": "sc",
+    "code": "MENA191",
+    "credits": 3.0,
+    "title": "Sr Th:Mid East+North Africa Stdy"
+  },
+  {
+    "campus": "pz",
+    "code": "MLLC144",
+    "credits": 3.0,
+    "title": "Adv Speech & Rhetoric: Debate"
+  },
+  {
+    "campus": "pz",
+    "code": "MLLC150",
+    "credits": 3.0,
+    "title": "Foreign Language Pedagogy"
+  },
+  {
+    "campus": "pz",
+    "code": "MLLC155",
+    "credits": 3.0,
+    "title": "Writing Across the Curriculum"
+  },
+  {
+    "campus": "pz",
+    "code": "MLLC188",
+    "credits": 3.0,
+    "title": "Social Justice in the U.S."
+  },
+  {
+    "campus": "sc",
+    "code": "MS038",
+    "credits": 3.0,
+    "title": "Machine Learning for Artists"
+  },
+  {
+    "campus": "po",
+    "code": "MS050",
+    "credits": 3.0,
+    "title": "Introduction to Film"
+  },
+  {
+    "campus": "sc",
+    "code": "MS054",
+    "credits": 3.0,
+    "title": "Intermediate Computational Media"
+  },
+  {
+    "campus": "pz",
+    "code": "MS097",
+    "credits": 3.0,
+    "title": "Contemporary US Media"
+  },
+  {
+    "campus": "pz",
+    "code": "MS098",
+    "credits": 3.0,
+    "title": "Media of Middle East"
+  },
+  {
+    "campus": "pz",
+    "code": "MS111",
+    "credits": 3.0,
+    "title": "Perspectives on Photography"
+  },
+  {
+    "campus": "pz",
+    "code": "MS115",
+    "credits": 3.0,
+    "title": "Sound, Art, and Power"
+  },
+  {
+    "campus": "pz",
+    "code": "MS117",
+    "credits": 3.0,
+    "title": "Fan Culture and Celebrity"
+  },
+  {
+    "campus": "pz",
+    "code": "MS121",
+    "credits": 3.0,
+    "title": "Cultural Politics of Self Care"
+  },
+  {
+    "campus": "sc",
+    "code": "MS132",
+    "credits": 3.0,
+    "title": "Theories of Interaction"
+  },
+  {
+    "campus": "po",
+    "code": "MS148F",
+    "credits": 3.0,
+    "title": "Global Cinema"
+  },
+  {
+    "campus": "po",
+    "code": "MS148G",
+    "credits": 3.0,
+    "title": "Film Theory"
+  },
+  {
+    "campus": "po",
+    "code": "MS149T",
+    "credits": 3.0,
+    "title": "Seminar: Critical Studies - Core Theories in Media Studies"
+  },
+  {
+    "campus": "sc",
+    "code": "MS160",
+    "credits": 3.0,
+    "title": "Computational Photography II"
+  },
+  {
+    "campus": "hmc",
+    "code": "MS173",
+    "credits": 3.0,
+    "title": "Exile in Cinema"
+  },
+  {
+    "campus": "po",
+    "code": "MS175",
+    "credits": 3.0,
+    "title": "\"Horror\" and The American Horror"
+  },
+  {
+    "campus": "sc",
+    "code": "MS192",
+    "credits": 3.0,
+    "title": "SR Project & Paper in Media Stds"
+  },
+  {
+    "campus": "cmc",
+    "code": "MSL001A",
+    "credits": 1.5,
+    "title": "Amer Mil Hist; Civil War-Present"
+  },
+  {
+    "campus": "cmc",
+    "code": "MSL089",
+    "credits": 0.0,
+    "title": "Riflery & Orienteering"
+  },
+  {
+    "campus": "cmc",
+    "code": "MSL101B",
+    "credits": 0.0,
+    "title": "Basics of Leadership IB"
+  },
+  {
+    "campus": "cmc",
+    "code": "MSL102B",
+    "credits": 1.5,
+    "title": "Mil Operations & Leadership IB"
+  },
+  {
+    "campus": "cmc",
+    "code": "MSL103B",
+    "credits": 1.5,
+    "title": "Intermediate Leadership & Mgt IB"
+  },
+  {
+    "campus": "cmc",
+    "code": "MSL104B",
+    "credits": 1.5,
+    "title": "Adv. Leadership & Management IB"
+  },
+  {
+    "campus": "po",
+    "code": "MUS032P",
+    "credits": 1.5,
+    "title": "Pomona College Glee Club"
+  },
+  {
+    "campus": "po",
+    "code": "MUS042B",
+    "credits": 1.5,
+    "title": "Afro-Cuban Music Ensemble"
+  },
+  {
+    "campus": "po",
+    "code": "MUS065",
+    "credits": 3.0,
+    "title": "Introduction to World Music"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS072",
+    "credits": 1.5,
+    "title": "Musicianship II"
+  },
+  {
+    "campus": "po",
+    "code": "MUS082L",
+    "credits": 0.0,
+    "title": "Lab, Theory III"
+  },
+  {
+    "campus": "po",
+    "code": "MUS082",
+    "credits": 3.0,
+    "title": "Music Theory III"
+  },
+  {
+    "campus": "po",
+    "code": "MUS088",
+    "credits": 3.0,
+    "title": "Global Musical Instruments"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS092F",
+    "credits": 3.0,
+    "title": "Voice for Musical Theatre"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS092H",
+    "credits": 1.5,
+    "title": "Voice for Musical Theatre"
+  },
+  {
+    "campus": "po",
+    "code": "MUS095",
+    "credits": 3.0,
+    "title": "Musical Mathematics"
+  },
+  {
+    "campus": "po",
+    "code": "MUS096B",
+    "credits": 3.0,
+    "title": "Electronic Music Studio"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS102",
+    "credits": 3.0,
+    "title": "Music Theory II"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS110B",
+    "credits": 3.0,
+    "title": "Music in Western Civilization II"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS112",
+    "credits": 3.0,
+    "title": "Intro to Ethnomusicology"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS119",
+    "credits": 3.0,
+    "title": "Women and Gender in Music"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS120",
+    "credits": 3.0,
+    "title": "Music in Christian Practice"
+  },
+  {
+    "campus": "po",
+    "code": "MUS121",
+    "credits": 3.0,
+    "title": "Sem in Music Hist(Before 1750)"
+  },
+  {
+    "campus": "po",
+    "code": "MUS147",
+    "credits": 3.0,
+    "title": "Linguistics in Musical Analysis"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS189",
+    "credits": 1.5,
+    "title": "Junior Recital"
+  },
+  {
+    "campus": "sc",
+    "code": "MUS191",
+    "credits": 3.0,
+    "title": "Senior Thesis in Music"
+  },
+  {
+    "campus": "cgu",
+    "code": "NEUR095L",
+    "credits": 3.0,
+    "title": "Foundations of Neuroscience"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR101B",
+    "credits": 3.0,
+    "title": "Human Brain: Neurons-Behav w/Lab"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR101BL",
+    "credits": 0.0,
+    "title": "Lab, Neurobiology"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR123",
+    "credits": 3.0,
+    "title": "The Stressed Brain"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR168",
+    "credits": 3.0,
+    "title": "Genes and Behavior w/ Lab"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR168L",
+    "credits": 0.0,
+    "title": "Genes and Behavior Lab"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR178",
+    "credits": 3.0,
+    "title": "Neurobiology with Lab"
+  },
+  {
+    "campus": "po",
+    "code": "NEUR192",
+    "credits": 3.0,
+    "title": "Neuroscience Senior Project"
+  },
+  {
+    "campus": "pz",
+    "code": "ORST103",
+    "credits": 3.0,
+    "title": "Leadership and Social Change"
+  },
+  {
+    "campus": "pz",
+    "code": "ORST135",
+    "credits": 3.0,
+    "title": "Organizational Behavior"
+  },
+  {
+    "campus": "pz",
+    "code": "ORST150",
+    "credits": 3.0,
+    "title": "Labor in the Global Economy"
+  },
+  {
+    "campus": "pz",
+    "code": "ORST198",
+    "credits": 3.0,
+    "title": "Program Review: Theory & Praxis"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE005E",
+    "credits": 1.0,
+    "title": "How to Improve Your Running"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE007D",
+    "credits": 1.0,
+    "title": "CATZ/Circuit Training"
+  },
+  {
+    "campus": "po",
+    "code": "PE007",
+    "credits": 1.0,
+    "title": "Triathlon Training"
+  },
+  {
+    "campus": "cmc",
+    "code": "PE008D",
+    "credits": 1.0,
+    "title": "Hi Intns Int Trng (HIIT) Cardio"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE011A",
+    "credits": 1.0,
+    "title": "Run-Walk-Jog"
+  },
+  {
+    "campus": "po",
+    "code": "PE022B",
+    "credits": 1.0,
+    "title": "Yoga - II"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE028B",
+    "credits": 1.0,
+    "title": "Model Mugging"
+  },
+  {
+    "campus": "cmc",
+    "code": "PE042A",
+    "credits": 1.0,
+    "title": "Basketball-Dynamic Ball Handling"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE056D",
+    "credits": 1.0,
+    "title": "Soccer Skills and Strength"
+  },
+  {
+    "campus": "cmc",
+    "code": "PE057C",
+    "credits": 1.0,
+    "title": "Introduction to Fitness"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE057D",
+    "credits": 1.0,
+    "title": "Dynamic Stretching"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE067B",
+    "credits": 1.0,
+    "title": "Walking and Mental Health"
+  },
+  {
+    "campus": "cmc",
+    "code": "PE076A",
+    "credits": 1.0,
+    "title": "Yoga-Hatha"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE088D",
+    "credits": 1.0,
+    "title": "Football Strategy"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE088E",
+    "credits": 1.0,
+    "title": "Football Rules & Decision Making"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE100",
+    "credits": 1.0,
+    "title": "Baseball Team"
+  },
+  {
+    "campus": "po",
+    "code": "PE105M",
+    "credits": 1.0,
+    "title": "Vars Team: Cross Country Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE105W",
+    "credits": 1.0,
+    "title": "Vars Team: Cross Country Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE115",
+    "credits": 1.0,
+    "title": "Diving Team-Men/Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE115M",
+    "credits": 1.0,
+    "title": "Vars Team: Soccer Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE115W",
+    "credits": 1.0,
+    "title": "Vars Team: Soccer Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE125",
+    "credits": 1.0,
+    "title": "Golf Team-Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE125M",
+    "credits": 1.0,
+    "title": "Vars Team: Water Polo Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE125W",
+    "credits": 1.0,
+    "title": "Vars Team: Water Polo Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE127",
+    "credits": 1.0,
+    "title": "Golf Team-Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE130",
+    "credits": 1.0,
+    "title": "Lacrosse Team-Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE130M",
+    "credits": 1.0,
+    "title": "Vars Team: Basketball Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE130W",
+    "credits": 1.0,
+    "title": "Vars Team: Basketball Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE137",
+    "credits": 1.0,
+    "title": "Softball Team-Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE140M",
+    "credits": 1.0,
+    "title": "Vars Team: Swim/Diving Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE140W",
+    "credits": 1.0,
+    "title": "Vars Team: Swim/Diving Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE145",
+    "credits": 1.0,
+    "title": "Swimming Team-Men/Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE150",
+    "credits": 1.0,
+    "title": "Tennis Team-Men"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE152",
+    "credits": 1.0,
+    "title": "Tennis Team-Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE155M",
+    "credits": 1.0,
+    "title": "Vars Team: Golf Men"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE155",
+    "credits": 1.0,
+    "title": "Track & Field-Men/Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE155W",
+    "credits": 1.0,
+    "title": "Vars Team: Golf Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE160W",
+    "credits": 1.0,
+    "title": "Vars Team: Lacrosse Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE166",
+    "credits": 1.0,
+    "title": "Water Polo Team-Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE170M",
+    "credits": 1.0,
+    "title": "Vars Team: Tennis Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE170W",
+    "credits": 1.0,
+    "title": "Vars Team: Tennis Women"
+  },
+  {
+    "campus": "po",
+    "code": "PE175M",
+    "credits": 1.0,
+    "title": "Vars Team: Track & Field Men"
+  },
+  {
+    "campus": "po",
+    "code": "PE175W",
+    "credits": 1.0,
+    "title": "Vars Team: Track & Field Women"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE230",
+    "credits": 1.0,
+    "title": "Rugby Club-Men"
+  },
+  {
+    "campus": "cgu",
+    "code": "PE232",
+    "credits": 1.0,
+    "title": "Rugby Club-Women"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL032",
+    "credits": 3.0,
+    "title": "Intro: Philosophy and the Arts"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL033",
+    "credits": 3.0,
+    "title": "Political Philosophy"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL035",
+    "credits": 3.0,
+    "title": "Well-being and Autonomy"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL042",
+    "credits": 3.0,
+    "title": "History of Modern Philosophy"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL043",
+    "credits": 3.0,
+    "title": "Continental Thought"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL046",
+    "credits": 3.0,
+    "title": "Feminism and Science (CP)"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL047",
+    "credits": 3.0,
+    "title": "Socrates"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL057",
+    "credits": 3.0,
+    "title": "Philosophy of Technology"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL080",
+    "credits": 3.0,
+    "title": "Philosophy of Mind"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL081",
+    "credits": 3.0,
+    "title": "Epistemology"
+  },
+  {
+    "campus": "pz",
+    "code": "PHIL084",
+    "credits": 3.0,
+    "title": "Islamic Philosophy"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL095",
+    "credits": 3.0,
+    "title": "Fundamentals of Logic"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL109",
+    "credits": 3.0,
+    "title": "Africana Philosophy"
+  },
+  {
+    "campus": "sc",
+    "code": "PHIL118",
+    "credits": 3.0,
+    "title": "History of Modern Philosophy"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL121",
+    "credits": 3.0,
+    "title": "Naturalism and Morality"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL160IO",
+    "credits": 3.0,
+    "title": "Special Topics in Value Theory - Feminism for Men"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL160",
+    "credits": 3.0,
+    "title": "Special Topics in Value Theory - Agency and Identity"
+  },
+  {
+    "campus": "cmc",
+    "code": "PHIL183",
+    "credits": 3.0,
+    "title": "Philosophy and Literature - Philosophy through Black Lit."
+  },
+  {
+    "campus": "po",
+    "code": "PHIL185R",
+    "credits": 3.0,
+    "title": "Topics: Phil of Science - Values,Credibility,Communication"
+  },
+  {
+    "campus": "po",
+    "code": "PHIL185S",
+    "credits": 3.0,
+    "title": "Topics: Social & Political Phil - Phenomenologies of Race"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS024A",
+    "credits": 3.0,
+    "title": "Mechanics & Wave Motion"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS024",
+    "credits": 3.0,
+    "title": "Mechanics & Wave Motion"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS031L",
+    "credits": 3.0,
+    "title": "General Physics Life Sciences"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS031LX",
+    "credits": 0.0,
+    "title": "General Physics Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS034L",
+    "credits": 3.0,
+    "title": "Principles of Physics"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS042",
+    "credits": 3.0,
+    "title": "General Physics w/Lab"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS042L",
+    "credits": 0.0,
+    "title": "Lab, General Physics"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS052",
+    "credits": 3.0,
+    "title": "Quantum Physics"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS054",
+    "credits": 1.0,
+    "title": "Modern Physics Laboratory"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS078",
+    "credits": 3.0,
+    "title": "Climate and Energy"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS089B",
+    "credits": 1.5,
+    "title": "Introductory Elec and Mag"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS089C",
+    "credits": 1.5,
+    "title": "Introductory Classical Mechanics"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS089CL",
+    "credits": 0.0,
+    "title": "Intro Classical Mechanics, Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS100",
+    "credits": 3.0,
+    "title": "Computational Phys/Engineering"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS102",
+    "credits": 3.0,
+    "title": "Electromagnetism"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS105",
+    "credits": 3.0,
+    "title": "Comput Partial Differential Equa"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS106L",
+    "credits": 3.0,
+    "title": "Electronics Lab"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS114",
+    "credits": 3.0,
+    "title": "Quantum Mechanics Computal Appls"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS116",
+    "credits": 3.0,
+    "title": "Quantum Mechanics"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS125",
+    "credits": 3.0,
+    "title": "Mechanics"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS128",
+    "credits": 3.0,
+    "title": "Electronics with Laboratory (CP)"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS134",
+    "credits": 2.0,
+    "title": "Optics Laboratory"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS142",
+    "credits": 3.0,
+    "title": "Electricity & Magnetism"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS154",
+    "credits": 3.0,
+    "title": "Fields & Waves"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS162",
+    "credits": 2.0,
+    "title": "Solid State Physics"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS172",
+    "credits": 2.0,
+    "title": "General Relativity & Cosmology"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS174",
+    "credits": 2.0,
+    "title": "Biophysics"
+  },
+  {
+    "campus": "po",
+    "code": "PHYS175",
+    "credits": 3.0,
+    "title": "Thermodynamics/Statistical Mech"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS178",
+    "credits": 3.0,
+    "title": "Biophysics"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS178F",
+    "credits": 3.0,
+    "title": "Computational Physics / Special Topics in Physics"
+  },
+  {
+    "campus": "cgu",
+    "code": "PHYS188L",
+    "credits": 3.0,
+    "title": "Sr Thesis Rsrch Project in Phys"
+  },
+  {
+    "campus": "hmc",
+    "code": "PHYS194",
+    "credits": 3.0,
+    "title": "Physics Clinic"
+  },
+  {
+    "campus": "po",
+    "code": "POLI001B",
+    "credits": 3.0,
+    "title": "Modern Political Theory"
+  },
+  {
+    "campus": "po",
+    "code": "POLI005",
+    "credits": 3.0,
+    "title": "Intro to Comparative Politics"
+  },
+  {
+    "campus": "po",
+    "code": "POLI033B",
+    "credits": 3.0,
+    "title": "Amer Constit II: Rights/Liberty"
+  },
+  {
+    "campus": "po",
+    "code": "POLI060",
+    "credits": 3.0,
+    "title": "Global Poli of Food/Agriculture"
+  },
+  {
+    "campus": "sc",
+    "code": "POLI100",
+    "credits": 3.0,
+    "title": "Intro to International Relations"
+  },
+  {
+    "campus": "po",
+    "code": "POLI111",
+    "credits": 3.0,
+    "title": "Green Political Theory"
+  },
+  {
+    "campus": "sc",
+    "code": "POLI115",
+    "credits": 3.0,
+    "title": "Politics of Identity-India"
+  },
+  {
+    "campus": "sc",
+    "code": "POLI123IO",
+    "credits": 3.0,
+    "title": "Power, Justice, US Environment"
+  },
+  {
+    "campus": "po",
+    "code": "POLI136",
+    "credits": 3.0,
+    "title": "Environmental Justice and Policy"
+  },
+  {
+    "campus": "po",
+    "code": "POLI147",
+    "credits": 3.0,
+    "title": "Education Politics & Policy"
+  },
+  {
+    "campus": "sc",
+    "code": "POLI150",
+    "credits": 3.0,
+    "title": "Intro to Public Policy"
+  },
+  {
+    "campus": "po",
+    "code": "POLI172",
+    "credits": 3.0,
+    "title": "Cities, Rights, and Development"
+  },
+  {
+    "campus": "po",
+    "code": "POLI177",
+    "credits": 3.0,
+    "title": "Sports and Politics"
+  },
+  {
+    "campus": "po",
+    "code": "POLI189Y",
+    "credits": 3.0,
+    "title": "Libidinal Economy & Race"
+  },
+  {
+    "campus": "po",
+    "code": "POLI189Z",
+    "credits": 3.0,
+    "title": "Writing New York"
+  },
+  {
+    "campus": "po",
+    "code": "POLI190B",
+    "credits": 3.0,
+    "title": "Sr Sem: Comparativ/Intl Politics"
+  },
+  {
+    "campus": "po",
+    "code": "POLI190D",
+    "credits": 3.0,
+    "title": "Senior Seminar in Politics"
+  },
+  {
+    "campus": "pz",
+    "code": "PORT022",
+    "credits": 3.0,
+    "title": "Intensive Introductry Portuguese"
+  },
+  {
+    "campus": "cmc",
+    "code": "PORT044",
+    "credits": 3.0,
+    "title": "Advanced Portuguese"
+  },
+  {
+    "campus": "pz",
+    "code": "POST050",
+    "credits": 3.0,
+    "title": "Politial Thought East&West Intro"
+  },
+  {
+    "campus": "pz",
+    "code": "POST070",
+    "credits": 3.0,
+    "title": "Research Methods in Polit Stdies"
+  },
+  {
+    "campus": "pz",
+    "code": "POST106",
+    "credits": 3.0,
+    "title": "Law and Politics"
+  },
+  {
+    "campus": "pz",
+    "code": "POST123",
+    "credits": 3.0,
+    "title": "Building Political Parties"
+  },
+  {
+    "campus": "hmc",
+    "code": "POST140",
+    "credits": 3.0,
+    "title": "Global Environmental Politics"
+  },
+  {
+    "campus": "pz",
+    "code": "POST141",
+    "credits": 3.0,
+    "title": "International Political Economy"
+  },
+  {
+    "campus": "pz",
+    "code": "POST170",
+    "credits": 3.0,
+    "title": "Latina/o Health Issues In The US"
+  },
+  {
+    "campus": "pz",
+    "code": "POST185",
+    "credits": 3.0,
+    "title": "Information Revolutions x.0&z.0"
+  },
+  {
+    "campus": "pz",
+    "code": "POST190",
+    "credits": 3.0,
+    "title": "Science, Politics & Alt Medicine"
+  },
+  {
+    "campus": "pz",
+    "code": "POST199",
+    "credits": 3.0,
+    "title": "Senior Thesis"
+  },
+  {
+    "campus": "po",
+    "code": "PPA001",
+    "credits": 3.0,
+    "title": "Intro to Public Policy Analysis"
+  },
+  {
+    "campus": "po",
+    "code": "PPA191",
+    "credits": 3.0,
+    "title": "Senior Thesis"
+  },
+  {
+    "campus": "cmc",
+    "code": "PPE001A",
+    "credits": 3.0,
+    "title": "Philosophy Seminar"
+  },
+  {
+    "campus": "cmc",
+    "code": "PPE001B",
+    "credits": 3.0,
+    "title": "Philosophy Tutorial"
+  },
+  {
+    "campus": "cmc",
+    "code": "PPE011A",
+    "credits": 3.0,
+    "title": "Politics Seminar"
+  },
+  {
+    "campus": "cmc",
+    "code": "PPE011B",
+    "credits": 3.0,
+    "title": "Politics Tutorial"
+  },
+  {
+    "campus": "po",
+    "code": "PPE100",
+    "credits": 3.0,
+    "title": "Enrich, Enlighten, and Reform"
+  },
+  {
+    "campus": "cmc",
+    "code": "PPE110A",
+    "credits": 3.0,
+    "title": "Economics Seminar"
+  },
+  {
+    "campus": "cmc",
+    "code": "PPE110B",
+    "credits": 3.0,
+    "title": "Economics Tutorial"
+  },
+  {
+    "campus": "cmc",
+    "code": "PSYC065",
+    "credits": 3.0,
+    "title": "Behavioral Psychology"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC105",
+    "credits": 3.0,
+    "title": "Child Development"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC108",
+    "credits": 3.0,
+    "title": "Child Development"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC113",
+    "credits": 3.0,
+    "title": "Psychobiology of Emotion"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC117",
+    "credits": 3.0,
+    "title": "Children & Families: South Asia"
+  },
+  {
+    "campus": "cmc",
+    "code": "PSYC120",
+    "credits": 3.0,
+    "title": "Sem:Behavr Modification w/Pract"
+  },
+  {
+    "campus": "sc",
+    "code": "PSYC124",
+    "credits": 3.0,
+    "title": "Basic Helping Skills"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC130P",
+    "credits": 1.5,
+    "title": "Stereotype Prejudice Practicum"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC130",
+    "credits": 3.0,
+    "title": "Stereotyping and Prejudice"
+  },
+  {
+    "campus": "cmc",
+    "code": "PSYC132",
+    "credits": 3.0,
+    "title": "Personality Psychology"
+  },
+  {
+    "campus": "sc",
+    "code": "PSYC133",
+    "credits": 3.0,
+    "title": "Emotions & Positive Psychology"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC141",
+    "credits": 3.0,
+    "title": "Human Neuroscience"
+  },
+  {
+    "campus": "sc",
+    "code": "PSYC145",
+    "credits": 3.0,
+    "title": "Mixed Methods Research"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC148",
+    "credits": 3.0,
+    "title": "Neuropharmacology and Behavior"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC152",
+    "credits": 3.0,
+    "title": "Infancy: A Developmental Seminar"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC153",
+    "credits": 3.0,
+    "title": "Asian American Psychology"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC157",
+    "credits": 3.0,
+    "title": "Research Design/Methodlgy w/Lab"
+  },
+  {
+    "campus": "sc",
+    "code": "PSYC168L",
+    "credits": 1.5,
+    "title": "Social Psychology Lab"
+  },
+  {
+    "campus": "sc",
+    "code": "PSYC168",
+    "credits": 3.0,
+    "title": "Social Psychology"
+  },
+  {
+    "campus": "cmc",
+    "code": "PSYC175",
+    "credits": 3.0,
+    "title": "Seminar on Diverse Teams at Work"
+  },
+  {
+    "campus": "hmc",
+    "code": "PSYC179T",
+    "credits": 3.0,
+    "title": "Human Nature and Genocide / Special Topics in Psychology"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC180A",
+    "credits": 3.0,
+    "title": "Sem: Social/Emotional Developmnt"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC180C",
+    "credits": 3.0,
+    "title": "Psychology of Climate Change"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC180H",
+    "credits": 3.0,
+    "title": "Sem: Consciousness & Cognition"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC180M",
+    "credits": 3.0,
+    "title": "Seminar in Cultural Psychology"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC180P",
+    "credits": 0.0,
+    "title": "Study of Lives Practicum"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC189A",
+    "credits": 3.0,
+    "title": "Clinical Neuropsychology"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC189",
+    "credits": 3.0,
+    "title": "Ethical Issues in Psychology"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC189L",
+    "credits": 3.0,
+    "title": "Data Mining for Psychologists"
+  },
+  {
+    "campus": "po",
+    "code": "PSYC189M",
+    "credits": 3.0,
+    "title": "Close Relationships"
+  },
+  {
+    "campus": "pz",
+    "code": "PSYC193",
+    "credits": 3.0,
+    "title": "Global Mental Health Seminar"
+  },
+  {
+    "campus": "po",
+    "code": "RLST002",
+    "credits": 3.0,
+    "title": "Ideas of Love"
+  },
+  {
+    "campus": "po",
+    "code": "RLST020",
+    "credits": 3.0,
+    "title": "Intro to the Hebrew Bible"
+  },
+  {
+    "campus": "po",
+    "code": "RLST025",
+    "credits": 3.0,
+    "title": "Relig, Punish, Restoration (CP)"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST045",
+    "credits": 3.0,
+    "title": "Sikhism"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST055",
+    "credits": 3.0,
+    "title": "Jewish Art & Identity"
+  },
+  {
+    "campus": "sc",
+    "code": "RLST086",
+    "credits": 3.0,
+    "title": "Christianity,Capital & Communism"
+  },
+  {
+    "campus": "sc",
+    "code": "RLST095",
+    "credits": 3.0,
+    "title": "Jesus,Paul,Early Chrstn Sexualty"
+  },
+  {
+    "campus": "po",
+    "code": "RLST100",
+    "credits": 3.0,
+    "title": "Worlds of Buddhism"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST102",
+    "credits": 3.0,
+    "title": "Hinduism & South Asian Culture"
+  },
+  {
+    "campus": "po",
+    "code": "RLST110",
+    "credits": 3.0,
+    "title": "Death, Dying, and the Afterlife"
+  },
+  {
+    "campus": "hmc",
+    "code": "RLST113",
+    "credits": 3.0,
+    "title": "God, Darwin, Design in America"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST137",
+    "credits": 3.0,
+    "title": "Jewish-Christian Relations"
+  },
+  {
+    "campus": "po",
+    "code": "RLST139",
+    "credits": 3.0,
+    "title": "Benjamin, Levinas, Derrida"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST151",
+    "credits": 3.0,
+    "title": "Poverty,Religion,& Social Change"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST169",
+    "credits": 3.0,
+    "title": "Christianity & Politics: E. Asia"
+  },
+  {
+    "campus": "cmc",
+    "code": "RLST176",
+    "credits": 3.0,
+    "title": "Visionaries/Prophets/Leadership"
+  },
+  {
+    "campus": "hmc",
+    "code": "RLST180",
+    "credits": 3.0,
+    "title": "Interpreting Religious Worlds"
+  },
+  {
+    "campus": "po",
+    "code": "RUSS002",
+    "credits": 3.0,
+    "title": "Elementary Russian 2"
+  },
+  {
+    "campus": "po",
+    "code": "RUSS180",
+    "credits": 3.0,
+    "title": "Readings 19th Century Russ Lit"
+  },
+  {
+    "campus": "po",
+    "code": "RUST103",
+    "credits": 3.0,
+    "title": "Dostoevsky & Popular Culture"
+  },
+  {
+    "campus": "po",
+    "code": "RUST114",
+    "credits": 3.0,
+    "title": "Prison Lit. in Russia & America"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC055",
+    "credits": 3.0,
+    "title": "Juvenile Delinquency"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC074",
+    "credits": 1.0,
+    "title": "Unsettling Histories"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC095",
+    "credits": 3.0,
+    "title": "Contemporary Central Asia"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC111",
+    "credits": 3.0,
+    "title": "Social Movements & Social Change"
+  },
+  {
+    "campus": "po",
+    "code": "SOC126",
+    "credits": 3.0,
+    "title": "Immigration & Second Generation"
+  },
+  {
+    "campus": "cmc",
+    "code": "SOC128",
+    "credits": 3.0,
+    "title": "The University Black List"
+  },
+  {
+    "campus": "po",
+    "code": "SOC147",
+    "credits": 3.0,
+    "title": "Sociology of Poverty"
+  },
+  {
+    "campus": "po",
+    "code": "SOC148",
+    "credits": 3.0,
+    "title": "Sociology of Emotions"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC155",
+    "credits": 3.0,
+    "title": "Rural and Urban Social Movements"
+  },
+  {
+    "campus": "po",
+    "code": "SOC157",
+    "credits": 3.0,
+    "title": "History & Devel Soc Theory II - Contemporary Theories"
+  },
+  {
+    "campus": "po",
+    "code": "SOC189E",
+    "credits": 3.0,
+    "title": "Sociology of Space and Time"
+  },
+  {
+    "campus": "po",
+    "code": "SOC189G",
+    "credits": 3.0,
+    "title": "Sociology through Literature"
+  },
+  {
+    "campus": "po",
+    "code": "SOC189K",
+    "credits": 3.0,
+    "title": "Globalizing Participation"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC199A",
+    "credits": 3.0,
+    "title": "Senior Seminar"
+  },
+  {
+    "campus": "pz",
+    "code": "SOC199B",
+    "credits": 3.0,
+    "title": "Adv Independent Research/Thesis"
+  },
+  {
+    "campus": "cmc",
+    "code": "SPAN002",
+    "credits": 3.0,
+    "title": "Continuing Introductory Spanish"
+  },
+  {
+    "campus": "po",
+    "code": "SPAN103",
+    "credits": 3.0,
+    "title": "Queer Fictions & Realities"
+  },
+  {
+    "campus": "po",
+    "code": "SPAN108",
+    "credits": 3.0,
+    "title": "Latin(o)Life Writing"
+  },
+  {
+    "campus": "po",
+    "code": "SPAN120B",
+    "credits": 3.0,
+    "title": "Modern Spain as Contact Zone"
+  },
+  {
+    "campus": "cmc",
+    "code": "SPAN125B",
+    "credits": 3.0,
+    "title": "Intro to Latin-Amer Lit & Civ II"
+  },
+  {
+    "campus": "cmc",
+    "code": "SPAN129",
+    "credits": 3.0,
+    "title": "The Latin American City"
+  },
+  {
+    "campus": "sc",
+    "code": "SPAN131",
+    "credits": 3.0,
+    "title": "Queer Lives in Latin America"
+  },
+  {
+    "campus": "po",
+    "code": "SPAN135",
+    "credits": 3.0,
+    "title": "The Boom:Modern Latin Amer Novel"
+  },
+  {
+    "campus": "sc",
+    "code": "SPAN139",
+    "credits": 3.0,
+    "title": "Plants, Land, and Food"
+  },
+  {
+    "campus": "po",
+    "code": "SPAN142",
+    "credits": 3.0,
+    "title": "Tropicalization:Rep of Latinidad"
+  },
+  {
+    "campus": "po",
+    "code": "SPAN153",
+    "credits": 3.0,
+    "title": "Spanglish in Context"
+  },
+  {
+    "campus": "sc",
+    "code": "SPAN183",
+    "credits": 3.0,
+    "title": "Intercul & Bilingualism in Andes"
+  },
+  {
+    "campus": "pz",
+    "code": "SPAN199",
+    "credits": 1.5,
+    "title": "Senior Research Project Seminar"
+  },
+  {
+    "campus": "po",
+    "code": "SPEC192",
+    "credits": 3.0,
+    "title": "Special Major Senior Project"
+  },
+  {
+    "campus": "hmc",
+    "code": "STS010",
+    "credits": 3.0,
+    "title": "Intro to Sci, Tech and Society"
+  },
+  {
+    "campus": "hmc",
+    "code": "STS179L",
+    "credits": 3.0,
+    "title": "Human and Artificial Minds /Spec Topics: Sci, Tech, Society"
+  },
+  {
+    "campus": "sc",
+    "code": "STS191",
+    "credits": 3.0,
+    "title": "Sr Thesis:Sci,Technology+Society"
+  },
+  {
+    "campus": "po",
+    "code": "THEA001D",
+    "credits": 3.0,
+    "title": "Beginning Acting: Black Theatre"
+  },
+  {
+    "campus": "po",
+    "code": "THEA022",
+    "credits": 3.0,
+    "title": "Lighting Technology"
+  },
+  {
+    "campus": "po",
+    "code": "THEA031",
+    "credits": 3.0,
+    "title": "World Theatre and Drama II"
+  },
+  {
+    "campus": "po",
+    "code": "THEA051C",
+    "credits": 1.0,
+    "title": "Theatre Performance - Little Women"
+  },
+  {
+    "campus": "po",
+    "code": "THEA051H",
+    "credits": 1.5,
+    "title": "Theatre Performance & Pedagogy - Little Women"
+  },
+  {
+    "campus": "po",
+    "code": "THEA052C",
+    "credits": 1.0,
+    "title": "Theatre Production: Practicum - Little Women"
+  },
+  {
+    "campus": "po",
+    "code": "THEA052H",
+    "credits": 1.5,
+    "title": "Theatre Productn: Pract/Pedagogy - Little Women"
+  },
+  {
+    "campus": "po",
+    "code": "THEA062",
+    "credits": 3.0,
+    "title": "Lifting Silent Narratives"
+  },
+  {
+    "campus": "po",
+    "code": "THEA080",
+    "credits": 3.0,
+    "title": "Scene Design for Stage & Screen"
+  },
+  {
+    "campus": "po",
+    "code": "THEA081",
+    "credits": 3.0,
+    "title": "Costume Design Stage & Screen"
+  },
+  {
+    "campus": "po",
+    "code": "THEA130",
+    "credits": 3.0,
+    "title": "Introduction to Directing (CP)"
+  },
+  {
+    "campus": "po",
+    "code": "THEA170",
+    "credits": 3.0,
+    "title": "Writing for Performance"
+  },
+  {
+    "campus": "po",
+    "code": "THEA188",
+    "credits": 3.0,
+    "title": "Theory/Criticism/Praxis"
+  },
+  {
+    "campus": "pz",
+    "code": "WRIT031",
+    "credits": 3.0,
+    "title": "Writing For Social Justice"
+  },
+  {
+    "campus": "sc",
+    "code": "WRIT109",
+    "credits": 1.5,
+    "title": "Writing Studio"
+  },
+  {
+    "campus": "sc",
+    "code": "WRIT120",
+    "credits": 3.0,
+    "title": "Tech Rhetorics"
+  },
+  {
+    "campus": "sc",
+    "code": "WRIT165IO",
+    "credits": 3.0,
+    "title": "Prison Writing Center Praxis"
+  },
+  {
+    "campus": "sc",
+    "code": "WRIT191",
+    "credits": 3.0,
+    "title": "Senior Thesis in Writing"
+  },
+  {
+    "campus": "sc",
+    "code": "WRIT197",
+    "credits": 3.0,
+    "title": "Special Topics in Writing - Archetype, apocalypse, imaginati"
   }
 ]
