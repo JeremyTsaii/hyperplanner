@@ -36,7 +36,7 @@
     "react-ga": "^3.2.1",
     "react-loading": "^2.0.3",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "3.4.3",
+    "react-scripts": "4.0.0",
     "react-tsparticles": "^1.18.11",
     "typescript": "^4.0.5"
   },
