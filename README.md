@@ -64,27 +64,25 @@ The Backend of HyperPlanner uses Hasura, which is an open source engine connecti
 
 ## What is the development workflow?
 
-First clone the repository onto your local machine. Note that on Windows, if using Git Bash, you will need to install Make. Look [here](https://gist.github.com/evanwill/0207876c3243bbb6863e65ec5dc3f058) for more information on installing Make. You will also need to have [Docker](https://www.docker.com/products/docker-desktop) downloaded.
+First clone the repository onto your local machine.
 You can then run the following commands:
 
-#### `make build`
-
-Creates the Docker development container.<br />
-
-#### `make serve`
+#### `npm run start`
 
 Runs the app in the development mode with live updates.<br />
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-#### `make format`
+#### `npm run format:fix`
 
 Formats the files with Prettier.<br />
 
-#### `make lint`
+#### `npm run lint:fix`
 
 Lints the files with ESLint.<br />
 
+#### `npm run test`
 
+Runs the test suite. Make sure that all tests pass before committing/pushing!<br />
 
 
 
