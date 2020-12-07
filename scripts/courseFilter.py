@@ -17,7 +17,8 @@ def courseFilter():
 
     for course in courses:
         # Read next course
-        newC = (course["code"], course["title"], course["campus"], course["credits"])
+        newC = (course["code"], course["title"], course["campus"],
+                course["credits"])
 
         if newC[0] == c[0] and newC[2] == "hmc":
             # If course duplicate, keep the HMC course
@@ -38,7 +39,12 @@ def courseFilter():
 
     # Add in the last course
     if any(i.isdigit() for i in c[0]):
-        newCourse = {"code": c[0], "title": c[1], "campus": c[2], "credits": c[3]}
+        newCourse = {
+            "code": c[0],
+            "title": c[1],
+            "campus": c[2],
+            "credits": c[3]
+        }
         filteredCourses.append(newCourse)
 
     # Write update allCourses.json with the filtered courses
