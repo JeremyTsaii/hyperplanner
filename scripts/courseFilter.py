@@ -14,9 +14,6 @@ def courseFilter():
     c = (0, 0, 0, 0)
     newC = (0, 0, 0, 0)
 
-    codes = set()
-    correctCodes = set()
-
     for course in courses:
         # Read next course
         newC = (course['code'], course['title'], course['campus'], course['credits'])
@@ -32,7 +29,7 @@ def courseFilter():
             c = newC
         else:
             c = newC
-        
+
     # Add in the last course
     if any(i.isdigit() for i in c[0]):
         newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
