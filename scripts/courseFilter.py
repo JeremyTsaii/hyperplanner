@@ -10,7 +10,6 @@ def courseFilter():
     courses.sort(key=lambda x: x['code'])
 
     filteredCourses = []
-
     c = (0, 0, 0, 0)
     newC = (0, 0, 0, 0)
 
@@ -22,16 +21,15 @@ def courseFilter():
             c = newC
         elif newC[0] != c[0] and c[0] != 0:
             # If newC is a new, valid course, add new course to fildterCourses
-            if not any(i.islower() for i in c[0]):
+            if not any(i.islower() for i in str(c[0])):
                 newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
                 filteredCourses.append(newCourse)
-                print(c[0])
             c = newC
         else:
             c = newC
 
     # Add in the last course if valid
-    if not any(i.islower() for i in c[0]):
+    if not any(i.islower() for i in str(c[0])):
         newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
         filteredCourses.append(newCourse)
 
