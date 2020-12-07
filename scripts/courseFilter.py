@@ -14,24 +14,29 @@ def courseFilter():
     c = (0, 0, 0, 0)
     newC = (0, 0, 0, 0)
 
+    codes = set()
+    correctCodes = set()
+
     for course in courses:
         # Read next course
         newC = (course['code'], course['title'], course['campus'], course['credits'])
 
-        if newC[0] == c[0] and newC[2] == 'hm':
+        if newC[0] == c[0] and newC[2] == 'hmc':
             # If course duplicate, keep the HMC course
             c = newC
         elif newC[0] != c[0] and c[0] != 0:
-            # If newC is a new course, add new course to 
-            newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
-            filteredCourses.append(newCourse)
+            # If newC is a new, valid course, add new course to fildterCourses
+            if any(i.isdigit() for i in c[0]):
+                newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
+                filteredCourses.append(newCourse)
             c = newC
         else:
             c = newC
-    
+        
     # Add in the last course
-    newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
-    filteredCourses.append(newCourse)
+    if any(i.isdigit() for i in c[0]):
+        newCourse = {'code': c[0], 'title': c[1], 'campus': c[2], 'credits': c[3]}
+        filteredCourses.append(newCourse)
 
     # Write update allCourses.json with the filtered courses
     newJson = open('../src/static/allCourses.json', 'w')
