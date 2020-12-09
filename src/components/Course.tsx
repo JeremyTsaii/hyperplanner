@@ -2,6 +2,7 @@ import React from 'react'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
+import Checkbox from '@material-ui/core/Checkbox'
 import {
   makeStyles,
   responsiveFontSizes,
@@ -118,6 +119,13 @@ function Course({
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
+  // Check if course is currently active
+  const [active, setActive] = React.useState(true)
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setActive(event.target.checked)
+  }
+
   let editIconPlaceholder = (
     <EditIcon
       functional={false}
@@ -202,7 +210,16 @@ function Course({
         }}
         xs={12}
         zeroMinWidth>
-        <Grid item xs={3} zeroMinWidth>
+        <Grid item xs={1} zeroMinWidth>
+          <Checkbox
+            checked={active}
+            color="default"
+            size="small"
+            onChange={handleChange}
+            inputProps={{ 'aria-label': 'primary checkbox' }}
+          />
+        </Grid>
+        <Grid item xs={2} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.codeText} noWrap>
               <b>{code}</b>
