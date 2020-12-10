@@ -1701,9 +1701,7 @@ export function useUpdate_UserMutation(
 export type Update_UserMutationHookResult = ReturnType<
   typeof useUpdate_UserMutation
 >
-export type Update_UserMutationResult = Apollo.MutationResult<
-  Update_UserMutation
->
+export type Update_UserMutationResult = Apollo.MutationResult<Update_UserMutation>
 export type Update_UserMutationOptions = Apollo.BaseMutationOptions<
   Update_UserMutation,
   Update_UserMutationVariables
@@ -1758,9 +1756,7 @@ export function useUpdate_Major_ChecksMutation(
 export type Update_Major_ChecksMutationHookResult = ReturnType<
   typeof useUpdate_Major_ChecksMutation
 >
-export type Update_Major_ChecksMutationResult = Apollo.MutationResult<
-  Update_Major_ChecksMutation
->
+export type Update_Major_ChecksMutationResult = Apollo.MutationResult<Update_Major_ChecksMutation>
 export type Update_Major_ChecksMutationOptions = Apollo.BaseMutationOptions<
   Update_Major_ChecksMutation,
   Update_Major_ChecksMutationVariables
@@ -1815,9 +1811,7 @@ export function useUpdate_Core_ChecksMutation(
 export type Update_Core_ChecksMutationHookResult = ReturnType<
   typeof useUpdate_Core_ChecksMutation
 >
-export type Update_Core_ChecksMutationResult = Apollo.MutationResult<
-  Update_Core_ChecksMutation
->
+export type Update_Core_ChecksMutationResult = Apollo.MutationResult<Update_Core_ChecksMutation>
 export type Update_Core_ChecksMutationOptions = Apollo.BaseMutationOptions<
   Update_Core_ChecksMutation,
   Update_Core_ChecksMutationVariables
@@ -1900,9 +1894,7 @@ export function useUpdate_CourseMutation(
 export type Update_CourseMutationHookResult = ReturnType<
   typeof useUpdate_CourseMutation
 >
-export type Update_CourseMutationResult = Apollo.MutationResult<
-  Update_CourseMutation
->
+export type Update_CourseMutationResult = Apollo.MutationResult<Update_CourseMutation>
 export type Update_CourseMutationOptions = Apollo.BaseMutationOptions<
   Update_CourseMutation,
   Update_CourseMutationVariables
@@ -2032,9 +2024,7 @@ export function useRemove_CourseMutation(
 export type Remove_CourseMutationHookResult = ReturnType<
   typeof useRemove_CourseMutation
 >
-export type Remove_CourseMutationResult = Apollo.MutationResult<
-  Remove_CourseMutation
->
+export type Remove_CourseMutationResult = Apollo.MutationResult<Remove_CourseMutation>
 export type Remove_CourseMutationOptions = Apollo.BaseMutationOptions<
   Remove_CourseMutation,
   Remove_CourseMutationVariables
@@ -2084,9 +2074,7 @@ export function useIncrement_Course_EditsMutation(
 export type Increment_Course_EditsMutationHookResult = ReturnType<
   typeof useIncrement_Course_EditsMutation
 >
-export type Increment_Course_EditsMutationResult = Apollo.MutationResult<
-  Increment_Course_EditsMutation
->
+export type Increment_Course_EditsMutationResult = Apollo.MutationResult<Increment_Course_EditsMutation>
 export type Increment_Course_EditsMutationOptions = Apollo.BaseMutationOptions<
   Increment_Course_EditsMutation,
   Increment_Course_EditsMutationVariables

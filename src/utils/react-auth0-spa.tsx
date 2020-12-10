@@ -27,6 +27,7 @@ interface IAuth0Context {
   getTokenWithPopup(o?: GetTokenWithPopupOptions): Promise<string | undefined>
   logout(o?: LogoutOptions): void
 }
+
 interface IAuth0ProviderOptions {
   children: React.ReactElement
   onRedirectCallback?(
@@ -119,5 +120,9 @@ export const Auth0Provider = ({
       {children}
     </Auth0Context.Provider>
   )
+}
+
+Auth0Provider.defaultProps = {
+  onRedirectCallback: null,
 }
 /* eslint-enable @typescript-eslint/no-non-null-assertion */
