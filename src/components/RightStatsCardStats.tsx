@@ -88,7 +88,7 @@ const RightStatsCardStats = ({
       </div>
     )
   }
-  // Checklist
+  // Major checklist
   if (isMajor) {
     return (
       <div className={classes.reqStatSection}>
@@ -104,6 +104,7 @@ const RightStatsCardStats = ({
       </div>
     )
   }
+  // Core checklist
   return (
     <div className={classes.reqStatSection}>
       {/* eslint-disable */}

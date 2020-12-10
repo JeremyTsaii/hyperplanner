@@ -74,7 +74,8 @@ const useStyles = makeStyles(() => ({
 // Graduation: total credits, credits remaining, average credits per semester, remaining average credits, pe
 // Major: electives
 // Humanities: depth, breadth, electives, mudd hums, writing intensives
-// NOTE: Major electives in credits while depth, breadth, hum electgives, mudd hums, and writing intensives in courses
+// NOTE: Major electives in number of credits while depth, breadth, hum electives,
+// mudd hums, and writing intensives in number of courses
 const calculateStats = (school: string, courses: Courses[]): Stats => {
   // Aggregate function that calculates multipate statistics to prevent looping through courses multiple times
   const getCourseStats = (

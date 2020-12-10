@@ -85,25 +85,29 @@ const useStyles = makeStyles(() => ({
 }))
 
 const getCourseColor = (type: string): string => {
-  if (type === 'major_req') {
-    return PINK
+  switch (type) {
+    case 'major_req': {
+      return PINK
+    }
+    case 'major_elec': {
+      return LPINK
+    }
+    case 'hum_depth': {
+      return PURPLE
+    }
+    case 'hum_breadth': {
+      return BLUE
+    }
+    case 'hum_elec': {
+      return LPURPLE
+    }
+    case 'core_req': {
+      return GREEN
+    }
+    default: {
+      return ORANGE
+    }
   }
-  if (type === 'major_elec') {
-    return LPINK
-  }
-  if (type === 'hum_depth') {
-    return PURPLE
-  }
-  if (type === 'hum_breadth') {
-    return BLUE
-  }
-  if (type === 'hum_elec') {
-    return LPURPLE
-  }
-  if (type === 'core_req') {
-    return GREEN
-  }
-  return ORANGE
 }
 
 const createEditIcon = (
