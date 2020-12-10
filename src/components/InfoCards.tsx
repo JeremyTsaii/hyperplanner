@@ -6,7 +6,7 @@ import {
   createMuiTheme,
 } from '@material-ui/core/styles'
 import ReactLoading from 'react-loading'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import LeftInfoCard from './LeftInfoCard'
 import RightStatsCard from './RightStatsCard'
 import { schoolDict, majorDict } from '../static/infoLists'

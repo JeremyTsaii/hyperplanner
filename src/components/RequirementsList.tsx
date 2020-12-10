@@ -87,7 +87,7 @@ const RequirementsList = ({
           const existingInfo = cache.readQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
           })
-          const newInfo = existingInfo!.users[0]
+          const newInfo = { ...existingInfo!.users[0] }
           newInfo.majorChecks = newChecks
           cache.writeQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
@@ -120,7 +120,7 @@ const RequirementsList = ({
           const existingInfo = cache.readQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
           })
-          const newInfo = existingInfo!.users[0]
+          const newInfo = { ...existingInfo!.users[0] }
           newInfo.coreChecks = newChecks
           cache.writeQuery<Get_InfoQuery>({
             query: Get_InfoDocument,

@@ -4,7 +4,7 @@ import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
-import { useMutation } from '@apollo/react-hooks'
+import { useMutation } from '@apollo/client'
 import {
   makeStyles,
   responsiveFontSizes,
@@ -230,7 +230,7 @@ function Course({
         const existingInfo = cache.readQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
         })
-        const newInfo = existingInfo!.users[0]
+        const newInfo = { ...existingInfo!.users[0] }
         newInfo.majorChecks = newMajorChecks
         cache.writeQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
@@ -263,7 +263,7 @@ function Course({
         const existingInfo = cache.readQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
         })
-        const newInfo = existingInfo!.users[0]
+        const newInfo = { ...existingInfo!.users[0] }
         newInfo.coreChecks = newCoreChecks
         cache.writeQuery<Get_InfoQuery>({
           query: Get_InfoDocument,

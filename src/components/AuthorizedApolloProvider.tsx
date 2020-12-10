@@ -1,6 +1,11 @@
 import React from 'react'
-import { ApolloProvider } from '@apollo/react-hooks'
-import ApolloClient from 'apollo-boost'
+import {
+  ApolloProvider,
+  ApolloClient,
+  createHttpLink,
+  InMemoryCache,
+} from '@apollo/client'
+import { setContext } from '@apollo/client/link/context'
 import ReactLoading from 'react-loading'
 import Particles from 'react-tsparticles'
 import { makeStyles } from '@material-ui/core/styles'
@@ -65,17 +70,23 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
       </div>
     )
   }
-  const apolloClient = new ApolloClient({
+
+  const httpLink = createHttpLink({
     uri: GRAPHQL_URL,
-    request: async (operation) => {
-      // Get token or get refreshed token
-      const token = isAuthenticated ? await getTokenSilently() : null
-      operation.setContext({
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      })
-    },
+  })
+
+  const authLink = setContext(async () => {
+    const token = await getTokenSilently()
+    return {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  })
+
+  const apolloClient = new ApolloClient({
+    link: authLink.concat(httpLink),
+    cache: new InMemoryCache(),
   })
 
   return <ApolloProvider client={apolloClient}>{children}</ApolloProvider>

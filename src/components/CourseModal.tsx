@@ -12,7 +12,7 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
-import { useMutation } from '@apollo/react-hooks'
+import { useMutation } from '@apollo/client'
 import { modifyChecklist } from '../utils/modalFunctions'
 import AllCourses from '../static/allCourses.json'
 import { types, bools, courseSort } from '../static/infoLists'
@@ -244,7 +244,7 @@ function CourseModal({
           const existingInfo = cache.readQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
           })
-          const newInfo = existingInfo!.users[0]
+          const newInfo = { ...existingInfo!.users[0] }
           newInfo.majorChecks = newMajorChecks
           cache.writeQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
@@ -277,7 +277,7 @@ function CourseModal({
           const existingInfo = cache.readQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
           })
-          const newInfo = existingInfo!.users[0]
+          const newInfo = { ...existingInfo!.users[0] }
           newInfo.coreChecks = newCoreChecks
           cache.writeQuery<Get_InfoQuery>({
             query: Get_InfoDocument,

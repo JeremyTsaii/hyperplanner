@@ -458,6 +458,22 @@
         "description": "columns and relationships of \"courses\"",
         "fields": [
           {
+            "name": "active",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "campus",
             "description": null,
             "args": [],
@@ -1089,6 +1105,16 @@
             "defaultValue": null
           },
           {
+            "name": "active",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "Boolean_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "campus",
             "description": null,
             "type": {
@@ -1227,6 +1253,16 @@
         "description": "input type for inserting data into table \"courses\"",
         "fields": null,
         "inputFields": [
+          {
+            "name": "active",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
           {
             "name": "campus",
             "description": null,
@@ -1824,6 +1860,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "active",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "campus",
             "description": null,
             "type": {
@@ -1980,6 +2026,12 @@
         "interfaces": null,
         "enumValues": [
           {
+            "name": "active",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "campus",
             "description": "column name",
             "isDeprecated": false,
@@ -2036,6 +2088,16 @@
         "description": "input type for updating data in table \"courses\"",
         "fields": null,
         "inputFields": [
+          {
+            "name": "active",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Boolean",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
           {
             "name": "campus",
             "description": null,
@@ -2305,6 +2367,12 @@
         "inputFields": null,
         "interfaces": null,
         "enumValues": [
+          {
+            "name": "active",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "campus",
             "description": "column name",
@@ -5315,6 +5383,18 @@
             "deprecationReason": null
           },
           {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "courses",
             "description": "An array relationship",
             "args": [
@@ -6023,6 +6103,18 @@
         "description": "aggregate avg on columns",
         "fields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -6058,6 +6150,16 @@
         "description": "order by avg() on columns of table \"users\"",
         "fields": null,
         "inputFields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -6153,6 +6255,16 @@
             "type": {
               "kind": "INPUT_OBJECT",
               "name": "String_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "Int_comparison_exp",
               "ofType": null
             },
             "defaultValue": null
@@ -6296,6 +6408,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -6352,6 +6474,16 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
               "ofType": null
             },
             "defaultValue": null
@@ -6507,6 +6639,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
               "ofType": null
             },
             "isDeprecated": false,
@@ -6675,6 +6819,16 @@
             "defaultValue": null
           },
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "created_at",
             "description": null,
             "type": {
@@ -6815,6 +6969,18 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
               "ofType": null
             },
             "isDeprecated": false,
@@ -6974,6 +7140,16 @@
           },
           {
             "name": "coreChecks",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "course_edits",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7267,6 +7443,16 @@
             "defaultValue": null
           },
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "courses_aggregate",
             "description": null,
             "type": {
@@ -7433,6 +7619,12 @@
             "deprecationReason": null
           },
           {
+            "name": "course_edits",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "created_at",
             "description": "column name",
             "isDeprecated": false,
@@ -7527,6 +7719,16 @@
             "type": {
               "kind": "SCALAR",
               "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
               "ofType": null
             },
             "defaultValue": null
@@ -7642,6 +7844,18 @@
         "description": "aggregate stddev on columns",
         "fields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -7678,6 +7892,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7707,6 +7931,18 @@
         "name": "users_stddev_pop_fields",
         "description": "aggregate stddev_pop on columns",
         "fields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -7744,6 +7980,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7773,6 +8019,18 @@
         "name": "users_stddev_samp_fields",
         "description": "aggregate stddev_samp on columns",
         "fields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -7810,6 +8068,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7839,6 +8107,18 @@
         "name": "users_sum_fields",
         "description": "aggregate sum on columns",
         "fields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -7875,6 +8155,16 @@
         "description": "order by sum() on columns of table \"users\"",
         "fields": null,
         "inputFields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -7922,6 +8212,12 @@
           },
           {
             "name": "coreChecks",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "course_edits",
             "description": "column name",
             "isDeprecated": false,
             "deprecationReason": null
@@ -7995,6 +8291,18 @@
         "description": "aggregate var_pop on columns",
         "fields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -8031,6 +8339,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -8060,6 +8378,18 @@
         "name": "users_var_samp_fields",
         "description": "aggregate var_samp on columns",
         "fields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -8097,6 +8427,16 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -8126,6 +8466,18 @@
         "name": "users_variance_fields",
         "description": "aggregate variance on columns",
         "fields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
           {
             "name": "grad_year",
             "description": null,
@@ -8162,6 +8514,16 @@
         "description": "order by variance() on columns of table \"users\"",
         "fields": null,
         "inputFields": [
+          {
+            "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
           {
             "name": "grad_year",
             "description": null,

@@ -4,7 +4,7 @@ import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
 import StepConnector from '@material-ui/core/StepConnector'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import { GET_INFO_QUERY } from '../utils/gqlQueries'
 
 const useStyles = makeStyles((theme) => ({
