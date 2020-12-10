@@ -344,14 +344,14 @@ export const bools = [
   },
 ]
 
-export type Course = {
+export type CourseType = {
   __typename?: 'courses' | undefined
 } & Pick<
   Courses,
   'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
 >
 
-export const courseSort = (c1: Course, c2: Course): number => {
+export const courseSort = (c1: CourseType, c2: CourseType): number => {
   let val = -c1.type.localeCompare(c2.type)
   // Types are equal so compare cdes next
   if (!val) {
@@ -360,7 +360,7 @@ export const courseSort = (c1: Course, c2: Course): number => {
   return val
 }
 
-export const placeholderCourses: Course[] = [
+export const placeholderCourses: CourseType[] = [
   {
     campus: 'cmc',
     code: 'PE056',
@@ -615,7 +615,7 @@ export const placeholderCourses: Course[] = [
   },
 ]
 
-export const demoColorCourses: Course[] = [
+export const demoColorCourses: CourseType[] = [
   {
     campus: 'hmc',
     code: 'CSCI140',
@@ -681,7 +681,7 @@ export const demoColorCourses: Course[] = [
   },
 ]
 
-export const demoInitialsCourses: Course[] = [
+export const demoInitialsCourses: CourseType[] = [
   {
     campus: 'hmc',
     code: 'ECON104',

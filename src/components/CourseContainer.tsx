@@ -4,7 +4,7 @@ import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
 import { makeStyles } from '@material-ui/core/styles'
 import Course from './Course'
-import { Course as CourseType } from '../static/infoLists'
+import { CourseType } from '../static/infoLists'
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {

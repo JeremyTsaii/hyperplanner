@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { useQuery } from '@apollo/react-hooks'
+import { useQuery } from '@apollo/client'
 import ReactLoading from 'react-loading'
 import { GET_COURSES_QUERY, GET_INFO_QUERY } from '../utils/gqlQueries'
 import CourseModal from './CourseModal'

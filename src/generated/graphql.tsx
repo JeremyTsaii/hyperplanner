@@ -1,8 +1,9 @@
-import gql from 'graphql-tag'
-import * as ApolloReactCommon from '@apollo/react-common'
-import * as ApolloReactHooks from '@apollo/react-hooks'
+import { gql } from '@apollo/client'
+import * as Apollo from '@apollo/client'
 export type Maybe<T> = T | null
-export type Exact<T extends { [key: string]: any }> = { [K in keyof T]: T[K] }
+export type Exact<T extends { [key: string]: unknown }> = {
+  [K in keyof T]: T[K]
+}
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -62,6 +63,7 @@ export type String_Comparison_Exp = {
 /** columns and relationships of "courses" */
 export type Courses = {
   __typename?: 'courses'
+  active: Scalars['Boolean']
   campus: Scalars['String']
   code: Scalars['String']
   credits: Scalars['numeric']
@@ -140,6 +142,7 @@ export type Courses_Bool_Exp = {
   _and?: Maybe<Array<Maybe<Courses_Bool_Exp>>>
   _not?: Maybe<Courses_Bool_Exp>
   _or?: Maybe<Array<Maybe<Courses_Bool_Exp>>>
+  active?: Maybe<Boolean_Comparison_Exp>
   campus?: Maybe<String_Comparison_Exp>
   code?: Maybe<String_Comparison_Exp>
   credits?: Maybe<Numeric_Comparison_Exp>
@@ -164,6 +167,7 @@ export type Courses_Inc_Input = {
 
 /** input type for inserting data into table "courses" */
 export type Courses_Insert_Input = {
+  active?: Maybe<Scalars['Boolean']>
   campus?: Maybe<Scalars['String']>
   code?: Maybe<Scalars['String']>
   credits?: Maybe<Scalars['numeric']>
@@ -245,6 +249,7 @@ export type Courses_On_Conflict = {
 
 /** ordering options when selecting data from "courses" */
 export type Courses_Order_By = {
+  active?: Maybe<Order_By>
   campus?: Maybe<Order_By>
   code?: Maybe<Order_By>
   credits?: Maybe<Order_By>
@@ -266,6 +271,8 @@ export type Courses_Pk_Columns_Input = {
 /** select columns of table "courses" */
 export enum Courses_Select_Column {
   /** column name */
+  Active = 'active',
+  /** column name */
   Campus = 'campus',
   /** column name */
   Code = 'code',
@@ -285,6 +292,7 @@ export enum Courses_Select_Column {
 
 /** input type for updating data in table "courses" */
 export type Courses_Set_Input = {
+  active?: Maybe<Scalars['Boolean']>
   campus?: Maybe<Scalars['String']>
   code?: Maybe<Scalars['String']>
   credits?: Maybe<Scalars['numeric']>
@@ -341,6 +349,8 @@ export type Courses_Sum_Order_By = {
 
 /** update columns of table "courses" */
 export enum Courses_Update_Column {
+  /** column name */
+  Active = 'active',
   /** column name */
   Campus = 'campus',
   /** column name */
@@ -861,6 +871,7 @@ export type Users = {
   auth0_id: Scalars['String']
   concentration?: Maybe<Scalars['String']>
   coreChecks?: Maybe<Scalars['String']>
+  course_edits?: Maybe<Scalars['Int']>
   /** An array relationship */
   courses: Array<Courses>
   /** An aggregated array relationship */
@@ -948,12 +959,14 @@ export type Users_Arr_Rel_Insert_Input = {
 /** aggregate avg on columns */
 export type Users_Avg_Fields = {
   __typename?: 'users_avg_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by avg() on columns of table "users" */
 export type Users_Avg_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -966,6 +979,7 @@ export type Users_Bool_Exp = {
   auth0_id?: Maybe<String_Comparison_Exp>
   concentration?: Maybe<String_Comparison_Exp>
   coreChecks?: Maybe<String_Comparison_Exp>
+  course_edits?: Maybe<Int_Comparison_Exp>
   courses?: Maybe<Courses_Bool_Exp>
   created_at?: Maybe<Timestamptz_Comparison_Exp>
   email?: Maybe<String_Comparison_Exp>
@@ -987,6 +1001,7 @@ export enum Users_Constraint {
 
 /** input type for incrementing integer column in table "users" */
 export type Users_Inc_Input = {
+  course_edits?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
 }
@@ -996,6 +1011,7 @@ export type Users_Insert_Input = {
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
   coreChecks?: Maybe<Scalars['String']>
+  course_edits?: Maybe<Scalars['Int']>
   courses?: Maybe<Courses_Arr_Rel_Insert_Input>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
@@ -1015,6 +1031,7 @@ export type Users_Max_Fields = {
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
   coreChecks?: Maybe<Scalars['String']>
+  course_edits?: Maybe<Scalars['Int']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
   grad_year?: Maybe<Scalars['Int']>
@@ -1032,6 +1049,7 @@ export type Users_Max_Order_By = {
   auth0_id?: Maybe<Order_By>
   concentration?: Maybe<Order_By>
   coreChecks?: Maybe<Order_By>
+  course_edits?: Maybe<Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
@@ -1050,6 +1068,7 @@ export type Users_Min_Fields = {
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
   coreChecks?: Maybe<Scalars['String']>
+  course_edits?: Maybe<Scalars['Int']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
   grad_year?: Maybe<Scalars['Int']>
@@ -1067,6 +1086,7 @@ export type Users_Min_Order_By = {
   auth0_id?: Maybe<Order_By>
   concentration?: Maybe<Order_By>
   coreChecks?: Maybe<Order_By>
+  course_edits?: Maybe<Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
@@ -1106,6 +1126,7 @@ export type Users_Order_By = {
   auth0_id?: Maybe<Order_By>
   concentration?: Maybe<Order_By>
   coreChecks?: Maybe<Order_By>
+  course_edits?: Maybe<Order_By>
   courses_aggregate?: Maybe<Courses_Aggregate_Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
@@ -1133,6 +1154,8 @@ export enum Users_Select_Column {
   /** column name */
   CoreChecks = 'coreChecks',
   /** column name */
+  CourseEdits = 'course_edits',
+  /** column name */
   CreatedAt = 'created_at',
   /** column name */
   Email = 'email',
@@ -1159,6 +1182,7 @@ export type Users_Set_Input = {
   auth0_id?: Maybe<Scalars['String']>
   concentration?: Maybe<Scalars['String']>
   coreChecks?: Maybe<Scalars['String']>
+  course_edits?: Maybe<Scalars['Int']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
   grad_year?: Maybe<Scalars['Int']>
@@ -1174,12 +1198,14 @@ export type Users_Set_Input = {
 /** aggregate stddev on columns */
 export type Users_Stddev_Fields = {
   __typename?: 'users_stddev_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by stddev() on columns of table "users" */
 export type Users_Stddev_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1187,12 +1213,14 @@ export type Users_Stddev_Order_By = {
 /** aggregate stddev_pop on columns */
 export type Users_Stddev_Pop_Fields = {
   __typename?: 'users_stddev_pop_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by stddev_pop() on columns of table "users" */
 export type Users_Stddev_Pop_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1200,12 +1228,14 @@ export type Users_Stddev_Pop_Order_By = {
 /** aggregate stddev_samp on columns */
 export type Users_Stddev_Samp_Fields = {
   __typename?: 'users_stddev_samp_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by stddev_samp() on columns of table "users" */
 export type Users_Stddev_Samp_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1213,12 +1243,14 @@ export type Users_Stddev_Samp_Order_By = {
 /** aggregate sum on columns */
 export type Users_Sum_Fields = {
   __typename?: 'users_sum_fields'
+  course_edits?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
 }
 
 /** order by sum() on columns of table "users" */
 export type Users_Sum_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1231,6 +1263,8 @@ export enum Users_Update_Column {
   Concentration = 'concentration',
   /** column name */
   CoreChecks = 'coreChecks',
+  /** column name */
+  CourseEdits = 'course_edits',
   /** column name */
   CreatedAt = 'created_at',
   /** column name */
@@ -1256,12 +1290,14 @@ export enum Users_Update_Column {
 /** aggregate var_pop on columns */
 export type Users_Var_Pop_Fields = {
   __typename?: 'users_var_pop_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by var_pop() on columns of table "users" */
 export type Users_Var_Pop_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1269,12 +1305,14 @@ export type Users_Var_Pop_Order_By = {
 /** aggregate var_samp on columns */
 export type Users_Var_Samp_Fields = {
   __typename?: 'users_var_samp_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by var_samp() on columns of table "users" */
 export type Users_Var_Samp_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1282,12 +1320,14 @@ export type Users_Var_Samp_Order_By = {
 /** aggregate variance on columns */
 export type Users_Variance_Fields = {
   __typename?: 'users_variance_fields'
+  course_edits?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
 
 /** order by variance() on columns of table "users" */
 export type Users_Variance_Order_By = {
+  course_edits?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1457,6 +1497,23 @@ export type Remove_CourseMutation = { __typename?: 'mutation_root' } & {
   >
 }
 
+export type Increment_Course_EditsMutationVariables = Exact<{
+  [key: string]: never
+}>
+
+export type Increment_Course_EditsMutation = {
+  __typename?: 'mutation_root'
+} & {
+  update_users?: Maybe<
+    { __typename?: 'users_mutation_response' } & Pick<
+      Users_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<{ __typename?: 'users' } & Pick<Users, 'course_edits'>>
+      }
+  >
+}
+
 export const Get_InfoDocument = gql`
   query GET_INFO {
     users {
@@ -1488,23 +1545,20 @@ export const Get_InfoDocument = gql`
  * });
  */
 export function useGet_InfoQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
-    Get_InfoQuery,
-    Get_InfoQueryVariables
-  >,
+  baseOptions?: Apollo.QueryHookOptions<Get_InfoQuery, Get_InfoQueryVariables>,
 ) {
-  return ApolloReactHooks.useQuery<Get_InfoQuery, Get_InfoQueryVariables>(
+  return Apollo.useQuery<Get_InfoQuery, Get_InfoQueryVariables>(
     Get_InfoDocument,
     baseOptions,
   )
 }
 export function useGet_InfoLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryHookOptions<
     Get_InfoQuery,
     Get_InfoQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useLazyQuery<Get_InfoQuery, Get_InfoQueryVariables>(
+  return Apollo.useLazyQuery<Get_InfoQuery, Get_InfoQueryVariables>(
     Get_InfoDocument,
     baseOptions,
   )
@@ -1513,7 +1567,7 @@ export type Get_InfoQueryHookResult = ReturnType<typeof useGet_InfoQuery>
 export type Get_InfoLazyQueryHookResult = ReturnType<
   typeof useGet_InfoLazyQuery
 >
-export type Get_InfoQueryResult = ApolloReactCommon.QueryResult<
+export type Get_InfoQueryResult = Apollo.QueryResult<
   Get_InfoQuery,
   Get_InfoQueryVariables
 >
@@ -1547,32 +1601,32 @@ export const Get_CoursesDocument = gql`
  * });
  */
 export function useGet_CoursesQuery(
-  baseOptions?: ApolloReactHooks.QueryHookOptions<
+  baseOptions?: Apollo.QueryHookOptions<
     Get_CoursesQuery,
     Get_CoursesQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useQuery<Get_CoursesQuery, Get_CoursesQueryVariables>(
+  return Apollo.useQuery<Get_CoursesQuery, Get_CoursesQueryVariables>(
     Get_CoursesDocument,
     baseOptions,
   )
 }
 export function useGet_CoursesLazyQuery(
-  baseOptions?: ApolloReactHooks.LazyQueryHookOptions<
+  baseOptions?: Apollo.LazyQueryHookOptions<
     Get_CoursesQuery,
     Get_CoursesQueryVariables
   >,
 ) {
-  return ApolloReactHooks.useLazyQuery<
-    Get_CoursesQuery,
-    Get_CoursesQueryVariables
-  >(Get_CoursesDocument, baseOptions)
+  return Apollo.useLazyQuery<Get_CoursesQuery, Get_CoursesQueryVariables>(
+    Get_CoursesDocument,
+    baseOptions,
+  )
 }
 export type Get_CoursesQueryHookResult = ReturnType<typeof useGet_CoursesQuery>
 export type Get_CoursesLazyQueryHookResult = ReturnType<
   typeof useGet_CoursesLazyQuery
 >
-export type Get_CoursesQueryResult = ApolloReactCommon.QueryResult<
+export type Get_CoursesQueryResult = Apollo.QueryResult<
   Get_CoursesQuery,
   Get_CoursesQueryVariables
 >
@@ -1606,7 +1660,7 @@ export const Update_UserDocument = gql`
     }
   }
 `
-export type Update_UserMutationFn = ApolloReactCommon.MutationFunction<
+export type Update_UserMutationFn = Apollo.MutationFunction<
   Update_UserMutation,
   Update_UserMutationVariables
 >
@@ -1634,23 +1688,21 @@ export type Update_UserMutationFn = ApolloReactCommon.MutationFunction<
  * });
  */
 export function useUpdate_UserMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     Update_UserMutation,
     Update_UserMutationVariables
   >,
 ) {
-  return ApolloReactHooks.useMutation<
-    Update_UserMutation,
-    Update_UserMutationVariables
-  >(Update_UserDocument, baseOptions)
+  return Apollo.useMutation<Update_UserMutation, Update_UserMutationVariables>(
+    Update_UserDocument,
+    baseOptions,
+  )
 }
 export type Update_UserMutationHookResult = ReturnType<
   typeof useUpdate_UserMutation
 >
-export type Update_UserMutationResult = ApolloReactCommon.MutationResult<
-  Update_UserMutation
->
-export type Update_UserMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type Update_UserMutationResult = Apollo.MutationResult<Update_UserMutation>
+export type Update_UserMutationOptions = Apollo.BaseMutationOptions<
   Update_UserMutation,
   Update_UserMutationVariables
 >
@@ -1667,7 +1719,7 @@ export const Update_Major_ChecksDocument = gql`
     }
   }
 `
-export type Update_Major_ChecksMutationFn = ApolloReactCommon.MutationFunction<
+export type Update_Major_ChecksMutationFn = Apollo.MutationFunction<
   Update_Major_ChecksMutation,
   Update_Major_ChecksMutationVariables
 >
@@ -1691,12 +1743,12 @@ export type Update_Major_ChecksMutationFn = ApolloReactCommon.MutationFunction<
  * });
  */
 export function useUpdate_Major_ChecksMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     Update_Major_ChecksMutation,
     Update_Major_ChecksMutationVariables
   >,
 ) {
-  return ApolloReactHooks.useMutation<
+  return Apollo.useMutation<
     Update_Major_ChecksMutation,
     Update_Major_ChecksMutationVariables
   >(Update_Major_ChecksDocument, baseOptions)
@@ -1704,10 +1756,8 @@ export function useUpdate_Major_ChecksMutation(
 export type Update_Major_ChecksMutationHookResult = ReturnType<
   typeof useUpdate_Major_ChecksMutation
 >
-export type Update_Major_ChecksMutationResult = ApolloReactCommon.MutationResult<
-  Update_Major_ChecksMutation
->
-export type Update_Major_ChecksMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type Update_Major_ChecksMutationResult = Apollo.MutationResult<Update_Major_ChecksMutation>
+export type Update_Major_ChecksMutationOptions = Apollo.BaseMutationOptions<
   Update_Major_ChecksMutation,
   Update_Major_ChecksMutationVariables
 >
@@ -1724,7 +1774,7 @@ export const Update_Core_ChecksDocument = gql`
     }
   }
 `
-export type Update_Core_ChecksMutationFn = ApolloReactCommon.MutationFunction<
+export type Update_Core_ChecksMutationFn = Apollo.MutationFunction<
   Update_Core_ChecksMutation,
   Update_Core_ChecksMutationVariables
 >
@@ -1748,12 +1798,12 @@ export type Update_Core_ChecksMutationFn = ApolloReactCommon.MutationFunction<
  * });
  */
 export function useUpdate_Core_ChecksMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     Update_Core_ChecksMutation,
     Update_Core_ChecksMutationVariables
   >,
 ) {
-  return ApolloReactHooks.useMutation<
+  return Apollo.useMutation<
     Update_Core_ChecksMutation,
     Update_Core_ChecksMutationVariables
   >(Update_Core_ChecksDocument, baseOptions)
@@ -1761,10 +1811,8 @@ export function useUpdate_Core_ChecksMutation(
 export type Update_Core_ChecksMutationHookResult = ReturnType<
   typeof useUpdate_Core_ChecksMutation
 >
-export type Update_Core_ChecksMutationResult = ApolloReactCommon.MutationResult<
-  Update_Core_ChecksMutation
->
-export type Update_Core_ChecksMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type Update_Core_ChecksMutationResult = Apollo.MutationResult<Update_Core_ChecksMutation>
+export type Update_Core_ChecksMutationOptions = Apollo.BaseMutationOptions<
   Update_Core_ChecksMutation,
   Update_Core_ChecksMutationVariables
 >
@@ -1803,7 +1851,7 @@ export const Update_CourseDocument = gql`
     }
   }
 `
-export type Update_CourseMutationFn = ApolloReactCommon.MutationFunction<
+export type Update_CourseMutationFn = Apollo.MutationFunction<
   Update_CourseMutation,
   Update_CourseMutationVariables
 >
@@ -1833,12 +1881,12 @@ export type Update_CourseMutationFn = ApolloReactCommon.MutationFunction<
  * });
  */
 export function useUpdate_CourseMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     Update_CourseMutation,
     Update_CourseMutationVariables
   >,
 ) {
-  return ApolloReactHooks.useMutation<
+  return Apollo.useMutation<
     Update_CourseMutation,
     Update_CourseMutationVariables
   >(Update_CourseDocument, baseOptions)
@@ -1846,10 +1894,8 @@ export function useUpdate_CourseMutation(
 export type Update_CourseMutationHookResult = ReturnType<
   typeof useUpdate_CourseMutation
 >
-export type Update_CourseMutationResult = ApolloReactCommon.MutationResult<
-  Update_CourseMutation
->
-export type Update_CourseMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type Update_CourseMutationResult = Apollo.MutationResult<Update_CourseMutation>
+export type Update_CourseMutationOptions = Apollo.BaseMutationOptions<
   Update_CourseMutation,
   Update_CourseMutationVariables
 >
@@ -1887,7 +1933,7 @@ export const Add_CourseDocument = gql`
     }
   }
 `
-export type Add_CourseMutationFn = ApolloReactCommon.MutationFunction<
+export type Add_CourseMutationFn = Apollo.MutationFunction<
   Add_CourseMutation,
   Add_CourseMutationVariables
 >
@@ -1916,23 +1962,21 @@ export type Add_CourseMutationFn = ApolloReactCommon.MutationFunction<
  * });
  */
 export function useAdd_CourseMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     Add_CourseMutation,
     Add_CourseMutationVariables
   >,
 ) {
-  return ApolloReactHooks.useMutation<
-    Add_CourseMutation,
-    Add_CourseMutationVariables
-  >(Add_CourseDocument, baseOptions)
+  return Apollo.useMutation<Add_CourseMutation, Add_CourseMutationVariables>(
+    Add_CourseDocument,
+    baseOptions,
+  )
 }
 export type Add_CourseMutationHookResult = ReturnType<
   typeof useAdd_CourseMutation
 >
-export type Add_CourseMutationResult = ApolloReactCommon.MutationResult<
-  Add_CourseMutation
->
-export type Add_CourseMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type Add_CourseMutationResult = Apollo.MutationResult<Add_CourseMutation>
+export type Add_CourseMutationOptions = Apollo.BaseMutationOptions<
   Add_CourseMutation,
   Add_CourseMutationVariables
 >
@@ -1943,7 +1987,7 @@ export const Remove_CourseDocument = gql`
     }
   }
 `
-export type Remove_CourseMutationFn = ApolloReactCommon.MutationFunction<
+export type Remove_CourseMutationFn = Apollo.MutationFunction<
   Remove_CourseMutation,
   Remove_CourseMutationVariables
 >
@@ -1967,12 +2011,12 @@ export type Remove_CourseMutationFn = ApolloReactCommon.MutationFunction<
  * });
  */
 export function useRemove_CourseMutation(
-  baseOptions?: ApolloReactHooks.MutationHookOptions<
+  baseOptions?: Apollo.MutationHookOptions<
     Remove_CourseMutation,
     Remove_CourseMutationVariables
   >,
 ) {
-  return ApolloReactHooks.useMutation<
+  return Apollo.useMutation<
     Remove_CourseMutation,
     Remove_CourseMutationVariables
   >(Remove_CourseDocument, baseOptions)
@@ -1980,10 +2024,58 @@ export function useRemove_CourseMutation(
 export type Remove_CourseMutationHookResult = ReturnType<
   typeof useRemove_CourseMutation
 >
-export type Remove_CourseMutationResult = ApolloReactCommon.MutationResult<
-  Remove_CourseMutation
->
-export type Remove_CourseMutationOptions = ApolloReactCommon.BaseMutationOptions<
+export type Remove_CourseMutationResult = Apollo.MutationResult<Remove_CourseMutation>
+export type Remove_CourseMutationOptions = Apollo.BaseMutationOptions<
   Remove_CourseMutation,
   Remove_CourseMutationVariables
+>
+export const Increment_Course_EditsDocument = gql`
+  mutation INCREMENT_COURSE_EDITS {
+    update_users(where: {}, _inc: { course_edits: 1 }) {
+      affected_rows
+      returning {
+        course_edits
+      }
+    }
+  }
+`
+export type Increment_Course_EditsMutationFn = Apollo.MutationFunction<
+  Increment_Course_EditsMutation,
+  Increment_Course_EditsMutationVariables
+>
+
+/**
+ * __useIncrement_Course_EditsMutation__
+ *
+ * To run a mutation, you first call `useIncrement_Course_EditsMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useIncrement_Course_EditsMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [incrementCourseEditsMutation, { data, loading, error }] = useIncrement_Course_EditsMutation({
+ *   variables: {
+ *   },
+ * });
+ */
+export function useIncrement_Course_EditsMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    Increment_Course_EditsMutation,
+    Increment_Course_EditsMutationVariables
+  >,
+) {
+  return Apollo.useMutation<
+    Increment_Course_EditsMutation,
+    Increment_Course_EditsMutationVariables
+  >(Increment_Course_EditsDocument, baseOptions)
+}
+export type Increment_Course_EditsMutationHookResult = ReturnType<
+  typeof useIncrement_Course_EditsMutation
+>
+export type Increment_Course_EditsMutationResult = Apollo.MutationResult<Increment_Course_EditsMutation>
+export type Increment_Course_EditsMutationOptions = Apollo.BaseMutationOptions<
+  Increment_Course_EditsMutation,
+  Increment_Course_EditsMutationVariables
 >

@@ -169,7 +169,7 @@ function InfoModal({
         const existingInfo = cache.readQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
         })
-        const newInfo = existingInfo!.users[0]
+        const newInfo = { ...existingInfo!.users[0] }
         newInfo.nickname = newName
         newInfo.school = school
         newInfo.major = major
