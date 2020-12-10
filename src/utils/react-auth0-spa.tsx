@@ -1,4 +1,5 @@
 // https://github.com/auth0/auth0-spa-js/pull/310
+// https://github.com/tommedema/startup-boilerplate/blob/master/packages/react-app/src/lib/auth0.tsx
 import React, { useState, useEffect, useContext } from 'react'
 import createAuth0Client, {
   Auth0Client,
@@ -12,6 +13,8 @@ import createAuth0Client, {
   LogoutOptions,
   Auth0ClientOptions,
 } from '@auth0/auth0-spa-js'
+
+type Auth0User = Omit<IdToken, '__raw'>
 
 interface IAuth0Context {
   isAuthenticated: boolean
@@ -47,7 +50,7 @@ export const Auth0Provider = ({
   ...initOptions
 }: IAuth0ProviderOptions & Auth0ClientOptions): JSX.Element => {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
-  const [user, setUser] = useState()
+  const [user, setUser] = useState<Auth0User>()
   const [auth0Client, setAuth0] = useState<Auth0Client>()
   const [loading, setLoading] = useState(true)
   const [popupOpen, setPopupOpen] = useState(false)
