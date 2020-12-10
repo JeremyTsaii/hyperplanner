@@ -76,7 +76,7 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   })
 
   const authLink = setContext(async () => {
-    const token = await getTokenSilently()
+    const token = isAuthenticated ? await getTokenSilently() : null
     return {
       headers: {
         Authorization: `Bearer ${token}`,

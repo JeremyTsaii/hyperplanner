@@ -11,7 +11,7 @@ import MuiDialogActions from '@material-ui/core/DialogActions'
 import CloseIcon from '@material-ui/icons/Close'
 import Course from './Course'
 import {
-  Course as CourseType,
+  CourseType,
   demoColorCourses,
   demoInitialsCourses,
 } from '../static/infoLists'
