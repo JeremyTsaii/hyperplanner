@@ -34,3 +34,6 @@ Courses table:
 ## Frontend Component Layout
 Below is the layout of the frontend components that make up the main dashboard. Diagrams are supplied to gve a sense of which components are responsible for displaying what specific data and from which context providers they draw the data from. The React Context API helps us keep data stores and reduce prop-drilling.
 
+![image](https://user-images.githubusercontent.com/44514622/101759712-c92f0100-3a8e-11eb-8d14-9db5614c1cfc.png)
+
+![image](https://user-images.githubusercontent.com/44514622/101759763-d9df7700-3a8e-11eb-8cd8-cf8b0ea0f692.png)
