@@ -1,6 +1,5 @@
 {
   "__schema": {
-    "description": null,
     "queryType": {
       "name": "query_root"
     },
@@ -5597,6 +5596,18 @@
             "deprecationReason": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -5686,6 +5697,18 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "args": [],
             "type": {
@@ -6115,6 +6138,18 @@
             "deprecationReason": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -6152,6 +6187,16 @@
         "inputFields": [
           {
             "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -6300,6 +6345,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "Int_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -6370,6 +6425,16 @@
             "defaultValue": null
           },
           {
+            "name": "planned_grad",
+            "description": null,
+            "type": {
+              "kind": "INPUT_OBJECT",
+              "name": "String_comparison_exp",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "school",
             "description": null,
             "type": {
@@ -6409,6 +6474,16 @@
         "inputFields": [
           {
             "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -6519,6 +6594,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -6580,6 +6665,16 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "type": {
               "kind": "SCALAR",
@@ -6681,6 +6776,18 @@
             "deprecationReason": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -6754,6 +6861,18 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "args": [],
             "type": {
@@ -6849,6 +6968,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -6910,6 +7039,16 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7011,6 +7150,18 @@
             "deprecationReason": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "args": [],
@@ -7084,6 +7235,18 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "args": [],
             "type": {
@@ -7179,6 +7342,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7240,6 +7413,16 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7483,6 +7666,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7544,6 +7737,16 @@
           },
           {
             "name": "nickname",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "planned_grad",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -7637,6 +7840,12 @@
             "deprecationReason": null
           },
           {
+            "name": "enroll",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": "column name",
             "isDeprecated": false,
@@ -7674,6 +7883,12 @@
           },
           {
             "name": "nickname",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "planned_grad",
             "description": "column name",
             "isDeprecated": false,
             "deprecationReason": null
@@ -7754,6 +7969,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7824,6 +8049,16 @@
             "defaultValue": null
           },
           {
+            "name": "planned_grad",
+            "description": null,
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "school",
             "description": null,
             "type": {
@@ -7845,6 +8080,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -7902,6 +8149,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -7933,6 +8190,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -7990,6 +8259,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -8021,6 +8300,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -8078,6 +8369,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -8109,6 +8410,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Int",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -8157,6 +8470,16 @@
         "inputFields": [
           {
             "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -8235,6 +8558,12 @@
             "deprecationReason": null
           },
           {
+            "name": "enroll",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "grad_year",
             "description": "column name",
             "isDeprecated": false,
@@ -8277,6 +8606,12 @@
             "deprecationReason": null
           },
           {
+            "name": "planned_grad",
+            "description": "column name",
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
             "name": "school",
             "description": "column name",
             "isDeprecated": false,
@@ -8292,6 +8627,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -8349,6 +8696,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -8380,6 +8737,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -8437,6 +8806,16 @@
             "defaultValue": null
           },
           {
+            "name": "enroll",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
             "name": "grad_year",
             "description": null,
             "type": {
@@ -8468,6 +8847,18 @@
         "fields": [
           {
             "name": "course_edits",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "Float",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "args": [],
             "type": {
@@ -8516,6 +8907,16 @@
         "inputFields": [
           {
             "name": "course_edits",
+            "description": null,
+            "type": {
+              "kind": "ENUM",
+              "name": "order_by",
+              "ofType": null
+            },
+            "defaultValue": null
+          },
+          {
+            "name": "enroll",
             "description": null,
             "type": {
               "kind": "ENUM",
@@ -8822,7 +9223,18 @@
           {
             "name": "inputFields",
             "description": null,
-            "args": [],
+            "args": [
+              {
+                "name": "includeDeprecated",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": "false"
+              }
+            ],
             "type": {
               "kind": "LIST",
               "name": null,
@@ -8952,7 +9364,18 @@
           {
             "name": "args",
             "description": null,
-            "args": [],
+            "args": [
+              {
+                "name": "includeDeprecated",
+                "description": null,
+                "type": {
+                  "kind": "SCALAR",
+                  "name": "Boolean",
+                  "ofType": null
+                },
+                "defaultValue": "false"
+              }
+            ],
             "type": {
               "kind": "NON_NULL",
               "name": null,
@@ -9075,6 +9498,34 @@
           {
             "name": "defaultValue",
             "description": "A GraphQL-formatted string representing the default value for this input value.",
+            "args": [],
+            "type": {
+              "kind": "SCALAR",
+              "name": "String",
+              "ofType": null
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "isDeprecated",
+            "description": null,
+            "args": [],
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "isDeprecated": false,
+            "deprecationReason": null
+          },
+          {
+            "name": "deprecationReason",
+            "description": null,
             "args": [],
             "type": {
               "kind": "SCALAR",
@@ -9388,32 +9839,6 @@
     ],
     "directives": [
       {
-        "name": "skip",
-        "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
-        "isRepeatable": false,
-        "locations": [
-          "FIELD",
-          "FRAGMENT_SPREAD",
-          "INLINE_FRAGMENT"
-        ],
-        "args": [
-          {
-            "name": "if",
-            "description": "Skipped when true.",
-            "type": {
-              "kind": "NON_NULL",
-              "name": null,
-              "ofType": {
-                "kind": "SCALAR",
-                "name": "Boolean",
-                "ofType": null
-              }
-            },
-            "defaultValue": null
-          }
-        ]
-      },
-      {
         "name": "include",
         "description": "Directs the executor to include this field or fragment only when the `if` argument is true.",
         "isRepeatable": false,
@@ -9440,11 +9865,39 @@
         ]
       },
       {
+        "name": "skip",
+        "description": "Directs the executor to skip this field or fragment when the `if` argument is true.",
+        "isRepeatable": false,
+        "locations": [
+          "FIELD",
+          "FRAGMENT_SPREAD",
+          "INLINE_FRAGMENT"
+        ],
+        "args": [
+          {
+            "name": "if",
+            "description": "Skipped when true.",
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "Boolean",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          }
+        ]
+      },
+      {
         "name": "deprecated",
         "description": "Marks an element of a GraphQL schema as no longer supported.",
         "isRepeatable": false,
         "locations": [
           "FIELD_DEFINITION",
+          "ARGUMENT_DEFINITION",
+          "INPUT_FIELD_DEFINITION",
           "ENUM_VALUE"
         ],
         "args": [

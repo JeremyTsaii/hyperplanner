@@ -1,6 +1,12 @@
 ## Frontend/Backend Integration
 The frontend uses GraphQL to get a payload of user information and their courses from the Hasura GraphQL endpoint. Apollo helps us communicate between the frontend and Hasura using GraphQL. Based on the payload, the frontend displays the user information, courses, and relevant statistics on the dashboard. When users insert/update/delete courses, GraphQL queries are sent back to the Hasura endpoint to modify the database. For UI performance reasons, we use optimistic updates. This way, the UI does not have to wait for the database write to complete before updating.
 
+To automatically generate the types necessary for all GraphQL queries/mutations, we use Codegen. Run the following command to update the generated GraphQL file (ask admin for the AUTH_TOKEN):
+
+```
+AUTH_TOKEN=xxxxx yarn generate --watch
+```
+
 ## Database Layout
 There are two main tables in the database, a user table and a courses table. There is a one-to-many relationship between users and courses. The object relationship defined in Hasura is courses.user_id -> users.auth0_id.
 
