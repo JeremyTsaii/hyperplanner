@@ -1,11 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Stepper from '@material-ui/core/Stepper'
 import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
 import StepConnector from '@material-ui/core/StepConnector'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { useQuery } from '@apollo/client'
-import { GET_INFO_QUERY } from '../utils/gqlQueries'
+import { UserContext } from '../context/UserContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -79,7 +78,7 @@ function YearStepper(): JSX.Element {
   }
   const steps = ['Freshman', 'Sophomore', 'Junior', 'Senior']
 
-  const { loading, error, data } = useQuery(GET_INFO_QUERY)
+  const { loading, error, data } = useContext(UserContext)
 
   if (loading) {
     return (

@@ -2,29 +2,14 @@ import React from 'react'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import IconButton from '@material-ui/core/IconButton'
-import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
-import { useMutation } from '@apollo/client'
 import {
   makeStyles,
   responsiveFontSizes,
   createMuiTheme,
   MuiThemeProvider,
 } from '@material-ui/core/styles'
-import { INCREMENT_COURSE_EDITS_MUTATION } from '../utils/gqlQueries'
-import { modifyChecklist } from '../utils/modalFunctions'
-import EditModal from './EditModal'
-/* eslint-disable */
-import {
-  useRemove_CourseMutation,
-  useUpdate_Major_ChecksMutation,
-  useUpdate_Core_ChecksMutation,
-  Get_InfoDocument,
-  Get_InfoQuery,
-  Get_CoursesQuery,
-  Get_CoursesDocument,
-} from '../generated/graphql'
-/* eslint-enable */
+import EditIcon from './EditIcon'
+import DeleteIcon from './DeleteIcon'
 
 // Color constants
 const PINK = '#e91e63' // Major (Requirement)
@@ -110,44 +95,6 @@ const getCourseColor = (type: string): string => {
   }
 }
 
-const createEditIcon = (
-  code: string,
-  title: string,
-  credits: number,
-  type: string,
-  campus: string,
-  writInten: boolean,
-  term: string,
-): JSX.Element => {
-  return (
-    <Grid item xs={1} zeroMinWidth>
-      <EditModal
-        codeProp={code}
-        titleProp={title}
-        creditsProp={credits}
-        typeProp={type}
-        campusProp={campus}
-        writIntenProp={writInten}
-        termProp={term}
-      />
-    </Grid>
-  )
-}
-
-const createDeleteIcon = (handleDelete?: () => void): JSX.Element => {
-  return (
-    <Grid item xs={1} zeroMinWidth>
-      <IconButton
-        edge="end"
-        aria-label="delete"
-        size="small"
-        onClick={handleDelete}>
-        <DeleteForeverIcon />
-      </IconButton>
-    </Grid>
-  )
-}
-
 interface courseProps {
   code: string
   title: string
@@ -157,10 +104,6 @@ interface courseProps {
   writInten: boolean
   term: string
   showIcons: boolean
-  majorChecks: string
-  coreChecks: string
-  school: string
-  id: string
 }
 
 function Course({
@@ -172,149 +115,49 @@ function Course({
   writInten,
   term,
   showIcons,
-  majorChecks,
-  coreChecks,
-  school,
-  id,
 }: courseProps): JSX.Element {
   const classes = useStyles()
 
-  const [courseRemove] = useRemove_CourseMutation()
-  const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
-  const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
-  const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
-
-  // Delete course on icon click
-  const handleDelete = () => {
-    // Update user course_edits column
-    updateCourseEdits()
-
-    // Remove course
-    courseRemove({
-      variables: { term, title },
-      update(cache) {
-        /* eslint-disable */
-        const existingCourses = cache.readQuery<Get_CoursesQuery>({
-          query: Get_CoursesDocument,
-        })
-        const newCourses = existingCourses!.courses.filter((course) => {
-          return course.title !== title || course.term !== term
-        })
-        cache.writeQuery<Get_CoursesQuery>({
-          query: Get_CoursesDocument,
-          data: { courses: newCourses },
-        })
-        /* eslint-enable */
-      },
-      optimisticResponse: {
-        __typename: 'mutation_root',
-        delete_courses: {
-          __typename: 'courses_mutation_response',
-          affected_rows: 1,
-        },
-      },
-    })
-
-    // Update checklists
-    const [newMajorChecks, newCoreChecks] = modifyChecklist(
-      code,
-      0,
-      majorChecks,
-      coreChecks,
-      school,
-    )
-
-    updateMajorChecks({
-      variables: {
-        id,
-        majorChecks: newMajorChecks,
-      },
-      update(cache) {
-        /* eslint-disable */
-        const existingInfo = cache.readQuery<Get_InfoQuery>({
-          query: Get_InfoDocument,
-        })
-        const newInfo = { ...existingInfo!.users[0] }
-        newInfo.majorChecks = newMajorChecks
-        cache.writeQuery<Get_InfoQuery>({
-          query: Get_InfoDocument,
-          data: { users: [newInfo] },
-        })
-        /* eslint-enable */
-      },
-      optimisticResponse: {
-        __typename: 'mutation_root',
-        update_users: {
-          __typename: 'users_mutation_response',
-          affected_rows: 1,
-          returning: [
-            {
-              __typename: 'users',
-              majorChecks: newMajorChecks,
-            },
-          ],
-        },
-      },
-    })
-
-    updateCoreChecks({
-      variables: {
-        id,
-        coreChecks: newCoreChecks,
-      },
-      update(cache) {
-        /* eslint-disable */
-        const existingInfo = cache.readQuery<Get_InfoQuery>({
-          query: Get_InfoDocument,
-        })
-        const newInfo = { ...existingInfo!.users[0] }
-        newInfo.coreChecks = newCoreChecks
-        cache.writeQuery<Get_InfoQuery>({
-          query: Get_InfoDocument,
-          data: { users: [newInfo] },
-        })
-        /* eslint-enable */
-      },
-      optimisticResponse: {
-        __typename: 'mutation_root',
-        update_users: {
-          __typename: 'users_mutation_response',
-          affected_rows: 1,
-          returning: [
-            {
-              __typename: 'users',
-              coreChecks: newCoreChecks,
-            },
-          ],
-        },
-      },
-    })
-  }
-
-  let editIconPlaceholder = <div />
-  let deleteIconPlaceholder = createDeleteIcon()
+  let editIconPlaceholder = (
+    <EditIcon
+      functional={false}
+      code=""
+      title=""
+      credits={0}
+      type=""
+      campus=""
+      writInten={false}
+      term=""
+    />
+  )
+  let deleteIconPlaceholder = (
+    <DeleteIcon functional={false} code="" title="" term="" />
+  )
 
   // If false, don't show icons (for logged out viewers)
   if (showIcons) {
-    editIconPlaceholder = createEditIcon(
-      code,
-      title,
-      credits,
-      type,
-      campus,
-      writInten,
-      term,
+    editIconPlaceholder = (
+      <EditIcon
+        functional
+        code={code}
+        title={title}
+        credits={credits}
+        type={type}
+        campus={campus}
+        writInten={writInten}
+        term={term}
+      />
     )
-    deleteIconPlaceholder = createDeleteIcon(handleDelete)
+    deleteIconPlaceholder = (
+      <DeleteIcon functional term={term} title={title} code={code} />
+    )
   }
 
   // Add M and/or W if Mudd hum/writing intensive course
   let placeholder = ''
   let titleLength = 6
   let codeLength = 1
-  let placeholderGrid = (): JSX.Element => {
-    return <div />
-  }
+  let placeholderGrid = <div />
 
   if (writInten) {
     placeholder = 'W'
@@ -331,18 +174,17 @@ function Course({
     }
   }
   if (placeholder) {
-    placeholderGrid = (): JSX.Element => {
-      return (
-        <Grid item xs={codeLength as 1 | 2} zeroMinWidth>
-          <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.writText} noWrap>
-              <b>{placeholder}</b>
-            </Typography>
-          </MuiThemeProvider>
-        </Grid>
-      )
-    }
+    placeholderGrid = (
+      <Grid item xs={codeLength as 1 | 2} zeroMinWidth>
+        <MuiThemeProvider theme={theme}>
+          <Typography variant="h6" className={classes.writText} noWrap>
+            <b>{placeholder}</b>
+          </Typography>
+        </MuiThemeProvider>
+      </Grid>
+    )
   }
+
   return (
     <Paper
       style={{
@@ -374,7 +216,7 @@ function Course({
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        {placeholderGrid()}
+        {placeholderGrid}
         <Grid item xs={1} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.creditText} noWrap>

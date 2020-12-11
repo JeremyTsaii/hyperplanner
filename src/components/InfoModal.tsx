@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import EditIcon from '@material-ui/icons/Edit'
@@ -26,6 +26,7 @@ import {
   Get_InfoDocument,
 } from '../generated/graphql'
 /* eslint-enable */
+import { UserContext } from '../context/UserContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -39,15 +40,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[500],
   },
 }))
-
-interface DialogProps {
-  nameProp: string
-  schoolProp: string
-  majorProp: string
-  concProp: string
-  gradYearProp: number
-  idProp: string
-}
 
 interface DialogTitleProps {
   onClose: () => void
@@ -85,27 +77,31 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function InfoModal({
-  nameProp,
-  schoolProp,
-  majorProp,
-  concProp,
-  gradYearProp,
-  idProp,
-}: DialogProps): JSX.Element {
+function InfoModal(): JSX.Element {
   const [updateUser] = useUpdate_UserMutation()
+  const { data: infoData } = useContext(UserContext)
+  const info = infoData.users[0]
+
+  const {
+    nickname: firstName,
+    school: schoolName,
+    major: majorName,
+    concentration: concName,
+    grad_year: grad,
+    auth0_id: id,
+  } = info
 
   // Changing information in modal
-  const [name, setName] = useState(nameProp)
+  const [name, setName] = useState(firstName)
   const nameRef = useRef('')
 
-  const [school, setSchool] = useState(schoolDict[schoolProp])
+  const [school, setSchool] = useState(schoolName)
 
-  const [major, setMajor] = useState(majorDict[majorProp])
+  const [major, setMajor] = useState(majorName)
 
-  const [concentration, setConcentration] = useState(concProp)
+  const [concentration, setConcentration] = useState(concName)
 
-  const [gradYear, setGradYear] = useState(String(gradYearProp))
+  const [gradYear, setGradYear] = useState(String(grad))
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -142,18 +138,18 @@ function InfoModal({
   }
 
   const handleClose = () => {
-    setName(nameProp)
-    setSchool(schoolDict[schoolProp])
-    setMajor(majorDict[majorProp])
-    setConcentration(concProp)
-    setGradYear(String(gradYearProp))
+    setName(firstName)
+    setSchool(schoolDict[schoolName])
+    setMajor(majorDict[majorName])
+    setConcentration(concName)
+    setGradYear(String(grad))
     setOpen(false)
   }
 
   const handleSave = () => {
     let newName = getValue(nameRef)
     if (newName === '') {
-      newName = nameProp
+      newName = firstName
     }
     updateUser({
       variables: {
@@ -162,7 +158,7 @@ function InfoModal({
         major,
         conc: concentration,
         gradYear: parseFloat(gradYear),
-        id: idProp,
+        id,
       },
       update(cache) {
         /* eslint-disable */

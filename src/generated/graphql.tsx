@@ -4,6 +4,10 @@ export type Maybe<T> = T | null
 export type Exact<T extends { [key: string]: unknown }> = {
   [K in keyof T]: T[K]
 }
+export type MakeOptional<T, K extends keyof T> = Omit<T, K> &
+  { [SubKey in K]?: Maybe<T[SubKey]> }
+export type MakeMaybe<T, K extends keyof T> = Omit<T, K> &
+  { [SubKey in K]: Maybe<T[SubKey]> }
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: string
@@ -878,6 +882,7 @@ export type Users = {
   courses_aggregate: Courses_Aggregate
   created_at: Scalars['timestamptz']
   email?: Maybe<Scalars['String']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id: Scalars['Int']
   last_seen: Scalars['timestamptz']
@@ -885,6 +890,7 @@ export type Users = {
   majorChecks: Scalars['String']
   name: Scalars['String']
   nickname?: Maybe<Scalars['String']>
+  planned_grad?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -960,6 +966,7 @@ export type Users_Arr_Rel_Insert_Input = {
 export type Users_Avg_Fields = {
   __typename?: 'users_avg_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -967,6 +974,7 @@ export type Users_Avg_Fields = {
 /** order by avg() on columns of table "users" */
 export type Users_Avg_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -983,6 +991,7 @@ export type Users_Bool_Exp = {
   courses?: Maybe<Courses_Bool_Exp>
   created_at?: Maybe<Timestamptz_Comparison_Exp>
   email?: Maybe<String_Comparison_Exp>
+  enroll?: Maybe<Int_Comparison_Exp>
   grad_year?: Maybe<Int_Comparison_Exp>
   id?: Maybe<Int_Comparison_Exp>
   last_seen?: Maybe<Timestamptz_Comparison_Exp>
@@ -990,6 +999,7 @@ export type Users_Bool_Exp = {
   majorChecks?: Maybe<String_Comparison_Exp>
   name?: Maybe<String_Comparison_Exp>
   nickname?: Maybe<String_Comparison_Exp>
+  planned_grad?: Maybe<String_Comparison_Exp>
   school?: Maybe<String_Comparison_Exp>
 }
 
@@ -1002,6 +1012,7 @@ export enum Users_Constraint {
 /** input type for incrementing integer column in table "users" */
 export type Users_Inc_Input = {
   course_edits?: Maybe<Scalars['Int']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
 }
@@ -1015,6 +1026,7 @@ export type Users_Insert_Input = {
   courses?: Maybe<Courses_Arr_Rel_Insert_Input>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
@@ -1022,6 +1034,7 @@ export type Users_Insert_Input = {
   majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
+  planned_grad?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1034,6 +1047,7 @@ export type Users_Max_Fields = {
   course_edits?: Maybe<Scalars['Int']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
@@ -1041,6 +1055,7 @@ export type Users_Max_Fields = {
   majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
+  planned_grad?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1052,6 +1067,7 @@ export type Users_Max_Order_By = {
   course_edits?: Maybe<Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
   last_seen?: Maybe<Order_By>
@@ -1059,6 +1075,7 @@ export type Users_Max_Order_By = {
   majorChecks?: Maybe<Order_By>
   name?: Maybe<Order_By>
   nickname?: Maybe<Order_By>
+  planned_grad?: Maybe<Order_By>
   school?: Maybe<Order_By>
 }
 
@@ -1071,6 +1088,7 @@ export type Users_Min_Fields = {
   course_edits?: Maybe<Scalars['Int']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
@@ -1078,6 +1096,7 @@ export type Users_Min_Fields = {
   majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
+  planned_grad?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1089,6 +1108,7 @@ export type Users_Min_Order_By = {
   course_edits?: Maybe<Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
   last_seen?: Maybe<Order_By>
@@ -1096,6 +1116,7 @@ export type Users_Min_Order_By = {
   majorChecks?: Maybe<Order_By>
   name?: Maybe<Order_By>
   nickname?: Maybe<Order_By>
+  planned_grad?: Maybe<Order_By>
   school?: Maybe<Order_By>
 }
 
@@ -1130,6 +1151,7 @@ export type Users_Order_By = {
   courses_aggregate?: Maybe<Courses_Aggregate_Order_By>
   created_at?: Maybe<Order_By>
   email?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
   last_seen?: Maybe<Order_By>
@@ -1137,6 +1159,7 @@ export type Users_Order_By = {
   majorChecks?: Maybe<Order_By>
   name?: Maybe<Order_By>
   nickname?: Maybe<Order_By>
+  planned_grad?: Maybe<Order_By>
   school?: Maybe<Order_By>
 }
 
@@ -1160,6 +1183,8 @@ export enum Users_Select_Column {
   /** column name */
   Email = 'email',
   /** column name */
+  Enroll = 'enroll',
+  /** column name */
   GradYear = 'grad_year',
   /** column name */
   Id = 'id',
@@ -1174,6 +1199,8 @@ export enum Users_Select_Column {
   /** column name */
   Nickname = 'nickname',
   /** column name */
+  PlannedGrad = 'planned_grad',
+  /** column name */
   School = 'school',
 }
 
@@ -1185,6 +1212,7 @@ export type Users_Set_Input = {
   course_edits?: Maybe<Scalars['Int']>
   created_at?: Maybe<Scalars['timestamptz']>
   email?: Maybe<Scalars['String']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
   last_seen?: Maybe<Scalars['timestamptz']>
@@ -1192,6 +1220,7 @@ export type Users_Set_Input = {
   majorChecks?: Maybe<Scalars['String']>
   name?: Maybe<Scalars['String']>
   nickname?: Maybe<Scalars['String']>
+  planned_grad?: Maybe<Scalars['String']>
   school?: Maybe<Scalars['String']>
 }
 
@@ -1199,6 +1228,7 @@ export type Users_Set_Input = {
 export type Users_Stddev_Fields = {
   __typename?: 'users_stddev_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -1206,6 +1236,7 @@ export type Users_Stddev_Fields = {
 /** order by stddev() on columns of table "users" */
 export type Users_Stddev_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1214,6 +1245,7 @@ export type Users_Stddev_Order_By = {
 export type Users_Stddev_Pop_Fields = {
   __typename?: 'users_stddev_pop_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -1221,6 +1253,7 @@ export type Users_Stddev_Pop_Fields = {
 /** order by stddev_pop() on columns of table "users" */
 export type Users_Stddev_Pop_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1229,6 +1262,7 @@ export type Users_Stddev_Pop_Order_By = {
 export type Users_Stddev_Samp_Fields = {
   __typename?: 'users_stddev_samp_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -1236,6 +1270,7 @@ export type Users_Stddev_Samp_Fields = {
 /** order by stddev_samp() on columns of table "users" */
 export type Users_Stddev_Samp_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1244,6 +1279,7 @@ export type Users_Stddev_Samp_Order_By = {
 export type Users_Sum_Fields = {
   __typename?: 'users_sum_fields'
   course_edits?: Maybe<Scalars['Int']>
+  enroll?: Maybe<Scalars['Int']>
   grad_year?: Maybe<Scalars['Int']>
   id?: Maybe<Scalars['Int']>
 }
@@ -1251,6 +1287,7 @@ export type Users_Sum_Fields = {
 /** order by sum() on columns of table "users" */
 export type Users_Sum_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1270,6 +1307,8 @@ export enum Users_Update_Column {
   /** column name */
   Email = 'email',
   /** column name */
+  Enroll = 'enroll',
+  /** column name */
   GradYear = 'grad_year',
   /** column name */
   Id = 'id',
@@ -1284,6 +1323,8 @@ export enum Users_Update_Column {
   /** column name */
   Nickname = 'nickname',
   /** column name */
+  PlannedGrad = 'planned_grad',
+  /** column name */
   School = 'school',
 }
 
@@ -1291,6 +1332,7 @@ export enum Users_Update_Column {
 export type Users_Var_Pop_Fields = {
   __typename?: 'users_var_pop_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -1298,6 +1340,7 @@ export type Users_Var_Pop_Fields = {
 /** order by var_pop() on columns of table "users" */
 export type Users_Var_Pop_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1306,6 +1349,7 @@ export type Users_Var_Pop_Order_By = {
 export type Users_Var_Samp_Fields = {
   __typename?: 'users_var_samp_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -1313,6 +1357,7 @@ export type Users_Var_Samp_Fields = {
 /** order by var_samp() on columns of table "users" */
 export type Users_Var_Samp_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }
@@ -1321,6 +1366,7 @@ export type Users_Var_Samp_Order_By = {
 export type Users_Variance_Fields = {
   __typename?: 'users_variance_fields'
   course_edits?: Maybe<Scalars['Float']>
+  enroll?: Maybe<Scalars['Float']>
   grad_year?: Maybe<Scalars['Float']>
   id?: Maybe<Scalars['Float']>
 }
@@ -1328,6 +1374,7 @@ export type Users_Variance_Fields = {
 /** order by variance() on columns of table "users" */
 export type Users_Variance_Order_By = {
   course_edits?: Maybe<Order_By>
+  enroll?: Maybe<Order_By>
   grad_year?: Maybe<Order_By>
   id?: Maybe<Order_By>
 }

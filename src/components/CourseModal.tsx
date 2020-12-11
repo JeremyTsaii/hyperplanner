@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
@@ -29,6 +29,7 @@ import {
   Courses,
 } from '../generated/graphql'
 /* eslint-enable */
+import { UserContext } from '../context/UserContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -53,10 +54,6 @@ type AllCourse = {
 interface DialogProps {
   term: string
   year: string
-  majorChecks: string
-  coreChecks: string
-  school: string
-  id: string
 }
 
 interface DialogTitleProps {
@@ -95,18 +92,16 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function CourseModal({
-  term,
-  year,
-  majorChecks,
-  coreChecks,
-  school,
-  id,
-}: DialogProps): JSX.Element {
+function CourseModal({ term, year }: DialogProps): JSX.Element {
   const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
   const [addCourse] = useAdd_CourseMutation()
   const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
   const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
+
+  const { data: infoData } = useContext(UserContext)
+
+  const info = infoData.users[0]
+  const { majorChecks, coreChecks, school, auth0_id: id } = info
 
   // Changing information in modal
   const [campus, setCampus] = useState('')
