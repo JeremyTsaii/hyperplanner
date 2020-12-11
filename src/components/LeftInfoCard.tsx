@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import InfoModal from './InfoModal'
+import { schoolDict, majorDict } from '../static/infoLists'
+import { UserContext } from '../context/UserContext'
 
 const useStyles = makeStyles((theme) => ({
   infoCard: {
@@ -69,25 +71,20 @@ const useStyles = makeStyles((theme) => ({
 }))
 
 interface infoProps {
-  firstName: string
-  schoolName: string
-  majorName: string
-  concName: string
-  gradYear: number
-  id: string
   ELEV: number
 }
 
-function LeftInfoCard({
-  firstName,
-  schoolName,
-  majorName,
-  concName,
-  gradYear,
-  id,
-  ELEV,
-}: infoProps): JSX.Element {
+function LeftInfoCard({ ELEV }: infoProps): JSX.Element {
   const classes = useStyles()
+  const { data: infoData } = useContext(UserContext)
+
+  const info = infoData.users[0]
+
+  const firstName = info.nickname
+  const schoolName = schoolDict[info.school]
+  const majorName = majorDict[info.major]
+  const concName = info.concentration
+  const gradYear = info.grad_year
 
   return (
     <Grid item>
@@ -110,14 +107,7 @@ function LeftInfoCard({
           </Typography>
         </div>
         <div className={classes.editIcon}>
-          <InfoModal
-            nameProp={firstName}
-            schoolProp={schoolName}
-            majorProp={majorName}
-            concProp={concName}
-            gradYearProp={gradYear}
-            idProp={id}
-          />
+          <InfoModal />
         </div>
       </Paper>
     </Grid>

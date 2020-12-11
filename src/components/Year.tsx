@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import { useQuery } from '@apollo/client'
 import ReactLoading from 'react-loading'
-import { GET_COURSES_QUERY, GET_INFO_QUERY } from '../utils/gqlQueries'
 import CourseModal from './CourseModal'
 import { placeholderCourses } from '../static/infoLists'
 import CourseContainer from './CourseContainer'
+import { UserContext } from '../context/UserContext'
+import { CoursesContext } from '../context/CoursesContext'
 
 const useStyles = makeStyles(() => ({
   loadingStyle: {
@@ -14,24 +14,8 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const createAddModal = (
-  term: string,
-  yearNumber: number,
-  majorChecks: string,
-  coreChecks: string,
-  school: string,
-  id: string,
-): JSX.Element => {
-  return (
-    <CourseModal
-      year={String(yearNumber)}
-      term={term}
-      majorChecks={majorChecks}
-      coreChecks={coreChecks}
-      school={school}
-      id={id}
-    />
-  )
+const createAddModal = (term: string, yearNumber: number): JSX.Element => {
+  return <CourseModal year={String(yearNumber)} term={term} />
 }
 
 interface IProps {
@@ -41,14 +25,12 @@ interface IProps {
 const Year = ({ yearNumber }: IProps): JSX.Element => {
   const classes = useStyles()
 
-  const { loading: infoLoading, error: infoError, data: infoData } = useQuery(
-    GET_INFO_QUERY,
-  )
+  const { loading: infoLoading, error: infoError } = useContext(UserContext)
   const {
     loading: coursesLoading,
     error: coursesError,
     data: coursesData,
-  } = useQuery(GET_COURSES_QUERY)
+  } = useContext(CoursesContext)
 
   if (infoLoading || coursesLoading) {
     return (
@@ -74,43 +56,16 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
         fallModal={fallModalPlaceholder}
         springModal={springModalPlaceholder}
         summerModal={summerModalPlaceholder}
-        majorChecks=""
-        coreChecks=""
-        school=""
-        id=""
       />
     )
   }
 
-  // After logging in, fill placeholders with icons/modals and correct courses
-  const info = infoData.users[0]
   const { courses } = coursesData
 
   coursePlaceholder = courses
-  fallModalPlaceholder = createAddModal(
-    'Fall',
-    yearNumber,
-    info.majorChecks,
-    info.coreChecks,
-    info.school,
-    info.auth0_id,
-  )
-  springModalPlaceholder = createAddModal(
-    'Spring',
-    yearNumber,
-    info.majorChecks,
-    info.coreChecks,
-    info.school,
-    info.auth0_id,
-  )
-  summerModalPlaceholder = createAddModal(
-    'Summer',
-    yearNumber,
-    info.majorChecks,
-    info.coreChecks,
-    info.school,
-    info.auth0_id,
-  )
+  fallModalPlaceholder = createAddModal('Fall', yearNumber)
+  springModalPlaceholder = createAddModal('Spring', yearNumber)
+  summerModalPlaceholder = createAddModal('Summer', yearNumber)
 
   return (
     <CourseContainer
@@ -120,10 +75,6 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
       fallModal={fallModalPlaceholder}
       springModal={springModalPlaceholder}
       summerModal={summerModalPlaceholder}
-      majorChecks={info.majorChecks}
-      coreChecks={info.coreChecks}
-      school={info.school}
-      id={info.auth0_id}
     />
   )
 }

@@ -29,16 +29,6 @@ import {
 } from '../generated/graphql'
 /* eslint-enable */
 
-interface EditProps {
-  codeProp: string
-  titleProp: string
-  creditsProp: number
-  typeProp: string
-  campusProp: string
-  writIntenProp: boolean
-  termProp: string
-}
-
 const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
@@ -88,7 +78,19 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
+interface editProps {
+  functional: boolean
+  codeProp: string
+  titleProp: string
+  creditsProp: number
+  typeProp: string
+  campusProp: string
+  writIntenProp: boolean
+  termProp: string
+}
+
 function EditModal({
+  functional,
   codeProp,
   titleProp,
   creditsProp,
@@ -96,7 +98,7 @@ function EditModal({
   campusProp,
   writIntenProp,
   termProp,
-}: EditProps): JSX.Element {
+}: editProps): JSX.Element {
   const [updateCourse] = useUpdate_CourseMutation()
   const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
   const oldTitle = titleProp
@@ -240,6 +242,15 @@ function EditModal({
     setCode(newCode)
     setTitle(newTitle)
     setOpen(false)
+  }
+
+  // Return icon but no functionality (logged out)
+  if (!functional) {
+    return (
+      <IconButton edge="end" aria-label="edit" size="small" onClick={undefined}>
+        <EditIcon />
+      </IconButton>
+    )
   }
 
   return (

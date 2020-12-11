@@ -3,6 +3,8 @@ import Particles from 'react-tsparticles'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import Layout from './components/GALayout'
 import './App.css'
+import { UserContextProvider } from './context/UserContext'
+import { CoursesContextProvider } from './context/CoursesContext'
 import TopBar from './components/TopBar'
 import InfoCards from './components/InfoCards'
 import YearCards from './components/YearCards'
@@ -61,9 +63,13 @@ function App(): JSX.Element {
                 },
               }}
             />
-            <TopBar />
-            <InfoCards />
-            <YearCards />
+            <UserContextProvider>
+              <CoursesContextProvider>
+                <TopBar />
+                <InfoCards />
+                <YearCards />
+              </CoursesContextProvider>
+            </UserContextProvider>
           </div>
         </Layout>
       </ThemeProvider>
