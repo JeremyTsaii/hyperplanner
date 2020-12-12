@@ -1,6 +1,7 @@
 import React, { createContext } from 'react'
-import { useQuery } from '@apollo/client'
-import { GET_COURSES_QUERY } from '../utils/gqlQueries'
+/* eslint-disable */
+import { useGet_CoursesQuery } from '../generated/graphql'
+/* eslint-enable */
 
 interface ProviderProps {
   children: React.ReactNode
@@ -12,7 +13,7 @@ export const CoursesContext = createContext({} as any)
 export const CoursesContextProvider = ({
   children,
 }: ProviderProps): JSX.Element => {
-  const { loading, error, data } = useQuery(GET_COURSES_QUERY)
+  const { loading, error, data } = useGet_CoursesQuery()
 
   return (
     <CoursesContext.Provider value={{ loading, error, data }}>

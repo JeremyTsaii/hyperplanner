@@ -1,6 +1,7 @@
 import React, { createContext } from 'react'
-import { useQuery } from '@apollo/client'
-import { GET_INFO_QUERY } from '../utils/gqlQueries'
+/* eslint-disable */
+import { useGet_InfoQuery } from '../generated/graphql'
+/* eslint-enable */
 
 interface ProviderProps {
   children: React.ReactNode
@@ -12,7 +13,7 @@ export const UserContext = createContext({} as any)
 export const UserContextProvider = ({
   children,
 }: ProviderProps): JSX.Element => {
-  const { loading, error, data } = useQuery(GET_INFO_QUERY)
+  const { loading, error, data } = useGet_InfoQuery()
 
   return (
     <UserContext.Provider value={{ loading, error, data }}>
