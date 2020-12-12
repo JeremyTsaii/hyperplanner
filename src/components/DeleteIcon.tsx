@@ -37,14 +37,15 @@ function DeleteIcon({
   const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
 
   const { data: infoData } = useContext(UserContext)
-  const info = infoData.users[0]
-  const { majorChecks, coreChecks, school, auth0_id: id } = info
 
   // Delete course on icon click
   // If not functional, clicking does nothing (user logged out)
   const handleDelete = !functional
     ? undefined
     : () => {
+        const info = infoData.users[0]
+        const { majorChecks, coreChecks, school, auth0_id: id } = info
+
         // Update user course_edits column
         updateCourseEdits()
 
