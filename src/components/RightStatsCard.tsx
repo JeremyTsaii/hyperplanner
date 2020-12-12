@@ -64,6 +64,91 @@ type Stats = {
   writ: number
 }
 
+interface statsProps {
+  ELEV: number
+}
+
+// Aggregate function that calculates multipate statistics to prevent looping through courses multiple times
+const getCourseStats = (
+  courseArr: Courses[],
+): {
+  pe: number
+  majorElec: number
+  depth: number
+  breadth: number
+  humElec: number
+  muddHum: number
+  writ: number
+  semesters: number
+} => {
+  // Counters for stats
+  let pe = 0
+  let majorElec = 0
+  let depth = 0
+  let breadth = 0
+  let humElec = 0
+  let muddHum = 0
+  let writ = 0
+
+  // Find number of completed semesters for average calculations
+  // Looks at greatest semester that is not a summer
+  let num = 0
+  let sem = 'fall'
+  courseArr.forEach((course) => {
+    if (course.writ_inten) {
+      writ += 1
+    }
+
+    if (course.type === 'pe') {
+      pe += course.credits
+    } else if (course.type === 'major_elec') {
+      majorElec += course.credits
+    } else if (course.type === 'hum_depth') {
+      depth += 1
+      if (course.campus === 'hmc') {
+        muddHum += 1
+      }
+    } else if (course.type === 'hum_breadth') {
+      breadth += 1
+      if (course.campus === 'hmc') {
+        muddHum += 1
+      }
+    } else if (course.type === 'hum_elec') {
+      humElec += 1
+      if (course.campus === 'hmc') {
+        muddHum += 1
+      }
+    }
+
+    const lastChar = course.term.slice(-1)
+    const lastSem = course.term.slice(0, -1)
+    const numLast = parseInt(lastChar, 10)
+
+    if (
+      (numLast > num || (numLast === num && sem === 'fall')) &&
+      lastSem !== 'summer'
+    ) {
+      sem = lastSem
+      num = numLast
+    }
+  })
+  num = num * 2 - (sem === 'fall' ? 1 : 0)
+
+  // -1 Edge case where no courses added yet
+  num = num === -1 ? 0 : num
+
+  return {
+    semesters: num,
+    pe,
+    majorElec,
+    depth,
+    breadth,
+    humElec,
+    muddHum,
+    writ,
+  }
+}
+
 // Calculate stats needed for graduation, major, humanities, and core requirements
 // Graduation: total credits, credits remaining, average credits per semester, remaining average credits, pe
 // Major: electives
@@ -71,87 +156,6 @@ type Stats = {
 // NOTE: Major electives in number of credits while depth, breadth, hum electives,
 // mudd hums, and writing intensives in number of courses
 const calculateStats = (school: string, courses: Courses[]): Stats => {
-  // Aggregate function that calculates multipate statistics to prevent looping through courses multiple times
-  const getCourseStats = (
-    courseArr: Courses[],
-  ): {
-    pe: number
-    majorElec: number
-    depth: number
-    breadth: number
-    humElec: number
-    muddHum: number
-    writ: number
-    semesters: number
-  } => {
-    // Counters for stats
-    let pe = 0
-    let majorElec = 0
-    let depth = 0
-    let breadth = 0
-    let humElec = 0
-    let muddHum = 0
-    let writ = 0
-
-    // Find number of completed semesters for average calculations
-    // Looks at greatest semester that is not a summer
-    let num = 0
-    let sem = 'fall'
-    courseArr.forEach((course) => {
-      if (course.writ_inten) {
-        writ += 1
-      }
-
-      if (course.type === 'pe') {
-        pe += course.credits
-      } else if (course.type === 'major_elec') {
-        majorElec += course.credits
-      } else if (course.type === 'hum_depth') {
-        depth += 1
-        if (course.campus === 'hmc') {
-          muddHum += 1
-        }
-      } else if (course.type === 'hum_breadth') {
-        breadth += 1
-        if (course.campus === 'hmc') {
-          muddHum += 1
-        }
-      } else if (course.type === 'hum_elec') {
-        humElec += 1
-        if (course.campus === 'hmc') {
-          muddHum += 1
-        }
-      }
-
-      const lastChar = course.term.slice(-1)
-      const lastSem = course.term.slice(0, -1)
-      const numLast = parseInt(lastChar, 10)
-
-      if (
-        (numLast > num || (numLast === num && sem === 'fall')) &&
-        lastSem !== 'summer'
-      ) {
-        sem = lastSem
-        num = numLast
-      }
-    })
-    num = num * 2 - (sem === 'fall' ? 1 : 0)
-
-    // -1 Edge case where no courses added yet
-    num = num === -1 ? 0 : num
-
-    return {
-      semesters: num,
-      pe,
-      majorElec,
-      depth,
-      breadth,
-      humElec,
-      muddHum,
-      writ,
-    }
-  }
-
   const statsObj = {} as Stats
   const key = school as keyof typeof Requirements
   const requiredCredits = Requirements[key].grad
@@ -187,8 +191,18 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
   return statsObj
 }
 
-interface statsProps {
-  ELEV: number
+// Calculate percentage of checked courses in array of requirements
+const calculatePercentageChecked = (arr: number[]): number => {
+  // Calculate percentage checked
+  const len = arr.length
+  const checked = arr.reduce((a, b) => a + b, 0)
+
+  return (checked / len) * 100
+}
+
+// Don't let percentages over 100
+const capPercentage = (val: number): number => {
+  return val > 100 ? 100 : val
 }
 
 function RightStatsCard({ ELEV }: statsProps): JSX.Element {
@@ -227,24 +241,6 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
-  }
-
-  const calculatePercentageChecked = (arr: number[]): number => {
-    // Calculate percentage checked
-    let len = 0
-    let checked = 0
-    arr.forEach((num: number) => {
-      len += 1
-      if (num) {
-        checked += 1
-      }
-    })
-
-    return (checked / len) * 100
-  }
-
-  const capPercentage = (val: number): number => {
-    return val > 100 ? 100 : val
   }
 
   let dynamicStatsComponent = {}

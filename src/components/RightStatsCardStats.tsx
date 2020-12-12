@@ -70,8 +70,8 @@ const RightStatsCardStats = ({
 
   const zip = (a1: string[], a2: number[]) => a1.map((x, i) => [x, a2[i]])
 
+  // Stats instaed of checklist of requirements (graduation/humanities)
   if (!isList) {
-    // Stats
     // eslint-disable-next-line
     const zippedStats = zip(titleArr!, valArr!)
 

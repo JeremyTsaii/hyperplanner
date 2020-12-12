@@ -2,14 +2,13 @@ import React, { useContext } from 'react'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
-import { useMutation } from '@apollo/client'
-import { INCREMENT_COURSE_EDITS_MUTATION } from '../utils/gqlQueries'
 import { modifyChecklist } from '../utils/modalFunctions'
 /* eslint-disable */
 import {
   useRemove_CourseMutation,
   useUpdate_Major_ChecksMutation,
   useUpdate_Core_ChecksMutation,
+  useIncrement_Course_EditsMutation,
   Get_InfoDocument,
   Get_InfoQuery,
   Get_CoursesQuery,
@@ -32,7 +31,7 @@ function DeleteIcon({
   code,
 }: deleteProps): JSX.Element {
   const [courseRemove] = useRemove_CourseMutation()
-  const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
+  const [updateCourseEdits] = useIncrement_Course_EditsMutation()
   const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
   const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
 
