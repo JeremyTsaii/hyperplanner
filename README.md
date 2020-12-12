@@ -67,6 +67,10 @@ The Backend of HyperPlanner uses Hasura, which is an open source engine connecti
 First clone the repository onto your local machine.
 You can then run the following commands:
 
+#### `npm install`
+
+Install all of the depedencies.
+
 #### `npm run start`
 
 Runs the app in the development mode with live updates.<br />
