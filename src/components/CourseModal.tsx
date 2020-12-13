@@ -12,16 +12,15 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
-import { useMutation } from '@apollo/client'
 import { modifyChecklist } from '../utils/modalFunctions'
 import AllCourses from '../static/allCourses.json'
 import { types, bools, courseSort } from '../static/infoLists'
-import { INCREMENT_COURSE_EDITS_MUTATION } from '../utils/gqlQueries'
 /* eslint-disable */
 import {
   useAdd_CourseMutation,
   useUpdate_Major_ChecksMutation,
   useUpdate_Core_ChecksMutation,
+  useIncrement_Course_EditsMutation,
   Get_InfoDocument,
   Get_InfoQuery,
   Get_CoursesQuery,
@@ -93,7 +92,7 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 function CourseModal({ term, year }: DialogProps): JSX.Element {
-  const [updateCourseEdits] = useMutation(INCREMENT_COURSE_EDITS_MUTATION)
+  const [updateCourseEdits] = useIncrement_Course_EditsMutation()
   const [addCourse] = useAdd_CourseMutation()
   const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
   const [updateCoreChecks] = useUpdate_Core_ChecksMutation()

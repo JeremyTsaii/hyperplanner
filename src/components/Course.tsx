@@ -134,7 +134,7 @@ function Course({
     <DeleteIcon functional={false} code="" title="" term="" />
   )
 
-  // If false, don't show icons (for logged out viewers)
+  // If false, icons don't have click functionality (for logged out viewers)
   if (showIcons) {
     editIconPlaceholder = (
       <EditIcon
