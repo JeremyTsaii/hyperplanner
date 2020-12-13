@@ -11,6 +11,8 @@ export const GET_INFO_QUERY = gql`
       auth0_id
       majorChecks
       coreChecks
+      enroll
+      planned_grad
     }
   }
 `

@@ -18,6 +18,8 @@ import {
   majorDict,
   concentrations,
   gradYears,
+  enrollYears,
+  plannedGradSem,
 } from '../static/infoLists'
 /* eslint-disable */
 import {
@@ -89,6 +91,8 @@ function InfoModal(): JSX.Element {
     concentration: concName,
     grad_year: grad,
     auth0_id: id,
+    enroll: enrollYear,
+    planned_grad: plannedGradYear,
   } = info
 
   // Changing information in modal
@@ -102,6 +106,10 @@ function InfoModal(): JSX.Element {
   const [concentration, setConcentration] = useState(concName)
 
   const [gradYear, setGradYear] = useState(String(grad))
+
+  const [enroll, setEnroll] = useState(String(enrollYear))
+
+  const [plannedGrad, setPlannedGrad] = useState(plannedGradYear)
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -130,6 +138,18 @@ function InfoModal(): JSX.Element {
     setGradYear(target.value)
   }
 
+  const handleEnrollChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement
+    setEnroll(target.value)
+  }
+
+  const handlePlannedGradChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const target = event.target as HTMLInputElement
+    setPlannedGrad(target.value)
+  }
+
   // Opening/Closing modal
   const [open, setOpen] = useState(false)
 
@@ -144,6 +164,8 @@ function InfoModal(): JSX.Element {
     setConcentration(concName)
     setGradYear(String(grad))
     setOpen(false)
+    setEnroll(enrollYear)
+    setPlannedGrad(plannedGradYear)
   }
 
   const handleSave = () => {
@@ -263,11 +285,23 @@ function InfoModal(): JSX.Element {
           </TextField>
           <TextField
             select
-            label="Graduation Year"
+            label="Start of Enrollment"
             fullWidth
-            value={gradYear}
-            onChange={handleGradYearChange}>
-            {gradYears.map((option) => (
+            value={enroll}
+            onChange={handleEnrollChange}>
+            {enrollYears.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.value}
+              </MenuItem>
+            ))}
+          </TextField>
+          <TextField
+            select
+            label="Planned Graduation"
+            fullWidth
+            value={plannedGradYear}
+            onChange={handlePlannedGradChange}>
+            {plannedGradSem.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
