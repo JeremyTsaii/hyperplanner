@@ -139,8 +139,8 @@ function InfoModal(): JSX.Element {
 
   const handleClose = () => {
     setName(firstName)
-    setSchool(schoolDict[schoolName])
-    setMajor(majorDict[majorName])
+    setSchool(schoolName)
+    setMajor(majorName)
     setConcentration(concName)
     setGradYear(String(grad))
     setOpen(false)
