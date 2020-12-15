@@ -1415,6 +1415,23 @@ export type Get_CoursesQuery = { __typename?: 'query_root' } & {
   >
 }
 
+export type Update_Course_ActiveMutationVariables = Exact<{
+  active: Scalars['Boolean']
+  code: Scalars['String']
+  term: Scalars['String']
+}>
+
+export type Update_Course_ActiveMutation = { __typename?: 'mutation_root' } & {
+  update_courses?: Maybe<
+    { __typename?: 'courses_mutation_response' } & Pick<
+      Courses_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<{ __typename?: 'courses' } & Pick<Courses, 'active'>>
+      }
+  >
+}
+
 export type Update_UserMutationVariables = Exact<{
   id: Scalars['String']
   name: Scalars['String']
@@ -1688,6 +1705,66 @@ export type Get_CoursesLazyQueryHookResult = ReturnType<
 export type Get_CoursesQueryResult = Apollo.QueryResult<
   Get_CoursesQuery,
   Get_CoursesQueryVariables
+>
+export const Update_Course_ActiveDocument = gql`
+  mutation UPDATE_COURSE_ACTIVE(
+    $active: Boolean!
+    $code: String!
+    $term: String!
+  ) {
+    update_courses(
+      where: { code: { _eq: $code }, term: { _eq: $term } }
+      _set: { active: $active }
+    ) {
+      affected_rows
+      returning {
+        active
+      }
+    }
+  }
+`
+export type Update_Course_ActiveMutationFn = Apollo.MutationFunction<
+  Update_Course_ActiveMutation,
+  Update_Course_ActiveMutationVariables
+>
+
+/**
+ * __useUpdate_Course_ActiveMutation__
+ *
+ * To run a mutation, you first call `useUpdate_Course_ActiveMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_Course_ActiveMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateCourseActiveMutation, { data, loading, error }] = useUpdate_Course_ActiveMutation({
+ *   variables: {
+ *      active: // value for 'active'
+ *      code: // value for 'code'
+ *      term: // value for 'term'
+ *   },
+ * });
+ */
+export function useUpdate_Course_ActiveMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    Update_Course_ActiveMutation,
+    Update_Course_ActiveMutationVariables
+  >,
+) {
+  return Apollo.useMutation<
+    Update_Course_ActiveMutation,
+    Update_Course_ActiveMutationVariables
+  >(Update_Course_ActiveDocument, baseOptions)
+}
+export type Update_Course_ActiveMutationHookResult = ReturnType<
+  typeof useUpdate_Course_ActiveMutation
+>
+export type Update_Course_ActiveMutationResult = Apollo.MutationResult<Update_Course_ActiveMutation>
+export type Update_Course_ActiveMutationOptions = Apollo.BaseMutationOptions<
+  Update_Course_ActiveMutation,
+  Update_Course_ActiveMutationVariables
 >
 export const Update_UserDocument = gql`
   mutation UPDATE_USER(

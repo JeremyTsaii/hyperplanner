@@ -30,6 +30,24 @@ export const GET_COURSES_QUERY = gql`
   }
 `
 
+export const UPDATE_COURSE_ACTIVE = gql`
+  mutation UPDATE_COURSE_ACTIVE(
+    $active: Boolean!
+    $code: String!
+    $term: String!
+  ) {
+    update_courses(
+      where: { code: { _eq: $code }, term: { _eq: $term } }
+      _set: { active: $active }
+    ) {
+      affected_rows
+      returning {
+        active
+      }
+    }
+  }
+`
+
 export const UPDATE_USER = gql`
   mutation UPDATE_USER(
     $id: String!
