@@ -3,6 +3,7 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
 import Checkbox from '@material-ui/core/Checkbox'
+import { fade } from '@material-ui/core/styles/colorManipulator'
 import {
   makeStyles,
   responsiveFontSizes,
@@ -127,6 +128,7 @@ function Course({
 
   // Check if course is currently active
   const [isActive, setActive] = React.useState(active)
+  const [courseAlpha, setCourseAlpha] = React.useState(active ? 1 : 0.2)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateCourseActive({
@@ -136,6 +138,7 @@ function Course({
         term,
       },
     })
+    setCourseAlpha(!isActive ? 1 : 0.2)
     setActive(event.target.checked)
   }
 
@@ -211,7 +214,7 @@ function Course({
   return (
     <Paper
       style={{
-        backgroundColor: getCourseColor(type),
+        backgroundColor: fade(getCourseColor(type), courseAlpha),
         marginTop: 5,
         marginBottom: 5,
         display: 'flex',
