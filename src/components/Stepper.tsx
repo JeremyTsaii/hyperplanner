@@ -71,7 +71,7 @@ const calculateYear = (enrollYear: number): number => {
   if (month < 5) {
     monthWeight = 1
   }
-  return 4 - (year - enrollYear) - monthWeight
+  return year - enrollYear - monthWeight
 }
 
 function YearStepper(): JSX.Element {
