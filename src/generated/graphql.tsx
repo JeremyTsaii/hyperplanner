@@ -1386,7 +1386,6 @@ export type Get_InfoQuery = { __typename?: 'query_root' } & {
     { __typename?: 'users' } & Pick<
       Users,
       | 'school'
-      | 'grad_year'
       | 'major'
       | 'concentration'
       | 'nickname'
@@ -1416,7 +1415,6 @@ export type Update_UserMutationVariables = Exact<{
   school: Scalars['String']
   major: Scalars['String']
   conc: Scalars['String']
-  gradYear: Scalars['Int']
   enroll: Scalars['Int']
   plannedGrad: Scalars['String']
 }>
@@ -1434,7 +1432,6 @@ export type Update_UserMutation = { __typename?: 'mutation_root' } & {
             | 'school'
             | 'major'
             | 'concentration'
-            | 'grad_year'
             | 'enroll'
             | 'planned_grad'
           >
@@ -1575,7 +1572,6 @@ export const Get_InfoDocument = gql`
   query GET_INFO {
     users {
       school
-      grad_year
       major
       concentration
       nickname
@@ -1696,7 +1692,6 @@ export const Update_UserDocument = gql`
     $school: String!
     $major: String!
     $conc: String!
-    $gradYear: Int!
     $enroll: Int!
     $plannedGrad: String!
   ) {
@@ -1707,7 +1702,6 @@ export const Update_UserDocument = gql`
         school: $school
         major: $major
         concentration: $conc
-        grad_year: $gradYear
         enroll: $enroll
         planned_grad: $plannedGrad
       }
@@ -1718,7 +1712,6 @@ export const Update_UserDocument = gql`
         school
         major
         concentration
-        grad_year
         enroll
         planned_grad
       }
@@ -1748,7 +1741,6 @@ export type Update_UserMutationFn = Apollo.MutationFunction<
  *      school: // value for 'school'
  *      major: // value for 'major'
  *      conc: // value for 'conc'
- *      gradYear: // value for 'gradYear'
  *      enroll: // value for 'enroll'
  *      plannedGrad: // value for 'plannedGrad'
  *   },

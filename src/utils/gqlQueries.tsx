@@ -4,7 +4,6 @@ export const GET_INFO_QUERY = gql`
   query GET_INFO {
     users {
       school
-      grad_year
       major
       concentration
       nickname
@@ -38,7 +37,6 @@ export const UPDATE_USER = gql`
     $school: String!
     $major: String!
     $conc: String!
-    $gradYear: Int!
     $enroll: Int!
     $plannedGrad: String!
   ) {
@@ -49,7 +47,6 @@ export const UPDATE_USER = gql`
         school: $school
         major: $major
         concentration: $conc
-        grad_year: $gradYear
         enroll: $enroll
         planned_grad: $plannedGrad
       }
@@ -60,7 +57,6 @@ export const UPDATE_USER = gql`
         school
         major
         concentration
-        grad_year
         enroll
         planned_grad
       }

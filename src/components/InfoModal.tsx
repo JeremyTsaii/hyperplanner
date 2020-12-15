@@ -87,7 +87,6 @@ function InfoModal(): JSX.Element {
     school: schoolName,
     major: majorName,
     concentration: concName,
-    grad_year: grad,
     auth0_id: id,
     enroll: enrollYear,
     planned_grad: plannedGradYear,
@@ -198,7 +197,6 @@ function InfoModal(): JSX.Element {
         school: schoolDict[school],
         major: majorDict[major],
         conc: concentration,
-        gradYear: grad,
         id,
         enroll: parseFloat(enroll),
         plannedGrad,
@@ -213,7 +211,6 @@ function InfoModal(): JSX.Element {
         newInfo.school = schoolDict[school]
         newInfo.major = majorDict[major]
         newInfo.concentration = concentration
-        newInfo.grad_year = grad
         newInfo.enroll = parseFloat(enroll)
         newInfo.planned_grad = plannedGrad
         cache.writeQuery<Get_InfoQuery>({
@@ -234,7 +231,6 @@ function InfoModal(): JSX.Element {
               school,
               major,
               concentration,
-              grad_year: grad,
               enroll: parseFloat(enroll),
               planned_grad: plannedGrad,
             },
