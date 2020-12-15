@@ -6,6 +6,7 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
+import { rootCertificates } from 'tls'
 import RightStatsCardStats from './RightStatsCardStats'
 import RightStatsCardProgress from './RightStatsCardProgress'
 import Requirements from '../static/requirements.json'
@@ -186,20 +187,21 @@ const calculateStats = (
   statsObj.total = totalCredits
 
   // Set minimum remaining credits to 0
-  if (totalCredits > requiredCredits) {
-    statsObj.rem = 0
-  } else {
-    statsObj.rem = requiredCredits - totalCredits
-  }
-
+  // if (totalCredits > requiredCredits) {
+  //   statsObj.rem = 0
+  // } else {
+  //   statsObj.rem = requiredCredits - totalCredits
+  // }
+  statsObj.rem =
+    totalCredits > requiredCredits ? 0 : requiredCredits - totalCredits
   // Logic for deciding the average remaining credits
   if (totalSemesters <= semesters && statsObj.rem > 0) {
     // If user still has remaining credits within time to graduate
     statsObj.avgRem = 'Infinity - Not Possible'
-  } else if (totalSemesters < semesters && statsObj.rem <= 0) {
+  } else if (totalSemesters < semesters && statsObj.rem === 0) {
     // Will graduate after planned semester
     statsObj.avgRem = `Graduating After ${plannedGrad}`
-  } else if (statsObj.rem <= 0) {
+  } else if (statsObj.rem === 0) {
     // Enough credits to graduate within planned semester
     statsObj.avgRem = 0
   } else {
