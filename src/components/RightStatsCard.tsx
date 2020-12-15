@@ -49,12 +49,12 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
   },
 }))
-
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 type Stats = {
   total: number
   rem: number
   avg: number
-  avgRem: number
+  avgRem: any
   pe: number
   majorElec: number
   depth: number
@@ -178,16 +178,39 @@ const calculateStats = (
     muddHum,
     writ,
   } = getCourseStats(courses)
+
+  // Calculate how many semesters the user plans on graduating in
   const plan = plannedGrad.split(' ', 2)
   const totalSemesters =
     2 * (parseFloat(plan[1]) - enrollYear) + (plan[0] === 'Fall' ? 1 : 0)
   statsObj.total = totalCredits
-  statsObj.rem = requiredCredits - totalCredits
+
+  // Set minimum remaining credits to 0
+  if (totalCredits > requiredCredits) {
+    statsObj.rem = 0
+  } else {
+    statsObj.rem = requiredCredits - totalCredits
+  }
+
+  // Logic for deciding the average remaining credits
+  if (totalSemesters <= semesters && statsObj.rem > 0) {
+    // If user still has remaining credits within time to graduate
+    statsObj.avgRem = 'Infinity - Not Possible'
+  } else if (totalSemesters < semesters && statsObj.rem <= 0) {
+    // Will graduate after planned semester
+    statsObj.avgRem = `Graduating After ${plannedGrad}`
+  } else if (statsObj.rem <= 0) {
+    // Enough credits to graduate within planned semester
+    statsObj.avgRem = 0
+  } else {
+    // Calculate average remaining credits
+    statsObj.avgRem = Number(
+      (statsObj.rem / (totalSemesters - semesters)).toFixed(2),
+    )
+  }
+
   statsObj.avg = Number(
     (totalCredits / (semesters === 0 ? 1 : semesters)).toFixed(2),
-  )
-  statsObj.avgRem = Number(
-    (statsObj.rem / (totalSemesters - semesters)).toFixed(2),
   )
   statsObj.pe = pe
   statsObj.majorElec = majorElec

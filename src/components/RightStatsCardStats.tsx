@@ -41,9 +41,10 @@ const useStyles = makeStyles((theme) => ({
   },
 }))
 
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 interface IProps {
   titleArr?: string[]
-  valArr?: number[]
+  valArr?: any[]
   isList: boolean
   isMajor?: boolean
   checklist?: { code: string; title: string }[]
@@ -68,7 +69,7 @@ const RightStatsCardStats = ({
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
-  const zip = (a1: string[], a2: number[]) => a1.map((x, i) => [x, a2[i]])
+  const zip = (a1: string[], a2: any[]) => a1.map((x, i) => [x, a2[i]])
 
   // Stats instaed of checklist of requirements (graduation/humanities)
   if (!isList) {
@@ -77,7 +78,7 @@ const RightStatsCardStats = ({
 
     return (
       <div className={classes.reqStatSection}>
-        {zippedStats.map((pair: Array<string | number>, i) => (
+        {zippedStats.map((pair: Array<string | any>, i) => (
           <Typography
             className={classes.personalStats}
             // eslint-disable-next-line
