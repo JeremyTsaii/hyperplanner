@@ -6,7 +6,6 @@ import FormControlLabel from '@material-ui/core/FormControlLabel'
 import FormControl from '@material-ui/core/FormControl'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
-import { rootCertificates } from 'tls'
 import RightStatsCardStats from './RightStatsCardStats'
 import RightStatsCardProgress from './RightStatsCardProgress'
 import Requirements from '../static/requirements.json'
@@ -187,11 +186,6 @@ const calculateStats = (
   statsObj.total = totalCredits
 
   // Set minimum remaining credits to 0
-  // if (totalCredits > requiredCredits) {
-  //   statsObj.rem = 0
-  // } else {
-  //   statsObj.rem = requiredCredits - totalCredits
-  // }
   statsObj.rem =
     totalCredits > requiredCredits ? 0 : requiredCredits - totalCredits
   // Logic for deciding the average remaining credits
