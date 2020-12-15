@@ -81,27 +81,6 @@ export const majorDict: StringToString = {
   Physics: 'phys',
 }
 
-export const gradYears = [
-  {
-    value: 2021,
-  },
-  {
-    value: 2022,
-  },
-  {
-    value: 2023,
-  },
-  {
-    value: 2024,
-  },
-  {
-    value: 2025,
-  },
-  {
-    value: 2026,
-  },
-]
-
 export const enrollYears = [
   {
     value: 2017,
@@ -120,45 +99,6 @@ export const enrollYears = [
   },
   {
     value: 2022,
-  },
-]
-
-export const plannedGradSem = [
-  {
-    value: 'Fall 2021',
-  },
-  {
-    value: 'Spring 2021',
-  },
-  {
-    value: 'Fall 2022',
-  },
-  {
-    value: 'Spring 2022',
-  },
-  {
-    value: 'Fall 2023',
-  },
-  {
-    value: 'Spring 2023',
-  },
-  {
-    value: 'Fall 2024',
-  },
-  {
-    value: 'Spring 2024',
-  },
-  {
-    value: 'Fall 2025',
-  },
-  {
-    value: 'Spring 2025',
-  },
-  {
-    value: 'Fall 2026',
-  },
-  {
-    value: 'Spring 2026',
   },
 ]
 
