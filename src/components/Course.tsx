@@ -97,6 +97,7 @@ const getCourseColor = (type: string): string => {
 }
 
 interface courseProps {
+  active: boolean
   code: string
   title: string
   credits: number
@@ -108,6 +109,7 @@ interface courseProps {
 }
 
 function Course({
+  active,
   code,
   title,
   credits,
@@ -120,7 +122,7 @@ function Course({
   const classes = useStyles()
 
   // Check if course is currently active
-  const [active, setActive] = React.useState(true)
+  const [isActive, setActive] = React.useState(active)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setActive(event.target.checked)
@@ -128,6 +130,7 @@ function Course({
 
   let editIconPlaceholder = (
     <EditIcon
+      active
       functional={false}
       code=""
       title=""
@@ -147,6 +150,7 @@ function Course({
     editIconPlaceholder = (
       <EditIcon
         functional
+        active={active}
         code={code}
         title={title}
         credits={credits}
@@ -212,7 +216,7 @@ function Course({
         zeroMinWidth>
         <Grid item xs={1} zeroMinWidth>
           <Checkbox
-            checked={active}
+            checked={isActive}
             color="default"
             size="small"
             onChange={handleChange}

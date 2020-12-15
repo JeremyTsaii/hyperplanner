@@ -163,6 +163,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     if (allFilled()) {
       addCourse({
         variables: {
+          active: true,
           term: formatTerm,
           title: newTitle,
           code: newCode,
@@ -182,6 +183,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
 
           const newCourse = {} as Courses
           newCourse.__typename = 'courses'
+          newCourse.active = true
           newCourse.term = formatTerm
           newCourse.title = newTitle
           newCourse.code = newCode
@@ -214,6 +216,7 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
                 type,
                 campus,
                 writ_inten: writInten === 'True',
+                active: true,
               },
             ],
           },

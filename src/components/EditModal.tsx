@@ -79,6 +79,7 @@ const DialogActions = withStyles((theme) => ({
 
 interface editProps {
   functional: boolean
+  activeProp: boolean
   codeProp: string
   titleProp: string
   creditsProp: number
@@ -90,6 +91,7 @@ interface editProps {
 
 function EditModal({
   functional,
+  activeProp,
   codeProp,
   titleProp,
   creditsProp,
@@ -183,6 +185,7 @@ function EditModal({
     updateCourse({
       variables: {
         old_title: oldTitle,
+        active: activeProp,
         term: termProp,
         title: newTitle,
         code: newCode,
@@ -200,6 +203,7 @@ function EditModal({
           if (course.title === oldTitle && course.term === termProp) {
             const newCourse = {} as Courses
             newCourse.__typename = 'courses'
+            newCourse.active = activeProp
             newCourse.term = termProp
             newCourse.title = newTitle
             newCourse.code = newCode
@@ -226,6 +230,7 @@ function EditModal({
           returning: [
             {
               __typename: 'courses',
+              active: activeProp,
               term: termProp,
               title: newTitle,
               code: newCode,

@@ -121,6 +121,7 @@ const HelpModal = (): JSX.Element => {
               writInten={course.writ_inten}
               term={course.term}
               showIcons={false}
+              active
             />
           ))}
           <Typography variant="h6" color="secondary">
@@ -137,6 +138,7 @@ const HelpModal = (): JSX.Element => {
               writInten={course.writ_inten}
               term={course.term}
               showIcons={false}
+              active
             />
           ))}
         </DialogContent>

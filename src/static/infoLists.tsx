@@ -348,7 +348,14 @@ export type CourseType = {
   __typename?: 'courses' | undefined
 } & Pick<
   Courses,
-  'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
+  | 'term'
+  | 'title'
+  | 'code'
+  | 'credits'
+  | 'type'
+  | 'campus'
+  | 'writ_inten'
+  | 'active'
 >
 
 export const courseSort = (c1: CourseType, c2: CourseType): number => {
@@ -369,6 +376,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Soccer',
     type: 'pe',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -378,6 +386,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Chemistry',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -387,6 +396,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Intro to CS',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -396,6 +406,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Calculus',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -405,6 +416,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Statistics',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -414,6 +426,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Physics',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -423,6 +436,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Writing',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'cmc',
@@ -432,6 +446,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Soccer',
     type: 'pe',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -441,6 +456,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'CS Principles',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -450,6 +466,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Biology',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -459,6 +476,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Critical Inquiry',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -468,6 +486,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Linear Algebra',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -477,6 +496,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Differential Equations',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -486,6 +506,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Data Structures',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -495,6 +516,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Discrete Mathematics',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -504,6 +526,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Financial Economics',
     type: 'hum_depth',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -513,6 +536,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Engineering',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -522,6 +546,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Data Analytics',
     type: 'other',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -531,6 +556,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Computer Systems',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -540,6 +566,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Software Development',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -549,6 +576,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Programming Practicum',
     type: 'major_elec',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'sc',
@@ -558,6 +586,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Macroeconomics',
     type: 'hum_depth',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'po',
@@ -567,6 +596,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Psychology',
     type: 'hum_breadth',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -576,6 +606,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Algorithms',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -585,6 +616,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Colloquium',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -594,6 +626,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Operating Systems',
     type: 'major_elec',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -603,6 +636,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Artificial Intelligence',
     type: 'major_elec',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'sc',
@@ -612,6 +646,7 @@ export const placeholderCourses: CourseType[] = [
     title: 'Intro to Music',
     type: 'hum_breadth',
     writ_inten: false,
+    active: true,
   },
 ]
 
@@ -624,6 +659,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Major Requirement',
     type: 'major_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -633,6 +669,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Major Elective',
     type: 'major_elec',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'sc',
@@ -642,6 +679,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Humanities Depth',
     type: 'hum_depth',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'sc',
@@ -651,6 +689,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Humanities Breadth',
     type: 'hum_breadth',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'po',
@@ -660,6 +699,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Humanities Elective',
     type: 'hum_elec',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -669,6 +709,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Core Requirement',
     type: 'core_req',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'cmc',
@@ -678,6 +719,7 @@ export const demoColorCourses: CourseType[] = [
     title: 'Physical Education/Other',
     type: 'pe',
     writ_inten: false,
+    active: true,
   },
 ]
 
@@ -690,6 +732,7 @@ export const demoInitialsCourses: CourseType[] = [
     title: 'Mudd Humanities',
     type: 'hum_depth',
     writ_inten: false,
+    active: true,
   },
   {
     campus: 'po',
@@ -699,6 +742,7 @@ export const demoInitialsCourses: CourseType[] = [
     title: 'Writing Intensive',
     type: 'hum_breadth',
     writ_inten: true,
+    active: true,
   },
   {
     campus: 'hmc',
@@ -708,5 +752,6 @@ export const demoInitialsCourses: CourseType[] = [
     title: 'Mudd Hum/Writ Int',
     type: 'hum_elec',
     writ_inten: true,
+    active: true,
   },
 ]

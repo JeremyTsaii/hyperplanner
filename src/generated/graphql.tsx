@@ -1403,7 +1403,14 @@ export type Get_CoursesQuery = { __typename?: 'query_root' } & {
   courses: Array<
     { __typename?: 'courses' } & Pick<
       Courses,
-      'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
+      | 'active'
+      | 'term'
+      | 'title'
+      | 'code'
+      | 'credits'
+      | 'type'
+      | 'campus'
+      | 'writ_inten'
     >
   >
 }
@@ -1467,6 +1474,7 @@ export type Update_Core_ChecksMutation = { __typename?: 'mutation_root' } & {
 
 export type Update_CourseMutationVariables = Exact<{
   old_title: Scalars['String']
+  active: Scalars['Boolean']
   term: Scalars['String']
   title: Scalars['String']
   code: Scalars['String']
@@ -1485,6 +1493,7 @@ export type Update_CourseMutation = { __typename?: 'mutation_root' } & {
         returning: Array<
           { __typename?: 'courses' } & Pick<
             Courses,
+            | 'active'
             | 'term'
             | 'title'
             | 'code'
@@ -1499,6 +1508,7 @@ export type Update_CourseMutation = { __typename?: 'mutation_root' } & {
 }
 
 export type Add_CourseMutationVariables = Exact<{
+  active: Scalars['Boolean']
   term: Scalars['String']
   title: Scalars['String']
   code: Scalars['String']
@@ -1517,6 +1527,7 @@ export type Add_CourseMutation = { __typename?: 'mutation_root' } & {
         returning: Array<
           { __typename?: 'courses' } & Pick<
             Courses,
+            | 'active'
             | 'term'
             | 'title'
             | 'code'
@@ -1621,6 +1632,7 @@ export type Get_InfoQueryResult = Apollo.QueryResult<
 export const Get_CoursesDocument = gql`
   query GET_COURSES {
     courses(order_by: [{ type: desc }, { code: asc }]) {
+      active
       term
       title
       code
@@ -1866,6 +1878,7 @@ export type Update_Core_ChecksMutationOptions = Apollo.BaseMutationOptions<
 export const Update_CourseDocument = gql`
   mutation UPDATE_COURSE(
     $old_title: String!
+    $active: Boolean!
     $term: String!
     $title: String!
     $code: String!
@@ -1878,6 +1891,7 @@ export const Update_CourseDocument = gql`
       where: { term: { _eq: $term }, title: { _eq: $old_title } }
       _set: {
         title: $title
+        active: $active
         code: $code
         credits: $credits
         type: $type
@@ -1887,6 +1901,7 @@ export const Update_CourseDocument = gql`
     ) {
       affected_rows
       returning {
+        active
         term
         title
         code
@@ -1917,6 +1932,7 @@ export type Update_CourseMutationFn = Apollo.MutationFunction<
  * const [updateCourseMutation, { data, loading, error }] = useUpdate_CourseMutation({
  *   variables: {
  *      old_title: // value for 'old_title'
+ *      active: // value for 'active'
  *      term: // value for 'term'
  *      title: // value for 'title'
  *      code: // value for 'code'
@@ -1948,6 +1964,7 @@ export type Update_CourseMutationOptions = Apollo.BaseMutationOptions<
 >
 export const Add_CourseDocument = gql`
   mutation ADD_COURSE(
+    $active: Boolean!
     $term: String!
     $title: String!
     $code: String!
@@ -1958,6 +1975,7 @@ export const Add_CourseDocument = gql`
   ) {
     insert_courses(
       objects: {
+        active: $active
         term: $term
         title: $title
         code: $code
@@ -1969,6 +1987,7 @@ export const Add_CourseDocument = gql`
     ) {
       affected_rows
       returning {
+        active
         term
         title
         code
@@ -1998,6 +2017,7 @@ export type Add_CourseMutationFn = Apollo.MutationFunction<
  * @example
  * const [addCourseMutation, { data, loading, error }] = useAdd_CourseMutation({
  *   variables: {
+ *      active: // value for 'active'
  *      term: // value for 'term'
  *      title: // value for 'title'
  *      code: // value for 'code'

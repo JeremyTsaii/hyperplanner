@@ -123,6 +123,7 @@ const CourseContainer = ({
                   writInten={course.writ_inten}
                   term={course.term}
                   showIcons={showIcons}
+                  active={course.active}
                 />
               ))}
           </Paper>
@@ -163,6 +164,7 @@ const CourseContainer = ({
                   writInten={course.writ_inten}
                   term={course.term}
                   showIcons={showIcons}
+                  active={course.active}
                 />
               ))}
           </Paper>
@@ -203,6 +205,7 @@ const CourseContainer = ({
                   writInten={course.writ_inten}
                   term={course.term}
                   showIcons={showIcons}
+                  active={course.active}
                 />
               ))}
           </Paper>
