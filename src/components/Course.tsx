@@ -11,6 +11,9 @@ import {
 } from '@material-ui/core/styles'
 import EditIcon from './EditIcon'
 import DeleteIcon from './DeleteIcon'
+/* eslint-disable */
+import { useUpdate_Course_ActiveMutation } from '../generated/graphql'
+/* eslint-enable */
 
 // Color constants
 const PINK = '#e91e63' // Major (Requirement)
@@ -119,12 +122,20 @@ function Course({
   term,
   showIcons,
 }: courseProps): JSX.Element {
+  const [updateCourseActive] = useUpdate_Course_ActiveMutation()
   const classes = useStyles()
 
   // Check if course is currently active
   const [isActive, setActive] = React.useState(active)
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    updateCourseActive({
+      variables: {
+        active: !isActive,
+        code,
+        term,
+      },
+    })
     setActive(event.target.checked)
   }
 
