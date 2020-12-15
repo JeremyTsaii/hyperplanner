@@ -39,6 +39,8 @@ export const UPDATE_USER = gql`
     $major: String!
     $conc: String!
     $gradYear: Int!
+    $enroll: Int!
+    $plannedGrad: String!
   ) {
     update_users(
       where: { auth0_id: { _eq: $id } }
@@ -48,6 +50,8 @@ export const UPDATE_USER = gql`
         major: $major
         concentration: $conc
         grad_year: $gradYear
+        enroll: $enroll
+        planned_grad: $plannedGrad
       }
     ) {
       affected_rows
@@ -57,6 +61,8 @@ export const UPDATE_USER = gql`
         major
         concentration
         grad_year
+        enroll
+        planned_grad
       }
     }
   }

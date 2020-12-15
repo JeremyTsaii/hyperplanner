@@ -49,7 +49,7 @@ interface IProps {
   checklist?: { code: string; title: string }[]
   id?: string
   coreChecks?: string
-  gradYear?: number
+  enroll?: number
   majorChecks?: string
   major?: string
 }
@@ -62,7 +62,7 @@ const RightStatsCardStats = ({
   checklist,
   id,
   coreChecks,
-  gradYear,
+  enroll,
   majorChecks,
   major,
 }: IProps): JSX.Element => {
@@ -113,7 +113,7 @@ const RightStatsCardStats = ({
         reqs={checklist!}
         id={id!}
         coreChecks={coreChecks!}
-        gradYear={gradYear!}
+        enroll={enroll!}
       />
       {/* eslint-enable */}
     </div>
@@ -127,7 +127,7 @@ RightStatsCardStats.defaultProps = {
   checklist: [],
   id: '',
   coreChecks: '',
-  gradYear: 0,
+  enroll: 0,
   majorChecks: '',
   major: '',
 }

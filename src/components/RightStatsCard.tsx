@@ -155,7 +155,12 @@ const getCourseStats = (
 // Humanities: depth, breadth, electives, mudd hums, writing intensives
 // NOTE: Major electives in number of credits while depth, breadth, hum electives,
 // mudd hums, and writing intensives in number of courses
-const calculateStats = (school: string, courses: Courses[]): Stats => {
+const calculateStats = (
+  school: string,
+  courses: Courses[],
+  enrollYear: number,
+  plannedGrad: string,
+): Stats => {
   const statsObj = {} as Stats
   const key = school as keyof typeof Requirements
   const requiredCredits = Requirements[key].grad
@@ -173,13 +178,17 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
     muddHum,
     writ,
   } = getCourseStats(courses)
-
+  const plan = plannedGrad.split(' ', 2)
+  const totalSemesters =
+    2 * (parseFloat(plan[1]) - enrollYear) + (plan[0] === 'Fall' ? 1 : 0)
   statsObj.total = totalCredits
   statsObj.rem = requiredCredits - totalCredits
   statsObj.avg = Number(
     (totalCredits / (semesters === 0 ? 1 : semesters)).toFixed(2),
   )
-  statsObj.avgRem = Number((statsObj.rem / (8 - semesters)).toFixed(2))
+  statsObj.avgRem = Number(
+    (statsObj.rem / (totalSemesters - semesters)).toFixed(2),
+  )
   statsObj.pe = pe
   statsObj.majorElec = majorElec
   statsObj.depth = depth
@@ -214,7 +223,18 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
 
   const info = infoData.users[0]
   const { courses } = coursesData
-  const stats = calculateStats(info.school, courses)
+
+  const {
+    school,
+    major,
+    auth0_id: id,
+    majorChecks,
+    coreChecks,
+    enroll,
+    planned_grad: plannedGrad,
+  } = info
+
+  const stats = calculateStats(info.school, courses, enroll, plannedGrad)
 
   const {
     total: totalCredits,
@@ -229,15 +249,6 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     muddHum,
     writ,
   } = stats
-
-  const {
-    school,
-    grad_year: gradYear,
-    major,
-    auth0_id: id,
-    majorChecks,
-    coreChecks,
-  } = info
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setValue((event.target as HTMLInputElement).value)
@@ -308,7 +319,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   } else if (value === 'core') {
     let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
     let coreTypeKey2 = 'pre' as keyof typeof jsonCoreChecks
-    if (gradYear > 2022) {
+    if (enroll > 2018) {
       coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
       coreTypeKey2 = 'post' as keyof typeof jsonCoreChecks
     }
@@ -323,7 +334,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         isList
         checklist={checklist}
         id={id}
-        gradYear={gradYear}
+        enroll={enroll}
         coreChecks={coreChecks}
       />
     )

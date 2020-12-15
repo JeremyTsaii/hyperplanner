@@ -1393,6 +1393,8 @@ export type Get_InfoQuery = { __typename?: 'query_root' } & {
       | 'auth0_id'
       | 'majorChecks'
       | 'coreChecks'
+      | 'enroll'
+      | 'planned_grad'
     >
   >
 }
@@ -1415,6 +1417,8 @@ export type Update_UserMutationVariables = Exact<{
   major: Scalars['String']
   conc: Scalars['String']
   gradYear: Scalars['Int']
+  enroll: Scalars['Int']
+  plannedGrad: Scalars['String']
 }>
 
 export type Update_UserMutation = { __typename?: 'mutation_root' } & {
@@ -1426,7 +1430,13 @@ export type Update_UserMutation = { __typename?: 'mutation_root' } & {
         returning: Array<
           { __typename?: 'users' } & Pick<
             Users,
-            'nickname' | 'school' | 'major' | 'concentration' | 'grad_year'
+            | 'nickname'
+            | 'school'
+            | 'major'
+            | 'concentration'
+            | 'grad_year'
+            | 'enroll'
+            | 'planned_grad'
           >
         >
       }
@@ -1572,6 +1582,8 @@ export const Get_InfoDocument = gql`
       auth0_id
       majorChecks
       coreChecks
+      enroll
+      planned_grad
     }
   }
 `
@@ -1685,6 +1697,8 @@ export const Update_UserDocument = gql`
     $major: String!
     $conc: String!
     $gradYear: Int!
+    $enroll: Int!
+    $plannedGrad: String!
   ) {
     update_users(
       where: { auth0_id: { _eq: $id } }
@@ -1694,6 +1708,8 @@ export const Update_UserDocument = gql`
         major: $major
         concentration: $conc
         grad_year: $gradYear
+        enroll: $enroll
+        planned_grad: $plannedGrad
       }
     ) {
       affected_rows
@@ -1703,6 +1719,8 @@ export const Update_UserDocument = gql`
         major
         concentration
         grad_year
+        enroll
+        planned_grad
       }
     }
   }
@@ -1731,6 +1749,8 @@ export type Update_UserMutationFn = Apollo.MutationFunction<
  *      major: // value for 'major'
  *      conc: // value for 'conc'
  *      gradYear: // value for 'gradYear'
+ *      enroll: // value for 'enroll'
+ *      plannedGrad: // value for 'plannedGrad'
  *   },
  * });
  */
