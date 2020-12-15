@@ -11,14 +11,7 @@ import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import {
-  schools,
-  schoolDict,
-  majors,
-  majorDict,
-  concentrations,
-  gradYears,
-} from '../static/infoLists'
+import { schools, majors, concentrations, gradYears } from '../static/infoLists'
 /* eslint-disable */
 import {
   useUpdate_UserMutation,
