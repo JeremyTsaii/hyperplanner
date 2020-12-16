@@ -199,9 +199,7 @@ function Course({
         justify="space-between"
         style={{
           display: 'flex',
-        }}
-        xs={12}
-        zeroMinWidth>
+        }}>
         <Grid item xs={3} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.codeText} noWrap>

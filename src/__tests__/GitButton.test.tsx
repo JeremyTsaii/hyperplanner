@@ -1,17 +1,13 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { render } from '@testing-library/react'
 import GitButton from '../components/GitButton'
 
 describe('GitHub Button', () => {
   test('Renders GitHub Button Without Crashing', () => {
-    const div = document.createElement('div')
-    ReactDOM.render(<GitButton />, div)
+    render(<GitButton />)
   })
   test('Renders Text in GitHub Button', () => {
     const { getByText } = render(<GitButton />)
-
-    const text = getByText(/github/i)
-    expect(text).toBeInTheDocument()
+    expect(getByText(/github/i)).toBeInTheDocument()
   })
 })
