@@ -12,8 +12,14 @@ import {
 } from '@material-ui/core/styles'
 import EditIcon from './EditIcon'
 import DeleteIcon from './DeleteIcon'
+import { courseSort } from '../static/infoLists'
 /* eslint-disable */
-import { useUpdate_Course_ActiveMutation } from '../generated/graphql'
+import {
+  Get_CoursesQuery,
+  Get_CoursesDocument,
+  useUpdate_CourseMutation,
+  Courses,
+} from '../generated/graphql'
 /* eslint-enable */
 
 // Color constants
@@ -123,22 +129,75 @@ function Course({
   term,
   showIcons,
 }: courseProps): JSX.Element {
-  const [updateCourseActive] = useUpdate_Course_ActiveMutation()
+  const [updateCourse] = useUpdate_CourseMutation()
   const classes = useStyles()
 
   // Check if course is currently active
   const [isActive, setActive] = React.useState(active)
-  const [courseAlpha, setCourseAlpha] = React.useState(active ? 1 : 0.2)
+  const courseAlpha = active ? 1 : 0.2
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    updateCourseActive({
+    updateCourse({
       variables: {
+        old_title: title,
         active: !isActive,
-        code,
         term,
+        title,
+        code,
+        credits,
+        type,
+        campus,
+        writ_inten: writInten,
+      },
+      update(cache) {
+        /* eslint-disable */
+        const existingCourses = cache.readQuery<Get_CoursesQuery>({
+          query: Get_CoursesDocument,
+        })
+        const newCourses = existingCourses!.courses.map((course) => {
+          if (course.code === code && course.term === term) {
+            const newCourse = {} as Courses
+            newCourse.__typename = 'courses'
+            newCourse.active = !isActive
+            newCourse.term = term
+            newCourse.title = title
+            newCourse.code = code
+            newCourse.credits = credits
+            newCourse.type = type
+            newCourse.campus = campus
+            newCourse.writ_inten = writInten
+            return newCourse
+          }
+          return course
+        })
+        newCourses.sort(courseSort)
+        cache.writeQuery<Get_CoursesQuery>({
+          query: Get_CoursesDocument,
+          data: { courses: newCourses },
+        })
+        /* eslint-enable */
+      },
+      optimisticResponse: {
+        __typename: 'mutation_root',
+        update_courses: {
+          __typename: 'courses_mutation_response',
+          affected_rows: 1,
+          returning: [
+            {
+              __typename: 'courses',
+              active: !isActive,
+              term,
+              title,
+              code,
+              credits,
+              type,
+              campus,
+              writ_inten: writInten,
+            },
+          ],
+        },
       },
     })
-    setCourseAlpha(!isActive ? 1 : 0.2)
     setActive(event.target.checked)
   }
 
