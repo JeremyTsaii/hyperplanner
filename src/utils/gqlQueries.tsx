@@ -4,13 +4,14 @@ export const GET_INFO_QUERY = gql`
   query GET_INFO {
     users {
       school
-      grad_year
       major
       concentration
       nickname
       auth0_id
       majorChecks
       coreChecks
+      enroll
+      planned_grad
     }
   }
 `
@@ -36,7 +37,8 @@ export const UPDATE_USER = gql`
     $school: String!
     $major: String!
     $conc: String!
-    $gradYear: Int!
+    $enroll: Int!
+    $plannedGrad: String!
   ) {
     update_users(
       where: { auth0_id: { _eq: $id } }
@@ -45,7 +47,8 @@ export const UPDATE_USER = gql`
         school: $school
         major: $major
         concentration: $conc
-        grad_year: $gradYear
+        enroll: $enroll
+        planned_grad: $plannedGrad
       }
     ) {
       affected_rows
@@ -54,7 +57,8 @@ export const UPDATE_USER = gql`
         school
         major
         concentration
-        grad_year
+        enroll
+        planned_grad
       }
     }
   }

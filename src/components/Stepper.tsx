@@ -62,7 +62,7 @@ const QontoConnector = withStyles({
   },
 })(StepConnector)
 
-const calculateYear = (gradYear: number): number => {
+const calculateYear = (enrollYear: number): number => {
   const date = new Date()
   const month = date.getMonth()
   const year = date.getFullYear()
@@ -71,7 +71,7 @@ const calculateYear = (gradYear: number): number => {
   if (month < 5) {
     monthWeight = 1
   }
-  return 4 - (gradYear - year) - monthWeight
+  return year - enrollYear - monthWeight
 }
 
 function YearStepper(): JSX.Element {
@@ -135,12 +135,12 @@ function YearStepper(): JSX.Element {
     )
   }
 
-  const gradYear = data.users[0].grad_year
+  const enrollYear = data.users[0].enroll
 
   return (
     <div className={classes.root}>
       <Stepper
-        activeStep={calculateYear(gradYear)}
+        activeStep={calculateYear(enrollYear)}
         alternativeLabel
         connector={<QontoConnector />}
         className={classes.stepper}>

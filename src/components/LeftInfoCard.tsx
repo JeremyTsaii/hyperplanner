@@ -30,11 +30,11 @@ const useStyles = makeStyles((theme) => ({
   },
   header: {
     color: '#fff',
-    fontSize: '20px',
+    fontSize: '22px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
-    marginBottom: theme.spacing(1),
-    paddingTop: theme.spacing(2),
+    marginBottom: theme.spacing(0.1),
+    paddingTop: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       fontSize: '7px',
       paddingTop: theme.spacing(1),
@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
   },
   personalInfo: {
     color: '#fff',
-    fontSize: '18px',
+    fontSize: '17.5px',
     textAlign: 'left',
     marginLeft: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
@@ -63,7 +63,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   editIcon: {
-    marginTop: theme.spacing(1.25),
+    marginTop: theme.spacing(0),
     alignSelf: 'flex-end',
     margin: '0',
     marginRight: theme.spacing(1),
@@ -84,7 +84,8 @@ function LeftInfoCard({ ELEV }: infoProps): JSX.Element {
   const schoolName = schoolDict[info.school]
   const majorName = majorDict[info.major]
   const concName = info.concentration
-  const gradYear = info.grad_year
+  const enrollYear = info.enroll
+  const plannedGrad = info.planned_grad
 
   return (
     <Grid item>
@@ -103,7 +104,10 @@ function LeftInfoCard({ ELEV }: infoProps): JSX.Element {
             <b>Concentration:</b> {concName}
           </Typography>
           <Typography className={classes.personalInfo}>
-            <b>Graduation Year:</b> {gradYear}
+            <b>Year Enrolled:</b> {enrollYear}
+          </Typography>
+          <Typography className={classes.personalInfo}>
+            <b>Planned Graduation:</b> {plannedGrad}
           </Typography>
         </div>
         <div className={classes.editIcon}>

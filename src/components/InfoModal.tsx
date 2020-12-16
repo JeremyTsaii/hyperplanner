@@ -80,21 +80,53 @@ function InfoModal(): JSX.Element {
     school: schoolName,
     major: majorName,
     concentration: concName,
-    grad_year: grad,
     auth0_id: id,
+    enroll: enrollYear,
+    planned_grad: plannedGradYear,
   } = info
 
   // Changing information in modal
   const [name, setName] = useState(firstName)
   const nameRef = useRef('')
 
-  const [school, setSchool] = useState(schoolName)
+  const [school, setSchool] = useState(schoolDict[schoolName])
 
-  const [major, setMajor] = useState(majorName)
+  const [major, setMajor] = useState(majorDict[majorName])
 
   const [concentration, setConcentration] = useState(concName)
 
-  const [gradYear, setGradYear] = useState(String(grad))
+  const [enroll, setEnroll] = useState(String(enrollYear))
+
+  const [plannedGrad, setPlannedGrad] = useState(plannedGradYear)
+
+  const updateGradDates = (start: number): { value: string }[] => {
+    return [
+      {
+        value: `Fall ${start}`,
+      },
+      {
+        value: `Spring ${start + 1}`,
+      },
+      {
+        value: `Fall ${start + 1}`,
+      },
+      {
+        value: `Spring ${start + 2}`,
+      },
+      {
+        value: `Fall ${start + 2}`,
+      },
+      {
+        value: `Spring ${start + 3}`,
+      },
+      {
+        value: `Fall ${start + 3}`,
+      },
+      {
+        value: `Spring ${start + 4}`,
+      },
+    ]
+  }
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -118,9 +150,16 @@ function InfoModal(): JSX.Element {
     setConcentration(target.value)
   }
 
-  const handleGradYearChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleEnrollChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
-    setGradYear(target.value)
+    setEnroll(target.value)
+  }
+
+  const handlePlannedGradChange = (
+    event: React.ChangeEvent<HTMLInputElement>,
+  ) => {
+    const target = event.target as HTMLInputElement
+    setPlannedGrad(target.value)
   }
 
   // Opening/Closing modal
@@ -135,8 +174,9 @@ function InfoModal(): JSX.Element {
     setSchool(schoolName)
     setMajor(majorName)
     setConcentration(concName)
-    setGradYear(String(grad))
     setOpen(false)
+    setEnroll(enrollYear)
+    setPlannedGrad(plannedGradYear)
   }
 
   const handleSave = () => {
@@ -147,11 +187,12 @@ function InfoModal(): JSX.Element {
     updateUser({
       variables: {
         name: newName,
-        school,
-        major,
+        school: schoolDict[school],
+        major: majorDict[major],
         conc: concentration,
-        gradYear: parseFloat(gradYear),
         id,
+        enroll: parseFloat(enroll),
+        plannedGrad,
       },
       update(cache) {
         /* eslint-disable */
@@ -160,10 +201,11 @@ function InfoModal(): JSX.Element {
         })
         const newInfo = { ...existingInfo!.users[0] }
         newInfo.nickname = newName
-        newInfo.school = school
-        newInfo.major = major
+        newInfo.school = schoolDict[school]
+        newInfo.major = majorDict[major]
         newInfo.concentration = concentration
-        newInfo.grad_year = parseFloat(gradYear)
+        newInfo.enroll = parseFloat(enroll)
+        newInfo.planned_grad = plannedGrad
         cache.writeQuery<Get_InfoQuery>({
           query: Get_InfoDocument,
           data: { users: [newInfo] },
@@ -182,7 +224,8 @@ function InfoModal(): JSX.Element {
               school,
               major,
               concentration,
-              grad_year: parseFloat(gradYear),
+              enroll: parseFloat(enroll),
+              planned_grad: plannedGrad,
             },
           ],
         },
@@ -222,7 +265,7 @@ function InfoModal(): JSX.Element {
             select
             label="School"
             fullWidth
-            value={school}
+            value={schoolDict[school]}
             onChange={handleSchoolChange}>
             {schools.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -234,7 +277,7 @@ function InfoModal(): JSX.Element {
             select
             label="Major"
             fullWidth
-            value={major}
+            value={majorDict[major]}
             onChange={handleMajorChange}>
             {majors.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -256,11 +299,23 @@ function InfoModal(): JSX.Element {
           </TextField>
           <TextField
             select
-            label="Graduation Year"
+            label="Start of Enrollment"
             fullWidth
-            value={gradYear}
-            onChange={handleGradYearChange}>
-            {gradYears.map((option) => (
+            value={enroll}
+            onChange={handleEnrollChange}>
+            {enrollYears.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.value}
+              </MenuItem>
+            ))}
+          </TextField>
+          <TextField
+            select
+            label="Planned Graduation"
+            fullWidth
+            value={plannedGrad}
+            onChange={handlePlannedGradChange}>
+            {updateGradDates(parseFloat(enroll)).map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
               </MenuItem>
