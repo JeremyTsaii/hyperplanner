@@ -2,7 +2,6 @@ import React from 'react'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import Typography from '@material-ui/core/Typography'
-import Checkbox from '@material-ui/core/Checkbox'
 import { fade } from '@material-ui/core/styles/colorManipulator'
 import {
   makeStyles,
@@ -12,15 +11,7 @@ import {
 } from '@material-ui/core/styles'
 import EditIcon from './EditIcon'
 import DeleteIcon from './DeleteIcon'
-import { courseSort } from '../static/infoLists'
-/* eslint-disable */
-import {
-  Get_CoursesQuery,
-  Get_CoursesDocument,
-  useUpdate_CourseMutation,
-  Courses,
-} from '../generated/graphql'
-/* eslint-enable */
+import CourseCheckbox from './CourseCheckbox'
 
 // Color constants
 const PINK = '#e91e63' // Major (Requirement)
@@ -129,77 +120,22 @@ function Course({
   term,
   showIcons,
 }: courseProps): JSX.Element {
-  const [updateCourse] = useUpdate_CourseMutation()
   const classes = useStyles()
-
-  // Check if course is currently active
-  const [isActive, setActive] = React.useState(active)
   const courseAlpha = active ? 1 : 0.2
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    updateCourse({
-      variables: {
-        old_title: title,
-        active: !isActive,
-        term,
-        title,
-        code,
-        credits,
-        type,
-        campus,
-        writ_inten: writInten,
-      },
-      update(cache) {
-        /* eslint-disable */
-        const existingCourses = cache.readQuery<Get_CoursesQuery>({
-          query: Get_CoursesDocument,
-        })
-        const newCourses = existingCourses!.courses.map((course) => {
-          if (course.code === code && course.term === term) {
-            const newCourse = {} as Courses
-            newCourse.__typename = 'courses'
-            newCourse.active = !isActive
-            newCourse.term = term
-            newCourse.title = title
-            newCourse.code = code
-            newCourse.credits = credits
-            newCourse.type = type
-            newCourse.campus = campus
-            newCourse.writ_inten = writInten
-            return newCourse
-          }
-          return course
-        })
-        newCourses.sort(courseSort)
-        cache.writeQuery<Get_CoursesQuery>({
-          query: Get_CoursesDocument,
-          data: { courses: newCourses },
-        })
-        /* eslint-enable */
-      },
-      optimisticResponse: {
-        __typename: 'mutation_root',
-        update_courses: {
-          __typename: 'courses_mutation_response',
-          affected_rows: 1,
-          returning: [
-            {
-              __typename: 'courses',
-              active: !isActive,
-              term,
-              title,
-              code,
-              credits,
-              type,
-              campus,
-              writ_inten: writInten,
-            },
-          ],
-        },
-      },
-    })
-    setActive(event.target.checked)
-  }
+  const checkboxPlaceholder = (
+    <CourseCheckbox
+      active={active}
+      functional
+      code={code}
+      title={title}
+      credits={credits}
+      type={type}
+      campus={campus}
+      writInten={writInten}
+      term={term}
+    />
+  )
 
   let editIconPlaceholder = (
     <EditIcon
@@ -287,15 +223,7 @@ function Course({
         }}
         xs={12}
         zeroMinWidth>
-        <Grid item xs={1} zeroMinWidth>
-          <Checkbox
-            checked={isActive}
-            color="default"
-            size="small"
-            onChange={handleChange}
-            inputProps={{ 'aria-label': 'primary checkbox' }}
-          />
-        </Grid>
+        {checkboxPlaceholder}
         <Grid item xs={2} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.codeText} noWrap>
