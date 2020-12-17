@@ -7,6 +7,10 @@ import MuiDialogActions from '@material-ui/core/DialogActions'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
+import ExportJson from './ImportExport/ExportJson'
+import ImportJson from './ImportExport/ImportJson'
+import ImportTranscript from './ImportExport/ImportTranscript'
+import ImportHyper from './ImportExport/ImportHyper'
 
 const useStyles = makeStyles((theme) => ({
   importButton: {
@@ -70,13 +74,13 @@ const ImportExportModal = (): JSX.Element => {
   // Change what is displayed, depending on which tab is active
   let activeTab = {}
   if (value === 0) {
-    activeTab = <div>Import JSON</div>
+    activeTab = <ImportTranscript />
   } else if (value === 1) {
-    activeTab = <div>Import Transcript</div>
+    activeTab = <ImportHyper />
   } else if (value === 2) {
-    activeTab = <div>Import Hyperschedule</div>
+    activeTab = <ImportJson />
   } else if (value === 3) {
-    activeTab = <div>Export JSON</div>
+    activeTab = <ExportJson />
   }
 
   return (
@@ -102,9 +106,9 @@ const ImportExportModal = (): JSX.Element => {
           indicatorColor="primary"
           aria-label="simple tabs example"
           variant="fullWidth">
-          <Tab label="Import JSON" className={classes.tab} />
           <Tab label="Import Transcript" className={classes.tab} />
           <Tab label="Import Hyperschedule" className={classes.tab} />
+          <Tab label="Import Json" className={classes.tab} />
           <Tab label="Export JSON" className={classes.tab} />
         </Tabs>
         <DialogContent dividers>{activeTab}</DialogContent>
