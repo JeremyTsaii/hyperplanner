@@ -104,6 +104,22 @@ function CourseCheckbox({
     setActive(event.target.checked)
   }
 
+  // Return icon but no functionality (logged out)
+  if (!functional) {
+    return (
+      <Grid item xs={1} zeroMinWidth>
+        <Checkbox
+          checked
+          disabled
+          color="default"
+          size="small"
+          onChange={undefined}
+          inputProps={{ 'aria-label': 'primary checkbox' }}
+        />
+      </Grid>
+    )
+  }
+
   return (
     <Grid item xs={1} zeroMinWidth>
       <Checkbox

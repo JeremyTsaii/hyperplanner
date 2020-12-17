@@ -123,17 +123,17 @@ function Course({
   const classes = useStyles()
   const courseAlpha = active ? 1 : 0.2
 
-  const checkboxPlaceholder = (
+  let checkboxPlaceholder = (
     <CourseCheckbox
-      active={active}
-      functional
-      code={code}
-      title={title}
-      credits={credits}
-      type={type}
-      campus={campus}
-      writInten={writInten}
-      term={term}
+      active
+      functional={false}
+      code=""
+      title=""
+      credits={0}
+      type=""
+      campus=""
+      writInten={false}
+      term=""
     />
   )
 
@@ -156,6 +156,19 @@ function Course({
 
   // If false, icons don't have click functionality (for logged out viewers)
   if (showIcons) {
+    checkboxPlaceholder = (
+      <CourseCheckbox
+        active={active}
+        functional
+        code={code}
+        title={title}
+        credits={credits}
+        type={type}
+        campus={campus}
+        writInten={writInten}
+        term={term}
+      />
+    )
     editIconPlaceholder = (
       <EditIcon
         functional
