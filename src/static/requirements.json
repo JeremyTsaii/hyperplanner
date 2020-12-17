@@ -117,6 +117,7 @@
           { "code": "CSCI184", "title": "Computer Science Clinic II" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" },
+          { "code": "CSCI195", "title": "Computer Science Colloquium" },
           { "code": "CSCI195", "title": "Computer Science Colloquium" }
         ],
         "major_elec": 6

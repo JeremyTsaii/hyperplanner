@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormControl from '@material-ui/core/FormControl'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import RightStatsCardStats from './RightStatsCardStats'
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '150px',
     width: '150px',
     margin: '0px',
-    paddingTop: theme.spacing(3),
+    marginTop: theme.spacing(0.5),
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(2),
     },
@@ -48,13 +46,22 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'left',
     color: 'white',
   },
+  tab: {
+    backgroundColor: '#23252e',
+    color: 'white',
+    textTransform: 'none',
+    fontWeight: 'bold',
+  },
+  indicator: {
+    left: '0px',
+  },
 }))
-
+/* eslint-disable  @typescript-eslint/no-explicit-any */
 type Stats = {
   total: number
   rem: number
   avg: number
-  avgRem: number
+  avgRem: any
   pe: number
   majorElec: number
   depth: number
@@ -155,7 +162,12 @@ const getCourseStats = (
 // Humanities: depth, breadth, electives, mudd hums, writing intensives
 // NOTE: Major electives in number of credits while depth, breadth, hum electives,
 // mudd hums, and writing intensives in number of courses
-const calculateStats = (school: string, courses: Courses[]): Stats => {
+const calculateStats = (
+  school: string,
+  courses: Courses[],
+  enrollYear: number,
+  plannedGrad: string,
+): Stats => {
   const statsObj = {} as Stats
   const key = school as keyof typeof Requirements
   const requiredCredits = Requirements[key].grad
@@ -174,12 +186,35 @@ const calculateStats = (school: string, courses: Courses[]): Stats => {
     writ,
   } = getCourseStats(courses)
 
+  // Calculate how many semesters the user plans on graduating in
+  const plan = plannedGrad.split(' ', 2)
+  const totalSemesters =
+    2 * (parseFloat(plan[1]) - enrollYear) + (plan[0] === 'Fall' ? 1 : 0)
   statsObj.total = totalCredits
-  statsObj.rem = requiredCredits - totalCredits
+
+  // Set minimum remaining credits to 0
+  statsObj.rem =
+    totalCredits > requiredCredits ? 0 : requiredCredits - totalCredits
+  // Logic for deciding the average remaining credits
+  if (totalSemesters <= semesters && statsObj.rem > 0) {
+    // If user still has remaining credits within time to graduate
+    statsObj.avgRem = 'Infinity - Not Possible'
+  } else if (totalSemesters < semesters && statsObj.rem === 0) {
+    // Will graduate after planned semester
+    statsObj.avgRem = `Graduating After ${plannedGrad}`
+  } else if (statsObj.rem === 0) {
+    // Enough credits to graduate within planned semester
+    statsObj.avgRem = 0
+  } else {
+    // Calculate average remaining credits
+    statsObj.avgRem = Number(
+      (statsObj.rem / (totalSemesters - semesters)).toFixed(2),
+    )
+  }
+
   statsObj.avg = Number(
     (totalCredits / (semesters === 0 ? 1 : semesters)).toFixed(2),
   )
-  statsObj.avgRem = Number((statsObj.rem / (8 - semesters)).toFixed(2))
   statsObj.pe = pe
   statsObj.majorElec = majorElec
   statsObj.depth = depth
@@ -214,7 +249,18 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
 
   const info = infoData.users[0]
   const { courses } = coursesData
-  const stats = calculateStats(info.school, courses)
+
+  const {
+    school,
+    major,
+    auth0_id: id,
+    majorChecks,
+    coreChecks,
+    enroll,
+    planned_grad: plannedGrad,
+  } = info
+
+  const stats = calculateStats(info.school, courses, enroll, plannedGrad)
 
   const {
     total: totalCredits,
@@ -230,17 +276,9 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     writ,
   } = stats
 
-  const {
-    school,
-    grad_year: gradYear,
-    major,
-    auth0_id: id,
-    majorChecks,
-    coreChecks,
-  } = info
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value)
+  /* eslint-disable-next-line */
+  const handleChange = (event: React.ChangeEvent<{}>, value: string) => {
+    setValue(value)
   }
 
   let dynamicStatsComponent = {}
@@ -308,7 +346,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   } else if (value === 'core') {
     let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
     let coreTypeKey2 = 'pre' as keyof typeof jsonCoreChecks
-    if (gradYear > 2022) {
+    if (enroll > 2018) {
       coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
       coreTypeKey2 = 'post' as keyof typeof jsonCoreChecks
     }
@@ -323,7 +361,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         isList
         checklist={checklist}
         id={id}
-        gradYear={gradYear}
+        enroll={enroll}
         coreChecks={coreChecks}
       />
     )
@@ -380,38 +418,22 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         {dynamicStatsComponent}
         {dynamicProgressComponent}
         <div className={classes.reqButtonSection}>
-          <FormControl component="fieldset">
-            <RadioGroup
-              aria-label="req"
-              name="req1"
-              value={value}
-              onChange={handleChange}>
-              <FormControlLabel
-                value="grad"
-                control={<Radio color="primary" />}
-                label="Graduation"
-                className={classes.statButton}
-              />
-              <FormControlLabel
-                value="major"
-                control={<Radio color="primary" />}
-                label="Major"
-                className={classes.statButton}
-              />
-              <FormControlLabel
-                value="hum"
-                control={<Radio color="primary" />}
-                label="Humanities"
-                className={classes.statButton}
-              />
-              <FormControlLabel
-                value="core"
-                control={<Radio color="primary" />}
-                label="Core"
-                className={classes.statButton}
-              />
-            </RadioGroup>
-          </FormControl>
+          <Tabs
+            classes={{
+              indicator: classes.indicator,
+            }}
+            orientation="vertical"
+            value={value}
+            onChange={handleChange}
+            textColor="primary"
+            indicatorColor="primary"
+            aria-label="simple tabs example"
+            variant="fullWidth">
+            <Tab label="Graduation" value="grad" className={classes.tab} />
+            <Tab label="Major" value="major" className={classes.tab} />
+            <Tab label="Humanities" value="hum" className={classes.tab} />
+            <Tab label="Core" value="core" className={classes.tab} />
+          </Tabs>
         </div>
       </Paper>
     </Grid>

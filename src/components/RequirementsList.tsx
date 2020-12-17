@@ -25,7 +25,7 @@ interface IProps {
   reqs: { code: string; title: string }[]
   id: string
   coreChecks?: string
-  gradYear?: number
+  enroll?: number
   majorChecks?: string
   major?: string
   isMajor: boolean
@@ -35,7 +35,7 @@ const RequirementsList = ({
   reqs,
   id,
   coreChecks,
-  gradYear,
+  enroll,
   majorChecks,
   major,
   isMajor,
@@ -54,7 +54,7 @@ const RequirementsList = ({
     key = major! as keyof typeof jsonChecks
   } else {
     jsonChecks = JSON.parse(coreChecks!) as JSON
-    if (gradYear! > 2022) {
+    if (enroll! > 2018) {
       key = 'post' as keyof typeof jsonChecks
     } else {
       key = 'pre' as keyof typeof jsonChecks
@@ -177,7 +177,7 @@ const RequirementsList = ({
 
 RequirementsList.defaultProps = {
   coreChecks: '',
-  gradYear: 0,
+  enroll: 0,
   majorChecks: '',
   major: '',
 }
