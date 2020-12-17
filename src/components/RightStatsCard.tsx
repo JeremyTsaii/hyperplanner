@@ -1,9 +1,7 @@
 import React, { useState, useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
-import Radio from '@material-ui/core/Radio'
-import RadioGroup from '@material-ui/core/RadioGroup'
-import FormControlLabel from '@material-ui/core/FormControlLabel'
-import FormControl from '@material-ui/core/FormControl'
+import Tabs from '@material-ui/core/Tabs'
+import Tab from '@material-ui/core/Tab'
 import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import RightStatsCardStats from './RightStatsCardStats'
@@ -37,7 +35,7 @@ const useStyles = makeStyles((theme) => ({
     maxWidth: '150px',
     width: '150px',
     margin: '0px',
-    paddingTop: theme.spacing(3),
+    marginTop: theme.spacing(0.5),
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(2),
     },
@@ -47,6 +45,15 @@ const useStyles = makeStyles((theme) => ({
     height: theme.spacing(4),
     textAlign: 'left',
     color: 'white',
+  },
+  tab: {
+    backgroundColor: '#23252e',
+    color: 'white',
+    textTransform: 'none',
+    fontWeight: 'bold',
+  },
+  indicator: {
+    left: '0px',
   },
 }))
 /* eslint-disable  @typescript-eslint/no-explicit-any */
@@ -269,8 +276,9 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     writ,
   } = stats
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setValue((event.target as HTMLInputElement).value)
+  /* eslint-disable-next-line */
+  const handleChange = (event: React.ChangeEvent<{}>, value: string) => {
+    setValue(value)
   }
 
   let dynamicStatsComponent = {}
@@ -410,38 +418,22 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         {dynamicStatsComponent}
         {dynamicProgressComponent}
         <div className={classes.reqButtonSection}>
-          <FormControl component="fieldset">
-            <RadioGroup
-              aria-label="req"
-              name="req1"
-              value={value}
-              onChange={handleChange}>
-              <FormControlLabel
-                value="grad"
-                control={<Radio color="primary" />}
-                label="Graduation"
-                className={classes.statButton}
-              />
-              <FormControlLabel
-                value="major"
-                control={<Radio color="primary" />}
-                label="Major"
-                className={classes.statButton}
-              />
-              <FormControlLabel
-                value="hum"
-                control={<Radio color="primary" />}
-                label="Humanities"
-                className={classes.statButton}
-              />
-              <FormControlLabel
-                value="core"
-                control={<Radio color="primary" />}
-                label="Core"
-                className={classes.statButton}
-              />
-            </RadioGroup>
-          </FormControl>
+          <Tabs
+            classes={{
+              indicator: classes.indicator,
+            }}
+            orientation="vertical"
+            value={value}
+            onChange={handleChange}
+            textColor="primary"
+            indicatorColor="primary"
+            aria-label="simple tabs example"
+            variant="fullWidth">
+            <Tab label="Graduation" value="grad" className={classes.tab} />
+            <Tab label="Major" value="major" className={classes.tab} />
+            <Tab label="Humanities" value="hum" className={classes.tab} />
+            <Tab label="Core" value="core" className={classes.tab} />
+          </Tabs>
         </div>
       </Paper>
     </Grid>
