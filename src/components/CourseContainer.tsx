@@ -88,6 +88,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeFall}
           className={classes.semesterButton}>
           Fall:{' '}
@@ -130,6 +132,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeSpring}
           className={classes.semesterButton}>
           Spring:{' '}
@@ -174,6 +178,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeSummer}
           className={classes.semesterButton}>
           Summer:{' '}
