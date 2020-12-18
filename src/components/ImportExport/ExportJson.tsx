@@ -22,6 +22,7 @@ const useStyles = makeStyles((theme) => ({
   json: {
     color: '#00897b',
     display: 'table-row',
+    backgroundColor: '#1f2129',
   },
 }))
 
