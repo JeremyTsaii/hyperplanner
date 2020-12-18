@@ -1,5 +1,6 @@
 import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import UploadButton from './UploadButton'
 
 const useStyles = makeStyles(() => ({
   instructions: {
@@ -47,10 +48,12 @@ function ImportTranscript(): JSX.Element {
         </p>
         <p>
           - Don&apos;t worry, uploading is required for transcript text
-          extraction but all files are deleted after extraction has completed
+          extraction but all files are <b>deleted</b> after extraction has
+          completed
         </p>
         <p> - Have questions/concerns? Feel free to email jetsai@hmc.edu</p>
       </div>
+      <UploadButton />
     </div>
   )
 }
