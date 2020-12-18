@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import SaveButton from './SaveButton'
 
 const useStyles = makeStyles(() => ({
   instructions: {
@@ -15,6 +16,12 @@ const useStyles = makeStyles(() => ({
 
 function ImportHyper(): JSX.Element {
   const classes = useStyles()
+
+  const [status, setStatus] = useState('Import')
+
+  const handleSave = () => {
+    setStatus('Imported')
+  }
 
   return (
     <div>
@@ -33,9 +40,10 @@ function ImportHyper(): JSX.Element {
         </p>
         <p>
           - <b>Copy and paste</b> the JSON into the field below to easily
-          transfer your planned courses
+          transfer your planned courses into your next semester
         </p>
       </div>
+      <SaveButton text={status} handleSave={handleSave} />
     </div>
   )
 }

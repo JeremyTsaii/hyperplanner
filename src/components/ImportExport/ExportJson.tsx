@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import { CoursesContext } from '../../context/CoursesContext'
 import CopyButton from './CopyButton'
+import { CourseType } from '../../static/infoLists'
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -22,13 +23,24 @@ const useStyles = makeStyles((theme) => ({
   json: {
     color: '#00897b',
     display: 'table-row',
+    backgroundColor: '#1f2129',
   },
 }))
 
 function ExportJson(): JSX.Element {
   const classes = useStyles()
   const { data } = useContext(CoursesContext)
-  const jsonStr = JSON.stringify(data.courses, null, 2)
+  // Remove __typename from courses data
+  const cleanedCourses = data.courses.map((course: CourseType) => ({
+    term: course.term,
+    title: course.title,
+    code: course.code,
+    credits: course.credits,
+    type: course.type,
+    campus: course.campus,
+    writ_inten: course.writ_inten,
+  }))
+  const jsonStr = JSON.stringify(cleanedCourses, null, 2)
 
   return (
     <div>

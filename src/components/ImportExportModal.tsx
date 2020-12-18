@@ -73,14 +73,21 @@ const ImportExportModal = (): JSX.Element => {
 
   // Change what is displayed, depending on which tab is active
   let activeTab = {}
-  if (value === 0) {
-    activeTab = <ImportTranscript />
-  } else if (value === 1) {
-    activeTab = <ImportHyper />
-  } else if (value === 2) {
-    activeTab = <ImportJson />
-  } else if (value === 3) {
-    activeTab = <ExportJson />
+  switch (value) {
+    case 0:
+      activeTab = <ImportTranscript />
+      break
+    case 1:
+      activeTab = <ImportHyper />
+      break
+    case 2:
+      activeTab = <ImportJson />
+      break
+    case 3:
+      activeTab = <ExportJson />
+      break
+    default:
+      activeTab = <ImportTranscript />
   }
 
   return (
