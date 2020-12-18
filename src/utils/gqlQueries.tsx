@@ -179,6 +179,7 @@ export const ADD_COURSE = gql`
 export const ADD_MULTIPLE_COURSES = gql`
   mutation ADD_MULTIPLE_COURSES($objects: [courses_insert_input!]!) {
     insert_courses(objects: $objects) {
+      affected_rows
       returning {
         term
         title

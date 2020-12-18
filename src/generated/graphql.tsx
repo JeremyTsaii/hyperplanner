@@ -1560,20 +1560,23 @@ export type Add_Multiple_CoursesMutationVariables = Exact<{
 
 export type Add_Multiple_CoursesMutation = { __typename?: 'mutation_root' } & {
   insert_courses?: Maybe<
-    { __typename?: 'courses_mutation_response' } & {
-      returning: Array<
-        { __typename?: 'courses' } & Pick<
-          Courses,
-          | 'term'
-          | 'title'
-          | 'code'
-          | 'credits'
-          | 'type'
-          | 'campus'
-          | 'writ_inten'
+    { __typename?: 'courses_mutation_response' } & Pick<
+      Courses_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<
+          { __typename?: 'courses' } & Pick<
+            Courses,
+            | 'term'
+            | 'title'
+            | 'code'
+            | 'credits'
+            | 'type'
+            | 'campus'
+            | 'writ_inten'
+          >
         >
-      >
-    }
+      }
   >
 }
 
@@ -2128,6 +2131,7 @@ export type Add_CourseMutationOptions = Apollo.BaseMutationOptions<
 export const Add_Multiple_CoursesDocument = gql`
   mutation ADD_MULTIPLE_COURSES($objects: [courses_insert_input!]!) {
     insert_courses(objects: $objects) {
+      affected_rows
       returning {
         term
         title
