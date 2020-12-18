@@ -102,41 +102,43 @@ const getCourseStats = (
   let num = 0
   let sem = 'fall'
   courseArr.forEach((course) => {
-    if (course.writ_inten) {
-      writ += 1
-    }
-
-    if (course.type === 'pe') {
-      pe += course.credits
-    } else if (course.type === 'major_elec') {
-      majorElec += course.credits
-    } else if (course.type === 'hum_depth') {
-      depth += 1
-      if (course.campus === 'hmc') {
-        muddHum += 1
+    if (course.active) {
+      if (course.writ_inten) {
+        writ += 1
       }
-    } else if (course.type === 'hum_breadth') {
-      breadth += 1
-      if (course.campus === 'hmc') {
-        muddHum += 1
-      }
-    } else if (course.type === 'hum_elec') {
-      humElec += 1
-      if (course.campus === 'hmc') {
-        muddHum += 1
-      }
-    }
 
-    const lastChar = course.term.slice(-1)
-    const lastSem = course.term.slice(0, -1)
-    const numLast = parseInt(lastChar, 10)
+      if (course.type === 'pe') {
+        pe += course.credits
+      } else if (course.type === 'major_elec') {
+        majorElec += course.credits
+      } else if (course.type === 'hum_depth') {
+        depth += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      } else if (course.type === 'hum_breadth') {
+        breadth += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      } else if (course.type === 'hum_elec') {
+        humElec += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      }
 
-    if (
-      (numLast > num || (numLast === num && sem === 'fall')) &&
-      lastSem !== 'summer'
-    ) {
-      sem = lastSem
-      num = numLast
+      const lastChar = course.term.slice(-1)
+      const lastSem = course.term.slice(0, -1)
+      const numLast = parseInt(lastChar, 10)
+
+      if (
+        (numLast > num || (numLast === num && sem === 'fall')) &&
+        lastSem !== 'summer'
+      ) {
+        sem = lastSem
+        num = numLast
+      }
     }
   })
   num = num * 2 - (sem === 'fall' ? 1 : 0)
@@ -172,7 +174,8 @@ const calculateStats = (
   const key = school as keyof typeof Requirements
   const requiredCredits = Requirements[key].grad
   const totalCredits = courses.reduce(
-    (count: number, course: Courses) => count + course.credits,
+    (count: number, course: Courses) =>
+      course.active ? count + course.credits : count,
     0,
   )
   const {
@@ -224,6 +227,45 @@ const calculateStats = (
   statsObj.writ = writ
 
   return statsObj
+}
+
+// Check if each course in user's major/core checks is active
+const checkActiveRequirements = (
+  type: string,
+  checksArr: number[],
+  checklist: { code: string; title: string }[],
+  courses: Courses[],
+): number[] => {
+  const userCourses = courses.filter((course) => course.type === type)
+  const activeCourses: { [code: string]: number } = {}
+
+  // Count # of active courses for each code
+  userCourses.forEach((course: Courses) => {
+    const currCode = course.code
+    if (course.active) {
+      if (currCode in activeCourses) {
+        activeCourses[currCode] += 1
+      } else {
+        activeCourses[currCode] = 1
+      }
+    }
+  })
+
+  return checksArr.map((c: number, i: number) => {
+    // Split for edge case of CSCI060/CSCI042
+    const courseCodes = checklist[i].code.split('/')
+
+    let val = 0
+    courseCodes.forEach((courseCode) => {
+      if (c === 1 && courseCode in activeCourses) {
+        if (activeCourses[courseCode] > 0) {
+          activeCourses[courseCode] -= 1
+          val = 1
+        }
+      }
+    })
+    return val
+  })
 }
 
 // Calculate percentage of checked courses in array of requirements
@@ -320,10 +362,15 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
     const majorKey2 = major as keyof typeof jsonMajorChecks
     const majorChecksArr = jsonMajorChecks[majorKey2]
-
+    const activeMajorChecksArr = checkActiveRequirements(
+      'major_req',
+      majorChecksArr,
+      checklist,
+      courses,
+    )
     const progressTitleArr = ['Completed', 'Electives']
     const progressValArr = [
-      calculatePercentageChecked(majorChecksArr),
+      calculatePercentageChecked(activeMajorChecksArr),
       capPercentage((majorElec / majorElecRequired) * 100),
     ]
 
@@ -352,8 +399,14 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     }
     const checklist = Requirements[schoolKey].core[coreTypeKey].courses
     const coreChecksArr = jsonCoreChecks[coreTypeKey2]
+    const activeCoreChecksArr = checkActiveRequirements(
+      'core_req',
+      coreChecksArr,
+      checklist,
+      courses,
+    )
     const progressTitleArr = ['Completed']
-    const progressValArr = [calculatePercentageChecked(coreChecksArr)]
+    const progressValArr = [calculatePercentageChecked(activeCoreChecksArr)]
 
     dynamicStatsComponent = (
       <RightStatsCardStats

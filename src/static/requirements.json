@@ -316,7 +316,7 @@
           { "code": "CSCI005", "title": "Introduction to Computer Science" },
           { "code": "ENGR079", "title": "Introduction to Engineering Systems" },
           { "code": "HSA010", "title": "Critical Inquiry" },
-          { "code": "MATH030", "title": "Calculus" },
+          { "code": "MATH030G/MATH030B", "title": "Calculus" },
           { "code": "MATH035", "title": "Probability and Statistics" },
           { "code": "MATH040", "title": "Introduction to Linear Algebra" },
           {
