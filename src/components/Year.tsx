@@ -6,6 +6,7 @@ import {
   placeholderCourses,
   csSchedule,
   engSchedule,
+  csmathSchedule,
 } from '../static/infoLists'
 import CourseContainer from './CourseContainer'
 import { UserContext } from '../context/UserContext'
@@ -63,7 +64,7 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
       <CourseContainer
         showIcons={false}
         yearNumber={yearNumber}
-        courses={csSchedule}
+        courses={csmathSchedule}
         fallModal={fallModalPlaceholder}
         springModal={springModalPlaceholder}
         summerModal={summerModalPlaceholder}
