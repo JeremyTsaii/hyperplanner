@@ -3,6 +3,12 @@ import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 import SaveButton from './SaveButton'
 import { campusDict, typeDict } from '../../static/infoLists'
+/* eslint-disable */
+import {
+  useAdd_Multiple_CoursesMutation,
+  useRemove_All_CoursesMutation,
+} from '../../generated/graphql'
+/* eslint-enable */
 
 const useStyles = makeStyles(() => ({
   instructions: {
@@ -13,17 +19,16 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-const validJson = (jsonStr: string): boolean => {
+/* eslint-disable-next-line */
+const validJson = (jsonStr: string): [boolean, any] => {
   try {
     let result = true
     const json = JSON.parse(jsonStr)
     if (!Array.isArray(json) || json.length === 0) {
-      return false
+      return [false, null]
     }
     json.forEach(function validate(course) {
-      const validTypename =
-        /* eslint-disable-next-line */
-        course.__typename !== 'undefined' && course.__typename === 'courses'
+      const validLength = Object.keys(course).length === 7
       const validTerm =
         course.term !== 'undefined' &&
         /((fall)|(spring)|(summer))[1-4]$/.test(course.term)
@@ -44,7 +49,7 @@ const validJson = (jsonStr: string): boolean => {
         typeof course.writ_inten === 'boolean'
       if (
         !(
-          validTypename &&
+          validLength &&
           validTerm &&
           validTitle &&
           validCode &&
@@ -57,9 +62,9 @@ const validJson = (jsonStr: string): boolean => {
         result = false
       }
     })
-    return result
+    return [result, json]
   } catch {
-    return false
+    return [false, null]
   }
 }
 
@@ -71,6 +76,9 @@ function ImportJson(): JSX.Element {
   const [errorText, setErrorText] = useState('')
   const jsonRef = useRef('')
 
+  const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
+  const [removeAllCourses] = useRemove_All_CoursesMutation()
+
   // Get json text input
   const getJsonField = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -78,7 +86,8 @@ function ImportJson(): JSX.Element {
   }
 
   const handleSave = () => {
-    const valid = validJson(getJsonField(jsonRef))
+    // Ensure user entered valid json array of courses
+    const [valid, courses] = validJson(getJsonField(jsonRef))
     setFormatError(!valid)
     setErrorText(
       !valid ? 'Please enter a well-formed, non-empty JSON courses array' : '',
@@ -86,6 +95,16 @@ function ImportJson(): JSX.Element {
 
     if (valid) {
       setStatus('Imported')
+
+      // Delete current courses
+      removeAllCourses()
+
+      // Write courses in inputted json field
+      addMultipleCourses({
+        variables: {
+          objects: courses,
+        },
+      })
     }
   }
 
