@@ -2,7 +2,7 @@ import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import ReactLoading from 'react-loading'
 import CourseModal from './CourseModal'
-import { placeholderCourses } from '../static/infoLists'
+import { placeholderCourses, csSchedule } from '../static/infoLists'
 import CourseContainer from './CourseContainer'
 import { UserContext } from '../context/UserContext'
 import { CoursesContext } from '../context/CoursesContext'
@@ -41,7 +41,19 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
   }
 
   // When not logged in, use placeholderCourses
-  let coursePlaceholder = placeholderCourses
+  const rng: number = Math.floor(Math.random() * 2)
+  let coursePlaceholder = null
+  switch (rng) {
+    case 0:
+      coursePlaceholder = placeholderCourses
+      break
+    case 1:
+      coursePlaceholder = csSchedule
+      break
+    default:
+      coursePlaceholder = placeholderCourses
+  }
+
   let fallModalPlaceholder = <div />
   let springModalPlaceholder = <div />
   let summerModalPlaceholder = <div />
