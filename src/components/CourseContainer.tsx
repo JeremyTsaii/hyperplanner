@@ -5,6 +5,7 @@ import Collapse from '@material-ui/core/Collapse'
 import { makeStyles } from '@material-ui/core/styles'
 import Course from './Course'
 import { CourseType } from '../static/infoLists'
+import CourseModal from './CourseModal'
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {
@@ -57,18 +58,12 @@ interface IProps {
   showIcons: boolean
   yearNumber: number
   courses: CourseType[]
-  fallModal: JSX.Element
-  springModal: JSX.Element
-  summerModal: JSX.Element
 }
 
 const CourseContainer = ({
   showIcons,
   yearNumber,
   courses,
-  fallModal,
-  springModal,
-  summerModal,
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
@@ -93,6 +88,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeFall}
           className={classes.semesterButton}>
           Fall:{' '}
@@ -103,7 +100,11 @@ const CourseContainer = ({
               0,
             )}
         </Button>
-        {fallModal}
+        <CourseModal
+          functional={showIcons}
+          year={String(yearNumber)}
+          term="Fall"
+        />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
@@ -131,6 +132,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeSpring}
           className={classes.semesterButton}>
           Spring:{' '}
@@ -143,7 +146,11 @@ const CourseContainer = ({
               0,
             )}
         </Button>
-        {springModal}
+        <CourseModal
+          functional={showIcons}
+          year={String(yearNumber)}
+          term="Spring"
+        />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
@@ -171,6 +178,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeSummer}
           className={classes.semesterButton}>
           Summer:{' '}
@@ -183,7 +192,11 @@ const CourseContainer = ({
               0,
             )}
         </Button>
-        {summerModal}
+        <CourseModal
+          functional={showIcons}
+          year={String(yearNumber)}
+          term="Summer"
+        />
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>

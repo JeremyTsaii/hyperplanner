@@ -1,13 +1,7 @@
 import React, { useContext, useState, useEffect } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import ReactLoading from 'react-loading'
-import CourseModal from './CourseModal'
-import {
-  placeholderCourses,
-  csSchedule,
-  engSchedule,
-  csmathSchedule,
-} from '../static/infoLists'
+import { placeholderCourses } from '../static/infoLists'
 import CourseContainer from './CourseContainer'
 import { UserContext } from '../context/UserContext'
 import { CoursesContext } from '../context/CoursesContext'
@@ -18,10 +12,6 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
   },
 }))
-
-const createAddModal = (term: string, yearNumber: number): JSX.Element => {
-  return <CourseModal year={String(yearNumber)} term={term} />
-}
 
 interface IProps {
   yearNumber: number
@@ -39,12 +29,12 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
 
   // const rng = Math.floor(Math.random() * 2)
 
-  const [coursePlaceholder, setCourses] = useState(placeholderCourses)
-  const schedules = [placeholderCourses, csSchedule, engSchedule]
+  // const [coursePlaceholder, setCourses] = useState(placeholderCourses)
+  // const schedules = [placeholderCourses, csSchedule, engSchedule]
 
-  useEffect(() => {
-    setCourses(schedules[Math.floor(Math.random() * 2)])
-  }, [coursePlaceholder])
+  // useEffect(() => {
+  //   setCourses(schedules[Math.floor(Math.random() * 2)])
+  // }, [coursePlaceholder])
 
   if (infoLoading || coursesLoading) {
     return (
@@ -54,9 +44,8 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
     )
   }
 
-  let fallModalPlaceholder = <div />
-  let springModalPlaceholder = <div />
-  let summerModalPlaceholder = <div />
+  // When not logged in, use placeholderCourses
+  let coursePlaceholder = placeholderCourses
 
   // Not logged in
   if (infoError || coursesError) {
@@ -64,29 +53,20 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
       <CourseContainer
         showIcons={false}
         yearNumber={yearNumber}
-        courses={csmathSchedule}
-        fallModal={fallModalPlaceholder}
-        springModal={springModalPlaceholder}
-        summerModal={summerModalPlaceholder}
+        courses={coursePlaceholder}
       />
     )
   }
 
   const { courses } = coursesData
 
-  // coursePlaceholder = courses
-  fallModalPlaceholder = createAddModal('Fall', yearNumber)
-  springModalPlaceholder = createAddModal('Spring', yearNumber)
-  summerModalPlaceholder = createAddModal('Summer', yearNumber)
+  coursePlaceholder = courses
 
   return (
     <CourseContainer
       showIcons
       yearNumber={yearNumber}
       courses={coursePlaceholder}
-      fallModal={fallModalPlaceholder}
-      springModal={springModalPlaceholder}
-      summerModal={summerModalPlaceholder}
     />
   )
 }

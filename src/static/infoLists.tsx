@@ -331,6 +331,7 @@ export const typeDict: StringToString = {
   hum_elec: 'Humanities Elective',
   pe: 'Physical Education',
   other: 'Other',
+  undecided: 'Undecided',
 }
 
 export const bools = [

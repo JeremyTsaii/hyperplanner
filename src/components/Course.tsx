@@ -18,6 +18,7 @@ const BLUE = '#2196f3' // Hums (Depth)
 const PURPLE = '#7c4dff' // Hums (Breadth)
 const LPURPLE = '#ba68c8' // Hums (Elective)
 const GREEN = '#26a69a' // Core
+const GREY = '#455a64' // Undecided
 const ORANGE = '#ef5350' // Other (PE)
 
 let theme = createMuiTheme({
@@ -88,6 +89,9 @@ const getCourseColor = (type: string): string => {
     }
     case 'core_req': {
       return GREEN
+    }
+    case 'undecided': {
+      return GREY
     }
     default: {
       return ORANGE
