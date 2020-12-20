@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import CloudUploadIcon from '@material-ui/icons/CloudUpload'
 import Button from '@material-ui/core/Button'
 import { makeStyles } from '@material-ui/core/styles'
@@ -9,22 +9,23 @@ const useStyles = makeStyles(() => ({
   },
 }))
 
-function UploadButton(): JSX.Element {
-  const classes = useStyles()
-  const [status, setStatus] = useState('Upload')
+interface uploadProps {
+  text: string
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-  const handleUpload = () => {
-    setStatus('Uploading...')
-  }
+function UploadButton({ text, onChange }: uploadProps): JSX.Element {
+  const classes = useStyles()
 
   return (
     <Button
       variant="outlined"
       color="primary"
+      component="label"
       className={classes.uploadButton}
-      startIcon={<CloudUploadIcon />}
-      onClick={handleUpload}>
-      {status}
+      startIcon={<CloudUploadIcon />}>
+      <input accept=".pdf" type="file" hidden onChange={onChange} />
+      {text}
     </Button>
   )
 }

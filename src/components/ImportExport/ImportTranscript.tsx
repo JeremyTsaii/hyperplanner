@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { useState, useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
+import axios from 'axios'
+import { UserContext } from '../../context/UserContext'
+
 import UploadButton from './UploadButton'
 
 const useStyles = makeStyles(() => ({
@@ -17,9 +20,56 @@ const useStyles = makeStyles(() => ({
 function ImportTranscript(): JSX.Element {
   const classes = useStyles()
 
+  const { data } = useContext(UserContext)
+
+  const [status, setStatus] = useState('Upload')
+
+  const handleUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    /* eslint-disable-next-line */
+    const file = event.target.files![0]
+    const fileName = file.name.split('.')[0]
+    setStatus(`Uploading ${file.name}...`)
+
+    // Uniquely identify user's uploaded file
+    const id = data.users[0].auth0_id.split('|')[1]
+    const AWS_URL = process.env.REACT_APP_AWS_URL
+    const AWS_API_KEY = process.env.REACT_APP_AWS_API_KEY
+
+    // Get presigned url
+    axios
+      .get(`${AWS_URL}${fileName}${id}.pdf`, {
+        headers: {
+          'x-api-key': AWS_API_KEY,
+        },
+      })
+      .then((response) => {
+        const UPLOAD_URL = response.data
+        const options = {
+          headers: {
+            'Content-Type': 'application/pdf',
+          },
+        }
+
+        // Send file to presigned url
+        axios
+          .put(UPLOAD_URL, file, options)
+          .then(() => {
+            setStatus('Extracting Text from PDF...')
+
+            // Get json when ready
+          })
+          .catch(() => {
+            setStatus('Error Occurred')
+          })
+      })
+      .catch(() => {
+        setStatus('Error Occurred')
+      })
+  }
+
   return (
-    <div>
-      <div className={classes.instructions}>
+    <div className={classes.instructions}>
+      <div>
         <p>Instructions:</p>
         <p>
           - Go to{' '}
@@ -33,15 +83,13 @@ function ImportTranscript(): JSX.Element {
           , log in, and click the &quot;<b>Transcripts</b>&quot; tab
         </p>
         <p>
-          - Click &quot;<b>View Unofficial Transcript</b>&quot;
+          - Click &quot;<b>View Unofficial Transcript</b>&quot;. This linear
+          view provides better text extraction than the normal side-by-side
+          transcript.
         </p>
         <p>
           - Click the print button in the top right corner and select &quot;
           <b>Save as PDF</b>&quot;
-        </p>
-        <p>
-          - This linear view provides better text extraction than the normal
-          side-by-side transcript
         </p>
         <p>
           - <b>Upload</b> the PDF below&#013;
@@ -51,9 +99,20 @@ function ImportTranscript(): JSX.Element {
           extraction but all files are <b>deleted</b> after extraction has
           completed
         </p>
-        <p> - Have questions/concerns? Feel free to email jetsai@hmc.edu</p>
+        <p>
+          - <b>Note:</b> text extraction is not fully accurate/complete. You
+          will need to add/edit course information by clicking the pencil icon
+          on the course. However, this should save you lots of manual entry
+          time!
+        </p>
       </div>
-      <UploadButton />
+      <UploadButton text={status} onChange={handleUpload} />
+      <p>
+        <b>
+          After uploading, please wait ~2 minutes for the extraction to complete
+          and don&apos;t click away.
+        </b>
+      </p>
     </div>
   )
 }
