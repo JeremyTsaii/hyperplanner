@@ -64,6 +64,7 @@ export const UPDATE_USER = gql`
     }
   }
 `
+
 export const UPDATE_MAJOR_CHECKS = gql`
   mutation UPDATE_MAJOR_CHECKS($id: String!, $majorChecks: String!) {
     update_users(
@@ -88,6 +89,14 @@ export const UPDATE_CORE_CHECKS = gql`
       returning {
         coreChecks
       }
+    }
+  }
+`
+
+export const UPDATE_ACTIVE_COURSES = gql`
+  mutation UPDATE_ACTIVE_COURSES($active: Boolean!, $term: String!) {
+    update_courses(where: { term: { _eq: $term } }, _set: { active: $active }) {
+      affected_rows
     }
   }
 `
