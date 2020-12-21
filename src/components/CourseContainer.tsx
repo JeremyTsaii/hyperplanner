@@ -99,6 +99,16 @@ const CourseContainer = ({
   const springTerm = `spring${yearNumber}`
   const summerTerm = `summer${yearNumber}`
 
+  const fallCourses = courses.filter(
+    (course: CourseType) => course.term === fallTerm,
+  )
+  const springCourses = courses.filter(
+    (course: CourseType) => course.term === springTerm,
+  )
+  const summerCourses = courses.filter(
+    (course: CourseType) => course.term === summerTerm,
+  )
+
   return (
     <Paper elevation={12} className={classes.mainCard}>
       <Typography className={classes.yearText}>Year {yearNumber}</Typography>
@@ -108,15 +118,14 @@ const CourseContainer = ({
           onClick={handleChangeFall}
           className={classes.semesterCollapse}>
           Fall:{' '}
-          {courses
-            .filter((course: CourseType) => course.term === `fall${yearNumber}`)
-            .reduce(
-              (count: number, course: CourseType) => count + course.credits,
-              0,
-            )}
+          {fallCourses.reduce(
+            (count: number, course: CourseType) => count + course.credits,
+            0,
+          )}
         </Button>
         <div className={classes.semesterButtons}>
           <TermCheckbox
+            numCourses={fallCourses.length}
             className={classes.semesterCheckbox}
             termString={fallTerm}
           />
@@ -126,24 +135,20 @@ const CourseContainer = ({
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
           <Paper elevation={0} className={classes.paper}>
-            {courses
-              .filter(
-                (course: CourseType) => course.term === `fall${yearNumber}`,
-              )
-              .map((course: CourseType) => (
-                <Course
-                  key={course.term + course.code}
-                  code={course.code}
-                  title={course.title}
-                  credits={course.credits}
-                  type={course.type}
-                  campus={course.campus}
-                  writInten={course.writ_inten}
-                  term={course.term}
-                  showIcons={showIcons}
-                  active={course.active}
-                />
-              ))}
+            {fallCourses.map((course: CourseType) => (
+              <Course
+                key={course.term + course.code}
+                code={course.code}
+                title={course.title}
+                credits={course.credits}
+                type={course.type}
+                campus={course.campus}
+                writInten={course.writ_inten}
+                term={course.term}
+                showIcons={showIcons}
+                active={course.active}
+              />
+            ))}
           </Paper>
         </Collapse>
       </div>
@@ -153,17 +158,14 @@ const CourseContainer = ({
           onClick={handleChangeSpring}
           className={classes.semesterCollapse}>
           Spring:{' '}
-          {courses
-            .filter(
-              (course: CourseType) => course.term === `spring${yearNumber}`,
-            )
-            .reduce(
-              (count: number, course: CourseType) => count + course.credits,
-              0,
-            )}
+          {springCourses.reduce(
+            (count: number, course: CourseType) => count + course.credits,
+            0,
+          )}
         </Button>
         <div className={classes.semesterButtons}>
           <TermCheckbox
+            numCourses={springCourses.length}
             className={classes.semesterCheckbox}
             termString={springTerm}
           />
@@ -173,24 +175,20 @@ const CourseContainer = ({
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
           <Paper elevation={0} className={classes.paper}>
-            {courses
-              .filter(
-                (course: CourseType) => course.term === `spring${yearNumber}`,
-              )
-              .map((course: CourseType) => (
-                <Course
-                  key={course.term + course.code}
-                  code={course.code}
-                  title={course.title}
-                  credits={course.credits}
-                  type={course.type}
-                  campus={course.campus}
-                  writInten={course.writ_inten}
-                  term={course.term}
-                  showIcons={showIcons}
-                  active={course.active}
-                />
-              ))}
+            {springCourses.map((course: CourseType) => (
+              <Course
+                key={course.term + course.code}
+                code={course.code}
+                title={course.title}
+                credits={course.credits}
+                type={course.type}
+                campus={course.campus}
+                writInten={course.writ_inten}
+                term={course.term}
+                showIcons={showIcons}
+                active={course.active}
+              />
+            ))}
           </Paper>
         </Collapse>
       </div>
@@ -200,17 +198,14 @@ const CourseContainer = ({
           onClick={handleChangeSummer}
           className={classes.semesterCollapse}>
           Summer:{' '}
-          {courses
-            .filter(
-              (course: CourseType) => course.term === `summer${yearNumber}`,
-            )
-            .reduce(
-              (count: number, course: CourseType) => count + course.credits,
-              0,
-            )}
+          {summerCourses.reduce(
+            (count: number, course: CourseType) => count + course.credits,
+            0,
+          )}
         </Button>
         <div className={classes.semesterButtons}>
           <TermCheckbox
+            numCourses={summerCourses.length}
             className={classes.semesterCheckbox}
             termString={summerTerm}
           />
@@ -220,24 +215,20 @@ const CourseContainer = ({
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
           <Paper elevation={0} className={classes.paper}>
-            {courses
-              .filter(
-                (course: CourseType) => course.term === `summer${yearNumber}`,
-              )
-              .map((course: CourseType) => (
-                <Course
-                  key={course.term + course.code}
-                  code={course.code}
-                  title={course.title}
-                  credits={course.credits}
-                  type={course.type}
-                  campus={course.campus}
-                  writInten={course.writ_inten}
-                  term={course.term}
-                  showIcons={showIcons}
-                  active={course.active}
-                />
-              ))}
+            {summerCourses.map((course: CourseType) => (
+              <Course
+                key={course.term + course.code}
+                code={course.code}
+                title={course.title}
+                credits={course.credits}
+                type={course.type}
+                campus={course.campus}
+                writInten={course.writ_inten}
+                term={course.term}
+                showIcons={showIcons}
+                active={course.active}
+              />
+            ))}
           </Paper>
         </Collapse>
       </div>
