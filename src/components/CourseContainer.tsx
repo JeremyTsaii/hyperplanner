@@ -5,6 +5,7 @@ import Collapse from '@material-ui/core/Collapse'
 import { makeStyles } from '@material-ui/core/styles'
 import Course from './Course'
 import { CourseType } from '../static/infoLists'
+import TermCheckbox from './TermCheckbox'
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {
@@ -33,6 +34,10 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
   },
+  semesterButtons: {
+    display: 'flex',
+    justifyContent: 'space-between',
+  },
   courseContainer: {
     background: '#23252e',
   },
@@ -46,10 +51,13 @@ const useStyles = makeStyles((theme) => ({
     margin: theme.spacing(1),
     marginRight: theme.spacing(0),
   },
-  semesterButton: {
+  semesterCollapse: {
     color: '#white',
     textAlign: 'left',
     alignItems: 'flex-start',
+  },
+  semesterCheckbox: {
+    marginRight: theme.spacing(1),
   },
 }))
 
@@ -87,6 +95,10 @@ const CourseContainer = ({
     setCheckedSummer((prev) => !prev)
   }
 
+  const fallTerm = `fall${yearNumber}`
+  const springTerm = `spring${yearNumber}`
+  const summerTerm = `summer${yearNumber}`
+
   return (
     <Paper elevation={12} className={classes.mainCard}>
       <Typography className={classes.yearText}>Year {yearNumber}</Typography>
@@ -94,7 +106,7 @@ const CourseContainer = ({
         <Button
           color="secondary"
           onClick={handleChangeFall}
-          className={classes.semesterButton}>
+          className={classes.semesterCollapse}>
           Fall:{' '}
           {courses
             .filter((course: CourseType) => course.term === `fall${yearNumber}`)
@@ -103,7 +115,13 @@ const CourseContainer = ({
               0,
             )}
         </Button>
-        {fallModal}
+        <div className={classes.semesterButtons}>
+          <TermCheckbox
+            className={classes.semesterCheckbox}
+            termString={fallTerm}
+          />
+          {fallModal}
+        </div>
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
@@ -133,7 +151,7 @@ const CourseContainer = ({
         <Button
           color="secondary"
           onClick={handleChangeSpring}
-          className={classes.semesterButton}>
+          className={classes.semesterCollapse}>
           Spring:{' '}
           {courses
             .filter(
@@ -144,7 +162,13 @@ const CourseContainer = ({
               0,
             )}
         </Button>
-        {springModal}
+        <div className={classes.semesterButtons}>
+          <TermCheckbox
+            className={classes.semesterCheckbox}
+            termString={springTerm}
+          />
+          {springModal}
+        </div>
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
@@ -174,7 +198,7 @@ const CourseContainer = ({
         <Button
           color="secondary"
           onClick={handleChangeSummer}
-          className={classes.semesterButton}>
+          className={classes.semesterCollapse}>
           Summer:{' '}
           {courses
             .filter(
@@ -185,7 +209,13 @@ const CourseContainer = ({
               0,
             )}
         </Button>
-        {summerModal}
+        <div className={classes.semesterButtons}>
+          <TermCheckbox
+            className={classes.semesterCheckbox}
+            termString={summerTerm}
+          />
+          {summerModal}
+        </div>
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
