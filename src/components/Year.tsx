@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import ReactLoading from 'react-loading'
 import { placeholderCourses } from '../static/infoLists'
@@ -26,15 +26,6 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
     error: coursesError,
     data: coursesData,
   } = useContext(CoursesContext)
-
-  // const rng = Math.floor(Math.random() * 2)
-
-  // const [coursePlaceholder, setCourses] = useState(placeholderCourses)
-  // const schedules = [placeholderCourses, csSchedule, engSchedule]
-
-  // useEffect(() => {
-  //   setCourses(schedules[Math.floor(Math.random() * 2)])
-  // }, [coursePlaceholder])
 
   if (infoLoading || coursesLoading) {
     return (

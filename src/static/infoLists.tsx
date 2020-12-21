@@ -10,9 +10,18 @@ export const schools = [
 interface StringToString {
   [input: string]: string
 }
+
 export const schoolDict: StringToString = {
   hmc: 'Harvey Mudd College',
   'Harvey Mudd College': 'hmc',
+}
+
+export const hyperToJson: StringToString = {
+  hm: 'hmc',
+  cm: 'cmc',
+  po: 'po',
+  pz: 'pz',
+  sc: 'sc',
 }
 
 export const majors = [
