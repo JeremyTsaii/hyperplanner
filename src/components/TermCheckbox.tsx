@@ -74,14 +74,26 @@ function TermCheckbox({
         update_courses: {
           __typename: 'courses_mutation_response',
           affected_rows: numCourses,
+          returning: [
+            {
+              __typename: 'courses',
+              active,
+            },
+          ],
         },
       },
     })
     setAnchorEl(null)
   }
 
-  const setActiveText = `Set all ${termString} courses active`
-  const setInactiveText = `Set all ${termString} courses inactive`
+  const setActiveText = `Set all ${termString.substr(
+    0,
+    termString.length - 1,
+  )} courses active`
+  const setInactiveText = `Set all ${termString.substr(
+    0,
+    termString.length - 1,
+  )} courses inactive`
 
   return (
     <div className={className}>

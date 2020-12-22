@@ -1489,7 +1489,9 @@ export type Update_Active_CoursesMutation = { __typename?: 'mutation_root' } & {
     { __typename?: 'courses_mutation_response' } & Pick<
       Courses_Mutation_Response,
       'affected_rows'
-    >
+    > & {
+        returning: Array<{ __typename?: 'courses' } & Pick<Courses, 'active'>>
+      }
   >
 }
 
@@ -1905,6 +1907,9 @@ export const Update_Active_CoursesDocument = gql`
   mutation UPDATE_ACTIVE_COURSES($active: Boolean!, $term: String!) {
     update_courses(where: { term: { _eq: $term } }, _set: { active: $active }) {
       affected_rows
+      returning {
+        active
+      }
     }
   }
 `

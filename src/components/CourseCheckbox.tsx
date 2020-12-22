@@ -9,6 +9,7 @@ import {
   useUpdate_CourseMutation,
   Courses,
 } from '../generated/graphql'
+import { AirplanemodeActiveTwoTone } from '@material-ui/icons'
 /* eslint-enable */
 
 interface checkboxProps {
@@ -36,14 +37,11 @@ function CourseCheckbox({
 }: checkboxProps): JSX.Element {
   const [updateCourse] = useUpdate_CourseMutation()
 
-  // Check if course is currently active
-  const [isActive, setActive] = React.useState(active)
-
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     updateCourse({
       variables: {
         old_title: title,
-        active: !isActive,
+        active: !active,
         term,
         title,
         code,
@@ -61,7 +59,7 @@ function CourseCheckbox({
           if (course.code === code && course.term === term) {
             const newCourse = {} as Courses
             newCourse.__typename = 'courses'
-            newCourse.active = !isActive
+            newCourse.active = !active
             newCourse.term = term
             newCourse.title = title
             newCourse.code = code
@@ -88,7 +86,7 @@ function CourseCheckbox({
           returning: [
             {
               __typename: 'courses',
-              active: !isActive,
+              active: !active,
               term,
               title,
               code,
@@ -101,7 +99,6 @@ function CourseCheckbox({
         },
       },
     })
-    setActive(event.target.checked)
   }
 
   // Return icon but no functionality (logged out)
@@ -123,7 +120,7 @@ function CourseCheckbox({
   return (
     <Grid item xs={1} zeroMinWidth>
       <Checkbox
-        checked={isActive}
+        checked={active}
         color="default"
         size="small"
         onChange={handleChange}
