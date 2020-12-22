@@ -37,7 +37,7 @@ function CourseCheckbox({
 }: checkboxProps): JSX.Element {
   const [updateCourse] = useUpdate_CourseMutation()
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+  const handleChange = () => {
     updateCourse({
       variables: {
         old_title: title,
