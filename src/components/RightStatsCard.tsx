@@ -295,7 +295,6 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   const {
     school,
     major,
-    auth0_id: id,
     majorChecks,
     coreChecks,
     enroll,
@@ -379,9 +378,9 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         isMajor
         isList
         checklist={checklist}
-        id={id}
         major={major}
         majorChecks={majorChecks}
+        activeMajorChecksArr={activeMajorChecksArr}
       />
     )
     dynamicProgressComponent = (
@@ -413,9 +412,9 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         isMajor={false}
         isList
         checklist={checklist}
-        id={id}
         enroll={enroll}
         coreChecks={coreChecks}
+        activeCoreChecksArr={activeCoreChecksArr}
       />
     )
     dynamicProgressComponent = (
