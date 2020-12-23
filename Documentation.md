@@ -4,7 +4,7 @@ The frontend uses GraphQL to get a payload of user information and their courses
 To automatically generate the types necessary for all GraphQL queries/mutations, we use Codegen. Run the following command to update the generated GraphQL file (ask admin for the AUTH_TOKEN):
 
 ```
-AUTH_TOKEN=xxxxx yarn generate --watch
+npm run generate
 ```
 
 ## Database Layout

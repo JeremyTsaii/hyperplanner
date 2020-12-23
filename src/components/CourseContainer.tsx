@@ -6,6 +6,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import Course from './Course'
 import { CourseType } from '../static/infoLists'
 import TermCheckbox from './TermCheckbox'
+import CourseModal from './CourseModal'
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {
@@ -65,18 +66,12 @@ interface IProps {
   showIcons: boolean
   yearNumber: number
   courses: CourseType[]
-  fallModal: JSX.Element
-  springModal: JSX.Element
-  summerModal: JSX.Element
 }
 
 const CourseContainer = ({
   showIcons,
   yearNumber,
   courses,
-  fallModal,
-  springModal,
-  summerModal,
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
@@ -115,6 +110,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeFall}
           className={classes.semesterCollapse}>
           Fall:{' '}
@@ -129,7 +126,11 @@ const CourseContainer = ({
             className={classes.semesterCheckbox}
             termString={fallTerm}
           />
-          {fallModal}
+          <CourseModal
+            functional={showIcons}
+            year={String(yearNumber)}
+            term="Fall"
+          />
         </div>
       </div>
       <div className={classes.courseContainer}>
@@ -155,6 +156,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeSpring}
           className={classes.semesterCollapse}>
           Spring:{' '}
@@ -169,7 +172,11 @@ const CourseContainer = ({
             className={classes.semesterCheckbox}
             termString={springTerm}
           />
-          {springModal}
+          <CourseModal
+            functional={showIcons}
+            year={String(yearNumber)}
+            term="Spring"
+          />
         </div>
       </div>
       <div className={classes.courseContainer}>
@@ -195,6 +202,8 @@ const CourseContainer = ({
       <div className={classes.semesterHeader}>
         <Button
           color="secondary"
+          variant="outlined"
+          size="small"
           onClick={handleChangeSummer}
           className={classes.semesterCollapse}>
           Summer:{' '}
@@ -209,7 +218,11 @@ const CourseContainer = ({
             className={classes.semesterCheckbox}
             termString={summerTerm}
           />
-          {summerModal}
+          <CourseModal
+            functional={showIcons}
+            year={String(yearNumber)}
+            term="Summer"
+          />
         </div>
       </div>
       <div className={classes.courseContainer}>

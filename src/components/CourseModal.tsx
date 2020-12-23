@@ -51,6 +51,7 @@ type AllCourse = {
 }
 
 interface DialogProps {
+  functional: boolean
   term: string
   year: string
 }
@@ -91,16 +92,13 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function CourseModal({ term, year }: DialogProps): JSX.Element {
+function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
   const [addCourse] = useAdd_CourseMutation()
   const [updateMajorChecks] = useUpdate_Major_ChecksMutation()
   const [updateCoreChecks] = useUpdate_Core_ChecksMutation()
 
   const { data: infoData } = useContext(UserContext)
-
-  const info = infoData.users[0]
-  const { majorChecks, coreChecks, school, auth0_id: id } = info
 
   // Changing information in modal
   const [campus, setCampus] = useState('')
@@ -140,9 +138,11 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     setWritInten('False')
   }
 
-  const handleOpen = () => {
-    setOpen(true)
-  }
+  const handleOpen = !functional
+    ? undefined
+    : () => {
+        setOpen(true)
+      }
   const handleClose = () => {
     resetInputs()
     setOpen(false)
@@ -157,6 +157,9 @@ function CourseModal({ term, year }: DialogProps): JSX.Element {
     )
   }
   const handleSave = () => {
+    const info = infoData.users[0]
+    const { majorChecks, coreChecks, school, auth0_id: id } = info
+
     const newTitle = titleRef
     const newCode = codeRef
     const formatTerm = term.toLowerCase() + year

@@ -1,7 +1,6 @@
 import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import ReactLoading from 'react-loading'
-import CourseModal from './CourseModal'
 import { placeholderCourses } from '../static/infoLists'
 import CourseContainer from './CourseContainer'
 import { UserContext } from '../context/UserContext'
@@ -13,10 +12,6 @@ const useStyles = makeStyles(() => ({
     justifyContent: 'center',
   },
 }))
-
-const createAddModal = (term: string, yearNumber: number): JSX.Element => {
-  return <CourseModal year={String(yearNumber)} term={term} />
-}
 
 interface IProps {
   yearNumber: number
@@ -42,9 +37,6 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
 
   // When not logged in, use placeholderCourses
   let coursePlaceholder = placeholderCourses
-  let fallModalPlaceholder = <div />
-  let springModalPlaceholder = <div />
-  let summerModalPlaceholder = <div />
 
   // Not logged in
   if (infoError || coursesError) {
@@ -53,9 +45,6 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
         showIcons={false}
         yearNumber={yearNumber}
         courses={coursePlaceholder}
-        fallModal={fallModalPlaceholder}
-        springModal={springModalPlaceholder}
-        summerModal={summerModalPlaceholder}
       />
     )
   }
@@ -63,18 +52,12 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
   const { courses } = coursesData
 
   coursePlaceholder = courses
-  fallModalPlaceholder = createAddModal('Fall', yearNumber)
-  springModalPlaceholder = createAddModal('Spring', yearNumber)
-  summerModalPlaceholder = createAddModal('Summer', yearNumber)
 
   return (
     <CourseContainer
       showIcons
       yearNumber={yearNumber}
       courses={coursePlaceholder}
-      fallModal={fallModalPlaceholder}
-      springModal={springModalPlaceholder}
-      summerModal={summerModalPlaceholder}
     />
   )
 }

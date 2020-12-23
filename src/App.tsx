@@ -5,6 +5,7 @@ import Layout from './components/GALayout'
 import './App.css'
 import { UserContextProvider } from './context/UserContext'
 import { CoursesContextProvider } from './context/CoursesContext'
+import { StatsContextProvider } from './context/StatsContext'
 import TopBar from './components/TopBar'
 import InfoCards from './components/InfoCards'
 import YearCards from './components/YearCards'
@@ -65,9 +66,11 @@ function App(): JSX.Element {
             />
             <UserContextProvider>
               <CoursesContextProvider>
-                <TopBar />
-                <InfoCards />
-                <YearCards />
+                <StatsContextProvider>
+                  <TopBar />
+                  <InfoCards />
+                  <YearCards />
+                </StatsContextProvider>
               </CoursesContextProvider>
             </UserContextProvider>
           </div>
