@@ -137,7 +137,14 @@ function ImportHyper(): JSX.Element {
           variant="filled"
         />
       </div>
-      <SaveButton text={status} handleSave={handleSave} />
+      <div className={classes.instructions}>
+        <p>
+          These courses will be <b>appended</b> to the corresponding semester
+        </p>
+      </div>
+      <div>
+        <SaveButton text={status} handleSave={handleSave} />
+      </div>
     </div>
   )
 }

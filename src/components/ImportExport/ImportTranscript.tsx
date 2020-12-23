@@ -46,12 +46,18 @@ function ImportTranscript(): JSX.Element {
     if (file === undefined) {
       return
     }
-    const fileName = file.name.split('.')[0]
     setStatus(`Uploading ${file.name}...`)
+
+    // Make sure file size not too large
+    const FILE_SIZE_LIMIT = 1600000
+    if (file.size > FILE_SIZE_LIMIT) {
+      setStatus(`File Size Too Large!`)
+      return
+    }
 
     // Uniquely identify user's uploaded file
     const id = data.users[0].auth0_id.split('|')[1]
-    const jobId = `${fileName}${id}.pdf`
+    const jobId = `${id}.pdf`
     const AWS_URL = process.env.REACT_APP_AWS_URL
     const AWS_API_KEY = process.env.REACT_APP_AWS_API_KEY
 
@@ -79,7 +85,7 @@ function ImportTranscript(): JSX.Element {
             // Get json when ready
             // For now, send request after 2 mins
             // Later, implement SQS polling
-            const jsonFile = `${fileName}${id}.json`
+            const jsonFile = `${id}.json`
             setTimeout(() => {
               axios
                 .get(`${AWS_URL}fileName=${jsonFile}&getJson=true`, {

@@ -189,7 +189,7 @@ export const StatsContextProvider = ({
   const userCourses = useContext(CoursesContext)
 
   // Wait until contexts are finished loading
-  if (user.loading || userCourses.loading) {
+  if (user.loading || user.error || userCourses.loading || userCourses.error) {
     return <StatsContext.Provider value={{}}>{children}</StatsContext.Provider>
   }
 

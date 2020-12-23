@@ -29,34 +29,7 @@ let theme = createMuiTheme({
 theme = responsiveFontSizes(theme)
 
 const useStyles = makeStyles(() => ({
-  codeText: {
-    color: '#FFFFFF',
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(1.25),
-    },
-    [theme.breakpoints.down('lg')]: {
-      fontSize: theme.spacing(1.4),
-    },
-  },
-  titleText: {
-    color: '#FFFFFF',
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(1.25),
-    },
-    [theme.breakpoints.down('lg')]: {
-      fontSize: theme.spacing(1.4),
-    },
-  },
-  creditText: {
-    color: '#FFFFFF',
-    [theme.breakpoints.down('md')]: {
-      fontSize: theme.spacing(1.25),
-    },
-    [theme.breakpoints.down('lg')]: {
-      fontSize: theme.spacing(1.4),
-    },
-  },
-  writText: {
+  text: {
     color: '#FFFFFF',
     [theme.breakpoints.down('md')]: {
       fontSize: theme.spacing(1.25),
@@ -181,7 +154,7 @@ function Course({
     placeholderGrid = (
       <Grid item xs={codeLength as 1 | 2} zeroMinWidth>
         <MuiThemeProvider theme={theme}>
-          <Typography variant="h6" className={classes.writText} noWrap>
+          <Typography variant="h6" className={classes.text} noWrap>
             <b>{placeholder}</b>
           </Typography>
         </MuiThemeProvider>
@@ -206,14 +179,14 @@ function Course({
         }}>
         <Grid item xs={3} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.codeText} noWrap>
+            <Typography variant="h6" className={classes.text} noWrap>
               <b>{code}</b>
             </Typography>
           </MuiThemeProvider>
         </Grid>
         <Grid item xs={titleLength as 4 | 6} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.titleText} noWrap>
+            <Typography variant="h6" className={classes.text} noWrap>
               {title}
             </Typography>
           </MuiThemeProvider>
@@ -221,7 +194,7 @@ function Course({
         {placeholderGrid}
         <Grid item xs={1} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
-            <Typography variant="h6" className={classes.creditText} noWrap>
+            <Typography variant="h6" className={classes.text} noWrap>
               {credits}
             </Typography>
           </MuiThemeProvider>
