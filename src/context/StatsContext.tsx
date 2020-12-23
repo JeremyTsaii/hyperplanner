@@ -51,41 +51,43 @@ const getCourseStats = (
   let num = 0
   let sem = 'fall'
   courseArr.forEach((course) => {
-    if (course.writ_inten) {
-      writ += 1
-    }
-
-    if (course.type === 'pe') {
-      pe += course.credits
-    } else if (course.type === 'major_elec') {
-      majorElec += course.credits
-    } else if (course.type === 'hum_depth') {
-      depth += 1
-      if (course.campus === 'hmc') {
-        muddHum += 1
+    if (course.active) {
+      if (course.writ_inten) {
+        writ += 1
       }
-    } else if (course.type === 'hum_breadth') {
-      breadth += 1
-      if (course.campus === 'hmc') {
-        muddHum += 1
-      }
-    } else if (course.type === 'hum_elec') {
-      humElec += 1
-      if (course.campus === 'hmc') {
-        muddHum += 1
-      }
-    }
 
-    const lastChar = course.term.slice(-1)
-    const lastSem = course.term.slice(0, -1)
-    const numLast = parseInt(lastChar, 10)
+      if (course.type === 'pe') {
+        pe += course.credits
+      } else if (course.type === 'major_elec') {
+        majorElec += course.credits
+      } else if (course.type === 'hum_depth') {
+        depth += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      } else if (course.type === 'hum_breadth') {
+        breadth += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      } else if (course.type === 'hum_elec') {
+        humElec += 1
+        if (course.campus === 'hmc') {
+          muddHum += 1
+        }
+      }
 
-    if (
-      (numLast > num || (numLast === num && sem === 'fall')) &&
-      lastSem !== 'summer'
-    ) {
-      sem = lastSem
-      num = numLast
+      const lastChar = course.term.slice(-1)
+      const lastSem = course.term.slice(0, -1)
+      const numLast = parseInt(lastChar, 10)
+
+      if (
+        (numLast > num || (numLast === num && sem === 'fall')) &&
+        lastSem !== 'summer'
+      ) {
+        sem = lastSem
+        num = numLast
+      }
     }
   })
   num = num * 2 - (sem === 'fall' ? 1 : 0)
@@ -123,7 +125,8 @@ const calculateStats = (
   // Credit calculation
   const requiredCredits = Requirements[key].grad
   const totalCredits = courses.reduce(
-    (count: number, course: Courses) => count + course.credits,
+    (count: number, course: Courses) =>
+      course.active ? count + course.credits : count,
     0,
   )
 
