@@ -126,7 +126,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   const info = infoData.users[0]
   const { courses } = coursesData
 
-  const { school, major, auth0_id: id, majorChecks, coreChecks, enroll } = info
+  const { school, major, majorChecks, coreChecks, enroll } = info
 
   const stats = useContext(StatsContext)
 
