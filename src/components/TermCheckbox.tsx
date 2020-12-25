@@ -85,15 +85,10 @@ function TermCheckbox({
     })
     setAnchorEl(null)
   }
-
-  const setActiveText = `Set all ${termString[0].toUpperCase()}${termString.substr(
-    1,
-    termString.length - 2,
-  )} courses active`
-  const setInactiveText = `Set all ${termString[0].toUpperCase()}${termString.substr(
-    1,
-    termString.length - 2,
-  )} courses inactive`
+  
+  const formatTerm = termString[0].toUpperCase() + termString.substr(1, termString.length - 2)
+  const setActiveText = `Set all ${formatTerm} courses active`
+  const setInactiveText = `Set all ${formatTerm} courses inactive`
 
   return (
     <div className={className}>
