@@ -142,12 +142,12 @@ function InfoModal(): JSX.Element {
 
   const handleSchoolChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
-    setSchool(target.value)
+    setSchool(schoolDict[target.value])
   }
 
   const handleMajorChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
-    setMajor(target.value)
+    setMajor(majorDict[target.value])
   }
 
   const handleConcentrationChange = (
@@ -178,8 +178,8 @@ function InfoModal(): JSX.Element {
 
   const handleClose = () => {
     setName(firstName)
-    setSchool(schoolName)
-    setMajor(majorName)
+    setSchool(schoolDict[schoolName])
+    setMajor(majorDict[majorName])
     setConcentration(concName)
     setOpen(false)
     setEnroll(enrollYear)
