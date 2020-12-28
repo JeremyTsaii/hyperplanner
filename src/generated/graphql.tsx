@@ -1404,7 +1404,14 @@ export type Get_CoursesQuery = { __typename?: 'query_root' } & {
   courses: Array<
     { __typename?: 'courses' } & Pick<
       Courses,
-      'term' | 'title' | 'code' | 'credits' | 'type' | 'campus' | 'writ_inten'
+      | 'active'
+      | 'term'
+      | 'title'
+      | 'code'
+      | 'credits'
+      | 'type'
+      | 'campus'
+      | 'writ_inten'
     >
   >
 }
@@ -1491,6 +1498,7 @@ export type Increment_Course_EditsMutation = {
 
 export type Update_CourseMutationVariables = Exact<{
   old_title: Scalars['String']
+  active: Scalars['Boolean']
   term: Scalars['String']
   title: Scalars['String']
   code: Scalars['String']
@@ -1509,6 +1517,7 @@ export type Update_CourseMutation = { __typename?: 'mutation_root' } & {
         returning: Array<
           { __typename?: 'courses' } & Pick<
             Courses,
+            | 'active'
             | 'term'
             | 'title'
             | 'code'
@@ -1522,7 +1531,24 @@ export type Update_CourseMutation = { __typename?: 'mutation_root' } & {
   >
 }
 
+export type Update_Active_CoursesMutationVariables = Exact<{
+  active: Scalars['Boolean']
+  term: Scalars['String']
+}>
+
+export type Update_Active_CoursesMutation = { __typename?: 'mutation_root' } & {
+  update_courses?: Maybe<
+    { __typename?: 'courses_mutation_response' } & Pick<
+      Courses_Mutation_Response,
+      'affected_rows'
+    > & {
+        returning: Array<{ __typename?: 'courses' } & Pick<Courses, 'active'>>
+      }
+  >
+}
+
 export type Add_CourseMutationVariables = Exact<{
+  active: Scalars['Boolean']
   term: Scalars['String']
   title: Scalars['String']
   code: Scalars['String']
@@ -1541,6 +1567,7 @@ export type Add_CourseMutation = { __typename?: 'mutation_root' } & {
         returning: Array<
           { __typename?: 'courses' } & Pick<
             Courses,
+            | 'active'
             | 'term'
             | 'title'
             | 'code'
@@ -1668,6 +1695,7 @@ export type Get_InfoQueryResult = Apollo.QueryResult<
 export const Get_CoursesDocument = gql`
   query GET_COURSES {
     courses(order_by: [{ type: desc }, { code: asc }]) {
+      active
       term
       title
       code
@@ -1967,6 +1995,7 @@ export type Increment_Course_EditsMutationOptions = Apollo.BaseMutationOptions<
 export const Update_CourseDocument = gql`
   mutation UPDATE_COURSE(
     $old_title: String!
+    $active: Boolean!
     $term: String!
     $title: String!
     $code: String!
@@ -1979,6 +2008,7 @@ export const Update_CourseDocument = gql`
       where: { term: { _eq: $term }, title: { _eq: $old_title } }
       _set: {
         title: $title
+        active: $active
         code: $code
         credits: $credits
         type: $type
@@ -1988,6 +2018,7 @@ export const Update_CourseDocument = gql`
     ) {
       affected_rows
       returning {
+        active
         term
         title
         code
@@ -2018,6 +2049,7 @@ export type Update_CourseMutationFn = Apollo.MutationFunction<
  * const [updateCourseMutation, { data, loading, error }] = useUpdate_CourseMutation({
  *   variables: {
  *      old_title: // value for 'old_title'
+ *      active: // value for 'active'
  *      term: // value for 'term'
  *      title: // value for 'title'
  *      code: // value for 'code'
@@ -2047,8 +2079,61 @@ export type Update_CourseMutationOptions = Apollo.BaseMutationOptions<
   Update_CourseMutation,
   Update_CourseMutationVariables
 >
+export const Update_Active_CoursesDocument = gql`
+  mutation UPDATE_ACTIVE_COURSES($active: Boolean!, $term: String!) {
+    update_courses(where: { term: { _eq: $term } }, _set: { active: $active }) {
+      affected_rows
+      returning {
+        active
+      }
+    }
+  }
+`
+export type Update_Active_CoursesMutationFn = Apollo.MutationFunction<
+  Update_Active_CoursesMutation,
+  Update_Active_CoursesMutationVariables
+>
+
+/**
+ * __useUpdate_Active_CoursesMutation__
+ *
+ * To run a mutation, you first call `useUpdate_Active_CoursesMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useUpdate_Active_CoursesMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [updateActiveCoursesMutation, { data, loading, error }] = useUpdate_Active_CoursesMutation({
+ *   variables: {
+ *      active: // value for 'active'
+ *      term: // value for 'term'
+ *   },
+ * });
+ */
+export function useUpdate_Active_CoursesMutation(
+  baseOptions?: Apollo.MutationHookOptions<
+    Update_Active_CoursesMutation,
+    Update_Active_CoursesMutationVariables
+  >,
+) {
+  return Apollo.useMutation<
+    Update_Active_CoursesMutation,
+    Update_Active_CoursesMutationVariables
+  >(Update_Active_CoursesDocument, baseOptions)
+}
+export type Update_Active_CoursesMutationHookResult = ReturnType<
+  typeof useUpdate_Active_CoursesMutation
+>
+export type Update_Active_CoursesMutationResult = Apollo.MutationResult<Update_Active_CoursesMutation>
+export type Update_Active_CoursesMutationOptions = Apollo.BaseMutationOptions<
+  Update_Active_CoursesMutation,
+  Update_Active_CoursesMutationVariables
+>
 export const Add_CourseDocument = gql`
   mutation ADD_COURSE(
+    $active: Boolean!
     $term: String!
     $title: String!
     $code: String!
@@ -2059,6 +2144,7 @@ export const Add_CourseDocument = gql`
   ) {
     insert_courses(
       objects: {
+        active: $active
         term: $term
         title: $title
         code: $code
@@ -2070,6 +2156,7 @@ export const Add_CourseDocument = gql`
     ) {
       affected_rows
       returning {
+        active
         term
         title
         code
@@ -2099,6 +2186,7 @@ export type Add_CourseMutationFn = Apollo.MutationFunction<
  * @example
  * const [addCourseMutation, { data, loading, error }] = useAdd_CourseMutation({
  *   variables: {
+ *      active: // value for 'active'
  *      term: // value for 'term'
  *      title: // value for 'title'
  *      code: // value for 'code'

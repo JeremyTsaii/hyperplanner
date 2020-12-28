@@ -48,10 +48,11 @@ interface IProps {
   isList: boolean
   isMajor?: boolean
   checklist?: { code: string; title: string }[]
-  id?: string
   coreChecks?: string
+  activeCoreChecksArr?: number[]
   enroll?: number
   majorChecks?: string
+  activeMajorChecksArr?: number[]
   major?: string
 }
 
@@ -61,10 +62,11 @@ const RightStatsCardStats = ({
   isList,
   isMajor,
   checklist,
-  id,
   coreChecks,
+  activeCoreChecksArr,
   enroll,
   majorChecks,
+  activeMajorChecksArr,
   major,
 }: IProps): JSX.Element => {
   const classes = useStyles()
@@ -97,8 +99,8 @@ const RightStatsCardStats = ({
         <RequirementsList
           isMajor
           reqs={checklist!}
-          id={id!}
           majorChecks={majorChecks!}
+          activeMajorChecksArr={activeMajorChecksArr}
           major={major!}
         />
         {/* eslint-enable */}
@@ -112,8 +114,8 @@ const RightStatsCardStats = ({
       <RequirementsList
         isMajor={false}
         reqs={checklist!}
-        id={id!}
         coreChecks={coreChecks!}
+        activeCoreChecksArr={activeCoreChecksArr}
         enroll={enroll!}
       />
       {/* eslint-enable */}
@@ -126,10 +128,11 @@ RightStatsCardStats.defaultProps = {
   valArr: [],
   isMajor: false,
   checklist: [],
-  id: '',
   coreChecks: '',
+  activeCoreChecksArr: [],
   enroll: 0,
   majorChecks: '',
+  activeMajorChecksArr: [],
   major: '',
 }
 

@@ -9,6 +9,8 @@ import RightStatsCardProgress from './RightStatsCardProgress'
 import Requirements from '../static/requirements.json'
 import { UserContext } from '../context/UserContext'
 import { StatsContext } from '../context/StatsContext'
+import { CoursesContext } from '../context/CoursesContext'
+import { Courses } from '../generated/graphql'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
@@ -61,6 +63,45 @@ interface statsProps {
   ELEV: number
 }
 
+// Check if each course in user's major/core checks is active
+const checkActiveRequirements = (
+  type: string,
+  checksArr: number[],
+  checklist: { code: string; title: string }[],
+  courses: Courses[],
+): number[] => {
+  const userCourses = courses.filter((course) => course.type === type)
+  const activeCourses: { [code: string]: number } = {}
+
+  // Count # of active courses for each code
+  userCourses.forEach((course: Courses) => {
+    const currCode = course.code
+    if (course.active) {
+      if (currCode in activeCourses) {
+        activeCourses[currCode] += 1
+      } else {
+        activeCourses[currCode] = 1
+      }
+    }
+  })
+
+  return checksArr.map((c: number, i: number) => {
+    // Split for edge case of CSCI060/CSCI042
+    const courseCodes = checklist[i].code.split('/')
+
+    let val = 0
+    courseCodes.forEach((courseCode) => {
+      if (c === 1 && courseCode in activeCourses) {
+        if (activeCourses[courseCode] > 0) {
+          activeCourses[courseCode] -= 1
+          val = 1
+        }
+      }
+    })
+    return val
+  })
+}
+
 // Calculate percentage of checked courses in array of requirements
 const calculatePercentageChecked = (arr: number[]): number => {
   // Calculate percentage checked
@@ -80,10 +121,12 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   const [value, setValue] = useState('grad')
 
   const { data: infoData } = useContext(UserContext)
+  const { data: coursesData } = useContext(CoursesContext)
 
   const info = infoData.users[0]
+  const { courses } = coursesData
 
-  const { school, major, auth0_id: id, majorChecks, coreChecks, enroll } = info
+  const { school, major, majorChecks, coreChecks, enroll } = info
 
   const stats = useContext(StatsContext)
 
@@ -145,9 +188,15 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
     const majorKey2 = major as keyof typeof jsonMajorChecks
     const majorChecksArr = jsonMajorChecks[majorKey2]
+    const activeMajorChecksArr = checkActiveRequirements(
+      'major_req',
+      majorChecksArr,
+      checklist,
+      courses,
+    )
     const progressTitleArr = ['Completed', 'Electives']
     const progressValArr = [
-      calculatePercentageChecked(majorChecksArr),
+      calculatePercentageChecked(activeMajorChecksArr),
       capPercentage((majorElec / majorElecRequired) * 100),
     ]
 
@@ -156,9 +205,9 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
         isMajor
         isList
         checklist={checklist}
-        id={id}
         major={major}
         majorChecks={majorChecks}
+        activeMajorChecksArr={activeMajorChecksArr}
       />
     )
     dynamicProgressComponent = (
@@ -176,17 +225,23 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     }
     const checklist = Requirements[schoolKey].core[coreTypeKey].courses
     const coreChecksArr = jsonCoreChecks[coreTypeKey2]
+    const activeCoreChecksArr = checkActiveRequirements(
+      'core_req',
+      coreChecksArr,
+      checklist,
+      courses,
+    )
     const progressTitleArr = ['Completed']
-    const progressValArr = [calculatePercentageChecked(coreChecksArr)]
+    const progressValArr = [calculatePercentageChecked(activeCoreChecksArr)]
 
     dynamicStatsComponent = (
       <RightStatsCardStats
         isMajor={false}
         isList
         checklist={checklist}
-        id={id}
         enroll={enroll}
         coreChecks={coreChecks}
+        activeCoreChecksArr={activeCoreChecksArr}
       />
     )
     dynamicProgressComponent = (

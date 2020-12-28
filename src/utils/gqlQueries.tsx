@@ -20,6 +20,7 @@ export const GET_INFO_QUERY = gql`
 export const GET_COURSES_QUERY = gql`
   query GET_COURSES {
     courses(order_by: [{ type: desc }, { code: asc }]) {
+      active
       term
       title
       code
@@ -108,6 +109,7 @@ export const INCREMENT_COURSE_EDITS_MUTATION = gql`
 export const UPDATE_COURSE = gql`
   mutation UPDATE_COURSE(
     $old_title: String!
+    $active: Boolean!
     $term: String!
     $title: String!
     $code: String!
@@ -120,6 +122,7 @@ export const UPDATE_COURSE = gql`
       where: { term: { _eq: $term }, title: { _eq: $old_title } }
       _set: {
         title: $title
+        active: $active
         code: $code
         credits: $credits
         type: $type
@@ -129,6 +132,7 @@ export const UPDATE_COURSE = gql`
     ) {
       affected_rows
       returning {
+        active
         term
         title
         code
@@ -141,8 +145,20 @@ export const UPDATE_COURSE = gql`
   }
 `
 
+export const UPDATE_ACTIVE_COURSES = gql`
+  mutation UPDATE_ACTIVE_COURSES($active: Boolean!, $term: String!) {
+    update_courses(where: { term: { _eq: $term } }, _set: { active: $active }) {
+      affected_rows
+      returning {
+        active
+      }
+    }
+  }
+`
+
 export const ADD_COURSE = gql`
   mutation ADD_COURSE(
+    $active: Boolean!
     $term: String!
     $title: String!
     $code: String!
@@ -153,6 +169,7 @@ export const ADD_COURSE = gql`
   ) {
     insert_courses(
       objects: {
+        active: $active
         term: $term
         title: $title
         code: $code
@@ -164,6 +181,7 @@ export const ADD_COURSE = gql`
     ) {
       affected_rows
       returning {
+        active
         term
         title
         code

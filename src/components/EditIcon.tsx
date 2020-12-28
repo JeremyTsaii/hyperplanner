@@ -4,6 +4,7 @@ import EditModal from './EditModal'
 
 interface editProps {
   functional: boolean
+  active: boolean
   code: string
   title: string
   credits: number
@@ -15,6 +16,7 @@ interface editProps {
 
 function EditIcon({
   functional,
+  active,
   code,
   title,
   credits,
@@ -27,6 +29,7 @@ function EditIcon({
     <Grid item xs={1} zeroMinWidth>
       <EditModal
         functional={functional}
+        activeProp={active}
         codeProp={code}
         titleProp={title}
         creditsProp={credits}
