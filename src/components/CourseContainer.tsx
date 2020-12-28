@@ -115,13 +115,13 @@ const CourseContainer = ({
           onClick={handleChangeFall}
           className={classes.semesterCollapse}>
           Fall:{' '}
-          {fallCourses.reduce(
-            (count: number, course: CourseType) => count + course.credits,
-            0,
-          )}
+          {fallCourses.reduce((count: number, course: CourseType) => {
+            return course.active ? count + course.credits : 0
+          }, 0)}
         </Button>
         <div className={classes.semesterButtons}>
           <TermCheckbox
+            functional={showIcons}
             numCourses={fallCourses.length}
             className={classes.semesterCheckbox}
             termString={fallTerm}
@@ -161,13 +161,13 @@ const CourseContainer = ({
           onClick={handleChangeSpring}
           className={classes.semesterCollapse}>
           Spring:{' '}
-          {springCourses.reduce(
-            (count: number, course: CourseType) => count + course.credits,
-            0,
-          )}
+          {springCourses.reduce((count: number, course: CourseType) => {
+            return course.active ? count + course.credits : 0
+          }, 0)}
         </Button>
         <div className={classes.semesterButtons}>
           <TermCheckbox
+            functional={showIcons}
             numCourses={springCourses.length}
             className={classes.semesterCheckbox}
             termString={springTerm}
@@ -207,13 +207,13 @@ const CourseContainer = ({
           onClick={handleChangeSummer}
           className={classes.semesterCollapse}>
           Summer:{' '}
-          {summerCourses.reduce(
-            (count: number, course: CourseType) => count + course.credits,
-            0,
-          )}
+          {summerCourses.reduce((count: number, course: CourseType) => {
+            return course.active ? count + course.credits : 0
+          }, 0)}
         </Button>
         <div className={classes.semesterButtons}>
           <TermCheckbox
+            functional={showIcons}
             numCourses={summerCourses.length}
             className={classes.semesterCheckbox}
             termString={summerTerm}

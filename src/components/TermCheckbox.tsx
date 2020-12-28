@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
@@ -14,18 +14,20 @@ import {
 /* eslint-enable */
 
 interface termCheckboxProps {
+  functional: boolean
   numCourses: number
   className: string
   termString: string
 }
 
 function TermCheckbox({
+  functional,
   numCourses,
   className,
   termString,
 }: termCheckboxProps): JSX.Element {
   const [updateActiveCourses] = useUpdate_Active_CoursesMutation()
-  const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null)
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null)
 
   const handleOpen = (event: React.MouseEvent<HTMLButtonElement>) => {
     setAnchorEl(event.currentTarget)
@@ -97,7 +99,7 @@ function TermCheckbox({
         size="small"
         aria-controls="term-check-all"
         aria-haspopup="true"
-        onClick={handleOpen}>
+        onClick={functional ? handleOpen : undefined}>
         <DoneAllIcon color="primary" />
       </IconButton>
       <Menu
