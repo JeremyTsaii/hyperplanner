@@ -102,8 +102,6 @@ function EditModal({
 }: editProps): JSX.Element {
   const [updateCourse] = useUpdate_CourseMutation()
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
-  const oldTitle = titleProp
-  const oldCode = codeProp
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -116,10 +114,7 @@ function EditModal({
 
   // Create refs for string inputs in text field
   const codeRef = useRef('')
-  const [code, setCode] = useState(codeProp)
-
   const titleRef = useRef('')
-  const [title, setTitle] = useState(titleProp)
 
   // Changing information in modal
   const [campus, setCampus] = useState(campusProp)
@@ -169,83 +164,86 @@ function EditModal({
     resetInputs()
     setOpen(false)
   }
+  const allFilled = () => {
+    return (
+      campus !== '' &&
+      credit !== '' &&
+      type !== '' &&
+      getValue(codeRef) !== '' &&
+      getValue(titleRef) !== ''
+    )
+  }
   const handleSave = () => {
-    // Update user course_edits column
-    updateCourseEdits()
+    if (allFilled()) {
+      // Update user course_edits column
+      updateCourseEdits()
 
-    let newCode = getValue(codeRef)
-    let newTitle = getValue(titleRef)
+      const newCode = getValue(codeRef)
+      const newTitle = getValue(titleRef)
 
-    if (newCode === '') {
-      newCode = oldCode
-    }
-    if (newTitle === '') {
-      newTitle = oldTitle
-    }
-    updateCourse({
-      variables: {
-        old_title: oldTitle,
-        active: activeProp,
-        term: termProp,
-        title: newTitle,
-        code: newCode,
-        credits: parseFloat(credit),
-        type,
-        campus,
-        writ_inten: writInten === 'True',
-      },
-      update(cache) {
-        /* eslint-disable */
-        const existingCourses = cache.readQuery<Get_CoursesQuery>({
-          query: Get_CoursesDocument,
-        })
-        const newCourses = existingCourses!.courses.map((course) => {
-          if (course.title === oldTitle && course.term === termProp) {
-            const newCourse = {} as Courses
-            newCourse.__typename = 'courses'
-            newCourse.active = activeProp
-            newCourse.term = termProp
-            newCourse.title = newTitle
-            newCourse.code = newCode
-            newCourse.credits = parseFloat(credit)
-            newCourse.type = type
-            newCourse.campus = campus
-            newCourse.writ_inten = writInten === 'True'
-            return newCourse
-          }
-          return course
-        })
-        newCourses.sort(courseSort)
-        cache.writeQuery<Get_CoursesQuery>({
-          query: Get_CoursesDocument,
-          data: { courses: newCourses },
-        })
-        /* eslint-enable */
-      },
-      optimisticResponse: {
-        __typename: 'mutation_root',
-        update_courses: {
-          __typename: 'courses_mutation_response',
-          affected_rows: 1,
-          returning: [
-            {
-              __typename: 'courses',
-              active: activeProp,
-              term: termProp,
-              title: newTitle,
-              code: newCode,
-              credits: parseFloat(credit),
-              type,
-              campus,
-              writ_inten: writInten === 'True',
-            },
-          ],
+      updateCourse({
+        variables: {
+          active: activeProp,
+          old_title: titleProp,
+          term: termProp,
+          title: newTitle,
+          code: newCode,
+          credits: parseFloat(credit),
+          type,
+          campus,
+          writ_inten: writInten === 'True',
         },
-      },
-    })
-    setCode(newCode)
-    setTitle(newTitle)
-    setOpen(false)
+        update(cache) {
+          /* eslint-disable */
+          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+          })
+          const newCourses = existingCourses!.courses.map((course) => {
+            if (course.title === titleProp && course.term === termProp) {
+              const newCourse = {} as Courses
+              newCourse.__typename = 'courses'
+              newCourse.active = activeProp
+              newCourse.term = termProp
+              newCourse.title = newTitle
+              newCourse.code = newCode
+              newCourse.credits = parseFloat(credit)
+              newCourse.type = type
+              newCourse.campus = campus
+              newCourse.writ_inten = writInten === 'True'
+              return newCourse
+            }
+            return course
+          })
+          newCourses.sort(courseSort)
+          cache.writeQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+            data: { courses: newCourses },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          update_courses: {
+            __typename: 'courses_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'courses',
+                active: activeProp,
+                term: termProp,
+                title: newTitle,
+                code: newCode,
+                credits: parseFloat(credit),
+                type,
+                campus,
+                writ_inten: writInten === 'True',
+              },
+            ],
+          },
+        },
+      })
+      setOpen(false)
+    }
   }
 
   // Return icon but no functionality (logged out)
@@ -277,22 +275,28 @@ function EditModal({
             margin="dense"
             id="code"
             label="Course Code"
-            placeholder={code}
+            defaultValue={codeProp}
             required
             fullWidth
             inputRef={codeRef}
             autoComplete="off"
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <TextField
             autoFocus
             margin="dense"
             id="title"
             label="Course Title"
-            placeholder={title}
+            defaultValue={titleProp}
             fullWidth
             required
             inputRef={titleRef}
             autoComplete="off"
+            InputLabelProps={{
+              shrink: true,
+            }}
           />
           <TextField
             select

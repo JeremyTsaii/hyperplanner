@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useRef } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
@@ -14,7 +14,13 @@ import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
 import { modifyChecklist } from '../utils/modalFunctions'
 import AllCourses from '../static/allCourses.json'
-import { types, bools, courseSort } from '../static/infoLists'
+import {
+  types,
+  bools,
+  courseSort,
+  credits,
+  campuses,
+} from '../static/infoLists'
 /* eslint-disable */
 import {
   useAdd_CourseMutation,
@@ -109,9 +115,25 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
 
   const [writInten, setWritInten] = useState('False')
 
-  const [titleRef, setTitle] = useState('')
+  // Create refs for string inputs in text field
+  // Need ref and normal state due to placeholders
+  const codeRef = useRef('')
+  const titleRef = useRef('')
 
-  const [codeRef, setCode] = useState('')
+  const getValue = (ref: React.MutableRefObject<string>): string => {
+    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    return cur.value
+  }
+
+  const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement
+    setCampus(target.value)
+  }
+
+  const handleCreditChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement
+    setCredit(target.value)
+  }
 
   const handleTypeChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
@@ -130,8 +152,6 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
 
   // Reset inputs to default in the modal
   const resetInputs = () => {
-    setTitle('')
-    setCode('')
     setCampus('')
     setCredit('')
     setType('')
@@ -152,16 +172,16 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
       campus !== '' &&
       credit !== '' &&
       type !== '' &&
-      codeRef !== '' &&
-      titleRef !== ''
+      getValue(codeRef) !== '' &&
+      getValue(titleRef) !== ''
     )
   }
   const handleSave = () => {
     const info = infoData.users[0]
     const { majorChecks, coreChecks, school, auth0_id: id } = info
 
-    const newTitle = titleRef
-    const newCode = codeRef
+    const newTitle = getValue(titleRef)
+    const newCode = getValue(codeRef)
     const formatTerm = term.toLowerCase() + year
     if (allFilled()) {
       addCourse({
@@ -325,9 +345,11 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             options={AllCourses}
             onChange={(event, newValue: AllCourse | null) => {
               if (newValue !== null) {
+                const curCode = (codeRef.current as unknown) as HTMLTextAreaElement
+                curCode.value = newValue.code
+                const curTitle = (titleRef.current as unknown) as HTMLTextAreaElement
+                curTitle.value = newValue.title
                 setCampus(newValue.campus)
-                setCode(newValue.code)
-                setTitle(newValue.title)
                 setCredit(newValue.credits.toFixed(1))
               }
             }}
@@ -345,11 +367,72 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             )}
           />
           <TextField
+            autoFocus
+            margin="dense"
+            id="code"
+            label="Course Code"
+            required
+            fullWidth
+            inputRef={codeRef}
+            autoComplete="off"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField
+            autoFocus
+            margin="dense"
+            id="title"
+            label="Course Title"
+            fullWidth
+            required
+            inputRef={titleRef}
+            autoComplete="off"
+            InputLabelProps={{
+              shrink: true,
+            }}
+          />
+          <TextField
+            select
+            label="Campus"
+            fullWidth
+            required
+            value={campus}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleCampusChange}>
+            {campuses.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
+          <TextField
+            select
+            label="Credits"
+            fullWidth
+            required
+            value={credit}
+            InputLabelProps={{
+              shrink: true,
+            }}
+            onChange={handleCreditChange}>
+            {credits.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.value}
+              </MenuItem>
+            ))}
+          </TextField>
+          <TextField
             select
             label="Course Type"
             fullWidth
             required
             value={type}
+            InputLabelProps={{
+              shrink: true,
+            }}
             onChange={handleTypeChange}>
             {types.map((option) => (
               <MenuItem key={option.value} value={option.value}>
@@ -363,6 +446,9 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             fullWidth
             required
             value={writInten}
+            InputLabelProps={{
+              shrink: true,
+            }}
             onChange={handleWritIntenChange}>
             {bools.map((option) => (
               <MenuItem key={option.label} value={option.label}>
