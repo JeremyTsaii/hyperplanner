@@ -93,7 +93,6 @@ function InfoModal(): JSX.Element {
   } = info
 
   // Changing information in modal
-  const [name, setName] = useState(firstName)
   const nameRef = useRef('')
 
   const [school, setSchool] = useState(schoolDict[schoolName])
@@ -177,7 +176,6 @@ function InfoModal(): JSX.Element {
   }
 
   const handleClose = () => {
-    setName(firstName)
     setSchool(schoolDict[schoolName])
     setMajor(majorDict[majorName])
     setConcentration(concName)
@@ -187,59 +185,57 @@ function InfoModal(): JSX.Element {
   }
 
   const handleSave = () => {
-    let newName = getValue(nameRef)
-    if (newName === '') {
-      newName = firstName
-    }
-    updateUser({
-      variables: {
-        name: newName,
-        school: schoolDict[school],
-        major: majorDict[major],
-        conc: concentration,
-        id,
-        enroll: parseFloat(enroll),
-        plannedGrad,
-      },
-      update(cache) {
-        /* eslint-disable */
-        const existingInfo = cache.readQuery<Get_InfoQuery>({
-          query: Get_InfoDocument,
-        })
-        const newInfo = { ...existingInfo!.users[0] }
-        newInfo.nickname = newName
-        newInfo.school = schoolDict[school]
-        newInfo.major = majorDict[major]
-        newInfo.concentration = concentration
-        newInfo.enroll = parseFloat(enroll)
-        newInfo.planned_grad = plannedGrad
-        cache.writeQuery<Get_InfoQuery>({
-          query: Get_InfoDocument,
-          data: { users: [newInfo] },
-        })
-        /* eslint-enable */
-      },
-      optimisticResponse: {
-        __typename: 'mutation_root',
-        update_users: {
-          __typename: 'users_mutation_response',
-          affected_rows: 1,
-          returning: [
-            {
-              __typename: 'users',
-              nickname: newName,
-              school,
-              major,
-              concentration,
-              enroll: parseFloat(enroll),
-              planned_grad: plannedGrad,
-            },
-          ],
+    const newName = getValue(nameRef)
+    if (newName !== '') {
+      updateUser({
+        variables: {
+          name: newName,
+          school: schoolDict[school],
+          major: majorDict[major],
+          conc: concentration,
+          id,
+          enroll: parseFloat(enroll),
+          plannedGrad,
         },
-      },
-    })
-    setName(newName)
-    setOpen(false)
+        update(cache) {
+          /* eslint-disable */
+          const existingInfo = cache.readQuery<Get_InfoQuery>({
+            query: Get_InfoDocument,
+          })
+          const newInfo = { ...existingInfo!.users[0] }
+          newInfo.nickname = newName
+          newInfo.school = schoolDict[school]
+          newInfo.major = majorDict[major]
+          newInfo.concentration = concentration
+          newInfo.enroll = parseFloat(enroll)
+          newInfo.planned_grad = plannedGrad
+          cache.writeQuery<Get_InfoQuery>({
+            query: Get_InfoDocument,
+            data: { users: [newInfo] },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          update_users: {
+            __typename: 'users_mutation_response',
+            affected_rows: 1,
+            returning: [
+              {
+                __typename: 'users',
+                nickname: newName,
+                school,
+                major,
+                concentration,
+                enroll: parseFloat(enroll),
+                planned_grad: plannedGrad,
+              },
+            ],
+          },
+        },
+      })
+      setOpen(false)
+    }
   }
 
   return (
@@ -260,11 +256,12 @@ function InfoModal(): JSX.Element {
         <DialogContent dividers>
           <TextField
             autoFocus
+            required
             margin="dense"
             id="name"
             label="Name"
             fullWidth
-            placeholder={name}
+            defaultValue={firstName}
             autoComplete="off"
             inputRef={nameRef}
           />

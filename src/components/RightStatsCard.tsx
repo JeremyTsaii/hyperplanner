@@ -33,19 +33,12 @@ const useStyles = makeStyles((theme) => ({
   reqButtonSection: {
     display: 'flex',
     flexDirection: 'column',
-    maxWidth: '150px',
-    width: '150px',
+    width: theme.spacing(18),
     margin: '0px',
     marginTop: theme.spacing(0.5),
     [theme.breakpoints.down('xs')]: {
       marginLeft: theme.spacing(2),
     },
-  },
-  statButton: {
-    marginBottom: theme.spacing(1),
-    height: theme.spacing(4),
-    textAlign: 'left',
-    color: 'white',
   },
   tab: {
     backgroundColor: '#23252e',

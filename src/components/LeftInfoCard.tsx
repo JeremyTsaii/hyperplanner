@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#23252e',
     height: theme.spacing(25),
     flexGrow: 1,
-    marginRight: theme.spacing(2),
+    marginRight: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       marginRight: '0',
     },
@@ -32,8 +32,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
     fontSize: '22px',
     textAlign: 'left',
-    marginLeft: theme.spacing(2),
-    marginBottom: theme.spacing(0.1),
+    marginLeft: theme.spacing(1),
     paddingTop: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       fontSize: '7px',
@@ -51,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#fff',
     fontSize: '17.5px',
     textAlign: 'left',
-    marginLeft: theme.spacing(2),
+    marginLeft: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       fontSize: '7px',
     },
@@ -63,7 +62,6 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   editIcon: {
-    marginTop: theme.spacing(0),
     alignSelf: 'flex-end',
     margin: '0',
     marginRight: theme.spacing(1),

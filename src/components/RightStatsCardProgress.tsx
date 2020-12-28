@@ -2,11 +2,12 @@ import React from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import CircularProgressWithLabel from './CircularProgress'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   progressSection: {
     display: 'flex',
+    justifyContent: 'center',
     alignItems: 'center',
-    justifyItems: 'center',
+    width: theme.spacing(70),
   },
 }))
 
