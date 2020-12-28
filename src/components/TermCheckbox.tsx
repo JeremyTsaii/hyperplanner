@@ -85,8 +85,9 @@ function TermCheckbox({
     })
     setAnchorEl(null)
   }
-  
-  const formatTerm = termString[0].toUpperCase() + termString.substr(1, termString.length - 2)
+
+  const formatTerm =
+    termString[0].toUpperCase() + termString.substr(1, termString.length - 2)
   const setActiveText = `Set all ${formatTerm} courses active`
   const setInactiveText = `Set all ${formatTerm} courses inactive`
 
