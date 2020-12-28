@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
     background: '#23252e',
     height: theme.spacing(25),
     flexGrow: 1,
-    marginRight: theme.spacing(3),
+    marginRight: theme.spacing(2),
     [theme.breakpoints.down('xs')]: {
       marginRight: '0',
     },

@@ -11,14 +11,12 @@ import CourseModal from './CourseModal'
 const useStyles = makeStyles((theme) => ({
   mainCard: {
     background: '#23252e',
-    margin: theme.spacing(2),
+    marginTop: theme.spacing(2),
+    marginLeft: theme.spacing(0.5),
+    marginRight: theme.spacing(0.5),
     width: theme.spacing(25),
-    height: theme.spacing(70),
+    height: theme.spacing(150),
     flexGrow: 1,
-    overflowY: 'scroll',
-    overflowX: 'hidden',
-    scrollbarWidth: 'thin',
-    scrollbarColor: '#282c34 #3a3f55',
     [theme.breakpoints.down('xs')]: {
       marginTop: theme.spacing(1),
       marginRight: theme.spacing(1),
@@ -45,12 +43,11 @@ const useStyles = makeStyles((theme) => ({
   yearText: {
     color: '#fff',
     fontSize: '22px',
+    marginTop: theme.spacing(1),
   },
-
   paper: {
     background: '#23252e',
-    margin: theme.spacing(1),
-    marginRight: theme.spacing(0),
+    margin: theme.spacing(0.75),
   },
   semesterCollapse: {
     color: '#white',

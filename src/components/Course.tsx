@@ -37,11 +37,8 @@ const useStyles = makeStyles(() => ({
       fontSize: theme.spacing(1.25),
     },
     [theme.breakpoints.down('lg')]: {
-      fontSize: theme.spacing(1.4),
+      fontSize: theme.spacing(1.3),
     },
-  },
-  courseButton: {
-    alignItems: 'flex-end',
   },
 }))
 

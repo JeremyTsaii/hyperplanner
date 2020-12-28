@@ -9,7 +9,6 @@ import {
   useUpdate_CourseMutation,
   Courses,
 } from '../generated/graphql'
-import { AirplanemodeActiveTwoTone } from '@material-ui/icons'
 /* eslint-enable */
 
 interface checkboxProps {
@@ -120,11 +119,13 @@ function CourseCheckbox({
   return (
     <Grid item xs={1} zeroMinWidth>
       <Checkbox
+        edge="start"
         checked={active}
         color="default"
         size="small"
         onChange={handleChange}
         inputProps={{ 'aria-label': 'primary checkbox' }}
+        style={{ paddingLeft: 13 }}
       />
     </Grid>
   )

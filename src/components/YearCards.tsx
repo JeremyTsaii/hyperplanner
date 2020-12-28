@@ -8,8 +8,8 @@ const useStyles = makeStyles((theme) => ({
   innerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',
-    marginLeft: theme.spacing(4),
-    marginRight: theme.spacing(4),
+    marginLeft: theme.spacing(1),
+    marginRight: theme.spacing(1),
     marginTop: theme.spacing(1),
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
