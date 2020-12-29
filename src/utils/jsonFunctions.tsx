@@ -4,6 +4,7 @@ import {
   CourseType,
   hyperToJson,
 } from '../static/infoLists'
+import WritIntens from '../static/writIntens.json'
 
 /* eslint-disable-next-line */
 function validate(course: any) {
@@ -47,6 +48,15 @@ const calculateTerm = (enrollYear: number, termStartDate: string): string => {
   }
   sem = 'fall'
   return sem + (year - enrollYear + 1).toString()
+}
+
+const checkWritInten = (code: string): boolean => {
+  for (let i = 0; i < WritIntens.length; i += 1) {
+    if (WritIntens[i].code === code) {
+      return true
+    }
+  }
+  return false
 }
 
 /* eslint-disable-next-line */
@@ -96,7 +106,7 @@ export const cleanHyper = (
         const subject = curCourse.courseMutualExclusionKey[0]
         const num = curCourse.courseMutualExclusionKey[1]
         courseEntry.code = subject + num.toString()
-        courseEntry.writ_inten = false
+        courseEntry.writ_inten = checkWritInten(courseEntry.code)
         courseEntry.type = 'undecided'
         if (!validate(courseEntry)) {
           return [false, null]
