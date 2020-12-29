@@ -1,0 +1,62 @@
+[
+  { "code": "ANTH111", "title": "Introduction to the Anthropology of Science" },
+  { "code": "ANTH115", "title": "War and Conflict" },
+  { "code": "ANTH134", "title": "Rationalities" },
+  { "code": "ECON150", "title": "The Political Economy of Higher Education" },
+  { "code": "GEOG105", "title": "Place, Power and Difference" },
+  {
+    "code": "GEOG179A",
+    "title": "Imagining Citizenship Otherwise / Special Topics in Geography"
+  },
+  {
+    "code": "GEOG179C",
+    "title": "Geographies Disease/Health Justice / Special Topics in Geography"
+  },
+  {
+    "code": "GEOG179D",
+    "title": "Critical Geographies of Community / Special Topics in Geography"
+  },
+  {
+    "code": "GEOG179E",
+    "title": "Geographies of Labor / Special Topics in Geography"
+  },
+  { "code": "HIST150", "title": "Technology and Medicine" },
+  { "code": "HIST151", "title": "Science in Fiction" },
+  { "code": "HIST179", "title": "Genetics and Race" },
+  { "code": "LIT035", "title": "Fiction Writing Workshop" },
+  {
+    "code": "LIT107",
+    "title": "Fourteen Poems: An Introduction to Poetry / Special Topics in Literature"
+  },
+  { "code": "LIT145", "title": "Third World Women Writers" },
+  { "code": "LIT147", "title": "Writers from Africa and the Caribbean" },
+  { "code": "LIT155", "title": "Post-Apartheid Narratives" },
+  { "code": "LIT156", "title": "Translation, or The Foreignness of Language" },
+  { "code": "LIT179", "title": "Jacobean Shakespeare" },
+  { "code": "LIT179B", "title": "Renaissance Literature and Culture" },
+  {
+    "code": "LIT179AC",
+    "title": "Sci-Fi, Horror and Other Tales / Special Topics in Literature"
+  },
+  {
+    "code": "LIT179D",
+    "title": "Medieval/Renaissance Romance / Special Topics in Literature"
+  },
+  { "code": "LIT179Q", "title": "Weird Books / Special Topics in Literature" },
+  {
+    "code": "LIT179V",
+    "title": "Forking Paths Fiction Workshop / Special Topics in Literature"
+  },
+  { "code": "PHIL122", "title": "Ethics: Ancient and Modern" },
+  { "code": "PHIL125", "title": "Ethical Issues in Science and Engineering" },
+  { "code": "POST188", "title": "Political Innovation" },
+  { "code": "RLST112", "title": "Engaging Religion" },
+  { "code": "RLST113", "title": "God, Darwin, and Design" },
+  { "code": "RLST114", "title": "2038 Prophecy, Apocalypse" },
+  { "code": "RLST147", "title": "World and Transnational Religions" },
+  { "code": "RLST183", "title": "Ghosts and the Machines" },
+  { "code": "RLST184", "title": "Science and Religion" },
+  { "code": "STS114", "title": "Social and Political Issues in Clinic" },
+  { "code": "STS179", "title": "Data and Society" },
+  { "code": "STS179", "title": "Technology and Human Reproduction" }
+]
