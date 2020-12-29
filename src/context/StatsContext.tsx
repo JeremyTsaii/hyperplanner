@@ -22,11 +22,80 @@ type Stats = {
   humElec: number
   muddHum: number
   writ: number
+  majorChecks: number[]
+  coreChecks: number[]
+}
+
+const generateUserMajorRequirements = (
+  major: string,
+  school: string,
+): {
+  majorReqTable: { [code: string]: number[] }
+  count: number
+} => {
+  const majorReqTable: { [code: string]: number[] } = {}
+
+  const schoolKey = school as keyof typeof Requirements
+  const majorKey = major as keyof typeof Requirements[typeof schoolKey]['major']
+  const checklist = Requirements[schoolKey].major[majorKey].major_req
+
+  let count = 0
+  /* eslint-disable */
+  checklist.forEach((req: { code: string; title: string }, index: number) => {
+    const currCode = req.code.split('/')
+    count += 1
+    currCode.forEach((code: string) => {
+      if (majorReqTable.hasOwnProperty(code)) {
+        majorReqTable[code].push(index)
+      } else {
+        majorReqTable[code] = [index]
+      }
+    })
+  })
+  /* eslint-enable */
+
+  return { majorReqTable, count }
+}
+
+const generateUserCoreRequirements = (
+  enrollYear: number,
+  school: string,
+): {
+  coreReqTable: { [code: string]: number[] }
+  count: number
+} => {
+  const coreReqTable: { [code: string]: number[] } = {}
+
+  const schoolKey = school as keyof typeof Requirements
+  const coreType = enrollYear > 2018 ? 'post' : 'pre'
+  const coreTypeKey = coreType as keyof typeof Requirements[typeof schoolKey]['core']
+  const checklist = Requirements[schoolKey].core[coreTypeKey].courses
+
+  let count = 0
+  /* eslint-disable */
+  checklist.forEach((req: { code: string; title: string }, index: number) => {
+    const currCode = req.code.split('/')
+    count += 1
+    currCode.forEach((code: string) => {
+      if (coreReqTable.hasOwnProperty(code)) {
+        coreReqTable[code].push(index)
+      } else {
+        coreReqTable[code] = [index]
+      }
+    })
+  })
+  /* eslint-enable */
+
+  return { coreReqTable, count }
 }
 
 // Aggregate function that calculates multipate statistics to prevent looping through courses multiple times
 const getCourseStats = (
   courseArr: Courses[],
+  majorReqTable: { [code: string]: number[] },
+  coreReqTable: { [code: string]: number[] },
+  majorCount: number,
+  coreCount: number,
 ): {
   pe: number
   majorElec: number
@@ -36,6 +105,8 @@ const getCourseStats = (
   muddHum: number
   writ: number
   semesters: number
+  majorChecks: number[]
+  coreChecks: number[]
 } => {
   // Counters for stats
   let pe = 0
@@ -46,6 +117,8 @@ const getCourseStats = (
   let muddHum = 0
   let writ = 0
 
+  const majorChecks: number[] = Array(majorCount).fill(0)
+  const coreChecks: number[] = Array(coreCount).fill(0)
   // Find number of completed semesters for average calculations
   // Looks at greatest semester that is not a summer
   let num = 0
@@ -89,6 +162,20 @@ const getCourseStats = (
         num = numLast
       }
     }
+
+    // Handle major/core checks array
+    /* eslint-disable */
+    if (majorReqTable.hasOwnProperty(course.code)) {
+      majorChecks[majorReqTable[course.code].shift() as number] = course.active
+        ? 2
+        : 1
+    }
+    if (coreReqTable.hasOwnProperty(course.code)) {
+      coreChecks[coreReqTable[course.code].shift() as number] = course.active
+        ? 2
+        : 1
+    }
+    /* eslint-enable */
   })
   num = num * 2 - (sem === 'fall' ? 1 : 0)
 
@@ -104,6 +191,8 @@ const getCourseStats = (
     humElec,
     muddHum,
     writ,
+    majorChecks,
+    coreChecks,
   }
 }
 
@@ -116,6 +205,7 @@ const getCourseStats = (
 const calculateStats = (
   school: string,
   courses: Courses[],
+  major: string,
   enrollYear: number,
   plannedGrad: string,
 ): Stats => {
@@ -130,6 +220,15 @@ const calculateStats = (
     0,
   )
 
+  const { majorReqTable, count: majorCount } = generateUserMajorRequirements(
+    major,
+    school,
+  )
+  const { coreReqTable, count: coreCount } = generateUserCoreRequirements(
+    enrollYear,
+    school,
+  )
+
   const {
     semesters,
     pe,
@@ -139,7 +238,18 @@ const calculateStats = (
     humElec,
     muddHum,
     writ,
-  } = getCourseStats(courses)
+    majorChecks,
+    coreChecks,
+  } = getCourseStats(
+    courses,
+    majorReqTable,
+    coreReqTable,
+    majorCount,
+    coreCount,
+  )
+
+  console.log(majorChecks)
+  console.log(coreChecks)
 
   // Calculate how many semesters the user plans on graduating in
   const plan = plannedGrad.split(' ', 2)
@@ -178,6 +288,8 @@ const calculateStats = (
   statsObj.humElec = humElec
   statsObj.muddHum = muddHum
   statsObj.writ = writ
+  statsObj.majorChecks = majorChecks
+  statsObj.coreChecks = coreChecks
 
   return statsObj
 }
@@ -203,6 +315,7 @@ export const StatsContextProvider = ({
   const stats = calculateStats(
     info.school,
     courses,
+    info.major,
     info.enroll,
     info.planned_grad,
   )
