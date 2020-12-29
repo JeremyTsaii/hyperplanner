@@ -20,8 +20,7 @@ const useStyles = makeStyles((theme) => ({
     flexFlow: 'column',
     overflowY: 'scroll',
     height: '100%',
-    maxWidth: '500px',
-    width: '500px',
+    width: theme.spacing(130),
     margin: '0px',
     [theme.breakpoints.down('xs')]: {
       width: '90%',

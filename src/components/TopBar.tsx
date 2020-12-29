@@ -15,10 +15,10 @@ import { CoursesContext } from '../context/CoursesContext'
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    paddingBottom: '20px',
-    paddingLeft: '15px',
-    paddingRight: '15px',
-    paddingTop: '15px',
+    paddingBottom: theme.spacing(1.5),
+    paddingLeft: theme.spacing(1),
+    paddingRight: theme.spacing(1),
+    paddingTop: theme.spacing(1),
   },
   appBar: {
     background: '#23252e',
@@ -28,7 +28,6 @@ const useStyles = makeStyles((theme) => ({
     borderBottomRightRadius: '10px',
   },
   toolBar: { display: 'flex', justifyContent: 'space-between' },
-  menuButton: {},
   title: {
     [theme.breakpoints.down('sm')]: {
       display: 'none',

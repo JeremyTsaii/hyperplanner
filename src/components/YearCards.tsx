@@ -4,13 +4,12 @@ import { makeStyles } from '@material-ui/core/styles'
 import Year from './Year'
 
 const useStyles = makeStyles((theme) => ({
-  outerContainer: {},
   innerContainer: {
     display: 'flex',
     flexWrap: 'nowrap',
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    marginTop: theme.spacing(1),
+    marginTop: theme.spacing(0),
     [theme.breakpoints.down('xs')]: {
       flexDirection: 'column',
       marginLeft: theme.spacing(2),
@@ -36,7 +35,7 @@ const YearCards = (): JSX.Element => {
   const classes = useStyles()
 
   return (
-    <Grid container justify="center" className={classes.outerContainer}>
+    <Grid container justify="center">
       <Grid item xs={12} className={classes.innerContainer}>
         <Year yearNumber={1} />
         <Year yearNumber={2} />

@@ -16,7 +16,7 @@ const useStyles = makeStyles((theme) => ({
   statsCard: {
     background: '#23252e',
     height: theme.spacing(25),
-    flexGrow: 4,
+    flexGrow: 1,
     flexDirection: 'row',
     display: 'flex',
     boxSizing: 'border-box',
@@ -33,7 +33,7 @@ const useStyles = makeStyles((theme) => ({
   reqButtonSection: {
     display: 'flex',
     flexDirection: 'column',
-    width: theme.spacing(18),
+    width: theme.spacing(19),
     margin: '0px',
     marginTop: theme.spacing(0.5),
     [theme.breakpoints.down('xs')]: {

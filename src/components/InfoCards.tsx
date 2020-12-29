@@ -25,8 +25,8 @@ const ELEV = 12
 const useStyles = makeStyles(() => ({
   container: {
     display: 'flex',
-    paddingRight: theme.spacing(4),
-    paddingLeft: theme.spacing(4),
+    paddingRight: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
     alignItems: 'stretch',
     flexWrap: 'nowrap',
     [theme.breakpoints.down('xs')]: {
