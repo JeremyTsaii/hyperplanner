@@ -329,6 +329,10 @@ export const types = [
     value: 'other',
     label: 'Other',
   },
+  {
+    value: 'undecided',
+    label: 'Undecided',
+  },
 ]
 
 export const typeDict: StringToString = {

@@ -119,3 +119,40 @@ export const cleanHyper = (
     return [false, null]
   }
 }
+
+const getTermCourses = (
+  term: string,
+  idx: number,
+  /* eslint-disable-next-line */
+  coursesJson: any,
+): CourseType[] => {
+  const courses = []
+  const termCourses = coursesJson[idx][term]
+  for (let j = 0; j < termCourses.length; j += 1) {
+    const curCourse = termCourses[j]
+    const newCourse = {} as CourseType
+    newCourse.term = `${term.toLowerCase()}${idx + 1}`
+    newCourse.title = curCourse.title
+    newCourse.code = curCourse.code
+    newCourse.credits = curCourse.credits
+    newCourse.type = 'undecided'
+    newCourse.campus = curCourse.campus
+    newCourse.writ_inten = false
+    courses.push(newCourse)
+  }
+  return courses
+}
+
+/* eslint-disable-next-line */
+export const getCoursesFromJson = (coursesJson: any): CourseType[] => {
+  let courses = [] as CourseType[]
+  for (let i = 0; i < coursesJson.length; i += 1) {
+    const fallCourses = getTermCourses('Fall', i, coursesJson)
+    courses = courses.concat(fallCourses)
+    const springCourses = getTermCourses('Spring', i, coursesJson)
+    courses = courses.concat(springCourses)
+    const summerCourses = getTermCourses('Summer', i, coursesJson)
+    courses = courses.concat(summerCourses)
+  }
+  return courses
+}

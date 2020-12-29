@@ -112,7 +112,7 @@ const CourseContainer = ({
           className={classes.semesterCollapse}>
           Fall:{' '}
           {fallCourses.reduce((count: number, course: CourseType) => {
-            return course.active ? count + course.credits : 0
+            return course.active ? count + course.credits : count
           }, 0)}
         </Button>
         <div className={classes.semesterButtons}>
@@ -158,7 +158,7 @@ const CourseContainer = ({
           className={classes.semesterCollapse}>
           Spring:{' '}
           {springCourses.reduce((count: number, course: CourseType) => {
-            return course.active ? count + course.credits : 0
+            return course.active ? count + course.credits : count
           }, 0)}
         </Button>
         <div className={classes.semesterButtons}>
@@ -204,7 +204,7 @@ const CourseContainer = ({
           className={classes.semesterCollapse}>
           Summer:{' '}
           {summerCourses.reduce((count: number, course: CourseType) => {
-            return course.active ? count + course.credits : 0
+            return course.active ? count + course.credits : count
           }, 0)}
         </Button>
         <div className={classes.semesterButtons}>

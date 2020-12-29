@@ -12,7 +12,7 @@ import {
 } from '../../generated/graphql'
 /* eslint-enable */
 import UploadButton from './UploadButton'
-import { validJson } from '../../utils/jsonFunctions'
+import { validJson, getCoursesFromJson } from '../../utils/jsonFunctions'
 import { CourseType, courseSort } from '../../static/infoLists'
 
 const useStyles = makeStyles(() => ({
@@ -97,57 +97,7 @@ function ImportTranscript(): JSX.Element {
                   const foundStatus = response2.data.status
                   if (foundStatus === 'found') {
                     const coursesJson = response2.data.data
-                    const courses = []
-                    for (let i = 0; i < coursesJson.length; i += 1) {
-                      for (
-                        let j1 = 0;
-                        j1 < coursesJson[i].Fall.length;
-                        j1 += 1
-                      ) {
-                        const curCourse = coursesJson[i].Fall[j1]
-                        const newCourse = {} as CourseType
-                        newCourse.term = `fall${i + 1}`
-                        newCourse.title = curCourse.title
-                        newCourse.code = curCourse.code
-                        newCourse.credits = curCourse.credits
-                        newCourse.type = 'undecided'
-                        newCourse.campus = curCourse.campus
-                        newCourse.writ_inten = false
-                        courses.push(newCourse)
-                      }
-                      for (
-                        let j2 = 0;
-                        j2 < coursesJson[i].Spring.length;
-                        j2 += 1
-                      ) {
-                        const curCourse = coursesJson[i].Spring[j2]
-                        const newCourse = {} as CourseType
-                        newCourse.term = `spring${i + 1}`
-                        newCourse.title = curCourse.title
-                        newCourse.code = curCourse.code
-                        newCourse.credits = curCourse.credits
-                        newCourse.type = 'undecided'
-                        newCourse.campus = curCourse.campus
-                        newCourse.writ_inten = false
-                        courses.push(newCourse)
-                      }
-                      for (
-                        let j3 = 0;
-                        j3 < coursesJson[i].Summer.length;
-                        j3 += 1
-                      ) {
-                        const curCourse = coursesJson[i].Summer[j3]
-                        const newCourse = {} as CourseType
-                        newCourse.term = `summer${i + 1}`
-                        newCourse.title = curCourse.title
-                        newCourse.code = curCourse.code
-                        newCourse.credits = curCourse.credits
-                        newCourse.type = 'undecided'
-                        newCourse.campus = curCourse.campus
-                        newCourse.writ_inten = false
-                        courses.push(newCourse)
-                      }
-                    }
+                    const courses = getCoursesFromJson(coursesJson)
 
                     const [isValid, result] = validJson(JSON.stringify(courses))
                     if (isValid) {
