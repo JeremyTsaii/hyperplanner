@@ -6,3 +6,5 @@ src/setupTests.ts
 src/generated
 src/static/defaultMajorChecks.json
 src/static/defaultCoreChecks.json
+src/static/allCourses.json
+src/static/coursesRaw.json
