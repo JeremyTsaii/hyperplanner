@@ -18,9 +18,9 @@ const useStyles = makeStyles(() => ({
     color: '#f50057',
   },
   link: {
-    color: '#FFF',
+    color: '#2196f3',
     '&:hover': {
-      color: '#00e676',
+      color: '#673ab7',
     },
   },
   textField: {

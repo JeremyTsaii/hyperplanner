@@ -12,6 +12,7 @@ import CloseIcon from '@material-ui/icons/Close'
 import Course from './Course'
 import {
   CourseType,
+  demoShadeCourses,
   demoColorCourses,
   demoInitialsCourses,
 } from '../static/infoLists'
@@ -31,6 +32,18 @@ const useStyles = makeStyles((theme) => ({
     right: theme.spacing(1),
     top: theme.spacing(1),
     color: theme.palette.grey[500],
+  },
+  link: {
+    color: '#2196f3',
+    '&:hover': {
+      color: '#673ab7',
+    },
+  },
+  header: {
+    paddingTop: theme.spacing(2),
+  },
+  resource: {
+    paddingLeft: theme.spacing(2),
   },
 }))
 
@@ -107,7 +120,75 @@ const HelpModal = (): JSX.Element => {
         open={open}>
         <DialogTitle onClose={handleClose}>Helpful Information</DialogTitle>
         <DialogContent dividers>
-          <Typography variant="h6" color="secondary">
+          <Typography variant="h6" color="secondary" className={classes.header}>
+            Helpful Resources
+          </Typography>
+          <Typography variant="subtitle1" color="secondary">
+            - Core Requirements:
+          </Typography>
+          <div className={classes.resource}>
+            <a
+              className={classes.link}
+              href="http://catalog.hmc.edu/content.php?catoid=14&navoid=701
+            "
+              target="_blank"
+              rel="noreferrer">
+              - Core Catalog
+            </a>
+          </div>
+          <Typography variant="subtitle1" color="secondary">
+            - Major Requirements:
+          </Typography>
+          <div className={classes.resource}>
+            <a
+              className={classes.link}
+              href="https://www.hmc.edu/academics/majors-at-harvey-mudd/"
+              target="_blank"
+              rel="noreferrer">
+              - Mudd Majors
+            </a>
+          </div>
+          <Typography variant="subtitle1" color="secondary">
+            - HSA Requirements:
+          </Typography>
+          <div className={classes.resource}>
+            <a
+              className={classes.link}
+              href="https://www.hmc.edu/hsa/curriculum/graduation-requirements/
+            "
+              target="_blank"
+              rel="noreferrer">
+              - HSA Curriculum
+            </a>
+          </div>
+          <div className={classes.resource}>
+            <a
+              className={classes.link}
+              href="https://www.hmc.edu/hsa/wp-content/uploads/sites/25/2019/11/Concept-Map-of-Requirements-110619.pdf
+            "
+              target="_blank"
+              rel="noreferrer">
+              - HSA Concept Map
+            </a>
+          </div>
+          <Typography variant="h6" color="secondary" className={classes.header}>
+            Course Shade Types
+          </Typography>
+          {demoShadeCourses.map((course: CourseType) => (
+            <Course
+              key={course.term + course.code}
+              code={course.code}
+              title={course.title}
+              credits={course.credits}
+              type={course.type}
+              campus={course.campus}
+              writInten={course.writ_inten}
+              term={course.term}
+              showIcons={false}
+              active={course.active}
+            />
+          ))}
+          <Typography variant="h6" color="secondary" className={classes.header}>
             Course Color Types
           </Typography>
           {demoColorCourses.map((course: CourseType) => (
@@ -121,10 +202,10 @@ const HelpModal = (): JSX.Element => {
               writInten={course.writ_inten}
               term={course.term}
               showIcons={false}
-              active
+              active={course.active}
             />
           ))}
-          <Typography variant="h6" color="secondary">
+          <Typography variant="h6" color="secondary" className={classes.header}>
             Course Initials Types
           </Typography>
           {demoInitialsCourses.map((course: CourseType) => (
@@ -138,7 +219,7 @@ const HelpModal = (): JSX.Element => {
               writInten={course.writ_inten}
               term={course.term}
               showIcons={false}
-              active
+              active={course.active}
             />
           ))}
         </DialogContent>

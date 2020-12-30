@@ -1956,6 +1956,29 @@ export const placeholderCourses: CourseType[] = [
   },
 ]
 
+export const demoShadeCourses: CourseType[] = [
+  {
+    campus: 'hmc',
+    code: 'PHYS024',
+    credits: 3.0,
+    term: 'fall3',
+    title: 'Active',
+    type: 'major_req',
+    writ_inten: false,
+    active: true,
+  },
+  {
+    campus: 'hmc',
+    code: 'PHYS024',
+    credits: 3.0,
+    term: 'fall3',
+    title: 'Inactive',
+    type: 'major_req',
+    writ_inten: false,
+    active: false,
+  },
+]
+
 export const demoColorCourses: CourseType[] = [
   {
     campus: 'hmc',
@@ -2027,6 +2050,16 @@ export const demoColorCourses: CourseType[] = [
     writ_inten: false,
     active: true,
   },
+  {
+    campus: 'cmc',
+    code: 'XYZ123',
+    credits: 3.0,
+    term: 'fall1',
+    title: 'Undecided',
+    type: 'undecided',
+    writ_inten: false,
+    active: true,
+  },
 ]
 
 export const demoInitialsCourses: CourseType[] = [
@@ -2055,7 +2088,7 @@ export const demoInitialsCourses: CourseType[] = [
     code: 'LIT035',
     credits: 3.0,
     term: 'fall1',
-    title: 'Mudd Hum/Writ Int',
+    title: 'Mudd Hum/Writ Intens',
     type: 'hum_elec',
     writ_inten: true,
     active: true,
