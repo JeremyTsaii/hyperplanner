@@ -61,7 +61,7 @@ function ImportJson(): JSX.Element {
       }))
       const sortedCourses = courses2.sort(courseSort)
 
-      setStatus('Imported')
+      setStatus('Successfully Imported')
 
       // Delete current courses
       removeAllCourses({

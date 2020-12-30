@@ -48,7 +48,6 @@ function ImportHyper(): JSX.Element {
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
 
   const handleSave = () => {
-    setStatus('Imported')
     const [isValid, result] = cleanHyper(getJsonField(jsonRef), enrollYear)
 
     setFormatError(!isValid)
@@ -66,7 +65,7 @@ function ImportHyper(): JSX.Element {
       }))
       const sortedCourses = courses2.sort(courseSort)
 
-      setStatus('Imported')
+      setStatus('Successfully Imported')
 
       // Write courses in inputted json field
       addMultipleCourses({
@@ -84,6 +83,8 @@ function ImportHyper(): JSX.Element {
 
           const sortedCourses = existingCourses.concat(courses2)
           sortedCourses.sort(courseSort)
+          console.log('Sorted Courses:')
+          console.log(sortedCourses)
           /* eslint-disable */
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
