@@ -32,6 +32,7 @@ function ExportJson(): JSX.Element {
   const { data } = useContext(CoursesContext)
   // Remove __typename from courses data
   const cleanedCourses = data.courses.map((course: CourseType) => ({
+    active: course.active,
     term: course.term,
     title: course.title,
     code: course.code,
