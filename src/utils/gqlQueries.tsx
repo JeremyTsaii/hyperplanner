@@ -66,34 +66,6 @@ export const UPDATE_USER = gql`
   }
 `
 
-export const UPDATE_MAJOR_CHECKS = gql`
-  mutation UPDATE_MAJOR_CHECKS($id: String!, $majorChecks: String!) {
-    update_users(
-      where: { auth0_id: { _eq: $id } }
-      _set: { majorChecks: $majorChecks }
-    ) {
-      affected_rows
-      returning {
-        majorChecks
-      }
-    }
-  }
-`
-
-export const UPDATE_CORE_CHECKS = gql`
-  mutation UPDATE_CORE_CHECKS($id: String!, $coreChecks: String!) {
-    update_users(
-      where: { auth0_id: { _eq: $id } }
-      _set: { coreChecks: $coreChecks }
-    ) {
-      affected_rows
-      returning {
-        coreChecks
-      }
-    }
-  }
-`
-
 export const INCREMENT_COURSE_EDITS_MUTATION = gql`
   mutation INCREMENT_COURSE_EDITS {
     update_users(where: {}, _inc: { course_edits: 1 }) {

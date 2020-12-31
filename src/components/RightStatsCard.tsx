@@ -59,7 +59,7 @@ const calculatePercentageChecked = (arr: number[]): number => {
   // Calculate percentage checked
   const len = arr.length
   const checked = arr.reduce((a, b) => {
-    const curVal = b > 0 ? 1 : 0
+    const curVal = b === 2 ? 1 : 0
     return a + curVal
   }, 0)
 

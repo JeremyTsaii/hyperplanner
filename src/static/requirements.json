@@ -252,7 +252,7 @@
             "title": "Introduction to Computational Biology"
           },
           {
-            "code": "BIOL103/BIOL110/BIOL111/BIOL184",
+            "code": "BIOL101/BIOL108/BIOL109/BIOL113",
             "title": "Comparative Physiology/Ecology and Environmental Biology/Evolutionary Biology/Molecular Genetics"
           },
           {
@@ -279,17 +279,17 @@
         "major_req": [
           { "code": "PHYS052", "title": "Quantum Physics" },
           { "code": "PHYS054", "title": "Modern Physics Lab" },
+          { "code": "PHYS111", "title": "Theoretical Mechanics" },
+          { "code": "PHYS116", "title": "Quantum Mechanics" },
+          { "code": "PHYS133", "title": "Electronics Laboratory" },
+          { "code": "PHYS134", "title": "Optics Laboratory" },
+          { "code": "PHYS151", "title": "Electromagnetic Fields" },
+          { "code": "PHYS195", "title": "Physics Colloquium" },
           {
-            "code": "MATH115",
+            "code": "MATH115/MATH180",
             "title": "Fourier Series and Boundary Value Problems"
           },
-          { "code": "PHYS111", "title": "Theoretical Mechanics" },
-          { "code": "PHYS133", "title": "Electronics Laboratory" },
-          { "code": "PHYS195", "title": "Physics Colloquium" },
-          { "code": "PHYS116", "title": "Quantum Mechanics" },
-          { "code": "PHYS134", "title": "Optics Laboratory" },
           { "code": "PHYS196", "title": "Physics Colloquium" },
-          { "code": "PHYS151", "title": "Electromagnetic Fields" },
           { "code": "PHYS191/PHYS193", "title": "Research/Clinic" },
           { "code": "PHYS195", "title": "Physics Colloquium" },
           { "code": "PHYS192/PHYS194", "title": "Research/Clinic" },
@@ -349,7 +349,7 @@
             "code": "CSCI005/CSCI042",
             "title": "Introduction to Computer Science"
           },
-          { "code": "ENR079", "title": "Introduction to Engineering Systems" },
+          { "code": "ENGR079", "title": "Introduction to Engineering Systems" },
           { "code": "HSA010", "title": "Critical Inquiry" },
           { "code": "MATH019", "title": "Calculus" },
           { "code": "MATH073", "title": "Linear Algebra" },
