@@ -15,58 +15,21 @@ const useStyles = makeStyles(() => ({
 
 interface IProps {
   reqs: { code: string; title: string }[]
-  coreChecks?: string
-  activeCoreChecksArr?: number[]
-  enroll?: number
-  majorChecks?: string
-  activeMajorChecksArr?: number[]
-  major?: string
-  isMajor: boolean
+  checksArr: number[]
 }
 
-const RequirementsList = ({
-  reqs,
-  coreChecks,
-  activeCoreChecksArr,
-  enroll,
-  majorChecks,
-  activeMajorChecksArr,
-  major,
-  isMajor,
-}: IProps): JSX.Element => {
+const RequirementsList = ({ reqs, checksArr }: IProps): JSX.Element => {
   const classes = useStyles()
-
-  let jsonChecks = {}
-  let key = '' as keyof typeof jsonChecks
-
-  /* eslint-disable */
-  if (isMajor) {
-    jsonChecks = JSON.parse(majorChecks!) as JSON
-    key = major! as keyof typeof jsonChecks
-  } else {
-    jsonChecks = JSON.parse(coreChecks!) as JSON
-    if (enroll! > 2018) {
-      key = 'post' as keyof typeof jsonChecks
-    } else {
-      key = 'pre' as keyof typeof jsonChecks
-    }
-  }
-  /* eslint-enable */
-
-  const arr = jsonChecks[key] as number[]
-  let activeArr = arr
-  if (isMajor && activeMajorChecksArr) {
-    activeArr = activeMajorChecksArr
-  } else if (!isMajor && activeCoreChecksArr) {
-    activeArr = activeCoreChecksArr
-  }
 
   return (
     <List dense>
       {reqs.map((req, i) => {
         return (
-          // eslint-disable-next-line
-          <ListItem key={req.code + i + req.title} button style={{ cursor: 'default' }}>
+          <ListItem
+            // eslint-disable-next-line
+            key={req.code + i + req.title}
+            button
+            style={{ cursor: 'default' }}>
             <ListItemText
               disableTypography
               primary={
@@ -81,8 +44,8 @@ const RequirementsList = ({
                 disableRipple
                 edge="end"
                 onChange={undefined}
-                checked={arr[i] === 1}
-                color={activeArr[i] === 1 ? 'primary' : 'default'}
+                checked={checksArr[i] === 1 || checksArr[i] === 2}
+                color={checksArr[i] === 2 ? 'primary' : 'default'}
                 style={{ cursor: 'default' }}
               />
             </ListItemSecondaryAction>
@@ -91,15 +54,6 @@ const RequirementsList = ({
       })}
     </List>
   )
-}
-
-RequirementsList.defaultProps = {
-  coreChecks: '',
-  activeCoreChecksArr: [],
-  enroll: 0,
-  majorChecks: '',
-  activeMajorChecksArr: [],
-  major: '',
 }
 
 export default RequirementsList
