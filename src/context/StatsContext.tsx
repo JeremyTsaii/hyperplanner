@@ -248,9 +248,6 @@ const calculateStats = (
     coreCount,
   )
 
-  console.log(majorChecks)
-  console.log(coreChecks)
-
   // Calculate how many semesters the user plans on graduating in
   const plan = plannedGrad.split(' ', 2)
   const totalSemesters =

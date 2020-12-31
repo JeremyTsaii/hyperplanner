@@ -66,7 +66,7 @@ const RequirementsList = ({
       {reqs.map((req, i) => {
         return (
           // eslint-disable-next-line
-          <ListItem key={req.code + i + req.title} button>
+          <ListItem key={req.code + i + req.title} button style={{ cursor: 'default' }}>
             <ListItemText
               disableTypography
               primary={
@@ -83,6 +83,7 @@ const RequirementsList = ({
                 onChange={undefined}
                 checked={arr[i] === 1}
                 color={activeArr[i] === 1 ? 'primary' : 'default'}
+                style={{ cursor: 'default' }}
               />
             </ListItemSecondaryAction>
           </ListItem>
