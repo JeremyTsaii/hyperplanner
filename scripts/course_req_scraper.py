@@ -3,18 +3,18 @@ import json
 
 
 def getCodeString(dept, keyword):
-  # Load courses from json file
-    with open('../src/static/allCourses.json') as f:
+    # Load courses from json file
+    with open("../src/static/allCourses.json") as f:
         courses = json.load(f)
     f.close()
 
-    results = ''
+    results = ""
 
     for course in courses:
-        curCode = course['code'].upper()
-        curTitle = course['title'].lower()
-        curSchool = course['campus'].lower()
+        curCode = course["code"].upper()
+        curTitle = course["title"].lower()
+        curSchool = course["campus"].lower()
         if dept in curCode and keyword in curTitle and curSchool != "cgu":
-            results += curCode + '/'
+            results += curCode + "/"
 
-    return results[:-1] if results else ''
+    return results[:-1] if results else ""
