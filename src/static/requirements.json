@@ -5,41 +5,119 @@
     "major": {
       "bio": {
         "major_req": [
-          { "code": "BIOL054", "title": "Experimental Biology Laboratory" },
-          { "code": "BIOL154", "title": "Biostatistics" },
-          { "code": "BIOL101", "title": "Comparative Physiology" },
-          { "code": "BIOL108", "title": "Ecology and Environmental Biology" },
-          { "code": "BIOL109", "title": "Evolutionary Biology" },
-          { "code": "BIOL113", "title": "Molecular Genetics" },
-          { "code": "CHEM056", "title": "Organic Chemistry I" },
-          { "code": "CHEM058", "title": "Organic Chemistry I Laboratory" },
-          { "code": "CHEM105", "title": "Organic Chemistry II" },
-          { "code": "BIOL191", "title": "Biology Colloquium" },
-          { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "BIOL191", "title": "Biology Colloquium" },
-          { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "BIOL193", "title": "Senior Thesis/Clinic" },
-          { "code": "BIOL194", "title": "Senior Thesis/Clinic" }
+          {
+            "code": "BIOL054",
+            "title": "Experimental Biology Laboratory"
+          },
+          {
+            "code": "BIOL154",
+            "title": "Biostatistics"
+          },
+          {
+            "code": "BIOL101",
+            "title": "Comparative Physiology"
+          },
+          {
+            "code": "BIOL108",
+            "title": "Ecology and Environmental Biology"
+          },
+          {
+            "code": "BIOL109",
+            "title": "Evolutionary Biology"
+          },
+          {
+            "code": "BIOL113",
+            "title": "Molecular Genetics"
+          },
+          {
+            "code": "CHEM056",
+            "title": "Organic Chemistry I"
+          },
+          {
+            "code": "CHEM058",
+            "title": "Organic Chemistry I Laboratory"
+          },
+          {
+            "code": "CHEM105",
+            "title": "Organic Chemistry II"
+          },
+          {
+            "code": "BIOL191",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "BIOL192",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "BIOL191",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "BIOL192",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "BIOL193",
+            "title": "Senior Thesis/Clinic"
+          },
+          {
+            "code": "BIOL194",
+            "title": "Senior Thesis/Clinic"
+          }
         ],
         "major_elec": 11
       },
       "bio_chem": {
         "major_req": [
-          { "code": "CHEM051", "title": "Physical Chemistry" },
-          { "code": "CHEM053", "title": "Physical Chemistry Laboratory" },
-          { "code": "CHEM056", "title": "Organic Chemistry I" },
-          { "code": "CHEM058", "title": "Organic Chemistry I Laboratory" },
-          { "code": "CHEM105", "title": "Organic Chemistry II" },
-          { "code": "CHEM111", "title": "Organic Chemistry II Laboratory" },
-          { "code": "BIOL054", "title": "Experimental Biology Laboratory" },
-          { "code": "BIOL154", "title": "Biostatistics" },
+          {
+            "code": "CHEM051",
+            "title": "Physical Chemistry"
+          },
+          {
+            "code": "CHEM053",
+            "title": "Physical Chemistry Laboratory"
+          },
+          {
+            "code": "CHEM056",
+            "title": "Organic Chemistry I"
+          },
+          {
+            "code": "CHEM058",
+            "title": "Organic Chemistry I Laboratory"
+          },
+          {
+            "code": "CHEM105",
+            "title": "Organic Chemistry II"
+          },
+          {
+            "code": "CHEM111",
+            "title": "Organic Chemistry II Laboratory"
+          },
+          {
+            "code": "BIOL054",
+            "title": "Experimental Biology Laboratory"
+          },
+          {
+            "code": "BIOL154",
+            "title": "Biostatistics"
+          },
           {
             "code": "BIOL111",
             "title": "Molecular and Cellular Biology Laboratory"
           },
-          { "code": "BIOL113", "title": "Molecular Genetics" },
-          { "code": "BIOL182/CHEM182", "title": "Biochemistry" },
-          { "code": "BIOL184/CHEM184", "title": "Biochemistry Laboratory" },
+          {
+            "code": "BIOL113",
+            "title": "Molecular Genetics"
+          },
+          {
+            "code": "BIOL182/CHEM182",
+            "title": "Biochemistry"
+          },
+          {
+            "code": "BIOL184/CHEM184",
+            "title": "Biochemistry Laboratory"
+          },
           {
             "code": "BIOL189/CHEM189",
             "title": "Topics in Biochemistry and Molecular Biology"
@@ -56,25 +134,54 @@
             "code": "BIOL101/BIOL108/BIOL109",
             "title": "Comparative Physiology/Ecology and Environmental Biology/Evolutionary Biology"
           },
-          { "code": "BIOL191", "title": "Biology Colloquium" },
-          { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
-          { "code": "BIOL193/CHEM151", "title": "Senior Thesis Research" },
-          { "code": "BIOL194/CHEM152", "title": "Senior Thesis Research" }
+          {
+            "code": "BIOL191",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "BIOL192",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "CHEM199",
+            "title": "Chemistry Seminar"
+          },
+          {
+            "code": "CHEM199",
+            "title": "Chemistry Seminar"
+          },
+          {
+            "code": "BIOL193/CHEM151",
+            "title": "Senior Thesis Research"
+          },
+          {
+            "code": "BIOL194/CHEM152",
+            "title": "Senior Thesis Research"
+          }
         ],
         "major_elec": 3
       },
       "chem": {
         "major_req": [
-          { "code": "CHEM051", "title": "Physical Chemistry" },
-          { "code": "CHEM056", "title": "Organic Chemistry" },
-          { "code": "CHEM103", "title": "Chemical Analysis" },
-          { "code": "CHEM104", "title": "Inorganic Chemistry" },
-          { "code": "CHEM182", "title": "Biochemistry" },
           {
-            "code": "CHEM053/CHEM058/CHEM109/CHEM110/CHEM184",
-            "title": "Physical/Organic/Chemical Analysis/Inorganic/Biochemistry Laboratory"
+            "code": "CHEM051",
+            "title": "Physical Chemistry"
+          },
+          {
+            "code": "CHEM056",
+            "title": "Organic Chemistry"
+          },
+          {
+            "code": "CHEM103",
+            "title": "Chemical Analysis"
+          },
+          {
+            "code": "CHEM104",
+            "title": "Inorganic Chemistry"
+          },
+          {
+            "code": "CHEM182",
+            "title": "Biochemistry"
           },
           {
             "code": "CHEM053/CHEM058/CHEM109/CHEM110/CHEM184",
@@ -88,12 +195,34 @@
             "code": "CHEM053/CHEM058/CHEM109/CHEM110/CHEM184",
             "title": "Physical/Organic/Chemical Analysis/Inorganic/Biochemistry Laboratory"
           },
-          { "code": "CHEM151", "title": "Senior Thesis Research" },
-          { "code": "CHEM152", "title": "Senior Thesis Research" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" },
-          { "code": "CHEM199", "title": "Chemistry Seminar" }
+          {
+            "code": "CHEM053/CHEM058/CHEM109/CHEM110/CHEM184",
+            "title": "Physical/Organic/Chemical Analysis/Inorganic/Biochemistry Laboratory"
+          },
+          {
+            "code": "CHEM151",
+            "title": "Senior Thesis Research"
+          },
+          {
+            "code": "CHEM152",
+            "title": "Senior Thesis Research"
+          },
+          {
+            "code": "CHEM199",
+            "title": "Chemistry Seminar"
+          },
+          {
+            "code": "CHEM199",
+            "title": "Chemistry Seminar"
+          },
+          {
+            "code": "CHEM199",
+            "title": "Chemistry Seminar"
+          },
+          {
+            "code": "CHEM199",
+            "title": "Chemistry Seminar"
+          }
         ],
         "major_elec": 8
       },
@@ -103,22 +232,58 @@
             "code": "CSCI060/CSCI042",
             "title": "Principles of Computer Science"
           },
-          { "code": "MATH055", "title": "Discrete Mathematics" },
+          {
+            "code": "MATH055",
+            "title": "Discrete Mathematics"
+          },
           {
             "code": "CSCI070",
             "title": "Data Structures and Program Development"
           },
-          { "code": "CSCI081", "title": "Computability and Logic" },
-          { "code": "CSCI105", "title": "Computer Systems" },
-          { "code": "CSCI121", "title": "Software Development" },
-          { "code": "CSCI131", "title": "Programming Languages" },
-          { "code": "CSCI140", "title": "Algorithms" },
-          { "code": "CSCI183", "title": "Computer Science Clinic I" },
-          { "code": "CSCI184", "title": "Computer Science Clinic II" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" }
+          {
+            "code": "CSCI081",
+            "title": "Computability and Logic"
+          },
+          {
+            "code": "CSCI105",
+            "title": "Computer Systems"
+          },
+          {
+            "code": "CSCI121",
+            "title": "Software Development"
+          },
+          {
+            "code": "CSCI131",
+            "title": "Programming Languages"
+          },
+          {
+            "code": "CSCI140",
+            "title": "Algorithms"
+          },
+          {
+            "code": "CSCI183",
+            "title": "Computer Science Clinic I"
+          },
+          {
+            "code": "CSCI184",
+            "title": "Computer Science Clinic II"
+          },
+          {
+            "code": "CSCI195",
+            "title": "Computer Science Colloquium"
+          },
+          {
+            "code": "CSCI195",
+            "title": "Computer Science Colloquium"
+          },
+          {
+            "code": "CSCI195",
+            "title": "Computer Science Colloquium"
+          },
+          {
+            "code": "CSCI195",
+            "title": "Computer Science Colloquium"
+          }
         ],
         "major_elec": 6
       },
@@ -128,23 +293,50 @@
             "code": "CSCI060/CSCI042",
             "title": "Principles of Computer Science"
           },
-          { "code": "MATH055", "title": "Discrete Mathematics" },
+          {
+            "code": "MATH055",
+            "title": "Discrete Mathematics"
+          },
           {
             "code": "CSCI070",
             "title": "Data Structures and Program Development"
           },
-          { "code": "CSCI081", "title": "Computability and Logic" },
-          { "code": "CSCI131", "title": "Programming Languages" },
-          { "code": "CSCI140", "title": "Algorithms" },
-          { "code": "CSCI195", "title": "Computer Science Colloquium" },
-          { "code": "MATH131", "title": "Analysis I" },
-          { "code": "MATH171", "title": "Abstract Algebra I" },
+          {
+            "code": "CSCI081",
+            "title": "Computability and Logic"
+          },
+          {
+            "code": "CSCI131",
+            "title": "Programming Languages"
+          },
+          {
+            "code": "CSCI140",
+            "title": "Algorithms"
+          },
+          {
+            "code": "CSCI195",
+            "title": "Computer Science Colloquium"
+          },
+          {
+            "code": "MATH131",
+            "title": "Analysis I"
+          },
+          {
+            "code": "MATH171",
+            "title": "Abstract Algebra I"
+          },
           {
             "code": "MATH199",
             "title": "Undergraduate Mathematics Colloquium"
           },
-          { "code": "CSMT183", "title": "Computer Science & Math Clinic I" },
-          { "code": "CSMT184", "title": "Computer Science & Math Clinic II" }
+          {
+            "code": "CSMT183",
+            "title": "Computer Science & Math Clinic I"
+          },
+          {
+            "code": "CSMT184",
+            "title": "Computer Science & Math Clinic II"
+          }
         ],
         "major_elec": 12
       },
@@ -154,10 +346,22 @@
             "code": "ENGR004",
             "title": "Introduction to Engineering Design and Manufacturing"
           },
-          { "code": "ENGR072", "title": "Engineering Mathematics" },
-          { "code": "ENGR080", "title": "Experimental Engineering" },
-          { "code": "ENGR082", "title": "Chemical and Thermal Processes" },
-          { "code": "ENGR083", "title": "Continuum Mechanics" },
+          {
+            "code": "ENGR072",
+            "title": "Engineering Mathematics"
+          },
+          {
+            "code": "ENGR080",
+            "title": "Experimental Engineering"
+          },
+          {
+            "code": "ENGR082",
+            "title": "Chemical and Thermal Processes"
+          },
+          {
+            "code": "ENGR083",
+            "title": "Continuum Mechanics"
+          },
           {
             "code": "ENGR084",
             "title": "Electronic and Magnetic Circuits and Devices"
@@ -166,25 +370,67 @@
             "code": "ENGR085",
             "title": "Digital Electronic and Computer Engineering"
           },
-          { "code": "ENGR086", "title": "Materials Engineering" },
-          { "code": "ENGR101", "title": "Advanced Systems Engineering" },
-          { "code": "ENGR102", "title": "Advanced Systems Engineering" },
-          { "code": "ENGR111", "title": "Engineering Clinic I" },
-          { "code": "ENGR112", "title": "Engineering Clinic II" },
-          { "code": "ENGR113", "title": "Engineering Clinic III" },
-          { "code": "ENGR122", "title": "Engineering Seminar" },
-          { "code": "ENGR124", "title": "Engineering Seminar" }
+          {
+            "code": "ENGR086",
+            "title": "Materials Engineering"
+          },
+          {
+            "code": "ENGR101",
+            "title": "Advanced Systems Engineering"
+          },
+          {
+            "code": "ENGR102",
+            "title": "Advanced Systems Engineering"
+          },
+          {
+            "code": "ENGR111",
+            "title": "Engineering Clinic I"
+          },
+          {
+            "code": "ENGR112",
+            "title": "Engineering Clinic II"
+          },
+          {
+            "code": "ENGR113",
+            "title": "Engineering Clinic III"
+          },
+          {
+            "code": "ENGR122",
+            "title": "Engineering Seminar"
+          },
+          {
+            "code": "ENGR124",
+            "title": "Engineering Seminar"
+          }
         ],
         "major_elec": 9
       },
       "math": {
         "major_req": [
-          { "code": "MATH055", "title": "Discrete Mathematics" },
-          { "code": "MATH070", "title": "Intermediate Linear Algebra" },
-          { "code": "MATH080", "title": "Intermediate Differential Equations" },
-          { "code": "MATH131", "title": "Mathematical Analysis I" },
-          { "code": "MATH157", "title": "Intermediate Probability" },
-          { "code": "MATH171", "title": "Abstract Algebra 1" },
+          {
+            "code": "MATH055",
+            "title": "Discrete Mathematics"
+          },
+          {
+            "code": "MATH070",
+            "title": "Intermediate Linear Algebra"
+          },
+          {
+            "code": "MATH080",
+            "title": "Intermediate Differential Equations"
+          },
+          {
+            "code": "MATH131",
+            "title": "Mathematical Analysis I"
+          },
+          {
+            "code": "MATH157",
+            "title": "Intermediate Probability"
+          },
+          {
+            "code": "MATH171",
+            "title": "Abstract Algebra 1"
+          },
           {
             "code": "MATH180",
             "title": "Introduction to Partial Differential Equations"
@@ -201,48 +447,108 @@
             "code": "MATH193/MATH197",
             "title": "Senior Thesis/Mathematics Clinic"
           },
-          { "code": "MATH199", "title": "Mathematics Colloquium" }
+          {
+            "code": "MATH199",
+            "title": "Mathematics Colloquium"
+          }
         ],
         "major_elec": 7
       },
       "math_phys": {
         "major_req": [
-          { "code": "MATH055", "title": "Discrete Mathematics" },
-          { "code": "MATH070", "title": "Intermediate Linear Algebra" },
-          { "code": "MATH131", "title": "Mathematical Analysis I" },
-          { "code": "MATH157", "title": "Intermediate Probability" },
-          { "code": "MATH171", "title": "Abstract Algebra 1" },
+          {
+            "code": "MATH055",
+            "title": "Discrete Mathematics"
+          },
+          {
+            "code": "MATH070",
+            "title": "Intermediate Linear Algebra"
+          },
+          {
+            "code": "MATH131",
+            "title": "Mathematical Analysis I"
+          },
+          {
+            "code": "MATH157",
+            "title": "Intermediate Probability"
+          },
+          {
+            "code": "MATH171",
+            "title": "Abstract Algebra 1"
+          },
           {
             "code": "MATH115/180",
             "title": "Fourier Series and Boundary Value Problems/Introduction to Partial Differential Equations"
           },
-          { "code": "MATH199", "title": "Mathematics Colloquium" },
-          { "code": "PHYS052", "title": "Quantum Physics" },
-          { "code": "PHYS054", "title": "Modern Physics Lab" },
-          { "code": "PHYS111", "title": "Theoretical Mechanics" },
-          { "code": "PHYS116", "title": "Quantum Mechanics" },
-          { "code": "PHYS117", "title": "Statistical Mechanics" },
-          { "code": "PHYS134", "title": "Optics Laboratory" },
+          {
+            "code": "MATH199",
+            "title": "Mathematics Colloquium"
+          },
+          {
+            "code": "PHYS052",
+            "title": "Quantum Physics"
+          },
+          {
+            "code": "PHYS054",
+            "title": "Modern Physics Lab"
+          },
+          {
+            "code": "PHYS111",
+            "title": "Theoretical Mechanics"
+          },
+          {
+            "code": "PHYS116",
+            "title": "Quantum Mechanics"
+          },
+          {
+            "code": "PHYS117",
+            "title": "Statistical Mechanics"
+          },
+          {
+            "code": "PHYS134",
+            "title": "Optics Laboratory"
+          },
           {
             "code": "PHYS151/PHYS154/PHYS156",
             "title": "Electromagnetic Fields/Fields and Waves/Classical Field Theory"
           },
-          { "code": "PHYS195", "title": "Physics Colloquium" },
-          { "code": "PHYS196", "title": "Physics Colloquium" },
+          {
+            "code": "PHYS195",
+            "title": "Physics Colloquium"
+          },
+          {
+            "code": "PHYS196",
+            "title": "Physics Colloquium"
+          },
           {
             "code": "MATH164/MATH165/PHYS170",
             "title": "Scientific Computing/Numerical Analysis/Computational Methods in Physics"
           },
-          { "code": "", "title": "Clinic/Thesis" },
-          { "code": "", "title": "Clinic/Thesis" }
+          {
+            "code": "",
+            "title": "Clinic/Thesis"
+          },
+          {
+            "code": "",
+            "title": "Clinic/Thesis"
+          }
         ],
         "major_elec": 12
       },
       "mcb": {
         "major_req": [
-          { "code": "MATH055", "title": "Discrete Mathematics" },
-          { "code": "BIOL054", "title": "Biology Laboratory" },
-          { "code": "BIOL154", "title": "Biostatistics" },
+          {
+            "code": "MATH055",
+            "title": "Discrete Mathematics"
+          },
+          {
+            "code": "BIOL054",
+            "title": "Biology Laboratory"
+          },
+          {
+            "code": "BIOL154",
+            "title": "Biostatistics"
+          },
           {
             "code": "MCBI118A",
             "title": "Introduction to Mathematical Biology"
@@ -271,26 +577,71 @@
             "code": "BIOL119/BIOL188",
             "title": "Mathematical Biology II/Computational Biology"
           },
-          { "code": "MATH", "title": "3-Unit Mathematics Course" },
-          { "code": "CSCI", "title": "3-Unit Computer Science Course" },
-          { "code": "BIOL191", "title": "Biology Colloquium" },
-          { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "MCBI199", "title": "Joint Colloquium" },
-          { "code": "MATH197/BIOL193", "title": "Senior Thesis/Clinic" },
-          { "code": "MATH197/BIOL193", "title": "Senior Thesis/Clinic" }
+          {
+            "code": "MATH",
+            "title": "3-Unit Mathematics Course"
+          },
+          {
+            "code": "CSCI",
+            "title": "3-Unit Computer Science Course"
+          },
+          {
+            "code": "BIOL191",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "BIOL192",
+            "title": "Biology Colloquium"
+          },
+          {
+            "code": "MCBI199",
+            "title": "Joint Colloquium"
+          },
+          {
+            "code": "MATH197/BIOL193",
+            "title": "Senior Thesis/Clinic"
+          },
+          {
+            "code": "MATH197/BIOL193",
+            "title": "Senior Thesis/Clinic"
+          }
         ],
         "major_elec": 8
       },
       "phys": {
         "major_req": [
-          { "code": "PHYS052", "title": "Quantum Physics" },
-          { "code": "PHYS054", "title": "Modern Physics Lab" },
-          { "code": "PHYS111", "title": "Theoretical Mechanics" },
-          { "code": "PHYS116", "title": "Quantum Mechanics" },
-          { "code": "PHYS133", "title": "Electronics Laboratory" },
-          { "code": "PHYS134", "title": "Optics Laboratory" },
-          { "code": "PHYS151", "title": "Electromagnetic Fields" },
-          { "code": "PHYS195", "title": "Physics Colloquium" },
+          {
+            "code": "PHYS052",
+            "title": "Quantum Physics"
+          },
+          {
+            "code": "PHYS054",
+            "title": "Modern Physics Lab"
+          },
+          {
+            "code": "PHYS111",
+            "title": "Theoretical Mechanics"
+          },
+          {
+            "code": "PHYS116",
+            "title": "Quantum Mechanics"
+          },
+          {
+            "code": "PHYS133",
+            "title": "Electronics Laboratory"
+          },
+          {
+            "code": "PHYS134",
+            "title": "Optics Laboratory"
+          },
+          {
+            "code": "PHYS151",
+            "title": "Electromagnetic Fields"
+          },
+          {
+            "code": "PHYS195",
+            "title": "Physics Colloquium"
+          },
           {
             "code": "MATH115/MATH180",
             "title": "Fourier Series and Boundary Value Problems"
@@ -299,9 +650,18 @@
             "code": "PHYS117",
             "title": "Statistical Mechanics and Thermodynamics"
           },
-          { "code": "PHYS181", "title": "Advanced Laboratory" },
-          { "code": "PHYS199", "title": "Senior Thesis in Physics" },
-          { "code": "PHYS199", "title": "Senior Thesis in Physics" }
+          {
+            "code": "PHYS181",
+            "title": "Advanced Laboratory"
+          },
+          {
+            "code": "PHYS199",
+            "title": "Senior Thesis in Physics"
+          },
+          {
+            "code": "PHYS199",
+            "title": "Senior Thesis in Physics"
+          }
         ],
         "major_elec": 0
       }
@@ -316,57 +676,150 @@
     "core": {
       "pre": {
         "courses": [
-          { "code": "BIOL023", "title": "Biology Laboratory" },
-          { "code": "BIOL052", "title": "Introduction to Biology" },
-          { "code": "CHEM023A", "title": "Chemistry in the Modern World I" },
-          { "code": "CHEM023B", "title": "Chemistry in the Modern World II" },
-          { "code": "CHEM024", "title": "Chemistry Laboratory" },
+          {
+            "code": "BIOL023",
+            "title": "Biology Laboratory"
+          },
+          {
+            "code": "BIOL052",
+            "title": "Introduction to Biology"
+          },
+          {
+            "code": "CHEM023A",
+            "title": "Chemistry in the Modern World I"
+          },
+          {
+            "code": "CHEM023B",
+            "title": "Chemistry in the Modern World II"
+          },
+          {
+            "code": "CHEM024",
+            "title": "Chemistry Laboratory"
+          },
           {
             "code": "CSCI005/CSCI042",
             "title": "Introduction to Computer Science"
           },
-          { "code": "ENGR079", "title": "Introduction to Engineering Systems" },
-          { "code": "HSA010", "title": "Critical Inquiry" },
-          { "code": "MATH030G/MATH030B", "title": "Calculus" },
-          { "code": "MATH035", "title": "Probability and Statistics" },
-          { "code": "MATH040", "title": "Introduction to Linear Algebra" },
+          {
+            "code": "ENGR079",
+            "title": "Introduction to Engineering Systems"
+          },
+          {
+            "code": "HSA010",
+            "title": "Critical Inquiry"
+          },
+          {
+            "code": "MATH030G/MATH030B",
+            "title": "Calculus"
+          },
+          {
+            "code": "MATH035",
+            "title": "Probability and Statistics"
+          },
+          {
+            "code": "MATH040",
+            "title": "Introduction to Linear Algebra"
+          },
           {
             "code": "MATH045",
             "title": "Introduction to Differential Equations"
           },
-          { "code": "MATH060", "title": "Multivariable Calculus" },
+          {
+            "code": "MATH060",
+            "title": "Multivariable Calculus"
+          },
           {
             "code": "MATH065",
             "title": "Differential Equations/Linear Algebra"
           },
-          { "code": "PHYS023", "title": "Special Relativity" },
-          { "code": "PHYS024", "title": "Mechanics and Wave Motion" },
-          { "code": "PHYS050", "title": "Physics Laboratory" },
-          { "code": "PHYS051", "title": "Electromagnetic Theory and Optics" },
-          { "code": "WRIT001", "title": "Introduction to Academic Writing" }
+          {
+            "code": "PHYS023",
+            "title": "Special Relativity"
+          },
+          {
+            "code": "PHYS024",
+            "title": "Mechanics and Wave Motion"
+          },
+          {
+            "code": "PHYS050",
+            "title": "Physics Laboratory"
+          },
+          {
+            "code": "PHYS051",
+            "title": "Electromagnetic Theory and Optics"
+          },
+          {
+            "code": "WRIT001",
+            "title": "Introduction to Academic Writing"
+          }
         ]
       },
       "post": {
         "courses": [
-          { "code": "BIOL023", "title": "Biology Laboratory" },
-          { "code": "BIOL052", "title": "Introduction to Biology" },
-          { "code": "CHEM023A", "title": "Chemistry in the Modern World I" },
-          { "code": "CHEM023B", "title": "Chemistry in the Modern World II" },
-          { "code": "CHEM024", "title": "Chemistry Laboratory" },
+          {
+            "code": "BIOL023",
+            "title": "Biology Laboratory"
+          },
+          {
+            "code": "BIOL052",
+            "title": "Introduction to Biology"
+          },
+          {
+            "code": "CHEM023A",
+            "title": "Chemistry in the Modern World I"
+          },
+          {
+            "code": "CHEM023B",
+            "title": "Chemistry in the Modern World II"
+          },
+          {
+            "code": "CHEM024",
+            "title": "Chemistry Laboratory"
+          },
           {
             "code": "CSCI005/CSCI042",
             "title": "Introduction to Computer Science"
           },
-          { "code": "ENGR079", "title": "Introduction to Engineering Systems" },
-          { "code": "HSA010", "title": "Critical Inquiry" },
-          { "code": "MATH019", "title": "Calculus" },
-          { "code": "MATH073", "title": "Linear Algebra" },
-          { "code": "MATH082", "title": "Differential Equations" },
-          { "code": "PHYS023", "title": "Special Relativity" },
-          { "code": "PHYS024", "title": "Mechanics and Wave Motion" },
-          { "code": "PHYS050", "title": "Physics Laboratory" },
-          { "code": "PHYS051", "title": "Electromagnetic Theory and Optics" },
-          { "code": "WRIT001", "title": "Introduction to Academic Writing" }
+          {
+            "code": "ENGR079",
+            "title": "Introduction to Engineering Systems"
+          },
+          {
+            "code": "HSA010",
+            "title": "Critical Inquiry"
+          },
+          {
+            "code": "MATH019",
+            "title": "Calculus"
+          },
+          {
+            "code": "MATH073",
+            "title": "Linear Algebra"
+          },
+          {
+            "code": "MATH082",
+            "title": "Differential Equations"
+          },
+          {
+            "code": "PHYS023",
+            "title": "Special Relativity"
+          },
+          {
+            "code": "PHYS024",
+            "title": "Mechanics and Wave Motion"
+          },
+          {
+            "code": "PHYS050",
+            "title": "Physics Laboratory"
+          },
+          {
+            "code": "PHYS051",
+            "title": "Electromagnetic Theory and Optics"
+          },
+          {
+            "code": "WRIT001",
+            "title": "Introduction to Academic Writing"
+          }
         ]
       }
     }
