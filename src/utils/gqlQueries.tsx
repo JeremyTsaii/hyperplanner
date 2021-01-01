@@ -9,8 +9,6 @@ export const GET_INFO_QUERY = gql`
       concentration
       nickname
       auth0_id
-      majorChecks
-      coreChecks
       enroll
       planned_grad
     }

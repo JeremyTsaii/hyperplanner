@@ -163,10 +163,16 @@ const getCourseStats = (
       }
     }
 
-    // Handle major/core checks array
+    const pattern = /[\D]*/
     /* eslint-disable */
+    const dept = course.code.match(pattern)![0] as string
+    // Handle major/core checks array
     if (majorReqTable.hasOwnProperty(course.code)) {
       majorChecks[majorReqTable[course.code].shift() as number] = course.active
+        ? 2
+        : 1
+    } else if (majorReqTable.hasOwnProperty(dept) && course.credits === 3 && course.type === "major_req") {
+      majorChecks[majorReqTable[dept].shift() as number] = course.active
         ? 2
         : 1
     }

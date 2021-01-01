@@ -256,22 +256,28 @@
             "title": "Comparative Physiology/Ecology and Environmental Biology/Evolutionary Biology/Molecular Genetics"
           },
           {
-            "code": "BIOL103/BIOL110/BIOL111/BIOL184",
+            "code": "BIOL101/BIOL108/BIOL109/BIOL113",
             "title": "Comparative Physiology/Ecology and Environmental Biology/Evolutionary Biology/Molecular Genetics"
           },
-          { "code": "", "title": "Biology Seminar" },
-          { "code": "", "title": "Biology Laboratory" },
+          {
+            "code": "BIOL165/BIOL173L/BIOL190/BIOLSEM",
+            "title": "Biology Seminar"
+          },
+          {
+            "code": "BIOL001D/BIOL002A/BIOL002A/BIOL002ALPO/BIOL002A/BIOL023/BIOL040/BIOL040/BIOL040LXKS/BIOL041C/BIOL041CLPO/BIOL041E/BIOL041ELPO/BIOL043LXKS/BIOL044LXKS/BIOL054/BIOL054/BIOL103/BIOL106/BIOL107/BIOL109/BIOL110/BIOL111/BIOL112/BIOL112/BIOL116/BIOL116/BIOL121/BIOL121/BIOL125/BIOL125/BIOL128/BIOL131/BIOL131LXKS/BIOL131/BIOL132/BIOL132/BIOL138L/BIOL138L/BIOL140/BIOL140/BIOL141LXKS/BIOL144/BIOL144/BIOL146L/BIOL147/BIOL148LXKS/BIOL154L/BIOL157LXKS/BIOL161/BIOL163/BIOL163/BIOL164/BIOL166/BIOL166/BIOL166/BIOL167/BIOL168LXKS/BIOL169/BIOL169/BIOL170/BIOL173/BIOL173L/BIOL173/BIOL174/BIOL174/BIOL178/BIOL181/BIOL184/BIOL185L/BIOL189MLPO/BIOL189NLPO/BIOL189N/BIOLLAB/MBIOLAB",
+            "title": "Biology Laboratory"
+          },
           {
             "code": "BIOL119/BIOL188",
             "title": "Mathematical Biology II/Computational Biology"
           },
-          { "code": "", "title": "3-Unit Mathematics Course" },
-          { "code": "", "title": "3-Unit Computer Science Course" },
+          { "code": "MATH", "title": "3-Unit Mathematics Course" },
+          { "code": "CSCI", "title": "3-Unit Computer Science Course" },
           { "code": "BIOL191", "title": "Biology Colloquium" },
           { "code": "BIOL192", "title": "Biology Colloquium" },
-          { "code": "", "title": "Joint Colloquium" },
-          { "code": "", "title": "Senior Thesis/Clinic" },
-          { "code": "", "title": "Senior Thesis/Clinic" }
+          { "code": "MCBI199", "title": "Joint Colloquium" },
+          { "code": "MATH197/BIOL193", "title": "Senior Thesis/Clinic" },
+          { "code": "MATH197/BIOL193", "title": "Senior Thesis/Clinic" }
         ],
         "major_elec": 8
       },
@@ -289,13 +295,15 @@
             "code": "MATH115/MATH180",
             "title": "Fourier Series and Boundary Value Problems"
           },
-          { "code": "PHYS196", "title": "Physics Colloquium" },
-          { "code": "PHYS191/PHYS193", "title": "Research/Clinic" },
-          { "code": "PHYS195", "title": "Physics Colloquium" },
-          { "code": "PHYS192/PHYS194", "title": "Research/Clinic" },
-          { "code": "PHYS196", "title": "Physics Colloquium" }
+          {
+            "code": "PHYS117",
+            "title": "Statistical Mechanics and Thermodynamics"
+          },
+          { "code": "PHYS181", "title": "Advanced Laboratory" },
+          { "code": "PHYS199", "title": "Senior Thesis in Physics" },
+          { "code": "PHYS199", "title": "Senior Thesis in Physics" }
         ],
-        "major_elec": 3
+        "major_elec": 0
       }
     },
     "hum": {
