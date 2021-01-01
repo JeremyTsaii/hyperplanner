@@ -207,9 +207,7 @@ function Course({
         justify="space-between"
         style={{
           display: 'flex',
-        }}
-        xs={12}
-        zeroMinWidth>
+        }}>
         {checkboxPlaceholder}
         <Grid item xs={2} zeroMinWidth>
           <MuiThemeProvider theme={theme}>

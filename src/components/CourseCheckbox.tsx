@@ -100,30 +100,15 @@ function CourseCheckbox({
     })
   }
 
-  // Return icon but no functionality (logged out)
-  if (!functional) {
-    return (
-      <Grid item xs={1} zeroMinWidth>
-        <Checkbox
-          checked
-          disabled
-          color="default"
-          size="small"
-          onChange={undefined}
-          inputProps={{ 'aria-label': 'primary checkbox' }}
-        />
-      </Grid>
-    )
-  }
-
   return (
     <Grid item xs={1} zeroMinWidth>
       <Checkbox
         edge="start"
         checked={active}
+        disabled={!functional}
         color="default"
         size="small"
-        onChange={handleChange}
+        onChange={functional ? handleChange : undefined}
         inputProps={{ 'aria-label': 'primary checkbox' }}
         style={{ paddingLeft: 13 }}
       />
