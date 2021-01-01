@@ -9,8 +9,6 @@ import RightStatsCardProgress from './RightStatsCardProgress'
 import Requirements from '../static/requirements.json'
 import { UserContext } from '../context/UserContext'
 import { StatsContext } from '../context/StatsContext'
-import { CoursesContext } from '../context/CoursesContext'
-import { Courses } from '../generated/graphql'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
@@ -56,55 +54,20 @@ interface statsProps {
   ELEV: number
 }
 
-// Check if each course in user's major/core checks is active
-const checkActiveRequirements = (
-  type: string,
-  checksArr: number[],
-  checklist: { code: string; title: string }[],
-  courses: Courses[],
-): number[] => {
-  const userCourses = courses.filter((course) => course.type === type)
-  const activeCourses: { [code: string]: number } = {}
-
-  // Count # of active courses for each code
-  userCourses.forEach((course: Courses) => {
-    const currCode = course.code
-    if (course.active) {
-      if (currCode in activeCourses) {
-        activeCourses[currCode] += 1
-      } else {
-        activeCourses[currCode] = 1
-      }
-    }
-  })
-
-  return checksArr.map((c: number, i: number) => {
-    // Split for edge case of CSCI060/CSCI042
-    const courseCodes = checklist[i].code.split('/')
-
-    let val = 0
-    courseCodes.forEach((courseCode) => {
-      if (c === 1 && courseCode in activeCourses) {
-        if (activeCourses[courseCode] > 0) {
-          activeCourses[courseCode] -= 1
-          val = 1
-        }
-      }
-    })
-    return val
-  })
-}
-
 // Calculate percentage of checked courses in array of requirements
 const calculatePercentageChecked = (arr: number[]): number => {
   // Calculate percentage checked
   const len = arr.length
-  const checked = arr.reduce((a, b) => a + b, 0)
+  const checked = arr.reduce((a, b) => {
+    const curVal = b === 2 ? 1 : 0
+    return a + curVal
+  }, 0)
 
   return (checked / len) * 100
 }
 
 // Don't let percentages over 100
+// Return arr [capped percent, uncapped percent]
 const capPercentage = (val: number): number => {
   return val > 100 ? 100 : val
 }
@@ -114,12 +77,10 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   const [value, setValue] = useState('grad')
 
   const { data: infoData } = useContext(UserContext)
-  const { data: coursesData } = useContext(CoursesContext)
 
   const info = infoData.users[0]
-  const { courses } = coursesData
 
-  const { school, major, majorChecks, coreChecks, enroll } = info
+  const { school, major, enroll } = info
 
   const stats = useContext(StatsContext)
 
@@ -135,6 +96,8 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     humElec,
     muddHum,
     writ,
+    coreChecks,
+    majorChecks,
   } = stats
 
   /* eslint-disable-next-line */
@@ -147,9 +110,6 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
 
   const schoolKey = school as keyof typeof Requirements
   const majorKey = major as keyof typeof Requirements[typeof schoolKey]['major']
-
-  const jsonMajorChecks = JSON.parse(majorChecks)
-  const jsonCoreChecks = JSON.parse(coreChecks)
 
   if (value === 'grad') {
     const titleArr = [
@@ -179,28 +139,17 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   } else if (value === 'major') {
     const checklist = Requirements[schoolKey].major[majorKey].major_req
     const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
-    const majorKey2 = major as keyof typeof jsonMajorChecks
-    const majorChecksArr = jsonMajorChecks[majorKey2]
-    const activeMajorChecksArr = checkActiveRequirements(
-      'major_req',
-      majorChecksArr,
-      checklist,
-      courses,
-    )
     const progressTitleArr = ['Completed', 'Electives']
     const progressValArr = [
-      calculatePercentageChecked(activeMajorChecksArr),
+      calculatePercentageChecked(majorChecks),
       capPercentage((majorElec / majorElecRequired) * 100),
     ]
 
     dynamicStatsComponent = (
       <RightStatsCardStats
-        isMajor
         isList
         checklist={checklist}
-        major={major}
-        majorChecks={majorChecks}
-        activeMajorChecksArr={activeMajorChecksArr}
+        checksArr={majorChecks}
       />
     )
     dynamicProgressComponent = (
@@ -211,30 +160,20 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     )
   } else if (value === 'core') {
     let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
-    let coreTypeKey2 = 'pre' as keyof typeof jsonCoreChecks
     if (enroll > 2018) {
       coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
-      coreTypeKey2 = 'post' as keyof typeof jsonCoreChecks
     }
+
     const checklist = Requirements[schoolKey].core[coreTypeKey].courses
-    const coreChecksArr = jsonCoreChecks[coreTypeKey2]
-    const activeCoreChecksArr = checkActiveRequirements(
-      'core_req',
-      coreChecksArr,
-      checklist,
-      courses,
-    )
+
     const progressTitleArr = ['Completed']
-    const progressValArr = [calculatePercentageChecked(activeCoreChecksArr)]
+    const progressValArr = [calculatePercentageChecked(coreChecks)]
 
     dynamicStatsComponent = (
       <RightStatsCardStats
-        isMajor={false}
         isList
         checklist={checklist}
-        enroll={enroll}
-        coreChecks={coreChecks}
-        activeCoreChecksArr={activeCoreChecksArr}
+        checksArr={coreChecks}
       />
     )
     dynamicProgressComponent = (

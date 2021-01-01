@@ -9,8 +9,6 @@ export const GET_INFO_QUERY = gql`
       concentration
       nickname
       auth0_id
-      majorChecks
-      coreChecks
       enroll
       planned_grad
     }
@@ -61,34 +59,6 @@ export const UPDATE_USER = gql`
         concentration
         enroll
         planned_grad
-      }
-    }
-  }
-`
-
-export const UPDATE_MAJOR_CHECKS = gql`
-  mutation UPDATE_MAJOR_CHECKS($id: String!, $majorChecks: String!) {
-    update_users(
-      where: { auth0_id: { _eq: $id } }
-      _set: { majorChecks: $majorChecks }
-    ) {
-      affected_rows
-      returning {
-        majorChecks
-      }
-    }
-  }
-`
-
-export const UPDATE_CORE_CHECKS = gql`
-  mutation UPDATE_CORE_CHECKS($id: String!, $coreChecks: String!) {
-    update_users(
-      where: { auth0_id: { _eq: $id } }
-      _set: { coreChecks: $coreChecks }
-    ) {
-      affected_rows
-      returning {
-        coreChecks
       }
     }
   }

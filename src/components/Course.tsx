@@ -124,9 +124,7 @@ function Course({
       term=""
     />
   )
-  let deleteIconPlaceholder = (
-    <DeleteIcon functional={false} code="" title="" term="" />
-  )
+  let deleteIconPlaceholder = <DeleteIcon functional={false} title="" term="" />
 
   // If false, icons don't have click functionality (for logged out viewers)
   if (showIcons) {
@@ -156,9 +154,7 @@ function Course({
         term={term}
       />
     )
-    deleteIconPlaceholder = (
-      <DeleteIcon functional term={term} title={title} code={code} />
-    )
+    deleteIconPlaceholder = <DeleteIcon functional term={term} title={title} />
   }
 
   // Add M and/or W if Mudd hum/writing intensive course

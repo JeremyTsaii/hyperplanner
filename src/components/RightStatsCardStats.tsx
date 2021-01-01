@@ -44,29 +44,17 @@ const useStyles = makeStyles((theme) => ({
 interface IProps {
   titleArr?: string[]
   valArr?: any[]
-  isList: boolean
-  isMajor?: boolean
   checklist?: { code: string; title: string }[]
-  coreChecks?: string
-  activeCoreChecksArr?: number[]
-  enroll?: number
-  majorChecks?: string
-  activeMajorChecksArr?: number[]
-  major?: string
+  checksArr?: number[]
+  isList: boolean
 }
 
 const RightStatsCardStats = ({
   titleArr,
   valArr,
   isList,
-  isMajor,
   checklist,
-  coreChecks,
-  activeCoreChecksArr,
-  enroll,
-  majorChecks,
-  activeMajorChecksArr,
-  major,
+  checksArr,
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
@@ -90,33 +78,12 @@ const RightStatsCardStats = ({
       </div>
     )
   }
-  // Major checklist
-  if (isMajor) {
-    return (
-      <div className={classes.reqStatSection}>
-        {/* eslint-disable */}
-        <RequirementsList
-          isMajor
-          reqs={checklist!}
-          majorChecks={majorChecks!}
-          activeMajorChecksArr={activeMajorChecksArr}
-          major={major!}
-        />
-        {/* eslint-enable */}
-      </div>
-    )
-  }
-  // Core checklist
+
+  // Major / Core checklist
   return (
     <div className={classes.reqStatSection}>
       {/* eslint-disable */}
-      <RequirementsList
-        isMajor={false}
-        reqs={checklist!}
-        coreChecks={coreChecks!}
-        activeCoreChecksArr={activeCoreChecksArr}
-        enroll={enroll!}
-      />
+      <RequirementsList reqs={checklist!} checksArr={checksArr!} />
       {/* eslint-enable */}
     </div>
   )
@@ -125,14 +92,8 @@ const RightStatsCardStats = ({
 RightStatsCardStats.defaultProps = {
   titleArr: [],
   valArr: [],
-  isMajor: false,
   checklist: [],
-  coreChecks: '',
-  activeCoreChecksArr: [],
-  enroll: 0,
-  majorChecks: '',
-  activeMajorChecksArr: [],
-  major: '',
+  checksArr: [],
 }
 
 export default RightStatsCardStats
