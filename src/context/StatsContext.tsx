@@ -171,10 +171,12 @@ const getCourseStats = (
       majorChecks[majorReqTable[course.code].shift() as number] = course.active
         ? 2
         : 1
-    } else if (majorReqTable.hasOwnProperty(dept) && course.credits === 3 && course.type === "major_req") {
-      majorChecks[majorReqTable[dept].shift() as number] = course.active
-        ? 2
-        : 1
+    } else if (
+      majorReqTable.hasOwnProperty(dept) &&
+      course.credits === 3 &&
+      course.type === 'major_req'
+    ) {
+      majorChecks[majorReqTable[dept].shift() as number] = course.active ? 2 : 1
     }
     if (coreReqTable.hasOwnProperty(course.code)) {
       coreChecks[coreReqTable[course.code].shift() as number] = course.active
