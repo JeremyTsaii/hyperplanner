@@ -67,6 +67,21 @@ export const majors = [
   },
 ]
 
+export const techDepts = new Set([
+  'ASTR',
+  'BIOL',
+  'CHEM',
+  'CSCI',
+  'CSMT',
+  'DS',
+  'ENGR',
+  'GEOL',
+  'MATH',
+  'MCBI',
+  'NEUR',
+  'PHYS',
+])
+
 export const majorDict: StringToString = {
   bio: 'Biology',
   Biology: 'bio',
@@ -88,6 +103,73 @@ export const majorDict: StringToString = {
   'Mathematical/Computational Biology': 'mcb',
   phys: 'Physics',
   Physics: 'phys',
+}
+
+export const majorToElecDept = {
+  bio: ['BIOL'],
+  bio_chem: ['BIOL'],
+  chem: ['CHEM'],
+  cs: ['CSCI'],
+  cs_math: ['CSCI', 'MATH'],
+  engr: ['ENGR'],
+  math: ['MATH'],
+  math_phys: ['MATH', 'PHYS'],
+  mcb: ['MATH', 'CSCI'],
+  phys: ['PHYS'],
+}
+
+export const concToHumDept = {
+  'American Studies': ['AMST'],
+  Anthropology: ['ANTH'],
+  Art: ['ART', 'ARHI'],
+  'Art History': ['ART', 'ARHI'],
+  'Asian American Studies': ['ASAM'],
+  'Asian Studies': ['ASIA'],
+  'Africana Studies': ['AFRI'],
+  'Chicanx/Latinx Studies': ['CHST'],
+  Classics: ['CLAS'],
+  Dance: ['DANC'],
+  Economics: ['ECON'],
+  Education: ['EDUC'],
+  'Environmental Analysis': ['EA'],
+  'European Studies': ['HIST'],
+  'Foreign Languages': [
+    'ARBC',
+    'CHIN',
+    'FREN',
+    'GERM',
+    'GREEK',
+    'ITAL',
+    'JAPN',
+    'KORE',
+    'LATN',
+    'LGCS',
+    'PORT',
+    'RUSS',
+    'SPAN',
+  ],
+  'Gender Studies': ['GWS'],
+  Geography: ['GEOG', 'EA'],
+  'German Studies': ['GERM'],
+  History: ['HIST'],
+  'Holocaust & Human Rights': ['PHIL'],
+  'Jewish Studies': ['RLST'],
+  'Latin American Studies': ['LAST', 'HIST'],
+  Linguistics: ['ANTH', 'LGCS'],
+  Literature: ['LIT', 'HIST'],
+  'Media Studies': ['MS'],
+  'Middle Eastern Studies': ['MES'],
+  Music: ['MUS'],
+  Philosophy: ['PHIL', 'PPE'],
+  'Political Studies': ['GOVT', 'POLI', 'PPE'],
+  Psychology: ['PSYC'],
+  'Public Policy Analysis': ['GOVT', 'POLI', 'PPA'],
+  'Religious Studies': ['RLST'],
+  'Science, Technology, & Society': ['STS'],
+  'Secular Studies': ['SOC'],
+  Sociology: ['SOC', 'SOSC'],
+  Theatre: ['THEA'],
+  'Writing and Rhetoric': ['WRIT', 'ENGL'],
 }
 
 export const enrollYears = [
@@ -197,7 +279,7 @@ export const concentrations = [
     value: 'Philosophy',
   },
   {
-    value: 'Politcal Studies',
+    value: 'Political Studies',
   },
   {
     value: 'Psychology',

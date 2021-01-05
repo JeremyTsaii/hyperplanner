@@ -4,6 +4,7 @@ import TextField from '@material-ui/core/TextField'
 import SaveButton from './SaveButton'
 import { cleanHyper } from '../../utils/jsonFunctions'
 import { UserContext } from '../../context/UserContext'
+import { StatsContext } from '../../context/StatsContext'
 import { CourseType, courseSort } from '../../static/infoLists'
 /* eslint-disable */
 import {
@@ -32,8 +33,9 @@ function ImportHyper(): JSX.Element {
   const classes = useStyles()
 
   const { data } = useContext(UserContext)
-  const enrollYear = data.users[0].enroll
+  const user = data.users[0]
 
+  const stats = useContext(StatsContext)
   // Get json text input
   const getJsonField = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -48,7 +50,7 @@ function ImportHyper(): JSX.Element {
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
 
   const handleSave = () => {
-    const [isValid, result] = cleanHyper(getJsonField(jsonRef), enrollYear)
+    const [isValid, result] = cleanHyper(getJsonField(jsonRef), stats, user)
 
     setFormatError(!isValid)
     setErrorText(
@@ -83,8 +85,7 @@ function ImportHyper(): JSX.Element {
 
           const sortedCourses = existingCourses.concat(courses2)
           sortedCourses.sort(courseSort)
-          console.log('Sorted Courses:')
-          console.log(sortedCourses)
+
           /* eslint-disable */
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
