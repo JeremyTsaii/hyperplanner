@@ -1,12 +1,33 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   campusDict,
   typeDict,
   CourseType,
   hyperToJson,
+  majorToElecDept,
+  concToHumDept,
+  techDepts,
 } from '../static/infoLists'
 import WritIntens from '../static/writIntens.json'
 
-/* eslint-disable-next-line */
+type Stats = {
+  total: number
+  rem: number
+  avg: number
+  avgRem: any
+  pe: number
+  majorElec: number
+  depth: number
+  breadth: number
+  humElec: number
+  muddHum: number
+  writ: number
+  majorChecks: number[]
+  majorReqTable: { [code: string]: number[] }
+  coreChecks: number[]
+  coreReqTable: { [code: string]: number[] }
+}
+
 function validate(course: any) {
   const validLength = Object.keys(course).length === 8
   const validActive =
@@ -53,16 +74,79 @@ const calculateTerm = (enrollYear: number, termStartDate: string): string => {
   return sem + (year - enrollYear + 1).toString()
 }
 
-const checkWritInten = (code: string): boolean => {
-  for (let i = 0; i < WritIntens.length; i += 1) {
-    if (WritIntens[i].code === code) {
-      return true
-    }
-  }
-  return false
+const isWritInten = (code: string): boolean => {
+  /* eslint-disable-next-line */
+  return WritIntens.hasOwnProperty(code)
 }
 
-/* eslint-disable-next-line */
+const isPe = (code: string) => {
+  return /^(PE)/.test(code)
+}
+
+const isCoreReq = (
+  code: string,
+  coreReqTable: { [code: string]: number[] },
+): boolean => {
+  /* eslint-disable-next-line */
+  return coreReqTable.hasOwnProperty(code)
+}
+
+const isMajorReq = (
+  code: string,
+  dept: string,
+  credits: number,
+  majorReqTable: { [code: string]: number[] },
+): boolean => {
+  /* eslint-disable */
+  // Handle major/core checks array
+  return (
+    majorReqTable.hasOwnProperty(code) ||
+    (majorReqTable.hasOwnProperty(dept) && credits === 3)
+  )
+  /* eslint-enable */
+}
+
+const isMajorElec = (dept: string, major: string): boolean => {
+  const majorKey = major as keyof typeof majorToElecDept
+  return majorToElecDept[majorKey].includes(dept)
+}
+
+const isHumDepth = (dept: string, concentration: string): boolean => {
+  const concKey = concentration as keyof typeof concToHumDept
+  return concToHumDept[concKey].includes(dept)
+}
+
+const isHumBreadth = (dept: string, concentration: string): boolean => {
+  return !isHumDepth(dept, concentration) && !techDepts.has(dept)
+}
+
+const determineCourseType = (
+  course: CourseType,
+  statsContext: Stats,
+  userContext: any,
+): string => {
+  const pattern = /[\D]*/
+  /* eslint-disable-next-line */
+  const dept = course.code.match(pattern)![0] as string
+  let message = 'undecided'
+  if (isPe(course.code)) {
+    message = 'pe'
+  } else if (isCoreReq(course.code, statsContext.coreReqTable)) {
+    message = 'core_req'
+  } else if (
+    isMajorReq(course.code, dept, course.credits, statsContext.majorReqTable)
+  ) {
+    message = 'major_req'
+  } else if (isMajorElec(dept, userContext.major)) {
+    message = 'major_elec'
+  } else if (isHumDepth(dept, userContext.concentration)) {
+    message = 'hum_depth'
+  } else if (isHumBreadth(dept, userContext.concentration)) {
+    message = 'hum_breadth'
+  }
+  return message
+}
+
 const getCampusName = (hypCourse: any): string => {
   // Two possible locations of campus name
   const possible1 =
@@ -81,7 +165,6 @@ const getCampusName = (hypCourse: any): string => {
   return 'hmc'
 }
 
-/* eslint-disable-next-line */
 export const validJson = (jsonStr: string): [boolean, any] => {
   try {
     const json = JSON.parse(jsonStr)
@@ -101,17 +184,16 @@ export const validJson = (jsonStr: string): [boolean, any] => {
 
 export const cleanHyper = (
   jsonStr: string,
-  enrollYear: number,
-  /* eslint-disable-next-line */
+  stats: Stats,
+  users: any,
 ): [boolean, any] => {
   try {
     const json = JSON.parse(jsonStr)
     if (!Array.isArray(json) || json.length === 0) {
       return [false, null]
     }
-
     const term = calculateTerm(
-      enrollYear,
+      users.enroll,
       json[0].courseSchedule[0].scheduleStartDate,
     )
 
@@ -126,9 +208,10 @@ export const cleanHyper = (
       courseEntry.campus = getCampusName(curCourse)
       const subject = curCourse.courseMutualExclusionKey[0]
       const num = curCourse.courseMutualExclusionKey[1]
-      courseEntry.code = subject + num.toString()
-      courseEntry.writ_inten = checkWritInten(courseEntry.code)
-      courseEntry.type = 'undecided'
+      const numStr = num < 100 ? `0${num.toString()}` : num.toString()
+      courseEntry.code = subject + numStr
+      courseEntry.writ_inten = isWritInten(courseEntry.code)
+      courseEntry.type = determineCourseType(courseEntry, stats, users)
       if (!validate(courseEntry)) {
         return [false, null]
       }
@@ -143,8 +226,9 @@ export const cleanHyper = (
 const getTermCourses = (
   term: string,
   idx: number,
-  /* eslint-disable-next-line */
   coursesJson: any,
+  stats: Stats,
+  users: any,
 ): CourseType[] => {
   const courses = []
   const termCourses = coursesJson[idx][term]
@@ -156,23 +240,26 @@ const getTermCourses = (
     newCourse.title = curCourse.title
     newCourse.code = curCourse.code
     newCourse.credits = curCourse.credits
-    newCourse.type = 'undecided'
+    newCourse.type = determineCourseType(curCourse, stats, users)
     newCourse.campus = curCourse.campus
-    newCourse.writ_inten = checkWritInten(curCourse.code)
+    newCourse.writ_inten = isWritInten(curCourse.code)
     courses.push(newCourse)
   }
   return courses
 }
 
-/* eslint-disable-next-line */
-export const getCoursesFromJson = (coursesJson: any): CourseType[] => {
+export const getCoursesFromJson = (
+  coursesJson: any,
+  stats: Stats,
+  user: any,
+): CourseType[] => {
   let courses = [] as CourseType[]
   for (let i = 0; i < coursesJson.length; i += 1) {
-    const fallCourses = getTermCourses('Fall', i, coursesJson)
+    const fallCourses = getTermCourses('Fall', i, coursesJson, stats, user)
     courses = courses.concat(fallCourses)
-    const springCourses = getTermCourses('Spring', i, coursesJson)
+    const springCourses = getTermCourses('Spring', i, coursesJson, stats, user)
     courses = courses.concat(springCourses)
-    const summerCourses = getTermCourses('Summer', i, coursesJson)
+    const summerCourses = getTermCourses('Summer', i, coursesJson, stats, user)
     courses = courses.concat(summerCourses)
   }
   return courses

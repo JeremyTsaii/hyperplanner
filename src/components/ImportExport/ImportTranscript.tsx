@@ -3,6 +3,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import axios from 'axios'
 import { UserContext } from '../../context/UserContext'
 import { CoursesContext } from '../../context/CoursesContext'
+import { StatsContext } from '../../context/StatsContext'
 /* eslint-disable */
 import {
   useAdd_Multiple_CoursesMutation,
@@ -32,6 +33,7 @@ function ImportTranscript(): JSX.Element {
 
   const { data } = useContext(UserContext)
   const { data: coursesData } = useContext(CoursesContext)
+  const { data: statsData } = useContext(StatsContext)
 
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
   const [removeAllCourses] = useRemove_All_CoursesMutation()
@@ -97,7 +99,11 @@ function ImportTranscript(): JSX.Element {
                   const foundStatus = response2.data.status
                   if (foundStatus === 'found') {
                     const coursesJson = response2.data.data
-                    const courses = getCoursesFromJson(coursesJson)
+                    const courses = getCoursesFromJson(
+                      coursesJson,
+                      statsData,
+                      data.users[0],
+                    )
 
                     const [isValid, result] = validJson(JSON.stringify(courses))
                     if (isValid) {

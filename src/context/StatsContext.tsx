@@ -23,7 +23,9 @@ type Stats = {
   muddHum: number
   writ: number
   majorChecks: number[]
+  majorReqTable: { [code: string]: number[] }
   coreChecks: number[]
+  coreReqTable: { [code: string]: number[] }
 }
 
 const generateUserMajorRequirements = (
@@ -294,7 +296,9 @@ const calculateStats = (
   statsObj.muddHum = muddHum
   statsObj.writ = writ
   statsObj.majorChecks = majorChecks
+  statsObj.majorReqTable = majorReqTable
   statsObj.coreChecks = coreChecks
+  statsObj.coreReqTable = coreReqTable
 
   return statsObj
 }
