@@ -33,7 +33,7 @@ function ImportTranscript(): JSX.Element {
 
   const { data } = useContext(UserContext)
   const { data: coursesData } = useContext(CoursesContext)
-  const { data: statsData } = useContext(StatsContext)
+  const statsData = useContext(StatsContext)
 
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
   const [removeAllCourses] = useRemove_All_CoursesMutation()
@@ -104,7 +104,6 @@ function ImportTranscript(): JSX.Element {
                       statsData,
                       data.users[0],
                     )
-
                     const [isValid, result] = validJson(JSON.stringify(courses))
                     if (isValid) {
                       setStatus('Successfully Imported')

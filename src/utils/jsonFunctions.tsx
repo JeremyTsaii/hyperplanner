@@ -112,13 +112,25 @@ const isMajorElec = (dept: string, major: string): boolean => {
   return majorToElecDept[majorKey].includes(dept)
 }
 
-const isHumDepth = (dept: string, concentration: string): boolean => {
+const isHumDepth = (
+  credits: number,
+  dept: string,
+  concentration: string,
+): boolean => {
   const concKey = concentration as keyof typeof concToHumDept
-  return concToHumDept[concKey].includes(dept)
+  return concToHumDept[concKey].includes(dept) && credits >= 3
 }
 
-const isHumBreadth = (dept: string, concentration: string): boolean => {
-  return !isHumDepth(dept, concentration) && !techDepts.has(dept)
+const isHumBreadth = (
+  credits: number,
+  dept: string,
+  concentration: string,
+): boolean => {
+  return (
+    !isHumDepth(credits, dept, concentration) &&
+    !techDepts.has(dept) &&
+    credits >= 3
+  )
 }
 
 const determineCourseType = (
@@ -130,7 +142,7 @@ const determineCourseType = (
   const pattern = /[\D]*/
   /* eslint-disable-next-line */
   const dept = course.code.match(pattern)![0] as string
-  let message = 'undecided'
+  let message = 'other'
   if (isPe(course.code)) {
     message = 'pe'
   } else if (isCoreReq(course.code, statsContext.coreReqTable)) {
@@ -141,11 +153,12 @@ const determineCourseType = (
     message = 'major_req'
   } else if (isMajorElec(dept, userContext.major)) {
     message = 'major_elec'
-  } else if (isHumDepth(dept, userContext.concentration)) {
+  } else if (isHumDepth(course.credits, dept, userContext.concentration)) {
     message = 'hum_depth'
-  } else if (isHumBreadth(dept, userContext.concentration)) {
+  } else if (isHumBreadth(course.credits, dept, userContext.concentration)) {
     message = 'hum_breadth'
   }
+
   return message
 }
 
@@ -235,7 +248,7 @@ const getTermCourses = (
   /* eslint-disable */
   coursesJson: any,
   stats: Stats,
-  users: any,
+  user: any,
   /* eslint-enable */
 ): CourseType[] => {
   const courses = []
@@ -248,7 +261,7 @@ const getTermCourses = (
     newCourse.title = curCourse.title
     newCourse.code = curCourse.code
     newCourse.credits = curCourse.credits
-    newCourse.type = determineCourseType(curCourse, stats, users)
+    newCourse.type = determineCourseType(curCourse, stats, user)
     newCourse.campus = curCourse.campus
     newCourse.writ_inten = isWritInten(curCourse.code)
     courses.push(newCourse)
