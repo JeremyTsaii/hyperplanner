@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import {
   campusDict,
   typeDict,
@@ -14,6 +13,7 @@ type Stats = {
   total: number
   rem: number
   avg: number
+  /* eslint-disable-next-line */
   avgRem: any
   pe: number
   majorElec: number
@@ -28,6 +28,7 @@ type Stats = {
   coreReqTable: { [code: string]: number[] }
 }
 
+/* eslint-disable-next-line */
 function validate(course: any) {
   const validLength = Object.keys(course).length === 8
   const validActive =
@@ -123,6 +124,7 @@ const isHumBreadth = (dept: string, concentration: string): boolean => {
 const determineCourseType = (
   course: CourseType,
   statsContext: Stats,
+  /* eslint-disable-next-line */
   userContext: any,
 ): string => {
   const pattern = /[\D]*/
@@ -147,6 +149,7 @@ const determineCourseType = (
   return message
 }
 
+/* eslint-disable-next-line */
 const getCampusName = (hypCourse: any): string => {
   // Two possible locations of campus name
   const possible1 =
@@ -165,6 +168,7 @@ const getCampusName = (hypCourse: any): string => {
   return 'hmc'
 }
 
+/* eslint-disable-next-line */
 export const validJson = (jsonStr: string): [boolean, any] => {
   try {
     const json = JSON.parse(jsonStr)
@@ -185,8 +189,10 @@ export const validJson = (jsonStr: string): [boolean, any] => {
 export const cleanHyper = (
   jsonStr: string,
   stats: Stats,
+  /* eslint-disable */
   users: any,
 ): [boolean, any] => {
+  /* eslint-enable */
   try {
     const json = JSON.parse(jsonStr)
     if (!Array.isArray(json) || json.length === 0) {
@@ -226,9 +232,11 @@ export const cleanHyper = (
 const getTermCourses = (
   term: string,
   idx: number,
+  /* eslint-disable */
   coursesJson: any,
   stats: Stats,
   users: any,
+  /* eslint-enable */
 ): CourseType[] => {
   const courses = []
   const termCourses = coursesJson[idx][term]
@@ -249,9 +257,11 @@ const getTermCourses = (
 }
 
 export const getCoursesFromJson = (
+  /* eslint-disable */
   coursesJson: any,
   stats: Stats,
   user: any,
+  /* eslint-enable */
 ): CourseType[] => {
   let courses = [] as CourseType[]
   for (let i = 0; i < coursesJson.length; i += 1) {
