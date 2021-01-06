@@ -1970,6 +1970,20 @@
         "fields": null,
         "inputFields": [
           {
+            "name": "code",
+            "description": null,
+            "type": {
+              "kind": "NON_NULL",
+              "name": null,
+              "ofType": {
+                "kind": "SCALAR",
+                "name": "String",
+                "ofType": null
+              }
+            },
+            "defaultValue": null
+          },
+          {
             "name": "term",
             "description": null,
             "type": {
@@ -2591,6 +2605,20 @@
             "name": "delete_courses_by_pk",
             "description": "delete single row from the table: \"courses\"",
             "args": [
+              {
+                "name": "code",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
               {
                 "name": "term",
                 "description": null,
@@ -4163,6 +4191,20 @@
             "description": "fetch data from the table: \"courses\" using primary key columns",
             "args": [
               {
+                "name": "code",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
+              {
                 "name": "term",
                 "description": null,
                 "type": {
@@ -4777,6 +4819,20 @@
             "name": "courses_by_pk",
             "description": "fetch data from the table: \"courses\" using primary key columns",
             "args": [
+              {
+                "name": "code",
+                "description": null,
+                "type": {
+                  "kind": "NON_NULL",
+                  "name": null,
+                  "ofType": {
+                    "kind": "SCALAR",
+                    "name": "String",
+                    "ofType": null
+                  }
+                },
+                "defaultValue": null
+              },
               {
                 "name": "term",
                 "description": null,

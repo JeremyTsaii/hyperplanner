@@ -9,6 +9,7 @@ import { CourseType, courseSort } from '../../static/infoLists'
 /* eslint-disable */
 import {
   useAdd_Multiple_CoursesMutation,
+  useRemove_Semester_CoursesMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
@@ -48,9 +49,14 @@ function ImportHyper(): JSX.Element {
   const jsonRef = useRef('')
 
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
+  const [removeSemesterCourses] = useRemove_Semester_CoursesMutation()
 
   const handleSave = () => {
-    const [isValid, result] = cleanHyper(getJsonField(jsonRef), stats, user)
+    const [isValid, result, term] = cleanHyper(
+      getJsonField(jsonRef),
+      stats,
+      user,
+    )
 
     setFormatError(!isValid)
     setErrorText(
@@ -66,9 +72,38 @@ function ImportHyper(): JSX.Element {
         __typename: 'courses',
       }))
       const sortedCourses = courses2.sort(courseSort)
-
+      let changeLength = 0
       setStatus('Successfully Imported')
 
+      // Delete courses in corresponding semester
+      removeSemesterCourses({
+        variables: {
+          term,
+        },
+        update(cache) {
+          /* eslint-disable */
+          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+          })
+          const newCourses = existingCourses!.courses.filter(
+            (course) => course.term !== term,
+          )
+          changeLength = existingCourses!.courses.length - newCourses.length
+          newCourses.sort(courseSort)
+          cache.writeQuery<Get_CoursesQuery>({
+            query: Get_CoursesDocument,
+            data: { courses: newCourses },
+          })
+          /* eslint-enable */
+        },
+        optimisticResponse: {
+          __typename: 'mutation_root',
+          delete_courses: {
+            __typename: 'courses_mutation_response',
+            affected_rows: changeLength,
+          },
+        },
+      })
       // Write courses in inputted json field
       addMultipleCourses({
         variables: {
@@ -79,19 +114,21 @@ function ImportHyper(): JSX.Element {
           const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
+          /* eslint-enable */
+
           const existingCourses = getExistingCourses
             ? getExistingCourses.courses
             : []
 
-          const sortedCourses = existingCourses.concat(courses2)
-          sortedCourses.sort(courseSort)
+          const sortedCourses2 = existingCourses.concat(courses2)
+          sortedCourses2.sort(courseSort)
 
           /* eslint-disable */
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: sortedCourses },
+            data: { courses: sortedCourses2 },
           })
-          /* eslint-disable */
+          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
@@ -141,7 +178,8 @@ function ImportHyper(): JSX.Element {
       </div>
       <div className={classes.instructions}>
         <p>
-          These courses will be <b>appended</b> to the corresponding semester
+          <b>Warning:</b> this will <b>overwrite</b> courses in the
+          corresponding semester
         </p>
       </div>
       <div>

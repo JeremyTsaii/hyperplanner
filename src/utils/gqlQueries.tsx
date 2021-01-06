@@ -189,6 +189,14 @@ export const REMOVE_COURSE = gql`
   }
 `
 
+export const REMOVE_SEMESTER_COURSES = gql`
+  mutation REMOVE_SEMESTER_COURSES($term: String!) {
+    delete_courses(where: { term: { _eq: $term } }) {
+      affected_rows
+    }
+  }
+`
+
 export const REMOVE_ALL_COURSES = gql`
   mutation REMOVE_ALL_COURSES {
     delete_courses(where: {}) {

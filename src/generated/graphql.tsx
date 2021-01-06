@@ -264,6 +264,7 @@ export type Courses_Order_By = {
 
 /** primary key columns input for table: "courses" */
 export type Courses_Pk_Columns_Input = {
+  code: Scalars['String'];
   term: Scalars['String'];
   title: Scalars['String'];
   user_id: Scalars['String'];
@@ -449,6 +450,7 @@ export type Mutation_RootDelete_CoursesArgs = {
 
 /** mutation root */
 export type Mutation_RootDelete_Courses_By_PkArgs = {
+  code: Scalars['String'];
   term: Scalars['String'];
   title: Scalars['String'];
   user_id: Scalars['String'];
@@ -741,6 +743,7 @@ export type Query_RootCourses_AggregateArgs = {
 
 /** query root */
 export type Query_RootCourses_By_PkArgs = {
+  code: Scalars['String'];
   term: Scalars['String'];
   title: Scalars['String'];
   user_id: Scalars['String'];
@@ -836,6 +839,7 @@ export type Subscription_RootCourses_AggregateArgs = {
 
 /** subscription root */
 export type Subscription_RootCourses_By_PkArgs = {
+  code: Scalars['String'];
   term: Scalars['String'];
   title: Scalars['String'];
   user_id: Scalars['String'];
@@ -1542,7 +1546,7 @@ export type Add_CourseMutation = (
 );
 
 export type Add_Multiple_CoursesMutationVariables = Exact<{
-  objects: Array<Courses_Insert_Input>;
+  objects: Array<Courses_Insert_Input> | Courses_Insert_Input;
 }>;
 
 
@@ -1565,6 +1569,19 @@ export type Remove_CourseMutationVariables = Exact<{
 
 
 export type Remove_CourseMutation = (
+  { __typename?: 'mutation_root' }
+  & { delete_courses?: Maybe<(
+    { __typename?: 'courses_mutation_response' }
+    & Pick<Courses_Mutation_Response, 'affected_rows'>
+  )> }
+);
+
+export type Remove_Semester_CoursesMutationVariables = Exact<{
+  term: Scalars['String'];
+}>;
+
+
+export type Remove_Semester_CoursesMutation = (
   { __typename?: 'mutation_root' }
   & { delete_courses?: Maybe<(
     { __typename?: 'courses_mutation_response' }
@@ -1958,6 +1975,38 @@ export function useRemove_CourseMutation(baseOptions?: Apollo.MutationHookOption
 export type Remove_CourseMutationHookResult = ReturnType<typeof useRemove_CourseMutation>;
 export type Remove_CourseMutationResult = Apollo.MutationResult<Remove_CourseMutation>;
 export type Remove_CourseMutationOptions = Apollo.BaseMutationOptions<Remove_CourseMutation, Remove_CourseMutationVariables>;
+export const Remove_Semester_CoursesDocument = gql`
+    mutation REMOVE_SEMESTER_COURSES($term: String!) {
+  delete_courses(where: {term: {_eq: $term}}) {
+    affected_rows
+  }
+}
+    `;
+export type Remove_Semester_CoursesMutationFn = Apollo.MutationFunction<Remove_Semester_CoursesMutation, Remove_Semester_CoursesMutationVariables>;
+
+/**
+ * __useRemove_Semester_CoursesMutation__
+ *
+ * To run a mutation, you first call `useRemove_Semester_CoursesMutation` within a React component and pass it any options that fit your needs.
+ * When your component renders, `useRemove_Semester_CoursesMutation` returns a tuple that includes:
+ * - A mutate function that you can call at any time to execute the mutation
+ * - An object with fields that represent the current status of the mutation's execution
+ *
+ * @param baseOptions options that will be passed into the mutation, supported options are listed on: https://www.apollographql.com/docs/react/api/react-hooks/#options-2;
+ *
+ * @example
+ * const [removeSemesterCoursesMutation, { data, loading, error }] = useRemove_Semester_CoursesMutation({
+ *   variables: {
+ *      term: // value for 'term'
+ *   },
+ * });
+ */
+export function useRemove_Semester_CoursesMutation(baseOptions?: Apollo.MutationHookOptions<Remove_Semester_CoursesMutation, Remove_Semester_CoursesMutationVariables>) {
+        return Apollo.useMutation<Remove_Semester_CoursesMutation, Remove_Semester_CoursesMutationVariables>(Remove_Semester_CoursesDocument, baseOptions);
+      }
+export type Remove_Semester_CoursesMutationHookResult = ReturnType<typeof useRemove_Semester_CoursesMutation>;
+export type Remove_Semester_CoursesMutationResult = Apollo.MutationResult<Remove_Semester_CoursesMutation>;
+export type Remove_Semester_CoursesMutationOptions = Apollo.BaseMutationOptions<Remove_Semester_CoursesMutation, Remove_Semester_CoursesMutationVariables>;
 export const Remove_All_CoursesDocument = gql`
     mutation REMOVE_ALL_COURSES {
   delete_courses(where: {}) {

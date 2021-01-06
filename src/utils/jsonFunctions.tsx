@@ -204,12 +204,12 @@ export const cleanHyper = (
   stats: Stats,
   /* eslint-disable */
   users: any,
-): [boolean, any] => {
+): [boolean, any, string] => {
   /* eslint-enable */
   try {
     const json = JSON.parse(jsonStr)
     if (!Array.isArray(json) || json.length === 0) {
-      return [false, null]
+      return [false, null, '']
     }
     const term = calculateTerm(
       users.enroll,
@@ -232,13 +232,13 @@ export const cleanHyper = (
       courseEntry.writ_inten = isWritInten(courseEntry.code)
       courseEntry.type = determineCourseType(courseEntry, stats, users)
       if (!validate(courseEntry)) {
-        return [false, null]
+        return [false, null, '']
       }
       newJson.push(courseEntry)
     }
-    return [true, newJson]
+    return [true, newJson, term]
   } catch {
-    return [false, null]
+    return [false, null, '']
   }
 }
 
