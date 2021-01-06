@@ -338,6 +338,57 @@ export const campuses = [
   },
 ]
 
+export const semesters = [
+  {
+    value: 'fall1',
+    label: 'Fall 1',
+  },
+  {
+    value: 'spring1',
+    label: 'Spring 1',
+  },
+  {
+    value: 'summer1',
+    label: 'Summer 1',
+  },
+  {
+    value: 'fall2',
+    label: 'Fall 2',
+  },
+  {
+    value: 'spring2',
+    label: 'Spring 2',
+  },
+  {
+    value: 'summer2',
+    label: 'Summer 2',
+  },
+  {
+    value: 'fall3',
+    label: 'Fall 3',
+  },
+  {
+    value: 'spring3',
+    label: 'Spring 3',
+  },
+  {
+    value: 'summer3',
+    label: 'Summer 3',
+  },
+  {
+    value: 'fall4',
+    label: 'Fall 4',
+  },
+  {
+    value: 'spring4',
+    label: 'Spring 4',
+  },
+  {
+    value: 'summer4',
+    label: 'Summer 4',
+  },
+]
+
 export const campusDict: StringToString = {
   hmc: 'Harvey Mudd College',
   sc: 'Scripps College',

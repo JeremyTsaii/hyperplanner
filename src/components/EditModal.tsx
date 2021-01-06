@@ -13,6 +13,7 @@ import { makeStyles, withStyles } from '@material-ui/core/styles'
 import Button from '@material-ui/core/Button'
 import {
   campuses,
+  semesters,
   credits,
   types,
   bools,
@@ -117,6 +118,8 @@ function EditModal({
   const titleRef = useRef('')
 
   // Changing information in modal
+  const [semester, setSemester] = useState(termProp)
+
   const [campus, setCampus] = useState(campusProp)
 
   const [credit, setCredit] = useState(String(creditsProp.toFixed(1)))
@@ -128,6 +131,11 @@ function EditModal({
   const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
     setCampus(target.value)
+  }
+
+  const handleSemesterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement
+    setSemester(target.value)
   }
 
   const handleCreditChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -185,7 +193,7 @@ function EditModal({
         variables: {
           active: activeProp,
           old_title: titleProp,
-          term: termProp,
+          term: semester,
           title: newTitle,
           code: newCode,
           credits: parseFloat(credit),
@@ -203,7 +211,7 @@ function EditModal({
               const newCourse = {} as Courses
               newCourse.__typename = 'courses'
               newCourse.active = activeProp
-              newCourse.term = termProp
+              newCourse.term = semester
               newCourse.title = newTitle
               newCourse.code = newCode
               newCourse.credits = parseFloat(credit)
@@ -230,7 +238,7 @@ function EditModal({
               {
                 __typename: 'courses',
                 active: activeProp,
-                term: termProp,
+                term: semester,
                 title: newTitle,
                 code: newCode,
                 credits: parseFloat(credit),
@@ -270,6 +278,19 @@ function EditModal({
         open={open}>
         <DialogTitle onClose={handleClose}>Edit Course</DialogTitle>
         <DialogContent dividers>
+          <TextField
+            select
+            label="Semester"
+            fullWidth
+            required
+            value={semester}
+            onChange={handleSemesterChange}>
+            {semesters.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
           <TextField
             autoFocus
             margin="dense"
