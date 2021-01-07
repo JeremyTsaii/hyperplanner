@@ -67,11 +67,7 @@ function TopBar(): JSX.Element {
       <AppBar position="static" className={classes.appBar}>
         <Toolbar variant="dense" className={classes.toolBar}>
           <div className={classes.brand}>
-            <img
-              alt="logo"
-              style={{ width: 50, paddingRight: 10 }}
-              src={Logo}
-            />
+            <img alt="logo" style={{ width: 75, paddingRight: 5 }} src={Logo} />
             <Typography variant="h5" className={classes.title}>
               HyperPlanner
             </Typography>

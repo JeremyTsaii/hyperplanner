@@ -94,7 +94,7 @@ const ImportExportModal = (): JSX.Element => {
     <div>
       <Button
         variant="outlined"
-        color="primary"
+        color="secondary"
         className={classes.importButton}
         startIcon={<ImportExportIcon />}
         onClick={handleOpen}>

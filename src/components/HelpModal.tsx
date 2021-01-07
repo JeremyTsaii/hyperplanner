@@ -106,7 +106,7 @@ const HelpModal = (): JSX.Element => {
     <div>
       <Button
         variant="outlined"
-        color="primary"
+        color="secondary"
         className={classes.helpButton}
         startIcon={<HelpOutlineIcon />}
         onClick={handleOpen}>
