@@ -159,6 +159,7 @@ function EditModal({
   const [open, setOpen] = useState(false)
 
   const resetInputs = () => {
+    setSemester(termProp)
     setCampus(campusProp)
     setCredit(String(creditsProp.toFixed(1)))
     setType(typeProp)
