@@ -341,51 +341,51 @@ export const campuses = [
 export const semesters = [
   {
     value: 'fall1',
-    label: 'Fall 1',
+    label: 'Year 1 Fall',
   },
   {
     value: 'spring1',
-    label: 'Spring 1',
+    label: 'Year 1 Spring',
   },
   {
     value: 'summer1',
-    label: 'Summer 1',
+    label: 'Year 1 Summer',
   },
   {
     value: 'fall2',
-    label: 'Fall 2',
+    label: 'Year 2 Fall',
   },
   {
     value: 'spring2',
-    label: 'Spring 2',
+    label: 'Year 2 Spring',
   },
   {
     value: 'summer2',
-    label: 'Summer 2',
+    label: 'Year 2 Summer',
   },
   {
     value: 'fall3',
-    label: 'Fall 3',
+    label: 'Year 3 Fall',
   },
   {
     value: 'spring3',
-    label: 'Spring 3',
+    label: 'Year 3 Spring',
   },
   {
     value: 'summer3',
-    label: 'Summer 3',
+    label: 'Year 3 Summer',
   },
   {
     value: 'fall4',
-    label: 'Fall 4',
+    label: 'Year 4 Fall',
   },
   {
     value: 'spring4',
-    label: 'Spring 4',
+    label: 'Year 4 Spring',
   },
   {
     value: 'summer4',
-    label: 'Summer 4',
+    label: 'Year 4 Summer',
   },
 ]
 
