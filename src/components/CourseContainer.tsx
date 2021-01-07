@@ -55,6 +55,11 @@ const useStyles = makeStyles((theme) => ({
     background: '#191b21',
     margin: theme.spacing(0.75),
   },
+  dragOver: {
+    borderColor: theme.palette.secondary.main,
+    borderWidth: '2px',
+    borderStyle: 'solid',
+  },
   semesterCollapse: {
     color: '#white',
     textAlign: 'left',
@@ -123,6 +128,8 @@ const CourseContainer = ({
     (course: CourseType) => course.term === summerTerm,
   )
 
+  // To pass course data during drag and drop, use stringified json as id
+  // https://github.com/atlassian/react-beautiful-dnd/issues/498
   return (
     <Paper elevation={12} className={classes.mainCard}>
       <Typography className={classes.yearText}>Year {yearNumber}</Typography>
@@ -159,13 +166,24 @@ const CourseContainer = ({
               return (
                 <div
                   ref={providedDrop.innerRef}
+                  className={
+                    snapshotDrop.isDraggingOver ? classes.dragOver : undefined
+                  }
                   /* eslint-disable-next-line */
                   {...providedDrop.droppableProps}>
                   <Paper elevation={0} className={classes.paper}>
                     {fallCourses.map((course: CourseType, index) => (
                       <Draggable
                         key={course.term + course.code}
-                        draggableId={course.term + course.code}
+                        draggableId={JSON.stringify({
+                          code: course.code,
+                          title: course.title,
+                          credits: course.credits,
+                          type: course.type,
+                          campus: course.campus,
+                          writ_inten: course.writ_inten,
+                          active: course.active,
+                        })}
                         index={index}>
                         {(providedDrag, snapshotDrag) => {
                           return (
@@ -197,7 +215,12 @@ const CourseContainer = ({
                       </Draggable>
                     ))}
                   </Paper>
-                  {providedDrop.placeholder}
+                  <span
+                    style={{
+                      display: 'none',
+                    }}>
+                    {providedDrop.placeholder}
+                  </span>
                 </div>
               )
             }}
@@ -232,22 +255,70 @@ const CourseContainer = ({
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSpring}>
-          <Paper elevation={0} className={classes.paper}>
-            {springCourses.map((course: CourseType) => (
-              <Course
-                key={course.term + course.code}
-                code={course.code}
-                title={course.title}
-                credits={course.credits}
-                type={course.type}
-                campus={course.campus}
-                writInten={course.writ_inten}
-                term={course.term}
-                showIcons={showIcons}
-                active={course.active}
-              />
-            ))}
-          </Paper>
+          <Droppable droppableId={springTerm}>
+            {(providedDrop, snapshotDrop) => {
+              return (
+                <div
+                  ref={providedDrop.innerRef}
+                  className={
+                    snapshotDrop.isDraggingOver ? classes.dragOver : undefined
+                  }
+                  /* eslint-disable-next-line */
+                  {...providedDrop.droppableProps}>
+                  <Paper elevation={0} className={classes.paper}>
+                    {springCourses.map((course: CourseType, index) => (
+                      <Draggable
+                        key={course.term + course.code}
+                        draggableId={JSON.stringify({
+                          code: course.code,
+                          title: course.title,
+                          credits: course.credits,
+                          type: course.type,
+                          campus: course.campus,
+                          writ_inten: course.writ_inten,
+                          active: course.active,
+                        })}
+                        index={index}>
+                        {(providedDrag, snapshotDrag) => {
+                          return (
+                            <div
+                              ref={providedDrag.innerRef}
+                              /* eslint-disable */
+                              {...providedDrag.draggableProps}
+                              {...providedDrag.dragHandleProps}
+                              /* eslint-enable */
+                              style={getStyle(
+                                providedDrag.draggableProps.style,
+                                snapshotDrag,
+                              )}>
+                              <Course
+                                key={course.term + course.code}
+                                code={course.code}
+                                title={course.title}
+                                credits={course.credits}
+                                type={course.type}
+                                campus={course.campus}
+                                writInten={course.writ_inten}
+                                term={course.term}
+                                showIcons={showIcons}
+                                active={course.active}
+                              />
+                            </div>
+                          )
+                        }}
+                      </Draggable>
+                    ))}
+                  </Paper>
+                  <span
+                    style={{
+                      display: 'none',
+                    }}>
+                    {providedDrop.placeholder}
+                  </span>
+                </div>
+              )
+            }}
+          </Droppable>
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>
@@ -278,22 +349,70 @@ const CourseContainer = ({
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedSummer}>
-          <Paper elevation={0} className={classes.paper}>
-            {summerCourses.map((course: CourseType) => (
-              <Course
-                key={course.term + course.code}
-                code={course.code}
-                title={course.title}
-                credits={course.credits}
-                type={course.type}
-                campus={course.campus}
-                writInten={course.writ_inten}
-                term={course.term}
-                showIcons={showIcons}
-                active={course.active}
-              />
-            ))}
-          </Paper>
+          <Droppable droppableId={summerTerm}>
+            {(providedDrop, snapshotDrop) => {
+              return (
+                <div
+                  ref={providedDrop.innerRef}
+                  className={
+                    snapshotDrop.isDraggingOver ? classes.dragOver : undefined
+                  }
+                  /* eslint-disable-next-line */
+                  {...providedDrop.droppableProps}>
+                  <Paper elevation={0} className={classes.paper}>
+                    {summerCourses.map((course: CourseType, index) => (
+                      <Draggable
+                        key={course.term + course.code}
+                        draggableId={JSON.stringify({
+                          code: course.code,
+                          title: course.title,
+                          credits: course.credits,
+                          type: course.type,
+                          campus: course.campus,
+                          writ_inten: course.writ_inten,
+                          active: course.active,
+                        })}
+                        index={index}>
+                        {(providedDrag, snapshotDrag) => {
+                          return (
+                            <div
+                              ref={providedDrag.innerRef}
+                              /* eslint-disable */
+                              {...providedDrag.draggableProps}
+                              {...providedDrag.dragHandleProps}
+                              /* eslint-enable */
+                              style={getStyle(
+                                providedDrag.draggableProps.style,
+                                snapshotDrag,
+                              )}>
+                              <Course
+                                key={course.term + course.code}
+                                code={course.code}
+                                title={course.title}
+                                credits={course.credits}
+                                type={course.type}
+                                campus={course.campus}
+                                writInten={course.writ_inten}
+                                term={course.term}
+                                showIcons={showIcons}
+                                active={course.active}
+                              />
+                            </div>
+                          )
+                        }}
+                      </Draggable>
+                    ))}
+                  </Paper>
+                  <span
+                    style={{
+                      display: 'none',
+                    }}>
+                    {providedDrop.placeholder}
+                  </span>
+                </div>
+              )
+            }}
+          </Droppable>
         </Collapse>
       </div>
     </Paper>
