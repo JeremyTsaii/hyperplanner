@@ -1,4 +1,11 @@
 import React, { useState } from 'react'
+import {
+  Droppable,
+  Draggable,
+  DraggingStyle,
+  NotDraggingStyle,
+  DraggableStateSnapshot,
+} from 'react-beautiful-dnd'
 import Paper from '@material-ui/core/Paper'
 import { Typography, Button } from '@material-ui/core'
 import Collapse from '@material-ui/core/Collapse'
@@ -86,6 +93,22 @@ const CourseContainer = ({
     setCheckedSummer((prev) => !prev)
   }
 
+  // Hack to disable animation except for currently dragged course
+  // https://github.com/atlassian/react-beautiful-dnd/issues/374
+  const getStyle = (
+    style: DraggingStyle | NotDraggingStyle | undefined,
+    snapshot: DraggableStateSnapshot,
+    /* eslint-disable-next-line */
+  ): any => {
+    if (!snapshot.isDragging) return {}
+    if (!snapshot.isDropAnimating) return style
+
+    return {
+      ...style,
+      transitionDuration: '0.001s',
+    }
+  }
+
   const fallTerm = `fall${yearNumber}`
   const springTerm = `spring${yearNumber}`
   const summerTerm = `summer${yearNumber}`
@@ -131,22 +154,54 @@ const CourseContainer = ({
       </div>
       <div className={classes.courseContainer}>
         <Collapse in={checkedFall}>
-          <Paper elevation={0} className={classes.paper}>
-            {fallCourses.map((course: CourseType) => (
-              <Course
-                key={course.term + course.code}
-                code={course.code}
-                title={course.title}
-                credits={course.credits}
-                type={course.type}
-                campus={course.campus}
-                writInten={course.writ_inten}
-                term={course.term}
-                showIcons={showIcons}
-                active={course.active}
-              />
-            ))}
-          </Paper>
+          <Droppable droppableId={fallTerm}>
+            {(providedDrop, snapshotDrop) => {
+              return (
+                <div
+                  ref={providedDrop.innerRef}
+                  /* eslint-disable-next-line */
+                  {...providedDrop.droppableProps}>
+                  <Paper elevation={0} className={classes.paper}>
+                    {fallCourses.map((course: CourseType, index) => (
+                      <Draggable
+                        key={course.term + course.code}
+                        draggableId={course.term + course.code}
+                        index={index}>
+                        {(providedDrag, snapshotDrag) => {
+                          return (
+                            <div
+                              ref={providedDrag.innerRef}
+                              /* eslint-disable */
+                              {...providedDrag.draggableProps}
+                              {...providedDrag.dragHandleProps}
+                              /* eslint-enable */
+                              style={getStyle(
+                                providedDrag.draggableProps.style,
+                                snapshotDrag,
+                              )}>
+                              <Course
+                                key={course.term + course.code}
+                                code={course.code}
+                                title={course.title}
+                                credits={course.credits}
+                                type={course.type}
+                                campus={course.campus}
+                                writInten={course.writ_inten}
+                                term={course.term}
+                                showIcons={showIcons}
+                                active={course.active}
+                              />
+                            </div>
+                          )
+                        }}
+                      </Draggable>
+                    ))}
+                  </Paper>
+                  {providedDrop.placeholder}
+                </div>
+              )
+            }}
+          </Droppable>
         </Collapse>
       </div>
       <div className={classes.semesterHeader}>

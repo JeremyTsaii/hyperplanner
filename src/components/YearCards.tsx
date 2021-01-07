@@ -1,6 +1,7 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
+import { DragDropContext } from 'react-beautiful-dnd'
 import Year from './Year'
 
 const useStyles = makeStyles((theme) => ({
@@ -34,13 +35,21 @@ const useStyles = makeStyles((theme) => ({
 const YearCards = (): JSX.Element => {
   const classes = useStyles()
 
+  const handleOnDragEnd = (result: any) => {
+    // Prevent dragging out of bounds
+    if (!result.destination) return
+    console.log(result)
+  }
+
   return (
     <Grid container justify="center">
       <Grid item xs={12} className={classes.innerContainer}>
-        <Year yearNumber={1} />
-        <Year yearNumber={2} />
-        <Year yearNumber={3} />
-        <Year yearNumber={4} />
+        <DragDropContext onDragEnd={handleOnDragEnd}>
+          <Year yearNumber={1} />
+          <Year yearNumber={2} />
+          <Year yearNumber={3} />
+          <Year yearNumber={4} />
+        </DragDropContext>
       </Grid>
     </Grid>
   )
