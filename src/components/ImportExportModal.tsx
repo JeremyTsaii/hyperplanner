@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    background: '#23252e',
+    background: '#191b21',
   },
   closeButton: {
     position: 'absolute',
@@ -29,7 +29,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.grey[500],
   },
   tab: {
-    backgroundColor: '#23252e',
+    backgroundColor: '#191b21',
     color: 'white',
   },
 }))
@@ -38,14 +38,14 @@ const DialogActions = withStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(1),
-    background: '#23252e',
+    background: '#191b21',
   },
 }))(MuiDialogActions)
 
 const DialogContent = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
-    background: '#23252e',
+    background: '#191b21',
   },
 }))(MuiDialogContent)
 

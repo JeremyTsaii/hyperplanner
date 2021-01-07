@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    background: '#23252e',
+    background: '#191b21',
   },
   closeButton: {
     position: 'absolute',
@@ -76,7 +76,7 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 const DialogContent = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
-    background: '#23252e',
+    background: '#191b21',
   },
 }))(MuiDialogContent)
 
@@ -84,7 +84,7 @@ const DialogActions = withStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(1),
-    background: '#23252e',
+    background: '#191b21',
   },
 }))(MuiDialogActions)
 
@@ -120,10 +120,10 @@ const HelpModal = (): JSX.Element => {
         open={open}>
         <DialogTitle onClose={handleClose}>Helpful Information</DialogTitle>
         <DialogContent dividers>
-          <Typography variant="h6" color="secondary" className={classes.header}>
+          <Typography variant="h6" color="primary" className={classes.header}>
             Helpful Resources
           </Typography>
-          <Typography variant="subtitle1" color="secondary">
+          <Typography variant="subtitle1" color="primary">
             - Core Requirements:
           </Typography>
           <div className={classes.resource}>
@@ -136,7 +136,7 @@ const HelpModal = (): JSX.Element => {
               - Core Catalog
             </a>
           </div>
-          <Typography variant="subtitle1" color="secondary">
+          <Typography variant="subtitle1" color="primary">
             - Major Requirements:
           </Typography>
           <div className={classes.resource}>
@@ -148,7 +148,7 @@ const HelpModal = (): JSX.Element => {
               - Mudd Majors
             </a>
           </div>
-          <Typography variant="subtitle1" color="secondary">
+          <Typography variant="subtitle1" color="primary">
             - HSA Requirements:
           </Typography>
           <div className={classes.resource}>
@@ -171,7 +171,7 @@ const HelpModal = (): JSX.Element => {
               - HSA Concept Map
             </a>
           </div>
-          <Typography variant="h6" color="secondary" className={classes.header}>
+          <Typography variant="h6" color="primary" className={classes.header}>
             Course Shade Types
           </Typography>
           {demoShadeCourses.map((course: CourseType) => (
@@ -188,7 +188,7 @@ const HelpModal = (): JSX.Element => {
               active={course.active}
             />
           ))}
-          <Typography variant="h6" color="secondary" className={classes.header}>
+          <Typography variant="h6" color="primary" className={classes.header}>
             Course Color Types
           </Typography>
           {demoColorCourses.map((course: CourseType) => (
@@ -205,7 +205,7 @@ const HelpModal = (): JSX.Element => {
               active={course.active}
             />
           ))}
-          <Typography variant="h6" color="secondary" className={classes.header}>
+          <Typography variant="h6" color="primary" className={classes.header}>
             Course Initials Types
           </Typography>
           {demoInitialsCourses.map((course: CourseType) => (

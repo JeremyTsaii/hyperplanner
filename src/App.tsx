@@ -23,10 +23,10 @@ const mainTheme = createMuiTheme({
   },
   palette: {
     primary: {
-      main: '#f50057',
+      main: '#BB86FC',
     },
     secondary: {
-      main: '#fff',
+      main: '#03DAC5',
     },
   },
 })
@@ -41,16 +41,16 @@ function App(): JSX.Element {
               params={{
                 fps_limit: 60,
                 background: {
-                  color: '#282c34',
+                  color: '#121212',
                 },
                 particles: {
                   links: {
                     enable: true,
-                    color: '#f50057',
+                    color: mainTheme.palette.primary.main,
                     distance: 185,
                   },
                   move: {
-                    enable: true,
+                    enable: false,
                   },
                   size: {
                     value: 3,
@@ -59,7 +59,7 @@ function App(): JSX.Element {
                     value: 0.5,
                   },
                   color: {
-                    value: '#f50057',
+                    value: mainTheme.palette.secondary.main,
                   },
                 },
               }}

@@ -15,9 +15,9 @@ import {
 } from '../../generated/graphql'
 /* eslint-enable */
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   instructions: {
-    color: '#f50057',
+    color: theme.palette.primary.main,
   },
   link: {
     color: '#2196f3',

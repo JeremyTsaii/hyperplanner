@@ -16,9 +16,9 @@ import UploadButton from './UploadButton'
 import { validJson, getCoursesFromJson } from '../../utils/jsonFunctions'
 import { CourseType, courseSort } from '../../static/infoLists'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   instructions: {
-    color: '#f50057',
+    color: theme.palette.primary.main,
   },
   link: {
     color: '#2196f3',

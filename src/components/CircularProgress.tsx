@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   top: {
-    color: '#00e676',
+    color: theme.palette.secondary.main,
     position: 'absolute',
     left: 0,
   },

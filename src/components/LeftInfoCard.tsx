@@ -10,7 +10,7 @@ import { UserContext } from '../context/UserContext'
 const useStyles = makeStyles((theme) => ({
   infoCard: {
     display: 'flex',
-    background: '#23252e',
+    background: '#191b21',
     height: theme.spacing(25),
     flexGrow: 1,
     marginRight: theme.spacing(1),

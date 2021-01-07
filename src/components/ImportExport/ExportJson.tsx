@@ -6,7 +6,7 @@ import { CourseType } from '../../static/infoLists'
 
 const useStyles = makeStyles((theme) => ({
   table: {
-    color: '#f50057',
+    color: theme.palette.primary.main,
     display: 'table',
     borderCollapse: 'separate',
   },

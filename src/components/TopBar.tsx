@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(1),
   },
   appBar: {
-    background: '#23252e',
+    background: '#191b21',
     borderTopLeftRadius: '10px',
     borderBottomLeftRadius: '10px',
     borderTopRightRadius: '10px',
@@ -29,6 +29,7 @@ const useStyles = makeStyles((theme) => ({
   },
   toolBar: { display: 'flex', justifyContent: 'space-between' },
   title: {
+    color: '#fff',
     [theme.breakpoints.down('sm')]: {
       display: 'none',
     },
@@ -71,10 +72,7 @@ function TopBar(): JSX.Element {
               style={{ width: 50, paddingRight: 10 }}
               src={Logo}
             />
-            <Typography
-              variant="h5"
-              color="secondary"
-              className={classes.title}>
+            <Typography variant="h5" className={classes.title}>
               HyperPlanner
             </Typography>
           </div>

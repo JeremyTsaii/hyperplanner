@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-  background-color: '#282c34';
+  background-color: '#121212';
 }
 
 .App-logo {
@@ -15,7 +15,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #121212;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -31,14 +31,14 @@
 
 /*Scrollbar*/
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 10px;
   scroll-behavior: smooth;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 10px;
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
-  border: 2px solid '#f50057';
+  border: 2px solid '#BB86FC';
 }
 
 /* Possible alternative */
@@ -58,7 +58,7 @@
 /* Firefox scrollbar */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #f50057 #23252e;
+  scrollbar-color: #bb86fc #121212;
 }
 
 @keyframes App-logo-spin {

@@ -44,11 +44,12 @@ const useStyles = makeStyles(() => ({
     },
   },
   loadingStyle: {
+    color: theme.palette.primary.main,
     display: 'flex',
     justifyContent: 'center',
   },
   loginText: {
-    color: '#f50057',
+    color: theme.palette.primary.main,
     fontSize: '30px',
   },
 }))
@@ -64,7 +65,7 @@ function InfoCards(): JSX.Element {
   if (infoLoading || coursesLoading) {
     return (
       <div className={classes.loadingStyle}>
-        <ReactLoading type="cylon" color="#f50057" height="2%" width="2%" />
+        <ReactLoading type="cylon" height="2%" width="2%" />
       </div>
     )
   }

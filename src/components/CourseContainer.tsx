@@ -10,7 +10,7 @@ import CourseModal from './CourseModal'
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {
-    background: '#23252e',
+    background: '#191b21',
     marginTop: theme.spacing(2),
     marginLeft: theme.spacing(0.5),
     marginRight: theme.spacing(0.5),
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
   courseContainer: {
-    background: '#23252e',
+    background: '#191b21',
   },
   yearText: {
     color: '#fff',
@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
   },
   paper: {
-    background: '#23252e',
+    background: '#191b21',
     margin: theme.spacing(0.75),
   },
   semesterCollapse: {
@@ -105,7 +105,7 @@ const CourseContainer = ({
       <Typography className={classes.yearText}>Year {yearNumber}</Typography>
       <div className={classes.semesterHeader}>
         <Button
-          color="secondary"
+          color="primary"
           variant="outlined"
           size="small"
           onClick={handleChangeFall}
@@ -151,7 +151,7 @@ const CourseContainer = ({
       </div>
       <div className={classes.semesterHeader}>
         <Button
-          color="secondary"
+          color="primary"
           variant="outlined"
           size="small"
           onClick={handleChangeSpring}
@@ -197,7 +197,7 @@ const CourseContainer = ({
       </div>
       <div className={classes.semesterHeader}>
         <Button
-          color="secondary"
+          color="primary"
           variant="outlined"
           size="small"
           onClick={handleChangeSummer}

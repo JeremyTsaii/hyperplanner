@@ -21,7 +21,7 @@ const PURPLE = '#7c4dff' // Hums (Breadth)
 const LPURPLE = '#ba68c8' // Hums (Elective)
 const GREEN = '#26a69a' // Core
 const GREY = '#455a64' // Undecided
-const ORANGE = '#ef5350' // Other (PE)
+const ORANGE = '#43a047' // Other (PE)
 
 let theme = createMuiTheme({
   typography: {

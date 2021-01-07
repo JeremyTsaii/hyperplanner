@@ -14,9 +14,9 @@ import {
 /* eslint-enable */
 import { CoursesContext } from '../../context/CoursesContext'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   instructions: {
-    color: '#f50057',
+    color: theme.palette.primary.main,
   },
   textField: {
     color: '#00897b',

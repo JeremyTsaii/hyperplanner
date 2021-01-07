@@ -244,7 +244,7 @@ function InfoModal(): JSX.Element {
         edge="end"
         aria-label="edit"
         size="small"
-        color="primary"
+        color="secondary"
         onClick={handleOpen}>
         <EditIcon />
       </IconButton>

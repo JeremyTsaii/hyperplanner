@@ -6,10 +6,11 @@ import CourseContainer from './CourseContainer'
 import { UserContext } from '../context/UserContext'
 import { CoursesContext } from '../context/CoursesContext'
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   loadingStyle: {
     display: 'flex',
     justifyContent: 'center',
+    color: theme.palette.primary.main,
   },
 }))
 
@@ -30,7 +31,7 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
   if (infoLoading || coursesLoading) {
     return (
       <div className={classes.loadingStyle}>
-        <ReactLoading type="cylon" color="#f50057" height="2%" width="2%" />
+        <ReactLoading type="cylon" height="2%" width="2%" />
       </div>
     )
   }

@@ -12,7 +12,7 @@ import { StatsContext } from '../context/StatsContext'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {
-    background: '#23252e',
+    background: '#191b21',
     height: theme.spacing(25),
     flexGrow: 1,
     flexDirection: 'row',
@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   tab: {
-    backgroundColor: '#23252e',
+    backgroundColor: '#191b21',
     color: 'white',
     textTransform: 'none',
     fontWeight: 'bold',

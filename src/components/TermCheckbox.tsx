@@ -100,7 +100,7 @@ function TermCheckbox({
         aria-controls="term-check-all"
         aria-haspopup="true"
         onClick={functional ? handleOpen : undefined}>
-        <DoneAllIcon color="primary" />
+        <DoneAllIcon color="secondary" />
       </IconButton>
       <Menu
         id="term-check-all"

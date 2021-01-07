@@ -19,16 +19,14 @@ const useStyles = makeStyles((theme) => ({
   },
   icon: {
     // Override icon color
-    color: '#f50057',
+    color: theme.palette.primary.main,
     '&$activeIcon': {
-      color: '#f50057',
+      color: theme.palette.primary.main,
     },
     '&$completedIcon': {
-      color: '#f50057',
+      color: theme.palette.primary.main,
     },
   },
-  activeIcon: {},
-  completedIcon: {},
 }))
 
 // Make step label text red
@@ -47,12 +45,12 @@ const QontoConnector = withStyles({
   },
   active: {
     '& $line': {
-      borderColor: '#f50057',
+      borderColor: '#BB86FC',
     },
   },
   completed: {
     '& $line': {
-      borderColor: '#f50057',
+      borderColor: '#BB86FC',
     },
   },
   line: {
@@ -95,8 +93,6 @@ function YearStepper(): JSX.Element {
                 StepIconProps={{
                   classes: {
                     root: classes.icon,
-                    active: classes.activeIcon,
-                    completed: classes.completedIcon,
                   },
                 }}>
                 {label}
@@ -122,8 +118,6 @@ function YearStepper(): JSX.Element {
                 StepIconProps={{
                   classes: {
                     root: classes.icon,
-                    active: classes.activeIcon,
-                    completed: classes.completedIcon,
                   },
                 }}>
                 {label}
@@ -150,8 +144,6 @@ function YearStepper(): JSX.Element {
               StepIconProps={{
                 classes: {
                   root: classes.icon,
-                  active: classes.activeIcon,
-                  completed: classes.completedIcon,
                 },
               }}>
               {label}
