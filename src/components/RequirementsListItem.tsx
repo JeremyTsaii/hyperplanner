@@ -11,6 +11,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 import CloseIcon from '@material-ui/icons/Close'
 import { Typography } from '@material-ui/core'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
+import AllCourses from '../static/allCourses.json'
 
 const useStyles = makeStyles((theme) => ({
   text: {
@@ -83,6 +84,14 @@ const RequirementsListItem = ({ req, i, reqStatus }: LIProps): JSX.Element => {
   const [open, setOpen] = React.useState(false)
 
   const codeList = req.code.split('/')
+  const titleList = new Array<string>(codeList.length)
+
+  AllCourses.forEach((course) => {
+    const codeIndex = codeList.indexOf(course.code)
+    if (codeIndex > -1) {
+      titleList[codeIndex] = course.title
+    }
+  })
 
   const handleOpen = () => {
     setOpen(true)
@@ -140,7 +149,7 @@ const RequirementsListItem = ({ req, i, reqStatus }: LIProps): JSX.Element => {
                     disableTypography
                     primary={
                       <Typography className={classes.text} noWrap>
-                        {k + 1}. <b>{code}</b>
+                        {k + 1}. <b>{code}</b> {titleList[k]}
                       </Typography>
                     }
                   />
