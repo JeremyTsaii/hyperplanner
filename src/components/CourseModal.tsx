@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
 import AddIcon from '@material-ui/icons/Add'
@@ -13,6 +13,9 @@ import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
 import AllCourses from '../static/allCourses.json'
+import { UserContext } from '../context/UserContext'
+import { StatsContext } from '../context/StatsContext'
+import { determineCourseType } from '../utils/jsonFunctions'
 import {
   types,
   bools,
@@ -93,6 +96,10 @@ const DialogActions = withStyles((theme) => ({
 }))(MuiDialogActions)
 
 function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
+  // Introduce user and stats context for course Determination
+  const { data: infoData } = useContext(UserContext)
+  const stats = useContext(StatsContext)
+
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
   const [addCourse] = useAdd_CourseMutation()
 
@@ -264,6 +271,17 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
                 curTitle.value = newValue.title
                 setCampus(newValue.campus)
                 setCredit(newValue.credits.toFixed(1))
+
+                // Determine Course Type
+                const info = infoData.users[0]
+                setType(
+                  determineCourseType(
+                    newValue.code,
+                    parseFloat(credit),
+                    stats,
+                    info,
+                  ),
+                )
               }
             }}
             fullWidth

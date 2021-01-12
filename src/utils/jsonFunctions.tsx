@@ -133,29 +133,28 @@ const isHumBreadth = (
   )
 }
 
-const determineCourseType = (
-  course: CourseType,
+export const determineCourseType = (
+  code: string,
+  credits: number,
   statsContext: Stats,
   /* eslint-disable-next-line */
   userContext: any,
 ): string => {
   const pattern = /[\D]*/
   /* eslint-disable-next-line */
-  const dept = course.code.match(pattern)![0] as string
+  const dept = code.match(pattern)![0] as string
   let message = 'other'
-  if (isPe(course.code)) {
+  if (isPe(code)) {
     message = 'pe'
-  } else if (isCoreReq(course.code, statsContext.coreReqTable)) {
+  } else if (isCoreReq(code, statsContext.coreReqTable)) {
     message = 'core_req'
-  } else if (
-    isMajorReq(course.code, dept, course.credits, statsContext.majorReqTable)
-  ) {
+  } else if (isMajorReq(code, dept, credits, statsContext.majorReqTable)) {
     message = 'major_req'
   } else if (isMajorElec(dept, userContext.major)) {
     message = 'major_elec'
-  } else if (isHumDepth(course.credits, dept, userContext.concentration)) {
+  } else if (isHumDepth(credits, dept, userContext.concentration)) {
     message = 'hum_depth'
-  } else if (isHumBreadth(course.credits, dept, userContext.concentration)) {
+  } else if (isHumBreadth(credits, dept, userContext.concentration)) {
     message = 'hum_breadth'
   }
 
@@ -230,7 +229,12 @@ export const cleanHyper = (
       const numStr = num < 100 ? `0${num.toString()}` : num.toString()
       courseEntry.code = subject + numStr
       courseEntry.writ_inten = isWritInten(courseEntry.code)
-      courseEntry.type = determineCourseType(courseEntry, stats, users)
+      courseEntry.type = determineCourseType(
+        courseEntry.code,
+        courseEntry.credits,
+        stats,
+        users,
+      )
       if (!validate(courseEntry)) {
         return [false, null, '']
       }
@@ -261,7 +265,12 @@ const getTermCourses = (
     newCourse.title = curCourse.title
     newCourse.code = curCourse.code
     newCourse.credits = curCourse.credits
-    newCourse.type = determineCourseType(curCourse, stats, user)
+    newCourse.type = determineCourseType(
+      curCourse.code,
+      curCourse.credits,
+      stats,
+      user,
+    )
     newCourse.campus = curCourse.campus
     newCourse.writ_inten = isWritInten(curCourse.code)
     courses.push(newCourse)
