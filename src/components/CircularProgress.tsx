@@ -45,9 +45,9 @@ const CircularProgressWithLabel = ({ title, val }: IProps): JSX.Element => {
           variant="static"
           disableShrink
           className={classes.top}
-          thickness={5.0}
+          thickness={5}
           size={80}
-          value={val}
+          value={val > 100 ? 100 : val}
         />
         <Box
           top={0}

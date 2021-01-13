@@ -66,12 +66,6 @@ const calculatePercentageChecked = (arr: number[]): number => {
   return (checked / len) * 100
 }
 
-// Don't let percentages over 100
-// Return arr [capped percent, uncapped percent]
-const capPercentage = (val: number): number => {
-  return val > 100 ? 100 : val
-}
-
 function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   const classes = useStyles()
   const [value, setValue] = useState('grad')
@@ -123,8 +117,8 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     const totalRequired = Requirements[schoolKey].grad
     const peRequired = Requirements[schoolKey].pe
     const progressValArr = [
-      capPercentage((totalCredits / totalRequired) * 100),
-      capPercentage((pe / peRequired) * 100),
+      (totalCredits / totalRequired) * 100,
+      (pe / peRequired) * 100,
     ]
 
     dynamicStatsComponent = (
@@ -142,7 +136,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     const progressTitleArr = ['Completed', 'Electives']
     const progressValArr = [
       calculatePercentageChecked(majorChecks),
-      capPercentage((majorElec / majorElecRequired) * 100),
+      (majorElec / majorElecRequired) * 100,
     ]
 
     dynamicStatsComponent = (
@@ -205,11 +199,11 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
       'Writing',
     ]
     const progressValArr = [
-      capPercentage((depth / depthRequired) * 100),
-      capPercentage((breadth / breadthRequired) * 100),
-      capPercentage((humElec / elecRequired) * 100),
-      capPercentage((muddHum / muddRequired) * 100),
-      capPercentage((writ / writRequired) * 100),
+      (depth / depthRequired) * 100,
+      (breadth / breadthRequired) * 100,
+      (humElec / elecRequired) * 100,
+      (muddHum / muddRequired) * 100,
+      (writ / writRequired) * 100,
     ]
 
     dynamicStatsComponent = (
