@@ -176,6 +176,7 @@ const CourseContainer = ({
                       <Draggable
                         key={course.term + course.code}
                         draggableId={JSON.stringify({
+                          term: course.term,
                           code: course.code,
                           title: course.title,
                           credits: course.credits,
@@ -270,6 +271,7 @@ const CourseContainer = ({
                       <Draggable
                         key={course.term + course.code}
                         draggableId={JSON.stringify({
+                          term: course.term,
                           code: course.code,
                           title: course.title,
                           credits: course.credits,
@@ -364,6 +366,7 @@ const CourseContainer = ({
                       <Draggable
                         key={course.term + course.code}
                         draggableId={JSON.stringify({
+                          term: course.term,
                           code: course.code,
                           title: course.title,
                           credits: course.credits,
