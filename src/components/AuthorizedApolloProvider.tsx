@@ -16,12 +16,12 @@ interface IProps {
   children: React.ReactNode
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   loadingStyle: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#121212',
+    backgroundColor: theme.palette.info.dark,
     width: '100vw',
     height: '100vh',
   },
@@ -40,7 +40,7 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
           params={{
             fps_limit: 60,
             background: {
-              color: '#121212',
+              color: theme.palette.info.dark,
             },
             particles: {
               links: {

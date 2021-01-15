@@ -20,34 +20,40 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    background: '#191b21',
+    background: theme.palette.info.dark,
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500],
+    color: theme.palette.warning.main,
   },
   tab: {
-    backgroundColor: '#191b21',
+    backgroundColor: theme.palette.info.dark,
     color: 'white',
   },
 }))
 
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-    background: '#191b21',
-  },
-}))(MuiDialogActions)
+const DialogActions = withStyles(
+  (theme) => ({
+    root: {
+      margin: 0,
+      padding: theme.spacing(1),
+      background: theme.palette.info.dark,
+    },
+  }),
+  { withTheme: true },
+)(MuiDialogActions)
 
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-    background: '#191b21',
-  },
-}))(MuiDialogContent)
+const DialogContent = withStyles(
+  (theme) => ({
+    root: {
+      padding: theme.spacing(2),
+      background: theme.palette.info.dark,
+    },
+  }),
+  { withTheme: true },
+)(MuiDialogContent)
 
 const ImportExportModal = (): JSX.Element => {
   const classes = useStyles()

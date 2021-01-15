@@ -1,6 +1,7 @@
 import React from 'react'
 import Particles from 'react-tsparticles'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
+import grey from '@material-ui/core/colors/grey'
 import Layout from './components/GALayout'
 import './App.css'
 import { UserContextProvider } from './context/UserContext'
@@ -24,24 +25,40 @@ const mainTheme = createMuiTheme({
   palette: {
     primary: {
       main: '#BB86FC',
+      dark: '#673ab7',
     },
     secondary: {
       main: '#03DAC5',
+      dark: '#01413c',
+    },
+    // Background colors
+    info: {
+      main: '#121212',
+      dark: '#191b21',
+      light: '#012e2a', // Secondary background
+    },
+    // Close buttons
+    warning: {
+      main: grey[500],
+    },
+    // Links
+    success: {
+      main: '#2196f3',
     },
   },
 })
 
 function App(): JSX.Element {
   return (
-    <AuthorizedApolloProvider>
-      <ThemeProvider theme={mainTheme}>
+    <ThemeProvider theme={mainTheme}>
+      <AuthorizedApolloProvider>
         <Layout>
           <div className="App">
             <Particles
               params={{
                 fps_limit: 60,
                 background: {
-                  color: '#121212',
+                  color: mainTheme.palette.info.dark,
                 },
                 particles: {
                   links: {
@@ -75,8 +92,8 @@ function App(): JSX.Element {
             </UserContextProvider>
           </div>
         </Layout>
-      </ThemeProvider>
-    </AuthorizedApolloProvider>
+      </AuthorizedApolloProvider>
+    </ThemeProvider>
   )
 }
 

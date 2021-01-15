@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => ({
     paddingTop: theme.spacing(1),
   },
   appBar: {
-    background: '#191b21',
+    background: theme.palette.info.dark,
     borderTopLeftRadius: '10px',
     borderBottomLeftRadius: '10px',
     borderTopRightRadius: '10px',
