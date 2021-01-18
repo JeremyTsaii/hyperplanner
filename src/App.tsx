@@ -1,5 +1,4 @@
 import React from 'react'
-import Particles from 'react-tsparticles'
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles'
 import grey from '@material-ui/core/colors/grey'
 import Layout from './components/GALayout'
@@ -54,33 +53,6 @@ function App(): JSX.Element {
       <AuthorizedApolloProvider>
         <Layout>
           <div className="App">
-            <Particles
-              params={{
-                fps_limit: 60,
-                background: {
-                  color: mainTheme.palette.info.dark,
-                },
-                particles: {
-                  links: {
-                    enable: true,
-                    color: mainTheme.palette.primary.main,
-                    distance: 185,
-                  },
-                  move: {
-                    enable: false,
-                  },
-                  size: {
-                    value: 3,
-                  },
-                  opacity: {
-                    value: 0.5,
-                  },
-                  color: {
-                    value: mainTheme.palette.secondary.main,
-                  },
-                },
-              }}
-            />
             <UserContextProvider>
               <CoursesContextProvider>
                 <StatsContextProvider>
