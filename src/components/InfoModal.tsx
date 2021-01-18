@@ -32,12 +32,19 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
+    backgroundColor: theme.palette.info.dark,
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.warning.main,
+    color: theme.palette.primary.main,
+  },
+  textFieldLabel: {
+    color: theme.palette.primary.main,
+  },
+  textInput: {
+    color: 'white',
   },
 }))
 
@@ -51,7 +58,9 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 
   return (
     <MuiDialogTitle disableTypography className={dialogClasses.root}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography color="primary" variant="h6">
+        {children}
+      </Typography>
       {onClose ? (
         <IconButton
           aria-label="close"
@@ -67,6 +76,7 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 const DialogContent = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
+    backgroundColor: theme.palette.info.dark,
   },
 }))(MuiDialogContent)
 
@@ -74,10 +84,13 @@ const DialogActions = withStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(1),
+    backgroundColor: theme.palette.info.dark,
   },
 }))(MuiDialogActions)
 
 function InfoModal(): JSX.Element {
+  const classes = useStyles()
+
   const [updateUser] = useUpdate_UserMutation()
   const { data: infoData } = useContext(UserContext)
   const info = infoData.users[0]
@@ -264,13 +277,25 @@ function InfoModal(): JSX.Element {
             defaultValue={firstName}
             autoComplete="off"
             inputRef={nameRef}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}
           />
           <TextField
             select
             label="School"
             fullWidth
             value={schoolDict[school]}
-            onChange={handleSchoolChange}>
+            onChange={handleSchoolChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {schools.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -282,7 +307,13 @@ function InfoModal(): JSX.Element {
             label="Major"
             fullWidth
             value={majorDict[major]}
-            onChange={handleMajorChange}>
+            onChange={handleMajorChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {majors.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -294,7 +325,13 @@ function InfoModal(): JSX.Element {
             label="Concentration"
             fullWidth
             value={concentration}
-            onChange={handleConcentrationChange}>
+            onChange={handleConcentrationChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {concentrations.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
@@ -306,7 +343,13 @@ function InfoModal(): JSX.Element {
             label="Start of Enrollment"
             fullWidth
             value={enroll}
-            onChange={handleEnrollChange}>
+            onChange={handleEnrollChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {enrollYears.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
@@ -318,7 +361,13 @@ function InfoModal(): JSX.Element {
             label="Planned Graduation"
             fullWidth
             value={plannedGrad}
-            onChange={handlePlannedGradChange}>
+            onChange={handlePlannedGradChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {updateGradDates(parseFloat(enroll)).map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
