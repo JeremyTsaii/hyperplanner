@@ -36,7 +36,7 @@ const mainTheme = createMuiTheme({
       dark: '#191b21',
       light: '#012e2a', // Secondary background
     },
-    // Close buttons
+    // Close buttons old color
     warning: {
       main: grey[500],
     },

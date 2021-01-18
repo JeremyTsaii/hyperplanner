@@ -51,9 +51,6 @@ const useStyles = makeStyles((theme) => ({
   textInput: {
     color: 'white',
   },
-  menuItem: {
-    backgroundColor: theme.palette.info.dark,
-  },
   autoComplete: {
     '& .MuiAutocomplete-inputRoot': {
       color: 'white',
