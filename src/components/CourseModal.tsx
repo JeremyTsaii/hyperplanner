@@ -37,12 +37,22 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
+    backgroundColor: theme.palette.info.dark,
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.warning.main,
+    color: theme.palette.primary.main,
+  },
+  textFieldLabel: {
+    color: theme.palette.primary.main,
+  },
+  textInput: {
+    color: 'white',
+  },
+  menuItem: {
+    backgroundColor: theme.palette.info.dark,
   },
 }))
 
@@ -69,7 +79,9 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 
   return (
     <MuiDialogTitle disableTypography className={dialogClasses.root}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography color="primary" variant="h6">
+        {children}
+      </Typography>
       {onClose ? (
         <IconButton
           aria-label="close"
@@ -85,6 +97,7 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 const DialogContent = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
+    backgroundColor: theme.palette.info.dark,
   },
 }))(MuiDialogContent)
 
@@ -92,10 +105,13 @@ const DialogActions = withStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(1),
+    backgroundColor: theme.palette.info.dark,
   },
 }))(MuiDialogActions)
 
 function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
+  const classes = useStyles()
+
   // Introduce user and stats context for course Determination
   const { data: infoData } = useContext(UserContext)
   const stats = useContext(StatsContext)
@@ -290,15 +306,23 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             renderInput={(params) => (
               <TextField
                 {...params}
+                color="primary"
                 variant="standard"
                 label="Search for your courses"
                 margin="normal"
                 fullWidth
+                InputLabelProps={{
+                  className: classes.textFieldLabel,
+                }}
+                InputProps={{
+                  className: classes.textInput,
+                }}
               />
             )}
           />
           <TextField
             autoFocus
+            color="primary"
             margin="dense"
             id="code"
             label="Course Code"
@@ -308,10 +332,15 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             autoComplete="off"
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
           />
           <TextField
             autoFocus
+            color="primary"
             margin="dense"
             id="title"
             label="Course Title"
@@ -321,9 +350,14 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             autoComplete="off"
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
           />
           <TextField
+            color="primary"
             select
             label="Campus"
             fullWidth
@@ -331,6 +365,10 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             value={campus}
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
             onChange={handleCampusChange}>
             {campuses.map((option) => (
@@ -340,6 +378,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             ))}
           </TextField>
           <TextField
+            color="primary"
             select
             label="Credits"
             fullWidth
@@ -347,6 +386,10 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             value={credit}
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
             onChange={handleCreditChange}>
             {credits.map((option) => (
@@ -356,6 +399,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             ))}
           </TextField>
           <TextField
+            color="primary"
             select
             label="Course Type"
             fullWidth
@@ -363,6 +407,10 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             value={type}
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
             onChange={handleTypeChange}>
             {types.map((option) => (
@@ -372,6 +420,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             ))}
           </TextField>
           <TextField
+            color="primary"
             select
             label="Writing Intensive?"
             fullWidth
@@ -379,6 +428,10 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             value={writInten}
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
             onChange={handleWritIntenChange}>
             {bools.map((option) => (

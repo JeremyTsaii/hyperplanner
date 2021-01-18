@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   textField: {
-    color: '#00897b',
+    color: theme.palette.secondary.main,
   },
 }))
 
