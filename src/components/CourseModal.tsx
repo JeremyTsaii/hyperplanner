@@ -54,6 +54,11 @@ const useStyles = makeStyles((theme) => ({
   menuItem: {
     backgroundColor: theme.palette.info.dark,
   },
+  autoComplete: {
+    '& .MuiAutocomplete-inputRoot': {
+      color: 'white',
+    },
+  },
 }))
 
 type AllCourse = {
@@ -301,6 +306,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
               }
             }}
             fullWidth
+            className={classes.autoComplete}
             style={{ width: 400 }}
             getOptionLabel={(option) => `${option.code} ${option.title}`}
             renderInput={(params) => (
@@ -313,9 +319,6 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
                 fullWidth
                 InputLabelProps={{
                   className: classes.textFieldLabel,
-                }}
-                InputProps={{
-                  className: classes.textInput,
                 }}
               />
             )}
