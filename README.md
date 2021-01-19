@@ -1,29 +1,33 @@
-# HyperPlanner
-![Banner](https://iili.io/dKj5lf.png)
+<h2 align="center">HyperPlanner</h2>
+<h3 align="center">The Web App for planning/reviewing all 4 years of college!</h3>
 
-### The Web App for planning/reviewing all 4 years of college!
+![Banner](https://user-images.githubusercontent.com/44514622/105098661-43c04880-5a5f-11eb-833f-c545aa39a037.PNG)
 
-[![forthebadge](https://forthebadge.com/images/badges/built-with-grammas-recipe.svg)](https://forthebadge.com)
+<h3 align="center">Check it out <a href="https://www.hyperplanner.io/">here</a>!</h3>
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/c938739e-15ab-4c97-9e21-217e6acdbe13/deploy-status)](https://app.netlify.com/sites/hyperplanner/deploys)
 
-[![Build Status](https://travis-ci.com/JeremyTsaii/hyperplanner.svg?branch=master)](https://travis-ci.com/JeremyTsaii/hyperplanner)
-
-<!-- [![Maintainability](https://api.codeclimate.com/v1/badges/80bb8a05abd8bfa7b70b/maintainability)](https://codeclimate.com/github/JeremyTsaii/hyperplanner/maintainability) -->
-
-<!-- [![codecov](https://codecov.io/gh/JeremyTsaii/hyperplanner/branch/master/graph/badge.svg)](https://codecov.io/gh/JeremyTsaii/hyperplanner) -->
-
-[![HitCount](http://hits.dwyl.com/JeremyTsaii/hyperplanner.svg)](http://hits.dwyl.com/JeremyTsaii/hyperplanner)
-
-[![Dependency Status](https://david-dm.org/JeremyTsaii/hyperplanner.svg)](https://david-dm.org/JeremyTsaii/hyperplanner)
-
-[![devDependency Status](https://david-dm.org/JeremyTsaii/hyperplanner/dev-status.svg)](https://david-dm.org/JeremyTsaii/hyperplanner#info=devDependencies)
-
-[![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat)](https://github.com/dwyl/esta/issues)
-
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+<p align="center"> 
+  <a href=https://forthebadge.com>
+    <img src="https://forthebadge.com/images/badges/built-with-grammas-recipe.svg"></a>
+  </br>
+  <a href=https://app.netlify.com/sites/hyperplanner/deploys>
+    <img src=https://api.netlify.com/api/v1/badges/c938739e-15ab-4c97-9e21-217e6acdbe13/deploy-status></a>
+  <a href=https://travis-ci.com/JeremyTsaii/hyperplanner>
+    <img src="https://travis-ci.com/JeremyTsaii/hyperplanner.svg?branch=master"></a>
+  <a href=http://hits.dwyl.com/JeremyTsaii/hyperplanner>
+    <img alt="HitCount" src=http://hits.dwyl.com/JeremyTsaii/hyperplanner.svg></a>
+  <a href=https://david-dm.org/JeremyTsaii/hyperplanner>
+    <img alt="Dependencies" src=https://david-dm.org/JeremyTsaii/hyperplanner.svg></a>
+  <a href="https://david-dm.org/JeremyTsaii/hyperplanner#info=devDependencies">
+    <img alt="DevDependencies" src=https://david-dm.org/JeremyTsaii/hyperplanner/dev-status.svg></a>
+  </br>
+  <a href=https://github.com/dwyl/esta/issues>
+    <img src="https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat"></a>
+  <a href=https://opensource.org/licenses/MIT>
+    <img src=https://img.shields.io/badge/License-MIT-yellow.svg></a>
+  <a href=https://github.com/prettier/prettier>
+    <img src="https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square"></a>
+</p>
 
 ***
 
@@ -32,19 +36,17 @@
 
 ## How was this developed?
 
-- Frontend of HyperPlanner made using TypeScript and React
+- TypeScript and React used for Frontend
+
+- AWS (S3, SQS, SNS, Textract, Lambda, API Gateway) and Python used for transcript text recognition [(repo)](https://github.com/JeremyTsaii/HyperPlannerTextExtraction)
+
+- AWS (Lambda, API Gateway, AppSyn) and Golang used for querying courses [(repo)](https://github.com/JeremyTsaii/HyperPlannerCourses) - experimental
 
 - Netlify used for deployment of the web app
 
 - Travis CI used for CI/CD tests
 
 - Jest/React Testing Library used for unit tests
-
-<!-- - Code Coverage and Code Climate used to assess the maintainability of the code and the coverage of tests -->
-
-- Docker used to create a consistent development environment
-
-- Makefile used to make the development commands easy to remember and use
 
 - Prettier and ESLint (Airbnb preferences) used for best coding practices
 
@@ -55,12 +57,6 @@
 ## Where is the Backend?
 
 The Backend of HyperPlanner uses Hasura, which is an open source engine connecting our PostgreSQL Database to our GraphQL Backend. This is hosted on Heroku, located [here](https://hyperplanner.herokuapp.com/console). The Frontend communicates with the GraphQL engine using Apollo Client.
-
-![Diagram](https://iili.io/J4B7N2.png)
-
-![Authentication](https://iili.io/JLmraR.png)
-
-![Database](https://iili.io/JP2d8l.png)
 
 ## What is the development workflow?
 
