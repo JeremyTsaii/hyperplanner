@@ -20,13 +20,13 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.primary.main,
   },
   link: {
-    color: '#2196f3',
+    color: theme.palette.success.main,
     '&:hover': {
-      color: '#673ab7',
+      color: theme.palette.primary.dark,
     },
   },
   textField: {
-    color: '#00897b',
+    color: theme.palette.secondary.main,
   },
 }))
 

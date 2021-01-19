@@ -37,28 +37,31 @@ const StyledStepLabel = withStyles({
 })(StepLabel)
 
 // Color connectors when completed
-const QontoConnector = withStyles({
-  alternativeLabel: {
-    top: 12,
-    left: 'calc(-50% + 16px)',
-    right: 'calc(50% + 16px)',
-  },
-  active: {
-    '& $line': {
-      borderColor: '#BB86FC',
+const QontoConnector = withStyles(
+  (theme) => ({
+    alternativeLabel: {
+      top: 12,
+      left: 'calc(-50% + 16px)',
+      right: 'calc(50% + 16px)',
     },
-  },
-  completed: {
-    '& $line': {
-      borderColor: '#BB86FC',
+    active: {
+      '& $line': {
+        borderColor: theme.palette.primary.main,
+      },
     },
-  },
-  line: {
-    borderColor: '#eaeaf0',
-    borderTopWidth: 2,
-    borderRadius: 1,
-  },
-})(StepConnector)
+    completed: {
+      '& $line': {
+        borderColor: theme.palette.primary.main,
+      },
+    },
+    line: {
+      borderColor: '#eaeaf0',
+      borderTopWidth: 2,
+      borderRadius: 1,
+    },
+  }),
+  { withTheme: true },
+)(StepConnector)
 
 const calculateYear = (enrollYear: number): number => {
   const date = new Date()

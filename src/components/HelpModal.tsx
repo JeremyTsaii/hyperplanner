@@ -25,18 +25,18 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    background: '#191b21',
+    background: theme.palette.info.dark,
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500],
+    color: theme.palette.warning.main,
   },
   link: {
-    color: '#2196f3',
+    color: theme.palette.success.main,
     '&:hover': {
-      color: '#673ab7',
+      color: theme.palette.primary.dark,
     },
   },
   header: {
@@ -73,20 +73,26 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
   )
 }
 
-const DialogContent = withStyles((theme) => ({
-  root: {
-    padding: theme.spacing(2),
-    background: '#191b21',
-  },
-}))(MuiDialogContent)
+const DialogContent = withStyles(
+  (theme) => ({
+    root: {
+      padding: theme.spacing(2),
+      background: theme.palette.info.dark,
+    },
+  }),
+  { withTheme: true },
+)(MuiDialogContent)
 
-const DialogActions = withStyles((theme) => ({
-  root: {
-    margin: 0,
-    padding: theme.spacing(1),
-    background: '#191b21',
-  },
-}))(MuiDialogActions)
+const DialogActions = withStyles(
+  (theme) => ({
+    root: {
+      margin: 0,
+      padding: theme.spacing(1),
+      background: theme.palette.info.dark,
+    },
+  }),
+  { withTheme: true },
+)(MuiDialogActions)
 
 const HelpModal = (): JSX.Element => {
   const classes = useStyles()

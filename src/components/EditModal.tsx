@@ -33,12 +33,19 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
+    backgroundColor: theme.palette.info.dark,
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500],
+    color: theme.palette.primary.main,
+  },
+  textFieldLabel: {
+    color: theme.palette.primary.main,
+  },
+  textInput: {
+    color: 'white',
   },
 }))
 
@@ -52,7 +59,9 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 
   return (
     <MuiDialogTitle disableTypography className={dialogClasses.root}>
-      <Typography variant="h6">{children}</Typography>
+      <Typography color="primary" variant="h6">
+        {children}
+      </Typography>
       {onClose ? (
         <IconButton
           aria-label="close"
@@ -68,6 +77,7 @@ const DialogTitle = ({ onClose, children }: DialogTitleProps) => {
 const DialogContent = withStyles((theme) => ({
   root: {
     padding: theme.spacing(2),
+    backgroundColor: theme.palette.info.dark,
   },
 }))(MuiDialogContent)
 
@@ -75,6 +85,7 @@ const DialogActions = withStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(1),
+    backgroundColor: theme.palette.info.dark,
   },
 }))(MuiDialogActions)
 
@@ -101,6 +112,8 @@ function EditModal({
   writIntenProp,
   termProp,
 }: editProps): JSX.Element {
+  const classes = useStyles()
+
   const [updateCourse] = useUpdate_CourseMutation()
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
 
@@ -285,7 +298,13 @@ function EditModal({
             fullWidth
             required
             value={semester}
-            onChange={handleSemesterChange}>
+            onChange={handleSemesterChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {semesters.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -304,6 +323,10 @@ function EditModal({
             autoComplete="off"
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
           />
           <TextField
@@ -318,6 +341,10 @@ function EditModal({
             autoComplete="off"
             InputLabelProps={{
               shrink: true,
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
             }}
           />
           <TextField
@@ -326,7 +353,13 @@ function EditModal({
             fullWidth
             required
             value={campus}
-            onChange={handleCampusChange}>
+            onChange={handleCampusChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {campuses.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -339,7 +372,13 @@ function EditModal({
             fullWidth
             required
             value={credit}
-            onChange={handleCreditChange}>
+            onChange={handleCreditChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {credits.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
@@ -352,7 +391,13 @@ function EditModal({
             fullWidth
             required
             value={type}
-            onChange={handleTypeChange}>
+            onChange={handleTypeChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {types.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -365,7 +410,13 @@ function EditModal({
             fullWidth
             required
             value={writInten}
-            onChange={handleWritIntenChange}>
+            onChange={handleWritIntenChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
             {bools.map((option) => (
               <MenuItem key={option.label} value={option.label}>
                 {option.label}

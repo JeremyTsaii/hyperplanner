@@ -7,7 +7,6 @@ import {
 } from '@apollo/client'
 import { setContext } from '@apollo/client/link/context'
 import ReactLoading from 'react-loading'
-import Particles from 'react-tsparticles'
 import { makeStyles, useTheme } from '@material-ui/core/styles'
 import { useAuth0 } from '../utils/react-auth0-spa'
 import { GRAPHQL_URL } from '../utils/auth_config.json'
@@ -16,12 +15,12 @@ interface IProps {
   children: React.ReactNode
 }
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
   loadingStyle: {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#121212',
+    backgroundColor: theme.palette.info.dark,
     width: '100vw',
     height: '100vh',
   },
@@ -36,32 +35,6 @@ const AuthorizedApolloProvider = ({ children }: IProps): JSX.Element => {
   if (loading) {
     return (
       <div className={classes.loadingStyle}>
-        <Particles
-          params={{
-            fps_limit: 60,
-            background: {
-              color: '#121212',
-            },
-            particles: {
-              links: {
-                enable: true,
-                color: theme.palette.primary.main,
-              },
-              move: {
-                enable: false,
-              },
-              size: {
-                value: 3,
-              },
-              opacity: {
-                value: 0.5,
-              },
-              color: {
-                value: theme.palette.secondary.main,
-              },
-            },
-          }}
-        />
         <ReactLoading
           type="spinningBubbles"
           color={theme.palette.primary.main}

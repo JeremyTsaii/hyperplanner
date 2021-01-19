@@ -17,7 +17,7 @@ import CourseModal from './CourseModal'
 
 const useStyles = makeStyles((theme) => ({
   mainCard: {
-    background: '#191b21',
+    background: theme.palette.info.dark,
     marginTop: theme.spacing(2),
     marginLeft: theme.spacing(0.5),
     marginRight: theme.spacing(0.5),
@@ -44,7 +44,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: 'space-between',
   },
   courseContainer: {
-    background: '#191b21',
+    background: theme.palette.info.dark,
   },
   yearText: {
     color: '#fff',
@@ -52,7 +52,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(1),
   },
   paper: {
-    background: '#191b21',
+    background: theme.palette.info.dark,
     margin: theme.spacing(0.75),
   },
   dragOver: {

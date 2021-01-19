@@ -20,24 +20,24 @@ const useStyles = makeStyles((theme) => ({
   root: {
     margin: 0,
     padding: theme.spacing(2),
-    background: '#191b21',
+    background: theme.palette.info.dark,
   },
   subtitle: {
     margin: 0,
     paddingLeft: theme.spacing(2),
-    background: '#191b21',
+    background: theme.palette.info.dark,
   },
   closeButton: {
     position: 'absolute',
     right: theme.spacing(1),
     top: theme.spacing(1),
-    color: theme.palette.grey[500],
+    color: theme.palette.warning.main,
   },
   listItem: {
     '&:hover': {
-      backgroundColor: '#01413c !important',
+      backgroundColor: `${theme.palette.secondary.dark} !important`,
     },
-    backgroundColor: '#012e2a',
+    backgroundColor: theme.palette.info.light,
   },
 }))
 
@@ -67,11 +67,14 @@ const DialogTitle = ({ onClose, reqTitle }: DialogTitleProps) => {
   )
 }
 
-const DialogContent = withStyles(() => ({
-  root: {
-    background: '#191b21',
-  },
-}))(MuiDialogContent)
+const DialogContent = withStyles(
+  (theme) => ({
+    root: {
+      background: theme.palette.info.dark,
+    },
+  }),
+  { withTheme: true },
+)(MuiDialogContent)
 
 interface LIProps {
   req: { code: string; title: string }
