@@ -9,14 +9,12 @@ import {
   generateUserMajorRequirements,
 } from '../../context/StatsContext'
 import { CourseType, courseSort } from '../../static/infoLists'
-/* eslint-disable */
 import {
   useAdd_Multiple_CoursesMutation,
   useRemove_Semester_CoursesMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   instructions: {
@@ -80,11 +78,11 @@ function ImportHyper(): JSX.Element {
 
     if (isValid) {
       // Append __typename to each course for cache update
-      const courses2 = result.map((course: CourseType) => ({
+      const coursesCache = result.map((course: CourseType) => ({
         ...course,
         __typename: 'courses',
       }))
-      const sortedCourses = courses2.sort(courseSort)
+
       let changeLength = 0
       setStatus('Successfully Imported')
 
@@ -94,20 +92,22 @@ function ImportHyper(): JSX.Element {
           term,
         },
         update(cache) {
-          /* eslint-disable */
-          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+          const courseQuery = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
-          const newCourses = existingCourses!.courses.filter(
+
+          const existingCourses = courseQuery ? courseQuery.courses : []
+
+          const newCourses = existingCourses.filter(
             (course) => course.term !== term,
           )
-          changeLength = existingCourses!.courses.length - newCourses.length
           newCourses.sort(courseSort)
+
+          changeLength = existingCourses.length - newCourses.length
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: newCourses },
           })
-          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
@@ -123,32 +123,27 @@ function ImportHyper(): JSX.Element {
           objects: result,
         },
         update(cache) {
-          /* eslint-disable */
-          const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
+          const courseQuery = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
-          /* eslint-enable */
 
-          const existingCourses = getExistingCourses
-            ? getExistingCourses.courses
-            : []
+          const existingCourses = courseQuery ? courseQuery.courses : []
 
-          const sortedCourses2 = existingCourses.concat(courses2)
-          sortedCourses2.sort(courseSort)
+          const sortedCourses = existingCourses
+            .concat(coursesCache)
+            .sort(courseSort)
 
-          /* eslint-disable */
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: sortedCourses2 },
+            data: { courses: sortedCourses },
           })
-          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
           insert_courses: {
             __typename: 'courses_mutation_response',
             affected_rows: result.length,
-            returning: sortedCourses,
+            returning: coursesCache,
           },
         },
       })

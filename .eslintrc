@@ -20,6 +20,7 @@
   "rules": {
     "no-use-before-define": "off",
     "no-underscore-dangle": "off",
+    "camelcase": "off",
     "@typescript-eslint/no-use-before-define": ["error"],
     "import/extensions": ["error", "ignorePackages", {
       "js": "never",

@@ -7,14 +7,12 @@ import {
   generateUserCoreRequirements,
   generateUserMajorRequirements,
 } from '../../context/StatsContext'
-/* eslint-disable */
 import {
   useAdd_Multiple_CoursesMutation,
   useRemove_All_CoursesMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 import UploadButton from './UploadButton'
 import { validJson, getCoursesFromJson } from '../../utils/jsonFunctions'
 import { CourseType, courseSort } from '../../static/infoLists'
@@ -123,21 +121,20 @@ function ImportTranscript(): JSX.Element {
 
                       // Append __typename to each course for cache update
                       // Sort for proper display
-                      const courses2 = result.map((course: CourseType) => ({
-                        ...course,
-                        __typename: 'courses',
-                      }))
-                      const sortedCourses = courses2.sort(courseSort)
+                      const coursesCache = result
+                        .map((course: CourseType) => ({
+                          ...course,
+                          __typename: 'courses',
+                        }))
+                        .sort(courseSort)
 
                       // Delete current courses
                       removeAllCourses({
                         update(cache) {
-                          /* eslint-disable */
                           cache.writeQuery<Get_CoursesQuery>({
                             query: Get_CoursesDocument,
                             data: { courses: [] },
                           })
-                          /* eslint-enable */
                         },
                         optimisticResponse: {
                           __typename: 'mutation_root',
@@ -154,19 +151,17 @@ function ImportTranscript(): JSX.Element {
                           objects: result,
                         },
                         update(cache) {
-                          /* eslint-disable */
                           cache.writeQuery<Get_CoursesQuery>({
                             query: Get_CoursesDocument,
-                            data: { courses: sortedCourses },
+                            data: { courses: coursesCache },
                           })
-                          /* eslint-disable */
                         },
                         optimisticResponse: {
                           __typename: 'mutation_root',
                           insert_courses: {
                             __typename: 'courses_mutation_response',
-                            affected_rows: sortedCourses.length,
-                            returning: sortedCourses,
+                            affected_rows: coursesCache.length,
+                            returning: coursesCache,
                           },
                         },
                       })

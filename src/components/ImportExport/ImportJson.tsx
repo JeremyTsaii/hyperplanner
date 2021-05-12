@@ -4,14 +4,12 @@ import TextField from '@material-ui/core/TextField'
 import SaveButton from './SaveButton'
 import { validJson } from '../../utils/jsonFunctions'
 import { CourseType, courseSort } from '../../static/infoLists'
-/* eslint-disable */
 import {
   useAdd_Multiple_CoursesMutation,
   useRemove_All_CoursesMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 import { CoursesContext } from '../../context/CoursesContext'
 
 const useStyles = makeStyles((theme) => ({
@@ -55,23 +53,22 @@ function ImportJson(): JSX.Element {
 
     if (isValid) {
       // Append __typename to each course for cache update
-      const courses2 = courses.map((course: CourseType) => ({
-        ...course,
-        __typename: 'courses',
-      }))
-      const sortedCourses = courses2.sort(courseSort)
+      const coursesCache = courses
+        .map((course: CourseType) => ({
+          ...course,
+          __typename: 'courses',
+        }))
+        .sort(courseSort)
 
       setStatus('Successfully Imported')
 
       // Delete current courses
       removeAllCourses({
         update(cache) {
-          /* eslint-disable */
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: [] },
           })
-          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
@@ -88,19 +85,17 @@ function ImportJson(): JSX.Element {
           objects: courses,
         },
         update(cache) {
-          /* eslint-disable */
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: sortedCourses },
+            data: { courses: coursesCache },
           })
-          /* eslint-disable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
           insert_courses: {
             __typename: 'courses_mutation_response',
-            affected_rows: sortedCourses.length,
-            returning: sortedCourses,
+            affected_rows: coursesCache.length,
+            returning: coursesCache,
           },
         },
       })
