@@ -305,8 +305,6 @@ function InfoModal(): JSX.Element {
           __typename: 'courses',
         }))
         courses2.sort(courseSort)
-        console.log(majorDict[major])
-        console.log(courses2)
 
         // Delete current courses
         removeAllCourses({

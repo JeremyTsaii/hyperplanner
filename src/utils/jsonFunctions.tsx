@@ -9,25 +9,6 @@ import {
 } from '../static/infoLists'
 import WritIntens from '../static/writIntens.json'
 
-type Stats = {
-  total: number
-  rem: number
-  avg: number
-  /* eslint-disable-next-line */
-  avgRem: any
-  pe: number
-  majorElec: number
-  depth: number
-  breadth: number
-  humElec: number
-  muddHum: number
-  writ: number
-  majorChecks: number[]
-  majorReqTable: { [code: string]: number[] }
-  coreChecks: number[]
-  coreReqTable: { [code: string]: number[] }
-}
-
 /* eslint-disable-next-line */
 function validate(course: any) {
   const validLength = Object.keys(course).length === 8
@@ -249,8 +230,6 @@ export const cleanHyper = (
         .split(' ')
         .filter((s: string) => s !== '')
       let [code] = codeSegments
-      console.log(code)
-      console.log(codeSegments)
       // Check if second index has all digits
       if (/^\d+$/.test(codeSegments[1])) {
         code = code.concat(codeSegments[1])

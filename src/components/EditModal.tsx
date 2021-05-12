@@ -180,6 +180,7 @@ function EditModal({
   }
 
   const handleOpen = () => {
+    resetInputs()
     setOpen(true)
   }
   const handleClose = () => {
