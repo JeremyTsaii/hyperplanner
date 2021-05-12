@@ -20,27 +20,14 @@ function LoginButton(): JSX.Element {
 
   return (
     <div>
-      {!isAuthenticated && (
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => loginWithPopup({})}
-          className={classes.logButton}
-          startIcon={<PersonOutlineIcon />}>
-          Log In
-        </Button>
-      )}
-
-      {isAuthenticated && (
-        <Button
-          variant="outlined"
-          color="primary"
-          onClick={() => logout()}
-          className={classes.logButton}
-          startIcon={<PersonOutlineIcon />}>
-          Log Out
-        </Button>
-      )}
+      <Button
+        variant="outlined"
+        color="primary"
+        onClick={isAuthenticated ? () => logout() : () => loginWithPopup({})}
+        className={classes.logButton}
+        startIcon={<PersonOutlineIcon />}>
+        {isAuthenticated ? 'Log Out' : 'Log In'}
+      </Button>
     </div>
   )
 }
