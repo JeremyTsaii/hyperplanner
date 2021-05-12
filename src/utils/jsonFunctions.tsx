@@ -137,8 +137,8 @@ export const determineCourseType = (
   code: string,
   credits: number,
   statsContext: Stats,
-  /* eslint-disable-next-line */
-  userContext: any,
+  major: string,
+  concentration: string,
 ): string => {
   const pattern = /[\D]*/
   /* eslint-disable-next-line */
@@ -150,11 +150,11 @@ export const determineCourseType = (
     message = 'core_req'
   } else if (isMajorReq(code, dept, credits, statsContext.majorReqTable)) {
     message = 'major_req'
-  } else if (isMajorElec(dept, userContext.major)) {
+  } else if (isMajorElec(dept, major)) {
     message = 'major_elec'
-  } else if (isHumDepth(credits, dept, userContext.concentration)) {
+  } else if (isHumDepth(credits, dept, concentration)) {
     message = 'hum_depth'
-  } else if (isHumBreadth(credits, dept, userContext.concentration)) {
+  } else if (isHumBreadth(credits, dept, concentration)) {
     message = 'hum_breadth'
   }
 
@@ -164,15 +164,27 @@ export const determineCourseType = (
 /* eslint-disable-next-line */
 const getCampusName = (hypCourse: any): string => {
   // Two possible locations of campus name
+
+  // Mutual Exclusion Key: CSCI183  HM
   const possible1 =
-    hyperToJson[hypCourse.courseMutualExclusionKey[3].toLowerCase()]
+    hypCourse.courseMutualExclusionKey !== undefined
+      ? hyperToJson[
+          hypCourse.courseMutualExclusionKey[0].split(' ').pop().toLowerCase()
+        ]
+      : undefined
   if (possible1 !== undefined) {
     return possible1
   }
+
+  // Schedule Location
   const possible2 =
-    hyperToJson[
-      hypCourse.courseSchedule[0].scheduleLocation.split(' ')[0].toLowerCase()
-    ]
+    hypCourse.courseSchedule !== undefined
+      ? hyperToJson[
+          hypCourse.courseSchedule[0].scheduleLocation
+            .split(' ')[0]
+            .toLowerCase()
+        ]
+      : undefined
   if (possible2 !== undefined) {
     return possible2
   }
@@ -198,11 +210,14 @@ export const validJson = (jsonStr: string): [boolean, any] => {
   }
 }
 
+// Clean json received from Hyperschedule
 export const cleanHyper = (
   jsonStr: string,
   stats: Stats,
+  enroll: number,
+  major: string,
+  concentration: string,
   /* eslint-disable */
-  users: any,
 ): [boolean, any, string] => {
   /* eslint-enable */
   try {
@@ -210,8 +225,9 @@ export const cleanHyper = (
     if (!Array.isArray(json) || json.length === 0) {
       return [false, null, '']
     }
+
     const term = calculateTerm(
-      users.enroll,
+      enroll,
       json[0].courseSchedule[0].scheduleStartDate,
     )
 
@@ -224,16 +240,27 @@ export const cleanHyper = (
       courseEntry.title = curCourse.courseName
       courseEntry.credits = parseFloat(curCourse.courseCredits)
       courseEntry.campus = getCampusName(curCourse)
-      const subject = curCourse.courseMutualExclusionKey[0]
-      const num = curCourse.courseMutualExclusionKey[1]
-      const numStr = num < 100 ? `0${num.toString()}` : num.toString()
-      courseEntry.code = subject + numStr
+      const [courseMutualExclusionKey] = curCourse.courseMutualExclusionKey
+      // Might contain empty spaces
+      // Code could be in first index or first two (ART002 vs. ART 002)
+      const codeSegments = courseMutualExclusionKey
+        .split(' ')
+        .filter((s: string) => s !== '')
+      let [code] = codeSegments
+      console.log(code)
+      console.log(codeSegments)
+      // Check if second index has all digits
+      if (/^\d+$/.test(codeSegments[1])) {
+        code = code.concat(codeSegments[1])
+      }
+      courseEntry.code = code
       courseEntry.writ_inten = isWritInten(courseEntry.code)
       courseEntry.type = determineCourseType(
         courseEntry.code,
         courseEntry.credits,
         stats,
-        users,
+        major,
+        concentration,
       )
       if (!validate(courseEntry)) {
         return [false, null, '']
@@ -252,7 +279,8 @@ const getTermCourses = (
   /* eslint-disable */
   coursesJson: any,
   stats: Stats,
-  user: any,
+  major: string,
+  concentration: string,
   /* eslint-enable */
 ): CourseType[] => {
   const courses = []
@@ -269,7 +297,8 @@ const getTermCourses = (
       curCourse.code,
       curCourse.credits,
       stats,
-      user,
+      major,
+      concentration,
     )
     newCourse.campus = curCourse.campus
     newCourse.writ_inten = isWritInten(curCourse.code)
@@ -282,16 +311,38 @@ export const getCoursesFromJson = (
   /* eslint-disable */
   coursesJson: any,
   stats: Stats,
-  user: any,
+  major: string,
+  concentration: string,
   /* eslint-enable */
 ): CourseType[] => {
   let courses = [] as CourseType[]
   for (let i = 0; i < coursesJson.length; i += 1) {
-    const fallCourses = getTermCourses('Fall', i, coursesJson, stats, user)
+    const fallCourses = getTermCourses(
+      'Fall',
+      i,
+      coursesJson,
+      stats,
+      major,
+      concentration,
+    )
     courses = courses.concat(fallCourses)
-    const springCourses = getTermCourses('Spring', i, coursesJson, stats, user)
+    const springCourses = getTermCourses(
+      'Spring',
+      i,
+      coursesJson,
+      stats,
+      major,
+      concentration,
+    )
     courses = courses.concat(springCourses)
-    const summerCourses = getTermCourses('Summer', i, coursesJson, stats, user)
+    const summerCourses = getTermCourses(
+      'Summer',
+      i,
+      coursesJson,
+      stats,
+      major,
+      concentration,
+    )
     courses = courses.concat(summerCourses)
   }
   return courses
