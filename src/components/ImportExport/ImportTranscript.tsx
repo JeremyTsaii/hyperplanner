@@ -3,7 +3,10 @@ import { makeStyles } from '@material-ui/core/styles'
 import axios from 'axios'
 import { UserContext } from '../../context/UserContext'
 import { CoursesContext } from '../../context/CoursesContext'
-import { StatsContext } from '../../context/StatsContext'
+import {
+  generateUserCoreRequirements,
+  generateUserMajorRequirements,
+} from '../../context/StatsContext'
 /* eslint-disable */
 import {
   useAdd_Multiple_CoursesMutation,
@@ -32,8 +35,8 @@ function ImportTranscript(): JSX.Element {
   const classes = useStyles()
 
   const { data } = useContext(UserContext)
+  const user = data.users[0]
   const { data: coursesData } = useContext(CoursesContext)
-  const statsData = useContext(StatsContext)
 
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
   const [removeAllCourses] = useRemove_All_CoursesMutation()
@@ -99,16 +102,27 @@ function ImportTranscript(): JSX.Element {
                   const foundStatus = response2.data.status
                   if (foundStatus === 'found') {
                     const coursesJson = response2.data.data
+                    const { majorReqTable } = generateUserMajorRequirements(
+                      user.major,
+                      user.school,
+                    )
+                    const { coreReqTable } = generateUserCoreRequirements(
+                      user.enroll,
+                      user.school,
+                    )
                     const courses = getCoursesFromJson(
                       coursesJson,
-                      statsData,
-                      data.users[0],
+                      majorReqTable,
+                      coreReqTable,
+                      user.major,
+                      user.concentration,
                     )
                     const [isValid, result] = validJson(JSON.stringify(courses))
                     if (isValid) {
                       setStatus('Successfully Imported')
 
                       // Append __typename to each course for cache update
+                      // Sort for proper display
                       const courses2 = result.map((course: CourseType) => ({
                         ...course,
                         __typename: 'courses',

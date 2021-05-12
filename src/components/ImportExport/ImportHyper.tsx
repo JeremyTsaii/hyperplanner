@@ -4,7 +4,10 @@ import TextField from '@material-ui/core/TextField'
 import SaveButton from './SaveButton'
 import { cleanHyper } from '../../utils/jsonFunctions'
 import { UserContext } from '../../context/UserContext'
-import { StatsContext } from '../../context/StatsContext'
+import {
+  generateUserCoreRequirements,
+  generateUserMajorRequirements,
+} from '../../context/StatsContext'
 import { CourseType, courseSort } from '../../static/infoLists'
 /* eslint-disable */
 import {
@@ -36,7 +39,6 @@ function ImportHyper(): JSX.Element {
   const { data } = useContext(UserContext)
   const user = data.users[0]
 
-  const stats = useContext(StatsContext)
   // Get json text input
   const getJsonField = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -52,10 +54,21 @@ function ImportHyper(): JSX.Element {
   const [removeSemesterCourses] = useRemove_Semester_CoursesMutation()
 
   const handleSave = () => {
+    const { majorReqTable } = generateUserMajorRequirements(
+      user.major,
+      user.school,
+    )
+    const { coreReqTable } = generateUserCoreRequirements(
+      user.enroll,
+      user.school,
+    )
     const [isValid, result, term] = cleanHyper(
       getJsonField(jsonRef),
-      stats,
-      user,
+      majorReqTable,
+      coreReqTable,
+      user.enroll,
+      user.major,
+      user.concentration,
     )
 
     setFormatError(!isValid)

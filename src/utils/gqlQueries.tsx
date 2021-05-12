@@ -115,6 +115,10 @@ export const UPDATE_COURSE = gql`
   }
 `
 
+export const UPDATE_COURSE_TYPES = gql`
+  mutation UPDATE_COURSE_TYPES()
+`
+
 export const UPDATE_ACTIVE_COURSES = gql`
   mutation UPDATE_ACTIVE_COURSES($active: Boolean!, $term: String!) {
     update_courses(where: { term: { _eq: $term } }, _set: { active: $active }) {

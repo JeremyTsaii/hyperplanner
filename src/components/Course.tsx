@@ -97,66 +97,6 @@ function Course({
   const classes = useStyles()
   const courseAlpha = active ? 1 : 0.2
 
-  let checkboxPlaceholder = (
-    <CourseCheckbox
-      active
-      functional={false}
-      code=""
-      title=""
-      credits={0}
-      type=""
-      campus=""
-      writInten={false}
-      term=""
-    />
-  )
-
-  let editIconPlaceholder = (
-    <EditIcon
-      active
-      functional={false}
-      code=""
-      title=""
-      credits={0}
-      type=""
-      campus=""
-      writInten={false}
-      term=""
-    />
-  )
-  let deleteIconPlaceholder = <DeleteIcon functional={false} title="" term="" />
-
-  // If false, icons don't have click functionality (for logged out viewers)
-  if (showIcons) {
-    checkboxPlaceholder = (
-      <CourseCheckbox
-        active={active}
-        functional
-        code={code}
-        title={title}
-        credits={credits}
-        type={type}
-        campus={campus}
-        writInten={writInten}
-        term={term}
-      />
-    )
-    editIconPlaceholder = (
-      <EditIcon
-        functional
-        active={active}
-        code={code}
-        title={title}
-        credits={credits}
-        type={type}
-        campus={campus}
-        writInten={writInten}
-        term={term}
-      />
-    )
-    deleteIconPlaceholder = <DeleteIcon functional term={term} title={title} />
-  }
-
   // Add M and/or W if Mudd hum/writing intensive course
   let placeholder = ''
   let titleLength = 6
@@ -204,7 +144,17 @@ function Course({
         style={{
           display: 'flex',
         }}>
-        {checkboxPlaceholder}
+        <CourseCheckbox
+          functional={showIcons}
+          active={active}
+          code={showIcons ? code : ''}
+          title={showIcons ? title : ''}
+          credits={showIcons ? credits : 0}
+          type={showIcons ? type : ''}
+          campus={showIcons ? campus : ''}
+          writInten={showIcons ? writInten : false}
+          term={showIcons ? term : ''}
+        />
         <Grid item xs={2} zeroMinWidth>
           <MuiThemeProvider theme={theme}>
             <Typography variant="h6" className={classes.text} noWrap>
@@ -227,8 +177,22 @@ function Course({
             </Typography>
           </MuiThemeProvider>
         </Grid>
-        {editIconPlaceholder}
-        {deleteIconPlaceholder}
+        <EditIcon
+          functional={showIcons}
+          active={active}
+          code={showIcons ? code : ''}
+          title={showIcons ? title : ''}
+          credits={showIcons ? credits : 0}
+          type={showIcons ? type : ''}
+          campus={showIcons ? campus : ''}
+          writInten={showIcons ? writInten : false}
+          term={showIcons ? term : ''}
+        />
+        <DeleteIcon
+          functional={showIcons}
+          term={showIcons ? term : ''}
+          title={showIcons ? title : ''}
+        />
       </Grid>
     </Paper>
   )

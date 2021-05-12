@@ -28,7 +28,7 @@ type Stats = {
   coreReqTable: { [code: string]: number[] }
 }
 
-const generateUserMajorRequirements = (
+export const generateUserMajorRequirements = (
   major: string,
   school: string,
 ): {
@@ -59,7 +59,7 @@ const generateUserMajorRequirements = (
   return { majorReqTable, count }
 }
 
-const generateUserCoreRequirements = (
+export const generateUserCoreRequirements = (
   enrollYear: number,
   school: string,
 ): {

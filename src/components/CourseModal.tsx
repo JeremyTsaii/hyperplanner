@@ -14,7 +14,10 @@ import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
 import AllCourses from '../static/allCourses.json'
 import { UserContext } from '../context/UserContext'
-import { StatsContext } from '../context/StatsContext'
+import {
+  generateUserCoreRequirements,
+  generateUserMajorRequirements,
+} from '../context/StatsContext'
 import { determineCourseType } from '../utils/jsonFunctions'
 import {
   types,
@@ -116,7 +119,6 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
 
   // Introduce user and stats context for course Determination
   const { data: infoData } = useContext(UserContext)
-  const stats = useContext(StatsContext)
 
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
   const [addCourse] = useAdd_CourseMutation()
@@ -230,6 +232,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
           // Sort by descending type then ascending code
           const sortedCourses = existingCourses.concat(newCourse)
           sortedCourses.sort(courseSort)
+
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
             data: { courses: sortedCourses },
@@ -292,12 +295,22 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
 
                 // Determine Course Type
                 const info = infoData.users[0]
+                const { majorReqTable } = generateUserMajorRequirements(
+                  info.major,
+                  info.school,
+                )
+                const { coreReqTable } = generateUserCoreRequirements(
+                  info.enroll,
+                  info.school,
+                )
                 setType(
                   determineCourseType(
                     newValue.code,
                     parseFloat(credit),
-                    stats,
-                    info,
+                    majorReqTable,
+                    coreReqTable,
+                    info.major,
+                    info.concentration,
                   ),
                 )
               }

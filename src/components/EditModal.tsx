@@ -18,10 +18,10 @@ import {
   types,
   bools,
   courseSort,
+  CourseType,
 } from '../static/infoLists'
 /* eslint-disable */
 import {
-  Courses,
   useUpdate_CourseMutation,
   useIncrement_Course_EditsMutation,
   Get_CoursesQuery,
@@ -222,7 +222,7 @@ function EditModal({
           })
           const newCourses = existingCourses!.courses.map((course) => {
             if (course.title === titleProp && course.term === termProp) {
-              const newCourse = {} as Courses
+              const newCourse = {} as CourseType
               newCourse.__typename = 'courses'
               newCourse.active = activeProp
               newCourse.term = semester

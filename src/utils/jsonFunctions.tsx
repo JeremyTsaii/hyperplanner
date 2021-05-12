@@ -136,7 +136,8 @@ const isHumBreadth = (
 export const determineCourseType = (
   code: string,
   credits: number,
-  statsContext: Stats,
+  majorReqTable: { [code: string]: number[] },
+  coreReqTable: { [code: string]: number[] },
   major: string,
   concentration: string,
 ): string => {
@@ -146,9 +147,9 @@ export const determineCourseType = (
   let message = 'other'
   if (isPe(code)) {
     message = 'pe'
-  } else if (isCoreReq(code, statsContext.coreReqTable)) {
+  } else if (isCoreReq(code, coreReqTable)) {
     message = 'core_req'
-  } else if (isMajorReq(code, dept, credits, statsContext.majorReqTable)) {
+  } else if (isMajorReq(code, dept, credits, majorReqTable)) {
     message = 'major_req'
   } else if (isMajorElec(dept, major)) {
     message = 'major_elec'
@@ -213,7 +214,8 @@ export const validJson = (jsonStr: string): [boolean, any] => {
 // Clean json received from Hyperschedule
 export const cleanHyper = (
   jsonStr: string,
-  stats: Stats,
+  majorReqTable: { [code: string]: number[] },
+  coreReqTable: { [code: string]: number[] },
   enroll: number,
   major: string,
   concentration: string,
@@ -258,7 +260,8 @@ export const cleanHyper = (
       courseEntry.type = determineCourseType(
         courseEntry.code,
         courseEntry.credits,
-        stats,
+        majorReqTable,
+        coreReqTable,
         major,
         concentration,
       )
@@ -278,7 +281,8 @@ const getTermCourses = (
   idx: number,
   /* eslint-disable */
   coursesJson: any,
-  stats: Stats,
+  majorReqTable: { [code: string]: number[] },
+  coreReqTable: { [code: string]: number[] },
   major: string,
   concentration: string,
   /* eslint-enable */
@@ -296,7 +300,8 @@ const getTermCourses = (
     newCourse.type = determineCourseType(
       curCourse.code,
       curCourse.credits,
-      stats,
+      majorReqTable,
+      coreReqTable,
       major,
       concentration,
     )
@@ -310,7 +315,8 @@ const getTermCourses = (
 export const getCoursesFromJson = (
   /* eslint-disable */
   coursesJson: any,
-  stats: Stats,
+  majorReqTable: { [code: string]: number[] },
+  coreReqTable: { [code: string]: number[] },
   major: string,
   concentration: string,
   /* eslint-enable */
@@ -321,7 +327,8 @@ export const getCoursesFromJson = (
       'Fall',
       i,
       coursesJson,
-      stats,
+      majorReqTable,
+      coreReqTable,
       major,
       concentration,
     )
@@ -330,7 +337,8 @@ export const getCoursesFromJson = (
       'Spring',
       i,
       coursesJson,
-      stats,
+      majorReqTable,
+      coreReqTable,
       major,
       concentration,
     )
@@ -339,7 +347,8 @@ export const getCoursesFromJson = (
       'Summer',
       i,
       coursesJson,
-      stats,
+      majorReqTable,
+      coreReqTable,
       major,
       concentration,
     )

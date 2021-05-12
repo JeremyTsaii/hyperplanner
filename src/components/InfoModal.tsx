@@ -18,15 +18,27 @@ import {
   majorDict,
   concentrations,
   enrollYears,
+  CourseType,
+  courseSort,
 } from '../static/infoLists'
 /* eslint-disable */
 import {
   useUpdate_UserMutation,
   Get_InfoQuery,
   Get_InfoDocument,
+  useAdd_Multiple_CoursesMutation,
+  useRemove_All_CoursesMutation,
+  Get_CoursesQuery,
+  Get_CoursesDocument,
 } from '../generated/graphql'
 /* eslint-enable */
 import { UserContext } from '../context/UserContext'
+import {
+  generateUserCoreRequirements,
+  generateUserMajorRequirements,
+} from '../context/StatsContext'
+import { CoursesContext } from '../context/CoursesContext'
+import { determineCourseType } from '../utils/jsonFunctions'
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -94,6 +106,7 @@ function InfoModal(): JSX.Element {
   const [updateUser] = useUpdate_UserMutation()
   const { data: infoData } = useContext(UserContext)
   const info = infoData.users[0]
+  const { data: coursesData } = useContext(CoursesContext)
 
   const {
     nickname: firstName,
@@ -104,6 +117,9 @@ function InfoModal(): JSX.Element {
     enroll: enrollYear,
     planned_grad: plannedGradYear,
   } = info
+
+  const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
+  const [removeAllCourses] = useRemove_All_CoursesMutation()
 
   // Changing information in modal
   const nameRef = useRef('')
@@ -199,7 +215,10 @@ function InfoModal(): JSX.Element {
 
   const handleSave = () => {
     const newName = getValue(nameRef)
+
+    // Make sure name is not empty
     if (newName !== '') {
+      // Update user information
       updateUser({
         variables: {
           name: newName,
@@ -247,6 +266,91 @@ function InfoModal(): JSX.Element {
           },
         },
       })
+
+      // Update course colors if major or concentration changed
+      if (majorName !== majorDict[major] || concName !== concentration) {
+        // Get current courses and update each course type
+        const { majorReqTable } = generateUserMajorRequirements(
+          majorDict[major],
+          schoolDict[school],
+        )
+        const { coreReqTable } = generateUserCoreRequirements(
+          parseFloat(enroll),
+          schoolDict[school],
+        )
+        const newCourses = coursesData.courses.map((course: CourseType) => {
+          const newCourse = {} as CourseType
+          newCourse.type = determineCourseType(
+            course.code,
+            course.credits,
+            majorReqTable,
+            coreReqTable,
+            majorDict[major],
+            concentration,
+          )
+          newCourse.active = course.active
+          newCourse.term = course.term
+          newCourse.title = course.title
+          newCourse.code = course.code
+          newCourse.credits = course.credits
+          newCourse.campus = course.campus
+          newCourse.writ_inten = course.writ_inten
+          return newCourse
+        })
+
+        // Append __typename to each course for cache update
+        // Sort so displayed in correct order
+        const courses2 = newCourses.map((course: CourseType) => ({
+          ...course,
+          __typename: 'courses',
+        }))
+        courses2.sort(courseSort)
+        console.log(majorDict[major])
+        console.log(courses2)
+
+        // Delete current courses
+        removeAllCourses({
+          update(cache) {
+            /* eslint-disable */
+            cache.writeQuery<Get_CoursesQuery>({
+              query: Get_CoursesDocument,
+              data: { courses: [] },
+            })
+            /* eslint-enable */
+          },
+          optimisticResponse: {
+            __typename: 'mutation_root',
+            delete_courses: {
+              __typename: 'courses_mutation_response',
+              affected_rows: coursesData.courses.length,
+            },
+          },
+        })
+
+        // Write new courses with changed types
+        addMultipleCourses({
+          variables: {
+            objects: newCourses,
+          },
+          update(cache) {
+            /* eslint-disable */
+            cache.writeQuery<Get_CoursesQuery>({
+              query: Get_CoursesDocument,
+              data: { courses: courses2 },
+            })
+            /* eslint-disable */
+          },
+          optimisticResponse: {
+            __typename: 'mutation_root',
+            insert_courses: {
+              __typename: 'courses_mutation_response',
+              affected_rows: courses2.length,
+              returning: courses2,
+            },
+          },
+        })
+      }
+
       setOpen(false)
     }
   }
