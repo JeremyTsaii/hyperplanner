@@ -12,9 +12,9 @@ import MenuItem from '@material-ui/core/MenuItem'
 import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
 import { Autocomplete } from '@material-ui/lab'
-import { modifyChecklist } from '../utils/modalFunctions'
-import AllCourses from '../static/allCourses.json'
-import { types, bools, courseSort } from '../static/infoLists'
+import { modifyChecklist } from '../../utils/modalFunctions'
+import AllCourses from '../../static/allCourses.json'
+import { types, bools, courseSort } from '../../static/infoLists'
 
 interface courseProps {
   code: string

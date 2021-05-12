@@ -7,10 +7,10 @@ import MuiDialogActions from '@material-ui/core/DialogActions'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import Tabs from '@material-ui/core/Tabs'
 import Tab from '@material-ui/core/Tab'
-import ExportJson from './ImportExport/ExportJson'
-import ImportJson from './ImportExport/ImportJson'
-import ImportTranscript from './ImportExport/ImportTranscript'
-import ImportHyper from './ImportExport/ImportHyper'
+import ExportJson from './ExportJson'
+import ImportJson from './ImportJson'
+import ImportTranscript from './ImportTranscript'
+import ImportHyper from './ImportHyper'
 
 const useStyles = makeStyles((theme) => ({
   importButton: {

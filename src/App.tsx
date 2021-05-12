@@ -6,9 +6,9 @@ import './App.css'
 import { UserContextProvider } from './context/UserContext'
 import { CoursesContextProvider } from './context/CoursesContext'
 import { StatsContextProvider } from './context/StatsContext'
-import TopBar from './components/TopBar'
-import InfoCards from './components/InfoCards'
-import YearCards from './components/YearCards'
+import TopBar from './components/Top/TopBar'
+import InfoCards from './components/Middle/InfoCards'
+import YearCards from './components/Bottom/YearCards'
 import AuthorizedApolloProvider from './components/AuthorizedApolloProvider'
 
 const mainTheme = createMuiTheme({

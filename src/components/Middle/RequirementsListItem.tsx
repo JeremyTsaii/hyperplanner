@@ -11,7 +11,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 import CloseIcon from '@material-ui/icons/Close'
 import { Typography } from '@material-ui/core'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import AllCourses from '../static/allCourses.json'
+import AllCourses from '../../static/allCourses.json'
 
 const useStyles = makeStyles((theme) => ({
   text: {

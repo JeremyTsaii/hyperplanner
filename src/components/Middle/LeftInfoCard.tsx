@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid'
 import { Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import InfoModal from './InfoModal'
-import { schoolDict, majorDict } from '../static/infoLists'
-import { UserContext } from '../context/UserContext'
+import { schoolDict, majorDict } from '../../static/infoLists'
+import { UserContext } from '../../context/UserContext'
 
 const useStyles = makeStyles((theme) => ({
   infoCard: {

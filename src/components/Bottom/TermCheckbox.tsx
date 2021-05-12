@@ -3,14 +3,14 @@ import IconButton from '@material-ui/core/IconButton'
 import Menu from '@material-ui/core/Menu'
 import MenuItem from '@material-ui/core/MenuItem'
 import DoneAllIcon from '@material-ui/icons/DoneAll'
-import { courseSort } from '../static/infoLists'
+import { courseSort } from '../../static/infoLists'
 /* eslint-disable */
 import {
   Get_CoursesQuery,
   Get_CoursesDocument,
   useUpdate_Active_CoursesMutation,
   Courses,
-} from '../generated/graphql'
+} from '../../generated/graphql'
 /* eslint-enable */
 
 interface termCheckboxProps {

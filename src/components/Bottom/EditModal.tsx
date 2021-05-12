@@ -1,39 +1,32 @@
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef } from 'react'
 import { Typography } from '@material-ui/core'
 import IconButton from '@material-ui/core/IconButton'
-import AddIcon from '@material-ui/icons/Add'
 import Dialog from '@material-ui/core/Dialog'
 import MuiDialogTitle from '@material-ui/core/DialogTitle'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import MuiDialogActions from '@material-ui/core/DialogActions'
+import EditIcon from '@material-ui/icons/Edit'
 import CloseIcon from '@material-ui/icons/Close'
 import TextField from '@material-ui/core/TextField'
 import MenuItem from '@material-ui/core/MenuItem'
-import Button from '@material-ui/core/Button'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { Autocomplete } from '@material-ui/lab'
-import AllCourses from '../static/allCourses.json'
-import { UserContext } from '../context/UserContext'
+import Button from '@material-ui/core/Button'
 import {
-  generateUserCoreRequirements,
-  generateUserMajorRequirements,
-} from '../context/StatsContext'
-import { determineCourseType } from '../utils/jsonFunctions'
-import {
+  campuses,
+  semesters,
+  credits,
   types,
   bools,
   courseSort,
-  credits,
-  campuses,
-} from '../static/infoLists'
+  CourseType,
+} from '../../static/infoLists'
 /* eslint-disable */
 import {
-  useAdd_CourseMutation,
+  useUpdate_CourseMutation,
   useIncrement_Course_EditsMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
-  Courses,
-} from '../generated/graphql'
+} from '../../generated/graphql'
 /* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
@@ -54,25 +47,7 @@ const useStyles = makeStyles((theme) => ({
   textInput: {
     color: 'white',
   },
-  autoComplete: {
-    '& .MuiAutocomplete-inputRoot': {
-      color: 'white',
-    },
-  },
 }))
-
-type AllCourse = {
-  campus: string
-  code: string
-  title: string
-  credits: number
-}
-
-interface DialogProps {
-  functional: boolean
-  term: string
-  year: string
-}
 
 interface DialogTitleProps {
   onClose: () => void
@@ -114,37 +89,66 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
-function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
+interface editProps {
+  functional: boolean
+  activeProp: boolean
+  codeProp: string
+  titleProp: string
+  creditsProp: number
+  typeProp: string
+  campusProp: string
+  writIntenProp: boolean
+  termProp: string
+}
+
+function EditModal({
+  functional,
+  activeProp,
+  codeProp,
+  titleProp,
+  creditsProp,
+  typeProp,
+  campusProp,
+  writIntenProp,
+  termProp,
+}: editProps): JSX.Element {
   const classes = useStyles()
 
-  // Introduce user and stats context for course Determination
-  const { data: infoData } = useContext(UserContext)
-
+  const [updateCourse] = useUpdate_CourseMutation()
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
-  const [addCourse] = useAdd_CourseMutation()
-
-  // Changing information in modal
-  const [campus, setCampus] = useState('')
-
-  const [credit, setCredit] = useState('')
-
-  const [type, setType] = useState('')
-
-  const [writInten, setWritInten] = useState('False')
-
-  // Create refs for string inputs in text field
-  // Need ref and normal state due to placeholders
-  const codeRef = useRef('')
-  const titleRef = useRef('')
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
     return cur.value
   }
 
+  const capitalize = (str: string): string => {
+    return str.charAt(0).toUpperCase() + str.slice(1)
+  }
+
+  // Create refs for string inputs in text field
+  const codeRef = useRef('')
+  const titleRef = useRef('')
+
+  // Changing information in modal
+  const [semester, setSemester] = useState(termProp)
+
+  const [campus, setCampus] = useState(campusProp)
+
+  const [credit, setCredit] = useState(String(creditsProp.toFixed(1)))
+
+  const [type, setType] = useState(typeProp)
+
+  const [writInten, setWritInten] = useState(capitalize(String(writIntenProp)))
+
   const handleCampusChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const target = event.target as HTMLInputElement
     setCampus(target.value)
+  }
+
+  const handleSemesterChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const target = event.target as HTMLInputElement
+    setSemester(target.value)
   }
 
   const handleCreditChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -167,19 +171,18 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
   // Opening/Closing modal
   const [open, setOpen] = useState(false)
 
-  // Reset inputs to default in the modal
   const resetInputs = () => {
-    setCampus('')
-    setCredit('')
-    setType('')
-    setWritInten('False')
+    setSemester(termProp)
+    setCampus(campusProp)
+    setCredit(String(creditsProp.toFixed(1)))
+    setType(typeProp)
+    setWritInten(capitalize(String(writIntenProp)))
   }
 
-  const handleOpen = !functional
-    ? undefined
-    : () => {
-        setOpen(true)
-      }
+  const handleOpen = () => {
+    resetInputs()
+    setOpen(true)
+  }
   const handleClose = () => {
     resetInputs()
     setOpen(false)
@@ -194,14 +197,18 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
     )
   }
   const handleSave = () => {
-    const newTitle = getValue(titleRef)
-    const newCode = getValue(codeRef)
-    const formatTerm = term.toLowerCase() + year
     if (allFilled()) {
-      addCourse({
+      // Update user course_edits column
+      updateCourseEdits()
+
+      const newCode = getValue(codeRef)
+      const newTitle = getValue(titleRef)
+
+      updateCourse({
         variables: {
-          active: true,
-          term: formatTerm,
+          active: activeProp,
+          old_title: titleProp,
+          term: semester,
           title: newTitle,
           code: newCode,
           credits: parseFloat(credit),
@@ -211,134 +218,106 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
         },
         update(cache) {
           /* eslint-disable */
-          const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
+          const existingCourses = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
-          const existingCourses = getExistingCourses
-            ? getExistingCourses.courses
-            : []
-
-          const newCourse = {} as Courses
-          newCourse.__typename = 'courses'
-          newCourse.active = true
-          newCourse.term = formatTerm
-          newCourse.title = newTitle
-          newCourse.code = newCode
-          newCourse.credits = parseFloat(credit)
-          newCourse.type = type
-          newCourse.campus = campus
-          newCourse.writ_inten = writInten === 'True'
-
-          // Sort by descending type then ascending code
-          const sortedCourses = existingCourses.concat(newCourse)
-          sortedCourses.sort(courseSort)
-
+          const newCourses = existingCourses!.courses.map((course) => {
+            if (course.title === titleProp && course.term === termProp) {
+              const newCourse = {} as CourseType
+              newCourse.__typename = 'courses'
+              newCourse.active = activeProp
+              newCourse.term = semester
+              newCourse.title = newTitle
+              newCourse.code = newCode
+              newCourse.credits = parseFloat(credit)
+              newCourse.type = type
+              newCourse.campus = campus
+              newCourse.writ_inten = writInten === 'True'
+              return newCourse
+            }
+            return course
+          })
+          newCourses.sort(courseSort)
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: sortedCourses },
+            data: { courses: newCourses },
           })
           /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
-          insert_courses: {
+          update_courses: {
             __typename: 'courses_mutation_response',
             affected_rows: 1,
             returning: [
               {
                 __typename: 'courses',
-                term: formatTerm,
+                active: activeProp,
+                term: semester,
                 title: newTitle,
                 code: newCode,
                 credits: parseFloat(credit),
                 type,
                 campus,
                 writ_inten: writInten === 'True',
-                active: true,
               },
             ],
           },
         },
       })
-
-      // Update course edits
-      updateCourseEdits()
-
-      resetInputs()
       setOpen(false)
     }
   }
-  /* eslint-disable react/jsx-props-no-spreading */
+
+  // Return icon but no functionality (logged out)
+  if (!functional) {
+    return (
+      <IconButton edge="end" aria-label="edit" size="small" onClick={undefined}>
+        <EditIcon />
+      </IconButton>
+    )
+  }
+
   return (
     <div>
-      <IconButton edge="end" aria-label="add" size="small" onClick={handleOpen}>
-        <AddIcon color="secondary" />
+      <IconButton
+        edge="end"
+        aria-label="edit"
+        size="small"
+        onClick={handleOpen}>
+        <EditIcon />
       </IconButton>
       <Dialog
         onClose={handleClose}
         aria-labelledby="customized-dialog-title"
         open={open}>
-        <DialogTitle onClose={handleClose}>
-          Add Course to {term}, Year {year}
-        </DialogTitle>
+        <DialogTitle onClose={handleClose}>Edit Course</DialogTitle>
         <DialogContent dividers>
-          <Autocomplete
-            options={AllCourses}
-            onChange={(event, newValue: AllCourse | null) => {
-              if (newValue !== null) {
-                const curCode = (codeRef.current as unknown) as HTMLTextAreaElement
-                curCode.value = newValue.code
-                const curTitle = (titleRef.current as unknown) as HTMLTextAreaElement
-                curTitle.value = newValue.title
-                setCampus(newValue.campus)
-                setCredit(newValue.credits.toFixed(1))
-
-                // Determine Course Type
-                const info = infoData.users[0]
-                const { majorReqTable } = generateUserMajorRequirements(
-                  info.major,
-                  info.school,
-                )
-                const { coreReqTable } = generateUserCoreRequirements(
-                  info.enroll,
-                  info.school,
-                )
-                setType(
-                  determineCourseType(
-                    newValue.code,
-                    parseFloat(credit),
-                    majorReqTable,
-                    coreReqTable,
-                    info.major,
-                    info.concentration,
-                  ),
-                )
-              }
-            }}
+          <TextField
+            select
+            label="Semester"
             fullWidth
-            className={classes.autoComplete}
-            style={{ width: 400 }}
-            getOptionLabel={(option) => `${option.code} ${option.title}`}
-            renderInput={(params) => (
-              <TextField
-                {...params}
-                color="primary"
-                variant="standard"
-                label="Search for your courses"
-                margin="normal"
-                fullWidth
-                InputLabelProps={{
-                  className: classes.textFieldLabel,
-                }}
-              />
-            )}
-          />
+            required
+            value={semester}
+            onChange={handleSemesterChange}
+            InputLabelProps={{
+              className: classes.textFieldLabel,
+            }}
+            InputProps={{
+              className: classes.textInput,
+            }}>
+            {semesters.map((option) => (
+              <MenuItem key={option.value} value={option.value}>
+                {option.label}
+              </MenuItem>
+            ))}
+          </TextField>
           <TextField
             autoFocus
-            color="primary"
             margin="dense"
             id="code"
             label="Course Code"
+            defaultValue={codeProp}
             required
             fullWidth
             inputRef={codeRef}
@@ -353,10 +332,10 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
           />
           <TextField
             autoFocus
-            color="primary"
             margin="dense"
             id="title"
             label="Course Title"
+            defaultValue={titleProp}
             fullWidth
             required
             inputRef={titleRef}
@@ -370,20 +349,18 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             }}
           />
           <TextField
-            color="primary"
             select
             label="Campus"
             fullWidth
             required
             value={campus}
+            onChange={handleCampusChange}
             InputLabelProps={{
-              shrink: true,
               className: classes.textFieldLabel,
             }}
             InputProps={{
               className: classes.textInput,
-            }}
-            onChange={handleCampusChange}>
+            }}>
             {campuses.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -391,20 +368,18 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             ))}
           </TextField>
           <TextField
-            color="primary"
             select
             label="Credits"
             fullWidth
             required
             value={credit}
+            onChange={handleCreditChange}
             InputLabelProps={{
-              shrink: true,
               className: classes.textFieldLabel,
             }}
             InputProps={{
               className: classes.textInput,
-            }}
-            onChange={handleCreditChange}>
+            }}>
             {credits.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.value}
@@ -412,20 +387,18 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             ))}
           </TextField>
           <TextField
-            color="primary"
             select
             label="Course Type"
             fullWidth
             required
             value={type}
+            onChange={handleTypeChange}
             InputLabelProps={{
-              shrink: true,
               className: classes.textFieldLabel,
             }}
             InputProps={{
               className: classes.textInput,
-            }}
-            onChange={handleTypeChange}>
+            }}>
             {types.map((option) => (
               <MenuItem key={option.value} value={option.value}>
                 {option.label}
@@ -433,20 +406,18 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             ))}
           </TextField>
           <TextField
-            color="primary"
             select
             label="Writing Intensive?"
             fullWidth
             required
             value={writInten}
+            onChange={handleWritIntenChange}
             InputLabelProps={{
-              shrink: true,
               className: classes.textFieldLabel,
             }}
             InputProps={{
               className: classes.textInput,
-            }}
-            onChange={handleWritIntenChange}>
+            }}>
             {bools.map((option) => (
               <MenuItem key={option.label} value={option.label}>
                 {option.label}
@@ -456,7 +427,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
         </DialogContent>
         <DialogActions>
           <Button autoFocus onClick={handleSave} color="primary">
-            Add Course
+            Edit Course
           </Button>
         </DialogActions>
       </Dialog>
@@ -464,4 +435,4 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
   )
 }
 
-export default CourseModal
+export default EditModal

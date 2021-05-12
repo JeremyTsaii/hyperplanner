@@ -8,4 +8,4 @@ src/static/defaultMajorChecks.json
 src/static/defaultCoreChecks.json
 src/static/allCourses.json
 src/static/coursesRaw.json
-src/components/CourseRecommendation.tsx
+src/components/WIP/CourseRecommendation.tsx

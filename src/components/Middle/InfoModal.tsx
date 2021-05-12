@@ -20,7 +20,7 @@ import {
   enrollYears,
   CourseType,
   courseSort,
-} from '../static/infoLists'
+} from '../../static/infoLists'
 /* eslint-disable */
 import {
   useUpdate_UserMutation,
@@ -30,15 +30,15 @@ import {
   useRemove_All_CoursesMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
-} from '../generated/graphql'
+} from '../../generated/graphql'
 /* eslint-enable */
-import { UserContext } from '../context/UserContext'
+import { UserContext } from '../../context/UserContext'
 import {
   generateUserCoreRequirements,
   generateUserMajorRequirements,
-} from '../context/StatsContext'
-import { CoursesContext } from '../context/CoursesContext'
-import { determineCourseType } from '../utils/jsonFunctions'
+} from '../../context/StatsContext'
+import { CoursesContext } from '../../context/CoursesContext'
+import { determineCourseType } from '../../utils/jsonFunctions'
 
 const useStyles = makeStyles((theme) => ({
   root: {

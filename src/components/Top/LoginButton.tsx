@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import PersonOutlineIcon from '@material-ui/icons/PersonOutline'
 import { makeStyles } from '@material-ui/core/styles'
-import { useAuth0 } from '../utils/react-auth0-spa'
+import { useAuth0 } from '../../utils/react-auth0-spa'
 
 const useStyles = makeStyles((theme) => ({
   logButton: {

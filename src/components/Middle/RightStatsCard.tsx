@@ -6,9 +6,9 @@ import Paper from '@material-ui/core/Paper'
 import Grid from '@material-ui/core/Grid'
 import RightStatsCardStats from './RightStatsCardStats'
 import RightStatsCardProgress from './RightStatsCardProgress'
-import Requirements from '../static/requirements.json'
-import { UserContext } from '../context/UserContext'
-import { StatsContext } from '../context/StatsContext'
+import Requirements from '../../static/requirements.json'
+import { UserContext } from '../../context/UserContext'
+import { StatsContext } from '../../context/StatsContext'
 
 const useStyles = makeStyles((theme) => ({
   statsCard: {

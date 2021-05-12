@@ -1,14 +1,14 @@
 import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Checkbox from '@material-ui/core/Checkbox'
-import { courseSort } from '../static/infoLists'
+import { courseSort } from '../../static/infoLists'
 /* eslint-disable */
 import {
   Get_CoursesQuery,
   Get_CoursesDocument,
   useUpdate_CourseMutation,
   Courses,
-} from '../generated/graphql'
+} from '../../generated/graphql'
 /* eslint-enable */
 
 interface checkboxProps {

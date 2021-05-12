@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import { makeStyles } from '@material-ui/core/styles'
 import ReactLoading from 'react-loading'
-import { placeholderCourses } from '../static/infoLists'
+import { placeholderCourses } from '../../static/infoLists'
 import CourseContainer from './CourseContainer'
-import { UserContext } from '../context/UserContext'
-import { CoursesContext } from '../context/CoursesContext'
+import { UserContext } from '../../context/UserContext'
+import { CoursesContext } from '../../context/CoursesContext'
 
 const useStyles = makeStyles((theme) => ({
   loadingStyle: {

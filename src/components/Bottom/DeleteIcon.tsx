@@ -10,7 +10,7 @@ import {
   Get_InfoQuery,
   Get_CoursesQuery,
   Get_CoursesDocument,
-} from '../generated/graphql'
+} from '../../generated/graphql'
 /* eslint-enable */
 
 interface deleteProps {

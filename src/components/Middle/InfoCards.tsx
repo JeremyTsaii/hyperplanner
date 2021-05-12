@@ -8,8 +8,8 @@ import {
 import ReactLoading from 'react-loading'
 import LeftInfoCard from './LeftInfoCard'
 import RightStatsCard from './RightStatsCard'
-import { UserContext } from '../context/UserContext'
-import { CoursesContext } from '../context/CoursesContext'
+import { UserContext } from '../../context/UserContext'
+import { CoursesContext } from '../../context/CoursesContext'
 
 let theme = createMuiTheme({
   typography: {

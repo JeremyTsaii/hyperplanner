@@ -7,10 +7,10 @@ import Grid from '@material-ui/core/Grid'
 import GitButton from './GitButton'
 import LoginButton from './LoginButton'
 import YearStepper from './Stepper'
-import Logo from '../images/logo.png'
+import Logo from '../../images/logo.png'
 import HelpModal from './HelpModal'
-import ImportExportModal from './ImportExportModal'
-import { CoursesContext } from '../context/CoursesContext'
+import ImportExportModal from '../ImportExport/ImportExportModal'
+import { CoursesContext } from '../../context/CoursesContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {

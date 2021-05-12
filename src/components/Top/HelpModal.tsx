@@ -9,13 +9,13 @@ import MuiDialogTitle from '@material-ui/core/DialogTitle'
 import MuiDialogContent from '@material-ui/core/DialogContent'
 import MuiDialogActions from '@material-ui/core/DialogActions'
 import CloseIcon from '@material-ui/icons/Close'
-import Course from './Course'
+import Course from '../Bottom/Course'
 import {
   CourseType,
   demoShadeCourses,
   demoColorCourses,
   demoInitialsCourses,
-} from '../static/infoLists'
+} from '../../static/infoLists'
 
 const useStyles = makeStyles((theme) => ({
   helpButton: {

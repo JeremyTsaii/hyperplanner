@@ -4,7 +4,7 @@ import Step from '@material-ui/core/Step'
 import StepLabel from '@material-ui/core/StepLabel'
 import StepConnector from '@material-ui/core/StepConnector'
 import { makeStyles, withStyles } from '@material-ui/core/styles'
-import { UserContext } from '../context/UserContext'
+import { UserContext } from '../../context/UserContext'
 
 const useStyles = makeStyles((theme) => ({
   root: {
