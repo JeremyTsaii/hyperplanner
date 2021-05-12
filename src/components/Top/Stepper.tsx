@@ -82,62 +82,10 @@ function YearStepper(): JSX.Element {
 
   const { loading, error, data } = useContext(UserContext)
 
-  if (loading) {
-    return (
-      <div className={classes.root}>
-        <Stepper
-          activeStep={0}
-          alternativeLabel
-          connector={<QontoConnector />}
-          className={classes.stepper}>
-          {steps.map((label) => (
-            <Step key={label}>
-              <StyledStepLabel
-                StepIconProps={{
-                  classes: {
-                    root: classes.icon,
-                  },
-                }}>
-                {label}
-              </StyledStepLabel>
-            </Step>
-          ))}
-        </Stepper>
-      </div>
-    )
-  }
-
-  if (error) {
-    return (
-      <div className={classes.root}>
-        <Stepper
-          activeStep={2}
-          alternativeLabel
-          connector={<QontoConnector />}
-          className={classes.stepper}>
-          {steps.map((label) => (
-            <Step key={label}>
-              <StyledStepLabel
-                StepIconProps={{
-                  classes: {
-                    root: classes.icon,
-                  },
-                }}>
-                {label}
-              </StyledStepLabel>
-            </Step>
-          ))}
-        </Stepper>
-      </div>
-    )
-  }
-
-  const enrollYear = data.users[0].enroll
-
   return (
     <div className={classes.root}>
       <Stepper
-        activeStep={calculateYear(enrollYear)}
+        activeStep={loading || error ? 0 : calculateYear(data.users[0].enroll)}
         alternativeLabel
         connector={<QontoConnector />}
         className={classes.stepper}>
