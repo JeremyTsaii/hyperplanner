@@ -120,9 +120,15 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
       (totalCredits / totalRequired) * 100,
       (pe / peRequired) * 100,
     ]
+    const endArr = [` / ${totalRequired}`, '', '', '']
 
     dynamicStatsComponent = (
-      <RightStatsCardStats titleArr={titleArr} valArr={valArr} isList={false} />
+      <RightStatsCardStats
+        titleArr={titleArr}
+        valArr={valArr}
+        endArr={endArr}
+        isList={false}
+      />
     )
     dynamicProgressComponent = (
       <RightStatsCardProgress
@@ -191,6 +197,14 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
       'Writing Intensive:',
     ]
     const valArr = [depth, breadth, humElec, muddHum, writ]
+    const endArr = [
+      ` / ${depthRequired}`,
+      ` / ${breadthRequired}`,
+      ` / ${elecRequired}`,
+      ` / ${muddRequired}`,
+      ` / ${writRequired}`,
+    ]
+
     const progressTitleArr = [
       'Depth',
       'Breadth',
@@ -207,7 +221,12 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     ]
 
     dynamicStatsComponent = (
-      <RightStatsCardStats titleArr={titleArr} valArr={valArr} isList={false} />
+      <RightStatsCardStats
+        titleArr={titleArr}
+        valArr={valArr}
+        endArr={endArr}
+        isList={false}
+      />
     )
     dynamicProgressComponent = (
       <RightStatsCardProgress

@@ -44,6 +44,7 @@ const useStyles = makeStyles((theme) => ({
 interface IProps {
   titleArr?: string[]
   valArr?: any[]
+  endArr?: string[]
   checklist?: { code: string; title: string }[]
   checksArr?: number[]
   isList: boolean
@@ -52,18 +53,20 @@ interface IProps {
 const RightStatsCardStats = ({
   titleArr,
   valArr,
+  endArr,
   isList,
   checklist,
   checksArr,
 }: IProps): JSX.Element => {
   const classes = useStyles()
 
-  const zip = (a1: string[], a2: any[]) => a1.map((x, i) => [x, a2[i]])
+  const zip = (a1: string[], a2: any[], a3: string[]) =>
+    a1.map((x, i) => [x, a2[i], a3[i]])
 
   // Stats instaed of checklist of requirements (graduation/humanities)
   if (!isList) {
     // eslint-disable-next-line
-    const zippedStats = zip(titleArr!, valArr!)
+    const zippedStats = zip(titleArr!, valArr!, endArr!)
 
     return (
       <div className={classes.reqStatSection}>
@@ -72,7 +75,7 @@ const RightStatsCardStats = ({
             className={classes.personalStats}
             // eslint-disable-next-line
             key={(pair[0] as string) + i + pair[1]}>
-            <b>{pair[0]}</b> {pair[1]}
+            <b>{pair[0]}</b> {pair[1] + pair[2]}
           </Typography>
         ))}
       </div>
@@ -92,6 +95,7 @@ const RightStatsCardStats = ({
 RightStatsCardStats.defaultProps = {
   titleArr: [],
   valArr: [],
+  endArr: [],
   checklist: [],
   checksArr: [],
 }
