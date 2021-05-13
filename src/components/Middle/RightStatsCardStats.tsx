@@ -64,9 +64,8 @@ const RightStatsCardStats = ({
     a1.map((x, i) => [x, a2[i], a3[i]])
 
   // Stats instaed of checklist of requirements (graduation/humanities)
-  if (!isList) {
-    // eslint-disable-next-line
-    const zippedStats = zip(titleArr!, valArr!, endArr!)
+  if (!isList && titleArr && valArr && endArr) {
+    const zippedStats = zip(titleArr, valArr, endArr)
 
     return (
       <div className={classes.reqStatSection}>
@@ -83,13 +82,15 @@ const RightStatsCardStats = ({
   }
 
   // Major / Core checklist
-  return (
-    <div className={classes.reqStatSection}>
-      {/* eslint-disable */}
-      <RequirementsList reqs={checklist!} checksArr={checksArr!} />
-      {/* eslint-enable */}
-    </div>
-  )
+  if (checklist && checksArr) {
+    return (
+      <div className={classes.reqStatSection}>
+        <RequirementsList reqs={checklist} checksArr={checksArr} />
+      </div>
+    )
+  }
+
+  return <div />
 }
 
 RightStatsCardStats.defaultProps = {

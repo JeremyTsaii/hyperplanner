@@ -70,13 +70,9 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   const classes = useStyles()
   const [value, setValue] = useState('grad')
 
-  const { data: infoData } = useContext(UserContext)
+  const { data: userData } = useContext(UserContext)
 
-  const info = infoData.users[0]
-
-  const { school, major, enroll } = info
-
-  const stats = useContext(StatsContext)
+  const { school, major, enroll } = userData.users[0]
 
   const {
     total: totalCredits,
@@ -92,7 +88,7 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     writ,
     coreChecks,
     majorChecks,
-  } = stats
+  } = useContext(StatsContext)
 
   /* eslint-disable-next-line */
   const handleChange = (event: React.ChangeEvent<{}>, value: string) => {
@@ -113,14 +109,17 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
       'Remaining Average Credits:',
     ]
     const valArr = [totalCredits, creditsRem, avgCredits, avgRem]
-    const progressTitleArr = ['Credits', 'PE']
     const totalRequired = Requirements[schoolKey].grad
     const peRequired = Requirements[schoolKey].pe
     const progressValArr = [
       (totalCredits / totalRequired) * 100,
       (pe / peRequired) * 100,
     ]
-    const endArr = [` / ${totalRequired}`, '', '', '']
+    const progressTitleArr = [
+      `Credits (${totalCredits}/${totalRequired})`,
+      `PE (${pe}/${peRequired})`,
+    ]
+    const endArr = [`/${totalRequired}`, '', '', '']
 
     dynamicStatsComponent = (
       <RightStatsCardStats
@@ -139,7 +138,10 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
   } else if (value === 'major') {
     const checklist = Requirements[schoolKey].major[majorKey].major_req
     const majorElecRequired = Requirements[schoolKey].major[majorKey].major_elec
-    const progressTitleArr = ['Completed', 'Electives']
+    const progressTitleArr = [
+      'Completed',
+      `Elective Credits (${majorElec}/${majorElecRequired})`,
+    ]
     const progressValArr = [
       calculatePercentageChecked(majorChecks),
       (majorElec / majorElecRequired) * 100,
@@ -198,19 +200,19 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
     ]
     const valArr = [depth, breadth, humElec, muddHum, writ]
     const endArr = [
-      ` / ${depthRequired}`,
-      ` / ${breadthRequired}`,
-      ` / ${elecRequired}`,
-      ` / ${muddRequired}`,
-      ` / ${writRequired}`,
+      `/${depthRequired}`,
+      `/${breadthRequired}`,
+      `/${elecRequired}`,
+      `/${muddRequired}`,
+      `/${writRequired}`,
     ]
 
     const progressTitleArr = [
-      'Depth',
-      'Breadth',
-      'Electives',
-      'Mudd Hums',
-      'Writing',
+      `Depth (${depth}/${depthRequired})`,
+      `Breadth (${breadth}/${breadthRequired})`,
+      `Electives (${humElec}/${elecRequired})`,
+      `Mudd (${muddHum}/${muddRequired})`,
+      `Writing (${writ}/${writRequired})`,
     ]
     const progressValArr = [
       (depth / depthRequired) * 100,

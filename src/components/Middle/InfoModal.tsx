@@ -21,7 +21,6 @@ import {
   CourseType,
   courseSort,
 } from '../../static/infoLists'
-/* eslint-disable */
 import {
   useUpdate_UserMutation,
   Get_InfoQuery,
@@ -31,7 +30,6 @@ import {
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 import { UserContext } from '../../context/UserContext'
 import {
   generateUserCoreRequirements,
@@ -100,14 +98,40 @@ const DialogActions = withStyles((theme) => ({
   },
 }))(MuiDialogActions)
 
+const updateGradDates = (start: number): { value: string }[] => {
+  return [
+    {
+      value: `Fall ${start}`,
+    },
+    {
+      value: `Spring ${start + 1}`,
+    },
+    {
+      value: `Fall ${start + 1}`,
+    },
+    {
+      value: `Spring ${start + 2}`,
+    },
+    {
+      value: `Fall ${start + 2}`,
+    },
+    {
+      value: `Spring ${start + 3}`,
+    },
+    {
+      value: `Fall ${start + 3}`,
+    },
+    {
+      value: `Spring ${start + 4}`,
+    },
+  ]
+}
+
 function InfoModal(): JSX.Element {
   const classes = useStyles()
 
   const [updateUser] = useUpdate_UserMutation()
-  const { data: infoData } = useContext(UserContext)
-  const info = infoData.users[0]
-  const { data: coursesData } = useContext(CoursesContext)
-
+  const { data: userData } = useContext(UserContext)
   const {
     nickname: firstName,
     school: schoolName,
@@ -116,7 +140,8 @@ function InfoModal(): JSX.Element {
     auth0_id: id,
     enroll: enrollYear,
     planned_grad: plannedGradYear,
-  } = info
+  } = userData.users[0]
+  const { data: coursesData } = useContext(CoursesContext)
 
   const [addMultipleCourses] = useAdd_Multiple_CoursesMutation()
   const [removeAllCourses] = useRemove_All_CoursesMutation()
@@ -133,35 +158,6 @@ function InfoModal(): JSX.Element {
   const [enroll, setEnroll] = useState(String(enrollYear))
 
   const [plannedGrad, setPlannedGrad] = useState(plannedGradYear)
-
-  const updateGradDates = (start: number): { value: string }[] => {
-    return [
-      {
-        value: `Fall ${start}`,
-      },
-      {
-        value: `Spring ${start + 1}`,
-      },
-      {
-        value: `Fall ${start + 1}`,
-      },
-      {
-        value: `Spring ${start + 2}`,
-      },
-      {
-        value: `Fall ${start + 2}`,
-      },
-      {
-        value: `Spring ${start + 3}`,
-      },
-      {
-        value: `Fall ${start + 3}`,
-      },
-      {
-        value: `Spring ${start + 4}`,
-      },
-    ]
-  }
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
     const cur = (ref.current as unknown) as HTMLTextAreaElement
@@ -208,9 +204,9 @@ function InfoModal(): JSX.Element {
     setSchool(schoolDict[schoolName])
     setMajor(majorDict[majorName])
     setConcentration(concName)
-    setOpen(false)
     setEnroll(enrollYear)
     setPlannedGrad(plannedGradYear)
+    setOpen(false)
   }
 
   const handleSave = () => {
@@ -230,22 +226,23 @@ function InfoModal(): JSX.Element {
           plannedGrad,
         },
         update(cache) {
-          /* eslint-disable */
-          const existingInfo = cache.readQuery<Get_InfoQuery>({
+          const infoQuery = cache.readQuery<Get_InfoQuery>({
             query: Get_InfoDocument,
           })
-          const newInfo = { ...existingInfo!.users[0] }
-          newInfo.nickname = newName
-          newInfo.school = schoolDict[school]
-          newInfo.major = majorDict[major]
-          newInfo.concentration = concentration
-          newInfo.enroll = parseFloat(enroll)
-          newInfo.planned_grad = plannedGrad
-          cache.writeQuery<Get_InfoQuery>({
-            query: Get_InfoDocument,
-            data: { users: [newInfo] },
-          })
-          /* eslint-enable */
+          // Ensure infoQuery is non-null
+          if (infoQuery) {
+            const newInfo = { ...infoQuery.users[0] }
+            newInfo.nickname = newName
+            newInfo.school = schoolDict[school]
+            newInfo.major = majorDict[major]
+            newInfo.concentration = concentration
+            newInfo.enroll = parseFloat(enroll)
+            newInfo.planned_grad = plannedGrad
+            cache.writeQuery<Get_InfoQuery>({
+              query: Get_InfoDocument,
+              data: { users: [newInfo] },
+            })
+          }
         },
         optimisticResponse: {
           __typename: 'mutation_root',
@@ -300,21 +297,20 @@ function InfoModal(): JSX.Element {
 
         // Append __typename to each course for cache update
         // Sort so displayed in correct order
-        const courses2 = newCourses.map((course: CourseType) => ({
-          ...course,
-          __typename: 'courses',
-        }))
-        courses2.sort(courseSort)
+        const coursesCache = newCourses
+          .map((course: CourseType) => ({
+            ...course,
+            __typename: 'courses',
+          }))
+          .sort(courseSort)
 
         // Delete current courses
         removeAllCourses({
           update(cache) {
-            /* eslint-disable */
             cache.writeQuery<Get_CoursesQuery>({
               query: Get_CoursesDocument,
               data: { courses: [] },
             })
-            /* eslint-enable */
           },
           optimisticResponse: {
             __typename: 'mutation_root',
@@ -331,24 +327,21 @@ function InfoModal(): JSX.Element {
             objects: newCourses,
           },
           update(cache) {
-            /* eslint-disable */
             cache.writeQuery<Get_CoursesQuery>({
               query: Get_CoursesDocument,
-              data: { courses: courses2 },
+              data: { courses: coursesCache },
             })
-            /* eslint-disable */
           },
           optimisticResponse: {
             __typename: 'mutation_root',
             insert_courses: {
               __typename: 'courses_mutation_response',
-              affected_rows: courses2.length,
-              returning: courses2,
+              affected_rows: coursesCache.length,
+              returning: coursesCache,
             },
           },
         })
       }
-
       setOpen(false)
     }
   }

@@ -74,16 +74,16 @@ interface infoProps {
 
 function LeftInfoCard({ ELEV }: infoProps): JSX.Element {
   const classes = useStyles()
-  const { data: infoData } = useContext(UserContext)
+  const { data: userData } = useContext(UserContext)
 
-  const info = infoData.users[0]
+  const user = userData.users[0]
 
-  const firstName = info.nickname
-  const schoolName = schoolDict[info.school]
-  const majorName = majorDict[info.major]
-  const concName = info.concentration
-  const enrollYear = info.enroll
-  const plannedGrad = info.planned_grad
+  const firstName = user.nickname
+  const schoolName = schoolDict[user.school]
+  const majorName = majorDict[user.major]
+  const concName = user.concentration
+  const enrollYear = user.enroll
+  const plannedGrad = user.planned_grad
 
   return (
     <Grid item>
