@@ -3,14 +3,12 @@ import Grid from '@material-ui/core/Grid'
 import { makeStyles } from '@material-ui/core/styles'
 import { DragDropContext } from 'react-beautiful-dnd'
 import Year from './Year'
-/* eslint-disable */
 import {
   Courses,
   useUpdate_CourseMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 import { courseSort } from '../../static/infoLists'
 import { UserContext } from '../../context/UserContext'
 
@@ -74,33 +72,34 @@ const YearCards = (): JSX.Element => {
           writ_inten: courseInfo.writ_inten,
         },
         update(cache) {
-          /* eslint-disable */
-          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+          const coursesQuery = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
+          const existingCourses = coursesQuery ? coursesQuery.courses : []
 
-          const newCourses = existingCourses!.courses.map((course) => {
-            if (course.title === courseInfo.title && course.term === srcId) {
-              const newCourse = {} as Courses
-              newCourse.__typename = 'courses'
-              newCourse.active = courseInfo.active
-              newCourse.term = dstId
-              newCourse.title = courseInfo.title
-              newCourse.code = courseInfo.code
-              newCourse.credits = courseInfo.credits
-              newCourse.type = courseInfo.type
-              newCourse.campus = courseInfo.campus
-              newCourse.writ_inten = courseInfo.writ_inten
-              return newCourse
-            }
-            return course
-          })
-          newCourses.sort(courseSort)
+          const coursesCache = existingCourses
+            .map((course) => {
+              if (course.title === courseInfo.title && course.term === srcId) {
+                const newCourse = {} as Courses
+                newCourse.__typename = 'courses'
+                newCourse.active = courseInfo.active
+                newCourse.term = dstId
+                newCourse.title = courseInfo.title
+                newCourse.code = courseInfo.code
+                newCourse.credits = courseInfo.credits
+                newCourse.type = courseInfo.type
+                newCourse.campus = courseInfo.campus
+                newCourse.writ_inten = courseInfo.writ_inten
+                return newCourse
+              }
+              return course
+            })
+            .sort(courseSort)
+
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: newCourses },
+            data: { courses: coursesCache },
           })
-          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',

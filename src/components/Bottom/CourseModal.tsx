@@ -26,7 +26,6 @@ import {
   credits,
   campuses,
 } from '../../static/infoLists'
-/* eslint-disable */
 import {
   useAdd_CourseMutation,
   useIncrement_Course_EditsMutation,
@@ -34,7 +33,6 @@ import {
   Get_CoursesDocument,
   Courses,
 } from '../../generated/graphql'
-/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -118,7 +116,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
   const classes = useStyles()
 
   // Introduce user and stats context for course Determination
-  const { data: infoData } = useContext(UserContext)
+  const { data: userData } = useContext(UserContext)
 
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
   const [addCourse] = useAdd_CourseMutation()
@@ -180,10 +178,12 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
     : () => {
         setOpen(true)
       }
+
   const handleClose = () => {
     resetInputs()
     setOpen(false)
   }
+
   const allFilled = () => {
     return (
       campus !== '' &&
@@ -193,6 +193,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
       getValue(titleRef) !== ''
     )
   }
+
   const handleSave = () => {
     const newTitle = getValue(titleRef)
     const newCode = getValue(codeRef)
@@ -210,13 +211,10 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
           writ_inten: writInten === 'True',
         },
         update(cache) {
-          /* eslint-disable */
-          const getExistingCourses = cache.readQuery<Get_CoursesQuery>({
+          const coursesQuery = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
-          const existingCourses = getExistingCourses
-            ? getExistingCourses.courses
-            : []
+          const existingCourses = coursesQuery ? coursesQuery.courses : []
 
           const newCourse = {} as Courses
           newCourse.__typename = 'courses'
@@ -230,14 +228,14 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
           newCourse.writ_inten = writInten === 'True'
 
           // Sort by descending type then ascending code
-          const sortedCourses = existingCourses.concat(newCourse)
-          sortedCourses.sort(courseSort)
+          const coursesCache = existingCourses
+            .concat(newCourse)
+            .sort(courseSort)
 
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: sortedCourses },
+            data: { courses: coursesCache },
           })
-          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',
@@ -294,14 +292,14 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
                 setCredit(newValue.credits.toFixed(1))
 
                 // Determine Course Type
-                const info = infoData.users[0]
+                const user = userData.users[0]
                 const { majorReqTable } = generateUserMajorRequirements(
-                  info.major,
-                  info.school,
+                  user.major,
+                  user.school,
                 )
                 const { coreReqTable } = generateUserCoreRequirements(
-                  info.enroll,
-                  info.school,
+                  user.enroll,
+                  user.school,
                 )
                 setType(
                   determineCourseType(
@@ -309,8 +307,8 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
                     parseFloat(credit),
                     majorReqTable,
                     coreReqTable,
-                    info.major,
-                    info.concentration,
+                    user.major,
+                    user.concentration,
                   ),
                 )
               }

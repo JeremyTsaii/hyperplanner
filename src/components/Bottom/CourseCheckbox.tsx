@@ -2,14 +2,12 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import Checkbox from '@material-ui/core/Checkbox'
 import { courseSort } from '../../static/infoLists'
-/* eslint-disable */
 import {
   Get_CoursesQuery,
   Get_CoursesDocument,
   useUpdate_CourseMutation,
   Courses,
 } from '../../generated/graphql'
-/* eslint-enable */
 
 interface checkboxProps {
   functional: boolean
@@ -50,32 +48,33 @@ function CourseCheckbox({
         writ_inten: writInten,
       },
       update(cache) {
-        /* eslint-disable */
-        const existingCourses = cache.readQuery<Get_CoursesQuery>({
+        const coursesQuery = cache.readQuery<Get_CoursesQuery>({
           query: Get_CoursesDocument,
         })
-        const newCourses = existingCourses!.courses.map((course) => {
-          if (course.code === code && course.term === term) {
-            const newCourse = {} as Courses
-            newCourse.__typename = 'courses'
-            newCourse.active = !active
-            newCourse.term = term
-            newCourse.title = title
-            newCourse.code = code
-            newCourse.credits = credits
-            newCourse.type = type
-            newCourse.campus = campus
-            newCourse.writ_inten = writInten
-            return newCourse
-          }
-          return course
-        })
-        newCourses.sort(courseSort)
+        const existingCourses = coursesQuery ? coursesQuery.courses : []
+        const coursesCache = existingCourses
+          .map((course) => {
+            if (course.code === code && course.term === term) {
+              const newCourse = {} as Courses
+              newCourse.__typename = 'courses'
+              newCourse.active = !active
+              newCourse.term = term
+              newCourse.title = title
+              newCourse.code = code
+              newCourse.credits = credits
+              newCourse.type = type
+              newCourse.campus = campus
+              newCourse.writ_inten = writInten
+              return newCourse
+            }
+            return course
+          })
+          .sort(courseSort)
+
         cache.writeQuery<Get_CoursesQuery>({
           query: Get_CoursesDocument,
-          data: { courses: newCourses },
+          data: { courses: coursesCache },
         })
-        /* eslint-enable */
       },
       optimisticResponse: {
         __typename: 'mutation_root',

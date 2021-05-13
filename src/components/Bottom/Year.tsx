@@ -36,29 +36,13 @@ const Year = ({ yearNumber }: IProps): JSX.Element => {
     )
   }
 
-  // When not logged in, use placeholderCourses
-  let coursePlaceholder = placeholderCourses
-
-  // Not logged in
-  if (infoError || coursesError) {
-    return (
-      <CourseContainer
-        showIcons={false}
-        yearNumber={yearNumber}
-        courses={coursePlaceholder}
-      />
-    )
-  }
-
-  const { courses } = coursesData
-
-  coursePlaceholder = courses
-
   return (
     <CourseContainer
-      showIcons
+      showIcons={!(infoError || coursesError)}
       yearNumber={yearNumber}
-      courses={coursePlaceholder}
+      courses={
+        infoError || coursesError ? placeholderCourses : coursesData.courses
+      }
     />
   )
 }

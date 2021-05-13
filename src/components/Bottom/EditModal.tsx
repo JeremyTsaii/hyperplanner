@@ -20,14 +20,12 @@ import {
   courseSort,
   CourseType,
 } from '../../static/infoLists'
-/* eslint-disable */
 import {
   useUpdate_CourseMutation,
   useIncrement_Course_EditsMutation,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -217,32 +215,34 @@ function EditModal({
           writ_inten: writInten === 'True',
         },
         update(cache) {
-          /* eslint-disable */
-          const existingCourses = cache.readQuery<Get_CoursesQuery>({
+          const coursesQuery = cache.readQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
           })
-          const newCourses = existingCourses!.courses.map((course) => {
-            if (course.title === titleProp && course.term === termProp) {
-              const newCourse = {} as CourseType
-              newCourse.__typename = 'courses'
-              newCourse.active = activeProp
-              newCourse.term = semester
-              newCourse.title = newTitle
-              newCourse.code = newCode
-              newCourse.credits = parseFloat(credit)
-              newCourse.type = type
-              newCourse.campus = campus
-              newCourse.writ_inten = writInten === 'True'
-              return newCourse
-            }
-            return course
-          })
-          newCourses.sort(courseSort)
+
+          const existingCourses = coursesQuery ? coursesQuery.courses : []
+
+          const coursesCache = existingCourses
+            .map((course) => {
+              if (course.title === titleProp && course.term === termProp) {
+                const newCourse = {} as CourseType
+                newCourse.__typename = 'courses'
+                newCourse.active = activeProp
+                newCourse.term = semester
+                newCourse.title = newTitle
+                newCourse.code = newCode
+                newCourse.credits = parseFloat(credit)
+                newCourse.type = type
+                newCourse.campus = campus
+                newCourse.writ_inten = writInten === 'True'
+                return newCourse
+              }
+              return course
+            })
+            .sort(courseSort)
           cache.writeQuery<Get_CoursesQuery>({
             query: Get_CoursesDocument,
-            data: { courses: newCourses },
+            data: { courses: coursesCache },
           })
-          /* eslint-enable */
         },
         optimisticResponse: {
           __typename: 'mutation_root',

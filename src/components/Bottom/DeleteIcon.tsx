@@ -2,16 +2,12 @@ import React from 'react'
 import Grid from '@material-ui/core/Grid'
 import IconButton from '@material-ui/core/IconButton'
 import DeleteForeverIcon from '@material-ui/icons/DeleteForever'
-/* eslint-disable */
 import {
   useRemove_CourseMutation,
   useIncrement_Course_EditsMutation,
-  Get_InfoDocument,
-  Get_InfoQuery,
   Get_CoursesQuery,
   Get_CoursesDocument,
 } from '../../generated/graphql'
-/* eslint-enable */
 
 interface deleteProps {
   functional: boolean
@@ -35,18 +31,18 @@ function DeleteIcon({ functional, term, title }: deleteProps): JSX.Element {
         courseRemove({
           variables: { term, title },
           update(cache) {
-            /* eslint-disable */
-            const existingCourses = cache.readQuery<Get_CoursesQuery>({
+            const coursesQuery = cache.readQuery<Get_CoursesQuery>({
               query: Get_CoursesDocument,
             })
-            const newCourses = existingCourses!.courses.filter((course) => {
+            const existingCourses = coursesQuery ? coursesQuery.courses : []
+
+            const coursesCache = existingCourses.filter((course) => {
               return course.title !== title || course.term !== term
             })
             cache.writeQuery<Get_CoursesQuery>({
               query: Get_CoursesDocument,
-              data: { courses: newCourses },
+              data: { courses: coursesCache },
             })
-            /* eslint-enable */
           },
           optimisticResponse: {
             __typename: 'mutation_root',
