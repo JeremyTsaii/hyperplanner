@@ -58,9 +58,8 @@ function InfoCards(): JSX.Element {
   const classes = useStyles()
 
   const { loading: infoLoading, error: infoError } = useContext(UserContext)
-  const { loading: coursesLoading, error: coursesError } = useContext(
-    CoursesContext,
-  )
+  const { loading: coursesLoading, error: coursesError } =
+    useContext(CoursesContext)
 
   if (infoLoading || coursesLoading) {
     return (

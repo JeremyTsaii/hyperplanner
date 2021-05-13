@@ -160,7 +160,7 @@ function InfoModal(): JSX.Element {
   const [plannedGrad, setPlannedGrad] = useState(plannedGradYear)
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
-    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    const cur = ref.current as unknown as HTMLTextAreaElement
     return cur.value
   }
 

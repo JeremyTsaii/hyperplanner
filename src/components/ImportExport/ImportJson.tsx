@@ -36,7 +36,7 @@ function ImportJson(): JSX.Element {
 
   // Get json text input
   const getJsonField = (ref: React.MutableRefObject<string>): string => {
-    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    const cur = ref.current as unknown as HTMLTextAreaElement
     return cur.value
   }
 

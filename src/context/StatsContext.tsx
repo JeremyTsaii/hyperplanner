@@ -70,7 +70,8 @@ export const generateUserCoreRequirements = (
 
   const schoolKey = school as keyof typeof Requirements
   const coreType = enrollYear > 2018 ? 'post' : 'pre'
-  const coreTypeKey = coreType as keyof typeof Requirements[typeof schoolKey]['core']
+  const coreTypeKey =
+    coreType as keyof typeof Requirements[typeof schoolKey]['core']
   const checklist = Requirements[schoolKey].core[coreTypeKey].courses
 
   let count = 0

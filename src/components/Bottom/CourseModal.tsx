@@ -136,7 +136,7 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
   const titleRef = useRef('')
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
-    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    const cur = ref.current as unknown as HTMLTextAreaElement
     return cur.value
   }
 
@@ -284,9 +284,11 @@ function CourseModal({ functional, term, year }: DialogProps): JSX.Element {
             options={AllCourses}
             onChange={(event, newValue: AllCourse | null) => {
               if (newValue !== null) {
-                const curCode = (codeRef.current as unknown) as HTMLTextAreaElement
+                const curCode =
+                  codeRef.current as unknown as HTMLTextAreaElement
                 curCode.value = newValue.code
-                const curTitle = (titleRef.current as unknown) as HTMLTextAreaElement
+                const curTitle =
+                  titleRef.current as unknown as HTMLTextAreaElement
                 curTitle.value = newValue.title
                 setCampus(newValue.campus)
                 setCredit(newValue.credits.toFixed(1))

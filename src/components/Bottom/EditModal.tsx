@@ -116,7 +116,7 @@ function EditModal({
   const [updateCourseEdits] = useIncrement_Course_EditsMutation()
 
   const getValue = (ref: React.MutableRefObject<string>): string => {
-    const cur = (ref.current as unknown) as HTMLTextAreaElement
+    const cur = ref.current as unknown as HTMLTextAreaElement
     return cur.value
   }
 

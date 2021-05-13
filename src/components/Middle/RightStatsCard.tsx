@@ -161,9 +161,11 @@ function RightStatsCard({ ELEV }: statsProps): JSX.Element {
       />
     )
   } else if (value === 'core') {
-    let coreTypeKey = 'pre' as keyof typeof Requirements[typeof schoolKey]['core']
+    let coreTypeKey =
+      'pre' as keyof typeof Requirements[typeof schoolKey]['core']
     if (enroll > 2018) {
-      coreTypeKey = 'post' as keyof typeof Requirements[typeof schoolKey]['core']
+      coreTypeKey =
+        'post' as keyof typeof Requirements[typeof schoolKey]['core']
     }
 
     const checklist = Requirements[schoolKey].core[coreTypeKey].courses
