@@ -20,12 +20,6 @@ const useStyles = makeStyles((theme) => ({
   icon: {
     // Override icon color
     color: theme.palette.primary.main,
-    '&$activeIcon': {
-      color: theme.palette.primary.main,
-    },
-    '&$completedIcon': {
-      color: theme.palette.primary.main,
-    },
   },
 }))
 
