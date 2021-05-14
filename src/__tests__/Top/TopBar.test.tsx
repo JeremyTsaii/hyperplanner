@@ -1,11 +1,11 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import TopBar from '../components/Top/TopBar'
-import { useAuth0 } from '../utils/react-auth0-spa'
-import { mockAuthUser, mockUserContext } from '../static/mocks'
-import { UserContext } from '../context/UserContext'
+import TopBar from '../../components/Top/TopBar'
+import { useAuth0 } from '../../utils/react-auth0-spa'
+import { mockAuthUser, mockUserContext } from '../../static/mocks'
+import { UserContext } from '../../context/UserContext'
 
-jest.mock('../utils/react-auth0-spa')
+jest.mock('../../utils/react-auth0-spa')
 
 describe('Top Bar', () => {
   beforeEach(() => {

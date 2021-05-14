@@ -22,6 +22,9 @@ describe('App', () => {
     await act(async () => {
       const { getByText } = render(<App />)
       expect(getByText(/hyperplanner/i)).toBeInTheDocument()
+      expect(getByText(/help/i)).toBeInTheDocument()
+      expect(getByText(/github/i)).toBeInTheDocument()
+      expect(getByText(/log out/i)).toBeInTheDocument()
     })
   })
 })

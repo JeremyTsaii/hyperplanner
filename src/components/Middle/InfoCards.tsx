@@ -57,11 +57,11 @@ const useStyles = makeStyles(() => ({
 function InfoCards(): JSX.Element {
   const classes = useStyles()
 
-  const { loading: infoLoading, error: infoError } = useContext(UserContext)
+  const { loading: userLoading, error: userError } = useContext(UserContext)
   const { loading: coursesLoading, error: coursesError } =
     useContext(CoursesContext)
 
-  if (infoLoading || coursesLoading) {
+  if (userLoading || coursesLoading) {
     return (
       <div className={classes.loadingStyle}>
         <ReactLoading type="cylon" height="2%" width="2%" />
@@ -69,7 +69,7 @@ function InfoCards(): JSX.Element {
     )
   }
 
-  if (infoError || coursesError) {
+  if (userError || coursesError) {
     return (
       <div className={classes.loginText}>Please enable pop-ups & log in!</div>
     )

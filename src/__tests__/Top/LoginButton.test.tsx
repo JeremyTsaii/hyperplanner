@@ -1,10 +1,10 @@
 import React from 'react'
 import { render } from '@testing-library/react'
-import LoginButton from '../components/Top/LoginButton'
-import { useAuth0 } from '../utils/react-auth0-spa'
-import { mockAuthUser } from '../static/mocks'
+import LoginButton from '../../components/Top/LoginButton'
+import { useAuth0 } from '../../utils/react-auth0-spa'
+import { mockAuthUser } from '../../static/mocks'
 
-jest.mock('../utils/react-auth0-spa')
+jest.mock('../../utils/react-auth0-spa')
 
 describe('Login Button', () => {
   beforeEach(() => {
