@@ -2,15 +2,9 @@ import React from 'react'
 import { render } from '@testing-library/react'
 import LoginButton from '../components/Top/LoginButton'
 import { useAuth0 } from '../utils/react-auth0-spa'
+import { mockAuthUser } from '../static/mocks'
 
 jest.mock('../utils/react-auth0-spa')
-
-// Create dummy user profile
-const user = {
-  email: 'johndoe@me.com',
-  email_verified: true,
-  sub: 'google-oauth2|2147627834623744883746',
-}
 
 describe('Login Button', () => {
   beforeEach(() => {
@@ -18,16 +12,13 @@ describe('Login Button', () => {
     ;(useAuth0 as jest.Mock).mockReturnValue({
       isAuthenticated: false,
       loading: true,
-      user,
+      mockAuthUser,
       logout: jest.fn(),
       loginWithRedirect: jest.fn(),
     })
   })
 
-  test('Renders Login Button Without Crashing', () => {
-    render(<LoginButton />)
-  })
-  test('Renders Text in Login Button', () => {
+  test('Renders Text in Login Button Without Crashing', () => {
     const { getByText } = render(<LoginButton />)
     expect(getByText(/log in/i)).toBeInTheDocument()
   })
@@ -36,19 +27,16 @@ describe('Login Button', () => {
 describe('Logout Button', () => {
   beforeEach(() => {
     // Swap between isAuthenticated false and true
-    ;(useAuth0 as jest.Mock).mockReturnValueOnce({
+    ;(useAuth0 as jest.Mock).mockReturnValue({
       isAuthenticated: true,
       loading: false,
-      user,
+      mockAuthUser,
       logout: jest.fn(),
       loginWithRedirect: jest.fn(),
     })
   })
 
-  test('Renders Logout Button Without Crashing', () => {
-    render(<LoginButton />)
-  })
-  test('Renders Text in Logout Button', () => {
+  test('Renders Text in Logout Button Without Crashing', () => {
     const { getByText } = render(<LoginButton />)
     expect(getByText(/log out/i)).toBeInTheDocument()
   })
