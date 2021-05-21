@@ -35,15 +35,14 @@ const CircularProgressWithLabel = ({ title, val }: IProps): JSX.Element => {
     <div className={classes.progress}>
       <Box position="relative" display="inline-flex">
         <CircularProgress
-          variant="indeterminate"
+          variant="determinate"
           className={classes.bottom}
           size={80}
           thickness={5}
           value={100}
         />
         <CircularProgress
-          variant="indeterminate"
-          disableShrink
+          variant="determinate"
           className={classes.top}
           thickness={5}
           size={80}
